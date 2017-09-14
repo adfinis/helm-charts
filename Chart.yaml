@@ -1,0 +1,12 @@
+apiVersion: v1
+description: Chart for Timed application
+name: timed
+version: 0.1.0
+keywords:
+  - timed
+  - tracking
+sources:
+  - https://github.com/adfinis-sygroup/timed-chart
+maintainers:
+  - name: Adfinis SyGroup AG
+    email: support@adfinis-sygroup.ch
