@@ -1,4 +1,4 @@
-1. Get the application URL by running these commands:
+1. Open following URL to start using Timed:
 {{- if .Values.ingress.enabled }}
 {{- range .Values.ingress.hosts }}
   http://{{ . }}
