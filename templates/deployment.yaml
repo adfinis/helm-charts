@@ -28,14 +28,23 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.internalPort }}
-          livenessProbe:
-            httpGet:
-              path: /
-              port: {{ .Values.service.internalPort }}
-          readinessProbe:
-            httpGet:
-              path: /
-              port: {{ .Values.service.internalPort }}
+          # TODO:
+          # Overriding host doesn't work hence disbaled by now
+          # Bug is properly in https://github.com/kubernetes/kubernetes/blob/master/pkg/probe/http/http.go
+          # livenessProbe:
+          #   httpGet:
+          #     httpHeaders:
+          #       - name: Host
+          #         value: {{ index .Values.ingress.hosts 0 }}
+          #     path: /admin/
+          #     port: {{ .Values.service.internalPort }}
+          # readinessProbe:
+          #   httpGet:
+          #     httpHeaders:
+          #       - name: Host
+          #         value: {{ index .Values.ingress.hosts 0 }}
+          #     path: /admin/
+          #     port: {{ .Values.service.internalPort }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- if .Values.nodeSelector }}
