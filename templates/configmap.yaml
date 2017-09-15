@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    app: {{ template "name" . }}
+data:
+  DJANGO_ALLOWED_HOSTS: {{ join "," .Values.ingress.hosts }}
+  DJANGO_HOST_DOMAIN: {{ index .Values.ingress.hosts 0 }}
+  # TODO should be determine through ingress config
+  DJANGO_HOST_PROTOCOL: http
+  # TODO sane default guessed by host
+  DJANGO_DEFAULT_FROM_EMAIL: {{ .Values.service.emailFrom }}

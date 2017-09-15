@@ -3,10 +3,16 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: timed-backend
+  repository: adfinissygroup/timed-backend
   tag: latest
   pullPolicy: IfNotPresent
 service:
+  # Specifiy secret for authentication.
+  # If not random token will be generated
+  # secret:
+  # Specify database url
+  # databaseUrl: psql://user:password@localhost:5432/database
+  emailFrom: webmaster@chart-example.local
   name: timed-backend
   type: ClusterIP
   externalPort: 80

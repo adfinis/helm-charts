@@ -18,7 +18,13 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          # TODO env vars
+          envFrom:
+            - secretRef:
+                name: pre-install-{{ template "fullname" . }}
+            - secretRef:
+                name: {{ template "fullname" . }}
+            - configMapRef:
+                name: {{ template "fullname" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.internalPort }}
