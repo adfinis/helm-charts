@@ -7,6 +7,8 @@ keywords:
   - tracking
 sources:
   - https://github.com/adfinis-sygroup/timed-chart
+  - https://github.com/adfinis-sygroup/timed-backend
+  - https://github.com/adfinis-sygroup/timed-frontend
 maintainers:
   - name: Adfinis SyGroup AG
     email: support@adfinis-sygroup.ch
