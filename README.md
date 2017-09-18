@@ -30,7 +30,6 @@ $ helm delete my-release
 
 ## TODOs
 
-* Integrate Timed Frontend
 * Deploy postgres as well
 * Migration of database
 * creation of default user
