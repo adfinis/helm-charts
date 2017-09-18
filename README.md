@@ -32,5 +32,6 @@ $ helm delete my-release
 
 * Deploy postgres as well
 * Migration of database
+ * waiting for Helm 2.7 resp. [hook-delete-policy feature](https://github.com/kubernetes/helm/pull/2692)
 * creation of default user
 * Documentation of configuration options
