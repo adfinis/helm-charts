@@ -7,7 +7,7 @@ This chart bootstraps a Timed application deployment on a [Kubernetes](https://k
 ## Prerequisites
 
 - Kubernetes 1.7+ with Beta APIs enabled
-- PV provisioner support in the underlying infrastructure
+- Helm 2.7+
 
 ## Installing the Chart
 
