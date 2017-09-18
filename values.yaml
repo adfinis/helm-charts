@@ -11,7 +11,7 @@ service:
   # If not random token will be generated
   # secret:
   # Specify database url
-  # databaseUrl: psql://user:password@localhost:5432/database
+  databaseUrl: psql://user:password@localhost:5432/database
   emailFrom: webmaster@chart-example.local
   name: timed-backend
   type: ClusterIP
