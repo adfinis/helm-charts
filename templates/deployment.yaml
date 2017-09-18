@@ -1,33 +1,33 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ template "fullname" . }}-backend
   labels:
-    app: {{ template "name" . }}
+    app: {{ template "name" . }}-backend
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.backend.replicaCount }}
   template:
     metadata:
       labels:
-        app: {{ template "name" . }}
+        app: {{ template "name" . }}-backend
         release: {{ .Release.Name }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
           envFrom:
             - secretRef:
-                name: pre-install-{{ template "fullname" . }}
+                name: pre-install-{{ template "fullname" . }}-backend
             - secretRef:
-                name: {{ template "fullname" . }}
+                name: {{ template "fullname" . }}-backend
             - configMapRef:
-                name: {{ template "fullname" . }}
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+                name: {{ template "fullname" . }}-backend
+          imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
           ports:
-            - containerPort: {{ .Values.service.internalPort }}
+            - containerPort: {{ .Values.backend.service.internalPort }}
           # TODO:
           # Overriding host doesn't work hence disbaled by now
           # Bug is properly in https://github.com/kubernetes/kubernetes/blob/master/pkg/probe/http/http.go
@@ -37,17 +37,17 @@ spec:
           #       - name: Host
           #         value: {{ index .Values.ingress.hosts 0 }}
           #     path: /admin/
-          #     port: {{ .Values.service.internalPort }}
+          #     port: {{ .Values.backend.service.internalPort }}
           # readinessProbe:
           #   httpGet:
           #     httpHeaders:
           #       - name: Host
           #         value: {{ index .Values.ingress.hosts 0 }}
           #     path: /admin/
-          #     port: {{ .Values.service.internalPort }}
+          #     port: {{ .Values.backend.service.internalPort }}
           resources:
-{{ toYaml .Values.resources | indent 12 }}
-    {{- if .Values.nodeSelector }}
+{{ toYaml .Values.backend.resources | indent 12 }}
+    {{- if .Values.backend.nodeSelector }}
       nodeSelector:
-{{ toYaml .Values.nodeSelector | indent 8 }}
+{{ toYaml .Values.backend.nodeSelector | indent 8 }}
     {{- end }}
