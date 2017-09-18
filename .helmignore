@@ -11,7 +11,7 @@
 .hgignore
 .svn/
 # Common backup files
-*.swp
+*.sw?
 *.bak
 *.tmp
 *~
