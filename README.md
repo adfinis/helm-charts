@@ -32,5 +32,6 @@ $ helm delete my-release
 ## TODOs
 
 * Deploy postgres as well
+* Migration of database
 * creation of default user
 * Documentation of configuration options
