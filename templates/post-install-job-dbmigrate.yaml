@@ -1,6 +1,8 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
+  # TODO: this should be done during pre phase but to do so need
+  # feature in https://github.com/kubernetes/helm/issues/2243
   name: post-install-{{ template "fullname" . }}-dbmigrate
   labels:
     heritage: {{ .Release.Service }}
