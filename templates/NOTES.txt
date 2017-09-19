@@ -1,13 +1,22 @@
-1. Open following URL to start using Timed:
+1. In Helm Version <2.7 following job needs to be cleaned manually.
+
+{{- if .Release.IsUpgrade }}
+  kubectl delete job post-upgrade-{{ template "fullname" . }}-dbmigrate
+{{- end }}
+{{- if .Release.IsInstall }}
+  kubectl delete job post-install-{{ template "fullname" . }}-dbmigrate
+{{- end }}
+
+2. Open following URL to start using Timed:
 {{- if .Values.ingress.enabled }}
 {{- range .Values.ingress.hosts }}
   http://{{ . }}
 {{- end }}
-{{- else if contains "NodePort" .Values.service.type }}
+{{- else if contains "NodePort" .Values.backend.service.type }}
   export NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ template "fullname" . }})
   export NODE_IP=$(kubectl get nodes --namespace {{ .Release.Namespace }} -o jsonpath="{.items[0].status.addresses[0].address}")
   echo http://$NODE_IP:$NODE_PORT
-{{- else if contains "LoadBalancer" .Values.service.type }}
+{{- else if contains "LoadBalancer" .Values.backend.service.type }}
      NOTE: It may take a few minutes for the LoadBalancer IP to be available.
            You can watch the status of by running 'kubectl get svc -w {{ template "fullname" . }}'
   export SERVICE_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ template "fullname" . }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
