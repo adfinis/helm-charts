@@ -1,0 +1,53 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          envFrom:
+            - secretRef:
+                name: pre-install-{{ template "fullname" . }}
+            - secretRef:
+                name: {{ template "fullname" . }}
+            - configMapRef:
+                name: {{ template "fullname" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.internalPort }}
+          # TODO:
+          # Overriding host doesn't work hence disbaled by now
+          # Bug is properly in https://github.com/kubernetes/kubernetes/blob/master/pkg/probe/http/http.go
+          # livenessProbe:
+          #   httpGet:
+          #     httpHeaders:
+          #       - name: Host
+          #         value: {{ index .Values.ingress.hosts 0 }}
+          #     path: /admin/
+          #     port: {{ .Values.service.internalPort }}
+          # readinessProbe:
+          #   httpGet:
+          #     httpHeaders:
+          #       - name: Host
+          #         value: {{ index .Values.ingress.hosts 0 }}
+          #     path: /admin/
+          #     port: {{ .Values.service.internalPort }}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+    {{- end }}
