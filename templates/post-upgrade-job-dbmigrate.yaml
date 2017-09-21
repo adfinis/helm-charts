@@ -26,6 +26,13 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-dbmigrate
           image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
+          imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
+          env:
+            - name: DJANGO_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "postgresql.fullname" . }}
+                  key: postgres-password
           envFrom:
             - secretRef:
                 name: pre-install-{{ template "fullname" . }}-backend
