@@ -66,6 +66,7 @@ ingress:
     #     - chart-example.local
 postgresql:
   install: true
+  postgresDatabase: timed
   service:
     # define host if postgres runs outside of k8s
     # host:
