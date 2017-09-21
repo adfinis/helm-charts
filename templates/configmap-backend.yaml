@@ -22,3 +22,4 @@ data:
 {{ else }}
   DJANGO_DATABASE_HOST: {{ .Values.postgresql.service.host | quote }}
 {{ end }}
+  DJANGO_ADMIN_USERNAME: {{ .Values.backend.service.adminUsername }}

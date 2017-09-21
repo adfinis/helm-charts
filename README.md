@@ -31,8 +31,6 @@ $ helm delete my-release
 
 ## TODOs
 
-* creation of default user
-* pull policy based on tag
 * Travis running helm lint
 * cron jobs
 * Documentation of configuration options
