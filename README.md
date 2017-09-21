@@ -31,7 +31,8 @@ $ helm delete my-release
 
 ## TODOs
 
-* Deploy postgres as well
-* Migration of database
 * creation of default user
+* pull policy based on tag
+* Travis running helm lint
+* cron jobs
 * Documentation of configuration options
