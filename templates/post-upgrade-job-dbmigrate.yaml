@@ -3,12 +3,12 @@ kind: Job
 metadata:
   # TODO: this should be done during pre phase but to do so following
   # feature is needed: https://github.com/kubernetes/helm/issues/2243
-  name: post-upgrade-{{ template "fullname" . }}-dbmigrate
+  name: post-upgrade-{{ template "timed.fullname" . }}-dbmigrate
   labels:
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
-    app: {{ template "name" . }}
+    app: {{ template "timed.name" . }}
   annotations:
     "helm.sh/hook": post-upgrade
     "helm.sh/hook-delete-policy": hook-succeeded
@@ -31,13 +31,11 @@ spec:
             - name: DJANGO_DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ template "postgresql.fullname" . }}
+                  name: {{ template "timed.postgresql.fullname" . }}
                   key: postgres-password
           envFrom:
             - secretRef:
-                name: pre-install-{{ template "fullname" . }}-backend
-            - secretRef:
-                name: {{ template "fullname" . }}-backend
+                name: pre-install-{{ template "timed.fullname" . }}-backend
             - configMapRef:
-                name: {{ template "fullname" . }}-backend
+                name: {{ template "timed.fullname" . }}-backend
           command: ["./manage.py", "migrate"]

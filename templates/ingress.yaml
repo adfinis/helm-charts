@@ -1,14 +1,14 @@
 {{- if .Values.ingress.enabled -}}
-{{- $backendServiceName := print (include "fullname" .) "-backend" -}}
+{{- $backendServiceName := print (include "timed.fullname" .) "-backend" -}}
 {{- $backendServicePort := .Values.backend.service.externalPort -}}
-{{- $frontendServiceName := print (include "fullname" .) "-frontend" -}}
+{{- $frontendServiceName := print (include "timed.fullname" .) "-frontend" -}}
 {{- $frontendServicePort := .Values.frontend.service.externalPort -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ template "timed.fullname" . }}
   labels:
-    app: {{ template "name" . }}
+    app: {{ template "timed.name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
