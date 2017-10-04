@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}-frontend
+  labels:
+    app: {{ template "name" . }}-frontend
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.frontend.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "name" . }}-frontend
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}"
+          imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.frontend.service.internalPort }}
+          livenessProbe:
+            httpGet:
+              path: /index.html
+              port: {{ .Values.frontend.service.internalPort }}
+          readinessProbe:
+            httpGet:
+              path: /index.html
+              port: {{ .Values.frontend.service.internalPort }}
+          resources:
+{{ toYaml .Values.frontend.resources | indent 12 }}
+    {{- if .Values.frontend.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.frontend.nodeSelector | indent 8 }}
+    {{- end }}

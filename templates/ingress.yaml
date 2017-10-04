@@ -1,6 +1,8 @@
 {{- if .Values.ingress.enabled -}}
-{{- $serviceName := include "fullname" . -}}
-{{- $servicePort := .Values.service.externalPort -}}
+{{- $backendServiceName := print (include "fullname" .) "-backend" -}}
+{{- $backendServicePort := .Values.backend.service.externalPort -}}
+{{- $frontendServiceName := print (include "fullname" .) "-frontend" -}}
+{{- $frontendServicePort := .Values.frontend.service.externalPort -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -22,16 +24,20 @@ spec:
         paths:
           - path: /admin/
             backend:
-              serviceName: {{ $serviceName }}
-              servicePort: {{ $servicePort }}
+              serviceName: {{ $backendServiceName }}
+              servicePort: {{ $backendServicePort }}
           - path: /static/
             backend:
-              serviceName: {{ $serviceName }}
-              servicePort: {{ $servicePort }}
+              serviceName: {{ $backendServiceName }}
+              servicePort: {{ $backendServicePort }}
           - path: /api/
             backend:
-              serviceName: {{ $serviceName }}
-              servicePort: {{ $servicePort }}
+              serviceName: {{ $backendServiceName }}
+              servicePort: {{ $backendServicePort }}
+          # frontend service as catch all backend
+          - backend:
+              serviceName: {{ $frontendServiceName }}
+              servicePort: {{ $frontendServicePort }}
     {{- end -}}
   {{- if .Values.ingress.tls }}
   tls:
