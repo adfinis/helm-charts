@@ -16,7 +16,7 @@ spec:
         release: {{ .Release.Name }}
     spec:
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Chart.Name }}-backend
           image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
           envFrom:
             - secretRef:

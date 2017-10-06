@@ -8,6 +8,7 @@ This chart bootstraps a Timed application deployment on a [Kubernetes](https://k
 
 - Kubernetes 1.7+ with Beta APIs enabled
 - PV provisioner support in the underlying infrastructure
+- Helm 2.7+
 
 ## Installing the Chart
 
@@ -15,7 +16,7 @@ To install the chart with the release name `my-release` git clone repository and
 following command:
 
 ```bash
-$ helm install --set ingress.hosts={"test-timed.k8s-dev.sycloud.ch"} --set service.databaseUrl="psql://user:password@host:5432/database"
+$ helm install --set ingress.hosts={"test-timed.k8s-dev.sycloud.ch"} --set backend.service.databaseUrl="psql://user:password@host:5432/database"
 ```
 
 The command deploys Timed on the Kubernetes cluster in the default configuration whereas host is set to ingress.hosts and database is running on databaseUrl.
@@ -31,6 +32,5 @@ $ helm delete my-release
 ## TODOs
 
 * Deploy postgres as well
-* Migration of database
 * creation of default user
 * Documentation of configuration options
