@@ -14,6 +14,7 @@ data:
   DJANGO_HOST_PROTOCOL: http
   # TODO sane default guessed by host
   DJANGO_DEFAULT_FROM_EMAIL: {{ .Values.backend.service.emailFrom | quote }}
+  DJANGO_SERVER_EMAIL: {{ .Values.backend.service.emailFrom | quote }}
   DJANGO_DATABASE_NAME: {{ .Values.postgresql.postgresDatabase | quote }}
   DJANGO_DATABASE_USER: {{ default "postgres" .Values.postgresUser | quote }}
   DJANGO_DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
