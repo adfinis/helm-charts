@@ -16,10 +16,16 @@ To install the chart with the release name `my-release` git clone repository and
 following command:
 
 ```bash
-$ helm install --set ingress.hosts={"test-timed.k8s-dev.sycloud.ch"} --set backend.service.databaseUrl="psql://user:password@host:5432/database"
+$ helm install --set ingress.hosts={"test-timed.k8s-dev.sycloud.ch"} --name my-release .
 ```
 
 The command deploys Timed on the Kubernetes cluster in the default configuration whereas host is set to ingress.hosts and database is running on databaseUrl.
+
+For simple testing without any persistence you can run the following:
+
+```bash
+$ helm install --set ingress.hosts={"test-timed.k8s-dev.sycloud.ch"} --set postgresql.persistence.enabled=false --name test-release .
+```
 
 ## Uninstalling the Chart
 
