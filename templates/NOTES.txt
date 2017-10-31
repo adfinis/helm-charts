@@ -12,6 +12,7 @@
 {{- range .Values.ingress.hosts }}
   http://{{ . }}
 {{- end }}
+{{- end }}
 
 3. Login with user `{{ .Values.backend.service.adminUsername }}`.
 
