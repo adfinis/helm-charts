@@ -3,12 +3,12 @@ kind: Job
 metadata:
   # TODO: this should be done during pre phase but to do so following
   # feature is needed: https://github.com/kubernetes/helm/issues/2243
-  name: post-install-{{ template "fullname" . }}-dbmigrate
+  name: post-install-{{ template "timed.fullname" . }}-dbmigrate
   labels:
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
-    app: {{ template "name" . }}
+    app: {{ template "timed.name" . }}
   annotations:
     "helm.sh/hook": post-install
     "helm.sh/hook-delete-policy": hook-succeeded
@@ -26,11 +26,17 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-dbmigrate
           image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
+          imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
+          env:
+            - name: DJANGO_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "timed.postgresql.fullname" . }}
+                  key: postgres-password
           envFrom:
             - secretRef:
-                name: pre-install-{{ template "fullname" . }}-backend
-            - secretRef:
-                name: {{ template "fullname" . }}-backend
+                name: pre-install-{{ template "timed.fullname" . }}-backend
             - configMapRef:
-                name: {{ template "fullname" . }}-backend
-          command: ["./manage.py", "migrate"]
+                name: {{ template "timed.fullname" . }}-backend
+          command: ["/bin/sh", "-c"]
+          args: ["./manage.py migrate && echo \"from django.contrib.auth import get_user_model; get_user_model().objects.create_superuser('$DJANGO_ADMIN_USERNAME', '$DJANGO_SERVER_EMAIL', '$DJANGO_ADMIN_PASSWORD')\" | ./manage.py shell"]

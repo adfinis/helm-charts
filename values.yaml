@@ -14,6 +14,9 @@ backend:
     # Specify database url
     databaseUrl: psql://user:password@localhost:5432/database
     emailFrom: webmaster@chart-example.local
+    adminUsername: admin
+    adminEmail: postmaster@chart-example.local
+    #adminPassword:
     name: timed-backend
     type: ClusterIP
     externalPort: 80
@@ -64,3 +67,9 @@ ingress:
     # - secretName: chart-example-tls
     #   hosts:
     #     - chart-example.local
+postgresql:
+  install: true
+  postgresDatabase: timed
+  service:
+    # define host if postgres runs outside of k8s
+    # host:

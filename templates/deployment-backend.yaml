@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ template "fullname" . }}-backend
+  name: {{ template "timed.fullname" . }}-backend
   labels:
-    app: {{ template "name" . }}-backend
+    app: {{ template "timed.name" . }}-backend
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
@@ -12,19 +12,23 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "name" . }}-backend
+        app: {{ template "timed.name" . }}-backend
         release: {{ .Release.Name }}
     spec:
       containers:
         - name: {{ .Chart.Name }}-backend
           image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
+          env:
+            - name: DJANGO_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "timed.postgresql.fullname" . }}
+                  key: postgres-password
           envFrom:
             - secretRef:
-                name: pre-install-{{ template "fullname" . }}-backend
-            - secretRef:
-                name: {{ template "fullname" . }}-backend
+                name: pre-install-{{ template "timed.fullname" . }}-backend
             - configMapRef:
-                name: {{ template "fullname" . }}-backend
+                name: {{ template "timed.fullname" . }}-backend
           imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.backend.service.internalPort }}
