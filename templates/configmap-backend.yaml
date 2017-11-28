@@ -16,7 +16,7 @@ data:
   DJANGO_DEFAULT_FROM_EMAIL: {{ .Values.backend.service.emailFrom | quote }}
   DJANGO_SERVER_EMAIL: {{ .Values.backend.service.emailFrom | quote }}
   DJANGO_DATABASE_NAME: {{ .Values.postgresql.postgresDatabase | quote }}
-  DJANGO_DATABASE_USER: {{ default "postgres" .Values.postgresUser | quote }}
+  DJANGO_DATABASE_USER: {{ default "postgres" .Values.postgresql.postgresUser | quote }}
   DJANGO_DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
 {{ if .Values.postgresql.install }}
   DJANGO_DATABASE_HOST: {{ include "timed.postgresql.fullname" . | quote }}

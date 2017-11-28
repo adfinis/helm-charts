@@ -12,7 +12,6 @@ backend:
     # If not random token will be generated
     # secret:
     # Specify database url
-    databaseUrl: psql://user:password@localhost:5432/database
     emailFrom: webmaster@chart-example.local
     adminUsername: admin
     adminEmail: postmaster@chart-example.local
