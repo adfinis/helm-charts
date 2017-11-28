@@ -17,4 +17,4 @@
 3. Login with user `{{ .Values.backend.service.adminUsername }}`.
 
 Passwort you can retrieve with:
-  kubectl get secret pre-install-{{ template "timed.fullname" . }}-backend -o yaml | awk '/DJANGO_ADMIN_PASSWORD/{print $NF}' | echo $(base64 --decode)
+  kubectl get secret pre-install-{{ template "timed.fullname" . }}-backend -o jsonpath '{.data.DJANGO_ADMIN_PASSWORD}' | base64 --decode
