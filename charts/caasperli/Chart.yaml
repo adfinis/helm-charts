@@ -2,5 +2,10 @@ apiVersion: v2
 name: caasperli
 description: Deploy Caasperli to a Kubernetes Cluster
 type: application
-version: 0.1.0
+version: 0.2.0
 appVersion: latest
+home: https://github.com/fujexo/potz-holzoepfel-und-zipfelchape
+maintainers:
+- name: hairmare
+  email: hairmare@purplehaze.ch
+  url: https://github.com/hairmare
