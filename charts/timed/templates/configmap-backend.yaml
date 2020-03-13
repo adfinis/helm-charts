@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "timed.fullname" . }}-backend
+  labels:
+    {{- include "timed.labels" . | nindent 4 }}
+    app.kubernetes.io/component: backend
+data:
+  EMAIL_URL: {{ .Values.backend.settings.emailUrl | quote }}
+  DJANGO_ALLOWED_HOSTS: {{ join "," .Values.ingress.hosts }}
+  DJANGO_HOST_DOMAIN: {{ index .Values.ingress.hosts 0 }}
+  DJANGO_HOST_PROTOCOL: http
+  DJANGO_DEFAULT_FROM_EMAIL: {{ .Values.backend.settings.emailFrom | quote }}
+  DJANGO_SERVER_EMAIL: {{ .Values.backend.settings.serverEmail | quote }}
+  DJANGO_DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}
+  DJANGO_DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
+  DJANGO_DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
+{{ if .Values.postgresql.enabled }}
+  DJANGO_DATABASE_HOST: {{ include "timed.postgresql.fullname" . | quote }}
+{{ else }}
+  DJANGO_DATABASE_HOST: {{ .Values.postgresql.service.host | quote }}
+{{ end }}
