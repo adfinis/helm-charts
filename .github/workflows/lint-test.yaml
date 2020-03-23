@@ -11,19 +11,15 @@ jobs:
 
       - name: Run chart-testing (lint)
         id: lint
-        uses: hairmare/chart-testing-action@chore/helmv3
+        uses: helm/chart-testing-action@v1.0.0-rc.1
         with:
           command: lint
-          image: quay.io/helmpack/chart-testing:v3.0.0-beta.1
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.0.0-alpha.3
-        with:
-          install_local_path_provisioner: true
         if: steps.lint.outputs.changed == 'true'
 
       - name: Run chart-testing (install)
-        uses: hairmare/chart-testing-action@chore/helmv3
+        uses: helm/chart-testing-action@v1.0.0-rc.1
         with:
           command: install
-          image: quay.io/helmpack/chart-testing:v3.0.0-beta.1
