@@ -1,0 +1,10 @@
+apiVersion: v1
+appVersion: "1.0"
+description: A Helm 2 chart to deploy Caasperli
+name: kasperleyn
+home: https://github.com/fujexo/potz-holzoepfel-und-zipfelchape
+version: 0.1.0
+maintainers:
+- name: hairmare
+  email: hairmare@purplehaze.ch
+  url: https://github.com/hairmare
