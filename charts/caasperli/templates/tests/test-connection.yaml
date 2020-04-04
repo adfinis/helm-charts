@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: "{{ include "caasperli.fullname" . }}-test-connection"
   labels:
-{{ include "caasperli.labels" . | nindent 4 }}
+    {{- include "caasperli.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test-success
 spec:
@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args:  ['{{ include "caasperli.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "caasperli.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never
