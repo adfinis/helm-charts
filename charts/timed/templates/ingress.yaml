@@ -1,0 +1,41 @@
+{{- if .Values.ingress.enabled -}}
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: {{ include "timed.fullname" . }}
+  labels:
+    {{- include "timed.labels" . | nindent 4 }}
+    app.kubernetes.io/component: frontend
+{{- with .Values.ingress.annotations }}
+  annotations:
+{{- toYaml . | indent 4 }}
+{{- end }}
+spec:
+  rules:
+    {{- range $host := .Values.ingress.hosts }}
+    - host: {{ $host }}
+      http:
+        paths:
+          - path: /admin/
+            backend:
+              serviceName: {{ $.Values.backend.service.name }}
+              servicePort: {{ $.Values.backend.service.externalPort }}
+          - path: /static/
+            backend:
+              serviceName: {{ $.Values.backend.service.name }}
+              servicePort: {{ $.Values.backend.service.externalPort }}
+          - path: /api/
+            backend:
+              serviceName: {{ $.Values.backend.service.name }}
+              servicePort: {{ $.Values.backend.service.externalPort }}
+          # frontend service as catch all backend
+          - path: /
+            backend:
+              serviceName: {{ $.Values.frontend.service.name }}
+              servicePort: {{ $.Values.frontend.service.externalPort }}
+    {{- end -}}
+  {{- if .Values.ingress.tls }}
+  tls:
+{{ toYaml .Values.ingress.tls | indent 4 }}
+  {{- end -}}
+{{- end -}}

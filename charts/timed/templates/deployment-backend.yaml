@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "timed.fullname" . }}-backend
+  labels:
+    {{- include "timed.labels" . | nindent 4 }}
+    app.kubernetes.io/component: backend
+spec:
+  replicas: {{ .Values.backend.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "timed.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "timed.labels" . | nindent 8 }}
+        app.kubernetes.io/component: backend
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-backend
+          image: "{{ .Values.backend.image.repository }}:{{ default .Chart.AppVersion .Values.backend.image.tag }}"
+          env:
+            - name: DJANGO_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "timed.postgresql.fullname" . }}
+                  key: postgresql-password
+          envFrom:
+            - secretRef:
+                name: {{ include "timed.fullname" . }}-django
+            - configMapRef:
+                name: {{ include "timed.fullname" . }}-backend
+          imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.backend.service.internalPort }}
+          {{- if .Values.backend.livenessProbe.enabled }}
+          livenessProbe:
+            initialDelaySeconds: {{ .Values.backend.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.backend.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.backend.livenessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.backend.livenessProbe.successThreshold }}
+            failureThreshold: {{ .Values.backend.livenessProbe.failureThreshold }}
+            httpGet:
+              path: /admin/
+              port: {{ .Values.backend.service.internalPort }}
+              httpHeaders:
+                - name: Host
+                  value: {{ first .Values.ingress.hosts }}
+          {{- end }}
+          {{- if .Values.backend.readinessProbe.enabled }}
+          readinessProbe:
+            initialDelaySeconds: {{ .Values.backend.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.backend.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.backend.readinessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.backend.readinessProbe.successThreshold }}
+            failureThreshold: {{ .Values.backend.readinessProbe.failureThreshold }}
+            httpGet:
+              path: /admin/
+              port: {{ .Values.backend.service.internalPort }}
+              httpHeaders:
+                - name: Host
+                  value: {{ first .Values.ingress.hosts }}
+          {{- end }}
+          resources:
+{{ toYaml .Values.backend.resources | indent 12 }}
+    {{- if .Values.backend.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.backend.nodeSelector | indent 8 }}
+    {{- end }}

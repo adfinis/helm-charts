@@ -6,9 +6,9 @@ This chart bootstraps a Timed application deployment on a [Kubernetes](https://k
 
 ## Prerequisites
 
-- Kubernetes 1.7+ with Beta APIs enabled
+- Kubernetes 1.17+
 - PV provisioner support in the underlying infrastructure
-- Helm 2.7+
+- Helm 3.0+
 
 ## Installing the Chart
 
@@ -37,6 +37,6 @@ $ helm delete my-release
 
 ## TODOs
 
-* Travis running helm lint
-* cron jobs
-* Documentation of configuration options
+- Travis running helm lint
+- cron jobs
+- Documentation of configuration options
