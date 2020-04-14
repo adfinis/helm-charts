@@ -6,10 +6,10 @@ metadata:
   labels:
     {{- include "timed.labels" . | nindent 4 }}
     app.kubernetes.io/component: frontend
-{{- with .Values.ingress.annotations }}
+  {{- with .Values.ingress.annotations }}
   annotations:
-{{- toYaml . | indent 4 }}
-{{- end }}
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   rules:
     {{- range $host := .Values.ingress.hosts }}
