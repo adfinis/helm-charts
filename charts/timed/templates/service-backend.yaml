@@ -14,3 +14,4 @@ spec:
       name: {{ .Values.backend.service.name }}
   selector:
     {{- include "timed.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: backend

@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.frontend.service.name }}
   labels:
     {{- include "timed.labels" . | nindent 4 }}
-    app.kubernetes.io/component: backend
+    app.kubernetes.io/component: frontend
 spec:
   type: {{ .Values.frontend.service.type }}
   ports:
@@ -14,3 +14,4 @@ spec:
       name: {{ .Values.frontend.service.name }}
   selector:
     {{- include "timed.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: frontend
