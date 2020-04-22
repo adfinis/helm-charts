@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "timed.fullname" . }}-workreport
+  labels:
+    {{- include "timed.labels" . | nindent 4 }}
+    app.kubernetes.io/component: backend
+binaryData:
+  workreport: |-
+    {{ .Files.Get "files/workreport.ots" | b64enc }}

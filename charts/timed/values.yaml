@@ -70,6 +70,8 @@ backend:
     emailFrom: webmaster@chart-example.local
     # backend.settings.serverEmail -- Email address error messages are sent from
     serverEmail: webmaster@chart-example.local
+    # backend.settings.workReportPath -- Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`.
+    workReportPath: /etc/workreport
 
 frontend:
   # frontend.replicaCount -- (int) Number of Backend replicas
