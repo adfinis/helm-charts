@@ -2,10 +2,13 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# replicaCount -- How many caasperlis to deploy
 replicaCount: 1
 
 image:
+  # image.repository -- Container image to deploy
   repository: fujexo/potz-holzoepfel-und-zipfelchape
+  # image.pullPolicy -- When to pull the container image
   pullPolicy: Always
 
 imagePullSecrets: []
@@ -13,17 +16,19 @@ nameOverride: ""
 fullnameOverride: ""
 
 serviceAccount:
-  # Specifies whether a service account should be created
+  # serviceAccount.create -- Specifies whether a service account should be created
   create: true
-  # Annotations to add to the service account
+  # serviceAccount.annotations -- Annotations to add to the service account
   annotations: {}
-  # The name of the service account to use.
+  # serviceAccount.name -- The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name:
 
+# podSecurityContext -- [PodSecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#podsecuritycontext-v1-core)
 podSecurityContext: {}
   # fsGroup: 2000
 
+# securityContext -- [SecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#securitycontext-v1-core)
 securityContext: {}
   # capabilities:
   #   drop:
@@ -33,17 +38,23 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
+  # service.type -- Type of the service to create
   type: ClusterIP
+  # service.port -- Port the service will expose
   port: 80
 
 ingress:
+  # ingress.enabled -- Enable ingress
   enabled: false
+  # ingress.annotations -- Annotations to add to the ingress resource
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
+  # ingress.hosts -- List of hosts to expose via ingress
   hosts:
     - host: chart-example.local
       paths: []
+  # ingress.tls -- TLS configuration for ingress
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

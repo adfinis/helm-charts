@@ -2,7 +2,7 @@ apiVersion: v2
 name: caasperli
 description: Deploy Caasperli to a Kubernetes Cluster
 type: application
-version: 0.3.0
+version: 0.4.0
 appVersion: latest
 home: https://github.com/fujexo/potz-holzoepfel-und-zipfelchape
 maintainers:
