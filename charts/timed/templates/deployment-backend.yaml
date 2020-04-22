@@ -45,7 +45,7 @@ spec:
               port: {{ .Values.backend.service.internalPort }}
               httpHeaders:
                 - name: Host
-                  value: {{ first .Values.ingress.hosts }}
+                  value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
           {{- end }}
           {{- if .Values.backend.readinessProbe.enabled }}
           readinessProbe:
@@ -59,7 +59,7 @@ spec:
               port: {{ .Values.backend.service.internalPort }}
               httpHeaders:
                 - name: Host
-                  value: {{ first .Values.ingress.hosts }}
+                  value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
           {{- end }}
           resources:
 {{ toYaml .Values.backend.resources | indent 12 }}
