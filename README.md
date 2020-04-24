@@ -1,42 +1,14 @@
 # Timed Application
 
 ## Introduction
+This chart runs a [timed](https://github.com/adfinis-sygroup/timed-frontend) deployment on a [Kubernetes](https://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
-This chart bootstraps a Timed application deployment on a [Kubernetes](https://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+Chart releases can be listed on the [releases](https://github.com/adfinis-sygroup/timed-chart/releases) page.
 
-## Prerequisites
+Source code can be found here:
+* timed-frontend: https://github.com/adfinis-sygroup/timed-frontend
+* timed-backend: https://github.com/adfinis-sygroup/timed-backend
 
-- Kubernetes 1.17+
-- PV provisioner support in the underlying infrastructure
-- Helm 3.0+
+## Chart timed
 
-## Installing the Chart
-
-To install the chart with the release name `my-release` git clone repository and run
-following command:
-
-```bash
-$ helm install --set ingress.hosts={"test-timed.k8s-dev.sycloud.ch"} --name my-release .
-```
-
-The command deploys Timed on the Kubernetes cluster in the default configuration whereas host is set to ingress.hosts.
-
-For simple testing without any persistence you can run the following:
-
-```bash
-$ helm install --set ingress.hosts={"test-timed.k8s-dev.sycloud.ch"} --set postgresql.persistence.enabled=false --name test-release .
-```
-
-## Uninstalling the Chart
-
-To uninstall/delete the `my-release` deployment:
-
-```bash
-$ helm delete my-release
-```
-
-## TODOs
-
-- Travis running helm lint
-- cron jobs
-- Documentation of configuration options
+For a timed README look inside the `charts/` directory: [timed/timed](charts/timed/README.md)
