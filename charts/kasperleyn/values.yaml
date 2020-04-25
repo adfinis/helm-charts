@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: fujexo/potz-holzoepfel-und-zipfelchape
+  repository: adfinissygroup/caasperli
   tag: latest
   pullPolicy: Always
 

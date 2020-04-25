@@ -3,7 +3,7 @@ appVersion: "1.0"
 description: A Helm 2 chart to deploy Caasperli
 name: kasperleyn
 home: https://github.com/fujexo/potz-holzoepfel-und-zipfelchape
-version: 0.2.0
+version: 0.3.0
 maintainers:
 - name: hairmare
   email: hairmare@purplehaze.ch

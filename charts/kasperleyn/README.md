@@ -2,7 +2,7 @@ kasperleyn
 ==========
 A Helm 2 chart to deploy Caasperli
 
-Current chart version is `0.2.0`
+Current chart version is `0.3.0`
 
 Source code can be found [here](https://github.com/fujexo/potz-holzoepfel-und-zipfelchape)
 
@@ -15,7 +15,7 @@ Source code can be found [here](https://github.com/fujexo/potz-holzoepfel-und-zi
 | affinity | object | `{}` |  |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |
-| image.repository | string | `"fujexo/potz-holzoepfel-und-zipfelchape"` |  |
+| image.repository | string | `"adfinissygroup/caasperli"` |  |
 | image.tag | string | `"latest"` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
