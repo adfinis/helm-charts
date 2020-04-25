@@ -3,7 +3,7 @@ name: Run pre-commit
 on:
   pull_request:
   push:
-    branches: 
+    branches:
       - master
 
 jobs:

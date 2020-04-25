@@ -3,3 +3,16 @@ repos:
     rev: v0.12.0
     hooks:
       - id: helm-docs
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    sha: v2.5.0
+    hooks:
+      - id: no-commit-to-branch
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-symlinks
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: detect-aws-credentials
+        args:
+          - --allow-missing-credentials
+      - id: detect-private-key

@@ -1,4 +1,6 @@
-# Deploy a Caasperli to you favourite platform in style
+# Helm Charts for Caasperli
+
+This repository contains Helm charts that can be used to deploy Caasperli.
 
 ## Usage
 
