@@ -1,0 +1,15 @@
+{{- if .Values.application.enabled }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ include "argoconfig.fullname" . }}
+  namespace: {{ .Values.application.namespace }}
+  labels:
+    {{- include "argoconfig.labels" . | nindent 4 }}
+spec:
+  project: {{ if .Values.application.projectOverride }}{{ .Values.Application.projectOverride }}{{ else }}{{ include "argoconfig.fullname" . }}{{ end }}
+  source:
+    {{- .Values.application.source | toYaml | nindent 4 }}
+  destination:
+    {{- .Values.application.destination | toYaml | nindent 4 }}
+{{- end }}

@@ -22,6 +22,15 @@ jobs:
         uses: helm/kind-action@v1.0.0-rc.1
         if: steps.lint.outputs.changed == 'true'
 
+      - name: Create argocd namespace for argoconfig chart
+        run: kubectl create ns argocd
+
+      - name: Install Argo CD Application CRD
+        run: kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/v1.5.2/manifests/crds/application-crd.yaml
+
+      - name: Install Argo CD AppProject CRD
+        run: kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/v1.5.2/manifests/crds/appproject-crd.yaml
+
       - name: Run chart-testing (install)
         uses: helm/chart-testing-action@v1.0.0-rc.2
         with:

@@ -1,0 +1,50 @@
+# Default values for argocd.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# nameOverride -- Override names
+nameOverride: ""
+# fullnameOverride -- Override fullname
+fullnameOverride: ""
+
+appProject:
+  # appProject.enabled -- Enable creating an AppProject resource
+  enabled: true
+  # appProject.namespace -- Namespace for AppProject resource
+  namespace: argocd
+  # appProject.clusterResourceWhitelist --
+  clusterResourceWhitelist:
+      # appProject.clusterResourceWhitelist[0].group -- API groups to whitelist
+    - group: '*'
+      # appProject.clusterResourceWhitelist[0].kind -- API kind to whitelist
+      kind: '*'
+  # appProject.destinations --
+  destinations:
+      # appProject.destinations[0].namespace -- Destination namespace to allow
+    - namespace: '*'
+      # appProject.destinations[0].server -- Destination server to allow
+      server: '*'
+  # appProject.sourceRepos -- Source repos to allow
+  sourceRepos:
+    - '*'
+
+application:
+  # application.enabled -- Enable creating an Application resource
+  enabled: true
+  # application.namespace -- Namespace for Application resource
+  namespace: argocd
+  # application.projectOverride -- Name of AppProject to install into
+  # @default -- Fullname
+  projectOverride: ~
+  source:
+    # application.source.repoURL -- URL of sourece repo
+    repoURL: https://hairmare.github.io/helm-caasperli
+    # application.source.chart -- Name of chart in source repo
+    chart: caasperli
+    # application.source.targetRevision -- Revision of chart in source repo to install
+    targetRevision: '*'
+  destination:
+    # application.destination.server -- Target cluster in Argo CD
+    server: https://kubernetes.default.svc
+    # application.destination.namespace -- Target namespace of application in Argo CD
+    namespace: caasperli

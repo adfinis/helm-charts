@@ -1,0 +1,11 @@
+apiVersion: v2
+name: argoconfig
+description: Configure a Caasperli deployment through Argo CD
+type: application
+version: 0.1.0
+appVersion: latest
+home: https://github.com/hairmare/helm-caasperli
+maintainers:
+- name: hairmare
+  email: hairmare@purplehaze.ch
+  url: https://github.com/hairmare

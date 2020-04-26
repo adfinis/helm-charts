@@ -1,0 +1,16 @@
+{{- if .Values.appProject.enabled }}
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: {{ include "argoconfig.fullname" . }}
+  namespace: {{ .Values.appProject.namespace }}
+  labels:
+    {{- include "argoconfig.labels" . | nindent 4 }}
+spec:
+  clusterResourceWhitelist:
+    {{- .Values.appProject.clusterResourceWhitelist | toYaml | nindent 4 }}
+  destinations:
+    {{- .Values.appProject.destinations | toYaml | nindent 4 }}
+  sourceRepos:
+    {{- .Values.appProject.sourceRepos | toYaml | nindent 4 }}
+{{- end }}
