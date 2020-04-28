@@ -2,7 +2,7 @@ caasperli
 =========
 Deploy Caasperli to a Kubernetes Cluster
 
-Current chart version is `0.6.0`
+Current chart version is `0.6.1`
 
 Source code can be found [here](https://github.com/fujexo/potz-holzoepfel-und-zipfelchape)
 
