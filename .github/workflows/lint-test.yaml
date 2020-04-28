@@ -24,6 +24,7 @@ jobs:
 
       - name: Prepare cluster for install tests
         run: ./.ci/prepare-lint-cluster.sh
+        if: steps.lint.outputs.changed == 'true'
 
       - name: Run chart-testing (install)
         uses: helm/chart-testing-action@v1.0.0-rc.2
