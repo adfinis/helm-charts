@@ -2,7 +2,7 @@ caasperli
 =========
 Deploy Caasperli to a Kubernetes Cluster
 
-Current chart version is `0.5.0`
+Current chart version is `0.5.1`
 
 Source code can be found [here](https://github.com/fujexo/potz-holzoepfel-und-zipfelchape)
 
@@ -15,7 +15,7 @@ Source code can be found [here](https://github.com/fujexo/potz-holzoepfel-und-zi
 | affinity | object | `{}` |  |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
-| image.repository | string | `"adfinissygroup/caasperli"` | Container image to deploy |
+| image.repository | string | `"adfinissygroup/potz-holzoepfel-und-zipfelchape"` | Container image to deploy |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` | Annotations to add to the ingress resource |
 | ingress.enabled | bool | `false` | Enable ingress |

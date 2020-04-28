@@ -7,7 +7,7 @@ replicaCount: 1
 
 image:
   # image.repository -- Container image to deploy
-  repository: adfinissygroup/caasperli
+  repository: adfinissygroup/potz-holzoepfel-und-zipfelchape
   # image.pullPolicy -- When to pull the container image
   pullPolicy: Always
 
