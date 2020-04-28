@@ -1,0 +1,31 @@
+apiVersion: v1
+entries:
+  timed:
+  - apiVersion: v2
+    appVersion: v0.13.1
+    created: "2020-04-28T15:37:22.163431932Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~8.7.3
+    description: Chart for Timed application
+    digest: cfa3253bf1b6d69a2d7a709734def8e8f9a303db30f33a24a6770e43a8d646b1
+    home: https://github.com/adfinis-sygroup/timed-frontend
+    keywords:
+    - timed
+    - tracking
+    maintainers:
+    - email: support@adfinis-sygroup.ch
+      name: adfinis-sygroup
+      url: https://adfinis-sygroup.ch
+    name: timed
+    sources:
+    - https://github.com/adfinis-sygroup/timed-chart
+    - https://github.com/adfinis-sygroup/timed-backend
+    - https://github.com/adfinis-sygroup/timed-frontend
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/timed-0.3.3/timed-0.3.3.tgz
+    version: 0.3.3
+generated: "2020-04-28T15:37:22.044250524Z"
