@@ -2,7 +2,7 @@ caasperli
 =========
 Deploy Caasperli to a Kubernetes Cluster
 
-Current chart version is `0.5.1`
+Current chart version is `0.6.0`
 
 Source code can be found [here](https://github.com/fujexo/potz-holzoepfel-und-zipfelchape)
 
@@ -24,6 +24,16 @@ Source code can be found [here](https://github.com/fujexo/potz-holzoepfel-und-zi
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | podSecurityContext | object | `{}` | [PodSecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#podsecuritycontext-v1-core) |
+| prometheus.enabled | bool | `false` | Enable Prometheus integration |
+| prometheus.extraLabels | object | `{}` | Labels to add to all Prometheus integration resources |
+| prometheus.podMonitor.enabled | bool | `true` | Enable creation of a PodMonitor CRD |
+| prometheus.podMonitor.interval | string | `"30s"` | Interval at which metrics should be scraped |
+| prometheus.podMonitor.metricRelabelings | list | `[]` | MetricRelabelConfigs to apply to samples before ingestion |
+| prometheus.podMonitor.relabelings | list | `[]` | RelabelConfigs to apply to samples before scraping |
+| prometheus.serviceMonitor.enabled | bool | `false` | Enable creation of a ServiceMonitor CRD |
+| prometheus.serviceMonitor.interval | string | `"30s"` | Interval at which metrics should be scraped |
+| prometheus.serviceMonitor.metricRelabelings | list | `[]` | MetricRelabelConfigs to apply to samples before ingestion |
+| prometheus.serviceMonitor.relabelings | list | `[]` | RelabelConfigs to apply to samples before scraping |
 | replicaCount | int | `1` | How many caasperlis to deploy |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` | [SecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#securitycontext-v1-core) |

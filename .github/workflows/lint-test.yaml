@@ -31,6 +31,12 @@ jobs:
       - name: Install Argo CD AppProject CRD
         run: kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/v1.5.2/manifests/crds/appproject-crd.yaml
 
+      - name: Install ServiceMonitor CRD
+        run: kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/release-0.38/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
+
+      - name: Install PodMonitor CRD
+        run: kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/release-0.38/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
+
       - name: Run chart-testing (install)
         uses: helm/chart-testing-action@v1.0.0-rc.2
         with:

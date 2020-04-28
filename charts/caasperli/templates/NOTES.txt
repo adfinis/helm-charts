@@ -26,3 +26,12 @@
   echo "Visit http://127.0.0.1:8080 to use your application"
   kubectl --namespace {{ .Release.Namespace }} port-forward $POD_NAME 8080:80
 {{- end }}
+{{- if .Values.prometheus.enabled }}
+1. To monitor your application we have configured the following resouces:
+{{- if .Values.prometheus.serviceMonitor.enabled }}
+   * monitoring.coreos.com/v1/ServiceMonitor: {{ template "caasperli.fullname" . }}
+{{- end }}
+{{- if  .Values.prometheus.podMonitor.enabled }}
+   * monitoring.coreos.com/v1/PodMonitor: {{ template "caasperli.fullname" . }}
+{{- end }}
+{{- end }}

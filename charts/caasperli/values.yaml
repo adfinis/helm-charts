@@ -77,3 +77,28 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Configure how Caasperli is to be monitored using Prometheus
+prometheus:
+  # prometheus.enabled -- Enable Prometheus integration
+  enabled: false
+  # prometheus.extraLabels -- Labels to add to all Prometheus integration resources
+  extraLabels: {}
+  serviceMonitor:
+    # prometheus.serviceMonitor.enabled -- Enable creation of a ServiceMonitor CRD
+    enabled: false
+    # prometheus.serviceMonitor.interval -- Interval at which metrics should be scraped
+    interval: "30s"
+    # prometheus.serviceMonitor.metricRelabelings -- MetricRelabelConfigs to apply to samples before ingestion
+    metricRelabelings: []
+    # prometheus.serviceMonitor.relabelings -- RelabelConfigs to apply to samples before scraping
+    relabelings: []
+  podMonitor:
+    # prometheus.podMonitor.enabled -- Enable creation of a PodMonitor CRD
+    enabled: true
+    # prometheus.podMonitor.interval -- Interval at which metrics should be scraped
+    interval: "30s"
+    # prometheus.podMonitor.metricRelabelings -- MetricRelabelConfigs to apply to samples before ingestion
+    metricRelabelings: []
+    # prometheus.podMonitor.relabelings -- RelabelConfigs to apply to samples before scraping
+    relabelings: []
