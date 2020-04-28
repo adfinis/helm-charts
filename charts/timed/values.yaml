@@ -1,0 +1,160 @@
+# Default values for timed-chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+backend:
+  # backend.replicaCount -- (int) Number of Backend replicas
+  replicaCount: 1
+  image:
+    # backend.image.repository -- Backend image name
+    repository: adfinissygroup/timed-backend
+     # Specify a tag to override which version of timed to deploy.
+     # If no tag is specified the appVersion from Chart.yaml is used as tag.
+     # tag:
+    # backend.image.pullPolicy -- Backend image pull policy
+    pullPolicy: IfNotPresent
+  service:
+    # Specifiy secret for authentication.
+    # If not random token will be generated
+    # secret:
+    # backend.service.name -- Backend service name
+    name: timed-backend
+    # backend.service.type -- Backend service type
+    type: ClusterIP
+    # backend.service.externalPort -- External Port of backend service
+    externalPort: 80
+    # backend.service.internalPort -- Internal Port of backend service
+    internalPort: 80
+  # backend.resources -- Resource limits for backend
+  resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #  cpu: 100m
+    #  memory: 128Mi
+    # requests:
+    #  cpu: 100m
+    #  memory: 128Mi
+  livenessProbe:
+    # backend.livenessProbe.enabled -- Enable liveness probe on backend
+    enabled: true
+    # backend.livenessProbe.initialDelaySeconds -- Number of seconds after the container has started before liveness probe is initiated
+    initialDelaySeconds: 60
+    # backend.livenessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    periodSeconds: 10
+    # backend.livenessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    timeoutSeconds: 5
+    # backend.livenessProbe.failureThreshold -- Number of tries to perform the probe
+    failureThreshold: 6
+    # backend.livenessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    successThreshold: 1
+  readinessProbe:
+    # backend.readinessProbe.enabled -- Enable readiness probe on backend
+    enabled: true
+    # backend.readinessProbe.initialDelaySeconds -- Number of seconds after the container has started before readiness probe is initiated
+    initialDelaySeconds: 30
+    # backend.readinessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    periodSeconds: 10
+    # backend.readinessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    timeoutSeconds: 5
+    # backend.readinessProbe.failureThreshold -- Number of tries to perform the probe
+    failureThreshold: 6
+    # backend.readinessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    successThreshold: 1
+  settings:
+    # django settings for backend
+    # backend.settings.emailUrl -- Connection string of SMTP server to send mails
+    emailUrl: smtp://localhost:25
+    # backend.settings.emailFrom -- Default email address to use for various responses
+    emailFrom: webmaster@chart-example.local
+    # backend.settings.serverEmail -- Email address error messages are sent from
+    serverEmail: webmaster@chart-example.local
+
+frontend:
+  # frontend.replicaCount -- (int) Number of Backend replicas
+  replicaCount: 1
+  image:
+    # frontend.image.repository -- Backend image name
+    repository: adfinissygroup/timed-frontend
+    # Specify a tag to override which version of timed to deploy.
+    # If no tag is specified the appVersion from Chart.yaml is used as tag.
+    # tag:
+    # frontend.image.pullPolicy -- Backend image pull policy
+    pullPolicy: IfNotPresent
+  service:
+    # frontend.service.name -- Backend service name
+    name: timed-frontend
+    # frontend.service.type -- Backend service type
+    type: ClusterIP
+    # frontend.service.externalPort -- External Port of frontend service
+    externalPort: 80
+    # frontend.service.internalPort -- Internal Port of frontend service
+    internalPort: 80
+  # frontend.resources -- Resource limits for frontend
+  resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #  cpu: 100m
+    #  memory: 128Mi
+    # requests:
+    #  cpu: 100m
+    #  memory: 128Mi
+  livenessProbe:
+    # frontend.livenessProbe.enabled -- Enable liveness probe on frontend
+    enabled: true
+    # frontend.livenessProbe.initialDelaySeconds -- Number of seconds after the container has started before liveness probe is initiated
+    initialDelaySeconds: 60
+    # frontend.livenessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    periodSeconds: 10
+    # frontend.livenessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    timeoutSeconds: 5
+    # frontend.livenessProbe.failureThreshold -- Number of tries to perform the probe
+    failureThreshold: 6
+    # frontend.livenessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    successThreshold: 1
+  readinessProbe:
+    # frontend.readinessProbe.enabled -- Enable readiness probe on frontend
+    enabled: true
+    # frontend.readinessProbe.initialDelaySeconds -- Number of seconds after the container has started before readiness probe is initiated
+    initialDelaySeconds: 30
+    # frontend.readinessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    periodSeconds: 10
+    # frontend.readinessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    timeoutSeconds: 5
+    # frontend.readinessProbe.failureThreshold -- Number of tries to perform the probe
+    failureThreshold: 6
+    # frontend.readinessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    successThreshold: 1
+
+ingress:
+  # ingress.enabled -- Enable ingress for timed
+  enabled: false
+  # ingress.annotations -- Ingress annotations
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  # ingress.hosts -- Ingress hostnames
+  hosts: []
+  #  - timed-test.example.com
+  # ingress.tls -- Ingress TLS options
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - timed-test.example.com
+
+postgresql:
+  # postgresql.enabled -- Enable PostgreSQL for persistence
+  enabled: true
+  # postgresql.postgresqlDatabase -- PostgreSQL database name
+  postgresqlDatabase: timed
+  # postgresql.postgresqlUsername -- PostgreSQL user name
+  postgresqlUsername: postgres
+  # postgresql.postgresqlPassword -- Set a password for PostgreSQL
+  # postgresqlPassword: s3cr3t
+  image:
+    # postgresql.image.tag -- PostgreSQL image version to use
+    tag: 12.2.0
