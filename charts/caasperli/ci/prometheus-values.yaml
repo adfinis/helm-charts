@@ -1,0 +1,22 @@
+prometheus:
+  enabled: true
+  extraLabels:
+    k8s.example.com: foo-bar
+  serviceMonitor:
+    enabled: true
+    metricRelabelings:
+      - regex: '(.*)'
+        replacement: '$1'
+    relabelings:
+      - sourceLabels:
+          - foo
+        targetLabel: bar
+  podMonitor:
+    enabled: true
+    metricRelabelings:
+      - regex: '(.*)'
+        replacement: '$1'
+    relabelings:
+      - sourceLabels:
+          - foo
+        targetLabel: bar

@@ -1,0 +1,7 @@
+* The following Argo CD configurations have been created
+{{- if .Values.appProject.enabled }}
+  * argoproj.io/v1alpha1/AppProject: {{ include "argoconfig.fullname" . }}
+{{- end }}
+{{- if .Values.application.enabled }}
+  * argoproj.io/v1alpha1/Application: {{ include "argoconfig.fullname" . }}
+{{- end }}
