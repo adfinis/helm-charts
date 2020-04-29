@@ -1,0 +1,29 @@
+{{- if and .Values.prometheus.enabled .Values.prometheus.podMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: {{ template "caasperli.fullname" . }}
+  labels:
+    {{- include "caasperli.labels" . | nindent 4 }}
+    {{- if .Values.prometheus.extraLabels }}
+    {{- .Values.prometheus.extraLabels | toYaml | nindent 4 }}
+    {{- end }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "caasperli.selectorLabels" . | nindent 6 }}
+  podMetricsEndpoints:
+    - port: http
+      {{- if .Values.prometheus.podMonitor.interval }}
+      interval: {{ .Values.prometheus.podMonitor.interval }}
+      {{- end }}
+      path: "/metrics"
+      {{- if .Values.prometheus.podMonitor.metricRelabelings }}
+      metricRelabelings:
+        {{- toYaml .Values.prometheus.podMonitor.metricRelabelings | nindent 6 }}
+      {{- end }}
+      {{- if .Values.prometheus.podMonitor.relabelings }}
+      relabelings:
+        {{- toYaml .Values.prometheus.podMonitor.relabelings | nindent 6 }}
+      {{- end }}
+{{- end }}
