@@ -10,6 +10,8 @@ image:
   repository: adfinissygroup/potz-holzoepfel-und-zipfelchape
   # image.pullPolicy -- When to pull the container image
   pullPolicy: Always
+  # image.tag -- Overrides the image tag whose default is the chart version.
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
@@ -22,7 +24,9 @@ serviceAccount:
   annotations: {}
   # serviceAccount.name -- The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name:
+  name: ""
+
+podAnnotations: {}
 
 # podSecurityContext -- [PodSecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#podsecuritycontext-v1-core)
 podSecurityContext: {}
@@ -71,6 +75,13 @@ resources: {}
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
 

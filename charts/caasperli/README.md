@@ -13,9 +13,14 @@ Source code can be found [here](https://github.com/adfinis-sygroup/potz-holzoepf
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
+| autoscaling.enabled | bool | `false` |  |
+| autoscaling.maxReplicas | int | `100` |  |
+| autoscaling.minReplicas | int | `1` |  |
+| autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
 | image.repository | string | `"adfinissygroup/potz-holzoepfel-und-zipfelchape"` | Container image to deploy |
+| image.tag | string | `""` | Overrides the image tag whose default is the chart version. |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` | Annotations to add to the ingress resource |
 | ingress.enabled | bool | `false` | Enable ingress |
@@ -23,6 +28,7 @@ Source code can be found [here](https://github.com/adfinis-sygroup/potz-holzoepf
 | ingress.tls | list | `[]` | TLS configuration for ingress |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
+| podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` | [PodSecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#podsecuritycontext-v1-core) |
 | prometheus.enabled | bool | `false` | Enable Prometheus integration |
 | prometheus.extraLabels | object | `{}` | Labels to add to all Prometheus integration resources |
@@ -41,5 +47,5 @@ Source code can be found [here](https://github.com/adfinis-sygroup/potz-holzoepf
 | service.type | string | `"ClusterIP"` | Type of the service to create |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
-| serviceAccount.name | string | `nil` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
+| serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
 | tolerations | list | `[]` |  |
