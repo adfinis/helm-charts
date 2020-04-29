@@ -1,5 +1,58 @@
 apiVersion: v1
 entries:
+  argoconfig:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2020-04-29T20:55:21.426155448Z"
+    description: Configure an Argo CD AppProject and Application
+    digest: 99cef66883f0d1237c1e74bf9f5f9599f46ed5a89d8e555550828be3116343f2
+    home: https://github.com/adfinis-sygroup/helm-charts
+    maintainers:
+    - email: support@adfinis-sygroup.ch
+      name: adfinis-sygroup
+      url: https://adfinis-sygroup.ch
+    - email: lucas.bickel@adfinis-sygroup.ch
+      name: hairmare
+    name: argoconfig
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/argoconfig-0.1.0/argoconfig-0.1.0.tgz
+    version: 0.1.0
+  caasperli:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2020-04-29T20:55:21.705756138Z"
+    description: Deploy Caasperli to a Kubernetes Cluster
+    digest: 130fd8762f32e5a5b45bf5cb3f56bc25333fd09f560207968a76f0dc5eb354e6
+    home: https://github.com/adfinis-sygroup/potz-holzoepfel-und-zipfelchape
+    maintainers:
+    - email: support@adfinis-sygroup.ch
+      name: adfinis-sygroup
+      url: https://adfinis-sygroup.ch
+    - email: lucas.bickel@adfinis-sygroup.ch
+      name: hairmare
+    name: caasperli
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/caasperli-0.6.1/caasperli-0.6.1.tgz
+    version: 0.6.1
+  kasperleyn:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-04-29T20:55:21.958398575Z"
+    description: A Helm 2 chart to deploy Caasperli
+    digest: bc5aedb77529fc387347bcd27f4d1cf3b47650e8bd43ce264729b65812fc81f8
+    home: https://github.com/adfinis-sygroup/potz-holzoepfel-und-zipfelchape
+    maintainers:
+    - email: support@adfinis-sygroup.ch
+      name: adfinis-sygroup
+      url: https://adfinis-sygroup.ch
+    - email: lucas.bickel@adfinis-sygroup.ch
+      name: hairmare
+    name: kasperleyn
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/kasperleyn-0.3.1/kasperleyn-0.3.1.tgz
+    version: 0.3.1
   timed:
   - apiVersion: v2
     appVersion: v0.13.1
