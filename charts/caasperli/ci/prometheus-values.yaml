@@ -20,3 +20,7 @@ prometheus:
       - sourceLabels:
           - foo
         targetLabel: bar
+grafana:
+  enabled: true
+  extraLabels:
+    k8s.example.com: bar-baz

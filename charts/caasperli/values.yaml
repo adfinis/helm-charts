@@ -113,3 +113,10 @@ prometheus:
     metricRelabelings: []
     # prometheus.podMonitor.relabelings -- RelabelConfigs to apply to samples before scraping
     relabelings: []
+
+# Configure if Caasperli should be deployed with Grafana templates
+grafana:
+  # grafana.enabled -- Enable Grafana Dashboards
+  enabled: false
+  # grafana.extraLabels -- Labels to add to all Grafana integration resources
+  extraLabels: {}

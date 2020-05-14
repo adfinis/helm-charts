@@ -2,7 +2,7 @@ caasperli
 =========
 Deploy Caasperli to a Kubernetes Cluster
 
-Current chart version is `0.6.1`
+Current chart version is `0.7.0`
 
 Source code can be found [here](https://github.com/adfinis-sygroup/potz-holzoepfel-und-zipfelchape)
 
@@ -18,6 +18,8 @@ Source code can be found [here](https://github.com/adfinis-sygroup/potz-holzoepf
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
 | fullnameOverride | string | `""` |  |
+| grafana.enabled | bool | `false` | Enable Grafana Dashboards |
+| grafana.extraLabels | object | `{}` | Labels to add to all Grafana integration resources |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
 | image.repository | string | `"adfinissygroup/potz-holzoepfel-und-zipfelchape"` | Container image to deploy |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart version. |
