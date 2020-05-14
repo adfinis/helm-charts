@@ -16,6 +16,12 @@ Source code can be found [here](https://github.com/adfinis-sygroup/timed-fronten
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| auth.ldap.bindDn | string | `"uid=auth_user,cn=systems,dc=example,dc=com"` | LDAP bind DN |
+| auth.ldap.enabled | bool | `false` | Enable LDAP user authentication |
+| auth.ldap.password | string | `"s3cr3t"` | LDAP password |
+| auth.ldap.serverUri | string | `"ldaps://ldap.example.com:636"` |  |
+| auth.ldap.userAttrMap | string | `"{\"first_name\": \"givenName\", \"last_name\": \"sn\", \"email\": \"mail\"}"` | LDAP user attribute mapping |
+| auth.ldap.userDnTemplate | string | `"uid=%(user)s,cn=users,dc=foo,dc=com"` | LDAP user DN template |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"adfinissygroup/timed-backend"` | Backend image name |
 | backend.livenessProbe.enabled | bool | `true` | Enable liveness probe on backend |
