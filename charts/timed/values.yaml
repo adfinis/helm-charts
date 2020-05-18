@@ -158,3 +158,18 @@ postgresql:
   image:
     # postgresql.image.tag -- PostgreSQL image version to use
     tag: 12.2.0
+
+auth:
+  ldap:
+    # auth.ldap.enabled -- Enable LDAP user authentication
+    enabled: false
+    # auth.ldap.servicerUri -- LDAP server URI
+    serverUri: "ldaps://ldap.example.com:636"
+    # auth.ldap.bindDn -- LDAP bind DN
+    bindDn: "uid=auth_user,cn=systems,dc=example,dc=com"
+    # auth.ldap.password -- LDAP password
+    password: s3cr3t
+    # auth.ldap.userDnTemplate -- LDAP user DN template
+    userDnTemplate: "uid=%(user)s,cn=users,dc=foo,dc=com"
+    # auth.ldap.userAttrMap -- LDAP user attribute mapping
+    userAttrMap: '{"first_name": "givenName", "last_name": "sn", "email": "mail"}'

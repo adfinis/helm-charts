@@ -20,3 +20,10 @@ data:
 {{- else }}
   DJANGO_DATABASE_HOST: {{ .Values.postgresql.service.host | quote }}
 {{- end }}
+{{- if .Values.auth.ldap.enabled }}
+  DJANGO_AUTH_LDAP_ENABLED: true
+  DJANGO_AUTH_LDAP_USER_ATTR_MAP: {{ .Values.auth.ldap.userAttrMap | quote }}
+  DJANGO_AUTH_LDAP_SERVER_URI: {{ .Values.auth.ldap.serverUri | quote }}
+  DJANGO_AUTH_LDAP_BIND_DN: {{ .Values.auth.ldap.bindDn | quote }}
+  DJANGO_AUTH_LDAP_USER_DN_TEMPLATE: {{ .Values.auth.ldap.userDnTemplate | quote }}
+{{- end }}
