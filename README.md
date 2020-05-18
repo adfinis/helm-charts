@@ -2,6 +2,8 @@
 
 ![Release Charts](https://github.com/adfinis-sygroup/helm-charts/workflows/Release%20Charts/badge.svg)
 
+![Lunkwill wearing a Helm shirt](docs/images/lunkwill_helm_shirt.png)
+
 This repository contains [Helm](https://helm.sh/) charts managed by Adfinis.
 
 ## Usage
