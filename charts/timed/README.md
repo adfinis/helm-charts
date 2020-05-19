@@ -2,7 +2,7 @@ timed
 =====
 Chart for Timed application
 
-Current chart version is `0.3.5`
+Current chart version is `0.3.6`
 
 Source code can be found [here](https://github.com/adfinis-sygroup/timed-frontend)
 
@@ -45,6 +45,7 @@ Source code can be found [here](https://github.com/adfinis-sygroup/timed-fronten
 | backend.settings.emailFrom | string | `"webmaster@chart-example.local"` | Default email address to use for various responses |
 | backend.settings.emailUrl | string | `"smtp://localhost:25"` | Connection string of SMTP server to send mails |
 | backend.settings.serverEmail | string | `"webmaster@chart-example.local"` | Email address error messages are sent from |
+| backend.settings.workReportPath | string | `"/etc/workreport"` | Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`. |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | frontend.image.repository | string | `"adfinissygroup/timed-frontend"` | Backend image name |
 | frontend.livenessProbe.enabled | bool | `true` | Enable liveness probe on frontend |

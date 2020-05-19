@@ -30,6 +30,9 @@ spec:
                 name: {{ include "timed.fullname" . }}-django
             - configMapRef:
                 name: {{ include "timed.fullname" . }}-backend
+          volumeMounts:
+            - name: workreport
+              mountPath: {{ .Values.backend.settings.workReportPath }}
           imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.backend.service.internalPort }}
@@ -67,3 +70,7 @@ spec:
       nodeSelector:
 {{ toYaml .Values.backend.nodeSelector | indent 8 }}
     {{- end }}
+      volumes:
+        - name: workreport
+          configMap:
+            name: {{ include "timed.fullname" .}}-workreport

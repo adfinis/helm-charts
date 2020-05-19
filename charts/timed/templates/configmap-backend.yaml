@@ -15,6 +15,7 @@ data:
   DJANGO_DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}
   DJANGO_DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
   DJANGO_DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
+  DJANGO_WORK_REPORT_PATH: {{ .Values.backend.settings.workReportPath | quote }}
 {{- if .Values.postgresql.enabled }}
   DJANGO_DATABASE_HOST: {{ include "timed.postgresql.fullname" . | quote }}
 {{- else }}
