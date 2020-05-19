@@ -175,3 +175,17 @@ auth:
     userDnTemplate: "uid=%(user)s,cn=users,dc=foo,dc=com"
     # auth.ldap.userAttrMap -- LDAP user attribute mapping
     userAttrMap: '{"first_name": "givenName", "last_name": "sn", "email": "mail"}'
+
+redmine:
+  # redmine.enabled -- Enable Redmine integration
+  enabled: false
+  # redmine.url -- Redmine URL
+  url: redmine.example.com
+  # redmine.apiKey -- Redmine API Key
+  apiKey: ""
+  # redmine.htaccessUser -- Redmine htaccess user
+  htaccessUser: ""
+  # redmine.htaccessPassword -- Redmine htaccess password
+  htaccessPassword: ""
+  # redmine.spenthoursField -- Spent hours field id on Redmine
+  spenthoursField: 0
