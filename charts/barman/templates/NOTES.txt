@@ -1,0 +1,49 @@
+The barman chart has been installed.
+
+Make sure your PostgreSQL server is properly setup to allow backups from barman.
+See: http://docs.pgbarman.org/release/2.10/#setup-of-a-new-server-in-barman
+
+
+Initial backup:
+
+  * Obtain a bash shell on the running Barman pod.
+
+    kubectl --namespace {{ .Release.Namespace }} exec -it {{ template "barman.fullname" . }}-0 /bin/bash
+
+  * Switch to the Barman user.
+
+    su barman
+
+  * Reset WAL log to perform first replication.
+
+    barman switch-xlog --force --archive all
+
+  * Perform the initial backup
+
+    barman backup all
+
+  * Verify replication and backups are working as expected.
+
+    barman check all
+
+Restore:
+
+  * Obtain a bash shell on the running Barman pod.
+
+    kubectl --namespace {{ .Release.Namespace }} exec -it {{ template "barman.fullname" . }}-0 /bin/bash
+
+  * Switch to the Barman user.
+
+    su barman
+
+  * List backups.
+
+    barman list-backup all
+
+  * Restore a backup into the recover directory
+
+    barman recover <server_name> <backup_id> <destination_directory>
+
+
+Further information can be found in Barman's official documentation:
+http://docs.pgbarman.org/release/2.10/

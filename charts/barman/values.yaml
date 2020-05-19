@@ -1,0 +1,45 @@
+image:
+  # image.repository -- Image repository
+  repository: ubcctlt/barman
+  # image.tag -- Image tag
+  tag: "latest"
+  # image.pullPolicy -- Image pull policy
+  pullPolicy: Always
+
+# resources -- Resource limits and requests
+resources: {}
+
+persistence:
+  data:
+    # persistence.data.enabled -- Enable persistent storage for backup data
+    enabled: true
+    # persistence.data.accessMode -- Access mode for persistent storage
+    accessMode: ReadWriteOnce
+    # persistence.data.size -- Size of storage volume
+    size: 20Gi
+    # persistence.data.storageClass -- Storage class
+    storageClass: ""
+  recover:
+    # persistence.recover.enabled -- Enable persistent storage for recovery
+    enabled: false
+    # persistence.recover.accessMode -- Access mode for persistent storage
+    accessMode: ReadWriteOnce
+    # persistence.recover.size -- Size of storage volume
+    size: 4Gi
+    # persistence.recover.storageClass -- Storage class
+    storageClass: ""
+
+barman:
+  # barman.backupSchedule -- Barman backup schedule
+  backupSchedule: "0 4 * * *"
+  postgresql:
+    # barman.postgresql.host -- Postgresql Host
+    host: postgresql
+    # barman.postgresql.superUser -- Postgresql super user
+    superUser: postgres
+    # barman.postgresql.superUserPassword -- Postgresql super user password
+    superUserPassword: postgres
+    # barman.postgresql.replicationUser -- Postgresql replication user
+    replicationUser: barman
+    # barman.postgresql.replicationPassword -- Postgresql replication password
+    replicationPassword: barman
