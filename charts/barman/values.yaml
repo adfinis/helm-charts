@@ -30,26 +30,46 @@ persistence:
     storageClass: ""
 
 barman:
-  # barman.backupSchedule -- Barman backup schedule
-  backupSchedule: "0 4 * * *"
+  # barman.backupMethod -- Barman backup method
+  backupMethod: postgres
+  # barman.backupOptions -- Barman backup options
+  backupOptions: concurrent_backup
+  # barman.backupDir -- Barman home directory
+  backupDir: /var/lib/barman
+  # barman.barmanUser -- Barman user
+  barmanUser: barman
+  # barman.compression -- Barman backup compression
+  compression: gzip
   # barman.retentionPolicy -- Barman retention policy
   retentionPolicy: "RECOVERY WINDOW of 1 MONTH"
   # barman.lastBackupMaximumAge -- Barman last backup maximum age
   lastBackupMaximumAge: "1 day"
+  # barman.backupSchedule -- Barman backup schedule
+  backupSchedule: "0 4 * * *"
   # barman.databaseSlotName -- Database slot name to be created/used
   databaseSlotName: barman
-  # barman.backupMethod -- Backup method
-  backupMethod: postgres
-  postgresql:
-    # barman.postgresql.host -- Postgresql Host
-    host: postgresql
-    # barman.postgresql.superUser -- Postgresql super user
-    superUser: postgres
-    # barman.postgresql.superUserPassword -- Postgresql super user password
-    superUserPassword: postgres
-    # barman.postgresql superUserDatabase -- Postgresql super user's database
-    superUserDatabase: postgres
-    # barman.postgresql.replicationUser -- Postgresql replication user
-    replicationUser: barman
-    # barman.postgresql.replicationPassword -- Postgresql replication password
-    replicationPassword: barman
+
+  backups:
+      # barman.backups[0].retentionPolicy -- Barman retention policy
+    - retentionPolicy: "RECOVERY WINDOW of 1 MONTH"
+      # barman.backups[0].backupMethod -- Barman backup method
+      backupMethod: postgres
+      # barman.backups[0].databaseSlotName -- Database slot name to be created/used
+      databaseSlotName: barman
+      # barman.backups[0].lastBackupMaximumAge -- Barman last backup maximum age
+      lastBackupMaximumAge: "1 day"
+      postgresql:
+        # barman.backups[0].postgresql.host -- Postgresql host
+        host: postgresql
+        # barman.backups[0].postgresql.port -- Postgresql port
+        port: 5432
+        # barman.backups[0].postgresql.superUser -- Postgresql super user
+        superUser: postgres
+        # barman.backups[0].postgresql.superUserPassword -- Postgresql super user password
+        superUserPassword: postgres
+        # barman.backups[0].postgresql.superUserDatabase -- Postgresql super user database
+        superUserDatabase: postgres
+        # barman.backups[0].postgresql.replicationUser -- Postgresql replication user
+        replicationUser: barman
+        # barman.backups[0].postgresql.replicationPassword -- Postgresql replication password
+        replicationPassword: barman

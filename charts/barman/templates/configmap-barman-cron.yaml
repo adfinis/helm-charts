@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "barman.fullname" . }}-cron-config
+  labels:
+    {{- include "barman.labels" . | nindent 4 }}
+data:
+  barman: |
+      * * * * * barman /usr/local/bin/barman receive-wal --create-slot pg; /usr/local/bin/barman cron
+      {{- range .Values.barman.backups }}
+      {{- if hasKey . "backupSchedule" }}
+      {{ .backupSchedule }} barman /usr/local/bin/barman backup {{ .postgresql.host }}
+      {{- else }}
+      {{ $.Values.barman.backupSchedule }} barman /usr/local/bin/barman backup {{ .postgresql.host }}
+      {{- end }}
+      {{- end }}
+      # required by cron

@@ -1,18 +1,36 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "barman.fullname" . }}-backup-config
+  name: {{ template "barman.fullname" . }}-global-config
   labels:
     {{- include "barman.labels" . | nindent 4 }}
 data:
-  {{ .Values.barman.postgresql.host }}.conf: |
-      [{{ .Values.barman.postgresql.host }}]
-      active = true
-      description = "PostgreSQL Database (Streaming-Only)"
-      conninfo = host={{ .Values.barman.postgresql.host }} user={{ .Values.barman.postgresql.superUser }} dbname={{ .Values.barman.postgresql.superUserDatabase }}
-      streaming_conninfo = host={{ .Values.barman.postgresql.host }} user={{ .Values.barman.postgresql.replicationUser }}
+  barman.conf: |
+      ; Commented lines show the default values
+      [barman]
+      ; archiver = off
       backup_method = {{ .Values.barman.backupMethod }}
-      streaming_archiver = on
-      slot_name = {{ .Values.barman.databaseSlotName }}
+      ; backup_directory = %(barman_home)s/%(name)s
+
+      backup_options = {{ .Values.barman.backupOptions }}
+
+      ; This must be set to the BARMAN_DATA_DIR environment variable
+      barman_home = {{ .Values.barman.backupDir }}
+
+      barman_user = {{ .Values.barman.barmanUser }}
+
+      ; barman_lock_directory = %(barman_home)s
+      compression = {{ .Values.barman.compression }}
+      configuration_files_directory = /etc/barman/barman.d
       last_backup_maximum_age = {{ .Values.barman.lastBackupMaximumAge }}
+      minimum_redundancy = 1
+      ;network_compression = true
       retention_policy = {{ .Values.barman.retentionPolicy }}
+      ; retention_policy_mode = auto
+      ;reuse_backup = link
+      streaming_archiver = on
+      ; wal_retention_policy = main
+
+      ; use empty log_file for stderr output
+      log_file = ""
+      log_level = INFO

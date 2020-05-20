@@ -5,7 +5,4 @@ metadata:
   labels:
     {{- include "barman.labels" . | nindent 4 }}
 data:
-  DB_HOST: {{ .Values.barman.postgresql.host | quote }}
-  DB_SUPERUSER: {{ .Values.barman.postgresql.superUser | quote }}
-  DB_REPLICATION_USER:  {{ .Values.barman.postgresql.replicationUser | quote }}
   BARMAN_BACKUP_SCHEDULE: {{ .Values.barman.backupSchedule | quote }}

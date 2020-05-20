@@ -12,16 +12,25 @@ Source code can be found [here](http://www.pgbarman.org/)
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| barman.backupMethod | string | `"postgres"` | Backup method |
+| barman.backupDir | string | `"/var/lib/barman"` | Barman home directory |
+| barman.backupMethod | string | `"postgres"` | Barman backup method |
+| barman.backupOptions | string | `"concurrent_backup"` | Barman backup options |
 | barman.backupSchedule | string | `"0 4 * * *"` | Barman backup schedule |
+| barman.backups[0].backupMethod | string | `"postgres"` | Barman backup method |
+| barman.backups[0].databaseSlotName | string | `"barman"` | Database slot name to be created/used |
+| barman.backups[0].lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age |
+| barman.backups[0].postgresql.host | string | `"postgresql"` | Postgresql host |
+| barman.backups[0].postgresql.port | int | `5432` | Postgresql port |
+| barman.backups[0].postgresql.replicationPassword | string | `"barman"` | Postgresql replication password |
+| barman.backups[0].postgresql.replicationUser | string | `"barman"` | Postgresql replication user |
+| barman.backups[0].postgresql.superUser | string | `"postgres"` | Postgresql super user |
+| barman.backups[0].postgresql.superUserDatabase | string | `"postgres"` | Postgresql super user database |
+| barman.backups[0].postgresql.superUserPassword | string | `"postgres"` | Postgresql super user password |
+| barman.backups[0].retentionPolicy | string | `"RECOVERY WINDOW of 1 MONTH"` | Barman retention policy |
+| barman.barmanUser | string | `"barman"` | Barman user |
+| barman.compression | string | `"gzip"` | Barman backup compression |
 | barman.databaseSlotName | string | `"barman"` | Database slot name to be created/used |
 | barman.lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age |
-| barman.postgresql.host | string | `"postgresql"` | Postgresql Host |
-| barman.postgresql.replicationPassword | string | `"barman"` | Postgresql replication password |
-| barman.postgresql.replicationUser | string | `"barman"` | Postgresql replication user |
-| barman.postgresql.superUser | string | `"postgres"` | Postgresql super user |
-| barman.postgresql.superUserDatabase | string | `"postgres"` |  |
-| barman.postgresql.superUserPassword | string | `"postgres"` | Postgresql super user password |
 | barman.retentionPolicy | string | `"RECOVERY WINDOW of 1 MONTH"` | Barman retention policy |
 | image.pullPolicy | string | `"Always"` | Image pull policy |
 | image.repository | string | `"ubcctlt/barman"` | Image repository |
