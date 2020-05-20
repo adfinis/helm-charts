@@ -2,7 +2,7 @@ barman
 ======
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
-Current chart version is `0.0.1`
+Current chart version is `0.0.2`
 
 Source code can be found [here](http://www.pgbarman.org/)
 
