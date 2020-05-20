@@ -12,4 +12,8 @@ spec:
     {{- .Values.application.source | toYaml | nindent 4 }}
   destination:
     {{- .Values.application.destination | toYaml | nindent 4 }}
+  {{- if .Values.application.syncPolicy }}
+  syncPolicy:
+    {{- .Values.application.syncPolicy | toYaml | nindent 4 }}
+  {{- end }}
 {{- end }}

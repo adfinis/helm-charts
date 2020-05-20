@@ -2,7 +2,7 @@ argoconfig
 ==========
 Configure an Argo CD AppProject and Application
 
-Current chart version is `0.1.0`
+Current chart version is `0.2.0`
 
 Source code can be found [here](https://github.com/adfinis-sygroup/helm-charts)
 
@@ -27,5 +27,6 @@ Source code can be found [here](https://github.com/adfinis-sygroup/helm-charts)
 | application.source.chart | string | `""` | Name of chart in source repo |
 | application.source.repoURL | string | `""` | URL of sourece repo |
 | application.source.targetRevision | string | `"*"` | Revision of chart in source repo to install |
+| application.syncPolicy | object | deactivated | Application [Sync Policy](https://argoproj.github.io/argo-cd/user-guide/auto_sync/) |
 | fullnameOverride | string | `""` | Override fullname |
 | nameOverride | string | `""` | Override names |
