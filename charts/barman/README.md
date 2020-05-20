@@ -12,12 +12,17 @@ Source code can be found [here](http://www.pgbarman.org/)
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| barman.backupMethod | string | `"postgres"` | Backup method |
 | barman.backupSchedule | string | `"0 4 * * *"` | Barman backup schedule |
+| barman.databaseSlotName | string | `"barman"` | Database slot name to be created/used |
+| barman.lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age |
 | barman.postgresql.host | string | `"postgresql"` | Postgresql Host |
 | barman.postgresql.replicationPassword | string | `"barman"` | Postgresql replication password |
 | barman.postgresql.replicationUser | string | `"barman"` | Postgresql replication user |
 | barman.postgresql.superUser | string | `"postgres"` | Postgresql super user |
+| barman.postgresql.superUserDatabase | string | `"postgres"` |  |
 | barman.postgresql.superUserPassword | string | `"postgres"` | Postgresql super user password |
+| barman.retentionPolicy | string | `"RECOVERY WINDOW of 1 MONTH"` | Barman retention policy |
 | image.pullPolicy | string | `"Always"` | Image pull policy |
 | image.repository | string | `"ubcctlt/barman"` | Image repository |
 | image.tag | string | `"latest"` | Image tag |

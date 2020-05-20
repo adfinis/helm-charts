@@ -32,6 +32,14 @@ persistence:
 barman:
   # barman.backupSchedule -- Barman backup schedule
   backupSchedule: "0 4 * * *"
+  # barman.retentionPolicy -- Barman retention policy
+  retentionPolicy: "RECOVERY WINDOW of 1 MONTH"
+  # barman.lastBackupMaximumAge -- Barman last backup maximum age
+  lastBackupMaximumAge: "1 day"
+  # barman.databaseSlotName -- Database slot name to be created/used
+  databaseSlotName: barman
+  # barman.backupMethod -- Backup method
+  backupMethod: postgres
   postgresql:
     # barman.postgresql.host -- Postgresql Host
     host: postgresql
@@ -39,6 +47,8 @@ barman:
     superUser: postgres
     # barman.postgresql.superUserPassword -- Postgresql super user password
     superUserPassword: postgres
+    # barman.postgresql superUserDatabase -- Postgresql super user's database
+    superUserDatabase: postgres
     # barman.postgresql.replicationUser -- Postgresql replication user
     replicationUser: barman
     # barman.postgresql.replicationPassword -- Postgresql replication password

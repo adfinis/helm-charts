@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "barman.fullname" . }}-backup-config
+  labels:
+    {{- include "barman.labels" . | nindent 4 }}
+data:
+  {{ .Values.barman.postgresql.host }}.conf: |
+      [{{ .Values.barman.postgresql.host }}]
+      active = true
+      description = "PostgreSQL Database (Streaming-Only)"
+      conninfo = host={{ .Values.barman.postgresql.host }} user={{ .Values.barman.postgresql.superUser }} dbname={{ .Values.barman.postgresql.superUserDatabase }}
+      streaming_conninfo = host={{ .Values.barman.postgresql.host }} user={{ .Values.barman.postgresql.replicationUser }}
+      backup_method = {{ .Values.barman.backupMethod }}
+      streaming_archiver = on
+      slot_name = {{ .Values.barman.databaseSlotName }}
+      last_backup_maximum_age = {{ .Values.barman.lastBackupMaximumAge }}
+      retention_policy = {{ .Values.barman.retentionPolicy }}

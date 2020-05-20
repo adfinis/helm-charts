@@ -35,6 +35,8 @@ spec:
             - mountPath: /var/lib/barman/recover
               name: recover
               subPath: recover
+            - mountPath: /etc/barman/barman.d
+              name: barman-config
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
@@ -46,6 +48,9 @@ spec:
         - name: recover
           emptyDir: {}
         {{- end }}
+        - name: barman-config
+          configMap:
+            name: {{ include "barman.fullname" . }}-backup-config
     {{- if .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml .Values.nodeSelector | nindent 8 }}
