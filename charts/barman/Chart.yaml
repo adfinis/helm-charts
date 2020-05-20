@@ -1,0 +1,17 @@
+apiVersion: v2
+name: barman
+type: application
+description: Chart for Barman PostgreSQL Backup and Recovery Manager
+version: 0.0.1
+appVersion: 2.1
+keywords:
+  - barman
+  - postgresql
+  - postgres
+home: http://www.pgbarman.org/
+sources:
+  - https://github.com/2ndquadrant-it/barman
+maintainers:
+  - name: adfinis
+    email: support@adfinis.com
+    url: https://adfinis.com
