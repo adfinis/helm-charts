@@ -4,7 +4,7 @@
 
 ![Lunkwill wearing a Helm shirt](docs/images/lunkwill_helm_shirt.png)
 
-This repository contains [Helm](https://helm.sh/) charts managed by Adfinis.
+This repository contains [Helm](https://helm.sh/) charts managed by [Adfinis](https://adfinis.com).
 
 ## Usage
 
