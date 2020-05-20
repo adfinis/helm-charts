@@ -2,7 +2,7 @@ apiVersion: v2
 name: timed
 type: application
 description: Chart for Timed application
-version: 0.3.7
+version: 0.3.8
 appVersion: v0.13.2
 home: https://github.com/adfinis-sygroup/timed-frontend
 keywords:
