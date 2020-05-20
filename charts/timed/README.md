@@ -2,7 +2,7 @@ timed
 =====
 Chart for Timed application
 
-Current chart version is `0.3.6`
+Current chart version is `0.3.7`
 
 Source code can be found [here](https://github.com/adfinis-sygroup/timed-frontend)
 
@@ -74,3 +74,9 @@ Source code can be found [here](https://github.com/adfinis-sygroup/timed-fronten
 | postgresql.image.tag | string | `"12.2.0"` | PostgreSQL image version to use |
 | postgresql.postgresqlDatabase | string | `"timed"` | PostgreSQL database name |
 | postgresql.postgresqlUsername | string | `"postgres"` | PostgreSQL user name |
+| redmine.apiKey | string | `""` | Redmine API Key |
+| redmine.enabled | bool | `false` | Enable Redmine integration |
+| redmine.htaccessPassword | string | `""` | Redmine htaccess password |
+| redmine.htaccessUser | string | `""` | Redmine htaccess user |
+| redmine.spenthoursField | int | `0` | Spent hours field id on Redmine |
+| redmine.url | string | `"redmine.example.com"` | Redmine URL |

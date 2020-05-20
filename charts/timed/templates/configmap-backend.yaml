@@ -28,3 +28,8 @@ data:
   DJANGO_AUTH_LDAP_BIND_DN: {{ .Values.auth.ldap.bindDn | quote }}
   DJANGO_AUTH_LDAP_USER_DN_TEMPLATE: {{ .Values.auth.ldap.userDnTemplate | quote }}
 {{- end }}
+{{- if .Values.redmine.enabled }}
+  DJANGO_REDMINE_URL: {{ .Values.redmine.url | quote }}
+  DJANGO_REDMINE_HTACCESS_USER: {{ .Values.redmine.htaccessUser | quote }}
+  DJANGO_REDMINE_SPENTHOURS_FIELD: {{ .Values.redmine.spenthoursField | quote }}
+{{- end }}
