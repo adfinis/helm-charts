@@ -48,3 +48,6 @@ application:
     server: https://kubernetes.default.svc
     # application.destination.namespace -- Target namespace of application in Argo CD
     namespace: default
+  # application.syncPolicy -- Application [Sync Policy](https://argoproj.github.io/argo-cd/user-guide/auto_sync/)
+  # @default -- deactivated
+  syncPolicy: {}
