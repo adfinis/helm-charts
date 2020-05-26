@@ -72,6 +72,58 @@ backend:
     serverEmail: webmaster@chart-example.local
     # backend.settings.workReportPath -- Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`.
     workReportPath: /etc/workreport
+  cronjobs:
+    # backend.cronjobs.notifySupervisors -- Notify supervisors
+    notifySupervisors:
+      schedule: "0 8 * * 4"
+      command:
+        - "./manage.py"
+        - "notify_supervisors_shorttime"
+    # backend.cronjobs.notifyReviewersFirst -- Notify reviewers first stage
+    notifyReviewersFirst:
+      schedule: "0 8 4 * *"
+      command:
+        - "./manage.py"
+        - "notify_reviewers_unverified"
+        - "--offset"
+        # backend.cronjobs.notifyReviewersFirst.command[3] -- Period will end today minus given offset
+        - "5"
+    # backend.cronjobs.notifyReviewersSecond -- Notify reviewers second stage
+    notifyReviewersSecond:
+      schedule: "0 8 11 * *"
+      command:
+        - "./manage.py"
+        - "notify_reviewers_unverified"
+        - "--offset"
+        # backend.cronjobs.notifyReviewersSecond.command[3] -- Period will end today minus given offset
+        - "12"
+        - "--message"
+        # backend.cronjobs.notifyReviewersSecond.command[5] -- Additional message to send if there are unverified reports
+        - "'Bitte verbleibende Positionen verifizieren.'"
+    # backend.cronjobs.notifyReviewersThird -- Notify reviewers third stage
+    notifyReviewersThird:
+      schedule: "0 8 18 * *"
+      command:
+        - "./manage.py"
+        - "notify_reviewers_unverified"
+        - "--offset"
+        # backend.cronjobs.notifyReviewersThird.command[3] -- Period will end today minus given offset
+        - "19"
+        - "--message"
+        # backend.cronjobs.notifyReviewersThird.command[5] -- Additional message to send if there are unverified reports
+        - "'Bitte sofort verifizieren!'"
+    # backend.cronjobs.redmineReport -- Redmine report
+    redmineReport:
+      schedule: "0 1 * * 1"
+      command:
+        - "./manage.py"
+        - "redmine_report"
+    # backend.cronjobs.notifyChangedEmployments -- Notify changed employments
+    notifyChangedEmployments:
+      schedule: "0 2 * * 1"
+      command:
+        - "./manage.py"
+        - "notify_changed_employments"
 
 frontend:
   # frontend.replicaCount -- (int) Number of Backend replicas

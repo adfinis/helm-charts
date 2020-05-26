@@ -2,7 +2,7 @@ timed
 =====
 Chart for Timed application
 
-Current chart version is `0.3.8`
+Current chart version is `0.3.9`
 
 Source code can be found [here](https://github.com/adfinis-sygroup/timed-frontend)
 
@@ -22,6 +22,17 @@ Source code can be found [here](https://github.com/adfinis-sygroup/timed-fronten
 | auth.ldap.serverUri | string | `"ldaps://ldap.example.com:636"` |  |
 | auth.ldap.userAttrMap | string | `"{\"first_name\": \"givenName\", \"last_name\": \"sn\", \"email\": \"mail\"}"` | LDAP user attribute mapping |
 | auth.ldap.userDnTemplate | string | `"uid=%(user)s,cn=users,dc=foo,dc=com"` | LDAP user DN template |
+| backend.cronjobs.notifyChangedEmployments | object | `{"command":["./manage.py","notify_changed_employments"],"schedule":"0 2 * * 1"}` | Notify changed employments |
+| backend.cronjobs.notifyReviewersFirst | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","5"],"schedule":"0 8 4 * *"}` | Notify reviewers first stage |
+| backend.cronjobs.notifyReviewersFirst.command[3] | string | `"5"` | Period will end today minus given offset |
+| backend.cronjobs.notifyReviewersSecond | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","12","--message","'Bitte verbleibende Positionen verifizieren.'"],"schedule":"0 8 11 * *"}` | Notify reviewers second stage |
+| backend.cronjobs.notifyReviewersSecond.command[3] | string | `"12"` | Period will end today minus given offset |
+| backend.cronjobs.notifyReviewersSecond.command[5] | string | `"'Bitte verbleibende Positionen verifizieren.'"` | Additional message to send if there are unverified reports |
+| backend.cronjobs.notifyReviewersThird | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","19","--message","'Bitte sofort verifizieren!'"],"schedule":"0 8 18 * *"}` | Notify reviewers third stage |
+| backend.cronjobs.notifyReviewersThird.command[3] | string | `"19"` | Period will end today minus given offset |
+| backend.cronjobs.notifyReviewersThird.command[5] | string | `"'Bitte sofort verifizieren!'"` | Additional message to send if there are unverified reports |
+| backend.cronjobs.notifySupervisors | object | `{"command":["./manage.py","notify_supervisors_shorttime"],"schedule":"0 8 * * 4"}` | Notify supervisors |
+| backend.cronjobs.redmineReport | object | `{"command":["./manage.py","redmine_report"],"schedule":"0 1 * * 1"}` | Redmine report |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"adfinissygroup/timed-backend"` | Backend image name |
 | backend.livenessProbe.enabled | bool | `true` | Enable liveness probe on backend |
