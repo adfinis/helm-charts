@@ -23,11 +23,20 @@ spec:
         - name: barman
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{/*
+          Fix permissions & owner of .pgpass file
+          https://www.postgresql.org/docs/9.4/libpq-pgpass.html
+          */}}
+          lifecycle:
+            postStart:
+              exec:
+                command:
+                  - "/bin/sh"
+                  - "-c"
+                  - "HOME=/home/barman && cp /.pgpass $HOME/ && chown barman:barman $HOME/.pgpass && chmod 600 $HOME/.pgpass"
           envFrom:
             - configMapRef:
                 name: {{ include "barman.fullname" . }}-config
-            - secretRef:
-                name: {{ include "barman.fullname" . }}-secret
           volumeMounts:
             - mountPath: /var/lib/barman
               name: data
@@ -35,6 +44,17 @@ spec:
             - mountPath: /var/lib/barman/recover
               name: recover
               subPath: recover
+            - mountPath: /etc/barman/barman.d
+              name: barman-backups-config
+            - mountPath: /etc/barman.conf
+              name: barman-global-config
+              subPath: barman.conf
+            - mountPath: /.pgpass
+              name: barman-pgpass-secret
+              subPath: .pgpass
+            - mountPath: /etc/cron.d/barman
+              name: barman-cron-config
+              subPath: barman
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
@@ -46,6 +66,19 @@ spec:
         - name: recover
           emptyDir: {}
         {{- end }}
+        - name: barman-backups-config
+          configMap:
+            name: {{ include "barman.fullname" . }}-backups-config
+        - name: barman-global-config
+          configMap:
+            name: {{ include "barman.fullname" . }}-global-config
+        - name: barman-pgpass-secret
+          secret:
+            secretName: {{ include "barman.fullname" . }}-pgpass-secret
+            defaultMode: 0600
+        - name: barman-cron-config
+          configMap:
+            name: {{ include "barman.fullname" . }}-cron-config
     {{- if .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml .Values.nodeSelector | nindent 8 }}
