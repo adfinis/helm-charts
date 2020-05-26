@@ -1,0 +1,34 @@
+{{- range $key, $val := .Values.backend.cronjobs }}
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "timed.fullname" $ }}-{{ $key | lower }}
+  labels:
+    {{- include "timed.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: {{ $key | lower | quote }}
+spec:
+  schedule: {{ $val.schedule | quote }}
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: {{ $.Chart.Name }}-redmine-report
+              image: "{{ $.Values.backend.image.repository }}:{{ default $.Chart.AppVersion $.Values.backend.image.tag }}"
+              imagePullPolicy: {{ $.Values.backend.image.pullPolicy }}
+              env:
+                - name: DJANGO_DATABASE_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ include "timed.postgresql.fullname" $ }}
+                      key: postgresql-password
+              envFrom:
+                - secretRef:
+                    name: {{ include "timed.fullname" $ }}-django
+                - configMapRef:
+                    name: {{ include "timed.fullname" $ }}-backend
+              command: {{ $val.command | toYaml | nindent 16 }}
+{{- end }}
