@@ -1,6 +1,7 @@
 apiVersion: v2
 name: back8sup
 description: A Helm chart for Kubernetes
+home: https://github.com/adfinis-sygroup/back8sup
 
 # A chart can be either an 'application' or a 'library' chart.
 #
