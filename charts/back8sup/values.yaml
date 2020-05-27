@@ -1,0 +1,92 @@
+# Default values for back8sup.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: adfinissygroup/back8sup
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart version.
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+rbacCreate: true
+
+cronjob:
+  schedule: "0 1 * * *"
+  concurrencyPolicy:  ""
+  failedJobsHistoryLimit: ""
+  successfulJobsHistoryLimit: ""
+  environment:
+    - name: API_ENDPOINT
+      value: https://kubernetes.default.svc.cluster.local:443
+    - name: CA_CERT
+      value: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+    - name: TOKEN_FILE
+      value: /var/run/secrets/kubernetes.io/serviceaccount/token
+    - name: CONFIGMAP_PATH
+      value: /etc/config.yaml
+    - name: EXPORT_FORMAT
+      value: yaml
+    - name: DST_FOLDER
+      value: /mnt/back8sup
+
+persistence:
+  mountPath: "/mnt/back8sup"
+
+configMaps:
+  config.yaml: |
+    global:
+      - pvc
+      - pv
+    namespaces:
+      - name: default
+        kind:
+          - deployment
+          - cm
+          - secret
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+  #
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
