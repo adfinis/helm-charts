@@ -1,1 +1,10 @@
-Cronjob for back8sup deployed successfully
+Cronjob for back8sup deployed successfully.
+
+Please consider triggering a manual backup to verify that back8sup is working:
+  kubectl create job --from=cronjob/{{ include "back8sup.fullname" . }} back8sup-manual-run
+  
+Check if the job ran to completion:
+  kubectl get job/back8sup-manual-run
+
+And delete the manual job it everything worked fine:
+      kubectl delete job/back8sup-manual-run
