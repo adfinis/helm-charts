@@ -1,0 +1,69 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "back8sup.fullname" . }}
+  labels:
+    {{- include "back8sup.labels" . | nindent 4 }}
+spec:
+  schedule: "{{ .Values.cronjob.schedule }}"
+  {{- with .Values.cronjob.concurrencyPolicy }}
+  concurrencyPolicy: {{ . }}
+  {{- end }}
+  {{- with .Values.cronjob.failedJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ . }}
+  {{- end }}
+  {{- with .Values.cronjob.successfulJobsHistoryLimit }}
+  successfulJobsHistoryLimit: {{ . }}
+  {{- end }}
+  jobTemplate:
+    metadata:
+      labels:
+        {{- include "back8sup.labels" . | nindent 8 }}
+    spec:
+      template:
+        metadata:
+          labels:
+            {{- include "back8sup.labels" . | nindent 12 }}
+        {{- with .Values.podAnnotations }}
+          annotations:
+            {{- toYaml .Values.podAnnotations | nindent 12 }}
+        {{- end }}
+        spec:
+          volumes:
+            - name: config-volume
+              configMap:
+                name: {{ include "back8sup.fullname" . }}-config
+            - name: backup-volume
+              persistentVolumeClaim:
+                claimName: {{ include "back8sup.fullname" . }}
+          restartPolicy: Never
+          {{- if .Values.priorityClassName }}
+          priorityClassName: "{{ .Values.priorityClassName }}"
+          {{- end }}
+          serviceAccount: {{ include "back8sup.serviceAccountName" . }}
+          containers:
+            - name: {{ .Chart.Name }}
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
+              volumeMounts:
+                - name: config-volume
+                  mountPath: /etc/config.yaml
+                  subPath: config.yaml
+                - name: backup-volume
+                  mountPath: "{{ .Values.persistence.mountPath }}"
+              env:
+                {{- toYaml .Values.cronjob.environment | nindent 16 }}
+              resources:
+                {{- toYaml .Values.resources | nindent 16 }}
+          {{- with .Values.nodeSelector }}
+          nodeSelector:
+            {{- toYaml . | indent 12 }}
+          {{- end }}
+          {{- with .Values.affinity }}
+          affinity:
+            {{- toYaml . | indent 12 }}
+          {{- end }}
+          {{- with .Values.tolerations }}
+          tolerations:
+            {{- toYaml . | indent 12 }}
+          {{- end }}

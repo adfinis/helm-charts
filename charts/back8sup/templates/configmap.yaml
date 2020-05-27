@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "back8sup.fullname" . }}-config
+  labels:
+    {{- include "back8sup.labels" . | nindent 4 }}
+data:
+    {{- toYaml .Values.configMaps | nindent 4 }}
