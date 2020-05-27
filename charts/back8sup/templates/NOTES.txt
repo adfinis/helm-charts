@@ -6,5 +6,5 @@ Please consider triggering a manual backup to verify that back8sup is working:
 Check if the job ran to completion:
   kubectl get job/back8sup-manual-run
 
-And delete the manual job it everything worked fine:
-      kubectl delete job/back8sup-manual-run
+And delete the manual job if everything worked fine:
+  kubectl delete job/back8sup-manual-run
