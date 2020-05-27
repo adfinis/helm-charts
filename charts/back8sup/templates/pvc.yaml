@@ -5,8 +5,11 @@ metadata:
   labels:
     {{- include "back8sup.labels" . | nindent 4 }}
 spec:
+  {{- if .Values.persistence.storageClassName }}
+  storageClassName: {{ .Values.persistence.storageClassName }}
+  {{- end }}
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: {{ .Values.persistence.size }}
