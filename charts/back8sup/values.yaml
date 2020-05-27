@@ -47,7 +47,6 @@ persistence:
   mountPath: "/mnt/back8sup"
   size: "10Gi"
   #  storageClassName: "default"
-  
 
 configMaps:
   config.yaml: |
