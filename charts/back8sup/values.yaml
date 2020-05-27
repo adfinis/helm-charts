@@ -7,7 +7,6 @@ replicaCount: 1
 image:
   repository: adfinissygroup/back8sup
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart version.
   tag: "latest"
 
 imagePullSecrets: []
@@ -46,6 +45,9 @@ cronjob:
 
 persistence:
   mountPath: "/mnt/back8sup"
+  size: "10Gi"
+  #  storageClassName: "default"
+  
 
 configMaps:
   config.yaml: |
