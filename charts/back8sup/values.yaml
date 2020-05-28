@@ -38,7 +38,7 @@ cronjob:
   # cronjob.schedule -- on which schedule the cronjob gets run
   schedule: "0 1 * * *"
   # cronjob.concurrencyPolicy -- specifies the concurrencyPolicy of the cronjob
-  concurrencyPolicy:  ""
+  concurrencyPolicy: ""
   # cronjob.failedJobsHistoryLimit -- specifies the failedJobsHistoryLimit of the cronjob
   failedJobsHistoryLimit: ""
   # cronjob.successfulJobsHistoryLimit -- specifies the successfulJobsHistoryLimit of the cronjob
