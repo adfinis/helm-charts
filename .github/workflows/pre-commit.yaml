@@ -16,11 +16,8 @@ jobs:
     - name: Set PY
       run: echo "::set-env name=PY::$(python -c 'import hashlib, sys;print(hashlib.sha256(sys.version.encode()+sys.executable.encode()).hexdigest())')"
 
-    - name: Install helm-docs
-      run: |
-        mkdir -p $GITHUB_WORKSPACE/bin
-        curl -L -o - https://github.com/norwoodj/helm-docs/releases/download/v0.12.0/helm-docs_0.12.0_Linux_x86_64.tar.gz | tar -C $GITHUB_WORKSPACE/bin -zxf -
-        echo "::add-path::$GITHUB_WORKSPACE/bin"
+    - name: Install deps
+      run: .ci/github/install-pre-commit-deps.sh
 
     - uses: actions/cache@v1
       with:
