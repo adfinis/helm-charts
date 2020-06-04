@@ -18,11 +18,13 @@ helm repo add adfinis https://charts.adfinis.com
 
 | Chart | Description |
 | ----- | ----------- |
-| [argoconfig](charts/argoconfig) | Configure an Argo CD AppProject and Application |
-| [barman](charts/barman) | Chart for Barman PostgreSQL Backup and Recovery Manager |
-| [caasperli](charts/caasperli) | Deploy Caasperli to a Kubernetes Cluster |
-| [kasperleyn](charts/kasperleyn) | A Helm 2 chart to deploy Caasperli |
-| [timed](charts/timed) | Chart for Timed application |
+{{- range (file.ReadDir "charts/" | sort) }}
+{{- $chartManifestPath := print "charts/" . "/Chart.yaml" }}
+{{ if (file.Exists $chartManifestPath) -}}
+    {{- $chartManifest := file.Read $chartManifestPath | data.YAML -}}
+| [{{.}}]({{print "charts/" .}}) | {{ $chartManifest.description }} |
+{{- end }}
+{{- end }}
 
 ## Development
 
