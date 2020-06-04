@@ -1,10 +1,11 @@
 # Adfinis Helm Charts
 
 ![Release Charts](https://github.com/adfinis-sygroup/helm-charts/workflows/Release%20Charts/badge.svg)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 ![Lunkwill wearing a Helm shirt](docs/images/lunkwill_helm_shirt.png)
 
-This repository contains [Helm](https://helm.sh/) charts managed by [Adfinis](https://adfinis.com).
+This repository contains [Helm](https://helm.sh/) charts managed by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Usage
 
@@ -16,13 +17,14 @@ helm repo add adfinis https://charts.adfinis.com
 
 ### Available Helm charts
 
-| Chart | Description |
-| ----- | ----------- |
-| [argoconfig](charts/argoconfig) | Configure an Argo CD AppProject and Application |
-| [barman](charts/barman) | Chart for Barman PostgreSQL Backup and Recovery Manager |
-| [caasperli](charts/caasperli) | Deploy Caasperli to a Kubernetes Cluster |
-| [kasperleyn](charts/kasperleyn) | A Helm 2 chart to deploy Caasperli |
-| [timed](charts/timed) | Chart for Timed application |
+#### more charts
+| Chart | Description | Chart Version | App Version |
+| ----- | ----------- | ------------- | ----------- |
+| [argoconfig](charts/argoconfig) | Configure an Argo CD AppProject and Application | `0.x` | `latest` |
+| [barman](charts/barman) | Chart for Barman PostgreSQL Backup and Recovery Manager | `0.x` | `2.1.x` |
+| [caasperli](charts/caasperli) | Deploy Caasperli to a Kubernetes Cluster | `0.x` | `latest` |
+| [kasperleyn](charts/kasperleyn) | A Helm 2 chart to deploy Caasperli | `0.x` | `1.0.x` |
+| [timed](charts/timed) | Chart for Timed application | `0.x` | `0.x` |
 
 ## Development
 
@@ -44,6 +46,14 @@ After installing the pre-commit requirements you can initialize pre-commit.
 pre-commit install
 pre-commit install-hooks
 ```
+
+## About this repository
+
+Adfinis fights for a software world that is more open, where the quality is
+better and where software must be accessible to everyone. This repository
+contains part of the action behind this comitment. Feel free to
+[contact](https://adfinis.com/kontakt/?pk_campaign=github&pk_kwd=helm-charts)
+us if you have any questions.
 
 ## License
 
