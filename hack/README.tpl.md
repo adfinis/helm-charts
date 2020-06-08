@@ -38,6 +38,7 @@ helm repo add adfinis https://charts.adfinis.com
 ```
 
 ### Available Helm charts
+
 {{- range (file.ReadDir "charts/" | sort) -}}
 {{- $chartManifestPath := print "charts/" . "/Chart.yaml" -}}
 {{- if (file.Exists $chartManifestPath) -}}{{- $chartManifest := file.Read $chartManifestPath | data.YAML -}}
@@ -55,6 +56,7 @@ helm repo add adfinis https://charts.adfinis.com
 {{- end }}
 
 #### more charts
+
 | Chart | Description | Chart Version | App Version |
 | ----- | ----------- | ------------- | ----------- |
 {{- range (file.ReadDir "charts/" | sort) -}}
