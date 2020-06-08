@@ -18,6 +18,7 @@ helm repo add adfinis https://charts.adfinis.com
 ### Available Helm charts
 
 #### more charts
+
 | Chart | Description | Chart Version | App Version |
 | ----- | ----------- | ------------- | ----------- |
 | [argoconfig](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argoconfig) | Configure an Argo CD AppProject and Application | `0.x` | `latest` |
