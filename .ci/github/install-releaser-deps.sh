@@ -6,7 +6,6 @@ readonly TARGETDIR=$GITHUB_WORKSPACE/bin
 
 mkdir -p $TARGETDIR
 
-.ci/github/_dep_helm-docs.sh
 .ci/github/_dep_gomplate.sh
 
 echo "::add-path::$TARGETDIR"

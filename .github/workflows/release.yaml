@@ -15,6 +15,9 @@ jobs:
       - name: Fetch history
         run: git fetch --prune --unshallow
 
+      - name: Install deps
+        run: .ci/github/install-release-deps.sh
+
       - name: Configure Git
         run: |
           git config user.name "$GITHUB_ACTOR"
@@ -22,5 +25,10 @@ jobs:
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.0.0-rc.2
+        env:
+          CR_TOKEN: "${{ secrets.CR_TOKEN }}"
+
+      - name: Update Pages site
+        run: .ci/github/update-pages-site.sh
         env:
           CR_TOKEN: "${{ secrets.CR_TOKEN }}"
