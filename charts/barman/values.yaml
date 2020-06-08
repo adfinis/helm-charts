@@ -73,3 +73,25 @@ barman:
         replicationUser: barman
         # barman.backups[0].postgresql.replicationPassword -- Postgresql replication password
         replicationPassword: barman
+
+prometheus:
+  # prometheus.enabled -- Enable Prometheus integration
+  enabled: true
+  service:
+    # prometheus.service.name -- Prometheus exporter service name
+    name: barman-exporter
+    # prometheus.service.internalPort -- Prometheus exporter service internal port
+    internalPort: 9780
+    # prometheus.service.externalPort -- Prometheus exporter service external port
+    externalPort: 9780
+    # prometheus.service.type -- Prometheus exporter service type
+    type: ClusterIP
+  serviceMonitor:
+    # prometheus.serviceMonitor.extraLabels -- Labels to add to service monitor
+    extraLabels: {}
+    # prometheus.serviceMonitor.interval -- Interval at which metrics should be scraped
+    interval: "30s"
+    # prometheus.serviceMonitor.metricRelabelings -- MetricRelabelConfigs to apply to samples before ingestion
+    metricRelabelings: []
+    # prometheus.serviceMonitor.relabelings -- RelabelConfigs to apply to samples before scraping
+    relabelings: []

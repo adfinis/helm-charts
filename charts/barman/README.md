@@ -43,4 +43,13 @@ Source code can be found [here](http://www.pgbarman.org/)
 | persistence.recover.enabled | bool | `false` | Enable persistent storage for recovery |
 | persistence.recover.size | string | `"4Gi"` | Size of storage volume |
 | persistence.recover.storageClass | string | `""` | Storage class |
+| prometheus.enabled | bool | `true` | Enable Prometheus integration |
+| prometheus.service.externalPort | int | `9780` | Prometheus exporter service external port |
+| prometheus.service.internalPort | int | `9780` | Prometheus exporter service internal port |
+| prometheus.service.name | string | `"barman-exporter"` | Prometheus exporter service name |
+| prometheus.service.type | string | `"ClusterIP"` | Prometheus exporter service type |
+| prometheus.serviceMonitor.extraLabels | object | `{}` | Labels to add to service monitor |
+| prometheus.serviceMonitor.interval | string | `"30s"` | Interval at which metrics should be scraped |
+| prometheus.serviceMonitor.metricRelabelings | list | `[]` | MetricRelabelConfigs to apply to samples before ingestion |
+| prometheus.serviceMonitor.relabelings | list | `[]` | RelabelConfigs to apply to samples before scraping |
 | resources | object | `{}` | Resource limits and requests |
