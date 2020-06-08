@@ -21,7 +21,7 @@ pushd "$gh_pages_worktree" > /dev/null
 git add index.md docs/images/lunkwill_helm_shirt.png
 git commit --message="Update site" --signoff
 
-local repo_url="https://x-access-token:$CR_TOKEN@github.com/adfinis-sygroup/helm-charts"
+readonly repo_url="https://x-access-token:$CR_TOKEN@github.com/adfinis-sygroup/helm-charts"
 git push "$repo_url" gh-pages
 
 popd > /dev/null
