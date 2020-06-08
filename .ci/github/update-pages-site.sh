@@ -19,6 +19,8 @@ cp --force docs/images/lunkwill_helm_shirt.png "$gh_pages_worktree/docs/images/l
 pushd "$gh_pages_worktree" > /dev/null
 
 git add index.md docs/images/lunkwill_helm_shirt.png
+# abort pages update if no changes detected
+`git diff --cached --quiet` && exit 0
 git commit --message="Update site" --signoff
 
 readonly repo_url="https://x-access-token:$CR_TOKEN@github.com/adfinis-sygroup/helm-charts"
