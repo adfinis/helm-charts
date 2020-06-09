@@ -51,3 +51,13 @@ application:
   # application.syncPolicy -- Application [Sync Policy](https://argoproj.github.io/argo-cd/user-guide/auto_sync/)
   # @default -- deactivated
   syncPolicy: {}
+
+cluster:
+  # cluster.enabled -- Create a cluster config secret
+  enabled: false
+  # cluster.clusterNameOverride -- Override name of the cluster
+  clusterNameOverride: ~
+  # cluster.server -- Cluster URL used by Argo CD to connect to the cluster
+  server: https://kubernetes.default.svc
+  # cluster.config -- Cluster config (ie. contents of a KUBECONFIG)
+  config: {}
