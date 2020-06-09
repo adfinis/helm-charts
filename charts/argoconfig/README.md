@@ -1,6 +1,6 @@
 argoconfig
 ==========
-Configure an Argo CD AppProjects, Applications and more
+Configure Argo CD AppProjects, Applications and more
 
 Current chart version is `0.3.1`
 
