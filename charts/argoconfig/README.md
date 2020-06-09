@@ -1,8 +1,8 @@
 argoconfig
 ==========
-Configure an Argo CD AppProject and Application
+Configure Argo CD AppProjects, Applications and more
 
-Current chart version is `0.3.0`
+Current chart version is `0.3.1`
 
 Source code can be found [here](https://github.com/adfinis-sygroup/helm-charts)
 
@@ -31,6 +31,7 @@ Source code can be found [here](https://github.com/adfinis-sygroup/helm-charts)
 | cluster.clusterNameOverride | string | `nil` | Override name of the cluster |
 | cluster.config | object | `{}` | Cluster config (ie. contents of a KUBECONFIG) |
 | cluster.enabled | bool | `false` | Create a cluster config secret |
+| cluster.namespace | string | `"argocd"` | Namespace to put the cluster config secret into |
 | cluster.server | string | `"https://kubernetes.default.svc"` | Cluster URL used by Argo CD to connect to the cluster |
 | fullnameOverride | string | `""` | Override fullname |
 | nameOverride | string | `""` | Override names |

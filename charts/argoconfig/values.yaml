@@ -57,6 +57,8 @@ cluster:
   enabled: false
   # cluster.clusterNameOverride -- Override name of the cluster
   clusterNameOverride: ~
+  # cluster.namespace -- Namespace to put the cluster config secret into
+  namespace: argocd
   # cluster.server -- Cluster URL used by Argo CD to connect to the cluster
   server: https://kubernetes.default.svc
   # cluster.config -- Cluster config (ie. contents of a KUBECONFIG)
