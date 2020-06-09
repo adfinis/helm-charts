@@ -21,7 +21,7 @@ helm repo add adfinis https://charts.adfinis.com
 
 | Chart | Description | Chart Version | App Version |
 | ----- | ----------- | ------------- | ----------- |
-| [argoconfig](charts/argoconfig) | Configure an Argo CD AppProject and Application | `0.x` | `latest` |
+| [argoconfig](charts/argoconfig) | Configure an Argo CD AppProjects, Applications and more | `0.x` | `latest` |
 | [barman](charts/barman) | Chart for Barman PostgreSQL Backup and Recovery Manager | `0.x` | `2.1.x` |
 | [caasperli](charts/caasperli) | Deploy Caasperli to a Kubernetes Cluster | `0.x` | `latest` |
 | [kasperleyn](charts/kasperleyn) | A Helm 2 chart to deploy Caasperli | `0.x` | `1.0.x` |
