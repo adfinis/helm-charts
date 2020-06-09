@@ -1,0 +1,17 @@
+{{- if .Values.prometheus.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.prometheus.service.name }}
+  labels:
+    {{- include "barman.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.prometheus.service.type }}
+  ports:
+    - port: {{ .Values.prometheus.service.externalPort }}
+      targetPort: {{ .Values.prometheus.service.internalPort }}
+      protocol: TCP
+      name: prom-exporter
+  selector:
+    {{- include "barman.selectorLabels" . | nindent 4 }}
+{{- end }}

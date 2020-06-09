@@ -1,0 +1,29 @@
+{{- if .Values.prometheus.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ template "barman.fullname" . }}
+  labels:
+    {{- include "barman.labels" . | nindent 4 }}
+    {{- if .Values.prometheus.serviceMonitor.extraLabels }}
+    {{- .Values.prometheus.serviceMonitor.extraLabels | toYaml | nindent 4 }}
+    {{- end }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "barman.selectorLabels" . | nindent 6 }}
+  endpoints:
+    - targetPort: {{ .Values.prometheus.service.externalPort }}
+      {{- if .Values.prometheus.serviceMonitor.interval }}
+      interval: {{ .Values.prometheus.serviceMonitor.interval }}
+      {{- end }}
+      path: "/metrics"
+      {{- if .Values.prometheus.serviceMonitor.metricRelabelings }}
+      metricRelabelings:
+        {{- toYaml .Values.prometheus.serviceMonitor.metricRelabelings | nindent 6 }}
+      {{- end }}
+      {{- if .Values.prometheus.serviceMonitor.relabelings }}
+      relabelings:
+        {{- toYaml .Values.prometheus.serviceMonitor.relabelings | nindent 6 }}
+      {{- end }}
+{{- end }}

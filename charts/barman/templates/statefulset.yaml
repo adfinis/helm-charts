@@ -23,6 +23,12 @@ spec:
         - name: barman
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.prometheus.enabled }}
+          ports:
+            - name: prom-exporter
+              containerPort: {{ .Values.prometheus.service.internalPort }}
+              protocol: TCP
+          {{- end }}
           {{/*
           Fix permissions & owner of .pgpass file
           https://www.postgresql.org/docs/9.4/libpq-pgpass.html
