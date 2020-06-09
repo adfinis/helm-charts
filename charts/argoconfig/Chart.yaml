@@ -1,6 +1,6 @@
 apiVersion: v2
 name: argoconfig
-description: Configure an Argo CD AppProjects, Applications and more
+description: Configure Argo CD AppProjects, Applications and more
 type: application
 version: 0.3.1
 appVersion: latest
