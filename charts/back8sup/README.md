@@ -1,6 +1,6 @@
 back8sup
 ========
-A Helm chart for Kubernetes
+Deploy back8sup to a Kubernetes Cluster
 
 Current chart version is `0.1.0`
 
