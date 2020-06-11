@@ -1,6 +1,6 @@
 apiVersion: v2
 name: back8sup
-description: A Helm chart for Kubernetes
+description: Deploy back8sup to a Kubernetes Cluster
 home: https://github.com/adfinis-sygroup/back8sup
 
 # A chart can be either an 'application' or a 'library' chart.
