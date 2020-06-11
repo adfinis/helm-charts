@@ -60,7 +60,7 @@ cronjob:
 
 persistence:
   # persistence.enabled -- specifies if persistence is enabled or not
-  enabled: true
+  enabled: false
   # persistence.mountPath -- specifies where to mount the PV
   mountPath: "/mnt/back8sup"
   # persistence.size -- specifies which size the PVC should request
