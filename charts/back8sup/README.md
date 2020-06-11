@@ -37,6 +37,7 @@ Source code can be found [here](https://github.com/adfinis-sygroup/back8sup)
 | imagePullSecrets | list | `[]` | specifies the image pull secrets to be used |
 | nameOverride | string | `""` | specifies the name override to be used for helm |
 | nodeSelector | object | `{}` | specifies the nodeSelector to be used |
+| persistence.enabled | bool | `true` | specifies if persistence is enabled or not |
 | persistence.mountPath | string | `"/mnt/back8sup"` | specifies where to mount the PV |
 | persistence.size | string | `"10Gi"` | specifies which size the PVC should request |
 | podAnnotations | object | `{}` | specifies the Pod Annotations to be set |
