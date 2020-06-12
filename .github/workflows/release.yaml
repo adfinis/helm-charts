@@ -9,14 +9,12 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-      - name: Fetch history
-        run: git fetch --prune --unshallow
-
-      - name: Install deps
-        run: .ci/github/install-release-deps.sh
+      - name: Run hack/ci/github/setup/release.sh
+        run: hack/ci/github/setup/release.sh
 
       - name: Configure Git
         run: |
@@ -28,7 +26,7 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.CR_TOKEN }}"
 
-      - name: Update Pages site
-        run: .ci/github/update-pages-site.sh
+      - name: Run hack/ci/github/steps/update-page.sh
+        run: hack/ci/github/steps/update-page.sh
         env:
           CR_TOKEN: "${{ secrets.CR_TOKEN }}"

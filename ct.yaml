@@ -1,2 +1,3 @@
 chart-repos:
+  - adfinis=https://charts.adfinis.com
   - bitnami=https://charts.bitnami.com/bitnami

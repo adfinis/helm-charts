@@ -1,0 +1,63 @@
+{{ template "chart.header" . }}
+{{ template "chart.description" . }}
+
+{{ template "chart.versionLine" . }}
+
+{{ template "chart.homepageLine" . }}
+{{- define "chart.homepage" }}{{ .Home }}{{ end }}
+{{- define "chart.homepageLine" }}
+{{ if .Home }}**Homepage:** <{{ .Home }}>{{ end }}
+{{- end }}
+
+{{ template "chart.maintainersSection" . }}
+{{- define "chart.maintainersHeader" }}## Maintainers{{ end -}}
+{{- define "chart.maintainersSection" -}}
+{{ if .Maintainers }}
+{{ template "chart.maintainersHeader" . }}
+This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
+{{- end -}}
+{{- end }}
+
+{{ template "chart.sourcesSection" . }}
+{{- define "chart.sourcesHeader" }}## Source Code{{ end }}
+{{- define "chart.sourcesList" }}
+{{- range .Sources }}
+* <{{ . }}>
+{{- end }}
+{{- end }}
+{{- define "chart.sourcesSection" -}}
+{{ if .Sources }}
+{{ template "chart.sourcesHeader" . }}
+{{ template "chart.sourcesList" . }}
+{{ end -}}
+{{- end }}
+
+{{ template "chart.requirementsSection" . }}{{ define "chart.requirementsTable" }}
+| Repository | Name | Version |
+|------------|------|---------|
+  {{- range .Dependencies }}
+| {{ .Repository }} | {{ .Name }} | `{{ .Version }}` |
+  {{- end }}
+{{ end -}}
+
+{{ template "chart.valuesSection" . }}{{ define "chart.valuesTable" }}
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+  {{- range .Values }}
+| `{{ .Key }}` | {{ .Type }} | {{ .Default }} | {{ .Description }} |
+  {{- end }}
+{{- end }}
+
+## About this chart
+
+Adfinis fights for a software world that is more open, where the quality is
+better and where software must be accessible to everyone. This chart
+is part of the action behind this comitment. Feel free to
+[contact](https://adfinis.com/kontakt/?pk_campaign=github&pk_kwd=helm-charts)
+us if you have any questions.
+
+## License
+
+This Helm chart is free software: you can redistribute it and/or modify it under the terms
+of the GNU Affero General Public License as published by the Free Software Foundation,
+version 3 of the License.
