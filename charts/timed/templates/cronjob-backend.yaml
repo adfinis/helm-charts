@@ -27,7 +27,7 @@ spec:
                       key: postgresql-password
               envFrom:
                 - secretRef:
-                    name: {{ include "timed.fullname" $ }}-django
+                    name: {{ include "timed.fullname" $ }}-backend
                 - configMapRef:
                     name: {{ include "timed.fullname" $ }}-backend
               command: {{ $val.command | toYaml | nindent 16 }}
