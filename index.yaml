@@ -69,6 +69,24 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/argoconfig-0.1.0/argoconfig-0.1.0.tgz
     version: 0.1.0
+  back8sup:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2020-06-12T09:30:27.083911469Z"
+    description: Deploy back8sup to a Kubernetes Cluster
+    digest: d705a6f583e5b2313e7cb6a8c6246d0400fcb4f0ca7e3bf32ddbcc3347eb499f
+    home: https://github.com/adfinis-sygroup/back8sup
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    - email: toni.tauro@adfinis.com
+      name: eyenx
+    name: back8sup
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/back8sup-0.1.0/back8sup-0.1.0.tgz
+    version: 0.1.0
   barman:
   - apiVersion: v2
     appVersion: "2.1"
