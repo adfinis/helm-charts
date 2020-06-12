@@ -1,0 +1,21 @@
+{{- if .Values.rbacCreate }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    {{- include "back8sup.labels" . | nindent 4 }}
+  name: {{ include "back8sup.fullname" . }}-cluster-reader
+rules:
+- apiGroups:
+  - '*'
+  resources:
+  - '*'
+  verbs:
+  - get
+  - list
+- nonResourceURLs:
+  - '*'
+  verbs:
+  - get
+  - list
+{{- end }}

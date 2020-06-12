@@ -1,0 +1,52 @@
+back8sup
+========
+Deploy back8sup to a Kubernetes Cluster
+
+Current chart version is `0.1.0`
+
+Source code can be found [here](https://github.com/adfinis-sygroup/back8sup)
+
+
+
+## Chart Values
+
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| affinity | object | `{}` | specifies the affinity to be used |
+| configMaps."config.yaml" | string | `"global:\n  - pvc\n  - pv\nnamespaces:\n  - name: default\n    kind:\n      - deployment\n      - cm\n      - secret\n"` |  |
+| cronjob.concurrencyPolicy | string | `""` | specifies the concurrencyPolicy of the cronjob |
+| cronjob.environment[0].name | string | `"API_ENDPOINT"` |  |
+| cronjob.environment[0].value | string | `"https://kubernetes.default.svc.cluster.local:443"` |  |
+| cronjob.environment[1].name | string | `"CA_CERT"` |  |
+| cronjob.environment[1].value | string | `"/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"` |  |
+| cronjob.environment[2].name | string | `"TOKEN_FILE"` |  |
+| cronjob.environment[2].value | string | `"/var/run/secrets/kubernetes.io/serviceaccount/token"` |  |
+| cronjob.environment[3].name | string | `"CONFIGMAP_PATH"` |  |
+| cronjob.environment[3].value | string | `"/etc/config.yaml"` |  |
+| cronjob.environment[4].name | string | `"EXPORT_FORMAT"` |  |
+| cronjob.environment[4].value | string | `"yaml"` |  |
+| cronjob.environment[5].name | string | `"DST_FOLDER"` |  |
+| cronjob.environment[5].value | string | `"/mnt/back8sup"` |  |
+| cronjob.failedJobsHistoryLimit | string | `""` | specifies the failedJobsHistoryLimit of the cronjob |
+| cronjob.schedule | string | `"0 1 * * *"` | on which schedule the cronjob gets run |
+| cronjob.successfulJobsHistoryLimit | string | `""` | specifies the successfulJobsHistoryLimit of the cronjob |
+| fullnameOverride | string | `""` | specifies the full name override to be used for helm |
+| image.pullPolicy | string | `"IfNotPresent"` | set the image pullPolicy |
+| image.repository | string | `"adfinissygroup/back8sup"` | set the image repository |
+| image.tag | string | `"latest"` | set the tag of the image |
+| imagePullSecrets | list | `[]` | specifies the image pull secrets to be used |
+| nameOverride | string | `""` | specifies the name override to be used for helm |
+| nodeSelector | object | `{}` | specifies the nodeSelector to be used |
+| persistence.enabled | bool | `true` | specifies if persistence is enabled or not |
+| persistence.mountPath | string | `"/mnt/back8sup"` | specifies where to mount the PV |
+| persistence.size | string | `"10Gi"` | specifies which size the PVC should request |
+| podAnnotations | object | `{}` | specifies the Pod Annotations to be set |
+| podSecurityContext | object | `{}` | specifies the Pod Security Context to be set |
+| rbacCreate | bool | `true` | wheter the rolebindings and roles should be created |
+| replicaCount | int | `1` | specifies the replica count of the pods |
+| resources | object | `{}` | specifies the resources to be used |
+| securityContext | object | `{}` | specifies the Security Context to be set |
+| serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
+| serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
+| serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
+| tolerations | list | `[]` | specifies the tolerations to be used |
