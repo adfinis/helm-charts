@@ -1,6 +1,8 @@
 * The following Argo CD configurations have been created
-{{- if .Values.cluster.enabled }}
-  * v1/Secret with "argocd.argoproj.io/secret-type=cluster": {{ include "argoconfig.fullname" . }}
+{{- range $name, $cluster := .Values.clusters }}
+{{- if $cluster.enabled }}
+  * v1/Secret with "argocd.argoproj.io/secret-type=cluster": $name
+{{- end }}
 {{- end }}
 {{- if .Values.appProject.enabled }}
   * argoproj.io/v1alpha1/AppProject: {{ include "argoconfig.fullname" . }}
