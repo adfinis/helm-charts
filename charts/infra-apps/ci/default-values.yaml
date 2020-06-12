@@ -1,0 +1,19 @@
+argocd:
+  enabled: true
+  values:
+    server:
+      ingress:
+        annotations:
+          k8s.adfinis.com/test-annotation: test
+certManager:
+  enabled: true
+  values:
+    TODO: add values in values.yaml
+ingressNginx:
+  enabled: true
+  values:
+    TODO: add values in values.yaml
+rbacManager:
+  enabled: true
+  values:
+    TODO: add values in values.yaml

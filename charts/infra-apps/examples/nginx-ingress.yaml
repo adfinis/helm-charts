@@ -1,0 +1,6 @@
+ingressNginx:
+  enabled: true
+  values:
+    controller:
+      service:
+        externalTrafficPolicy: Local

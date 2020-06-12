@@ -1,0 +1,119 @@
+# argocd -- [Argo CD](https://argoproj.github.io/argo-cd/)
+# @default -- [example](./examples/argocd.yaml)
+argocd:
+  # argocd.enabled -- Enable Argo CD
+  enabled: false
+  name: argocd
+  destination:
+    # argocd.destination.namespace -- Namespace
+    namespace: "infra-argocd"
+  # argocd.repoURL -- Repo URL
+  # @default -- [repo](https://argoproj.github.io/argo-helm)
+  repoURL: "https://argoproj.github.io/argo-helm"
+  # argocd.chart -- Chart
+  chart: "argo-cd"
+  # argocd.targetRevision -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version
+  targetRevision: "2.9.*"
+  # argocd.values -- Helm values
+  # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml)
+  values: {}
+
+# certManager -- [cert-manager](https://cert-manager.io/)
+# @default -- [example](./examples/cert-manager.yaml)
+certManager:
+  # certManager.enabled -- Enable cert-manager
+  enabled: false
+  name: certmgr
+  destination:
+    # certManager.destination.namespace -- Namespace
+    namespace: infra-certManager
+  # certManager.repoURL -- Repo URL
+  # @default -- [repo](https://charts.jetstack.io)
+  repoURL: "https://charts.jetstack.io"
+  # certManager.chart -- Chart
+  chart: "cert-manager"
+  # certManager.targetRevision -- [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version
+  targetRevision: '1.0.*'
+  # certManager.values -- Helm values
+  # @default -- [upstream values](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
+  values: {}
+
+# ingressNginx -- [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
+# @default -- [example](./examples/nginx-ingress.yaml)
+ingressNginx:
+  # ingressNginx.enabled -- Configure nginx-ingress
+  enabled: false
+  name: ingress
+  destination:
+    # ingressNginx.destination.namespace -- Namespace
+    namespace: infra-ingress
+  # ingressNginx.repoURL -- Repo URL
+  # @default -- [repo](https://kubernetes.github.io/ingress-nginx)
+  repoURL: "https://kubernetes.github.io/ingress-nginx"
+  # ingressNginx.chart -- Chart
+  chart: "ingress-nginx"
+  # ingressNginx.targetRevision -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/master/charts/ingress-nginx) version
+  targetRevision: '3.7.*'
+  # ingressNginx.values -- Helm values
+  # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/master/charts/ingress-nginx/values.yaml)
+  values: {}
+
+# kubePrometheusStack -- [prometheus-operator](https://github.com/coreos/prometheus-operator)
+# @default -- [example](./examples/prometheus.yaml)
+kubePrometheusStack:
+  # kubePrometheusStack.enabled -- Enable prometheus-operator
+  enabled: false
+  name: monitoring
+  destination:
+    # kubePrometheusStack.destination.namespace -- Namespace
+    namespace: infra-monitoring
+  # kubePrometheusStack.repoURL -- Repo URL
+  # @default -- [repo](https://prometheus-community.github.io/helm-charts)
+  repoURL: "https://prometheus-community.github.io/helm-charts"
+  # kubePrometheusStack.chart -- Chart
+  chart: "kube-prometheus-stack"
+  # kubePrometheusStack.targetRevision -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
+  targetRevision: '10.1.*'
+  # kubePrometheusStack.values -- Helm values
+  # @default -- [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
+  values: {}
+
+# rbacManager -- [rbac-manager](https://fairwindsops.github.io/rbac-manager/)
+# @default -- [example](./examples/rbac-manager.yaml)
+rbacManager:
+  # rbacManager.enabled -- Enable rbac-manager operator
+  enabled: false
+  name: rbac-manager
+  destination:
+    # rbacManager.destination.namespace -- Namespace
+    namespace: infra-rbac
+  # rbacManager.repoURL -- Repo URL
+  # @default -- [repo](https://charts.fairwinds.com/stable)
+  repoURL: "https://charts.fairwinds.com/stable"
+  # rbacManager.chart -- Chart
+  chart: "rbac-manager"
+  # rbacManager.targetRevision -- [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version
+  targetRevision: '1.5.*'
+  # rbacManager.values -- Helm values
+  # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml)
+  values: {}
+
+# velero -- [Velero](https://velero.io/)
+# @default -- [example](./examples/velero.yaml)
+velero:
+  # velero.enabled -- Enable Velero
+  enabled: false
+  name: velero
+  destination:
+    # velero.destination.namespace -- Namespace
+    namespace: infra-velero
+  # velero.repoURL -- Repo URL
+  # @default -- [repo](https://vmware-tanzu.github.io/helm-charts)
+  repoURL: "https://vmware-tanzu.github.io/helm-charts"
+  # velero.chart -- Chart
+  chart: velero
+  # velero.targetRevision -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
+  targetRevision: '2.12.*'
+  # velero.values -- Helm values
+  # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
+  values: {}
