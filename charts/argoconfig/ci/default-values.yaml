@@ -1,0 +1,14 @@
+cluster:
+  enabled: true
+  namespace: ~
+appProject:
+  enabled: true
+  namespace: ~
+apps:
+  defaults:
+    enabled: true
+    namespace: ~
+    source:
+      repoURL: "https://charts.example.com"
+      chart: "example"
+      targetRevision: 'HEAD'

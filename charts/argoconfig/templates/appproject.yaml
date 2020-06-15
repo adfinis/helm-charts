@@ -3,7 +3,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: {{ include "argoconfig.fullname" . }}
-  namespace: {{ .Values.appProject.namespace }}
+  {{- with .Values.appProject.namespace }}
+  namespace: {{ . }}
+  {{- end }}
   labels:
     {{- include "argoconfig.labels" . | nindent 4 }}
 spec:

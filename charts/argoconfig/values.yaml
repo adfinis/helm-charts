@@ -7,51 +7,8 @@ nameOverride: ""
 # fullnameOverride -- Override fullname
 fullnameOverride: ""
 
-appProject:
-  # appProject.enabled -- Enable creating an AppProject resource
-  enabled: true
-  # appProject.namespace -- Namespace for AppProject resource
-  namespace: argocd
-  # appProject.clusterResourceWhitelist --
-  clusterResourceWhitelist:
-      # appProject.clusterResourceWhitelist[0].group -- API groups to whitelist
-    - group: '*'
-      # appProject.clusterResourceWhitelist[0].kind -- API kind to whitelist
-      kind: '*'
-  # appProject.destinations --
-  destinations:
-      # appProject.destinations[0].namespace -- Destination namespace to allow
-    - namespace: '*'
-      # appProject.destinations[0].server -- Destination server to allow
-      server: '*'
-  # appProject.sourceRepos -- Source repos to allow
-  sourceRepos:
-    - '*'
-
-application:
-  # application.enabled -- Enable creating an Application resource
-  enabled: true
-  # application.namespace -- Namespace for Application resource
-  namespace: argocd
-  # application.projectOverride -- Name of AppProject to install into
-  # @default -- Fullname
-  projectOverride: ~
-  source:
-    # application.source.repoURL -- URL of sourece repo
-    repoURL: ""
-    # application.source.chart -- Name of chart in source repo
-    chart: ""
-    # application.source.targetRevision -- Revision of chart in source repo to install
-    targetRevision: '*'
-  destination:
-    # application.destination.server -- Target cluster in Argo CD
-    server: https://kubernetes.default.svc
-    # application.destination.namespace -- Target namespace of application in Argo CD
-    namespace: default
-  # application.syncPolicy -- Application [Sync Policy](https://argoproj.github.io/argo-cd/user-guide/auto_sync/)
-  # @default -- deactivated
-  syncPolicy: {}
-
+# cluster -- Cluster ConfigMap creation
+# @default -- see [docs](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#clusters)
 cluster:
   # cluster.enabled -- Create a cluster config secret
   enabled: false
@@ -59,7 +16,45 @@ cluster:
   clusterNameOverride: ~
   # cluster.namespace -- Namespace to put the cluster config secret into
   namespace: argocd
-  # cluster.server -- Cluster URL used by Argo CD to connect to the cluster
   server: https://kubernetes.default.svc
-  # cluster.config -- Cluster config (ie. contents of a KUBECONFIG)
   config: {}
+
+# appProject -- Project configuration
+# @default -- see [docs](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#projects)
+appProject:
+  # appProject.enabled -- Enable creating an AppProject resource
+  enabled: false
+  # appProject.namespace -- Namespace for AppProject resource
+  namespace: argocd
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - namespace: 'infra-*'
+      server: '*'
+  sourceRepos:
+    - '*'
+
+# apps -- Map of Argo CD apps
+# @default -- deactivated defaults app
+apps:
+  # apps.defaults -- Defaults used for all apps added to apps map
+  # @default -- see [docs](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#applications)
+  defaults:
+    # apps.defaults.enabled -- Enable creating an Application resource
+    enabled: false
+    # apps.defaults.namespace -- Namespace for Application resource
+    namespace: argocd
+    # apps.defaults.projectOverride -- Name of AppProject to install into
+    # @default -- Fullname
+    projectOverride: ~
+    # apps.defaults.values -- Helm values
+    values: {}
+    source:
+      repoURL:
+      chart:
+      targetRevision:
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: default
+    syncPolicy: {}

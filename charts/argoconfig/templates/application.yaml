@@ -1,19 +1,31 @@
-{{- if .Values.application.enabled }}
+{{- $defaults := .Values.apps.defaults -}}
+{{- range $name, $app := .Values.apps -}}
+{{- if $app.enabled -}}
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ include "argoconfig.fullname" . }}
-  namespace: {{ .Values.application.namespace }}
+  name: {{ include "argoconfig.fullname" $ }}-{{ $name }}
+  {{- with (default $defaults.namespace $app.namespace) }}
+  namespace: {{ . }}
+  {{- end }}
   labels:
-    {{- include "argoconfig.labels" . | nindent 4 }}
+    {{- include "argoconfig.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: {{ $name }}
 spec:
-  project: {{ if .Values.application.projectOverride }}{{ .Values.Application.projectOverride }}{{ else }}{{ include "argoconfig.fullname" . }}{{ end }}
+  project: {{ if $app.projectOverride }}{{ $app.projectOverride }}{{ else }}{{ include "argoconfig.fullname" $ }}{{ end }}
   source:
-    {{- .Values.application.source | toYaml | nindent 4 }}
+    {{- merge $app.source $defaults.source | toYaml | nindent 4 }}
   destination:
-    {{- .Values.application.destination | toYaml | nindent 4 }}
-  {{- if .Values.application.syncPolicy }}
+    {{- merge $app.destination $defaults.destination | toYaml | nindent 4 }}
+    {{- with $app.values }}
+    helm:
+      values: |-
+        {{- . | toYaml | nindent 8 }}
+    {{- end }}
+  {{- if $app.syncPolicy }}
   syncPolicy:
-    {{- .Values.application.syncPolicy | toYaml | nindent 4 }}
+    {{- $app.syncPolicy | toYaml | nindent 4 }}
   {{- end }}
 {{- end }}
+{{ end }}
