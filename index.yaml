@@ -3,6 +3,23 @@ entries:
   argoconfig:
   - apiVersion: v2
     appVersion: latest
+    created: "2020-06-15T10:56:53.470781367Z"
+    description: Configure Argo CD AppProjects, Applications and more
+    digest: 0eeadaa4d7055810364039ffd259e4534766ee194d8c7e8285bbcc3efe39f83c
+    home: https://github.com/adfinis-sygroup/helm-charts
+    maintainers:
+    - email: support@adfinis-sygroup.ch
+      name: adfinis-sygroup
+      url: https://adfinis-sygroup.ch
+    - email: lucas.bickel@adfinis-sygroup.ch
+      name: hairmare
+    name: argoconfig
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/argoconfig-0.4.0/argoconfig-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: latest
     created: "2020-06-09T13:10:46.206731762Z"
     description: Configure Argo CD AppProjects, Applications and more
     digest: ab886b9f6809fcf40f93133ab987c50626dce17c87cf766f7f05acfcbcd3a435
