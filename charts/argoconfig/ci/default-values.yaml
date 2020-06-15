@@ -1,6 +1,9 @@
-cluster:
-  enabled: true
-  namespace: ~
+clusters:
+  defaults:
+    namespace: ~
+  local:
+    enabled: true
+    namespace: ~
 appProject:
   enabled: true
   namespace: ~

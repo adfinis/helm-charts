@@ -1,23 +1,26 @@
-# Default values for argocd.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
 # nameOverride -- Override names
 nameOverride: ""
+
 # fullnameOverride -- Override fullname
 fullnameOverride: ""
 
-# cluster -- Cluster ConfigMap creation
+# clusters -- Argo CD cluster secrets
 # @default -- see [docs](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#clusters)
-cluster:
-  # cluster.enabled -- Create a cluster config secret
-  enabled: false
-  # cluster.clusterNameOverride -- Override name of the cluster
-  clusterNameOverride: ~
-  # cluster.namespace -- Namespace to put the cluster config secret into
-  namespace: argocd
-  server: https://kubernetes.default.svc
-  config: {}
+clusters:
+  defaults:
+    # clusters.defaults.enabled -- Enable creating cluster secret
+    enabled: false
+    # clusters.defaults.namespace -- Namespace to put the cluster config secret into
+    namespace: argocd
+    # clusters.defaults.config -- Cluster config
+    config: {}
+  local:
+    # clusters.local.enabled -- Local cluster is enabled by default
+    enabled: true
+    # clusters.local.server -- Cluster API endpoint
+    # @default -- Local cluster
+    server: https://kubernetes.default.svc
+    config: {}
 
 # appProject -- Project configuration
 # @default -- see [docs](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#projects)
