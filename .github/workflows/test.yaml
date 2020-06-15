@@ -15,7 +15,7 @@ jobs:
 
     - uses: actions/setup-python@v1
 
-    - name: Run hack/ci/github/setup/pre-commit.sh
+    - name: Setup environment for pre-commit
       run: hack/ci/github/setup/pre-commit.sh
 
     - uses: actions/cache@v1
@@ -42,7 +42,7 @@ jobs:
         uses: helm/kind-action@v1.0.0-rc.1
         if: steps.lint.outputs.changed == 'true'
 
-      - name: Run hack/deploy/init.sh
+      - name: Setup cluster for chart-testing (install)
         run: hack/deploy/init.sh
         if: steps.lint.outputs.changed == 'true'
 

@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run hack/ci/github/setup/release.sh
+      - name: Setup environment for release
         run: hack/ci/github/setup/release.sh
 
       - name: Configure Git
@@ -26,7 +26,7 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.CR_TOKEN }}"
 
-      - name: Run hack/ci/github/steps/update-page.sh
+      - name: Run gomplate to update pages index
         run: hack/ci/github/steps/update-page.sh
         env:
           CR_TOKEN: "${{ secrets.CR_TOKEN }}"
