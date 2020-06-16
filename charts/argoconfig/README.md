@@ -2,7 +2,7 @@ argoconfig
 ==========
 Configure Argo CD AppProjects, Applications and more
 
-Current chart version is `0.5.1`
+Current chart version is `0.6.0`
 
 
 **Homepage:** <https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/>
@@ -17,20 +17,17 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 * <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argoconfig>
 
 
+## Chart Requirements
+
+
+| Repository | Name | Version |
+|------------|------|---------|
+| https://charts.adfinis.com | common | `0.0.0` |
 ## Chart Values
 
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| `appProject` | object | see [docs](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#projects) | Project configuration |
-| `appProject.enabled` | bool | `false` | Enable creating an AppProject resource |
-| `appProject.namespace` | string | `"argocd"` | Namespace for AppProject resource |
-| `apps` | object | deactivated defaults app | Map of Argo CD apps |
-| `apps.defaults` | object | see [docs](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#applications) | Defaults used for all apps added to apps map |
-| `apps.defaults.enabled` | bool | `false` | Enable creating an Application resource |
-| `apps.defaults.namespace` | string | `"argocd"` | Namespace for Application resource |
-| `apps.defaults.projectOverride` | string | Fullname | Name of AppProject to install into |
-| `apps.defaults.values` | object | `{}` | Helm values |
 | `clusters` | object | see [docs](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#clusters) | Argo CD cluster secrets |
 | `clusters.defaults.config` | object | `{}` | Cluster config |
 | `clusters.defaults.enabled` | bool | `false` | Enable creating cluster secret |
