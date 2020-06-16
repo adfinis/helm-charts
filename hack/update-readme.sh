@@ -1,21 +1,20 @@
 #!/bin/bash
 
-# quick and dirty gomplate wrapper to update README.md
+# gomplate wrapper to update README.md
 
 set -e
 
-err () {
-    echo "${1}" 1>&2
-    exit 1
-}
+source hack/sh/rc.sh
+source hack/sh/_functions.sh
+source hack/sh/deps/helm.sh
+source hack/sh/deps/gomplate.sh
 
 # specify an alternative hack/update-readme/$HELMCHARTS_GOMPLATE_NAME.yaml config
 readonly readme_config_name=${HELMCHARTS_GOMPLATE_NAME:-readme}
 # where to render the template to, defaults to README.md but can be overridden for generating the GitHub Pages index
 readonly output_path=${HELMCHARTS_GOMPLATE_OUTPUT:-README.md}
 
-[[ ! -x `which helm` ]] && err "Could not locate helm binary. See https://helm.sh/docs/intro/install/ for info."
-[[ ! -x `which gomplate` ]] && err "Could not locate gomplate binary. See https://docs.gomplate.ca/installing/ for info."
+set -x
 
-gomplate -o $output_path -f hack/README.tpl.md \
-  -d readme=hack/update-readme/$readme_config_name.yaml
+gomplate -o $output_path -f hack/config/update-readme/README.md.gotmpl \
+  -d readme=hack/config/update-readme/$readme_config_name.yaml

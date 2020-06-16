@@ -57,48 +57,49 @@ helm repo add adfinis https://charts.adfinis.com
 
 #### more charts
 
-| Chart | Description | Chart Version | App Version |
-| ----- | ----------- | ------------- | ----------- |
+| Chart | Description | Version |
+| ----- | ----------- | ------- |
 {{- range (file.ReadDir "charts/" | sort) -}}
 {{- $chartManifestPath := print "charts/" . "/Chart.yaml" -}}
 {{- if (file.Exists $chartManifestPath) -}}{{- $chartManifest := file.Read $chartManifestPath | data.YAML -}}
 {{- if not (has $chartManifest "icon") }}
-| [{{.}}]({{ print $readme.chartBaseURL . }}) | {{ $chartManifest.description | strings.Abbrev 80 }} | `{{ template "helmcharts.shortVersion" $chartManifest.version }}` | `{{ template "helmcharts.shortVersion" $chartManifest.appVersion }}` |
+| [{{.}}]({{ print $readme.chartBaseURL . }}) | {{ $chartManifest.description | strings.Abbrev 80 }} | ![Version: {{ template "helmcharts.shortVersion" $chartManifest.version }}](https://img.shields.io/badge/version-{{ template "helmcharts.shortVersion" $chartManifest.version }}-brightgreen) ![App version: {{ template "helmcharts.shortVersion" $chartManifest.appVersion }}](https://img.shields.io/badge/app%20version-{{ template "helmcharts.shortVersion" $chartManifest.appVersion }}-brightgreen) |
 {{- end -}}
 {{- end -}}
 {{- end }}
 
+## Contributing
 {{- if not $readme.web.enabled }}
 {{/* This content only shows up on the GitHUb README and not on charts.adfinis.com */}}
-## Development
 
-### pre-commit hook
-
-This project uses [pre-commit](https://pre-commit.com/) to automate some tasks like
-generating README files.
-
-#### pre-commit requirements
-
-* [helm-docs](https://github.com/norwoodj/helm-docs)
-* [gomplate](https://github.com/hairyhenderson/gomplate)
-
-#### pre-commit configuration
-
-After installing the pre-commit requirements you can initialize pre-commit.
+Have a look at the [documentation](./docs/) to get started.
 
 ```bash
+# clone repo
+git clone git@github.com:adfinis-sygroup/helm-charts.git
+cd helm-charts
+
+# initialize pre-commit
 pre-commit install
 pre-commit install-hooks
+
+# run pre-commit
+pre-commit run -a
+
+# update root README
+hack/update-readme.sh
+
+# update charts README
+hack/helm-docs.sh
 ```
 {{- else }}
 {{/* This content replaces the Development section when used as index page */}}
-## Contributing
 
 This Helm chart repositories code may be found on [GitHub](https://github.com) at
 [adfinis-sygroup/helm-charts](https://github.com/adfinis-sygroup/helm-charts).
+{{- end }}
 
 We track issues with this chart repository in the [issue tracker](https://github.com/adfinis-sygroup/helm-charts/issues).
-{{- end }}
 
 ## About this repository
 

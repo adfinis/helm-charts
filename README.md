@@ -19,35 +19,40 @@ helm repo add adfinis https://charts.adfinis.com
 
 #### more charts
 
-| Chart | Description | Chart Version | App Version |
-| ----- | ----------- | ------------- | ----------- |
-| [argoconfig](charts/argoconfig) | Configure Argo CD AppProjects, Applications and more | `0.x` | `latest` |
-| [back8sup](charts/back8sup) | Deploy back8sup to a Kubernetes Cluster | `0.x` | `latest` |
-| [barman](charts/barman) | Chart for Barman PostgreSQL Backup and Recovery Manager | `0.x` | `2.1.x` |
-| [caasperli](charts/caasperli) | Deploy Caasperli to a Kubernetes Cluster | `0.x` | `latest` |
-| [kasperleyn](charts/kasperleyn) | A Helm 2 chart to deploy Caasperli | `0.x` | `1.0.x` |
-| [timed](charts/timed) | Chart for Timed application | `0.x` | `0.x` |
+| Chart | Description | Version |
+| ----- | ----------- | ------- |
+| [argoconfig](charts/argoconfig) | Configure Argo CD AppProjects, Applications and more | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: latest](https://img.shields.io/badge/app%20version-latest-brightgreen) |
+| [back8sup](charts/back8sup) | Deploy back8sup to a Kubernetes Cluster | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: latest](https://img.shields.io/badge/app%20version-latest-brightgreen) |
+| [barman](charts/barman) | Chart for Barman PostgreSQL Backup and Recovery Manager | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 2.1.x](https://img.shields.io/badge/app%20version-2.1.x-brightgreen) |
+| [caasperli](charts/caasperli) | Deploy Caasperli to a Kubernetes Cluster | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: latest](https://img.shields.io/badge/app%20version-latest-brightgreen) |
+| [kasperleyn](charts/kasperleyn) | A Helm 2 chart to deploy Caasperli | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.0.x](https://img.shields.io/badge/app%20version-1.0.x-brightgreen) |
+| [timed](charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 
-## Development
+## Contributing
 
-### pre-commit hook
 
-This project uses [pre-commit](https://pre-commit.com/) to automate some tasks like
-generating README files.
-
-#### pre-commit requirements
-
-* [helm-docs](https://github.com/norwoodj/helm-docs)
-* [gomplate](https://github.com/hairyhenderson/gomplate)
-
-#### pre-commit configuration
-
-After installing the pre-commit requirements you can initialize pre-commit.
+Have a look at the [documentation](./docs/) to get started.
 
 ```bash
+# clone repo
+git clone git@github.com:adfinis-sygroup/helm-charts.git
+cd helm-charts
+
+# initialize pre-commit
 pre-commit install
 pre-commit install-hooks
+
+# run pre-commit
+pre-commit run -a
+
+# update root README
+hack/update-readme.sh
+
+# update charts README
+hack/helm-docs.sh
 ```
+
+We track issues with this chart repository in the [issue tracker](https://github.com/adfinis-sygroup/helm-charts/issues).
 
 ## About this repository
 

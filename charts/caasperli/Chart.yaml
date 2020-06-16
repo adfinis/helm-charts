@@ -2,12 +2,13 @@ apiVersion: v2
 name: caasperli
 description: Deploy Caasperli to a Kubernetes Cluster
 type: application
-version: 0.7.0
+version: 0.7.1
 appVersion: latest
 home: https://github.com/adfinis-sygroup/potz-holzoepfel-und-zipfelchape
+sources:
+  - https://github.com/adfinis-sygroup/potz-holzoepfel-und-zipfelchape
+  - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/caasperli
 maintainers:
   - name: adfinis-sygroup
-    email: support@adfinis-sygroup.ch
-    url: https://adfinis-sygroup.ch
-  - name: hairmare
-    email: lucas.bickel@adfinis-sygroup.ch
+    email: support@adfinis.com
+    url: https://adfinis.com

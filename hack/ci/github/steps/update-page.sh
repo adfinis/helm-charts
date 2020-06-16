@@ -1,17 +1,21 @@
 #!/bin/bash
 
+set -e
 
-echo 'Updating charts repo site...'
+source hack/sh/rc.sh
+source hack/sh/_functions.sh
 
-set -ex
+info 'Updating charts repo site...'
+
+set -x
 
 gh_pages_worktree=$(mktemp -d)
 
-git worktree add "$gh_pages_worktree" gh-pages
+git worktree add "$gh_pages_worktree" gh-pages || true
 
 HELMCHARTS_GOMPLATE_OUTPUT="$gh_pages_worktree/index.md" \
 HELMCHARTS_GOMPLATE_NAME=indexpage \
-./hack/update-readme.sh
+hack/update-readme.sh
 
 mkdir --parent "$gh_pages_worktree/docs/images"
 cp --force docs/images/lunkwill_helm_shirt.png "$gh_pages_worktree/docs/images/lunkwill_helm_shirt.png"
