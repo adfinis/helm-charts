@@ -1,0 +1,13 @@
+apiVersion: v2
+name: common
+description: Common chartbuilding components and helpers, based on incubator/common
+type: library
+version: 0.0.0
+appVersion: 0.0.0
+home: https://helm.sh
+  - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/common
+sources:
+maintainers:
+  - name: adfinis-sygroup
+    email: support@adfinis.com
+    url: https://adfinis.com

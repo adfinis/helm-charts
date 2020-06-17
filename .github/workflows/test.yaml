@@ -26,6 +26,7 @@ jobs:
     - uses: pre-commit/action@v1.0.1
 
   lint-test:
+    name: Lint and Install
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -37,6 +38,7 @@ jobs:
         uses: helm/chart-testing-action@v1.0.0-rc.2
         with:
           command: lint
+          config: hack/chart-testing/ct.yaml
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.0.0-rc.1
@@ -50,3 +52,4 @@ jobs:
         uses: helm/chart-testing-action@v1.0.0-rc.2
         with:
           command: install
+          config: hack/chart-testing/ct-install.yaml
