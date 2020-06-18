@@ -2,7 +2,7 @@ kasperleyn
 ==========
 A Helm 2 chart to deploy Caasperli
 
-Current chart version is `0.3.2`
+Current chart version is `0.3.3`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/potz-holzoepfel-und-zipfelchape>
