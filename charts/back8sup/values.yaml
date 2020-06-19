@@ -58,7 +58,7 @@ cronjob:
     - name: DST_FOLDER
       value: /mnt/back8sup
     - name: EXPIRE
-      value: 30
+      value: "30"
 
 persistence:
   # persistence.enabled -- specifies if persistence is enabled or not
