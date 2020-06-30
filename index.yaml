@@ -314,6 +314,22 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/caasperli-0.6.1/caasperli-0.6.1.tgz
     version: 0.6.1
+  common:
+  - apiVersion: v2
+    appVersion: 0.0.0
+    created: "2020-06-30T20:56:53.973176936Z"
+    description: Common chartbuilding components and helpers, based on incubator/common
+    digest: 48b86fdab9c90e12db2da5c6048705e3c73fc491d8673faf84fddeb62323e8cf
+    home: https://helm.sh - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/common
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: common
+    type: library
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/common-0.0.0/common-0.0.0.tgz
+    version: 0.0.0
   kasperleyn:
   - apiVersion: v1
     appVersion: "1.0"
