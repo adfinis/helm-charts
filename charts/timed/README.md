@@ -30,12 +30,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| `auth.ldap.bindDn` | string | `"uid=auth_user,cn=systems,dc=example,dc=com"` | LDAP bind DN |
-| `auth.ldap.enabled` | bool | `false` | Enable LDAP user authentication |
-| `auth.ldap.password` | string | `"s3cr3t"` | LDAP password |
-| `auth.ldap.serverUri` | string | `"ldaps://ldap.example.com:636"` |  |
-| `auth.ldap.userAttrMap` | string | `"{\"first_name\": \"givenName\", \"last_name\": \"sn\", \"email\": \"mail\"}"` | LDAP user attribute mapping |
-| `auth.ldap.userDnTemplate` | string | `"uid=%(user)s,cn=users,dc=foo,dc=com"` | LDAP user DN template |
+| `auth.oidc.client.id` | string | `"timed"` | OIDC client id |
+| `auth.oidc.client.secret` | string | `nil` | OIDC client secret |
+| `auth.oidc.createUser` | string | `"False"` | OIDC create user in timed db if it does not already exist |
+| `auth.oidc.introspect.enabled` | bool | `true` | Enable OIDC introspect |
+| `auth.oidc.introspect.endpoint` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect/token/introspect"` | OIDC introspect endpoint |
+| `auth.oidc.tokenEndpoint` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect/token"` | OIDC token endpoint url |
+| `auth.oidc.userinfoEndpoint` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect/userinfo"` | OIDC user endpoint url |
 | `backend.cronjobs.notifyChangedEmployments` | object | `{"command":["./manage.py","notify_changed_employments"],"schedule":"0 2 * * 1"}` | Notify changed employments |
 | `backend.cronjobs.notifyReviewersFirst` | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","5"],"schedule":"0 8 4 * *"}` | Notify reviewers first stage |
 | `backend.cronjobs.notifyReviewersFirst.command[3]` | string | `"5"` | Period will end today minus given offset |
