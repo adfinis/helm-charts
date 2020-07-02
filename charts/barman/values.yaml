@@ -29,6 +29,10 @@ persistence:
     # persistence.recover.storageClass -- Storage class
     storageClass: ""
 
+rbac:
+  # rbac.create -- Whether to create RBAC or not
+  create: false
+
 barman:
   # barman.backupMethod -- Barman backup method
   backupMethod: postgres
@@ -73,6 +77,13 @@ barman:
         replicationUser: barman
         # barman.backups[0].postgresql.replicationPassword -- Postgresql replication password
         replicationPassword: barman
+      # barman.backups[0].namespace -- namespace where postgresql is deployed
+      ## not active when barman.createRbac is false
+      namespace: postgresql
+      # barman.backups[0].serviceaccount -- service account of the postgresql deployment
+      ## not active when barman.createRbac is false
+      serviceaccount: postgresql
+
 
 prometheus:
   # prometheus.enabled -- Enable Prometheus integration

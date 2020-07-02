@@ -1,0 +1,16 @@
+{{- if .Values.rbac.create }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: postgresqlbarman
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: barman-backup
+subjects:
+{{- range .Values.barman.backups }}
+- kind: ServiceAccount
+  name: {{ .serviceaccount }}
+  namespace: {{ .namespace }}
+{{- end }}
+{{- end }}
