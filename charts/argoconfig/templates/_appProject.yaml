@@ -1,0 +1,17 @@
+{{- define "argoconfig.appProject.tpl" -}}
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+{{ template "common.metadata" . }}
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - namespace: '*'
+      server: '*'
+  sourceRepos:
+    - '*'
+{{- end }}
+{{- define "argoconfig.appProject" -}}
+{{- include "common.util.merge" (append . "argoconfig.appProject.tpl") -}}
+{{- end -}}
