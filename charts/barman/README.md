@@ -2,7 +2,7 @@ barman
 ======
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
-Current chart version is `0.0.4`
+Current chart version is `0.0.5`
 
 
 **Homepage:** <http://www.pgbarman.org/>
@@ -31,6 +31,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `barman.backups[0].backupMethod` | string | `"postgres"` | Barman backup method |
 | `barman.backups[0].databaseSlotName` | string | `"barman"` | Database slot name to be created/used |
 | `barman.backups[0].lastBackupMaximumAge` | string | `"1 day"` | Barman last backup maximum age |
+| `barman.backups[0].namespace` | string | `"postgresql"` | namespace where postgresql is deployed |
 | `barman.backups[0].postgresql.host` | string | `"postgresql"` | Postgresql host |
 | `barman.backups[0].postgresql.port` | int | `5432` | Postgresql port |
 | `barman.backups[0].postgresql.replicationPassword` | string | `"barman"` | Postgresql replication password |
@@ -39,6 +40,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `barman.backups[0].postgresql.superUserDatabase` | string | `"postgres"` | Postgresql super user database |
 | `barman.backups[0].postgresql.superUserPassword` | string | `"postgres"` | Postgresql super user password |
 | `barman.backups[0].retentionPolicy` | string | `"RECOVERY WINDOW of 1 MONTH"` | Barman retention policy |
+| `barman.backups[0].serviceaccount` | string | `"postgresql"` | service account of the postgresql deployment |
 | `barman.barmanUser` | string | `"barman"` | Barman user |
 | `barman.compression` | string | `"gzip"` | Barman backup compression |
 | `barman.databaseSlotName` | string | `"barman"` | Database slot name to be created/used |
@@ -64,6 +66,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `prometheus.serviceMonitor.interval` | string | `"30s"` | Interval at which metrics should be scraped |
 | `prometheus.serviceMonitor.metricRelabelings` | list | `[]` | MetricRelabelConfigs to apply to samples before ingestion |
 | `prometheus.serviceMonitor.relabelings` | list | `[]` | RelabelConfigs to apply to samples before scraping |
+| `rbac.create` | bool | `false` | Whether to create RBAC or not |
 | `resources` | object | `{}` | Resource limits and requests |
 
 ## About this chart
