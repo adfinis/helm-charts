@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "rmd.fullname" . }}-dbmigrate
+  labels:
+    {{- include "rmd.labels" . | nindent 4 }}
+    app.kubernetes.io/component: db-migrate
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  activeDeadlineSeconds: 300
+  template:
+    metadata:
+      name: {{ .Release.Name }}
+      labels:
+        {{- include "rmd.labels" . | nindent 8 }}
+        app.kubernetes.io/component: db-migrate
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: {{ .Chart.Name }}-dbmigrate
+          image: "{{ .Values.rmd.image.repository }}:{{ default .Chart.AppVersion .Values.rmd.image.tag }}"
+          imagePullPolicy: {{ .Values.rmd.image.pullPolicy }}
+          env:
+            - name: DJANGO_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "rmd.postgresql.fullname" . }}
+                  key: postgresql-password
+          envFrom:
+            - secretRef:
+                name: {{ include "rmd.fullname" . }}
+            - configMapRef:
+                name: {{ include "rmd.fullname" . }}
+          command: ["app/manage.py", "migrate"]

@@ -1,0 +1,114 @@
+# Default values for rmd.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+rmd:
+  # rmd.replicaCount -- (int) Number of Rmd replicas
+  replicaCount: 1
+  image:
+    # rmd.image.repository -- Rmd image name
+    repository: wiktorkepczynski/my_rmd
+     # Specify a tag to override which version of rmd to deploy.
+     # If no tag is specified the appVersion from Chart.yaml is used as tag.
+     # tag:
+    # rmd.image.pullPolicy -- Rmd image pull policy
+    pullPolicy: IfNotPresent
+  service:
+    # Specifiy secret for authentication.
+    # If not random token will be generated
+    # secret:
+    # rmd.service.name -- Rmd service name
+    name: rmd
+    # rmd.service.type -- Rmd service type
+    type: ClusterIP
+    # rmd.service.externalPort -- External Port of rmd service
+    externalPort: 80
+    # rmd.service.internalPort -- Internal Port of rmd service
+    internalPort: 80
+  # rmd.resources -- Resource limits for rmd
+  resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #  cpu: 100m
+    #  memory: 128Mi
+    # requests:
+    #  cpu: 100m
+    #  memory: 128Mi
+  livenessProbe:
+    # rmd.livenessProbe.enabled -- Enable liveness probe on rmd
+    enabled: true
+    # rmd.livenessProbe.initialDelaySeconds -- Number of seconds after the container has started before liveness probe is initiated
+    initialDelaySeconds: 60
+    # rmd.livenessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    periodSeconds: 10
+    # rmd.livenessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    timeoutSeconds: 5
+    # rmd.livenessProbe.failureThreshold -- Number of tries to perform the probe
+    failureThreshold: 6
+    # rmd.livenessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    successThreshold: 1
+  readinessProbe:
+    # rmd.readinessProbe.enabled -- Enable readiness probe on rmd
+    enabled: true
+    # rmd.readinessProbe.initialDelaySeconds -- Number of seconds after the container has started before readiness probe is initiated
+    initialDelaySeconds: 30
+    # rmd.readinessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    periodSeconds: 10
+    # rmd.readinessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    timeoutSeconds: 5
+    # rmd.readinessProbe.failureThreshold -- Number of tries to perform the probe
+    failureThreshold: 6
+    # rmd.readinessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    successThreshold: 1
+  settings:
+    # django settings for rmd
+    # rmd.settings.emailHost -- Connection string of SMTP server to send mails
+    emailHost: smtp.syhosting.ch:587
+    # rmd.settings.emailFrom -- Default email address to use for various responses
+    emailFrom: maildelay@rmd.io
+    # rmd.settings.serverEmail -- Email address error messages are sent from
+    serverEmail: maildelay@rmd.io
+  cronjobs:
+    # rmd.cronjobs.importMails -- import Mails
+    importMails:
+      schedule: "0 * * * *"
+      command:
+        - "app/manage.py"
+        - "import"
+    # rmd.cronjobs.sendMails -- send Mails
+    sendMails:
+      schedule: "10 * * * *"
+      command:
+        - "app/manage.py"
+        - "sendmail"
+
+ingress:
+  # ingress.enabled -- Enable ingress for rmd
+  enabled: false
+  # ingress.annotations -- Ingress annotations
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  # ingress.hosts -- Ingress hostnames
+  hosts: []
+  #  - rmd-test.example.com
+  # ingress.tls -- Ingress TLS options
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - rmd-test.example.com
+
+postgresql:
+  # postgresql.enabled -- Enable PostgreSQL for persistence
+  enabled: true
+  # postgresql.postgresqlDatabase -- PostgreSQL database name
+  postgresqlDatabase: rmd.io
+  # postgresql.postgresqlUsername -- PostgreSQL user name
+  postgresqlUsername: postgres
+  # postgresql.postgresqlPassword -- Set a password for PostgreSQL
+  # postgresqlPassword: s3cr3t
+  image:
+    # postgresql.image.tag -- PostgreSQL image version to use
+    tag: 12.2.0

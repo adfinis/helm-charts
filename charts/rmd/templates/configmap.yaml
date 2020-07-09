@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "rmd.fullname" . }}
+  labels:
+    {{- include "rmd.labels" . | nindent 4 }}
+    app.kubernetes.io/component: backend
+data:
+  EMAIL_HOST: {{ .Values.rmd.settings.emailHost | quote }}
+  DJANGO_ALLOWED_HOSTS: {{ join "," .Values.ingress.hosts | default "localhost" }}
+  DJANGO_HOST_DOMAIN: {{ mustFirst .Values.ingress.hosts | default "localhost" | quote }}
+  DJANGO_HOST_PROTOCOL: http{{- if .Values.ingress.tls }}s{{- end }}
+  DJANGO_DEFAULT_FROM_EMAIL: {{ .Values.rmd.settings.emailFrom | quote }}
+  DJANGO_SERVER_EMAIL: {{ .Values.rmd.settings.serverEmail | quote }}
+  DJANGO_DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}
+  DJANGO_DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
+  DJANGO_DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
+{{- if .Values.postgresql.enabled }}
+  DJANGO_DATABASE_HOST: {{ include "rmd.postgresql.fullname" . | quote }}
+{{- else }}
+  DJANGO_DATABASE_HOST: {{ .Values.postgresql.service.host | quote }}
+{{- end }}

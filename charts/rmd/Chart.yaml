@@ -1,0 +1,22 @@
+apiVersion: v2
+name: rmd
+description: Chart for Rmd.io application
+type: application
+version: 0.1.0
+appVersion: test_tag
+keywords:
+  - rmd
+  - postgresql
+home: https://github.com/adfinis-sygroup/rmd.io
+sources:
+  - https://github.com/adfinis-sygroup/rmd.io
+  - https://github.com/trowik/helm-charts/tree/master/charts/rmd
+maintainers:
+  - name: adfinis
+    email: support@adfinis.com
+    url: https://adfinis.com
+dependencies:
+  - name: postgresql
+    version: ~8.10.14
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled

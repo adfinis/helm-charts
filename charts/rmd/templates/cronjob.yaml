@@ -1,0 +1,34 @@
+{{- range $key, $val := .Values.rmd.cronjobs }}
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "rmd.fullname" $ }}-{{ $key | lower }}
+  labels:
+    {{- include "rmd.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: {{ $key | lower | quote }}
+spec:
+  schedule: {{ $val.schedule | quote }}
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: {{ $.Chart.Name }}
+              image: "{{ $.Values.rmd.image.repository }}:{{ default $.Chart.AppVersion $.Values.rmd.image.tag }}"
+              imagePullPolicy: {{ $.Values.rmd.image.pullPolicy }}
+              env:
+                - name: DJANGO_DATABASE_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ include "rmd.postgresql.fullname" $ }}
+                      key: postgresql-password
+              envFrom:
+                - secretRef:
+                    name: {{ include "rmd.fullname" $ }}
+                - configMapRef:
+                    name: {{ include "rmd.fullname" $ }}
+              command: {{ $val.command | toYaml | nindent 16 }}
+{{- end }}

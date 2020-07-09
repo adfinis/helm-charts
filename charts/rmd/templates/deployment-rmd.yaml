@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "rmd.fullname" . }}
+  labels:
+    {{- include "rmd.labels" . | nindent 4 }}
+    app.kubernetes.io/component: rmd
+spec:
+  replicas: {{ .Values.rmd.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "rmd.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "rmd.labels" . | nindent 8 }}
+        app.kubernetes.io/component: rmd
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.rmd.image.repository }}:{{ default .Chart.AppVersion .Values.rmd.image.tag }}"
+          env:
+            - name: DJANGO_DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "rmd.postgresql.fullname" . }}
+                  key: postgresql-password
+          envFrom:
+            - secretRef:
+                name: {{ include "rmd.fullname" . }}
+            - configMapRef:
+                name: {{ include "rmd.fullname" . }}
+          imagePullPolicy: {{ .Values.rmd.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.rmd.service.internalPort }}
+          {{- if .Values.rmd.livenessProbe.enabled }}
+          livenessProbe:
+            initialDelaySeconds: {{ .Values.rmd.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.rmd.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.rmd.livenessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.rmd.livenessProbe.successThreshold }}
+            failureThreshold: {{ .Values.rmd.livenessProbe.failureThreshold }}
+            httpGet:
+              path: /admin/
+              port: {{ .Values.rmd.service.internalPort }}
+              httpHeaders:
+                - name: Host
+                  value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
+          {{- end }}
+          {{- if .Values.rmd.readinessProbe.enabled }}
+          readinessProbe:
+            initialDelaySeconds: {{ .Values.rmd.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.rmd.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.rmd.readinessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.rmd.readinessProbe.successThreshold }}
+            failureThreshold: {{ .Values.rmd.readinessProbe.failureThreshold }}
+            httpGet:
+              path: /admin/
+              port: {{ .Values.rmd.service.internalPort }}
+              httpHeaders:
+                - name: Host
+                  value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
+          {{- end }}
+          resources:
+{{ toYaml .Values.rmd.resources | indent 12 }}
+    {{- if .Values.rmd.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.rmd.nodeSelector | indent 8 }}
+    {{- end }}
