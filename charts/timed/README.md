@@ -24,7 +24,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | `~8.7.3` |
+| https://charts.bitnami.com/bitnami | postgresql | `~8.10.14` |
 ## Chart Values
 
 
