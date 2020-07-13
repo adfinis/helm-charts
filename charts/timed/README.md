@@ -71,6 +71,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `backend.settings.emailFrom` | string | `"webmaster@chart-example.local"` | Default email address to use for various responses |
 | `backend.settings.emailUrl` | string | `"smtp://localhost:25"` | Connection string of SMTP server to send mails |
 | `backend.settings.serverEmail` | string | `"webmaster@chart-example.local"` | Email address error messages are sent from |
+| `backend.settings.uwsgi.harakiri` | int | `60` | uWSGI harakiri (request timeout) |
+| `backend.settings.uwsgi.maxRequests` | int | `2000` | uWSGI max requests |
+| `backend.settings.uwsgi.processes` | int | `16` | uWSGI number of worker processes |
 | `backend.settings.workReportPath` | string | `"/etc/workreport"` | Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`. |
 | `frontend.image.pullPolicy` | string | `"IfNotPresent"` | Backend image pull policy |
 | `frontend.image.repository` | string | `"adfinissygroup/timed-frontend"` | Backend image name |

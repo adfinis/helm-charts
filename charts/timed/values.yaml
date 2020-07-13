@@ -72,6 +72,14 @@ backend:
     serverEmail: webmaster@chart-example.local
     # backend.settings.workReportPath -- Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`.
     workReportPath: /etc/workreport
+    uwsgi:
+      # backend.settings.uwsgi.maxRequests -- uWSGI max requests
+      maxRequests: 2000
+      # backend.settings.uwsgi.harakiri -- uWSGI harakiri (request timeout)
+      harakiri: 60
+      # backend.settings.uwsgi.processes -- uWSGI number of worker processes
+      processes: 16
+
   cronjobs:
     # backend.cronjobs.notifySupervisors -- Notify supervisors
     notifySupervisors:
