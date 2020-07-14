@@ -2,7 +2,7 @@ barman
 ======
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
-Current chart version is `0.0.5`
+Current chart version is `0.0.6`
 
 
 **Homepage:** <http://www.pgbarman.org/>
@@ -51,6 +51,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `image.tag` | string | `"latest"` | Image tag |
 | `persistence.data.accessMode` | string | `"ReadWriteOnce"` | Access mode for persistent storage |
 | `persistence.data.enabled` | bool | `true` | Enable persistent storage for backup data |
+| `persistence.data.persistentVolumeReclaimPolicy` | string | `"Retain"` | PV reclaim policy |
 | `persistence.data.size` | string | `"20Gi"` | Size of storage volume |
 | `persistence.data.storageClass` | string | `""` | Storage class |
 | `persistence.recover.accessMode` | string | `"ReadWriteOnce"` | Access mode for persistent storage |

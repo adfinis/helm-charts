@@ -19,6 +19,8 @@ persistence:
     size: 20Gi
     # persistence.data.storageClass -- Storage class
     storageClass: ""
+    # persistence.data.persistentVolumeReclaimPolicy -- PV reclaim policy
+    persistentVolumeReclaimPolicy: Retain
   recover:
     # persistence.recover.enabled -- Enable persistent storage for recovery
     enabled: false
