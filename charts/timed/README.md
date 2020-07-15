@@ -75,8 +75,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `backend.settings.uwsgi.maxRequests` | int | `2000` | uWSGI max requests |
 | `backend.settings.uwsgi.processes` | int | `16` | uWSGI number of worker processes |
 | `backend.settings.workReportPath` | string | `"/etc/workreport"` | Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`. |
-| `frontend.image.pullPolicy` | string | `"IfNotPresent"` | Backend image pull policy |
-| `frontend.image.repository` | string | `"adfinissygroup/timed-frontend"` | Backend image name |
+| `frontend.image.pullPolicy` | string | `"IfNotPresent"` | Frontend image pull policy |
+| `frontend.image.repository` | string | `"adfinissygroup/timed-frontend"` | Frontend image name |
+| `frontend.image.tag` | string | `"v1.0-rc1"` | Frontend image tag |
 | `frontend.livenessProbe.enabled` | bool | `true` | Enable liveness probe on frontend |
 | `frontend.livenessProbe.failureThreshold` | int | `6` | Number of tries to perform the probe |
 | `frontend.livenessProbe.initialDelaySeconds` | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
@@ -93,8 +94,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `frontend.resources` | object | `{}` | Resource limits for frontend |
 | `frontend.service.externalPort` | int | `80` | External Port of frontend service |
 | `frontend.service.internalPort` | int | `80` | Internal Port of frontend service |
-| `frontend.service.name` | string | `"timed-frontend"` | Backend service name |
-| `frontend.service.type` | string | `"ClusterIP"` | Backend service type |
+| `frontend.service.name` | string | `"timed-frontend"` | Frontend service name |
+| `frontend.service.type` | string | `"ClusterIP"` | Frontend service type |
 | `ingress.annotations` | object | `{}` | Ingress annotations |
 | `ingress.enabled` | bool | `false` | Enable ingress for timed |
 | `ingress.hosts` | list | `[]` | Ingress hostnames |

@@ -137,17 +137,18 @@ frontend:
   # frontend.replicaCount -- (int) Number of Backend replicas
   replicaCount: 1
   image:
-    # frontend.image.repository -- Backend image name
+    # frontend.image.repository -- Frontend image name
     repository: adfinissygroup/timed-frontend
     # Specify a tag to override which version of timed to deploy.
     # If no tag is specified the appVersion from Chart.yaml is used as tag.
-    # tag:
-    # frontend.image.pullPolicy -- Backend image pull policy
+    # frontend.image.tag -- Frontend image tag
+    tag: v1.0-rc1
+    # frontend.image.pullPolicy -- Frontend image pull policy
     pullPolicy: IfNotPresent
   service:
-    # frontend.service.name -- Backend service name
+    # frontend.service.name -- Frontend service name
     name: timed-frontend
-    # frontend.service.type -- Backend service type
+    # frontend.service.type -- Frontend service type
     type: ClusterIP
     # frontend.service.externalPort -- External Port of frontend service
     externalPort: 80
