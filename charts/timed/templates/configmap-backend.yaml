@@ -16,20 +16,27 @@ data:
   DJANGO_DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
   DJANGO_DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
   DJANGO_WORK_REPORT_PATH: {{ .Values.backend.settings.workReportPath | quote }}
+  OIDC_USERINFO_ENDPOINT: {{ .Values.auth.oidc.userinfoEndpoint | quote }}
+  OIDC_TOKEN_ENDPOINT: {{ .Values.auth.oidc.tokenEndpoint | quote }}
+  OIDC_CLIENT_ID: {{ .Values.auth.oidc.client.id | quote }}
+  OIDC_CREATE_USER: {{ .Values.auth.oidc.createUser | quote }}
+{{- if .Values.auth.oidc.introspect.enabled }}
+  OIDC_CHECK_INTROSPECT: "True"
+  OIDC_INTROSPECT_ENDPOINT: {{ .Values.auth.oidc.introspect.endpoint | quote }}
+  OIDC_INTROSPECT_CLIENT_ID: {{ .Values.auth.oidc.client.id | quote }}
+{{- else }}
+  OIDC_CHECK_INTROSPECT: "False"
+{{- end }}
 {{- if .Values.postgresql.enabled }}
   DJANGO_DATABASE_HOST: {{ include "timed.postgresql.fullname" . | quote }}
 {{- else }}
   DJANGO_DATABASE_HOST: {{ .Values.postgresql.service.host | quote }}
-{{- end }}
-{{- if .Values.auth.ldap.enabled }}
-  DJANGO_AUTH_LDAP_ENABLED: true
-  DJANGO_AUTH_LDAP_USER_ATTR_MAP: {{ .Values.auth.ldap.userAttrMap | quote }}
-  DJANGO_AUTH_LDAP_SERVER_URI: {{ .Values.auth.ldap.serverUri | quote }}
-  DJANGO_AUTH_LDAP_BIND_DN: {{ .Values.auth.ldap.bindDn | quote }}
-  DJANGO_AUTH_LDAP_USER_DN_TEMPLATE: {{ .Values.auth.ldap.userDnTemplate | quote }}
 {{- end }}
 {{- if .Values.redmine.enabled }}
   DJANGO_REDMINE_URL: {{ .Values.redmine.url | quote }}
   DJANGO_REDMINE_HTACCESS_USER: {{ .Values.redmine.htaccessUser | quote }}
   DJANGO_REDMINE_SPENTHOURS_FIELD: {{ .Values.redmine.spenthoursField | quote }}
 {{- end }}
+  UWSGI_MAX_REQUESTS: {{ .Values.backend.settings.uwsgi.maxRequests | quote }}
+  UWSGI_HARAKIRI: {{ .Values.backend.settings.uwsgi.harakiri | quote }}
+  UWSGI_PROCESSES: {{ .Values.backend.settings.uwsgi.processes | quote }}

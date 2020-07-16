@@ -27,7 +27,7 @@ helm repo add adfinis https://charts.adfinis.com
 | [caasperli](charts/caasperli) | Deploy Caasperli to a Kubernetes Cluster | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: latest](https://img.shields.io/badge/app%20version-latest-brightgreen) |
 | [common](charts/common) | Common chartbuilding components and helpers, based on incubator/common | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [kasperleyn](charts/kasperleyn) | A Helm 2 chart to deploy Caasperli | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.0.x](https://img.shields.io/badge/app%20version-1.0.x-brightgreen) |
-| [timed](charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
+| [timed](charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.0.x](https://img.shields.io/badge/app%20version-1.0.x-brightgreen) |
 
 ## Contributing
 
