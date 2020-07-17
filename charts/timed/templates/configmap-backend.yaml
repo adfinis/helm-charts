@@ -16,16 +16,18 @@ data:
   DJANGO_DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
   DJANGO_DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
   DJANGO_WORK_REPORT_PATH: {{ .Values.backend.settings.workReportPath | quote }}
-  OIDC_USERINFO_ENDPOINT: {{ .Values.auth.oidc.userinfoEndpoint | quote }}
-  OIDC_TOKEN_ENDPOINT: {{ .Values.auth.oidc.tokenEndpoint | quote }}
-  OIDC_CLIENT_ID: {{ .Values.auth.oidc.client.id | quote }}
-  OIDC_CREATE_USER: {{ .Values.auth.oidc.createUser | quote }}
+  DJANGO_OIDC_USERINFO_ENDPOINT: {{ .Values.auth.oidc.userinfoEndpoint | quote }}
+  DJANGO_OIDC_CLIENT_ID: {{ .Values.auth.oidc.client.id | quote }}
+  DJANGO_OIDC_CREATE_USER: {{ .Values.auth.oidc.createUser | quote }}
+  DJANGO_OIDC_USERNAME_CLAIM: {{ .Values.auth.oidc.claims.username | quote }}
+  DJANGO_OIDC_EMAIL_CLAIM: {{ .Values.auth.oidc.claims.email | quote }}
+  DJANGO_OIDC_FIRSTNAME_CLAIM: {{ .Values.auth.oidc.claims.firstname | quote }}
+  DJANGO_OIDC_LASTNAME_CLAIM: {{ .Values.auth.oidc.claims.lastname | quote }}
 {{- if .Values.auth.oidc.introspect.enabled }}
-  OIDC_CHECK_INTROSPECT: "True"
-  OIDC_INTROSPECT_ENDPOINT: {{ .Values.auth.oidc.introspect.endpoint | quote }}
-  OIDC_INTROSPECT_CLIENT_ID: {{ .Values.auth.oidc.client.id | quote }}
+  DJANGO_OIDC_CHECK_INTROSPECT: "True"
+  DJANGO_OIDC_INTROSPECT_ENDPOINT: {{ .Values.auth.oidc.introspect.endpoint | quote }}
 {{- else }}
-  OIDC_CHECK_INTROSPECT: "False"
+  DJANGO_OIDC_CHECK_INTROSPECT: "False"
 {{- end }}
 {{- if .Values.postgresql.enabled }}
   DJANGO_DATABASE_HOST: {{ include "timed.postgresql.fullname" . | quote }}

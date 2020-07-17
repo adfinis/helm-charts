@@ -3,7 +3,7 @@ name: timed
 description: Chart for Timed application
 type: application
 version: 0.3.12
-appVersion: v1.0-rc2
+appVersion: v1.0-rc3
 keywords:
   - timed
   - tracking
