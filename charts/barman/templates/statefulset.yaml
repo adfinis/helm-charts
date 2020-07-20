@@ -103,7 +103,6 @@ spec:
         resources:
           requests:
             storage: {{ .Values.persistence.data.size | quote }}
-        persistentVolumeReclaimPolicy: {{ .Values.persistence.data.persistentVolumeReclaimPolicy | quote }}
     {{- end }}
     {{- if .Values.persistence.recover.enabled }}
     - metadata:
