@@ -226,8 +226,6 @@ auth:
   oidc:
     # auth.oidc.userinfoEndpoint -- OIDC user endpoint url
     userinfoEndpoint: https://example.com/auth/realms/timed/protocol/openid-connect/userinfo
-    # auth.oidc.tokenEndpoint -- OIDC token endpoint url
-    tokenEndpoint: https://example.com/auth/realms/timed/protocol/openid-connect/token
     # auth.oidc.createUser -- OIDC create user in timed db if it does not already exist
     createUser: "False"
     client:
@@ -240,6 +238,15 @@ auth:
       enabled: true
       # auth.oidc.introspect.endpoint -- OIDC introspect endpoint
       endpoint: https://example.com/auth/realms/timed/protocol/openid-connect/token/introspect
+    claims:
+      # auth.oidc.claims.firstname -- OIDC firstname claim name
+      firstname: given_name
+      # auth.oidc.claims.lastname -- OIDC lastname claim name
+      lastname: family_name
+      # auth.oidc.claims.username -- OIDC username claim name
+      username: preferred_username
+      # auth.oidc.claims.email -- OIDC email claim name
+      email: email
 
 redmine:
   # redmine.enabled -- Enable Redmine integration

@@ -2,7 +2,7 @@ timed
 =====
 Chart for Timed application
 
-Current chart version is `0.3.12`
+Current chart version is `0.3.13`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/timed-frontend>
@@ -30,12 +30,15 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| `auth.oidc.claims.email` | string | `"email"` | OIDC email claim name |
+| `auth.oidc.claims.firstname` | string | `"given_name"` | OIDC firstname claim name |
+| `auth.oidc.claims.lastname` | string | `"family_name"` | OIDC lastname claim name |
+| `auth.oidc.claims.username` | string | `"preferred_username"` | OIDC username claim name |
 | `auth.oidc.client.id` | string | `"timed"` | OIDC client id |
 | `auth.oidc.client.secret` | string | `nil` | OIDC client secret |
 | `auth.oidc.createUser` | string | `"False"` | OIDC create user in timed db if it does not already exist |
 | `auth.oidc.introspect.enabled` | bool | `true` | Enable OIDC introspect |
 | `auth.oidc.introspect.endpoint` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect/token/introspect"` | OIDC introspect endpoint |
-| `auth.oidc.tokenEndpoint` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect/token"` | OIDC token endpoint url |
 | `auth.oidc.userinfoEndpoint` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect/userinfo"` | OIDC user endpoint url |
 | `backend.cronjobs.notifyChangedEmployments` | object | `{"command":["./manage.py","notify_changed_employments"],"schedule":"0 2 * * 1"}` | Notify changed employments |
 | `backend.cronjobs.notifyReviewersFirst` | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","5"],"schedule":"0 8 4 * *"}` | Notify reviewers first stage |
