@@ -1,0 +1,33 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ include "sentryapps.fullname" . }}
+  namespace: {{ .Values.spec.metadata.namespace }}
+  labels: {{ include "sentryapps.labels" . | nindent 3 }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ .Values.spec.destination.namespace }}
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    chart: sentry
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision | default "HEAD" }}
+    helm:
+      parameters:
+        - name: timeout
+          value: 10m
+      values: |-
+        user: {{ .Values.user | toJson }}
+        auth:
+          register: true
+        ingress:
+          enabled: {{ .Values.hostname | empty | not }}
+          hostname: {{ .Values.hostname | default "" | quote }}
+        postgresql:
+          persistence:
+            enabled: true
+        postgresqlPassword: {{ required "a password for Postgres is required!" .Values.sentry.postgresqlPassword | quote }}

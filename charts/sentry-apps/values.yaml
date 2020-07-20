@@ -1,0 +1,21 @@
+---
+spec:
+  metadata:
+    namespace: argocd
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: sentry
+  source:
+    repoURL: "https://sentry-kubernetes.github.io/charts"
+    targetRevision: 4.2.0
+
+user:
+  create: true
+  email: admin@sentry.local
+  password: admin
+
+ingress:
+  hostname: sentry.example.org
+
+sentry:
+  #postgresqlPassword: changeme
