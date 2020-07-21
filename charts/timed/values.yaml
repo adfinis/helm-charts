@@ -221,6 +221,15 @@ postgresql:
   image:
     # postgresql.image.tag -- PostgreSQL image version to use
     tag: 12.2.0
+  ingress:
+    # postgresql.ingress.enabled -- Enable ingress
+    enabled: false
+    # postgresql.ingress.loadBalancerSourceRanges -- Whitelist specific IP ranges
+    loadBalancerSourceRanges: []
+    # postgresql.ingress.selector -- Service selector labels
+    selector:
+      app: postgresql
+      role: slave
 
 auth:
   oidc:
