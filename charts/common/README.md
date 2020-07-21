@@ -2,7 +2,7 @@ common
 ======
 Common chartbuilding components and helpers, based on incubator/common
 
-Current chart version is `0.0.0`
+Current chart version is `0.0.1`
 
 
 **Homepage:** <https://helm.sh - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/common>
