@@ -18,4 +18,4 @@ ingress:
   hostname: sentry.example.org
 
 sentry:
-  #postgresqlPassword: changeme
+  postgresqlPassword:
