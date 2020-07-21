@@ -2,7 +2,7 @@ caasperli
 =========
 Deploy Caasperli to a Kubernetes Cluster
 
-Current chart version is `0.7.2`
+Current chart version is `0.7.3`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/potz-holzoepfel-und-zipfelchape>
@@ -67,7 +67,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 Adfinis fights for a software world that is more open, where the quality is
 better and where software must be accessible to everyone. This chart
-is part of the action behind this comitment. Feel free to
+is part of the action behind this commitment. Feel free to
 [contact](https://adfinis.com/kontakt/?pk_campaign=github&pk_kwd=helm-charts)
 us if you have any questions.
 
