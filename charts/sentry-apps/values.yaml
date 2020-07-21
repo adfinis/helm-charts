@@ -32,11 +32,11 @@ rabbitmq:
   enabled: false
 
 sentry:
-  # sentry.postgresqlPassword -- password used to access the sentry Database
+  # sentry.postgresqlPassword -- (string) password used to access the sentry Database
   # required for the upgrades
   postgresqlPassword:
 
 system:
-  # system.secretKey -- secret key used for the session.
+  # system.secretKey -- (string) secret key used for the session.
   # Changing it invalidates all the current sessions.
   secretKey:
