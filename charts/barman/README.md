@@ -2,7 +2,7 @@ barman
 ======
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
-Current chart version is `0.0.7`
+Current chart version is `0.0.8`
 
 
 **Homepage:** <http://www.pgbarman.org/>
@@ -73,7 +73,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 Adfinis fights for a software world that is more open, where the quality is
 better and where software must be accessible to everyone. This chart
-is part of the action behind this comitment. Feel free to
+is part of the action behind this commitment. Feel free to
 [contact](https://adfinis.com/kontakt/?pk_campaign=github&pk_kwd=helm-charts)
 us if you have any questions.
 
