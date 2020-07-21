@@ -36,8 +36,7 @@ spec:
         clickhouse:
           enabled: true
           clickhouse: {{ .Values.clickhouse | toJson }}
-        kafka:
-          {{ .Values.kafka | toJson }}
+        kafka: {{ .Values.kafka | toJson }}
         postgresql:
           persistence:
             enabled: true
@@ -47,8 +46,7 @@ spec:
           cluster:
             enabled: false
         sentry:
-          worker:
-            {{ .Values.sentry.worker | toJson }}
+          worker: {{ .Values.sentry.worker | toJson }}
         zookeeper:
           persistence:
             enabled: true
