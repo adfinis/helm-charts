@@ -22,7 +22,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.adfinis.com | common | `0.0.0` |
+| https://charts.adfinis.com | common | `0.0.1` |
 ## Chart Values
 
 
@@ -43,7 +43,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 Adfinis fights for a software world that is more open, where the quality is
 better and where software must be accessible to everyone. This chart
-is part of the action behind this comitment. Feel free to
+is part of the action behind this commitment. Feel free to
 [contact](https://adfinis.com/kontakt/?pk_campaign=github&pk_kwd=helm-charts)
 us if you have any questions.
 
