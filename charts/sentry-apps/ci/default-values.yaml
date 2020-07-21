@@ -4,3 +4,6 @@ ingress:
 
 sentry:
   postgresqlPassword: changeme
+
+system:
+  secretKey: changeme
