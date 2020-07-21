@@ -2,9 +2,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ include "sentryapps.fullname" . }}
+  name: {{ include "common.name" . }}
   namespace: {{ .Values.spec.metadata.namespace }}
-  labels: {{ include "sentryapps.labels" . | nindent 3 }}
+  labels: {{ include "common.labels.standard" . | nindent 3 }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
