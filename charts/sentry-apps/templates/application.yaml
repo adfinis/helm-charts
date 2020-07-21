@@ -31,5 +31,7 @@ spec:
           persistence:
             enabled: true
         postgresqlPassword: {{ .Values.sentry.postgresqlPassword | quote }}
+        rabbitmq:
+          enabled: {{ .Values.rabbitmq.enabled }}
         system:
           secretKey: {{ .Values.system.secretKey | quote }}
