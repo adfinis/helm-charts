@@ -30,4 +30,4 @@ spec:
         postgresql:
           persistence:
             enabled: true
-        postgresqlPassword: {{ required "a password for Postgres is required!" .Values.sentry.postgresqlPassword | quote }}
+        postgresqlPassword: {{ .Values.sentry.postgresqlPassword | quote }}

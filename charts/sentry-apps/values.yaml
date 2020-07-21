@@ -1,21 +1,32 @@
 ---
 spec:
   metadata:
+    # spec.metadata.namespace -- namespace for the ArgoCD application
     namespace: argocd
   destination:
+    # spec.destination.server -- Kubernetes cluster for Sentry
     server: "https://kubernetes.default.svc"
+    # spec.destination.namespace -- namespace for Sentry
     namespace: sentry
   source:
+    # spec.source.repoURL -- Chart museum to get Sentry
     repoURL: "https://sentry-kubernetes.github.io/charts"
+    # spec.source.targetRevision -- revision of the chart to use for Sentry
     targetRevision: 4.2.0
 
 user:
+  # user.create -- if true, creates the user defined by email and password.
   create: true
+  # user.email -- Admin user email
   email: admin@sentry.local
+  # user.password -- Admin user password
   password: admin
 
 ingress:
-  hostname: sentry.example.org
+  # ingress.hostname -- Set this to enable the ingress configuration.
+  hostname: ""
 
 sentry:
-  postgresqlPassword:
+  # sentry.postgresqlPassword -- password used to access the sentry Database
+  # required for the upgrades
+  postgresqlPassword

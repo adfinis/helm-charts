@@ -28,16 +28,16 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| `ingress.hostname` | string | `"sentry.example.org"` |  |
-| `sentry` | string | `nil` |  |
-| `spec.destination.namespace` | string | `"sentry"` |  |
-| `spec.destination.server` | string | `"https://kubernetes.default.svc"` |  |
-| `spec.metadata.namespace` | string | `"argocd"` |  |
-| `spec.source.repoURL` | string | `"https://sentry-kubernetes.github.io/charts"` |  |
-| `spec.source.targetRevision` | string | `"4.2.0"` |  |
-| `user.create` | bool | `true` |  |
-| `user.email` | string | `"admin@sentry.local"` |  |
-| `user.password` | string | `"admin"` |  |
+| `ingress.hostname` | string | `""` | Set this to enable the ingress configuration. |
+| `sentry` | string | `"postgresqlPassword"` |  |
+| `spec.destination.namespace` | string | `"sentry"` | namespace for Sentry |
+| `spec.destination.server` | string | `"https://kubernetes.default.svc"` | Kubernetes cluster for Sentry |
+| `spec.metadata.namespace` | string | `"argocd"` | namespace for the ArgoCD application |
+| `spec.source.repoURL` | string | `"https://sentry-kubernetes.github.io/charts"` | Chart museum to get Sentry |
+| `spec.source.targetRevision` | string | `"4.2.0"` | revision of the chart to use for Sentry |
+| `user.create` | bool | `true` | if true, creates the user defined by email and password. |
+| `user.email` | string | `"admin@sentry.local"` | Admin user email |
+| `user.password` | string | `"admin"` | Admin user password |
 
 ## About this chart
 
