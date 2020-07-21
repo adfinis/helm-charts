@@ -2,7 +2,7 @@ argoconfig
 ==========
 Configure Argo CD AppProjects, Applications and more
 
-Current chart version is `0.6.0`
+Current chart version is `0.6.1`
 
 
 **Homepage:** <https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/>

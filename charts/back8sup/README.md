@@ -2,7 +2,7 @@ back8sup
 ========
 Deploy back8sup to a Kubernetes Cluster
 
-Current chart version is `0.1.1`
+Current chart version is `0.1.2`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/back8sup>
