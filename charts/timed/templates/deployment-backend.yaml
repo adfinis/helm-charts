@@ -33,6 +33,7 @@ spec:
           volumeMounts:
             - name: workreport
               mountPath: {{ .Values.backend.settings.workReportPath }}
+              subPath: workreport
           imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.backend.service.internalPort }}

@@ -1,0 +1,4 @@
+auth:
+  oidc:
+    client:
+      secret: foo

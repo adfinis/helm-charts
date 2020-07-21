@@ -72,6 +72,14 @@ backend:
     serverEmail: webmaster@chart-example.local
     # backend.settings.workReportPath -- Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`.
     workReportPath: /etc/workreport
+    uwsgi:
+      # backend.settings.uwsgi.maxRequests -- uWSGI max requests
+      maxRequests: 2000
+      # backend.settings.uwsgi.harakiri -- uWSGI harakiri (request timeout)
+      harakiri: 60
+      # backend.settings.uwsgi.processes -- uWSGI number of worker processes
+      processes: 16
+
   cronjobs:
     # backend.cronjobs.notifySupervisors -- Notify supervisors
     notifySupervisors:
@@ -129,17 +137,18 @@ frontend:
   # frontend.replicaCount -- (int) Number of Backend replicas
   replicaCount: 1
   image:
-    # frontend.image.repository -- Backend image name
+    # frontend.image.repository -- Frontend image name
     repository: adfinissygroup/timed-frontend
     # Specify a tag to override which version of timed to deploy.
     # If no tag is specified the appVersion from Chart.yaml is used as tag.
-    # tag:
-    # frontend.image.pullPolicy -- Backend image pull policy
+    # frontend.image.tag -- Frontend image tag
+    tag: v1.0-rc1
+    # frontend.image.pullPolicy -- Frontend image pull policy
     pullPolicy: IfNotPresent
   service:
-    # frontend.service.name -- Backend service name
+    # frontend.service.name -- Frontend service name
     name: timed-frontend
-    # frontend.service.type -- Backend service type
+    # frontend.service.type -- Frontend service type
     type: ClusterIP
     # frontend.service.externalPort -- External Port of frontend service
     externalPort: 80
@@ -214,19 +223,30 @@ postgresql:
     tag: 12.2.0
 
 auth:
-  ldap:
-    # auth.ldap.enabled -- Enable LDAP user authentication
-    enabled: false
-    # auth.ldap.servicerUri -- LDAP server URI
-    serverUri: "ldaps://ldap.example.com:636"
-    # auth.ldap.bindDn -- LDAP bind DN
-    bindDn: "uid=auth_user,cn=systems,dc=example,dc=com"
-    # auth.ldap.password -- LDAP password
-    password: s3cr3t
-    # auth.ldap.userDnTemplate -- LDAP user DN template
-    userDnTemplate: "uid=%(user)s,cn=users,dc=foo,dc=com"
-    # auth.ldap.userAttrMap -- LDAP user attribute mapping
-    userAttrMap: '{"first_name": "givenName", "last_name": "sn", "email": "mail"}'
+  oidc:
+    # auth.oidc.userinfoEndpoint -- OIDC user endpoint url
+    userinfoEndpoint: https://example.com/auth/realms/timed/protocol/openid-connect/userinfo
+    # auth.oidc.createUser -- OIDC create user in timed db if it does not already exist
+    createUser: "False"
+    client:
+      # auth.oidc.client.id -- OIDC client id
+      id: timed
+      # auth.oidc.client.secret -- OIDC client secret
+      secret: ~
+    introspect:
+      # auth.oidc.introspect.enabled -- Enable OIDC introspect
+      enabled: true
+      # auth.oidc.introspect.endpoint -- OIDC introspect endpoint
+      endpoint: https://example.com/auth/realms/timed/protocol/openid-connect/token/introspect
+    claims:
+      # auth.oidc.claims.firstname -- OIDC firstname claim name
+      firstname: given_name
+      # auth.oidc.claims.lastname -- OIDC lastname claim name
+      lastname: family_name
+      # auth.oidc.claims.username -- OIDC username claim name
+      username: preferred_username
+      # auth.oidc.claims.email -- OIDC email claim name
+      email: email
 
 redmine:
   # redmine.enabled -- Enable Redmine integration

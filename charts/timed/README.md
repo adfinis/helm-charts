@@ -2,7 +2,7 @@ timed
 =====
 Chart for Timed application
 
-Current chart version is `0.3.11`
+Current chart version is `0.3.13`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/timed-frontend>
@@ -24,18 +24,22 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | `~8.7.3` |
+| https://charts.bitnami.com/bitnami | postgresql | `~8.10.14` |
 ## Chart Values
 
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| `auth.ldap.bindDn` | string | `"uid=auth_user,cn=systems,dc=example,dc=com"` | LDAP bind DN |
-| `auth.ldap.enabled` | bool | `false` | Enable LDAP user authentication |
-| `auth.ldap.password` | string | `"s3cr3t"` | LDAP password |
-| `auth.ldap.serverUri` | string | `"ldaps://ldap.example.com:636"` |  |
-| `auth.ldap.userAttrMap` | string | `"{\"first_name\": \"givenName\", \"last_name\": \"sn\", \"email\": \"mail\"}"` | LDAP user attribute mapping |
-| `auth.ldap.userDnTemplate` | string | `"uid=%(user)s,cn=users,dc=foo,dc=com"` | LDAP user DN template |
+| `auth.oidc.claims.email` | string | `"email"` | OIDC email claim name |
+| `auth.oidc.claims.firstname` | string | `"given_name"` | OIDC firstname claim name |
+| `auth.oidc.claims.lastname` | string | `"family_name"` | OIDC lastname claim name |
+| `auth.oidc.claims.username` | string | `"preferred_username"` | OIDC username claim name |
+| `auth.oidc.client.id` | string | `"timed"` | OIDC client id |
+| `auth.oidc.client.secret` | string | `nil` | OIDC client secret |
+| `auth.oidc.createUser` | string | `"False"` | OIDC create user in timed db if it does not already exist |
+| `auth.oidc.introspect.enabled` | bool | `true` | Enable OIDC introspect |
+| `auth.oidc.introspect.endpoint` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect/token/introspect"` | OIDC introspect endpoint |
+| `auth.oidc.userinfoEndpoint` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect/userinfo"` | OIDC user endpoint url |
 | `backend.cronjobs.notifyChangedEmployments` | object | `{"command":["./manage.py","notify_changed_employments"],"schedule":"0 2 * * 1"}` | Notify changed employments |
 | `backend.cronjobs.notifyReviewersFirst` | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","5"],"schedule":"0 8 4 * *"}` | Notify reviewers first stage |
 | `backend.cronjobs.notifyReviewersFirst.command[3]` | string | `"5"` | Period will end today minus given offset |
@@ -70,9 +74,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `backend.settings.emailFrom` | string | `"webmaster@chart-example.local"` | Default email address to use for various responses |
 | `backend.settings.emailUrl` | string | `"smtp://localhost:25"` | Connection string of SMTP server to send mails |
 | `backend.settings.serverEmail` | string | `"webmaster@chart-example.local"` | Email address error messages are sent from |
+| `backend.settings.uwsgi.harakiri` | int | `60` | uWSGI harakiri (request timeout) |
+| `backend.settings.uwsgi.maxRequests` | int | `2000` | uWSGI max requests |
+| `backend.settings.uwsgi.processes` | int | `16` | uWSGI number of worker processes |
 | `backend.settings.workReportPath` | string | `"/etc/workreport"` | Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`. |
-| `frontend.image.pullPolicy` | string | `"IfNotPresent"` | Backend image pull policy |
-| `frontend.image.repository` | string | `"adfinissygroup/timed-frontend"` | Backend image name |
+| `frontend.image.pullPolicy` | string | `"IfNotPresent"` | Frontend image pull policy |
+| `frontend.image.repository` | string | `"adfinissygroup/timed-frontend"` | Frontend image name |
+| `frontend.image.tag` | string | `"v1.0-rc1"` | Frontend image tag |
 | `frontend.livenessProbe.enabled` | bool | `true` | Enable liveness probe on frontend |
 | `frontend.livenessProbe.failureThreshold` | int | `6` | Number of tries to perform the probe |
 | `frontend.livenessProbe.initialDelaySeconds` | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
@@ -89,8 +97,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `frontend.resources` | object | `{}` | Resource limits for frontend |
 | `frontend.service.externalPort` | int | `80` | External Port of frontend service |
 | `frontend.service.internalPort` | int | `80` | Internal Port of frontend service |
-| `frontend.service.name` | string | `"timed-frontend"` | Backend service name |
-| `frontend.service.type` | string | `"ClusterIP"` | Backend service type |
+| `frontend.service.name` | string | `"timed-frontend"` | Frontend service name |
+| `frontend.service.type` | string | `"ClusterIP"` | Frontend service type |
 | `ingress.annotations` | object | `{}` | Ingress annotations |
 | `ingress.enabled` | bool | `false` | Enable ingress for timed |
 | `ingress.hosts` | list | `[]` | Ingress hostnames |
