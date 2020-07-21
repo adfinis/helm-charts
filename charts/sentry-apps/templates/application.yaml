@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ include "common.name" . }}
+  name: sentry
   namespace: {{ .Values.spec.metadata.namespace }}
   labels: {{ include "common.labels.standard" . | nindent 3 }}
   finalizers:
