@@ -20,11 +20,7 @@ spec:
               image: "{{ $.Values.rmd.image.repository }}:{{ default $.Chart.AppVersion $.Values.rmd.image.tag }}"
               imagePullPolicy: {{ $.Values.rmd.image.pullPolicy }}
               env:
-                - name: DJANGO_DATABASE_PASSWORD
-                  valueFrom:
-                    secretKeyRef:
-                      name: {{ include "rmd.postgresql.fullname" $ }}
-                      key: postgresql-password
+                {{- include "rmd.djangoDatabasePassword" $ | nindent 16 }}
               envFrom:
                 - secretRef:
                     name: {{ include "rmd.fullname" $ }}

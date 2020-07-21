@@ -66,3 +66,14 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- $name := default "postgresql" .Values.postgresql.nameOverride -}}
 {{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+
+{{/*
+Django database password
+*/}}
+{{- define "rmd.djangoDatabasePassword" -}}
+- name: DJANGO_DATABASE_PASSWORD
+  valueFrom:
+    secretKeyRef:
+      name: {{ include "rmd.postgresql.fullname" . }}
+      key: postgresql-password
+{{- end -}}

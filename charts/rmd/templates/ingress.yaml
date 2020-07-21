@@ -15,21 +15,13 @@ spec:
     - host: {{ $host }}
       http:
         paths:
-          - path: /admin/
-            rmd:
-              serviceName: {{ $.Values.rmd.service.name }}
-              servicePort: {{ $.Values.rmd.service.externalPort }}
-          - path: /static/
-            rmd:
-              serviceName: {{ $.Values.rmd.service.name }}
-              servicePort: {{ $.Values.rmd.service.externalPort }}
-          - path: /api/
+          - path: /
             rmd:
               serviceName: {{ $.Values.rmd.service.name }}
               servicePort: {{ $.Values.rmd.service.externalPort }}
     {{- end -}}
   {{- if .Values.ingress.tls }}
   tls:
-{{ toYaml .Values.ingress.tls | indent 4 }}
+    {{ toYaml .Values.ingress.tls | nindent 4 }}
   {{- end -}}
 {{- end -}}

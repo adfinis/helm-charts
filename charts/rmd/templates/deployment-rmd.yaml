@@ -4,7 +4,7 @@ metadata:
   name: {{ include "rmd.fullname" . }}
   labels:
     {{- include "rmd.labels" . | nindent 4 }}
-    app.kubernetes.io/component: rmd
+    app.kubernetes.io/component: app
 spec:
   replicas: {{ .Values.rmd.replicaCount }}
   selector:
@@ -14,17 +14,13 @@ spec:
     metadata:
       labels:
         {{- include "rmd.labels" . | nindent 8 }}
-        app.kubernetes.io/component: rmd
+        app.kubernetes.io/component: app
     spec:
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.rmd.image.repository }}:{{ default .Chart.AppVersion .Values.rmd.image.tag }}"
           env:
-            - name: DJANGO_DATABASE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "rmd.postgresql.fullname" . }}
-                  key: postgresql-password
+            {{- include "rmd.djangoDatabasePassword" . | nindent 12 }}
           envFrom:
             - secretRef:
                 name: {{ include "rmd.fullname" . }}
@@ -45,7 +41,7 @@ spec:
               port: {{ .Values.rmd.service.internalPort }}
               httpHeaders:
                 - name: Host
-                  value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
+                  value: {{ mustFirst .Values.ingress.hosts }}
           {{- end }}
           {{- if .Values.rmd.readinessProbe.enabled }}
           readinessProbe:
@@ -59,11 +55,11 @@ spec:
               port: {{ .Values.rmd.service.internalPort }}
               httpHeaders:
                 - name: Host
-                  value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
+                  value: {{ mustFirst .Values.ingress.hosts }}
           {{- end }}
           resources:
-{{ toYaml .Values.rmd.resources | indent 12 }}
+            {{ toYaml .Values.rmd.resources | nindent 12 }}
     {{- if .Values.rmd.nodeSelector }}
       nodeSelector:
-{{ toYaml .Values.rmd.nodeSelector | indent 8 }}
+        {{ toYaml .Values.rmd.nodeSelector | nindent 8 }}
     {{- end }}

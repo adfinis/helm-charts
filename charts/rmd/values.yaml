@@ -7,9 +7,9 @@ rmd:
   image:
     # rmd.image.repository -- Rmd image name
     repository: wiktorkepczynski/my_rmd
-     # Specify a tag to override which version of rmd to deploy.
-     # If no tag is specified the appVersion from Chart.yaml is used as tag.
-     # tag:
+    # rmd.image.tag -- Specify a tag to override which version of rmd to deploy.
+    # @default -- appVersion from Chart.yaml
+    tag: ~
     # rmd.image.pullPolicy -- Rmd image pull policy
     pullPolicy: IfNotPresent
   service:
@@ -21,9 +21,9 @@ rmd:
     # rmd.service.type -- Rmd service type
     type: ClusterIP
     # rmd.service.externalPort -- External Port of rmd service
-    externalPort: 80
+    externalPort: 8000
     # rmd.service.internalPort -- Internal Port of rmd service
-    internalPort: 80
+    internalPort: 8000
   # rmd.resources -- Resource limits for rmd
   resources: {}
     # We usually recommend not to specify default resources and to leave this as a conscious
@@ -65,20 +65,20 @@ rmd:
   settings:
     # django settings for rmd
     # rmd.settings.emailHost -- Connection string of SMTP server to send mails
-    emailHost: smtp.syhosting.ch:587
+    emailHost: smtp.examplexample.ch:587
     # rmd.settings.emailFrom -- Default email address to use for various responses
     emailFrom: maildelay@rmd.io
     # rmd.settings.serverEmail -- Email address error messages are sent from
     serverEmail: maildelay@rmd.io
   cronjobs:
-    # rmd.cronjobs.importMails -- import Mails
     importMails:
+      # rmd.cronjobs.importMails.schedule -- when to import mails
       schedule: "0 * * * *"
       command:
         - "app/manage.py"
         - "import"
-    # rmd.cronjobs.sendMails -- send Mails
     sendMails:
+      # rmd.cronjobs.sendMails.schedule -- when to send mails
       schedule: "10 * * * *"
       command:
         - "app/manage.py"
@@ -92,7 +92,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   # ingress.hosts -- Ingress hostnames
-  hosts: []
+  hosts: ["localhost"]
   #  - rmd-test.example.com
   # ingress.tls -- Ingress TLS options
   tls: []
@@ -108,7 +108,4 @@ postgresql:
   # postgresql.postgresqlUsername -- PostgreSQL user name
   postgresqlUsername: postgres
   # postgresql.postgresqlPassword -- Set a password for PostgreSQL
-  # postgresqlPassword: s3cr3t
-  image:
-    # postgresql.image.tag -- PostgreSQL image version to use
-    tag: 12.2.0
+  postgresqlPassword: ~

@@ -4,7 +4,6 @@ metadata:
   name: {{ .Values.rmd.service.name }}
   labels:
     {{- include "rmd.labels" . | nindent 4 }}
-    app.kubernetes.io/component: rmd
 spec:
   type: {{ .Values.rmd.service.type }}
   ports:
@@ -14,4 +13,3 @@ spec:
       name: {{ .Values.rmd.service.name }}
   selector:
     {{- include "rmd.selectorLabels" . | nindent 4 }}
-    app.kubernetes.io/component: rmd

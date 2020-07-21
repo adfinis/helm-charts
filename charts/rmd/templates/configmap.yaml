@@ -4,7 +4,6 @@ metadata:
   name: {{ include "rmd.fullname" . }}
   labels:
     {{- include "rmd.labels" . | nindent 4 }}
-    app.kubernetes.io/component: backend
 data:
   EMAIL_HOST: {{ .Values.rmd.settings.emailHost | quote }}
   DJANGO_ALLOWED_HOSTS: {{ join "," .Values.ingress.hosts | default "localhost" }}
