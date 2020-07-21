@@ -1,17 +1,6 @@
-clusters:
-  defaults:
-    namespace: ~
-  local:
-    enabled: true
-    namespace: ~
-appProject:
-  enabled: true
-  namespace: ~
-apps:
-  defaults:
-    enabled: true
-    namespace: ~
-    source:
-      repoURL: "https://charts.example.com"
-      chart: "example"
-      targetRevision: 'HEAD'
+---
+ingress:
+  hostname: sentry.example.org
+
+sentry:
+  postgresqlPassword: changeme
