@@ -28,9 +28,15 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| `clickhouse.replicas` | int | `1` | total number of clickhouse replicas |
 | `ingress.hostname` | string | `""` | Set this to enable the ingress configuration. |
+| `kafka.defaultReplicationFactor` | int | `1` |  |
+| `kafka.replicaCount` | int | `1` |  |
 | `rabbitmq.enabled` | bool | `false` | enable RabbitMQ Redis will be used instead. |
+| `redis.cluster` | object | `{"enabled":false}` | enable and configures the Redis cluster https://github.com/bitnami/charts/tree/master/bitnami/redis |
+| `redis.enabled` | bool | `true` |  |
 | `sentry.postgresqlPassword` | string | `nil` | password used to access the sentry Database required for the upgrades |
+| `sentry.worker.replicas` | int | `1` | total number of sentry worker replicas |
 | `spec.destination.namespace` | string | `"sentry"` | namespace for Sentry |
 | `spec.destination.server` | string | `"https://kubernetes.default.svc"` | Kubernetes cluster for Sentry |
 | `spec.metadata.namespace` | string | `"argocd"` | namespace for the ArgoCD application |

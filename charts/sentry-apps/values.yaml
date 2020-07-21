@@ -26,12 +26,34 @@ ingress:
   # ingress.hostname -- Set this to enable the ingress configuration.
   hostname: ""
 
+clickhouse:
+  # clickhouse.replicas -- total number of clickhouse replicas
+  replicas: 1
+
+# kakfa -- Kafka configuration
+# https://github.com/bitnami/charts/tree/master/bitnami/kafka/
+kafka:
+  replicaCount: 1
+  defaultReplicationFactor: 1
+
 rabbitmq:
   # rabbitmq.enabled -- enable RabbitMQ
   # Redis will be used instead.
   enabled: false
 
+redis:
+  enabled: true
+
+  # redis.cluster -- enable and configures the Redis cluster
+  # https://github.com/bitnami/charts/tree/master/bitnami/redis
+  cluster:
+    enabled: false
+
 sentry:
+  worker:
+    # sentry.worker.replicas -- total number of sentry worker replicas
+    replicas: 1
+
   # sentry.postgresqlPassword -- (string) password used to access the sentry Database
   # required for the upgrades
   postgresqlPassword:

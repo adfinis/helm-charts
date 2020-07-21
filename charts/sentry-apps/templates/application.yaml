@@ -22,16 +22,33 @@ spec:
           value: 10m
       values: |-
         user: {{ .Values.user | toJson }}
+
         auth:
           register: true
         ingress:
-          enabled: {{ .Values.hostname | empty | not }}
-          hostname: {{ .Values.hostname | default "" | quote }}
+          enabled: {{ .Values.ingress.hostname | empty | not }}
+          hostname: {{ .Values.ingress.hostname | default "" | quote }}
+
+        postgresqlPassword: {{ .Values.sentry.postgresqlPassword | quote }}
+        system:
+          secretKey: {{ .Values.system.secretKey | quote }}
+
+        clickhouse:
+          enabled: true
+          clickhouse: {{ .Values.clickhouse | toJson }}
+        kafka:
+          {{ .Values.kafka | toJson }}
         postgresql:
           persistence:
             enabled: true
-        postgresqlPassword: {{ .Values.sentry.postgresqlPassword | quote }}
         rabbitmq:
           enabled: {{ .Values.rabbitmq.enabled }}
-        system:
-          secretKey: {{ .Values.system.secretKey | quote }}
+        redis:
+          cluster:
+            enabled: false
+        sentry:
+          worker:
+            {{ .Values.sentry.worker | toJson }}
+        zookeeper:
+          persistence:
+            enabled: true
