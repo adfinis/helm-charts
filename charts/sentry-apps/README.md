@@ -29,12 +29,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `ingress.hostname` | string | `""` | Set this to enable the ingress configuration. |
-| `sentry` | string | `"postgresqlPassword"` |  |
+| `rabbitmq.enabled` | bool | `false` | enable RabbitMQ Redis will be used instead. |
+| `sentry.postgresqlPassword` | string | `nil` | password used to access the sentry Database required for the upgrades |
 | `spec.destination.namespace` | string | `"sentry"` | namespace for Sentry |
 | `spec.destination.server` | string | `"https://kubernetes.default.svc"` | Kubernetes cluster for Sentry |
 | `spec.metadata.namespace` | string | `"argocd"` | namespace for the ArgoCD application |
 | `spec.source.repoURL` | string | `"https://sentry-kubernetes.github.io/charts"` | Chart museum to get Sentry |
 | `spec.source.targetRevision` | string | `"4.2.0"` | revision of the chart to use for Sentry |
+| `system.secretKey` | string | `nil` | secret key used for the session. Changing it invalidates all the current sessions. |
 | `user.create` | bool | `true` | if true, creates the user defined by email and password. |
 | `user.email` | string | `"admin@sentry.local"` | Admin user email |
 | `user.password` | string | `"admin"` | Admin user password |

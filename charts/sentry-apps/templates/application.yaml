@@ -31,3 +31,5 @@ spec:
           persistence:
             enabled: true
         postgresqlPassword: {{ .Values.sentry.postgresqlPassword | quote }}
+        system:
+          secretKey: {{ .Values.system.secretKey | quote }}

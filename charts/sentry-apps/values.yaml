@@ -29,4 +29,14 @@ ingress:
 sentry:
   # sentry.postgresqlPassword -- password used to access the sentry Database
   # required for the upgrades
-  postgresqlPassword
+  postgresqlPassword:
+
+system:
+  # system.secretKey -- secret key used for the session.
+  # Changing it invalidates all the current sessions.
+  secretKey:
+
+rabbitmq:
+  # rabbitmq.enabled -- enable RabbitMQ
+  # Redis will be used instead.
+  enabled: false
