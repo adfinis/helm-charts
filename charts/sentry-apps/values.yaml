@@ -44,10 +44,10 @@ rabbitmq:
 redis:
   enabled: true
 
-  # redis.cluster -- enable and configures the Redis cluster
-  # https://github.com/bitnami/charts/tree/master/bitnami/redis
   cluster:
-    enabled: false
+    # redis.cluster.slaveCount -- number of followers in the Redis cluster
+    # https://github.com/bitnami/charts/tree/master/bitnami/redis
+    slaveCount: 1
 
 sentry:
   worker:

@@ -54,7 +54,7 @@ spec:
           value: "true"
         - name: rabbitmq.enabled
           value: {{ .Values.rabbitmq.enabled | quote }}
-        - name: redis.cluster.enabled
-          value: "false"
+        - name: redis.cluster.slaveCount
+          value: {{ .Values.redis.slaveCount | quote }}
         - name: zookeeper.persistence.enabled
           value: "true"

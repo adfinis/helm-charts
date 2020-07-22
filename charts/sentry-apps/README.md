@@ -33,7 +33,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `kafka.defaultReplicationFactor` | int | `1` |  |
 | `kafka.replicaCount` | int | `1` |  |
 | `rabbitmq.enabled` | bool | `false` | enable RabbitMQ Redis will be used instead. |
-| `redis.cluster` | object | `{"enabled":false}` | enable and configures the Redis cluster https://github.com/bitnami/charts/tree/master/bitnami/redis |
+| `redis.cluster.slaveCount` | int | `1` | number of followers in the Redis cluster https://github.com/bitnami/charts/tree/master/bitnami/redis |
 | `redis.enabled` | bool | `true` |  |
 | `sentry.postgresqlPassword` | string | `nil` | password used to access the sentry Database required for the upgrades |
 | `sentry.worker.replicas` | int | `1` | total number of sentry worker replicas |
