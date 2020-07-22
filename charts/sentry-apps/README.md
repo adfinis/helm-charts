@@ -41,7 +41,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `spec.destination.server` | string | `"https://kubernetes.default.svc"` | Kubernetes cluster for Sentry |
 | `spec.metadata.namespace` | string | `"argocd"` | namespace for the ArgoCD application |
 | `spec.source.repoURL` | string | `"https://sentry-kubernetes.github.io/charts"` | Chart museum to get Sentry |
-| `spec.source.targetRevision` | string | `"4.2.0"` | revision of the chart to use for Sentry |
+| `spec.source.targetRevision` | string | `"4.3.0"` | revision of the chart to use for Sentry |
 | `system.secretKey` | string | `nil` | secret key used for the session. Changing it invalidates all the current sessions. |
 | `user.create` | bool | `true` | if true, creates the user defined by email and password. |
 | `user.email` | string | `"admin@sentry.local"` | Admin user email |
