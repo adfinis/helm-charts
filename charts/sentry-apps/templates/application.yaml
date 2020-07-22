@@ -22,11 +22,11 @@ spec:
           value: 10m
         {{- range $k, $v := .Values.user }}
         - name: user.{{ $k }}
-          value: {{ $v }}
+          value: {{ $v | quote }}
         {{- end }}
         {{- if .Values.ingress.hostname | empty | not }}
         - name: ingress.enabled
-          value: true
+          value: "true"
         - name: ingress.hostname
           value: {{ .Values.ingress.hostname | default "" | quote }}
         {{- end }}
@@ -36,25 +36,25 @@ spec:
           value: {{ .Values.system.secretKey | quote }}
         {{- range $k, $v := .Values.clickhouse }}
         - name: clickhouse.clickhouse.{{ $k }}
-          value: {{ $v }}
+          value: {{ $v | quote }}
         {{- end }}
         {{- range $k, $v := .Values.kafka }}
         - name: kafka.{{ $k }}
-          value: {{ $v }}
+          value: {{ $v | quote }}
         {{- end }}
         {{- range $k, $v := .Values.kafka }}
         - name: kafka.{{ $k }}
-          value: {{ $v }}
+          value: {{ $v | quote }}
         {{- end }}
         {{- range $k, $v := .Values.sentry.worker }}
         - name: sentry.worker.{{ $k }}
-          value: {{ $v }}
+          value: {{ $v | quote }}
         {{- end }}
         - name: postgresql.persistence.enabled
-          value: true
+          value: "true"
         - name: rabbitmq.enabled
           value: {{ .Values.rabbitmq.enabled }}
         - name: redis.cluster.enabled
-          value: false
+          value: "false"
         - name: zookeeper.persistence.enabled
-          value: true
+          value: "true"
