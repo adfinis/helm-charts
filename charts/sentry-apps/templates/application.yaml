@@ -30,8 +30,6 @@ spec:
         - name: ingress.hostname
           value: {{ .Values.ingress.hostname | default "" | quote }}
         {{- end }}
-        - name: postgresqlPassword
-          value: {{ .Values.sentry.postgresqlPassword | quote }}
         - name: system.secretKey
           value: {{ .Values.system.secretKey | quote }}
         {{- range $k, $v := .Values.clickhouse }}
@@ -50,6 +48,8 @@ spec:
         - name: sentry.worker.{{ $k }}
           value: {{ $v | quote }}
         {{- end }}
+        - name: postgresql.postgresqlPassword
+          value: {{ .Values.postgresql.postgresqlPassword | quote }}
         - name: postgresql.persistence.enabled
           value: "true"
         - name: rabbitmq.enabled

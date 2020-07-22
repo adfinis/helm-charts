@@ -54,8 +54,8 @@ sentry:
     # sentry.worker.replicas -- total number of sentry worker replicas
     replicas: 1
 
-  # sentry.postgresqlPassword -- (string) password used to access the sentry Database
-  # required for the upgrades
+postgresql:
+  # postgresql.postgresqlPassword -- (string) password used to access the database
   postgresqlPassword:
 
 system:
