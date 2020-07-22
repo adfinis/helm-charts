@@ -12,7 +12,7 @@ image:
   # image.pullPolicy -- set the image pullPolicy
   pullPolicy: IfNotPresent
   # image.tag -- set the tag of the image
-  tag: "latest"
+  tag: "v0.1.0"
 
 # imagePullSecrets -- specifies the image pull secrets to be used
 imagePullSecrets: []
@@ -57,6 +57,8 @@ cronjob:
       value: yaml
     - name: DST_FOLDER
       value: /mnt/back8sup
+    - name: EXPIRE
+      value: 30
 
 persistence:
   # persistence.enabled -- specifies if persistence is enabled or not

@@ -2,7 +2,7 @@ back8sup
 ========
 Deploy back8sup to a Kubernetes Cluster
 
-Current chart version is `0.1.2`
+Current chart version is `0.1.3`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/back8sup>
@@ -38,13 +38,15 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `cronjob.environment[4].value` | string | `"yaml"` |  |
 | `cronjob.environment[5].name` | string | `"DST_FOLDER"` |  |
 | `cronjob.environment[5].value` | string | `"/mnt/back8sup"` |  |
+| `cronjob.environment[6].name` | string | `"EXPIRE"` |  |
+| `cronjob.environment[6].value` | int | `30` |  |
 | `cronjob.failedJobsHistoryLimit` | string | `""` | specifies the failedJobsHistoryLimit of the cronjob |
 | `cronjob.schedule` | string | `"0 1 * * *"` | on which schedule the cronjob gets run |
 | `cronjob.successfulJobsHistoryLimit` | string | `""` | specifies the successfulJobsHistoryLimit of the cronjob |
 | `fullnameOverride` | string | `""` | specifies the full name override to be used for helm |
 | `image.pullPolicy` | string | `"IfNotPresent"` | set the image pullPolicy |
 | `image.repository` | string | `"adfinissygroup/back8sup"` | set the image repository |
-| `image.tag` | string | `"latest"` | set the tag of the image |
+| `image.tag` | string | `"v0.1.0"` | set the tag of the image |
 | `imagePullSecrets` | list | `[]` | specifies the image pull secrets to be used |
 | `nameOverride` | string | `""` | specifies the name override to be used for helm |
 | `nodeSelector` | object | `{}` | specifies the nodeSelector to be used |
