@@ -20,33 +20,41 @@ spec:
       parameters:
         - name: timeout
           value: 10m
-      values: |-
-        user: {{ .Values.user | toJson }}
-
-        auth:
-          register: true
-        ingress:
-          enabled: {{ .Values.ingress.hostname | empty | not }}
-          hostname: {{ .Values.ingress.hostname | default "" | quote }}
-
-        postgresqlPassword: {{ .Values.sentry.postgresqlPassword | quote }}
-        system:
-          secretKey: {{ .Values.system.secretKey | quote }}
-
-        clickhouse:
-          enabled: true
-          clickhouse: {{ .Values.clickhouse | toJson }}
-        kafka: {{ .Values.kafka | toJson }}
-        postgresql:
-          persistence:
-            enabled: true
-        rabbitmq:
-          enabled: {{ .Values.rabbitmq.enabled }}
-        redis:
-          cluster:
-            enabled: false
-        sentry:
-          worker: {{ .Values.sentry.worker | toJson }}
-        zookeeper:
-          persistence:
-            enabled: true
+        {{- range $k, $v := .Values.user }}
+        - name: user.{{ $k }}
+          value: {{ $v }}
+        {{- end }}
+        {{- if .Values.ingress.hostname | empty | not }}
+        - name: ingress.enabled
+          value: true
+        - name: ingress.hostname
+          value: {{ .Values.ingress.hostname | default "" | quote }}
+        {{- end }}
+        - name: postgresqlPassword
+          value: {{ .Values.sentry.postgresqlPassword | quote }}
+        - name: system.secretKey
+          value: {{ .Values.system.secretKey | quote }}
+        {{- range $k, $v := .Values.clickhouse }}
+        - name: clickhouse.clickhouse.{{ $k }}
+          value: {{ $v }}
+        {{- end }}
+        {{- range $k, $v := .Values.kafka }}
+        - name: kafka.{{ $k }}
+          value: {{ $v }}
+        {{- end }}
+        {{- range $k, $v := .Values.kafka }}
+        - name: kafka.{{ $k }}
+          value: {{ $v }}
+        {{- end }}
+        {{- range $k, $v := .Values.sentry.worker }}
+        - name: sentry.worker.{{ $k }}
+          value: {{ $v }}
+        {{- end }}
+        - name: postgresql.persistence.enabled
+          value: true
+        - name: rabbitmq.enabled
+          value: {{ .Values.rabbitmq.enabled }}
+        - name: redis.cluster.enabled
+          value: false
+        - name: zookeeper.persistence.enabled
+          value: true
