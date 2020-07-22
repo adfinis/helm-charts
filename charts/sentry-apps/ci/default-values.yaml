@@ -1,9 +1,9 @@
 ---
 ingress:
-  hostname: sentry.example.org
+  hostname: ci.example.org
 
-sentry:
-  postgresqlPassword: changeme
+postgresql:
+  postgresqlPassword: this-is-ci
 
 system:
-  secretKey: changeme
+  secretKey: this-is-ci
