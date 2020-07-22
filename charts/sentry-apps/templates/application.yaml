@@ -53,7 +53,7 @@ spec:
         - name: postgresql.persistence.enabled
           value: "true"
         - name: rabbitmq.enabled
-          value: {{ .Values.rabbitmq.enabled }}
+          value: {{ .Values.rabbitmq.enabled | quote }}
         - name: redis.cluster.enabled
           value: "false"
         - name: zookeeper.persistence.enabled
