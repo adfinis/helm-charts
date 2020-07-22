@@ -12,7 +12,7 @@ spec:
     # spec.source.repoURL -- Chart museum to get Sentry
     repoURL: "https://sentry-kubernetes.github.io/charts"
     # spec.source.targetRevision -- revision of the chart to use for Sentry
-    targetRevision: 4.3.0
+    targetRevision: 4.5.0
 
 user:
   # user.create -- if true, creates the user defined by email and password.
