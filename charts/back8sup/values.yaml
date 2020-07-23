@@ -12,7 +12,7 @@ image:
   # image.pullPolicy -- set the image pullPolicy
   pullPolicy: IfNotPresent
   # image.tag -- set the tag of the image
-  tag: "v0.1.0"
+  tag: "v0.1.3"
 
 # imagePullSecrets -- specifies the image pull secrets to be used
 imagePullSecrets: []
