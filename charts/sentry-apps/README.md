@@ -22,7 +22,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.adfinis.com | common | `0.0.1` |
+| https://charts.adfinis.com | common | `~0.0.1` |
 ## Chart Values
 
 
