@@ -4,7 +4,7 @@ name: sentry-apps
 description: Sentry on premise
 type: application
 version: 0.1.0
-appVersion: 4.2.0
+appVersion: 4.7.0
 home: https://github.com/sentry-kubernetes/charts/tree/develop/sentry
 sources:
   - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/sentry-apps
