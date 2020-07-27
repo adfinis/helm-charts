@@ -2,7 +2,7 @@ back8sup
 ========
 Deploy back8sup to a Kubernetes Cluster
 
-Current chart version is `0.1.3`
+Current chart version is `0.1.4`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/back8sup>
@@ -46,7 +46,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `fullnameOverride` | string | `""` | specifies the full name override to be used for helm |
 | `image.pullPolicy` | string | `"IfNotPresent"` | set the image pullPolicy |
 | `image.repository` | string | `"adfinissygroup/back8sup"` | set the image repository |
-| `image.tag` | string | `"v0.1.3"` | set the tag of the image |
 | `imagePullSecrets` | list | `[]` | specifies the image pull secrets to be used |
 | `nameOverride` | string | `""` | specifies the name override to be used for helm |
 | `nodeSelector` | object | `{}` | specifies the nodeSelector to be used |
