@@ -42,3 +42,6 @@ data:
   UWSGI_MAX_REQUESTS: {{ .Values.backend.settings.uwsgi.maxRequests | quote }}
   UWSGI_HARAKIRI: {{ .Values.backend.settings.uwsgi.harakiri | quote }}
   UWSGI_PROCESSES: {{ .Values.backend.settings.uwsgi.processes | quote }}
+{{- if .Values.backend.settings.admins }}
+  DJANGO_ADMINS: {{- join "," .Values.backend.admins | quote }}
+{{- end }}
