@@ -2,7 +2,7 @@ timed
 =====
 Chart for Timed application
 
-Current chart version is `0.3.15`
+Current chart version is `0.3.16`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/timed-frontend>
@@ -71,6 +71,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `backend.service.internalPort` | int | `80` | Internal Port of backend service |
 | `backend.service.name` | string | `"timed-backend"` | Backend service name |
 | `backend.service.type` | string | `"ClusterIP"` | Backend service type |
+| `backend.settings.admins` | list | `[]` | Django administrators, example: Jon Doe <jon.doe@example.com> |
 | `backend.settings.emailFrom` | string | `"webmaster@chart-example.local"` | Default email address to use for various responses |
 | `backend.settings.emailUrl` | string | `"smtp://localhost:25"` | Connection string of SMTP server to send mails |
 | `backend.settings.serverEmail` | string | `"webmaster@chart-example.local"` | Email address error messages are sent from |
