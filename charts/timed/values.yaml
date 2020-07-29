@@ -235,6 +235,8 @@ postgresql:
 
 auth:
   oidc:
+    # auth.oidc.host -- OIDC host
+    url: https://example.com/auth/realms/timed/protocol/openid-connect
     # auth.oidc.userinfoEndpoint -- OIDC user endpoint url
     userinfoEndpoint: https://example.com/auth/realms/timed/protocol/openid-connect/userinfo
     # auth.oidc.createUser -- OIDC create user in timed db if it does not already exist
