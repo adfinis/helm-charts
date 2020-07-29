@@ -2,7 +2,7 @@ timed
 =====
 Chart for Timed application
 
-Current chart version is `0.3.17`
+Current chart version is `0.3.18`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/timed-frontend>
