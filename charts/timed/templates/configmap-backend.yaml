@@ -43,5 +43,5 @@ data:
   UWSGI_HARAKIRI: {{ .Values.backend.settings.uwsgi.harakiri | quote }}
   UWSGI_PROCESSES: {{ .Values.backend.settings.uwsgi.processes | quote }}
 {{- if .Values.backend.settings.admins }}
-  DJANGO_ADMINS: {{- join "," .Values.backend.admins | quote }}
+  DJANGO_ADMINS: {{ join "," .Values.backend.settings.admins | quote }}
 {{- end }}
