@@ -22,6 +22,9 @@ spec:
           persistence:
             enabled: true
 
+        system:
+          secretKey: {{ .Values.system.secretKey | quote }}
+
       parameters:
         - name: timeout
           value: 10m
@@ -35,8 +38,6 @@ spec:
         - name: ingress.hostname
           value: {{ .Values.ingress.hostname | quote }}
         {{- end }}
-        - name: system.secretKey
-          value: {{ .Values.system.secretKey | quote }}
         {{- range $k, $v := .Values.clickhouse }}
         - name: clickhouse.clickhouse.{{ $k }}
           value: {{ $v | quote }}
