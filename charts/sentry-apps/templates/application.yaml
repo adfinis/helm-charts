@@ -1,9 +1,8 @@
 {{ template "argoconfig.application" (list . "sentry-apps") }}
 
 {{- define "sentry-apps" }}
-{{- $name := (template "common.name") -}}
 metadata:
-  name: {{ .Values.spec.metadata.name | default $name }}
+  {{- .Values.spec.metadata | toYaml | nindent 2 }}
 spec:
   destination:
     {{- with .Values.spec.destination.namespace }}
