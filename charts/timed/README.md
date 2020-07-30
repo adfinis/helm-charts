@@ -2,7 +2,7 @@ timed
 =====
 Chart for Timed application
 
-Current chart version is `0.3.17`
+Current chart version is `0.3.18`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/timed-frontend>
@@ -39,6 +39,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `auth.oidc.createUser` | string | `"False"` | OIDC create user in timed db if it does not already exist |
 | `auth.oidc.introspect.enabled` | bool | `true` | Enable OIDC introspect |
 | `auth.oidc.introspect.endpoint` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect/token/introspect"` | OIDC introspect endpoint |
+| `auth.oidc.url` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect"` |  |
 | `auth.oidc.userinfoEndpoint` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect/userinfo"` | OIDC user endpoint url |
 | `backend.cronjobs.notifyChangedEmployments` | object | `{"command":["./manage.py","notify_changed_employments"],"schedule":"0 2 * * 1"}` | Notify changed employments |
 | `backend.cronjobs.notifyReviewersFirst` | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","5"],"schedule":"0 8 4 * *"}` | Notify reviewers first stage |
@@ -81,7 +82,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `backend.settings.workReportPath` | string | `"/etc/workreport"` | Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`. |
 | `frontend.image.pullPolicy` | string | `"IfNotPresent"` | Frontend image pull policy |
 | `frontend.image.repository` | string | `"adfinissygroup/timed-frontend"` | Frontend image name |
-| `frontend.image.tag` | string | `"v1.0-rc1"` | Frontend image tag |
+| `frontend.image.tag` | string | `"v1.0-rc2"` | Frontend image tag |
 | `frontend.livenessProbe.enabled` | bool | `true` | Enable liveness probe on frontend |
 | `frontend.livenessProbe.failureThreshold` | int | `6` | Number of tries to perform the probe |
 | `frontend.livenessProbe.initialDelaySeconds` | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
