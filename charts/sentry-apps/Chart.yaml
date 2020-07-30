@@ -4,7 +4,7 @@ name: sentry-apps
 description: Sentry on premise
 type: application
 version: 0.1.0
-appVersion: 4.7.0
+appVersion: 4.7.1
 home: https://github.com/sentry-kubernetes/charts/tree/develop/sentry
 sources:
   - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/sentry-apps
@@ -16,3 +16,6 @@ dependencies:
   - name: common
     repository: https://charts.adfinis.com
     version: ~0.0.1
+  - name: argoconfig
+    repository: https://charts.adfinis.com
+    version: ~0.6.1

@@ -1,22 +1,24 @@
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
+{{ template "argoconfig.application" (list . "sentry-apps") }}
+
+{{- define "sentry-apps" }}
 metadata:
-  name: sentry
-  namespace: {{ .Values.spec.metadata.namespace }}
-  labels:
-    {{ include "common.labels.standard" . | nindent 4 }}
+  name: {{ template "common.fullname" . }}
 spec:
   destination:
-    namespace: {{ .Values.spec.destination.namespace }}
-    server: {{ .Values.spec.destination.server }}
-  project: default
+    {{- with .Values.spec.destination.namespace }}
+    namespace: {{ . }}
+    {{- end }}
+    {{- with .Values.spec.destination.server }}
+    server: {{ . }}
+    {{- end }}
   source:
-    chart: sentry
+    chart: {{ .Values.spec.source.chart }}
     repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision | default "HEAD" }}
+    targetRevision: {{ .Values.spec.source.targetRevision | quote }}
     helm:
       values: |-
+        nameOverride: {{ template "common.fullname" }}
+
         user:
           {{- .Values.user | toYaml | nindent 10 }}
 
@@ -52,3 +54,4 @@ spec:
         zookeeper:
           persistence:
             enabled: true
+{{- end }}

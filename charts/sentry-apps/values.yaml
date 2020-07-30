@@ -1,14 +1,17 @@
----
 spec:
   metadata:
+    # spec.metadata.name -- name for the ArgoCD application
+    name: sentry
     # spec.metadata.namespace -- namespace for the ArgoCD application
-    namespace: argocd
+    namespace: argocd1
   destination:
     # spec.destination.server -- Kubernetes cluster for Sentry
-    server: "https://kubernetes.default.svc"
+    #server
     # spec.destination.namespace -- namespace for Sentry
     namespace: sentry
   source:
+    # spec.source.chart -- name of the Chart for Sentry
+    chart: sentry
     # spec.source.repoURL -- Chart museum to get Sentry
     repoURL: "https://sentry-kubernetes.github.io/charts"
     # spec.source.targetRevision -- revision of the chart to use for Sentry

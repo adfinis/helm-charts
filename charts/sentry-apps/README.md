@@ -22,6 +22,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
+| https://charts.adfinis.com | argoconfig | `~0.6.1` |
 | https://charts.adfinis.com | common | `~0.0.1` |
 ## Chart Values
 
@@ -39,8 +40,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `redis.enabled` | bool | `true` |  |
 | `sentry.worker.replicas` | int | `1` | total number of sentry worker replicas |
 | `spec.destination.namespace` | string | `"sentry"` | namespace for Sentry |
-| `spec.destination.server` | string | `"https://kubernetes.default.svc"` | Kubernetes cluster for Sentry |
-| `spec.metadata.namespace` | string | `"argocd"` | namespace for the ArgoCD application |
+| `spec.metadata.name` | string | `"sentry"` | name for the ArgoCD application |
+| `spec.metadata.namespace` | string | `"argocd1"` | namespace for the ArgoCD application |
+| `spec.source.chart` | string | `"sentry"` | name of the Chart for Sentry |
 | `spec.source.repoURL` | string | `"https://sentry-kubernetes.github.io/charts"` | Chart museum to get Sentry |
 | `spec.source.targetRevision` | string | `"4.7.1"` | revision of the chart to use for Sentry |
 | `system.secretKey` | string | `nil` | secret key used for the session. Changing it invalidates all the current sessions. |
