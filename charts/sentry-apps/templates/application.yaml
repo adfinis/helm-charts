@@ -17,46 +17,38 @@ spec:
     targetRevision: {{ .Values.spec.source.targetRevision | default "HEAD" }}
     helm:
       values: |-
+        user:
+          {{- .Values.user | nindent 1 }}
+
+        ingress:
+          {{- .Values.ingress | nindent 1 }}
+
+        clickhouse:
+          clickhouse:
+            {{ .Values.clickhouse | nindent 2 }}
+
+        kafka:
+          {{- .Values.kafka | nindent 1 }}
+
         postgresql:
           postgresqlPassword: {{ .Values.postgresql.postgresqlPassword | quote }}
           persistence:
             enabled: true
 
+        rabbitmq:
+          {{- .Values.rabbitmq | nindent 2 }}
+
+        redis:
+          cluster:
+            slaveCount: {{ .Values.redis.cluster.slaveCount }}
+
+        sentry:
+          worker:
+            {{- .Values.sentry.worker | nindent 2 }}
+
         system:
           secretKey: {{ .Values.system.secretKey | quote }}
 
-      parameters:
-        - name: timeout
-          value: 10m
-        {{- range $k, $v := .Values.user }}
-        - name: user.{{ $k }}
-          value: {{ $v | quote }}
-        {{- end }}
-        {{- if .Values.ingress.enabled }}
-        - name: ingress.enabled
-          value: "true"
-        - name: ingress.hostname
-          value: {{ .Values.ingress.hostname | quote }}
-        {{- end }}
-        {{- range $k, $v := .Values.clickhouse }}
-        - name: clickhouse.clickhouse.{{ $k }}
-          value: {{ $v | quote }}
-        {{- end }}
-        {{- range $k, $v := .Values.kafka }}
-        - name: kafka.{{ $k }}
-          value: {{ $v | quote }}
-        {{- end }}
-        {{- range $k, $v := .Values.kafka }}
-        - name: kafka.{{ $k }}
-          value: {{ $v | quote }}
-        {{- end }}
-        {{- range $k, $v := .Values.sentry.worker }}
-        - name: sentry.worker.{{ $k }}
-          value: {{ $v | quote }}
-        {{- end }}
-        - name: rabbitmq.enabled
-          value: {{ .Values.rabbitmq.enabled | quote }}
-        - name: redis.cluster.slaveCount
-          value: {{ .Values.redis.cluster.slaveCount | quote }}
-        - name: zookeeper.persistence.enabled
-          value: "true"
+        zookeeper:
+          persistence:
+            enabled: true
