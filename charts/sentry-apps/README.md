@@ -41,7 +41,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `sentry.worker.replicas` | int | `1` | total number of sentry worker replicas |
 | `spec.destination.namespace` | string | `"sentry"` | namespace for Sentry |
 | `spec.metadata.name` | string | `"sentry"` | name for the ArgoCD application |
-| `spec.metadata.namespace` | string | `"argocd1"` | namespace for the ArgoCD application |
+| `spec.metadata.namespace` | string | `"argocd"` | namespace for the ArgoCD application |
 | `spec.source.chart` | string | `"sentry"` | name of the Chart for Sentry |
 | `spec.source.repoURL` | string | `"https://sentry-kubernetes.github.io/charts"` | Chart museum to get Sentry |
 | `spec.source.targetRevision` | string | `"4.7.1"` | revision of the chart to use for Sentry |

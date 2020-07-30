@@ -3,7 +3,7 @@ spec:
     # spec.metadata.name -- name for the ArgoCD application
     name: sentry
     # spec.metadata.namespace -- namespace for the ArgoCD application
-    namespace: argocd1
+    namespace: argocd
   destination:
     # spec.destination.server -- Kubernetes cluster for Sentry
     #server
