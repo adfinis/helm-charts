@@ -5,8 +5,6 @@ spec:
     # spec.metadata.namespace -- namespace for the ArgoCD application
     namespace: argocd
   destination:
-    # spec.destination.server -- Kubernetes cluster for Sentry
-    #server
     # spec.destination.namespace -- namespace for Sentry
     namespace: sentry
   source:
