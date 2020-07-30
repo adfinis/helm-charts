@@ -37,7 +37,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `rabbitmq.enabled` | bool | `false` | enable RabbitMQ Redis will be used instead. |
 | `redis.cluster.slaveCount` | int | `1` | number of followers in the Redis cluster https://github.com/bitnami/charts/tree/master/bitnami/redis |
 | `redis.enabled` | bool | `true` |  |
-| `sentry.worker.annotations` | object | `{}` | annotations to add |
 | `sentry.worker.replicas` | int | `1` | total number of sentry worker replicas |
 | `spec.destination.namespace` | string | `"sentry"` | namespace for Sentry |
 | `spec.destination.server` | string | `"https://kubernetes.default.svc"` | Kubernetes cluster for Sentry |

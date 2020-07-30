@@ -44,7 +44,7 @@ spec:
 
         sentry:
           worker:
-            {{- .Values.sentry.worker | toYaml | nindent 10 }}
+            {{- .Values.sentry.worker | toYaml | nindent 12 }}
 
         system:
           secretKey: {{ .Values.system.secretKey | quote }}

@@ -53,8 +53,6 @@ redis:
 
 sentry:
   worker:
-    # sentry.worker.annotations -- annotations to add
-    annotations: {}
     # sentry.worker.replicas -- total number of sentry worker replicas
     replicas: 1
 
