@@ -29,7 +29,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `clickhouse.replicas` | int | `1` | total number of clickhouse replicas |
-| `ingress.hostname` | string | `""` | Set this to enable the ingress configuration. |
+| `ingress.enabled` | bool | `false` | if true, enables the ingress configuration. |
+| `ingress.hostname` | string | `""` | hostname to use |
 | `kafka.defaultReplicationFactor` | int | `1` |  |
 | `kafka.replicaCount` | int | `1` |  |
 | `postgresql.postgresqlPassword` | string | `nil` | password used to access the database |

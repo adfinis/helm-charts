@@ -23,7 +23,9 @@ user:
   password: admin
 
 ingress:
-  # ingress.hostname -- Set this to enable the ingress configuration.
+  # ingress.enabled -- if true, enables the ingress configuration.
+  enabled: false
+  # ingress.hostname -- hostname to use
   hostname: ""
 
 clickhouse:
