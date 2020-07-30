@@ -2,7 +2,7 @@ timed
 =====
 Chart for Timed application
 
-Current chart version is `0.3.19`
+Current chart version is `0.3.20`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/timed-frontend>
@@ -82,7 +82,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `backend.settings.workReportPath` | string | `"/etc/workreport"` | Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`. |
 | `frontend.image.pullPolicy` | string | `"IfNotPresent"` | Frontend image pull policy |
 | `frontend.image.repository` | string | `"adfinissygroup/timed-frontend"` | Frontend image name |
-| `frontend.image.tag` | string | `"v1.0-rc2"` | Frontend image tag |
 | `frontend.livenessProbe.enabled` | bool | `true` | Enable liveness probe on frontend |
 | `frontend.livenessProbe.failureThreshold` | int | `6` | Number of tries to perform the probe |
 | `frontend.livenessProbe.initialDelaySeconds` | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
