@@ -18,17 +18,17 @@ spec:
     helm:
       values: |-
         user:
-          {{- .Values.user | nindent 1 }}
+          {{- .Values.user | toYaml | nindent 10 }}
 
         ingress:
-          {{- .Values.ingress | nindent 1 }}
+          {{- .Values.ingress | toYaml | nindent 10 }}
 
         clickhouse:
           clickhouse:
-            {{ .Values.clickhouse | nindent 2 }}
+            {{- .Values.clickhouse | toYaml | nindent 12 }}
 
         kafka:
-          {{- .Values.kafka | nindent 1 }}
+          {{- .Values.kafka | toYaml | nindent 10 }}
 
         postgresql:
           postgresqlPassword: {{ .Values.postgresql.postgresqlPassword | quote }}
@@ -36,7 +36,7 @@ spec:
             enabled: true
 
         rabbitmq:
-          {{- .Values.rabbitmq | nindent 2 }}
+          {{- .Values.rabbitmq | toYaml | nindent 10 }}
 
         redis:
           cluster:
@@ -44,7 +44,7 @@ spec:
 
         sentry:
           worker:
-            {{- .Values.sentry.worker | nindent 2 }}
+            {{- .Values.sentry.worker | toYaml | nindent 10 }}
 
         system:
           secretKey: {{ .Values.system.secretKey | quote }}
