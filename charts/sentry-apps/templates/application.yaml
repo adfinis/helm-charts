@@ -16,6 +16,12 @@ spec:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision | default "HEAD" }}
     helm:
+      values: |-
+        postgresql:
+          postgresqlPassword: {{ .Values.postgresql.postgresqlPassword | quote }}
+          persistence:
+            enabled: true
+
       parameters:
         - name: timeout
           value: 10m
@@ -47,10 +53,6 @@ spec:
         - name: sentry.worker.{{ $k }}
           value: {{ $v | quote }}
         {{- end }}
-        - name: postgresql.postgresqlPassword
-          value: {{ .Values.postgresql.postgresqlPassword | quote }}
-        - name: postgresql.persistence.enabled
-          value: "true"
         - name: rabbitmq.enabled
           value: {{ .Values.rabbitmq.enabled | quote }}
         - name: redis.cluster.slaveCount
