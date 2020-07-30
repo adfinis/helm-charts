@@ -17,8 +17,6 @@ spec:
     targetRevision: {{ .Values.spec.source.targetRevision | quote }}
     helm:
       values: |-
-        nameOverride: {{ template "common.name" . }}
-
         user:
           {{- .Values.user | toYaml | nindent 10 }}
 
