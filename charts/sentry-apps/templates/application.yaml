@@ -4,7 +4,8 @@ kind: Application
 metadata:
   name: sentry
   namespace: {{ .Values.spec.metadata.namespace }}
-  labels: {{ include "common.labels.standard" . | nindent 3 }}
+  labels:
+    {{ include "common.labels.standard" . | nindent 4 }}
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
