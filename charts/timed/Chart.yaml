@@ -2,7 +2,7 @@ apiVersion: v2
 name: timed
 description: Chart for Timed application
 type: application
-version: 0.3.20
+version: 0.3.21
 appVersion: v1.0.0
 keywords:
   - timed
