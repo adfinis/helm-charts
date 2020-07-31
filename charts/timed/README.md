@@ -24,7 +24,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | `~8.10.14` |
+| https://charts.bitnami.com/bitnami | postgresql | `~9.1.2` |
 ## Chart Values
 
 
@@ -105,7 +105,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `ingress.hosts` | list | `[]` | Ingress hostnames |
 | `ingress.tls` | list | `[]` | Ingress TLS options |
 | `postgresql.enabled` | bool | `true` | Enable PostgreSQL for persistence |
-| `postgresql.image.tag` | string | `"12.2.0"` | PostgreSQL image version to use |
+| `postgresql.image.tag` | string | `"12.3.0"` | PostgreSQL image version to use |
 | `postgresql.ingress.enabled` | bool | `false` | Enable ingress |
 | `postgresql.ingress.loadBalancerSourceRanges` | list | `[]` | Whitelist specific IP ranges |
 | `postgresql.ingress.selector` | object | `{"app":"postgresql","role":"slave"}` | Service selector labels |
