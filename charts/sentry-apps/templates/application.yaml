@@ -11,6 +11,7 @@ spec:
     {{- with .Values.spec.destination.server }}
     server: {{ . }}
     {{- end }}
+  project: {{ .Values.spec.project }}
   source:
     chart: {{ .Values.spec.source.chart }}
     repoURL: {{ .Values.spec.source.repoURL }}

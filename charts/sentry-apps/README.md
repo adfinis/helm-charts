@@ -42,6 +42,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `spec.destination.namespace` | string | `"sentry"` | namespace for Sentry |
 | `spec.metadata.name` | string | `"sentry"` | name for the ArgoCD application |
 | `spec.metadata.namespace` | string | `"argocd"` | namespace for the ArgoCD application |
+| `spec.project` | string | `"default"` | project to deploy the ArgoCD application to |
 | `spec.source.chart` | string | `"sentry"` | name of the Chart for Sentry |
 | `spec.source.repoURL` | string | `"https://sentry-kubernetes.github.io/charts"` | Chart museum to get Sentry |
 | `spec.source.targetRevision` | string | `"4.7.1"` | revision of the chart to use for Sentry |

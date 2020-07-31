@@ -7,6 +7,8 @@ spec:
   destination:
     # spec.destination.namespace -- namespace for Sentry
     namespace: sentry
+  # spec.project -- project to deploy the ArgoCD application to
+  project: default
   source:
     # spec.source.chart -- name of the Chart for Sentry
     chart: sentry
