@@ -111,6 +111,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `postgresql.ingress.selector` | object | `{"app":"postgresql","role":"slave"}` | Service selector labels |
 | `postgresql.postgresqlDatabase` | string | `"timed"` | PostgreSQL database name |
 | `postgresql.postgresqlUsername` | string | `"postgres"` | PostgreSQL user name |
+| `postgresql.tls.certFilename` | string | `"tls.crt"` | Cert file name |
+| `postgresql.tls.certKeyFilename` | string | `"tls.key"` | Cert key filename |
+| `postgresql.tls.certificate.dnsNames` | list | `[]` | DNS names of certificate |
+| `postgresql.tls.certificate.issuerRef` | object | cert-manager | Issuer ref |
+| `postgresql.tls.certificate.name` | string | `"psql-server"` | Name of certificate |
+| `postgresql.tls.certificatesSecret` | string | `"psql-server"` | Name of TLS secret |
+| `postgresql.tls.enabled` | bool | `false` | Enable TLS for Postgresql |
 | `redmine.apiKey` | string | `""` | Redmine API Key |
 | `redmine.enabled` | bool | `false` | Enable Redmine integration |
 | `redmine.htaccessPassword` | string | `""` | Redmine htaccess password |

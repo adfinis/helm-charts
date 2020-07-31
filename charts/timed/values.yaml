@@ -232,6 +232,26 @@ postgresql:
     selector:
       app: postgresql
       role: slave
+  tls:
+    # postgresql.tls.enabled -- Enable TLS for Postgresql
+    enabled: false
+    # postgresql.tls.certificatesSecret -- Name of TLS secret
+    certificatesSecret: psql-server
+    # postgresql.tls.certFilename -- Cert file name
+    certFilename: "tls.crt"
+    # postgresql.tls.certKeyFilename -- Cert key filename
+    certKeyFilename: "tls.key"
+    certificate:
+      # postgresql.tls.certificate.name -- Name of certificate
+      name: psql-server
+      # postgresql.tls.certificate.dnsNames -- DNS names of certificate
+      dnsNames: []
+      # postgresql.tls.certificate.issuerRef -- Issuer ref
+      # @default -- cert-manager
+      issuerRef:
+        group: cert-manager.io
+        kind: ClusterIssuer
+        name: letsencrypt-prod
 
 auth:
   oidc:
