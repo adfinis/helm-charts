@@ -46,12 +46,13 @@ rabbitmq:
   # Redis will be used instead.
   enabled: false
 
+# redis -- Redis settigs
+# @defaults -- See [bitnami/redis](https://github.com/bitnami/charts/tree/master/bitnami/redis) chart
 redis:
   enabled: true
 
   cluster:
     # redis.cluster.slaveCount -- number of followers in the Redis cluster
-    # https://github.com/bitnami/charts/tree/master/bitnami/redis
     slaveCount: 1
 
 sentry:
