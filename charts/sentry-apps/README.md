@@ -23,7 +23,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Repository | Name | Version |
 |------------|------|---------|
 | https://charts.adfinis.com | argoconfig | `~0.6.1` |
-| https://charts.adfinis.com | common | `~0.0.1` |
 ## Chart Values
 
 
@@ -36,8 +35,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `kafka.replicaCount` | int | `1` |  |
 | `postgresql.postgresqlPassword` | string | `nil` | password used to access the database |
 | `rabbitmq.enabled` | bool | `false` | enable RabbitMQ Redis will be used instead. |
-| `redis.cluster.slaveCount` | int | `1` | number of followers in the Redis cluster https://github.com/bitnami/charts/tree/master/bitnami/redis |
-| `redis.enabled` | bool | `true` |  |
+| `redis` | object | `{"cluster":{"slaveCount":1},"enabled":true}` | Redis settigs @defaults -- See [bitnami/redis](https://github.com/bitnami/charts/tree/master/bitnami/redis) chart |
+| `redis.cluster.slaveCount` | int | `1` | number of followers in the Redis cluster |
 | `sentry.worker.replicas` | int | `1` | total number of sentry worker replicas |
 | `spec.destination.namespace` | string | `"sentry"` | namespace for Sentry |
 | `spec.metadata.name` | string | `"sentry"` | name for the ArgoCD application |

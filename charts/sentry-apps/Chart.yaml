@@ -13,9 +13,6 @@ maintainers:
     email: support@adfinis.com
     url: https://adfinis.com
 dependencies:
-  - name: common
-    repository: https://charts.adfinis.com
-    version: ~0.0.1
   - name: argoconfig
     repository: https://charts.adfinis.com
     version: ~0.6.1
