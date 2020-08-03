@@ -13,7 +13,12 @@ spec:
     {{- end }}
   project: {{ .Values.spec.project }}
   source:
-    chart: {{ .Values.spec.source.chart }}
+    {{- with .Values.spec.source.chart }}
+    chart: {{ . }}
+    {{- end }}
+    {{- with .Values.spec.source.path }}
+    path: {{ . }}
+    {{- end }}
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision | quote }}
     helm:
@@ -28,6 +33,9 @@ spec:
           clickhouse:
             {{- .Values.clickhouse | toYaml | nindent 12 }}
 
+        config:
+          {{- .Values.config | toYaml | nindent 10 }}
+
         kafka:
           {{- .Values.kafka | toYaml | nindent 10 }}
 
@@ -38,6 +46,9 @@ spec:
 
         rabbitmq:
           {{- .Values.rabbitmq | toYaml | nindent 10 }}
+
+        relay:
+          {{- .Values.relay | toYaml | nindent 10 }}
 
         redis:
           cluster:

@@ -29,22 +29,23 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `clickhouse.replicas` | int | `1` | total number of clickhouse replicas |
+| `config` | object | `{}` | extra configuration for some config maps @defaults -- See [values.yaml](https://github.com/sentry-kubernetes/charts/tree/develop/sentry) of upstream project |
 | `ingress.enabled` | bool | `false` | if true, enables the ingress configuration. |
 | `ingress.hostname` | string | `""` | hostname to use |
-| `kafka.defaultReplicationFactor` | int | `1` |  |
-| `kafka.replicaCount` | int | `1` |  |
+| `kafka` | object | `{}` |  |
 | `postgresql.postgresqlPassword` | string | `nil` | password used to access the database |
 | `rabbitmq.enabled` | bool | `false` | enable RabbitMQ Redis will be used instead. |
 | `redis` | object | `{"cluster":{"slaveCount":1},"enabled":true}` | Redis settigs @defaults -- See [bitnami/redis](https://github.com/bitnami/charts/tree/master/bitnami/redis) chart |
 | `redis.cluster.slaveCount` | int | `1` | number of followers in the Redis cluster |
+| `relay.replicas` | int | `1` | total number of relay replicas (use 0 when bootstrapping) |
 | `sentry.worker.replicas` | int | `1` | total number of sentry worker replicas |
 | `spec.destination.namespace` | string | `"sentry"` | namespace for Sentry |
 | `spec.metadata.name` | string | `"sentry"` | name for the ArgoCD application |
 | `spec.metadata.namespace` | string | `"argocd"` | namespace for the ArgoCD application |
 | `spec.project` | string | `"default"` | project to deploy the ArgoCD application to |
-| `spec.source.chart` | string | `"sentry"` | name of the Chart for Sentry |
-| `spec.source.repoURL` | string | `"https://sentry-kubernetes.github.io/charts"` | Chart museum to get Sentry |
-| `spec.source.targetRevision` | string | `"4.7.2"` | revision of the chart to use for Sentry |
+| `spec.source.path` | string | `"sentry"` |  |
+| `spec.source.repoURL` | string | `"https://github.com/adfinis-forks/charts-2.git"` |  |
+| `spec.source.targetRevision` | string | `"feat/sentry-with-relay"` |  |
 | `system.secretKey` | string | `nil` | secret key used for the session. Changing it invalidates all the current sessions. |
 | `user.create` | bool | `true` | if true, creates the user defined by email and password. |
 | `user.email` | string | `"admin@sentry.local"` | Admin user email |

@@ -10,12 +10,9 @@ spec:
   # spec.project -- project to deploy the ArgoCD application to
   project: default
   source:
-    # spec.source.chart -- name of the Chart for Sentry
-    chart: sentry
-    # spec.source.repoURL -- Chart museum to get Sentry
-    repoURL: "https://sentry-kubernetes.github.io/charts"
-    # spec.source.targetRevision -- revision of the chart to use for Sentry
-    targetRevision: 4.7.2
+    repoURL: "https://github.com/adfinis-forks/charts-2.git"
+    path: "sentry"
+    targetRevision: feat/sentry-with-relay
 
 user:
   # user.create -- if true, creates the user defined by email and password.
@@ -36,15 +33,17 @@ clickhouse:
   replicas: 1
 
 # kakfa -- Kafka configuration
-# https://github.com/bitnami/charts/tree/master/bitnami/kafka/
-kafka:
-  replicaCount: 1
-  defaultReplicationFactor: 1
+# @defaults -- See [bitnami/kafka](https://github.com/bitnami/charts/tree/master/bitnami/kafka/)
+kafka: {}
 
 rabbitmq:
   # rabbitmq.enabled -- enable RabbitMQ
   # Redis will be used instead.
   enabled: false
+
+relay:
+  # relay.replicas -- total number of relay replicas (use 0 when bootstrapping)
+  replicas: 1
 
 # redis -- Redis settigs
 # @defaults -- See [bitnami/redis](https://github.com/bitnami/charts/tree/master/bitnami/redis) chart
@@ -63,6 +62,10 @@ sentry:
 postgresql:
   # postgresql.postgresqlPassword -- (string) password used to access the database
   postgresqlPassword:
+
+# config -- extra configuration for some config maps
+# @defaults -- See [values.yaml](https://github.com/sentry-kubernetes/charts/tree/develop/sentry) of upstream project
+config: {}
 
 system:
   # system.secretKey -- (string) secret key used for the session.
