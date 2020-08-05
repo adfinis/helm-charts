@@ -49,8 +49,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `spec.source.targetRevision` | string | current appVersion | revision of the chart to use for Sentry |
 | `system.secretKey` | string | `nil` | secret key used for the session. Changing it invalidates all the current sessions. |
 | `user.create` | bool | `true` | if true, creates the user defined by email and password. |
-| `user.email` | string | `"admin@sentry.local"` | Admin user email |
-| `user.password` | string | `"admin"` | Admin user password |
+| `user.email` | string | `"admin@sentry.local"` | Super user email |
+| `user.password` | string | A randomly generated one. | Super user password. |
 
 ## About this chart
 

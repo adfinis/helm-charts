@@ -23,10 +23,11 @@ spec:
 user:
   # user.create -- if true, creates the user defined by email and password.
   create: true
-  # user.email -- Admin user email
+  # user.email -- Super user email
   email: admin@sentry.local
-  # user.password -- Admin user password
-  password: admin
+  # user.password -- Super user password.
+  # @default -- A randomly generated one.
+  password: ""
 
 ingress:
   # ingress.enabled -- if true, enables the ingress configuration.

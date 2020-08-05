@@ -23,7 +23,9 @@ spec:
     helm:
       values: |-
         user:
-          {{- .Values.user | toYaml | nindent 10 }}
+          create: {{ .Values.user.create | default false }}
+          email: {{ .Values.user.name }}
+          password: {{ .Values.user.password | default (randAlphaNum 50) | quote }}
 
         ingress:
           {{- .Values.ingress | toYaml | nindent 10 }}
