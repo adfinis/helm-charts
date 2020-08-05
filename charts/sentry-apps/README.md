@@ -43,9 +43,10 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `spec.metadata.name` | string | `"sentry"` | name for the ArgoCD application |
 | `spec.metadata.namespace` | string | `"argocd"` | namespace for the ArgoCD application |
 | `spec.project` | string | `"default"` | project to deploy the ArgoCD application to |
-| `spec.source.path` | string | `"sentry"` |  |
-| `spec.source.repoURL` | string | `"https://github.com/adfinis-forks/charts-2.git"` |  |
-| `spec.source.targetRevision` | string | `"feat/sentry-with-relay"` |  |
+| `spec.source.chart` | string | `"sentry"` | name of the Chart for Sentry |
+| `spec.source.path` | string | `""` | path of the Chart for Sentry when using Git repository |
+| `spec.source.repoURL` | string | `"https://sentry-kubernetes.github.io/charts"` | Chart museum to get Sentry |
+| `spec.source.targetRevision` | string | `"4.7.2"` | revision of the chart to use for Sentry |
 | `system.secretKey` | string | `nil` | secret key used for the session. Changing it invalidates all the current sessions. |
 | `user.create` | bool | `true` | if true, creates the user defined by email and password. |
 | `user.email` | string | `"admin@sentry.local"` | Admin user email |

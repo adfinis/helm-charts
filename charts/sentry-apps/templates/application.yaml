@@ -13,11 +13,10 @@ spec:
     {{- end }}
   project: {{ .Values.spec.project }}
   source:
-    {{- with .Values.spec.source.chart }}
-    chart: {{ . }}
-    {{- end }}
-    {{- with .Values.spec.source.path }}
-    path: {{ . }}
+    {{- if .Values.spec.source.path }}
+    path: {{ .Values.spec.source.path }}
+    {{- else }}
+    chart: {{ .Values.spec.source.chart }}
     {{- end }}
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision | quote }}

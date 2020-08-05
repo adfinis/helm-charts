@@ -10,9 +10,14 @@ spec:
   # spec.project -- project to deploy the ArgoCD application to
   project: default
   source:
-    repoURL: "https://github.com/adfinis-forks/charts-2.git"
-    path: "sentry"
-    targetRevision: feat/sentry-with-relay
+    # spec.source.chart -- name of the Chart for Sentry
+    chart: sentry
+    # spec.source.path -- path of the Chart for Sentry when using Git repository
+    path: ""
+    # spec.source.repoURL -- Chart museum to get Sentry
+    repoURL: "https://sentry-kubernetes.github.io/charts"
+    # spec.source.targetRevision -- revision of the chart to use for Sentry
+    targetRevision: 4.7.2
 
 user:
   # user.create -- if true, creates the user defined by email and password.
