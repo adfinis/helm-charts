@@ -1,0 +1,68 @@
+{{ template "argoconfig.application" (list . "sentry-apps") }}
+
+{{- define "sentry-apps" }}
+metadata:
+  {{- .Values.spec.metadata | toYaml | nindent 2 }}
+spec:
+  destination:
+    {{- with .Values.spec.destination.namespace }}
+    namespace: {{ . }}
+    {{- end }}
+    {{- with .Values.spec.destination.server }}
+    server: {{ . }}
+    {{- end }}
+  project: {{ .Values.spec.project }}
+  source:
+    {{- if .Values.spec.source.path }}
+    path: {{ .Values.spec.source.path }}
+    {{- else }}
+    chart: {{ .Values.spec.source.chart }}
+    {{- end }}
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision | default .Chart.AppVersion | quote }}
+    helm:
+      values: |-
+        user:
+          create: {{ .Values.user.create | default false }}
+          email: {{ .Values.user.email | quote }}
+          password: {{ .Values.user.password | default (randAlphaNum 50) | quote }}
+
+        ingress:
+          {{- .Values.ingress | toYaml | nindent 10 }}
+
+        clickhouse:
+          clickhouse:
+            {{- .Values.clickhouse | toYaml | nindent 12 }}
+
+        config:
+          {{- .Values.config | toYaml | nindent 10 }}
+
+        kafka:
+          {{- .Values.kafka | toYaml | nindent 10 }}
+
+        postgresql:
+          postgresqlPassword: {{ .Values.postgresql.postgresqlPassword | quote }}
+          persistence:
+            enabled: true
+
+        rabbitmq:
+          {{- .Values.rabbitmq | toYaml | nindent 10 }}
+
+        relay:
+          {{- .Values.relay | toYaml | nindent 10 }}
+
+        redis:
+          cluster:
+            slaveCount: {{ .Values.redis.cluster.slaveCount }}
+
+        sentry:
+          worker:
+            {{- .Values.sentry.worker | toYaml | nindent 12 }}
+
+        system:
+          secretKey: {{ .Values.system.secretKey | quote }}
+
+        zookeeper:
+          persistence:
+            enabled: true
+{{- end }}
