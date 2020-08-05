@@ -5,7 +5,12 @@ metadata:
   name: {{ .Values.postgresql.tls.certificate.name }}
 spec:
   secretName: {{ .Values.postgresql.tls.certificatesSecret }}
+{{- if .Values.postgresql.tls.certificate.dnsNames }}
   dnsNames:
-{{- toYaml .Values.postgresql.tls.dnsNames | indent 4 }}
-{{- toYaml .Values.postgresql.tls.issuerRef | indent 2 }}
+{{ toYaml .Values.postgresql.tls.certificate.dnsNames | indent 4 }}
+{{- end }}
+{{- if .Values.postgresql.tls.certificate.issuerRef }}
+  issuerRef:
+{{ toYaml .Values.postgresql.tls.certificate.issuerRef | indent 4 }}
+{{- end }}
 {{- end }}
