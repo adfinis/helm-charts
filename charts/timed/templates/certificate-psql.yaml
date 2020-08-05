@@ -1,0 +1,11 @@
+{{- if .Values.postgresql.tls.enabled }}
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: {{ .Values.postgresql.tls.certificate.name }}
+spec:
+  secretName: {{ .Values.postgresql.tls.certificatesSecret }}
+  dnsNames:
+{{- toYaml .Values.postgresql.tls.dnsNames | indent 4 }}
+{{- toYaml .Values.postgresql.tls.issuerRef | indent 2 }}
+{{- end }}

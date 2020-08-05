@@ -2,7 +2,7 @@ timed
 =====
 Chart for Timed application
 
-Current chart version is `0.3.20`
+Current chart version is `0.4.0`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/timed-frontend>
@@ -24,7 +24,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | `~8.10.14` |
+| https://charts.bitnami.com/bitnami | postgresql | `~9.1.2` |
 ## Chart Values
 
 
@@ -105,12 +105,19 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `ingress.hosts` | list | `[]` | Ingress hostnames |
 | `ingress.tls` | list | `[]` | Ingress TLS options |
 | `postgresql.enabled` | bool | `true` | Enable PostgreSQL for persistence |
-| `postgresql.image.tag` | string | `"12.2.0"` | PostgreSQL image version to use |
+| `postgresql.image.tag` | string | `"12.3.0"` | PostgreSQL image version to use |
 | `postgresql.ingress.enabled` | bool | `false` | Enable ingress |
 | `postgresql.ingress.loadBalancerSourceRanges` | list | `[]` | Whitelist specific IP ranges |
 | `postgresql.ingress.selector` | object | `{"app":"postgresql","role":"slave"}` | Service selector labels |
 | `postgresql.postgresqlDatabase` | string | `"timed"` | PostgreSQL database name |
 | `postgresql.postgresqlUsername` | string | `"postgres"` | PostgreSQL user name |
+| `postgresql.tls.certFilename` | string | `"tls.crt"` | Cert file name |
+| `postgresql.tls.certKeyFilename` | string | `"tls.key"` | Cert key filename |
+| `postgresql.tls.certificate.dnsNames` | list | `[]` | DNS names of certificate |
+| `postgresql.tls.certificate.issuerRef` | object | cert-manager | Issuer ref |
+| `postgresql.tls.certificate.name` | string | `"psql-server"` | Name of certificate |
+| `postgresql.tls.certificatesSecret` | string | `"psql-server"` | Name of TLS secret |
+| `postgresql.tls.enabled` | bool | `false` | Enable TLS for Postgresql |
 | `redmine.apiKey` | string | `""` | Redmine API Key |
 | `redmine.enabled` | bool | `false` | Enable Redmine integration |
 | `redmine.htaccessPassword` | string | `""` | Redmine htaccess password |
