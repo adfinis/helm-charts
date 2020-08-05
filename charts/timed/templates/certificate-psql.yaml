@@ -7,7 +7,7 @@ spec:
   secretName: {{ .Values.postgresql.tls.certificatesSecret }}
 {{- if .Values.postgresql.tls.certificate.dnsNames }}
   dnsNames:
-{{ toYaml .Values.postgresql.tls.certificate.dnsNames | indent 4 }}
+    {{ toYaml .Values.postgresql.tls.certificate.dnsNames | nindent 4 }}
 {{- end }}
 {{- if .Values.postgresql.tls.certificate.issuerRef }}
   issuerRef:
