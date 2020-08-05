@@ -19,7 +19,7 @@ spec:
     chart: {{ .Values.spec.source.chart }}
     {{- end }}
     repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision | quote }}
+    targetRevision: {{ .Values.spec.source.targetRevision | .Chart.AppVersion | quote }}
     helm:
       values: |-
         user:
