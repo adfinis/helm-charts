@@ -11,6 +11,6 @@ spec:
 {{- end }}
 {{- if .Values.postgresql.tls.certificate.issuerRef }}
   issuerRef:
-{{ toYaml .Values.postgresql.tls.certificate.issuerRef | indent 4 }}
+    {{ toYaml .Values.postgresql.tls.certificate.issuerRef | nindent 4 }}
 {{- end }}
 {{- end }}
