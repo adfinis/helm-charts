@@ -24,7 +24,7 @@ spec:
       values: |-
         user:
           create: {{ .Values.user.create | default false }}
-          email: {{ .Values.user.name }}
+          email: {{ .Values.user.email | quote }}
           password: {{ .Values.user.password | default (randAlphaNum 50) | quote }}
 
         ingress:
