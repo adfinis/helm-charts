@@ -32,8 +32,14 @@ ingress:
     # global issuer
     #"cert-manager.io/cluster-issuer": selfsigned-issuer
 
-    # disable max body size
-    nginx.ingress.kubernetes.io/proxy-body-size: 0
+    # allow bigger max body size
+    nginx.ingress.kubernetes.io/proxy-body-size: "200m"
+
+    # CORS (for JavaScript integrations)
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT,GET,POST,OPTIONS"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "*"
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
 
   tls:
     - hosts:
