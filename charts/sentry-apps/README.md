@@ -29,13 +29,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | `clickhouse.replicas` | int | `1` | total number of clickhouse replicas |
-| `config` | object | `{}` | extra configuration for some config maps @defaults -- See [values.yaml](https://github.com/sentry-kubernetes/charts/tree/develop/sentry) of upstream project |
+| `config` | object | See [values.yaml](https://github.com/sentry-kubernetes/charts/tree/develop/sentry) of upstream project | extra configuration for some config maps |
 | `ingress.enabled` | bool | `false` | if true, enables the ingress configuration. |
 | `ingress.hostname` | string | `""` | hostname to use |
 | `kafka` | object | `{}` |  |
 | `postgresql.postgresqlPassword` | string | `nil` | password used to access the database |
 | `rabbitmq.enabled` | bool | `false` | enable RabbitMQ Redis will be used instead. |
-| `redis` | object | `{"cluster":{"slaveCount":1},"enabled":true}` | Redis settigs @defaults -- See [bitnami/redis](https://github.com/bitnami/charts/tree/master/bitnami/redis) chart |
+| `redis` | object | See [bitnami/redis](https://github.com/bitnami/charts/tree/master/bitnami/redis) chart | Redis settigs |
 | `redis.cluster.slaveCount` | int | `1` | number of followers in the Redis cluster |
 | `relay.replicas` | int | `1` | total number of relay replicas (use 0 when bootstrapping) |
 | `sentry.worker.replicas` | int | `1` | total number of sentry worker replicas |
@@ -46,6 +46,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `spec.source.chart` | string | `"sentry"` | name of the Chart for Sentry |
 | `spec.source.path` | string | `""` | path of the Chart for Sentry when using Git repository |
 | `spec.source.repoURL` | string | `"https://sentry-kubernetes.github.io/charts"` | Chart museum to get Sentry |
+| `spec.source.targetRevision` | string | current appVersion | revision of the chart to use for Sentry |
 | `system.secretKey` | string | `nil` | secret key used for the session. Changing it invalidates all the current sessions. |
 | `user.create` | bool | `true` | if true, creates the user defined by email and password. |
 | `user.email` | string | `"admin@sentry.local"` | Admin user email |

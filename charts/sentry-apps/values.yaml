@@ -17,7 +17,8 @@ spec:
     # spec.source.repoURL -- Chart museum to get Sentry
     repoURL: "https://sentry-kubernetes.github.io/charts"
     # spec.source.targetRevision -- revision of the chart to use for Sentry
-    # targetRevision:
+    # @default -- current appVersion
+    targetRevision: ""
 
 user:
   # user.create -- if true, creates the user defined by email and password.
@@ -38,7 +39,7 @@ clickhouse:
   replicas: 1
 
 # kakfa -- Kafka configuration
-# @defaults -- See [bitnami/kafka](https://github.com/bitnami/charts/tree/master/bitnami/kafka/)
+# @default -- See [bitnami/kafka](https://github.com/bitnami/charts/tree/master/bitnami/kafka/)
 kafka: {}
 
 rabbitmq:
@@ -51,7 +52,7 @@ relay:
   replicas: 1
 
 # redis -- Redis settigs
-# @defaults -- See [bitnami/redis](https://github.com/bitnami/charts/tree/master/bitnami/redis) chart
+# @default -- See [bitnami/redis](https://github.com/bitnami/charts/tree/master/bitnami/redis) chart
 redis:
   enabled: true
 
@@ -69,7 +70,7 @@ postgresql:
   postgresqlPassword:
 
 # config -- extra configuration for some config maps
-# @defaults -- See [values.yaml](https://github.com/sentry-kubernetes/charts/tree/develop/sentry) of upstream project
+# @default -- See [values.yaml](https://github.com/sentry-kubernetes/charts/tree/develop/sentry) of upstream project
 config: {}
 
 system:
