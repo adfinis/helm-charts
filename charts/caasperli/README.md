@@ -2,7 +2,7 @@ caasperli
 =========
 Deploy Caasperli to a Kubernetes Cluster
 
-Current chart version is `0.7.3`
+Current chart version is `0.8.0`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/potz-holzoepfel-und-zipfelchape>
@@ -28,6 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `autoscaling.maxReplicas` | int | `100` |  |
 | `autoscaling.minReplicas` | int | `1` |  |
 | `autoscaling.targetCPUUtilizationPercentage` | int | `80` |  |
+| `deploymentAnnotations` | object | `{}` | Annotations to add to Deployment. |
 | `fullnameOverride` | string | `""` |  |
 | `grafana.enabled` | bool | `false` | Enable Grafana Dashboards |
 | `grafana.extraLabels` | object | `{}` | Labels to add to all Grafana integration resources |
@@ -41,7 +42,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `ingress.tls` | list | `[]` | TLS configuration for ingress |
 | `nameOverride` | string | `""` |  |
 | `nodeSelector` | object | `{}` |  |
-| `podAnnotations` | object | `{}` |  |
+| `podAnnotations` | object | `{}` | Annotations to add to Pod. |
 | `podSecurityContext` | object | `{}` | [PodSecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#podsecuritycontext-v1-core) |
 | `prometheus.enabled` | bool | `false` | Enable Prometheus integration |
 | `prometheus.extraLabels` | object | `{}` | Labels to add to all Prometheus integration resources |

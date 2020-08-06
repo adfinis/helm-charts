@@ -26,6 +26,10 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
+# deploymentAnnotations -- Annotations to add to Deployment.
+deploymentAnnotations: {}
+
+# podAnnotations -- Annotations to add to Pod.
 podAnnotations: {}
 
 # podSecurityContext -- [PodSecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#podsecuritycontext-v1-core)
