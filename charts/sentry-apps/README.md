@@ -2,7 +2,7 @@ sentry-apps
 ===========
 Sentry on premise
 
-Current chart version is `0.1.0`
+Current chart version is `0.1.1`
 
 
 **Homepage:** <https://github.com/sentry-kubernetes/charts/tree/develop/sentry>
@@ -32,7 +32,11 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `config` | object | See [values.yaml](https://github.com/sentry-kubernetes/charts/tree/develop/sentry) of upstream project | extra configuration for some config maps |
 | `ingress.enabled` | bool | `false` | if true, enables the ingress configuration. |
 | `ingress.hostname` | string | `""` | hostname to use |
-| `kafka` | object | `{}` |  |
+| `kafka.defaultReplicationFactor` | int | `1` |  |
+| `kafka.offsetsTopicReplicationFactor` | int | `1` | replication factor for the offsets topic |
+| `kafka.replicaCount` | int | `1` | number of Kakfa brokers to deploy |
+| `kafka.transactionStateLogMinIsr` | int | `1` | overridden min.insync.replicas config for the transaction topic |
+| `kafka.transactionStateLogReplicationFactor` | int | `1` | replication factor for the transaction topic |
 | `postgresql.postgresqlPassword` | string | `nil` | password used to access the database |
 | `rabbitmq.enabled` | bool | `false` | enable RabbitMQ Redis will be used instead. |
 | `redis` | object | See [bitnami/redis](https://github.com/bitnami/charts/tree/master/bitnami/redis) chart | Redis settigs |
