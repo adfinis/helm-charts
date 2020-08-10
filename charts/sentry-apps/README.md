@@ -32,7 +32,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `config` | object | See [values.yaml](https://github.com/sentry-kubernetes/charts/tree/develop/sentry) of upstream project | extra configuration for some config maps |
 | `ingress.enabled` | bool | `false` | if true, enables the ingress configuration. |
 | `ingress.hostname` | string | `""` | hostname to use |
-| `kafka.defaultReplicationFactor` | int | `1` |  |
+| `kafka.defaultReplicationFactor` | int | `1` | replication factor for automatically created topics |
 | `kafka.offsetsTopicReplicationFactor` | int | `1` | replication factor for the offsets topic |
 | `kafka.replicaCount` | int | `1` | number of Kakfa brokers to deploy |
 | `kafka.transactionStateLogMinIsr` | int | `1` | overridden min.insync.replicas config for the transaction topic |

@@ -44,7 +44,7 @@ clickhouse:
 kafka:
   # kafka.replicaCount -- number of Kakfa brokers to deploy
   replicaCount: 1
-  # kafka.defaultReplicationFaction -- replication factor for automatically created topics
+  # kafka.defaultReplicationFactor -- replication factor for automatically created topics
   defaultReplicationFactor: 1
   # kafka.offsetsTopicReplicationFactor -- replication factor for the offsets topic
   offsetsTopicReplicationFactor: 1
