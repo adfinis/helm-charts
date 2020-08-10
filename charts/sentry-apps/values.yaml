@@ -40,8 +40,18 @@ clickhouse:
   replicas: 1
 
 # kakfa -- Kafka configuration
-# @default -- See [bitnami/kafka](https://github.com/bitnami/charts/tree/master/bitnami/kafka/)
-kafka: {}
+# @default -- See [sentry's default](https://github.com/sentry-kubernetes/charts/blob/develop/sentry/values.yaml) or [bitnami/kafka](https://github.com/bitnami/charts/tree/master/bitnami/kafka/)
+kafka:
+  # kafka.replicaCount -- number of Kakfa brokers to deploy
+  replicaCount: 1
+  # kafka.defaultReplicationFactor -- replication factor for automatically created topics
+  defaultReplicationFactor: 1
+  # kafka.offsetsTopicReplicationFactor -- replication factor for the offsets topic
+  offsetsTopicReplicationFactor: 1
+  # kafka.transactionStateLogReplicationFactor -- replication factor for the transaction topic
+  transactionStateLogReplicationFactor: 1
+  # kafka.transactionStateLogMinIsr -- overridden min.insync.replicas config for the transaction topic
+  transactionStateLogMinIsr: 1
 
 rabbitmq:
   # rabbitmq.enabled -- enable RabbitMQ
