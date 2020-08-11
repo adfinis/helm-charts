@@ -230,7 +230,7 @@ postgresql:
     loadBalancerSourceRanges: []
     # postgresql.ingress.selector -- Service selector labels
     selector:
-      app: postgresql
+      app.kubernetes.io/name: postgresql
       role: slave
   tls:
     # postgresql.tls.enabled -- Enable TLS for Postgresql
