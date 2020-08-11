@@ -261,6 +261,8 @@ auth:
     userinfoEndpoint: https://example.com/auth/realms/timed/protocol/openid-connect/userinfo
     # auth.oidc.createUser -- OIDC create user in timed db if it does not already exist
     createUser: "False"
+    # auth.oidc.adminLoginRedirectUrl -- URL of the django-admin, to which the user is redirected after successful admin login
+    adminLoginRedirectUrl: https://example.com/admin/
     client:
       # auth.oidc.client.id -- OIDC client id
       id: timed
