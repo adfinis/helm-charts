@@ -2,7 +2,7 @@ timed
 =====
 Chart for Timed application
 
-Current chart version is `0.4.2`
+Current chart version is `0.4.3`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/timed-frontend>
@@ -30,6 +30,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| `auth.oidc.adminLoginRedirectUrl` | string | `"https://example.com/admin/"` | URL of the django-admin, to which the user is redirected after successful admin login |
 | `auth.oidc.claims.email` | string | `"email"` | OIDC email claim name |
 | `auth.oidc.claims.firstname` | string | `"given_name"` | OIDC firstname claim name |
 | `auth.oidc.claims.lastname` | string | `"family_name"` | OIDC lastname claim name |

@@ -23,6 +23,7 @@ data:
   DJANGO_OIDC_EMAIL_CLAIM: {{ .Values.auth.oidc.claims.email | quote }}
   DJANGO_OIDC_FIRSTNAME_CLAIM: {{ .Values.auth.oidc.claims.firstname | quote }}
   DJANGO_OIDC_LASTNAME_CLAIM: {{ .Values.auth.oidc.claims.lastname | quote }}
+  DJANGO_OIDC_ADMIN_LOGIN_REDIRECT_URL: {{ .Values.auth.oidc.adminLoginRedirectUrl | quote }}
 {{- if .Values.auth.oidc.introspect.enabled }}
   DJANGO_OIDC_CHECK_INTROSPECT: "True"
   DJANGO_OIDC_INTROSPECT_ENDPOINT: {{ .Values.auth.oidc.introspect.endpoint | quote }}
