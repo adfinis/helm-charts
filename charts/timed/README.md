@@ -2,7 +2,7 @@ timed
 =====
 Chart for Timed application
 
-Current chart version is `0.4.1`
+Current chart version is `0.4.2`
 
 
 **Homepage:** <https://github.com/adfinis-sygroup/timed-frontend>
@@ -108,7 +108,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `postgresql.image.tag` | string | `"12.3.0"` | PostgreSQL image version to use |
 | `postgresql.ingress.enabled` | bool | `false` | Enable ingress |
 | `postgresql.ingress.loadBalancerSourceRanges` | list | `[]` | Whitelist specific IP ranges |
-| `postgresql.ingress.selector` | object | `{"app":"postgresql","role":"slave"}` | Service selector labels |
+| `postgresql.ingress.selector` | object | `{"app.kubernetes.io/name":"postgresql","role":"slave"}` | Service selector labels |
 | `postgresql.postgresqlDatabase` | string | `"timed"` | PostgreSQL database name |
 | `postgresql.postgresqlUsername` | string | `"postgres"` | PostgreSQL user name |
 | `postgresql.tls.certFilename` | string | `"tls.crt"` | Cert file name |
