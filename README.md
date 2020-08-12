@@ -28,7 +28,7 @@ helm repo add adfinis https://charts.adfinis.com
 | [common](charts/common) | Common chartbuilding components and helpers, based on incubator/common | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [kasperleyn](charts/kasperleyn) | A Helm 2 chart to deploy Caasperli | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.0.x](https://img.shields.io/badge/app%20version-1.0.x-brightgreen) |
 | [sentry-apps](charts/sentry-apps) | Sentry on premise | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 4.7.x](https://img.shields.io/badge/app%20version-4.7.x-brightgreen) |
-| [timed](charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.0.x](https://img.shields.io/badge/app%20version-1.0.x-brightgreen) |
+| [timed](charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.1.x](https://img.shields.io/badge/app%20version-1.1.x-brightgreen) |
 
 ## Contributing
 
