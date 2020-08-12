@@ -30,18 +30,25 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| `auth.allowLocalLogin` | string | `"False"` | Allow local Django login |
 | `auth.oidc.adminLoginRedirectUrl` | string | `"https://example.com/admin/"` | URL of the django-admin, to which the user is redirected after successful admin login |
 | `auth.oidc.claims.email` | string | `"email"` | OIDC email claim name |
 | `auth.oidc.claims.firstname` | string | `"given_name"` | OIDC firstname claim name |
 | `auth.oidc.claims.lastname` | string | `"family_name"` | OIDC lastname claim name |
 | `auth.oidc.claims.username` | string | `"preferred_username"` | OIDC username claim name |
 | `auth.oidc.client.id` | string | `"timed"` | OIDC client id |
-| `auth.oidc.client.secret` | string | `nil` | OIDC client secret |
 | `auth.oidc.createUser` | string | `"False"` | OIDC create user in timed db if it does not already exist |
+| `auth.oidc.endPoints.auth` | string | `nil` | OIDC /auth endpoint |
+| `auth.oidc.endPoints.jwks` | string | `nil` | OIDC /certs endpoint |
+| `auth.oidc.endPoints.token` | string | `nil` | OIDC /token endpoint |
+| `auth.oidc.endPoints.userInfo` | string | `nil` | OIDC /userinfo endpoint |
+| `auth.oidc.introspect.client.id` | string | `"timed-confidential"` | OIDC introspect client id |
+| `auth.oidc.introspect.client.secret` | string | `nil` | OIDC introspect client secret |
 | `auth.oidc.introspect.enabled` | bool | `true` | Enable OIDC introspect |
-| `auth.oidc.introspect.endpoint` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect/token/introspect"` | OIDC introspect endpoint |
+| `auth.oidc.introspect.endpoint` | string | `nil` | OIDC introspect endpoint |
+| `auth.oidc.signAlgorithm` | string | `"RS256"` | Algorithm the OIDC provider uses to sign ID tokens |
 | `auth.oidc.url` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect"` |  |
-| `auth.oidc.userinfoEndpoint` | string | `"https://example.com/auth/realms/timed/protocol/openid-connect/userinfo"` | OIDC user endpoint url |
+| `auth.oidc.verifySSL` | string | `"True"` | OIDC verify SSL |
 | `backend.cronjobs.notifyChangedEmployments` | object | `{"command":["./manage.py","notify_changed_employments"],"schedule":"0 2 * * 1"}` | Notify changed employments |
 | `backend.cronjobs.notifyReviewersFirst` | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","5"],"schedule":"0 8 4 * *"}` | Notify reviewers first stage |
 | `backend.cronjobs.notifyReviewersFirst.command[3]` | string | `"5"` | Period will end today minus given offset |
