@@ -40,6 +40,9 @@ spec:
         kafka:
           {{- .Values.kafka | toYaml | nindent 10 }}
 
+        nginx:
+          {{- .Values.nginx | toYaml | nindent 10 }}
+
         postgresql:
           postgresqlPassword: {{ .Values.postgresql.postgresqlPassword | quote }}
           persistence:
