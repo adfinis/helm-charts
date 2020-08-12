@@ -27,6 +27,10 @@ spec:
             backend:
               serviceName: {{ $.Values.backend.service.name }}
               servicePort: {{ $.Values.backend.service.externalPort }}
+          - path: /oidc/
+            backend:
+              serviceName: {{ $.Values.backend.service.name }}
+              servicePort: {{ $.Values.backend.service.externalPort }}
           # frontend service as catch all backend
           - path: /
             backend:
