@@ -254,11 +254,21 @@ postgresql:
         name: letsencrypt-prod
 
 auth:
+  # auth.allowLocalLogin -- Allow local Django login
+  allowLocalLogin: "False"
   oidc:
     # auth.oidc.host -- OIDC host
     url: https://example.com/auth/realms/timed/protocol/openid-connect
-    # auth.oidc.userinfoEndpoint -- OIDC user endpoint url
-    userinfoEndpoint: https://example.com/auth/realms/timed/protocol/openid-connect/userinfo
+    endPoints:
+      # auth.oidc.endPoints.auth -- OIDC /auth endpoint
+      auth: ~
+      # auth.oidc.endPoints.token -- OIDC /token endpoint
+      token: ~
+      # auth.oidc.endPoints.userInfo -- OIDC /userinfo endpoint
+      userInfo: ~
+      # auth.oidc.endPoints.jwks -- OIDC /certs endpoint
+      jwks: ~
+
     # auth.oidc.createUser -- OIDC create user in timed db if it does not already exist
     createUser: "False"
     # auth.oidc.adminLoginRedirectUrl -- URL of the django-admin, to which the user is redirected after successful admin login
@@ -266,13 +276,20 @@ auth:
     client:
       # auth.oidc.client.id -- OIDC client id
       id: timed
-      # auth.oidc.client.secret -- OIDC client secret
-      secret: ~
+    # auth.oidc.signAlgorithm -- Algorithm the OIDC provider uses to sign ID tokens
+    signAlgorithm: RS256
+    # auth.oidc.verifySSL -- OIDC verify SSL
+    verifySSL: "True"
     introspect:
       # auth.oidc.introspect.enabled -- Enable OIDC introspect
       enabled: true
+      client:
+        # auth.oidc.introspect.client.id -- OIDC introspect client id
+        id: timed-confidential
+        # auth.oidc.introspect.client.secret -- OIDC introspect client secret
+        secret: ~
       # auth.oidc.introspect.endpoint -- OIDC introspect endpoint
-      endpoint: https://example.com/auth/realms/timed/protocol/openid-connect/token/introspect
+      endpoint: ~
     claims:
       # auth.oidc.claims.firstname -- OIDC firstname claim name
       firstname: given_name
