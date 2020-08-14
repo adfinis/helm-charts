@@ -141,9 +141,8 @@ frontend:
   image:
     # frontend.image.repository -- Frontend image name
     repository: adfinissygroup/timed-frontend
-    # Specify a tag to override which version of timed to deploy.
-    # If no tag is specified the appVersion from Chart.yaml is used as tag.
-    # tag:
+    # frontend.image.tag -- Frontend image tag
+    tag: v1.1.0
     # frontend.image.pullPolicy -- Frontend image pull policy
     pullPolicy: IfNotPresent
   service:
