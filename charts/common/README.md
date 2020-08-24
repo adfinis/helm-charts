@@ -1,19 +1,17 @@
-common
-======
+# common
+
+![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square) ![AppVersion: 0.0.0](https://img.shields.io/badge/AppVersion-0.0.0-informational?style=flat-square)
+
 Common chartbuilding components and helpers, based on incubator/common
 
-Current chart version is `0.0.1`
-
-
-**Homepage:** <https://helm.sh - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/common>
-
+**Homepage:** <https://helm.sh>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
+## Source Code
 
-
-
+* <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/common>
 
 ## About this chart
 
