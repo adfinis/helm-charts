@@ -64,6 +64,5 @@ spec:
           secretKey: {{ .Values.system.secretKey | quote }}
 
         zookeeper:
-          persistence:
-            enabled: true
+          {{- .Values.zookeeper | toYaml | nindent 10 }}
 {{- end }}

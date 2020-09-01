@@ -97,3 +97,9 @@ system:
   # system.secretKey -- (string) secret key used for the session.
   # Changing it invalidates all the current sessions.
   secretKey:
+
+# zookeeper -- extra configuration for the [zookeper chart](https://github.com/bitnami/charts/tree/master/bitnami/zookeeper)
+# @default -- Persistence enabled
+zookeeper:
+  persistence:
+    enabled: true
