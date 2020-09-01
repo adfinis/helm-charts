@@ -1,6 +1,6 @@
 # sentry-apps
 
-![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 5.0.0](https://img.shields.io/badge/AppVersion-5.0.0-informational?style=flat-square)
+![Version: 0.2.2](https://img.shields.io/badge/Version-0.2.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 5.0.0](https://img.shields.io/badge/AppVersion-5.0.0-informational?style=flat-square)
 
 Sentry on premise
 
@@ -34,6 +34,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kafka.transactionStateLogReplicationFactor | int | `1` | replication factor for the transaction topic |
 | nginx | object | See [sentry's default](https://github.com/sentry-kubernetes/charts/blob/develop/sentry/values.yaml) | NGINX configuration (required when `ingress.enabled=false`) |
 | nginx.enabled | bool | `true` | enables nginx |
+| postgresql.persistence.enabled | bool | `true` | Enable postgresql persistence |
 | postgresql.postgresqlPassword | string | `nil` | password used to access the database |
 | rabbitmq.enabled | bool | `false` | enable RabbitMQ Redis will be used instead. |
 | redis | object | See [bitnami/redis](https://github.com/bitnami/charts/tree/master/bitnami/redis) chart | Redis settigs |

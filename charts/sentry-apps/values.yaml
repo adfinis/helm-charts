@@ -85,6 +85,9 @@ sentry:
 postgresql:
   # postgresql.postgresqlPassword -- (string) password used to access the database
   postgresqlPassword:
+  persistence:
+    # postgresql.persistence.enabled -- Enable postgresql persistence
+    enabled: true
 
 # config -- extra configuration for some config maps
 # @default -- See [values.yaml](https://github.com/sentry-kubernetes/charts/tree/develop/sentry) of upstream project

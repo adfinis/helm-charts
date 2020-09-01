@@ -44,9 +44,7 @@ spec:
           {{- .Values.nginx | toYaml | nindent 10 }}
 
         postgresql:
-          postgresqlPassword: {{ .Values.postgresql.postgresqlPassword | quote }}
-          persistence:
-            enabled: true
+          {{- .Values.postgresql | toYaml | nindent 10 }}
 
         rabbitmq:
           {{- .Values.rabbitmq | toYaml | nindent 10 }}
