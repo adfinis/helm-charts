@@ -723,6 +723,27 @@ entries:
     version: 0.3.1
   sentry-apps:
   - apiVersion: v2
+    appVersion: 5.1.1
+    created: "2020-09-01T06:37:19.477175369Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: ~0.6.1
+    description: Sentry on premise
+    digest: 1ca9c356e8079366606f208833f9da6e5f19a756ce12f9afbb5c62c19b64efa5
+    home: https://github.com/sentry-kubernetes/charts/tree/develop/sentry
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: sentry-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/sentry-apps
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/sentry-apps-0.3.0/sentry-apps-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     appVersion: 5.0.0
     created: "2020-09-01T06:21:41.176777854Z"
     dependencies:
