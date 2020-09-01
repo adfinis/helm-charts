@@ -1,13 +1,12 @@
 # kasperleyn
 
-![Version: 0.3.5](https://img.shields.io/badge/Version-0.3.5-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
+> **:exclamation: This Helm Chart is deprecated!**
+
+![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![AppVersion: v0.1.2](https://img.shields.io/badge/AppVersion-v0.1.2-informational?style=flat-square)
 
 A Helm 2 chart to deploy Caasperli
 
 **Homepage:** <https://github.com/adfinis-sygroup/potz-holzoepfel-und-zipfelchape>
-
-## Maintainers
-This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Values
 
@@ -17,7 +16,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"adfinissygroup/potz-holzoepfel-und-zipfelchape"` |  |
-| image.tag | string | `"latest"` |  |
+| image.tag | string | `"v0.1.2"` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
 | ingress.enabled | bool | `false` |  |

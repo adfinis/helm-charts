@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: adfinissygroup/potz-holzoepfel-und-zipfelchape
-  tag: latest
+  tag: v0.1.2
   pullPolicy: Always
 
 imagePullSecrets: []
