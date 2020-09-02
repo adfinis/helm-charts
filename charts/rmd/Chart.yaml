@@ -3,7 +3,7 @@ name: rmd
 description: Chart for Rmd.io application
 type: application
 version: 0.1.0
-appVersion: test_v2
+appVersion: latest
 keywords:
   - rmd
   - postgresql

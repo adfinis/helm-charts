@@ -44,7 +44,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | `rmd.cronjobs.sendMails.command[1]` | string | `"sendmail"` |  |
 | `rmd.cronjobs.sendMails.schedule` | string | `"10 * * * *"` | when to send mails |
 | `rmd.image.pullPolicy` | string | `"IfNotPresent"` | Rmd image pull policy |
-| `rmd.image.repository` | string | `"wiktorkepczynski/my_rmd"` | Rmd image name |
+| `rmd.image.repository` | string | `"adfinissygroup/rmd"` | Rmd image name |
 | `rmd.image.tag` | string | appVersion from Chart.yaml | Specify a tag to override which version of rmd to deploy. |
 | `rmd.livenessProbe.enabled` | bool | `true` | Enable liveness probe on rmd |
 | `rmd.livenessProbe.failureThreshold` | int | `6` | Number of tries to perform the probe |

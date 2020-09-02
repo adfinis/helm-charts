@@ -6,7 +6,7 @@ rmd:
   replicaCount: 1
   image:
     # rmd.image.repository -- Rmd image name
-    repository: wiktorkepczynski/my_rmd
+    repository: adfinissygroup/rmd
     # rmd.image.tag -- Specify a tag to override which version of rmd to deploy.
     # @default -- appVersion from Chart.yaml
     tag: ~
