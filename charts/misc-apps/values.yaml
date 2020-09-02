@@ -1,0 +1,27 @@
+# downscaler -- [kube-downscaler](https://github.com/hjacobs/kube-downscaler)
+# @default -- see [values.yaml](./values.yaml)
+downscaler:
+  # downscaler.enabled -- Enable kube-downscaler: [example](./examples/kube-downscaler.yaml)
+  enabled: false
+  namespace: "infra-downscaler"
+  repoURL: "http://storage.googleapis.com/kubernetes-charts-incubator"
+  chart: "kube-downscaler"
+  # downscaler.targetRevision -- [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version
+  targetRevision: "0.5.*"
+  # downscaler.values -- Helm values
+  # @default -- [upstream values](https://github.com/helm/charts/blob/master/incubator/kube-downscaler/values.yaml)
+  values: {}
+
+# signalilo -- [sigalilo](https://github.com/vshn/signalilo)
+# @default -- see [values.yaml](./values.yaml)
+signalilo:
+  # signalilo.enabled -- Enable signalilo: [example](./examples/signalilo.yaml)
+  enabled: false
+  namespace: "infra-signalilo"
+  repoURL: "https://charts.appuio.ch"
+  chart: "signalilo"
+  # signalilo.targetRevision -- [signalilo Helm chart](https://github.com/appuio/charts/tree/master/signalilo) version
+  targetRevision: "0.5.*"
+  # signalilo.values -- Helm values
+  # @default -- [upstream values](https://github.com/appuio/charts/blob/master/signalilo/values.yaml)
+  values: {}

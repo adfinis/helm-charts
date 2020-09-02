@@ -1,0 +1,23 @@
+signalilo:
+  enabled: true
+  values:
+    resources:
+      limits:
+        cpu: 50m
+        memory: 200Mi
+    config:
+      # needs replacing with a fresh uuid
+      uuid:
+      icinga_hostname: kubernetes.default.svc
+      icinga_url: https://icinga.int.example.com
+      icinga_username: api-user
+      icinga_password: secret
+      alertmanager_bearer_token: secret
+    extraEnvVars:
+      - name: SIGNALILO_ICINGA_DEBUG
+        value: "false"
+       # the CA of your icinga setup, if needed
+      - name: SIGNALILO_ICINGA_CA
+        value: |
+          -----BEGIN CERTIFICATE-----
+          -----END CERTIFICATE-----

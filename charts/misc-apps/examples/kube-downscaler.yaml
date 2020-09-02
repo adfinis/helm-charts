@@ -1,0 +1,12 @@
+downscaler:
+  enabled: true
+  values:
+    debug:
+      enable: false
+    resources:
+      limits:
+        cpu: 50m
+        memory: 200Mi
+    excludedNamespaces:
+      - kube-system
+      - infra-downscaler
