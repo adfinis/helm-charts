@@ -2,7 +2,7 @@ apiVersion: v2
 name: sentry-apps
 description: Sentry on premise
 type: application
-version: 0.3.2
+version: 0.3.3
 appVersion: 5.1.2
 home: https://github.com/sentry-kubernetes/charts/tree/develop/sentry
 sources:

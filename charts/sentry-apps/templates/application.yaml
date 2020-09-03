@@ -57,8 +57,7 @@ spec:
             slaveCount: {{ .Values.redis.cluster.slaveCount }}
 
         sentry:
-          worker:
-            {{- .Values.sentry.worker | toYaml | nindent 12 }}
+          {{- .Values.sentry | toYaml | nindent 10 }}
 
         system:
           secretKey: {{ .Values.system.secretKey | quote }}
