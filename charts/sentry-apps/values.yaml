@@ -90,13 +90,17 @@ postgresql:
     enabled: true
 
 # config -- extra configuration for some config maps
-# @default -- See [values.yaml](https://github.com/sentry-kubernetes/charts/tree/develop/sentry) of upstream project
+# @default -- See [values.yaml](https://github.com/sentry-kubernetes/charts/blob/develop/sentry/values.yaml) of upstream project
 config: {}
 
 system:
   # system.secretKey -- (string) secret key used for the session.
   # Changing it invalidates all the current sessions.
   secretKey:
+
+# hooks -- configure hooks
+# @default -- See [values.yaml](https://github.com/sentry-kubernetes/charts/blob/develop/sentry/values.yaml) of upstream project
+hooks: {}
 
 # zookeeper -- extra configuration for the [zookeper chart](https://github.com/bitnami/charts/tree/master/bitnami/zookeeper)
 # @default -- Persistence enabled
