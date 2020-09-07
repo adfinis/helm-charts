@@ -62,6 +62,11 @@ spec:
         system:
           secretKey: {{ .Values.system.secretKey | quote }}
 
+        {{- with .Values.hooks }}
+        hooks:
+          {{- . | toYaml | nindent 10 }}
+        {{- end }}
+
         zookeeper:
           {{- .Values.zookeeper | toYaml | nindent 10 }}
 {{- end }}

@@ -1,6 +1,6 @@
 # sentry-apps
 
-![Version: 0.3.3](https://img.shields.io/badge/Version-0.3.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 5.1.2](https://img.shields.io/badge/AppVersion-5.1.2-informational?style=flat-square)
+![Version: 0.3.4](https://img.shields.io/badge/Version-0.3.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 5.1.2](https://img.shields.io/badge/AppVersion-5.1.2-informational?style=flat-square)
 
 Sentry on premise
 
@@ -24,7 +24,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | clickhouse.replicas | int | `1` | total number of clickhouse replicas |
-| config | object | See [values.yaml](https://github.com/sentry-kubernetes/charts/tree/develop/sentry) of upstream project | extra configuration for some config maps |
+| config | object | See [values.yaml](https://github.com/sentry-kubernetes/charts/blob/develop/sentry/values.yaml) of upstream project | extra configuration for some config maps |
+| hooks | object | See [values.yaml](https://github.com/sentry-kubernetes/charts/blob/develop/sentry/values.yaml) of upstream project | configure hooks |
 | ingress.enabled | bool | `false` | if true, enables the ingress configuration. |
 | ingress.hostname | string | `""` | hostname to use |
 | kafka.defaultReplicationFactor | int | `1` | replication factor for automatically created topics |
