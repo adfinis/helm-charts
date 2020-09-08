@@ -3,6 +3,7 @@
 downscaler:
   # downscaler.enabled -- Enable kube-downscaler: [example](./examples/kube-downscaler.yaml)
   enabled: false
+  name: downscaler
   destination:
     # downscaler.destination.namespace -- Namespace
     namespace: "infra-downscaler"
@@ -22,6 +23,7 @@ downscaler:
 signalilo:
   # signalilo.enabled -- Enable signalilo: [example](./examples/signalilo.yaml)
   enabled: false
+  name: signalilo
   destination:
     # signalilo.destination.namespace -- Namespace
     namespace: "infra-signalilo"
