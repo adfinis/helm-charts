@@ -3,6 +3,27 @@ entries:
   argoconfig:
   - apiVersion: v2
     appVersion: latest
+    created: "2020-09-08T17:56:58.611971746Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.0
+    description: Configure Argo CD AppProjects, Applications and more
+    digest: a1dadea0a381a47b05419e072f276ab409c655b561a6cbc20e296fb83c48beb5
+    home: https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: argoconfig
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argoconfig
+    type: library
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/argoconfig-0.6.3/argoconfig-0.6.3.tgz
+    version: 0.6.3
+  - apiVersion: v2
+    appVersion: latest
     created: "2020-08-24T08:31:35.812935856Z"
     dependencies:
     - name: common
