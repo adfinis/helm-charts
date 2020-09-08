@@ -1,11 +1,15 @@
 # downscaler -- [kube-downscaler](https://github.com/hjacobs/kube-downscaler)
-# @default -- see [values.yaml](./values.yaml)
+# @default -- see below
 downscaler:
   # downscaler.enabled -- Enable kube-downscaler: [example](./examples/kube-downscaler.yaml)
   enabled: false
   destination:
+    # downscaler.destination.namespace -- Namespace
     namespace: "infra-downscaler"
+  # downscaler.repoURL -- Repo URL
+  # @default -- [repo](http://storage.googleapis.com/kubernetes-charts-incubator)
   repoURL: "http://storage.googleapis.com/kubernetes-charts-incubator"
+  # downscaler.chart -- Chart
   chart: "kube-downscaler"
   # downscaler.targetRevision -- [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version
   targetRevision: "0.5.*"
@@ -14,13 +18,17 @@ downscaler:
   values: {}
 
 # signalilo -- [sigalilo](https://github.com/vshn/signalilo)
-# @default -- see [values.yaml](./values.yaml)
+# @default -- see below
 signalilo:
   # signalilo.enabled -- Enable signalilo: [example](./examples/signalilo.yaml)
   enabled: false
   destination:
+    # signalilo.destination.namespace -- Namespace
     namespace: "infra-signalilo"
+  # signalilo.repoURL --
+  # @default -- [repo](https://charts.appuio.ch)
   repoURL: "https://charts.appuio.ch"
+  # signalilo.chart -- Chart
   chart: "signalilo"
   # signalilo.targetRevision -- [signalilo Helm chart](https://github.com/appuio/charts/tree/master/signalilo) version
   targetRevision: "0.5.*"
