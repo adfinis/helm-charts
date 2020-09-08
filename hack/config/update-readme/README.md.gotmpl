@@ -45,8 +45,7 @@ helm repo add adfinis https://charts.adfinis.com
 {{- if has $chartManifest "icon" }}
 #### [{{.}}]({{ print $readme.chartBaseURL . }})
 
-![Version: {{ template "helmcharts.shortVersion" $chartManifest.version }}](https://img.shields.io/badge/version-{{ template "helmcharts.shortVersion" $chartManifest.version }}-brightgreen)
-![App version: {{ template "helmcharts.shortVersion" $chartManifest.appVersion }}](https://img.shields.io/badge/app%20version-{{ template "helmcharts.shortVersion" $chartManifest.appVersion }}-brightgreen)
+![Version: {{ template "helmcharts.shortVersion" $chartManifest.version }}](https://img.shields.io/badge/version-{{ template "helmcharts.shortVersion" $chartManifest.version }}-brightgreen){{ if has $chartManifest "appVersion" }} ![App version: {{ template "helmcharts.shortVersion" $chartManifest.appVersion }}](https://img.shields.io/badge/app%20version-{{ template "helmcharts.shortVersion" $chartManifest.appVersion }}-brightgreen){{ end }}
 
 {{ $chartManifest.description }}
 
@@ -63,7 +62,7 @@ helm repo add adfinis https://charts.adfinis.com
 {{- $chartManifestPath := print "charts/" . "/Chart.yaml" -}}
 {{- if (file.Exists $chartManifestPath) -}}{{- $chartManifest := file.Read $chartManifestPath | data.YAML -}}
 {{- if not (has $chartManifest "icon") }}
-| [{{.}}]({{ print $readme.chartBaseURL . }}) | {{ $chartManifest.description | strings.Abbrev 80 }} | ![Version: {{ template "helmcharts.shortVersion" $chartManifest.version }}](https://img.shields.io/badge/version-{{ template "helmcharts.shortVersion" $chartManifest.version }}-brightgreen) ![App version: {{ template "helmcharts.shortVersion" $chartManifest.appVersion }}](https://img.shields.io/badge/app%20version-{{ template "helmcharts.shortVersion" $chartManifest.appVersion }}-brightgreen) |
+| [{{.}}]({{ print $readme.chartBaseURL . }}) | {{ $chartManifest.description | strings.Abbrev 80 }} | ![Version: {{ template "helmcharts.shortVersion" $chartManifest.version }}](https://img.shields.io/badge/version-{{ template "helmcharts.shortVersion" $chartManifest.version }}-brightgreen){{ if has $chartManifest "appVersion" }} ![App version: {{ template "helmcharts.shortVersion" $chartManifest.appVersion }}](https://img.shields.io/badge/app%20version-{{ template "helmcharts.shortVersion" $chartManifest.appVersion }}-brightgreen){{ end }} |
 {{- end -}}
 {{- end -}}
 {{- end }}
