@@ -23,17 +23,17 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| downscaler | object | see below | [kube-downscaler](https://github.com/hjacobs/kube-downscaler) |
+| downscaler | object | [example](./examples/kube-downscaler.yaml) | [kube-downscaler](https://github.com/hjacobs/kube-downscaler) |
 | downscaler.chart | string | `"kube-downscaler"` | Chart |
 | downscaler.destination.namespace | string | `"infra-downscaler"` | Namespace |
-| downscaler.enabled | bool | `false` | Enable kube-downscaler: [example](./examples/kube-downscaler.yaml) |
+| downscaler.enabled | bool | `false` | Enable kube-downscaler |
 | downscaler.repoURL | string | [repo](http://storage.googleapis.com/kubernetes-charts-incubator) | Repo URL |
 | downscaler.targetRevision | string | `"0.5.*"` | [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version |
 | downscaler.values | object | [upstream values](https://github.com/helm/charts/blob/master/incubator/kube-downscaler/values.yaml) | Helm values |
-| signalilo | object | see below | [sigalilo](https://github.com/vshn/signalilo) |
+| signalilo | object | [example](./examples/signalilo.yaml) | [sigalilo](https://github.com/vshn/signalilo) |
 | signalilo.chart | string | `"signalilo"` | Chart |
 | signalilo.destination.namespace | string | `"infra-signalilo"` | Namespace |
-| signalilo.enabled | bool | `false` | Enable signalilo: [example](./examples/signalilo.yaml) |
+| signalilo.enabled | bool | `false` | Enable signalilo |
 | signalilo.repoURL | string | [repo](https://charts.appuio.ch) | Repo URL |
 | signalilo.targetRevision | string | `"0.5.*"` | [signalilo Helm chart](https://github.com/appuio/charts/tree/master/signalilo) version |
 | signalilo.values | object | [upstream values](https://github.com/appuio/charts/blob/master/signalilo/values.yaml) | Helm values |

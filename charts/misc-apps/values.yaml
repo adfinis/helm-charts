@@ -1,7 +1,7 @@
 # downscaler -- [kube-downscaler](https://github.com/hjacobs/kube-downscaler)
-# @default -- see below
+# @default -- [example](./examples/kube-downscaler.yaml)
 downscaler:
-  # downscaler.enabled -- Enable kube-downscaler: [example](./examples/kube-downscaler.yaml)
+  # downscaler.enabled -- Enable kube-downscaler
   enabled: false
   name: downscaler
   destination:
@@ -19,9 +19,9 @@ downscaler:
   values: {}
 
 # signalilo -- [sigalilo](https://github.com/vshn/signalilo)
-# @default -- see below
+# @default -- [example](./examples/signalilo.yaml)
 signalilo:
-  # signalilo.enabled -- Enable signalilo: [example](./examples/signalilo.yaml)
+  # signalilo.enabled -- Enable signalilo
   enabled: false
   name: signalilo
   destination:
