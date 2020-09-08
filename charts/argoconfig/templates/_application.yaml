@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 {{ template "common.metadata" . }}
 spec:
-  project: "argocd"
+  project: "default"
   source: {}
   destination:
     server: "https://kubernetes.default.svc"
