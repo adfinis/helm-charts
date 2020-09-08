@@ -25,7 +25,7 @@ signalilo:
   destination:
     # signalilo.destination.namespace -- Namespace
     namespace: "infra-signalilo"
-  # signalilo.repoURL --
+  # signalilo.repoURL -- Repo URL
   # @default -- [repo](https://charts.appuio.ch)
   repoURL: "https://charts.appuio.ch"
   # signalilo.chart -- Chart
