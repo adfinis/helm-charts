@@ -1,5 +1,6 @@
 downscaler:
   enabled: true
+  project: infra-downscaler
   values:
     debug:
       enable: false

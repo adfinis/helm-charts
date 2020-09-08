@@ -3,7 +3,8 @@
 downscaler:
   # downscaler.enabled -- Enable kube-downscaler: [example](./examples/kube-downscaler.yaml)
   enabled: false
-  namespace: "infra-downscaler"
+  destination:
+    namespace: "infra-downscaler"
   repoURL: "http://storage.googleapis.com/kubernetes-charts-incubator"
   chart: "kube-downscaler"
   # downscaler.targetRevision -- [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version
@@ -17,7 +18,8 @@ downscaler:
 signalilo:
   # signalilo.enabled -- Enable signalilo: [example](./examples/signalilo.yaml)
   enabled: false
-  namespace: "infra-signalilo"
+  destination:
+    namespace: "infra-signalilo"
   repoURL: "https://charts.appuio.ch"
   chart: "signalilo"
   # signalilo.targetRevision -- [signalilo Helm chart](https://github.com/appuio/charts/tree/master/signalilo) version

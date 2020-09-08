@@ -1,5 +1,6 @@
 signalilo:
   enabled: true
+  project: infra-signalilo
   values:
     resources:
       limits:
