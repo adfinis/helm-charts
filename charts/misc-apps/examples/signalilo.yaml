@@ -4,7 +4,7 @@ signalilo:
   values:
     resources:
       limits:
-        cpu: 50m
+        cpu: 100m
         memory: 200Mi
     config:
       # needs replacing with a fresh uuid
