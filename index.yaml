@@ -753,6 +753,28 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/kasperleyn-0.3.1/kasperleyn-0.3.1.tgz
     version: 0.3.1
+  misc-apps:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2020-09-09T15:39:05.072452071Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.6.3
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 7444a5fa6f0d87759a1db9af07aaa41ad4f6f6e64967cec9cbce76faca0b322b
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/misc-apps-0.1.0/misc-apps-0.1.0.tgz
+    version: 0.1.0
   sentry-apps:
   - apiVersion: v2
     appVersion: 5.1.2
