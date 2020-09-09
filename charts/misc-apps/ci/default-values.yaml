@@ -1,0 +1,7 @@
+downscaler:
+  enabled: true
+  values: {}
+
+signalilo:
+  enabled: true
+  values: {}
