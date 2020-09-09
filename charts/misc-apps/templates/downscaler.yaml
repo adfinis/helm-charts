@@ -2,7 +2,7 @@
 {{ template "argoconfig.application" (list . "misc-apps.downscaler") }}
 {{ end }}
 
-{{- define "misc-apps.downscaler" -}}{{- $app := unset .Values.downscaler "enabled" -}}{{- $name := default $app.namespace $app.name -}}
+{{- define "misc-apps.downscaler" -}}{{- $app := unset .Values.downscaler "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
 metadata:
   name: {{ template "common.fullname" . }}-{{ $name }}
 spec:

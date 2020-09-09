@@ -2,7 +2,7 @@
 {{ template "argoconfig.application" (list . "misc-apps.signalilo") }}
 {{ end }}
 
-{{- define "misc-apps.signalilo" -}}{{- $app := unset .Values.signalilo "enabled" -}}{{- $name := default $app.namespace $app.name -}}
+{{- define "misc-apps.signalilo" -}}{{- $app := unset .Values.signalilo "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
 metadata:
   name: {{ template "common.fullname" . }}-{{ $name }}
 spec:
