@@ -1,5 +1,5 @@
-# downscaler -- [kube-downscaler](https://github.com/hjacobs/kube-downscaler)
-# @default -- [example](./examples/kube-downscaler.yaml)
+# downscaler -- [kube-downscaler](https://github.com/hjacobs/kube-downscaler) ([example](./examples/kube-downscaler.yaml))
+# @default -- -
 downscaler:
   # downscaler.enabled -- Enable kube-downscaler
   enabled: false
@@ -18,8 +18,8 @@ downscaler:
   # @default -- [upstream values](https://github.com/helm/charts/blob/master/incubator/kube-downscaler/values.yaml)
   values: {}
 
-# signalilo -- [sigalilo](https://github.com/vshn/signalilo)
-# @default -- [example](./examples/signalilo.yaml)
+# signalilo -- [sigalilo](https://github.com/vshn/signalilo) ([example](./examples/signalilo.yaml))
+# @default -- -
 signalilo:
   # signalilo.enabled -- Enable signalilo
   enabled: false
