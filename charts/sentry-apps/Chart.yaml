@@ -14,4 +14,4 @@ maintainers:
 dependencies:
   - name: argoconfig
     repository: https://charts.adfinis.com
-    version: ~0.6.1
+    version: ~0.6.3
