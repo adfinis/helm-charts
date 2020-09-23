@@ -1,52 +1,25 @@
 {{ template "chart.header" . }}
+{{ template "chart.deprecationWarning" . }}
+
+{{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}
+
 {{ template "chart.description" . }}
 
-{{ template "chart.versionLine" . }}
-
 {{ template "chart.homepageLine" . }}
-{{- define "chart.homepage" }}{{ .Home }}{{ end }}
-{{- define "chart.homepageLine" }}
-{{ if .Home }}**Homepage:** <{{ .Home }}>{{ end }}
-{{- end }}
 
-{{ template "chart.maintainersSection" . }}
-{{- define "chart.maintainersHeader" }}## Maintainers{{ end -}}
 {{- define "chart.maintainersSection" -}}
 {{ if .Maintainers }}
 {{ template "chart.maintainersHeader" . }}
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 {{- end -}}
 {{- end }}
+{{ template "chart.maintainersSection" . }}
 
 {{ template "chart.sourcesSection" . }}
-{{- define "chart.sourcesHeader" }}## Source Code{{ end }}
-{{- define "chart.sourcesList" }}
-{{- range .Sources }}
-* <{{ . }}>
-{{- end }}
-{{- end }}
-{{- define "chart.sourcesSection" -}}
-{{ if .Sources }}
-{{ template "chart.sourcesHeader" . }}
-{{ template "chart.sourcesList" . }}
-{{ end -}}
-{{- end }}
 
-{{ template "chart.requirementsSection" . }}{{ define "chart.requirementsTable" }}
-| Repository | Name | Version |
-|------------|------|---------|
-  {{- range .Dependencies }}
-| {{ .Repository }} | {{ .Name }} | `{{ .Version }}` |
-  {{- end }}
-{{ end -}}
+{{ template "chart.requirementsSection" . }}
 
-{{ template "chart.valuesSection" . }}{{ define "chart.valuesTable" }}
-| Key | Type | Default | Description |
-|-----|------|---------|-------------|
-  {{- range .Values }}
-| `{{ .Key }}` | {{ .Type }} | {{ .Default }} | {{ .Description }} |
-  {{- end }}
-{{- end }}
+{{ template "chart.valuesSection" . }}
 
 ## About this chart
 

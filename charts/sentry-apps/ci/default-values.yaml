@@ -1,0 +1,9 @@
+---
+ingress:
+  hostname: ci.example.org
+
+postgresql:
+  postgresqlPassword: this-is-ci
+
+system:
+  secretKey: this-is-ci

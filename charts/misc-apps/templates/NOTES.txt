@@ -1,0 +1,7 @@
+The following apps are available:
+{{ if .Values.downscaler.enabled }}
+* kube-downscaler
+{{ end }}
+{{ if .Values.signalilo.enabled }}
+* signalilo
+{{ end }}

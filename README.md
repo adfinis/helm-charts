@@ -22,13 +22,15 @@ helm repo add adfinis https://charts.adfinis.com
 | Chart | Description | Version |
 | ----- | ----------- | ------- |
 | [argoconfig](charts/argoconfig) | Configure Argo CD AppProjects, Applications and more | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: latest](https://img.shields.io/badge/app%20version-latest-brightgreen) |
-| [back8sup](charts/back8sup) | Deploy back8sup to a Kubernetes Cluster | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: latest](https://img.shields.io/badge/app%20version-latest-brightgreen) |
+| [back8sup](charts/back8sup) | Deploy back8sup to a Kubernetes Cluster | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [barman](charts/barman) | Chart for Barman PostgreSQL Backup and Recovery Manager | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 2.1.x](https://img.shields.io/badge/app%20version-2.1.x-brightgreen) |
 | [caasperli](charts/caasperli) | Deploy Caasperli to a Kubernetes Cluster | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: latest](https://img.shields.io/badge/app%20version-latest-brightgreen) |
 | [common](charts/common) | Common chartbuilding components and helpers, based on incubator/common | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [kasperleyn](charts/kasperleyn) | A Helm 2 chart to deploy Caasperli | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.0.x](https://img.shields.io/badge/app%20version-1.0.x-brightgreen) |
+| [kasperleyn](charts/kasperleyn) | A Helm 2 chart to deploy Caasperli | ![Version: 1.0.x](https://img.shields.io/badge/version-1.0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
+| [misc-apps](charts/misc-apps) | Argo CD app-of-apps config for miscellaneous small tools | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [rmd](charts/rmd) | Chart for Rmd.io application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: latest](https://img.shields.io/badge/app%20version-latest-brightgreen) |
-| [timed](charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.0.x](https://img.shields.io/badge/app%20version-1.0.x-brightgreen) |
+| [sentry-apps](charts/sentry-apps) | Sentry on premise | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 5.1.x](https://img.shields.io/badge/app%20version-5.1.x-brightgreen) |
+| [timed](charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.1.x](https://img.shields.io/badge/app%20version-1.1.x-brightgreen) |
 
 ## Contributing
 
@@ -60,7 +62,7 @@ We track issues with this chart repository in the [issue tracker](https://github
 
 Adfinis fights for a software world that is more open, where the quality is
 better and where software must be accessible to everyone. This repository
-contains part of the action behind this comitment. Feel free to
+contains part of the action behind this commitment. Feel free to
 [contact](https://adfinis.com/kontakt/?pk_campaign=github&pk_kwd=helm-charts)
 us if you have any questions.
 

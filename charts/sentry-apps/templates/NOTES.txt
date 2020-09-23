@@ -1,0 +1,12 @@
+Congratulations, you've just installed Sentry.
+
+{{- if .Values.user.create }}
+
+Log into sentry-web using.
+   - username: {{ .Values.user.email }}
+   - password: {{ .Values.user.password }}
+
+{{- else }}
+
+  You should be able to access sentry.
+{{- end }}

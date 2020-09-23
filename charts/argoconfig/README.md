@@ -1,41 +1,36 @@
-argoconfig
-==========
+# argoconfig
+
+![Version: 0.6.3](https://img.shields.io/badge/Version-0.6.3-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+
 Configure Argo CD AppProjects, Applications and more
-
-Current chart version is `0.6.0`
-
 
 **Homepage:** <https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/>
 
-
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
-
 
 ## Source Code
 
 * <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argoconfig>
 
-
-## Chart Requirements
-
+## Requirements
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.adfinis.com | common | `0.0.0` |
-## Chart Values
+| https://charts.adfinis.com | common | 0.0.0 |
 
+## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| `clusters` | object | see [docs](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#clusters) | Argo CD cluster secrets |
-| `clusters.defaults.config` | object | `{}` | Cluster config |
-| `clusters.defaults.enabled` | bool | `false` | Enable creating cluster secret |
-| `clusters.defaults.namespace` | string | `"argocd"` | Namespace to put the cluster config secret into |
-| `clusters.local.enabled` | bool | `true` | Local cluster is enabled by default |
-| `clusters.local.server` | string | Local cluster | Cluster API endpoint |
-| `fullnameOverride` | string | `""` | Override fullname |
-| `nameOverride` | string | `""` | Override names |
+| clusters | object | see [docs](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#clusters) | Argo CD cluster secrets |
+| clusters.defaults.config | object | `{}` | Cluster config |
+| clusters.defaults.enabled | bool | `false` | Enable creating cluster secret |
+| clusters.defaults.namespace | string | `"argocd"` | Namespace to put the cluster config secret into |
+| clusters.local.enabled | bool | `true` | Local cluster is enabled by default |
+| clusters.local.server | string | Local cluster | Cluster API endpoint |
+| fullnameOverride | string | `""` | Override fullname |
+| nameOverride | string | `""` | Override names |
 
 ## About this chart
 

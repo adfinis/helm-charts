@@ -1,3 +1,6 @@
+deploymentAnnotations:
+  k8s.adfinis.com/ci: test
+
 prometheus:
   enabled: true
   extraLabels:

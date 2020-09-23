@@ -1,4 +1,10 @@
+backend:
+  settings:
+    admins:
+      - "Jon Doe <jon.doe@example.com>"
+
 auth:
   oidc:
-    client:
-      secret: foo
+    introspect:
+      client:
+        secret: foo

@@ -1,10 +1,7 @@
 apiVersion: v1
 name: kasperleyn
+deprecated: true
 description: A Helm 2 chart to deploy Caasperli
-version: 0.3.3
-appVersion: "1.0"
+version: 1.0.0
+appVersion: "v0.1.2"
 home: https://github.com/adfinis-sygroup/potz-holzoepfel-und-zipfelchape
-maintainers:
-  - name: adfinis-sygroup
-    email: support@adfinis.com
-    url: https://adfinis.com

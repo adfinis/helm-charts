@@ -12,7 +12,9 @@ image:
   # image.pullPolicy -- set the image pullPolicy
   pullPolicy: IfNotPresent
   # image.tag -- set the tag of the image
-  tag: "latest"
+  # Specify a tag to override which version of timed to deploy.
+  # If no tag is specified the appVersion from Chart.yaml is used as tag.
+  tag: ""
 
 # imagePullSecrets -- specifies the image pull secrets to be used
 imagePullSecrets: []
@@ -57,6 +59,8 @@ cronjob:
       value: yaml
     - name: DST_FOLDER
       value: /mnt/back8sup
+    - name: EXPIRE
+      value: "30"
 
 persistence:
   # persistence.enabled -- specifies if persistence is enabled or not
