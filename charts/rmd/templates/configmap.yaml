@@ -6,16 +6,17 @@ metadata:
     {{- include "rmd.labels" . | nindent 4 }}
 data:
   EMAIL_HOST: {{ .Values.rmd.settings.emailHost | quote }}
-  DJANGO_ALLOWED_HOSTS: {{ join "," .Values.ingress.hosts | default "localhost" }}
-  DJANGO_HOST_DOMAIN: {{ mustFirst .Values.ingress.hosts | default "localhost" | quote }}
-  DJANGO_HOST_PROTOCOL: http{{- if .Values.ingress.tls }}s{{- end }}
-  DJANGO_DEFAULT_FROM_EMAIL: {{ .Values.rmd.settings.emailFrom | quote }}
-  DJANGO_SERVER_EMAIL: {{ .Values.rmd.settings.serverEmail | quote }}
-  DJANGO_DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}
-  DJANGO_DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
-  DJANGO_DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
+  EMAIL_HOST_PORT: {{ .Values.rmd.settings.emailPort | quote }}
+  EMAIL_FOLDER: {{ .Values.rmd.settings.emailFolder | quote }}
+  EMAIL_HOST_USER: {{ .Values.rmd.settings.emailUser | quote }}
+  EMAIL_HOST_PASSWORD: {{ .Values.rmd.settings.emailPassword | quote }}
+  DEFAULT_FROM_EMAIL: {{ .Values.rmd.settings.emailFrom | quote }}
+  DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}
+  DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
+  DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
+  WAIT_FOR_IT_TIMER: {{ .Values.rmd.image.waitForItTimeout | quote }}
 {{- if .Values.postgresql.enabled }}
-  DJANGO_DATABASE_HOST: {{ include "rmd.postgresql.fullname" . | quote }}
+  DATABASE_HOST: {{ include "rmd.postgresql.fullname" . | quote }}
 {{- else }}
-  DJANGO_DATABASE_HOST: {{ .Values.postgresql.service.host | quote }}
+  DATABASE_HOST: {{ .Values.postgresql.service.host | quote }}
 {{- end }}

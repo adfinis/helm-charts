@@ -31,6 +31,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
 | postgresql.postgresqlDatabase | string | `"rmd.io"` | PostgreSQL database name |
 | postgresql.postgresqlPassword | string | `nil` | Set a password for PostgreSQL |
+| postgresql.postgresqlPort | int | `5432` |  |
 | postgresql.postgresqlUsername | string | `"postgres"` | PostgreSQL user name |
 | rmd.cronjobs.importMails.command[0] | string | `"app/manage.py"` |  |
 | rmd.cronjobs.importMails.command[1] | string | `"import"` |  |
@@ -41,6 +42,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rmd.image.pullPolicy | string | `"IfNotPresent"` | Rmd image pull policy |
 | rmd.image.repository | string | `"adfinissygroup/rmd"` | Rmd image name |
 | rmd.image.tag | string | appVersion from Chart.yaml | Specify a tag to override which version of rmd to deploy. |
+| rmd.image.waitForItTimeout | int | `60` | Timeout for wait-for-it.sh |
 | rmd.livenessProbe.enabled | bool | `true` | Enable liveness probe on rmd |
 | rmd.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | rmd.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
@@ -59,9 +61,12 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rmd.service.internalPort | int | `8000` | Internal Port of rmd service |
 | rmd.service.name | string | `"rmd"` | Rmd service name |
 | rmd.service.type | string | `"ClusterIP"` | Rmd service type |
+| rmd.settings.emailFolder | string | `"INBOX"` | Folder name on the SMTP server |
 | rmd.settings.emailFrom | string | `"maildelay@rmd.io"` | Default email address to use for various responses |
-| rmd.settings.emailHost | string | `"smtp.examplexample.ch:587"` | Connection string of SMTP server to send mails |
-| rmd.settings.serverEmail | string | `"maildelay@rmd.io"` | Email address error messages are sent from |
+| rmd.settings.emailHost | string | `"smtp.examplexample.ch"` | Connection string of SMTP server to send mails |
+| rmd.settings.emailPassword | string | `nil` | Password for the SMTP server |
+| rmd.settings.emailPort | int | `587` | Port for the SMTP server |
+| rmd.settings.emailUser | string | `"maildelay@dev.rmd.io"` | Username for the SMTP server |
 
 ## About this chart
 

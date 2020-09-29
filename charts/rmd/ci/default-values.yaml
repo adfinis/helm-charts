@@ -1,2 +1,5 @@
 postgresql:
   postgresqlPassword: s3cr3t
+rmd:
+  settings:
+    emailPassword: s3cr3t
