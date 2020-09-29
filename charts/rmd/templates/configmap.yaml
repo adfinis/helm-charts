@@ -19,3 +19,6 @@ data:
 {{- else }}
   DJANGO_DATABASE_HOST: {{ .Values.postgresql.service.host | quote }}
 {{- end }}
+  DATABASE_HOST: postgresql
+  DATABASE_PORT: 5432
+  WAIT_FOR_IT_TIMER: 60
