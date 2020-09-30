@@ -1,18 +1,18 @@
 # rmd
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
 
 Chart for Rmd.io application
 
-**Homepage:** <https://github.com/adfinis-sygroup/rmd.io>
+**Homepage:** <https://github.com/trowik/rmd.io/tree/fix-uwsgi>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/rmd.io>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/rmd>
+* <https://github.com/trowik/rmd.io/tree/fix-uwsgi>
+* <https://github.com/trowik/helm-charts/tree/master/charts/rmd>
 
 ## Requirements
 
