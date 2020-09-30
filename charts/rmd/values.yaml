@@ -12,6 +12,8 @@ rmd:
     tag: ~
     # rmd.image.pullPolicy -- Rmd image pull policy
     pullPolicy: IfNotPresent
+    # rmd.image.waitForItTimeout -- Timeout for wait-for-it.sh
+    waitForItTimeout: 60
   service:
     # Specifiy secret for authentication.
     # If not random token will be generated
@@ -65,11 +67,17 @@ rmd:
   settings:
     # django settings for rmd
     # rmd.settings.emailHost -- Connection string of SMTP server to send mails
-    emailHost: smtp.examplexample.ch:587
+    emailHost: smtp.examplexample.ch
+    # rmd.settings.emailPort -- Port for the SMTP server
+    emailPort: 587
     # rmd.settings.emailFrom -- Default email address to use for various responses
     emailFrom: maildelay@rmd.io
-    # rmd.settings.serverEmail -- Email address error messages are sent from
-    serverEmail: maildelay@rmd.io
+    # rmd.settings.emailUser -- Username for the SMTP server
+    emailUser: maildelay@dev.rmd.io
+    # rmd.settings.emailPassword -- Password for the SMTP server
+    emailPassword: ~
+    # rmd.settings.emailFolder -- Folder name on the SMTP server
+    emailFolder: "INBOX"
   cronjobs:
     importMails:
       # rmd.cronjobs.importMails.schedule -- when to import mails
@@ -109,3 +117,5 @@ postgresql:
   postgresqlUsername: postgres
   # postgresql.postgresqlPassword -- Set a password for PostgreSQL
   postgresqlPassword: ~
+  # postgresql.postgresqlPort-- PostgreSQL database port
+  postgresqlPort: 5432
