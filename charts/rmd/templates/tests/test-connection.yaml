@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "rmd.fullname" . }}:{{ .Values.rmd.service.port }}']
+      args: ['{{ include "rmd.fullname" . }}:{{ .Values.rmd.service.externalPort }}']
   restartPolicy: Never
