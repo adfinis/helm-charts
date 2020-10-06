@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "rmd.fullname" . }}
+  labels:
+    {{- include "rmd.labels" . | nindent 4 }}
+data:
+  EMAIL_HOST: {{ .Values.rmd.settings.emailHost | quote }}
+  EMAIL_HOST_PORT: {{ .Values.rmd.settings.emailPort | quote }}
+  EMAIL_FOLDER: {{ .Values.rmd.settings.emailFolder | quote }}
+  EMAIL_HOST_USER: {{ .Values.rmd.settings.emailUser | quote }}
+  EMAIL_HOST_PASSWORD: {{ .Values.rmd.settings.emailPassword | quote }}
+  DEFAULT_FROM_EMAIL: {{ .Values.rmd.settings.emailFrom | quote }}
+  DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}
+  DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
+  DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
+  WAIT_FOR_IT_TIMER: {{ .Values.rmd.image.waitForItTimeout | quote }}
+{{- if .Values.postgresql.enabled }}
+  DATABASE_HOST: {{ include "rmd.postgresql.fullname" . | quote }}
+{{- else }}
+  DATABASE_HOST: {{ .Values.postgresql.service.host | quote }}
+{{- end }}
