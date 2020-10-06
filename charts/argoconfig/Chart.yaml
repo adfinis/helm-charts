@@ -1,9 +1,8 @@
 apiVersion: v2
 name: argoconfig
-description: Configure Argo CD AppProjects, Applications and more
+description: Configure Argo CD AppProjects and Applications
 type: library
-version: 0.6.3
-appVersion: latest
+version: 0.7.0
 home: https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/
 sources:
   - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argoconfig
@@ -14,4 +13,4 @@ maintainers:
 dependencies:
   - name: common
     repository: https://charts.adfinis.com
-    version: 0.0.0
+    version: 0.0.2
