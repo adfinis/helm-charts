@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.0](https://img.shields.io/badge/AppVersion-0.2.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -30,6 +30,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | downscaler.repoURL | string | [repo](http://storage.googleapis.com/kubernetes-charts-incubator) | Repo URL |
 | downscaler.targetRevision | string | `"0.5.*"` | [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version |
 | downscaler.values | object | [upstream values](https://github.com/helm/charts/blob/master/incubator/kube-downscaler/values.yaml) | Helm values |
+| sentryKubernetes | object | - | [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml) |
+| sentryKubernetes.chart | string | `"sentry-kubernetes"` | Chart |
+| sentryKubernetes.destination.namespace | string | `"infra-sentry-kubernetes"` | Namespace |
+| sentryKubernetes.enabled | bool | `false` | Enable sentry-kubernetes |
+| sentryKubernetes.repoURL | string | [repo](https://sentry-kubernetes.github.io/charts) | Repo URL |
+| sentryKubernetes.targetRevision | string | `"0.3.*"` | [sentry-kubernetes Helm chart](https://github.com/sentry-kubernetes/charts/tree/develop/sentry-kubernetes) |
+| sentryKubernetes.values | object | [upstream values](https://github.com/sentry-kubernetes/charts/blob/develop/sentry-kubernetes/values.yaml) | Helm values |
 | signalilo | object | - | [sigalilo](https://github.com/vshn/signalilo) ([example](./examples/signalilo.yaml)) |
 | signalilo.chart | string | `"signalilo"` | Chart |
 | signalilo.destination.namespace | string | `"infra-signalilo"` | Namespace |

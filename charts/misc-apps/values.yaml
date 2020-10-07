@@ -35,3 +35,22 @@ signalilo:
   # signalilo.values -- Helm values
   # @default -- [upstream values](https://github.com/appuio/charts/blob/master/signalilo/values.yaml)
   values: {}
+
+# sentryKubernetes -- [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml)
+# @default -- -
+sentryKubernetes:
+  # sentryKubernetes.enabled -- Enable sentry-kubernetes
+  enabled: false
+  destination:
+    # sentryKubernetes.destination.namespace -- Namespace
+    namespace: "infra-sentry-kubernetes"
+  # sentryKubernetes.repoURL -- Repo URL
+  # @default -- [repo](https://sentry-kubernetes.github.io/charts)
+  repoURL: "https://sentry-kubernetes.github.io/charts"
+  # sentryKubernetes.chart -- Chart
+  chart: "sentry-kubernetes"
+  # sentryKubernetes.targetRevision -- [sentry-kubernetes Helm chart](https://github.com/sentry-kubernetes/charts/tree/develop/sentry-kubernetes)
+  targetRevision: "0.3.*"
+  # sentryKubernetes.values -- Helm values
+  # @default -- [upstream values](https://github.com/sentry-kubernetes/charts/blob/develop/sentry-kubernetes/values.yaml)
+  values: {}
