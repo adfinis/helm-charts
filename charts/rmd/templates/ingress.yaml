@@ -16,7 +16,7 @@ spec:
       http:
         paths:
           - path: /
-            rmd:
+            backend:
               serviceName: {{ $.Values.rmd.service.name }}
               servicePort: {{ $.Values.rmd.service.externalPort }}
     {{- end -}}
