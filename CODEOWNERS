@@ -1,0 +1,7 @@
+# All helm chart related stuff should belong to the helm charts team
+* @adfinis-sygroup/helm-charts
+
+# Add specific owners to specific charts where ownership extends above group
+/charts/back8sup      @adfinis-sygroup/helm-charts @eyenx
+/charts/barman        @adfinis-sygroup/helm-charts @michaelimfeld
+/charts/timed         @adfinis-sygroup/helm-charts @michaelimfeld @aziiee
