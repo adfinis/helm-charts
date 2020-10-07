@@ -9,4 +9,4 @@ mkdir -p $ADFINIS_CHARTS_TMP_BIN
 
 # Install deps
 source hack/sh/deps/gomplate.sh
-echo "::add-path::$ADFINIS_CHARTS_TMP_BIN"
+echo $ADFINIS_CHARTS_TMP_BIN >> $GITHUB_PATH
