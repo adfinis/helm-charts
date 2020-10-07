@@ -17,7 +17,7 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: {{ include "rmd.fullname" . }}
+              serviceName: {{ include "rmd.fullname" $ }}
               servicePort: {{ $.Values.rmd.service.externalPort }}
     {{- end -}}
   {{- if .Values.ingress.tls }}
