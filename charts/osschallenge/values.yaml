@@ -1,0 +1,106 @@
+# Default values for osschallenge.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+osschallenge:
+  # osschallenge.replicaCount -- (int) Number of OSS-Challenge replicas
+  replicaCount: 1
+  image:
+    # osschallenge.image.repository -- OSS-Challenge image name
+    repository: adfinissygroup/oss-challenge
+    # osschallenge.image.tag -- Specify a tag to override which version of osschallenge to deploy.
+    # @default -- appVersion from Chart.yaml
+    tag: ~
+    # osschallenge.image.pullPolicy -- OSS-Challenge image pull policy
+    pullPolicy: IfNotPresent
+    # osschallenge.image.waitForItTimeout -- Timeout for wait-for-it.sh
+    waitForItTimeout: 60
+  service:
+    # Specifiy secret for authentication.
+    # If not random token will be generated
+    # secret:
+    # osschallenge.service.name -- OSS-Challenge service name
+    name: osschallenge
+    # osschallenge.service.type -- OSS-Challenge service type
+    type: ClusterIP
+    # osschallenge.service.externalPort -- External Port of osschallenge service
+    externalPort: 8000
+    # osschallenge.service.internalPort -- Internal Port of osschallenge service
+    internalPort: 8000
+  # osschallenge.resources -- Resource limits for osschallenge
+  resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #  cpu: 100m
+    #  memory: 128Mi
+    # requests:
+    #  cpu: 100m
+    #  memory: 128Mi
+  livenessProbe:
+    # osschallenge.livenessProbe.enabled -- Enable liveness probe on osschallenge
+    enabled: true
+    # osschallenge.livenessProbe.initialDelaySeconds -- Number of seconds after the container has started before liveness probe is initiated
+    initialDelaySeconds: 60
+    # osschallenge.livenessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    periodSeconds: 10
+    # osschallenge.livenessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    timeoutSeconds: 5
+    # osschallenge.livenessProbe.failureThreshold -- Number of tries to perform the probe
+    failureThreshold: 6
+    # osschallenge.livenessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    successThreshold: 1
+  readinessProbe:
+    # osschallenge.readinessProbe.enabled -- Enable readiness probe on osschallenge
+    enabled: true
+    # osschallenge.readinessProbe.initialDelaySeconds -- Number of seconds after the container has started before readiness probe is initiated
+    initialDelaySeconds: 30
+    # osschallenge.readinessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    periodSeconds: 10
+    # osschallenge.readinessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    timeoutSeconds: 5
+    # osschallenge.readinessProbe.failureThreshold -- Number of tries to perform the probe
+    failureThreshold: 6
+    # osschallenge.readinessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    successThreshold: 1
+  settings:
+    # django settings for osschallenge
+    # osschallenge.settings.emailHost -- Connection string of SMTP server to send mails
+    emailHost: smtp.example.com
+    # osschallenge.settings.emailPort -- Port for the SMTP server
+    emailPort: 587
+    # osschallenge.settings.emailFrom -- Default email address to use for various responses
+    emailFrom: osschallenge@oss-challenge.ch
+    # osschallenge.settings.emailUser -- Username for the SMTP server
+    emailUser: example@example.com
+    # osschallenge.settings.emailPassword -- Password for the SMTP server
+    emailPassword: ~
+    # osschallenge.settings.siteUrl -- URL for OSS-Challenge
+    siteUrl: https://oss-challenge.ch
+
+ingress:
+  # ingress.enabled -- Enable ingress for osschallenge
+  enabled: false
+  # ingress.annotations -- Ingress annotations
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  # ingress.hosts -- Ingress hostnames
+  hosts: ["localhost"]
+  #  - osschallenge-test.example.com
+  # ingress.tls -- Ingress TLS options
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - osschallenge-test.example.com
+
+postgresql:
+  # postgresql.enabled -- Enable PostgreSQL for persistence
+  enabled: true
+  # postgresql.postgresqlDatabase -- PostgreSQL database name
+  postgresqlDatabase: osschallenge
+  # postgresql.postgresqlUsername -- PostgreSQL user name
+  postgresqlUsername: osschallenge
+  # postgresql.postgresqlPassword -- Set a password for PostgreSQL
+  # postgresqlPassword: ~

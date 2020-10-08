@@ -1,0 +1,7 @@
+postgresql:
+  postgresqlPassword: s3cr3t
+  persistence:
+    enabled: false
+osschallenge:
+  settings:
+    emailPassword: s3cr3t

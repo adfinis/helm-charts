@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "osschallenge.fullname" . }}-dbmigrate
+  labels:
+    {{- include "osschallenge.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  activeDeadlineSeconds: 300
+  template:
+    metadata:
+      name: {{ .Release.Name }}
+      labels:
+        {{- include "osschallenge.labels" . | nindent 8 }}
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: {{ .Chart.Name }}-dbmigrate
+          image: "{{ .Values.osschallenge.image.repository }}:{{ default .Chart.AppVersion .Values.osschallenge.image.tag }}"
+          imagePullPolicy: {{ .Values.osschallenge.image.pullPolicy }}
+          env:
+            {{- include "osschallenge.djangoDatabasePassword" . | nindent 12 }}
+          envFrom:
+            - secretRef:
+                name: {{ include "osschallenge.fullname" . }}
+            - configMapRef:
+                name: {{ include "osschallenge.fullname" . }}
+          command: ["./manage.py", "migrate"]

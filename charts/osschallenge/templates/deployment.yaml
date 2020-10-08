@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "osschallenge.fullname" . }}
+  labels:
+    {{- include "osschallenge.labels" . | nindent 4 }}
+    app.kubernetes.io/component: app
+spec:
+  replicas: {{ .Values.osschallenge.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "osschallenge.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "osschallenge.labels" . | nindent 8 }}
+        app.kubernetes.io/component: app
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.osschallenge.image.repository }}:{{ default .Chart.AppVersion .Values.osschallenge.image.tag }}"
+          env:
+            {{- include "osschallenge.djangoDatabasePassword" . | nindent 12 }}
+          envFrom:
+            - secretRef:
+                name: {{ include "osschallenge.fullname" . }}
+            - configMapRef:
+                name: {{ include "osschallenge.fullname" . }}
+          imagePullPolicy: {{ .Values.osschallenge.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.osschallenge.service.internalPort }}
+              name: http
+              protocol: TCP
+          {{- if .Values.osschallenge.livenessProbe.enabled }}
+          livenessProbe:
+            initialDelaySeconds: {{ .Values.osschallenge.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.osschallenge.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.osschallenge.livenessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.osschallenge.livenessProbe.successThreshold }}
+            failureThreshold: {{ .Values.osschallenge.livenessProbe.failureThreshold }}
+            httpGet:
+              path: /admin/
+              port: http
+              httpHeaders:
+                - name: Host
+                  value: {{ mustFirst .Values.ingress.hosts }}
+          {{- end }}
+          {{- if .Values.osschallenge.readinessProbe.enabled }}
+          readinessProbe:
+            initialDelaySeconds: {{ .Values.osschallenge.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.osschallenge.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.osschallenge.readinessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.osschallenge.readinessProbe.successThreshold }}
+            failureThreshold: {{ .Values.osschallenge.readinessProbe.failureThreshold }}
+            httpGet:
+              path: /admin/
+              port: http
+              httpHeaders:
+                - name: Host
+                  value: {{ mustFirst .Values.ingress.hosts }}
+          {{- end }}
+          resources:
+            {{ toYaml .Values.osschallenge.resources | nindent 12 }}
+    {{- if .Values.osschallenge.nodeSelector }}
+      nodeSelector:
+        {{ toYaml .Values.osschallenge.nodeSelector | nindent 8 }}
+    {{- end }}
