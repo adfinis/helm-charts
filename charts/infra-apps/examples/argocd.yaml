@@ -1,0 +1,58 @@
+_: &hostname argocd.example.com
+_: &url https://argocd.example.com
+
+argocd:
+  enabled: true
+  values:
+    server:
+      certificate:
+        domain: *hostname
+      config:
+        dex.config: |
+          connectors:
+          - type: ldap
+            id: ldap
+            name: myLDAP
+            config:
+              # ip address of remote LDAP server
+              host: ldap.example.com:389
+              # only set these to true if you have no other options
+              insecureNoSSL: false
+              insecureSkipVerify: false
+              # service accountused to bind to LDAP server
+              bindDN: CN=srvuser,OU=org,DC=example,DC=com
+              # password for service account
+              bindPW: password
+              # text for username prompt
+              usernamePrompt: User Name
+              # user search DN/config (here with AD specific attributes)
+              userSearch:
+                baseDN: DC=example,DC=com
+                filter: "(objectClass=person)"
+                username: sAMAccountName
+                idAttr: DN
+                emailAttr: mail
+                nameAttr: cn
+              # group search DN/config (here with AD specific attributes)
+              groupSearch:
+                baseDN: DC=example,DC=com
+                filter: "(objectClass=group)"
+                userAttr: DN
+                groupAttr: memberOf
+                nameAttr: cn
+        url: *url
+      ingress:
+        annotations: {}
+        enabled: true
+        hosts:
+        - *hostname
+        ingress:
+          tls:
+          - hosts:
+            - *hostname
+            secretName: infra-argocd-cert
+      rbacConfig:
+        policy.csv: |
+          g, username@example.com, role:admin
+        policy.default: role:readonly
+        scopes: '[email,groups]'

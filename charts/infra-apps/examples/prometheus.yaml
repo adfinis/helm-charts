@@ -1,0 +1,86 @@
+_: &prometheusHost "prometheus.example.com"
+_: &alertmanagerHost "alertmanager.example.com"
+_: &grafanaHost "grafana.example.com"
+
+kubePrometheusStack:
+  enabled: true
+  values:
+    alertmanager:
+      enabled: true
+      ingress:
+        annotations:
+          kubernetes.io/ingress.class: infra-ingress
+          kubernetes.io/tls-acme: "true"
+        enabled: true
+        hosts:
+        - *alertmanagerHost
+        tls:
+        - hosts:
+          - *alertmanagerHost
+          secretName: infra-monitoring-alertmanager-cert
+    commonLabels:
+      k8s.adfinis.com/prometheus: kube-prometheus
+    grafana:
+      enabled: true
+      grafana.ini:
+        auth.ldap:
+          allow_sign_up: true
+          config_file: /etc/grafana/ldap.toml
+          enabled: true
+      ingress:
+        annotations:
+          kubernetes.io/ingress.class: infra-ingress
+          kubernetes.io/tls-acme: "true"
+        enabled: true
+        hosts:
+        - *grafanaHost
+        tls:
+        - hosts:
+          - *grafanaHost
+          secretName: infra-monitoring-grafana-cert
+      ldap:
+        config: |-
+          verbose_logging = true
+          [[servers]]
+          host = "ldap.example.com"
+          port = 389
+          use_ssl = false
+          start_tls = false
+          ssl_skip_verify = false
+          bind_dn = "CN=srvaccount,OU=ServiceAccount,OU=Administration,DC=example,DC=com"
+          bind_password = 'secretpw'
+          search_filter = "(sAMAccountName=%s)"
+          search_base_dns = ["DC=example,DC=com"]
+          [servers.attributes]
+          name = "cn"
+          surname = "cn"
+          username = "sAMAccountName"
+          member_of = "memberOf"
+          email =  "mail"
+        enabled: true
+    prometheus:
+      enabled: true
+      ingress:
+        annotations:
+          kubernetes.io/ingress.class: infra-ingress
+          kubernetes.io/tls-acme: "true"
+        enabled: true
+        hosts:
+        - *prometheusHost
+        tls:
+        - hosts:
+          - *prometheusHost
+          secretName: infra-monitoring-prom-cert
+      prometheusSpec:
+        podMonitorNamespaceSelector:
+          any: true
+        podMonitorSelector:
+          matchLabels:
+            k8s.adfinis.com/prometheus: kube-prometheus
+        ruleNamespaceSelector:
+          any: true
+        serviceMonitorNamespaceSelector:
+          any: true
+        serviceMonitorSelector:
+          matchLabels:
+            k8s.adfinis.com/prometheus: kube-prometheus

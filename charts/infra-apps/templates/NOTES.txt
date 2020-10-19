@@ -1,0 +1,19 @@
+The following apps have been provisioned in Argo CD:
+{{ if .Values.argocd.enabled }}
+* Argo CD
+{{ end }}
+{{ if .Values.certManager.enabled }}
+* Cert Manager
+{{ end }}
+{{ if .Values.ingressNginx.enabled }}
+* NGINX Ingress Controller
+{{ end }}
+{{ if .Values.kubePrometheusStack.enabled }}
+* kube-prometheus-stack
+{{ end }}
+{{ if .Values.rbacManager.enabled }}
+* rbac-manager
+{{ end }}
+{{ if .Values.velero.enabled }}
+* Velero
+{{ end }}
