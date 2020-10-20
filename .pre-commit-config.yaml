@@ -4,7 +4,7 @@ repos:
     hooks:
       - id: helm-docs
         args:
-          - -t ../../hack/config/helm-docs/README.md.gotmpl
+          - -t ./hack/config/helm-docs/README.md.gotmpl
   - repo: local
     hooks:
       - id: update-readme
