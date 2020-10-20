@@ -12,4 +12,4 @@ readonly template_file=$HELM_DOCS_TEMPLATE_FILE
 
 set -x
 
-helm-docs --template-file=$template_file
+helm-docs --template-files=$template_file

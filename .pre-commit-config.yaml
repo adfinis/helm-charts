@@ -1,10 +1,10 @@
 repos:
   - repo: https://github.com/norwoodj/helm-docs
-    rev: v0.13.0
+    rev: v1.3.0
     hooks:
       - id: helm-docs
         args:
-          - --template-file=../../hack/config/helm-docs/README.md.gotmpl
+          - --template-files=./hack/config/helm-docs/README.md.gotmpl
   - repo: local
     hooks:
       - id: update-readme

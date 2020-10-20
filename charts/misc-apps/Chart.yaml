@@ -3,7 +3,7 @@ name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
 # version and appVersion are in sync in this chart!
-version: 0.2.1
+version: 0.2.2
 appVersion: 0.2.1
 home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/misc-apps
 sources:
