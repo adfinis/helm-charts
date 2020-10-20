@@ -2,7 +2,7 @@ apiVersion: v2
 name: common
 description: Common chartbuilding components and helpers, based on incubator/common
 type: library
-version: 0.0.2
+version: 0.0.3
 appVersion: 0.0.0
 home: https://helm.sh
 sources:
