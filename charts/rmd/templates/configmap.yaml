@@ -6,7 +6,7 @@ metadata:
     {{- include "rmd.labels" . | nindent 4 }}
 data:
   EMAIL_HOST: {{ .Values.rmd.settings.emailHost | quote }}
-  EMAIL_HOST_PORT: {{ .Values.rmd.settings.emailPort | quote }}
+  EMAIL_PORT: {{ .Values.rmd.settings.emailPort | quote }}
   EMAIL_FOLDER: {{ .Values.rmd.settings.emailFolder | quote }}
   EMAIL_HOST_USER: {{ .Values.rmd.settings.emailUser | quote }}
   EMAIL_HOST_PASSWORD: {{ .Values.rmd.settings.emailPassword | quote }}
