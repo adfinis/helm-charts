@@ -122,5 +122,7 @@ prometheus:
 grafana:
   # grafana.enabled -- Enable Grafana Dashboards
   enabled: false
+  # grafana.defaultLabel -- Add a default `grafana_dashboard: 1` label
+  defaultLabel: true
   # grafana.extraLabels -- Labels to add to all Grafana integration resources
   extraLabels: {}

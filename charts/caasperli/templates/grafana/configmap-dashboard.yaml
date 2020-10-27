@@ -12,8 +12,11 @@ items:
     name: {{ printf "%s-%s" (include "caasperli.fullname" $) $dashboardName | trunc 63 | trimSuffix "-" }}
     labels:
       {{- include "caasperli.labels" $ | nindent 6 }}
+      {{- if $.Values.grafana.defaultLabel }}
+      grafana_dashboard: "1"
+      {{- end }}
       {{- if $.Values.grafana.extraLabels }}
-      {{- $.Values.prometheus.extraLabels | toYaml | nindent 6 }}
+      {{- $.Values.grafana.extraLabels | toYaml | nindent 6 }}
       {{- end }}
   data:
     {{ $dashboardName }}.json: {{ $.Files.Get $path | toJson }}
