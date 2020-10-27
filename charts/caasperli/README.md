@@ -1,6 +1,6 @@
 # caasperli
 
-![Version: 0.8.2](https://img.shields.io/badge/Version-0.8.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 0.8.3](https://img.shields.io/badge/Version-0.8.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Deploy Caasperli to a Kubernetes Cluster
 
@@ -25,6 +25,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
 | deploymentAnnotations | object | `{}` | Annotations to add to Deployment. |
 | fullnameOverride | string | `""` |  |
+| grafana.defaultLabel | bool | `true` | Add a default `grafana_dashboard: 1` label |
 | grafana.enabled | bool | `false` | Enable Grafana Dashboards |
 | grafana.extraLabels | object | `{}` | Labels to add to all Grafana integration resources |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
