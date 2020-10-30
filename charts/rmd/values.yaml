@@ -63,6 +63,8 @@ rmd:
     successThreshold: 1
   settings:
     # django settings for rmd
+    # rmd.settings.sentry -- sentry dsn
+    sentry: ~
     # rmd.settings.secret -- django secret key
     secret: ~
     # rmd.settings.siteUrl -- URL for Rmd.io
