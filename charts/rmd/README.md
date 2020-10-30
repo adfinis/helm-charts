@@ -1,6 +1,6 @@
 # rmd
 
-![Version: 0.1.9](https://img.shields.io/badge/Version-0.1.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
+![Version: 0.1.10](https://img.shields.io/badge/Version-0.1.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
 
 Chart for Rmd.io application
 
@@ -68,6 +68,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rmd.settings.emailPort | int | `587` | Port for the SMTP server |
 | rmd.settings.emailUser | string | `"maildelay@dev.rmd.io"` | Username for the SMTP server |
 | rmd.settings.secret | string | `nil` | django secret key |
+| rmd.settings.sentry | string | `nil` | sentry dsn |
 | rmd.settings.siteUrl | string | `"http://localhost:8000"` | URL for Rmd.io |
 
 ## About this chart
