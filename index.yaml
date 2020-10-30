@@ -1083,6 +1083,32 @@ entries:
   rmd:
   - apiVersion: v2
     appVersion: edge
+    created: "2020-10-30T14:15:00.56437884Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~9.1.2
+    description: Chart for Rmd.io application
+    digest: 08c6e26cdfd5b67c8f66c06a4495d381ec5d629b2c169a07aba2849ea5981011
+    home: https://github.com/adfinis-sygroup/rmd.io
+    keywords:
+    - rmd
+    - postgresql
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: rmd
+    sources:
+    - https://github.com/adfinis-sygroup/rmd.io
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/rmd
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/rmd-0.1.10/rmd-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v2
+    appVersion: edge
     created: "2020-10-30T13:18:58.906127161Z"
     dependencies:
     - condition: postgresql.enabled
