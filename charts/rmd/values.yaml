@@ -66,6 +66,8 @@ rmd:
     successThreshold: 1
   settings:
     # django settings for rmd
+    # rmd.settings.siteUrl -- URL for Rmd.io
+    siteUrl: http://localhost:8000
     # rmd.settings.emailHost -- Connection string of SMTP server to send mails
     emailHost: smtp.examplexample.ch
     # rmd.settings.emailPort -- Port for the SMTP server

@@ -15,6 +15,7 @@ data:
   DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
   DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
   WAIT_FOR_IT_TIMER: {{ .Values.rmd.image.waitForItTimeout | quote }}
+  SITE_URL: {{ .Values.rmd.settings.siteUrl | quote }}
 {{- if .Values.postgresql.enabled }}
   DATABASE_HOST: {{ include "rmd.postgresql.fullname" . | quote }}
 {{- else }}
