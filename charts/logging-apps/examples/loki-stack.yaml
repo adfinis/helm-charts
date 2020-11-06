@@ -1,0 +1,10 @@
+lokiStack:
+  enabled: true
+  project: infra-logging
+  values:
+    loki:
+      enabled: true
+    promtail:
+      enabled: true
+    grafana:
+      enabled: false

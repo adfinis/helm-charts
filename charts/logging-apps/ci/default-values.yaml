@@ -1,0 +1,3 @@
+lokiStack:
+  enabled: true
+  values: {}
