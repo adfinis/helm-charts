@@ -3,6 +3,7 @@
 lokiStack:
   # lokiStack.enabled -- Enable loki
   enabled: false
+  name: loki-stack
   destination:
     # lokiStack.destination.namespace -- Namespace
     namespace: "infra-logging"
