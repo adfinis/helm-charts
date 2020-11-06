@@ -3,6 +3,7 @@
 dex:
   # dex.enabled -- Enable dex
   enabled: false
+  name: dex
   destination:
     # dex.destination.namespace -- Namespace
     namespace: "infra-login"
@@ -22,6 +23,7 @@ dex:
 gangway:
   # gangway.enabled -- Enable gangway
   enabled: false
+  name: gangway
   destination:
     # gangway.destination.namespace -- Namespace
     namespace: "infra-login"
@@ -41,6 +43,7 @@ gangway:
 vault:
   # vault.enabled -- Enable vault
   enabled: false
+  name: vault
   destination:
     # vault.destination.namespace -- Namespace
     namespace: "infra-vault"
