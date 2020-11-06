@@ -1,0 +1,37 @@
+# dex -- [dex](https://github.com/dexidp/dex/) ([example](./examples/dex.yaml))
+# @default -- -
+dex:
+  # dex.enabled -- Enable dex
+  enabled: false
+  destination:
+    # dex.destination.namespace -- Namespace
+    namespace: "infra-login"
+  # dex.repoURL -- Repo URL
+  # @default -- [repo](https://charts.helm.sh/stable/)
+  repoURL: "https://charts.helm.sh/stable/"
+  # dex.chart -- Chart
+  chart: "dex"
+    # dex.targetRevision -- [dex Helm chart](https://github.com/helm/charts/tree/master/stable/dex/) version
+  targetRevision: "2.10.*"
+  # dex.values -- Helm values
+  # @default -- [upstream values](https://github.com/helm/charts/tree/master/stable/dex/values.yaml)
+  values: {}
+
+# gangway -- [gangway](https://github.com/heptiolabs/gangway/) ([example](./examples/gangway.yaml))
+# @default -- -
+gangway:
+  # gangway.enabled -- Enable gangway
+  enabled: false
+  destination:
+    # gangway.destination.namespace -- Namespace
+    namespace: "infra-login"
+  # gangway.repoURL -- Repo URL
+  # @default -- [repo](https://charts.helm.sh/stable/)
+  repoURL: "https://charts.helm.sh/stable/"
+  # gangway.chart -- Chart
+  chart: "gangway"
+    # gangway.targetRevision -- [gangway Helm chart](https://github.com/helm/charts/tree/master/stable/gangway/) version
+  targetRevision: "0.4.*"
+  # gangway.values -- Helm values
+  # @default -- [upstream values](https://github.com/helm/charts/tree/master/stable/gangway/values.yaml)
+  values: {}
