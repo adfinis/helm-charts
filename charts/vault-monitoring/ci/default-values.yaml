@@ -1,0 +1,87 @@
+replicaCount: 1
+
+vault:
+  serverName: vault.example.com
+  port: 443
+  portName: https
+  ca_path: /etc/vault/ssl/ca.crt
+  ip: 10.1.2.3
+  scheme: https
+  ca: ""
+  auth:
+    mount_path: auth/kuberntees
+    role: metrics
+  service:
+    type: externalName
+    selector: {}
+  serviceMonitor:
+    labels:
+      k8s.example.com/prometheus: kube-prometheus
+
+prometheusRules:
+  enabled: true
+  rules:
+    - alert: VaultLeadershipLoss
+      expr: sum(increase(vault_core_leadership_lost_count{job="example"}[1h])) > 5
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: High frequency of Vault leadership losses
+        description: There have been more than 5 Vault leadership losses in the past 1h
+    - alert: VaultLeadershipStepDowns
+      expr: sum(increase(vault_core_step_down_count{job="example"}[1h])) > 5
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: High frequency of Vault leadership step downs
+        description: There have been more than 5 Vault leadership step downs in the past 1h
+    - alert: VaultLeadershipSetupFailures
+      expr: sum(increase(vault_core_leadership_setup_failed{job="example"}[1h])) > 5
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: High frequency of Vault leadership setup failures
+        description: There have been more than 5 Vault leadership setup failures in the past 1h
+    - alert: VaultSealed
+      expr: vault_core_unsealed{} < 1
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: The Vault is sealed!
+        description: The Vault is sealed!
+    - alert: VaultRequestFailures
+      expr: increase(vault_audit_log_request_failure[5m]) > 0
+      for: 15m
+      labels:
+        severity: critical
+      annotations:
+        summary: High frequency of failed Vault requests
+        description: There has been an increased number of failed Vault requests in the last 15 minutes
+    - alert: VaultResponseFailures
+      expr: increase(vault_audit_log_response_failure[5m]) > 0
+      for: 15m
+      labels:
+        severity: critical
+      annotations:
+        summary: High frequency of failed Vault responses
+        description: There has been an increased number of failed Vault responses in the last 15 minutes
+    - alert: VaultTokenCreate
+      expr: increase(vault_token_create_count[5m]) > 100
+      for: 15m
+      labels:
+        severity: critical
+      annotations:
+        summary: High frequency of created Vault token
+        description: There has been an increased number of Vault token creation in the last 15 minutes
+    - alert: VaultTokenStore
+      expr: increase(vault_token_store_count[5m]) > 100
+      for: 15m
+      labels:
+        severity: critical
+      annotations:
+        summary: High frequency of stored Vault token
+        description: There has been an increased number of Vault token storing in the last 15 minutes

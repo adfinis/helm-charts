@@ -32,6 +32,7 @@ helm repo add adfinis https://charts.adfinis.com
 | [rmd](charts/rmd) | Chart for Rmd.io application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |
 | [sentry-apps](charts/sentry-apps) | Sentry on premise | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 5.1.x](https://img.shields.io/badge/app%20version-5.1.x-brightgreen) |
 | [timed](charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.1.x](https://img.shields.io/badge/app%20version-1.1.x-brightgreen) |
+| [vault-monitoring](charts/vault-monitoring) | monitor your vualt server from within kubernetes | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.5.x](https://img.shields.io/badge/app%20version-1.5.x-brightgreen) |
 
 ## Contributing
 

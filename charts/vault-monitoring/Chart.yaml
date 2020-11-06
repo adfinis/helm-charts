@@ -1,0 +1,13 @@
+apiVersion: v2
+name: vault-monitoring
+description: monitor your vualt server from within kubernetes
+type: application
+version: 0.0.1
+appVersion: 1.5.5
+home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring
+sources:
+  - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring
+maintainers:
+  - name: adfinis-sygroup
+    email: support@adfinis.com
+    url: https://adfinis.com

@@ -1,0 +1,177 @@
+# Default values for vault-monitoring.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+
+# replicaCount -- specifies the replica count of the pods
+replicaCount: 1
+
+image:
+  # image.repository -- set the image repository
+  repository: vault
+  # image.pullPolicy -- set the image pullPolicy
+  pullPolicy: IfNotPresent
+  # image.tag -- set the tag of the image
+  # Specify a tag to override which version of timed to deploy.
+  # If no tag is specified the appVersion from Chart.yaml is used as tag.
+  tag: ""
+
+# imagePullSecrets -- specifies the image pull secrets to be used
+imagePullSecrets: []
+# nameOverride -- specifies the name override to be used for helm
+nameOverride: ""
+# fullnameOverride -- specifies the full name override to be used for helm
+fullnameOverride: ""
+
+serviceAccount:
+  # serviceAccount.create -- Specifies whether a service account should be created
+  create: true
+  # serviceAccount.annotations -- Annotations to add to the service account
+  annotations: {}
+  # serviceAccount.name -- The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+# rbacCreate -- wheter the rolebindings and roles should be created
+rbacCreate: true
+
+# podAnnotations -- specifies the Pod Annotations to be set
+podAnnotations: {}
+
+# podSecurityContext -- specifies the Pod Security Context to be set
+podSecurityContext: {}
+  # fsGroup: 2000
+
+# securityContext -- specifies the Security Context to be set
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+  #
+
+# resources -- specifies the resources to be used
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+# nodeSelector -- specifies the nodeSelector to be used
+nodeSelector: {}
+
+# tolerations -- specifies the tolerations to be used
+tolerations: []
+
+# affinity -- specifies the affinity to be used
+affinity: {}
+
+
+vault:
+  # vault.serverName -- the vault servername
+  serverName: vault.example.com
+  # vault.port -- the vault port  to connect to
+  port: 443
+  # vault.portName -- the vault portName to use in the services
+  portName: https
+  # vault.ca_path -- the CA path to include in the configuration
+  ca_path: /etc/vault/ssl/ca.crt
+  # vault.ip -- the vault ip to connect to
+  ip: 10.1.2.3
+  # vault.scheme -- the scheme to use for connection
+  scheme: https
+  # vault.ca -- the vault CA to trust
+  ca: ""
+  auth:
+    # vault.auth.mount_path -- where the kubernetes auth is mounted on vault
+    mount_path: auth/kuberntees
+    # vault.auth.role -- the vault role to use for connection
+    role: metrics
+  service:
+    # vault.service.type -- which type the vault service has. For connecting to an external vault server, chose externalName
+    type: externalName
+    # vault.service.selector -- definition of the  vault service selector for endpoint selection. Keep empty for using externalName
+    selector: {}
+  serviceMonitor:
+    # vault.serviceMonitor.labels -- labels to set on the vault serviceMonitor
+    labels: {}
+
+prometheusRules:
+  # prometheusRules.enabled -- wether or not the prometheus alerts are enabled
+  enabled: false
+  # prometheusRules.labels --  labels to set in the prometheus alerts
+  labels: {}
+  # prometheusRules.rules -- set of prometheus alerts to define
+  rules:  []
+    #- alert: VaultLeadershipLoss
+    #  expr: sum(increase(vault_core_leadership_lost_count{job="example"}[1h])) > 5
+    #  for: 1m
+    #  labels:
+    #    severity: critical
+    #  annotations:
+    #    summary: High frequency of Vault leadership losses
+    #    description: There have been more than 5 Vault leadership losses in the past 1h
+    #- alert: VaultLeadershipStepDowns
+    #  expr: sum(increase(vault_core_step_down_count{job="example"}[1h])) > 5
+    #  for: 1m
+    #  labels:
+    #    severity: critical
+    #  annotations:
+    #    summary: High frequency of Vault leadership step downs
+    #    description: There have been more than 5 Vault leadership step downs in the past 1h
+    #- alert: VaultLeadershipSetupFailures
+    #  expr: sum(increase(vault_core_leadership_setup_failed{job="example"}[1h])) > 5
+    #  for: 1m
+    #  labels:
+    #    severity: critical
+    #  annotations:
+    #    summary: High frequency of Vault leadership setup failures
+    #    description: There have been more than 5 Vault leadership setup failures in the past 1h
+    #- alert: VaultSealed
+    #  expr: vault_core_unsealed{} < 1
+    #  for: 1m
+    #  labels:
+    #    severity: critical
+    #  annotations:
+    #    summary: The Vault is sealed!
+    #    description: The Vault is sealed!
+    #- alert: VaultRequestFailures
+    #  expr: increase(vault_audit_log_request_failure[5m]) > 0
+    #  for: 15m
+    #  labels:
+    #    severity: critical
+    #  annotations:
+    #    summary: High frequency of failed Vault requests
+    #    description: There has been an increased number of failed Vault requests in the last 15 minutes
+    #- alert: VaultResponseFailures
+    #  expr: increase(vault_audit_log_response_failure[5m]) > 0
+    #  for: 15m
+    #  labels:
+    #    severity: critical
+    #  annotations:
+    #    summary: High frequency of failed Vault responses
+    #    description: There has been an increased number of failed Vault responses in the last 15 minutes
+    #- alert: VaultTokenCreate
+    #  expr: increase(vault_token_create_count[5m]) > 100
+    #  for: 15m
+    #  labels:
+    #    severity: critical
+    #  annotations:
+    #    summary: High frequency of created Vault token
+    #    description: There has been an increased number of Vault token creation in the last 15 minutes
+    #- alert: VaultTokenStore
+    #  expr: increase(vault_token_store_count[5m]) > 100
+    #  for: 15m
+    #  labels:
+    #    severity: critical
+    #  annotations:
+    #    summary: High frequency of stored Vault token
+    #    description: There has been an increased number of Vault token storing in the last 15 minutes
