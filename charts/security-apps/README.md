@@ -37,6 +37,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | gangway.repoURL | string | [repo](https://charts.helm.sh/stable/) | Repo URL |
 | gangway.targetRevision | string | `"0.4.*"` | [gangway Helm chart](https://github.com/helm/charts/tree/master/stable/gangway/) version |
 | gangway.values | object | [upstream values](https://github.com/helm/charts/tree/master/stable/gangway/values.yaml) | Helm values |
+| vault | object | - | [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml)) |
+| vault.chart | string | `"vault"` | Chart |
+| vault.destination.namespace | string | `"infra-vault"` | Namespace |
+| vault.enabled | bool | `false` | Enable vault |
+| vault.repoURL | string | [repo](https://helm.releases.hashicorp.com/) | Repo URL |
+| vault.targetRevision | string | `"0.8.*"` | [vault Helm chart](https://github.com/hashicorp/vault-helm) version |
+| vault.values | object | [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml) | Helm values |
 
 ## About this chart
 
