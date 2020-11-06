@@ -1,0 +1,11 @@
+dex:
+  enabled: true
+  values: {}
+
+gangway:
+  enabled: true
+  values: {}
+
+vault:
+  enabled: true
+  values: {}
