@@ -1,4 +1,4 @@
-# loki-stack -- [loki-stack](https://github.com/grafana/loki) ([example](./examples/loki.yaml))
+# lokiStack -- [loki-stack](https://github.com/grafana/loki) ([example](./examples/loki-stack.yaml))
 # @default -- -
 lokiStack:
   # lokiStack.enabled -- Enable loki

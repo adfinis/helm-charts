@@ -23,6 +23,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| lokiStack | object | - | [loki-stack](https://github.com/grafana/loki) ([example](./examples/loki-stack.yaml)) |
 | lokiStack.chart | string | `"loki-stack"` | Chart |
 | lokiStack.destination.namespace | string | `"infra-logging"` | Namespace |
 | lokiStack.enabled | bool | `false` | Enable loki |
