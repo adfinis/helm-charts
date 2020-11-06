@@ -1,0 +1,15 @@
+{{- if eq .Values.vault.service.type "externalName" }}
+apiVersion: v1
+kind: Endpoints
+metadata:
+  labels:
+    {{- include "vaultMonitoring.labels" . | nindent 4 }}
+  name: {{ include "vaultMonitoring.name" . }}
+subsets:
+- addresses:
+  - ip: {{ .Values.vault.ip }}
+  ports:
+  - name: {{ .Values.vault.portName }}
+    port: {{ .Values.vault.port }}
+    protocol: TCP
+{{- end }}

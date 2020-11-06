@@ -1,0 +1,21 @@
+{{- if .Values.prometheusRules.enabled }}
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: {{ template "vaultMonitoring.name" . }}
+{{- if .Values.prometheusRules.namespace }}
+  namespace: {{ .Values.prometheusRules.namespace }}
+{{- end }}
+  labels:
+    {{- include "vaultMonitoring.labels" . | nindent 4 }}
+{{- if .Values.prometheusRules.labels }}
+{{- toYaml .Values.prometheusRules.labels | nindent 4 }}
+{{- end }}
+spec:
+{{- with .Values.prometheusRules.rules }}
+  groups:
+    - name: {{ template "vaultMonitoring.name" $ }}
+      rules: {{ tpl (toYaml .) $ | nindent 8 }}
+{{- end }}
+{{- end }}

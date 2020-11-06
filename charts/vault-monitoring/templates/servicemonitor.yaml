@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "vaultMonitoring.name" . }}
+  labels:
+    {{- include "vaultMonitoring.labels" . | nindent 4 }}
+    {{ .Values.vault.serviceMonitor.labels }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "vaultMonitoring.selectorLabels" . | nindent 6 }}
+  namespaceSelector:
+    matchNames:
+      -  {{ .Release.Namespace }}
+  endpoints:
+    - interval: 30s
+      path: /v1/sys/metrics
+      params:
+        format:
+          - prometheus
+      port: {{ .Values.vault.portName }}
+      scheme: {{ .Values.vault.scheme }}
+      scrapeTimeout: { .values.vault.serviceMonitor.scrapeTimeout }}
+      bearerTokenFile: '/etc/prometheus/config_out/.vault-token'
+      tlsConfig:
+        # TODO
+        caFile: {{ .Values.vault.ca_path }} # this might be a problem as it needs to be mounted inside prometheus?
+        serverName: {{ .Values.vault.serverName }}

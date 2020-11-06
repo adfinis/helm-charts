@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "vaultMonitoring.name" . }}
+  labels:
+    {{- include "vaultMonitoring.labels" . | nindent 4 }}
+spec:
+  selector: {{ .Values.vault.service.selector }}
+  externalName: {{ .Values.vault.serverName }}
+  ports:
+  - name: {{ .Values.vault.portName }}
+    port: {{ .Values.vault.port }}
+    protocol: TCP
+    targetPort: {{ .Values.vault.port }}
+  sessionAffinity: None
+  type: {{ .Values.vault.service.type }}

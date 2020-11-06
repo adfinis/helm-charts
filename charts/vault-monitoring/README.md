@@ -29,6 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | podSecurityContext | object | `{}` | specifies the Pod Security Context to be set |
 | prometheusRules.enabled | bool | `false` | wether or not the prometheus alerts are enabled |
 | prometheusRules.labels | object | `{}` | labels to set in the prometheus alerts |
+| prometheusRules.namespace | string | `""` | set namespace where the prometheusRules will be created |
 | prometheusRules.rules | list | `[]` | set of prometheus alerts to define |
 | rbacCreate | bool | `true` | wheter the rolebindings and roles should be created |
 | replicaCount | int | `1` | specifies the replica count of the pods |
@@ -50,6 +51,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vault.service.selector | object | `{}` | definition of the  vault service selector for endpoint selection. Keep empty for using externalName |
 | vault.service.type | string | `"externalName"` | which type the vault service has. For connecting to an external vault server, chose externalName |
 | vault.serviceMonitor.labels | object | `{}` | labels to set on the vault serviceMonitor |
+| vault.serviceMonitor.scrapeTimeout | string | `"30s"` |  |
 
 ## About this chart
 

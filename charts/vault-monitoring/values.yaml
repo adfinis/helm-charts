@@ -103,10 +103,14 @@ vault:
   serviceMonitor:
     # vault.serviceMonitor.labels -- labels to set on the vault serviceMonitor
     labels: {}
+    # vault.scrapeTimeout  -- scrapeTimeout of the serviceMonitor
+    scrapeTimeout: 30s
 
 prometheusRules:
   # prometheusRules.enabled -- wether or not the prometheus alerts are enabled
   enabled: false
+  # prometheusRules.namespace -- set namespace where the prometheusRules will be created
+  namespace: ""
   # prometheusRules.labels --  labels to set in the prometheus alerts
   labels: {}
   # prometheusRules.rules -- set of prometheus alerts to define
