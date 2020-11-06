@@ -1,6 +1,6 @@
 apiVersion: v2
 name: vault-monitoring
-description: monitor your vualt server from within kubernetes
+description: monitor your vault server from within Kubernetes' prometheus
 type: application
 version: 0.0.1
 appVersion: 1.5.5
