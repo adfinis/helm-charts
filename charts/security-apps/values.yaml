@@ -35,3 +35,22 @@ gangway:
   # gangway.values -- Helm values
   # @default -- [upstream values](https://github.com/helm/charts/tree/master/stable/gangway/values.yaml)
   values: {}
+
+# vault -- [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml))
+# @default -- -
+vault:
+  # vault.enabled -- Enable vault
+  enabled: false
+  destination:
+    # vault.destination.namespace -- Namespace
+    namespace: "infra-vault"
+  # vault.repoURL -- Repo URL
+  # @default -- [repo](https://helm.releases.hashicorp.com/)
+  repoURL: "https://helm.releases.hashicorp.com/"
+  # vault.chart -- Chart
+  chart: "vault"
+    # vault.targetRevision -- [vault Helm chart](https://github.com/hashicorp/vault-helm) version
+  targetRevision: "0.8.*"
+  # vault.values -- Helm values
+  # @default -- [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml)
+  values: {}
