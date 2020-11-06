@@ -109,7 +109,7 @@ backend:
         - "12"
         - "--message"
         # backend.cronjobs.notifyReviewersSecond.command[5] -- Additional message to send if there are unverified reports
-        - "'Bitte verbleibende Positionen verifizieren.'"
+        - "'Please verify your reports.'"
     # backend.cronjobs.notifyReviewersThird -- Notify reviewers third stage
     notifyReviewersThird:
       schedule: "0 8 18 * *"
@@ -121,7 +121,7 @@ backend:
         - "19"
         - "--message"
         # backend.cronjobs.notifyReviewersThird.command[5] -- Additional message to send if there are unverified reports
-        - "'Bitte sofort verifizieren!'"
+        - "'Please verify your reports immediately!'"
     # backend.cronjobs.redmineReport -- Redmine report
     redmineReport:
       schedule: "0 1 * * 1"

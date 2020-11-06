@@ -15,9 +15,6 @@ rmd:
     # rmd.image.waitForItTimeout -- Timeout for wait-for-it.sh
     waitForItTimeout: 60
   service:
-    # Specifiy secret for authentication.
-    # If not random token will be generated
-    # secret:
     # rmd.service.name -- Rmd service name
     name: rmd
     # rmd.service.type -- Rmd service type
@@ -66,6 +63,12 @@ rmd:
     successThreshold: 1
   settings:
     # django settings for rmd
+    # rmd.settings.sentry -- sentry dsn
+    sentry: ~
+    # rmd.settings.secret -- django secret key
+    secret: ~
+    # rmd.settings.siteUrl -- URL for Rmd.io
+    siteUrl: http://localhost:8000
     # rmd.settings.emailHost -- Connection string of SMTP server to send mails
     emailHost: smtp.examplexample.ch
     # rmd.settings.emailPort -- Port for the SMTP server
