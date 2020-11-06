@@ -1,0 +1,10 @@
+The following apps are available:
+{{ if .Values.dex.enabled }}
+* dex
+{{ end }}
+{{ if .Values.gangway.enabled }}
+* gangway
+{{ end }}
+{{ if .Values.vault.enabled }}
+* vault
+{{ end }}
