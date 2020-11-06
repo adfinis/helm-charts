@@ -1,5 +1,5 @@
 {{ if .Values.lokiStack.enabled }}
-{{ template "argoconfig.application" (list . "misc-apps.lokiStack") }}
+{{ template "argoconfig.application" (list . "logging-apps.lokiStack") }}
 {{ end }}
 
 {{- define "logging-apps.lokiStack" -}}{{- $app := unset .Values.lokiStack "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
