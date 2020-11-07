@@ -92,7 +92,7 @@ vault:
   ca: ""
   auth:
     # vault.auth.mount_path -- where the kubernetes auth is mounted on vault
-    mount_path: auth/kuberntees
+    mount_path: auth/kubernetes
     # vault.auth.role -- the vault role to use for connection
     role: metrics
   service:
