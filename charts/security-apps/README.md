@@ -25,14 +25,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 |-----|------|---------|-------------|
 | dex | object | - | [dex](https://github.com/dexidp/dex/) ([example](./examples/dex.yaml)) |
 | dex.chart | string | `"dex"` | Chart |
-| dex.destination.namespace | string | `"infra-login"` | Namespace |
+| dex.destination.namespace | string | `"infra-dex"` | Namespace |
 | dex.enabled | bool | `false` | Enable dex |
 | dex.repoURL | string | [repo](https://charts.helm.sh/stable/) | Repo URL |
 | dex.targetRevision | string | `"2.10.*"` | [dex Helm chart](https://github.com/helm/charts/tree/master/stable/dex/) version |
 | dex.values | object | [upstream values](https://github.com/helm/charts/tree/master/stable/dex/values.yaml) | Helm values |
 | gangway | object | - | [gangway](https://github.com/heptiolabs/gangway/) ([example](./examples/gangway.yaml)) |
 | gangway.chart | string | `"gangway"` | Chart |
-| gangway.destination.namespace | string | `"infra-login"` | Namespace |
+| gangway.destination.namespace | string | `"infra-gangway"` | Namespace |
 | gangway.enabled | bool | `false` | Enable gangway |
 | gangway.repoURL | string | [repo](https://charts.helm.sh/stable/) | Repo URL |
 | gangway.targetRevision | string | `"0.4.*"` | [gangway Helm chart](https://github.com/helm/charts/tree/master/stable/gangway/) version |
