@@ -30,7 +30,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | prometheusRules.enabled | bool | `false` | wether or not the prometheus alerts are enabled |
 | prometheusRules.labels | object | `{}` | labels to set in the prometheus alerts |
 | prometheusRules.namespace | string | `""` | set namespace where the prometheusRules will be created |
-| prometheusRules.rules | list | `[]` | set of prometheus alerts to define |
+| prometheusRules.rules | list | list of predefined alerts | set of prometheus alerts to define |
 | rbacCreate | bool | `true` | wheter the rolebindings and roles should be created |
 | replicaCount | int | `1` | specifies the replica count of the pods |
 | resources | object | `{}` | specifies the resources to be used |
@@ -39,7 +39,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
 | tolerations | list | `[]` | specifies the tolerations to be used |
-| vault.auth.mount_path | string | `"auth/kuberntees"` | where the kubernetes auth is mounted on vault |
+| vault.auth.mount_path | string | `"auth/kubernetes"` | where the kubernetes auth is mounted on vault |
 | vault.auth.role | string | `"metrics"` | the vault role to use for connection |
 | vault.ca | string | `""` | the vault CA to trust |
 | vault.ca_path | string | `"/etc/vault/ssl/ca.crt"` | the CA path to include in the configuration |
