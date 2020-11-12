@@ -9,3 +9,7 @@ gangway:
 vault:
   enabled: true
   values: {}
+
+falco:
+  enabled: true
+  values: {}

@@ -12,7 +12,7 @@ dex:
   repoURL: "https://charts.helm.sh/stable/"
   # dex.chart -- Chart
   chart: "dex"
-    # dex.targetRevision -- [dex Helm chart](https://github.com/helm/charts/tree/master/stable/dex/) version
+  # dex.targetRevision -- [dex Helm chart](https://github.com/helm/charts/tree/master/stable/dex/) version
   targetRevision: "2.10.*"
   # dex.values -- Helm values
   # @default -- [upstream values](https://github.com/helm/charts/tree/master/stable/dex/values.yaml)
@@ -32,7 +32,7 @@ gangway:
   repoURL: "https://charts.helm.sh/stable/"
   # gangway.chart -- Chart
   chart: "gangway"
-    # gangway.targetRevision -- [gangway Helm chart](https://github.com/helm/charts/tree/master/stable/gangway/) version
+  # gangway.targetRevision -- [gangway Helm chart](https://github.com/helm/charts/tree/master/stable/gangway/) version
   targetRevision: "0.4.*"
   # gangway.values -- Helm values
   # @default -- [upstream values](https://github.com/helm/charts/tree/master/stable/gangway/values.yaml)
@@ -52,8 +52,28 @@ vault:
   repoURL: "https://helm.releases.hashicorp.com/"
   # vault.chart -- Chart
   chart: "vault"
-    # vault.targetRevision -- [vault Helm chart](https://github.com/hashicorp/vault-helm) version
+  # vault.targetRevision -- [vault Helm chart](https://github.com/hashicorp/vault-helm) version
   targetRevision: "0.8.*"
   # vault.values -- Helm values
   # @default -- [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml)
+  values: {}
+
+# falco -- [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml))
+# @default -- -
+falco:
+  # falco.enabled -- Enable falco
+  enabled: false
+  name: falco
+  destination:
+    # vault.destination.namespace -- Namespace
+    namespace: "infra-falco"
+  # falco.repoURL -- Repo URL
+  # @default -- [repo](https://falcosecurity.github.io/charts)
+  repoURL: "https://falcosecurity.github.io/charts"
+  # falco.chart -- Chart
+  chart: "falco"
+  # falco.targetRevision -- [falco Helm chart](https://github.com/falcosecurity/charts) version
+  targetRevision: "1.5.*"
+  # falco.values -- Helm values
+  # @default -- [upstream values](https://github.com/falcosecurity/charts/tree/master/values.yaml)
   values: {}

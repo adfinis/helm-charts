@@ -30,6 +30,12 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dex.repoURL | string | [repo](https://charts.helm.sh/stable/) | Repo URL |
 | dex.targetRevision | string | `"2.10.*"` | [dex Helm chart](https://github.com/helm/charts/tree/master/stable/dex/) version |
 | dex.values | object | [upstream values](https://github.com/helm/charts/tree/master/stable/dex/values.yaml) | Helm values |
+| falco | object | - | [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml)) |
+| falco.chart | string | `"falco"` | Chart |
+| falco.enabled | bool | `false` | Enable falco |
+| falco.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
+| falco.targetRevision | string | `"1.5.*"` | [falco Helm chart](https://github.com/falcosecurity/charts) version |
+| falco.values | object | [upstream values](https://github.com/falcosecurity/charts/tree/master/values.yaml) | Helm values |
 | gangway | object | - | [gangway](https://github.com/heptiolabs/gangway/) ([example](./examples/gangway.yaml)) |
 | gangway.chart | string | `"gangway"` | Chart |
 | gangway.destination.namespace | string | `"infra-gangway"` | Namespace |
