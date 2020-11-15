@@ -88,7 +88,7 @@ vault:
   ip: 10.1.2.3
   # vault.scheme -- the scheme to use for connection
   scheme: https
-  # vault.ca -- the vault CA to trust
+  # vault.ca -- the vault CA to trust -- if set a secret is created that must be mounted in Prometheus for the ServiceMonitoring to work
   ca: ""
   auth:
     # vault.auth.mount_path -- where the kubernetes auth is mounted on vault

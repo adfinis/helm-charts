@@ -10,7 +10,9 @@ data:
 
     vault = {
       address = "{{ .Values.vault.scheme }}://{{ .Values.vault.serverName }}"
+      {{- if .Values.vault.ca }}
       ca_cert =  "{{ .Values.vault.ca_path }}"
+      {{- end }}
     }
 
     auto_auth {

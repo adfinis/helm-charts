@@ -25,5 +25,7 @@ spec:
       scrapeTimeout: {{ .Values.vault.serviceMonitor.scrapeTimeout }}
       bearerTokenFile: '/etc/prometheus/config_out/.vault-token'
       tlsConfig:
-        caFile: {{ .Values.vault.ca_path }} # TODO this might be a problem as it needs to be mounted inside prometheus?
+        {{- if .Values.vault.ca }}
+        caFile: {{ .Values.vault.ca_path }}
+        {{- end }}
         serverName: {{ .Values.vault.serverName }}

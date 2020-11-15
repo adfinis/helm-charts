@@ -41,7 +41,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | tolerations | list | `[]` | specifies the tolerations to be used |
 | vault.auth.mount_path | string | `"auth/kubernetes"` | where the kubernetes auth is mounted on vault |
 | vault.auth.role | string | `"metrics"` | the vault role to use for connection |
-| vault.ca | string | `""` | the vault CA to trust |
+| vault.ca | string | `""` |  |
 | vault.ca_path | string | `"/etc/vault/ssl/ca.crt"` | the CA path to include in the configuration |
 | vault.ip | string | `"10.1.2.3"` | the vault ip to connect to |
 | vault.port | int | `443` | the vault port  to connect to |
