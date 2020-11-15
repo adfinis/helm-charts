@@ -37,3 +37,23 @@ filebeat:
   # filebeat.values -- Helm values
   # @default -- [upstream values](https://github.com/elastic/helm-charts/tree/master/filebeat/values.yaml)
   values: {}
+
+# fluentd -- [fluentd](https://github.com/fluent/fluentd) ([example](./examples/fluentd.yaml))
+# @default -- -
+fluentd:
+  # fluentd.enabled -- Enable loki
+  enabled: false
+  name: fluentd
+  destination:
+    # fluentd.destination.namespace -- Namespace
+    namespace: "infra-logging"
+  # fluentd.repoURL -- Repo URL
+  # @default -- [repo](https://charts.bitnami.com/bitnami)
+  repoURL: "https://charts.bitnami.com/bitnami"
+  # fluentd.chart -- Chart
+  chart: "fluentd"
+  # fluentd.targetRevision -- [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version
+  targetRevision: "3.0.*"
+  # fluentd.values -- Helm values
+  # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/fluentd/values.yaml)
+  values: {}

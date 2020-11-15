@@ -5,3 +5,7 @@ lokiStack:
 filebeat:
   enabled: true
   values: {}
+
+fluentd:
+  enabled: true
+  values: {}
