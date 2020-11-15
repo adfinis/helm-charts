@@ -23,6 +23,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| filebeat | object | - | [filebeat](https://github.com/elastic/beats/tree/master/filebeat) ([example](./examples/filebeat.yaml)) |
+| filebeat.chart | string | `"filebeat"` | Chart |
+| filebeat.destination.namespace | string | `"infra-logging"` | Namespace |
+| filebeat.enabled | bool | `false` | Enable loki |
+| filebeat.repoURL | string | [repo](https://helm.elastic.co) | Repo URL |
+| filebeat.targetRevision | string | `"7.9.*"` | [filebeat Helm chart](https://github.com/elastic/helm-charts/tree/master/filebeat) version |
+| filebeat.values | object | [upstream values](https://github.com/elastic/helm-charts/tree/master/filebeat/values.yaml) | Helm values |
 | lokiStack | object | - | [loki-stack](https://github.com/grafana/loki) ([example](./examples/loki-stack.yaml)) |
 | lokiStack.chart | string | `"loki-stack"` | Chart |
 | lokiStack.destination.namespace | string | `"infra-logging"` | Namespace |

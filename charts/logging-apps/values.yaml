@@ -17,3 +17,23 @@ lokiStack:
   # lokiStack.values -- Helm values
   # @default -- [upstream values](https://github.com/grafana/loki/blob/master/production/helm/loki-stack/values.yaml)
   values: {}
+
+# filebeat -- [filebeat](https://github.com/elastic/beats/tree/master/filebeat) ([example](./examples/filebeat.yaml))
+# @default -- -
+filebeat:
+  # filebeat.enabled -- Enable loki
+  enabled: false
+  name: filebeat
+  destination:
+    # filebeat.destination.namespace -- Namespace
+    namespace: "infra-logging"
+  # filebeat.repoURL -- Repo URL
+  # @default -- [repo](https://helm.elastic.co)
+  repoURL: "https://helm.elastic.co"
+  # filebeat.chart -- Chart
+  chart: "filebeat"
+  # filebeat.targetRevision -- [filebeat Helm chart](https://github.com/elastic/helm-charts/tree/master/filebeat) version
+  targetRevision: "7.9.*"
+  # filebeat.values -- Helm values
+  # @default -- [upstream values](https://github.com/elastic/helm-charts/tree/master/filebeat/values.yaml)
+  values: {}

@@ -1,3 +1,7 @@
 lokiStack:
   enabled: true
   values: {}
+
+filebeat:
+  enabled: true
+  values: {}
