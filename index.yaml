@@ -1538,6 +1538,28 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/rmd-0.1.1/rmd-0.1.1.tgz
     version: 0.1.1
+  security-apps:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2020-11-16T08:27:11.342015694Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.6.3
+    description: Argo CD app-of-apps config for security applications
+    digest: a6161e70bfe799dfccd2ac644e0e16ef6acf2b663f2825ef02e6382380c078b6
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/security-apps-0.0.1/security-apps-0.0.1.tgz
+    version: 0.0.1
   sentry-apps:
   - apiVersion: v2
     appVersion: 5.1.2
