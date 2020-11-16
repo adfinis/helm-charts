@@ -1126,6 +1126,27 @@ entries:
   logging-apps:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2020-11-16T08:30:37.433478738Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.6.3
+    description: Argo CD app-of-apps config for logging applications
+    digest: 1e4f56ec64e7b99fc36446ce43bf04daa36730587a85d50d98d916888467a85b
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.0.2/logging-apps-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2020-11-16T08:22:11.471391418Z"
     dependencies:
     - name: argoconfig
