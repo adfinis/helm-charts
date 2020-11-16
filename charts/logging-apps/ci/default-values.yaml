@@ -1,0 +1,11 @@
+lokiStack:
+  enabled: true
+  values: {}
+
+filebeat:
+  enabled: true
+  values: {}
+
+fluentd:
+  enabled: true
+  values: {}
