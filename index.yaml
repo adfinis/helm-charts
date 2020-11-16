@@ -1123,6 +1123,28 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/kasperleyn-0.3.1/kasperleyn-0.3.1.tgz
     version: 0.3.1
+  logging-apps:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2020-11-16T08:22:11.471391418Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.6.3
+    description: Argo CD app-of-apps config for logging applications
+    digest: 4b5cb95d337c0e9f64fb7276edceae195536be96042d57f98bac29a473afa2e0
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.0.1/logging-apps-0.0.1.tgz
+    version: 0.0.1
   misc-apps:
   - apiVersion: v2
     appVersion: 0.2.1
