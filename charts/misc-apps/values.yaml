@@ -54,3 +54,22 @@ sentryKubernetes:
   # sentryKubernetes.values -- Helm values
   # @default -- [upstream values](https://github.com/sentry-kubernetes/charts/blob/develop/sentry-kubernetes/values.yaml)
   values: {}
+
+# metallb -- [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml)
+# @default -- -
+metallb:
+  # metallb.enabled -- Enable metallb
+  enabled: false
+  destination:
+    # metallb.destination.namespace -- Namespace
+    namespace: "infra-metallb"
+  # metallb.repoURL -- Repo URL
+  # @default -- [repo](https://charts.bitnami.com/bitnami)
+  repoURL: "https://charts.bintami.com/bitnami"
+  # metallb.chart -- Chart
+  chart: "metallb"
+  # metallb.targetRevision -- [metallb Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/metallb)
+  targetRevision: "1.0.*"
+  # metallb.values -- Helm values
+  # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/metallb/values.yaml)
+  values: {}
