@@ -5,3 +5,11 @@ downscaler:
 signalilo:
   enabled: true
   values: {}
+
+sentryKubernetes:
+  enabled: true
+  values: {}
+
+metallb:
+  enabled: true
+  values: {}
