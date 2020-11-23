@@ -140,14 +140,6 @@ prometheusRules:
       annotations:
         summary: High frequency of Vault leadership setup failures
         description: There have been more than 5 Vault leadership setup failures in the past 1h
-    - alert: VaultSealed
-      expr: vault_core_unsealed{} < 1
-      for: 1m
-      labels:
-        severity: critical
-      annotations:
-        summary: The Vault is sealed!
-        description: The Vault is sealed!
     - alert: VaultRequestFailures
       expr: increase(vault_audit_log_request_failure[5m]) > 0
       for: 15m
