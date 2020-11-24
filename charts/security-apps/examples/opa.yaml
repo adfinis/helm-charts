@@ -1,0 +1,20 @@
+falco:
+  enabled: true
+  project: infra-opa
+  values:
+    opa: false
+    certManager:
+      enabled: true
+    prometheus:
+      enabled: true
+    serviceMonitor:
+      enabled: true
+      additionalLabels:
+        k8s.adfinis.com/prometheus: kube-prometheus
+    auditLog:
+      enabled: true
+    mgmt:
+      configmapPolicies:
+        enabled: true
+        namespaces:
+          - infra-opa

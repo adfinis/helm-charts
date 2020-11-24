@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.1](https://img.shields.io/badge/AppVersion-0.0.1-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -43,6 +43,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | gangway.repoURL | string | [repo](https://charts.helm.sh/stable/) | Repo URL |
 | gangway.targetRevision | string | `"0.4.*"` | [gangway Helm chart](https://github.com/helm/charts/tree/master/stable/gangway/) version |
 | gangway.values | object | [upstream values](https://github.com/helm/charts/tree/master/stable/gangway/values.yaml) | Helm values |
+| opa | object | - | [Open Policy Agent](https://www.openpolicyagent.org/) ([example](./examples/opa.yaml)) |
+| opa.chart | string | `"opa"` | Chart |
+| opa.destination.namespace | string | `"infra-opa"` | Namespace |
+| opa.enabled | bool | `false` | Enable Open Policy Agent |
+| opa.repoURL | string | [repo](https://charts.helm.sh/stable) | Repo URL |
+| opa.targetRevision | string | `"1.5.*"` | [Open Policy Agent Helm chart](https://github.com/helm/charts/tree/master/stable/opa) version |
+| opa.values | object | [upstream values](https://github.com/helm/charts/blob/master/stable/opa/values.yaml) | Helm values |
 | vault | object | - | [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml)) |
 | vault.chart | string | `"vault"` | Chart |
 | vault.destination.namespace | string | `"infra-vault"` | Namespace |

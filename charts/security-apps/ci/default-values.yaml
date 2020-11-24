@@ -13,3 +13,7 @@ vault:
 falco:
   enabled: true
   values: {}
+
+opa:
+  enabled: true
+  values: {}

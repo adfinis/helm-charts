@@ -11,3 +11,6 @@ The following apps are available:
 {{ if .Values.falco.enabled }}
 * falco
 {{ end }}
+{{ if .Values.opa.enabled }}
+* Open Policy Agent
+{{ end }}
