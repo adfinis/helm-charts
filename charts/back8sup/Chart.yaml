@@ -2,8 +2,8 @@ apiVersion: v2
 name: back8sup
 description: Deploy back8sup to a Kubernetes Cluster
 type: application
-version: 0.1.9
-appVersion: v0.5.0
+version: 0.2.0
+appVersion: v0.5.2
 home: https://github.com/adfinis-sygroup/back8sup
 sources:
   - https://github.com/adfinis-sygroup/back8sup
