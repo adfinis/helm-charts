@@ -266,6 +266,24 @@ entries:
     version: 0.1.0
   back8sup:
   - apiVersion: v2
+    appVersion: v0.6.1
+    created: "2020-11-26T10:26:09.852756052Z"
+    description: Deploy back8sup to a Kubernetes Cluster
+    digest: 9258cd12942a6745d8a75577e825298b96fef8e91a99a0a021113ee44ab2a606
+    home: https://github.com/adfinis-sygroup/back8sup
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: back8sup
+    sources:
+    - https://github.com/adfinis-sygroup/back8sup
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/back8sup
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/back8sup-0.2.1/back8sup-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: v0.5.0
     created: "2020-11-06T14:51:32.322398263Z"
     description: Deploy back8sup to a Kubernetes Cluster
