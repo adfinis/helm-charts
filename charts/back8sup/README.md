@@ -1,6 +1,6 @@
 # back8sup
 
-![Version: 0.1.9](https://img.shields.io/badge/Version-0.1.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.5.0](https://img.shields.io/badge/AppVersion-v0.5.0-informational?style=flat-square)
+![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.6.1](https://img.shields.io/badge/AppVersion-v0.6.1-informational?style=flat-square)
 
 Deploy back8sup to a Kubernetes Cluster
 
@@ -33,7 +33,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | cronjob.environment[4].value | string | `"yaml"` |  |
 | cronjob.environment[5].name | string | `"DST_FOLDER"` |  |
 | cronjob.environment[5].value | string | `"/mnt/back8sup"` |  |
-| cronjob.environment[6].name | string | `"EXPIRE"` |  |
+| cronjob.environment[6].name | string | `"GENERATIONS"` |  |
 | cronjob.environment[6].value | string | `"30"` |  |
 | cronjob.failedJobsHistoryLimit | string | `""` | specifies the failedJobsHistoryLimit of the cronjob |
 | cronjob.schedule | string | `"0 1 * * *"` | on which schedule the cronjob gets run |

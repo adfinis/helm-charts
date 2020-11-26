@@ -59,7 +59,7 @@ cronjob:
       value: yaml
     - name: DST_FOLDER
       value: /mnt/back8sup
-    - name: EXPIRE
+    - name: GENERATIONS
       value: "30"
 
 persistence:
