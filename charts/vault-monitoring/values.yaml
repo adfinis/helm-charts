@@ -117,7 +117,7 @@ prometheusRules:
   # @default -- list of predefined alerts
   rules:
     - alert: VaultLeadershipLoss
-      expr: sum(increase(vault_core_leadership_lost_count{job="example"}[1h])) > 5
+      expr: sum(increase(vault_core_leadership_lost_count{job="vault-monitoring"}[1h])) > 5
       for: 1m
       labels:
         severity: critical
@@ -125,7 +125,7 @@ prometheusRules:
         summary: High frequency of Vault leadership losses
         description: There have been more than 5 Vault leadership losses in the past 1h
     - alert: VaultLeadershipStepDowns
-      expr: sum(increase(vault_core_step_down_count{job="example"}[1h])) > 5
+      expr: sum(increase(vault_core_step_down_count{job="vault-monitoring"}[1h])) > 5
       for: 1m
       labels:
         severity: critical
@@ -133,7 +133,7 @@ prometheusRules:
         summary: High frequency of Vault leadership step downs
         description: There have been more than 5 Vault leadership step downs in the past 1h
     - alert: VaultLeadershipSetupFailures
-      expr: sum(increase(vault_core_leadership_setup_failed{job="example"}[1h])) > 5
+      expr: sum(increase(vault_core_leadership_setup_failed{job="vault-monitoring"}[1h])) > 5
       for: 1m
       labels:
         severity: critical
