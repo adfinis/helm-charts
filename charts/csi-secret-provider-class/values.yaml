@@ -1,0 +1,16 @@
+# provider -- specify secret provider
+provider: ~
+
+# parameters -- parameters for provider
+parameters: {}
+
+# parametersTpl -- template to generate parameters
+# @default -- raw values from `parameters`
+parametersTpl: "{{ .Values.parameters | toYaml }}"
+
+# secretObjects -- secretObjects for for SecretProviderClass
+secretObjects: []
+
+# secretObjectsTpl -- template to generate secretObjects
+# @default -- raw values from `secretObjects`
+secretObjectsTpl: "{{ .Values.secretObjects | toYaml }}"
