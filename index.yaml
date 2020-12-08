@@ -1702,6 +1702,27 @@ entries:
     version: 0.1.1
   security-apps:
   - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2020-12-08T13:15:41.148501341Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.6.3
+    description: Argo CD app-of-apps config for security applications
+    digest: 821874e2f63d83359b682b0fc1b190011aa4c65250b7c08c83114f1906beab7e
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/security-apps-0.1.0/security-apps-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
     appVersion: 0.0.1
     created: "2020-11-16T08:27:11.342015694Z"
     dependencies:
