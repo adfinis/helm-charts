@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.0](https://img.shields.io/badge/AppVersion-0.2.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -35,8 +35,15 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | falco.destination.namespace | string | `"infra-falco"` | Namespace |
 | falco.enabled | bool | `false` | Enable falco |
 | falco.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
-| falco.targetRevision | string | `"1.5.*"` | [falco Helm chart](https://github.com/falcosecurity/charts) version |
-| falco.values | object | [upstream values](https://github.com/falcosecurity/charts/tree/master/values.yaml) | Helm values |
+| falco.targetRevision | string | `"1.5.*"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version |
+| falco.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml) | Helm values |
+| falcosidekick | object | - | [falcosidekick](https://github.com/falcosecurity/falcosidekick/) ([example](./examples/falcosidekick.yaml)) |
+| falcosidekick.chart | string | `"falcosidekick"` | Chart |
+| falcosidekick.destination.namespace | string | `"infra-falco"` | Namespace |
+| falcosidekick.enabled | bool | `false` | Enable falcosidekick |
+| falcosidekick.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
+| falcosidekick.targetRevision | string | `"0.1.*"` | [falcosidekick Helm chart](https://github.com/falcosecurity/charts/tree/master/falcosidekick) version |
+| falcosidekick.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.yaml) | Helm values |
 | gangway | object | - | [gangway](https://github.com/heptiolabs/gangway/) ([example](./examples/gangway.yaml)) |
 | gangway.chart | string | `"gangway"` | Chart |
 | gangway.destination.namespace | string | `"infra-gangway"` | Namespace |
