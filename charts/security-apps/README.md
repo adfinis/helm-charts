@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.1](https://img.shields.io/badge/AppVersion-0.0.1-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -32,6 +32,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dex.values | object | [upstream values](https://github.com/helm/charts/tree/master/stable/dex/values.yaml) | Helm values |
 | falco | object | - | [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml)) |
 | falco.chart | string | `"falco"` | Chart |
+| falco.destination.namespace | string | `"infra-falco"` | Namespace |
 | falco.enabled | bool | `false` | Enable falco |
 | falco.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
 | falco.targetRevision | string | `"1.5.*"` | [falco Helm chart](https://github.com/falcosecurity/charts) version |
@@ -43,6 +44,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | gangway.repoURL | string | [repo](https://charts.helm.sh/stable/) | Repo URL |
 | gangway.targetRevision | string | `"0.4.*"` | [gangway Helm chart](https://github.com/helm/charts/tree/master/stable/gangway/) version |
 | gangway.values | object | [upstream values](https://github.com/helm/charts/tree/master/stable/gangway/values.yaml) | Helm values |
+| gatekeeper | object | - | [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml)) |
+| gatekeeper.chart | string | `"gatekeeper"` | Chart |
+| gatekeeper.destination.namespace | string | `"infra-gatekeeper"` | Namespace |
+| gatekeeper.enabled | bool | `false` | Enable falco |
+| gatekeeper.repoURL | string | [repo](https://open-policy-agent.github.io/gatekeeper/charts) | Repo URL |
+| gatekeeper.targetRevision | string | `"3.2.2"` | [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version |
+| gatekeeper.values | object | [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml) | Helm values |
 | vault | object | - | [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml)) |
 | vault.chart | string | `"vault"` | Chart |
 | vault.destination.namespace | string | `"infra-vault"` | Namespace |

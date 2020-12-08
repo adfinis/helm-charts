@@ -65,7 +65,7 @@ falco:
   enabled: false
   name: falco
   destination:
-    # vault.destination.namespace -- Namespace
+    # falco.destination.namespace -- Namespace
     namespace: "infra-falco"
   # falco.repoURL -- Repo URL
   # @default -- [repo](https://falcosecurity.github.io/charts)
@@ -76,4 +76,24 @@ falco:
   targetRevision: "1.5.*"
   # falco.values -- Helm values
   # @default -- [upstream values](https://github.com/falcosecurity/charts/tree/master/values.yaml)
+  values: {}
+
+# gatekeeper -- [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml))
+# @default -- -
+gatekeeper:
+  # gatekeeper.enabled -- Enable falco
+  enabled: false
+  name: gatekeeper
+  destination:
+    # gatekeeper.destination.namespace -- Namespace
+    namespace: "infra-gatekeeper"
+  # gatekeeper.repoURL -- Repo URL
+  # @default -- [repo](https://open-policy-agent.github.io/gatekeeper/charts)
+  repoURL: "https://falcosecurity.github.io/charts"
+  # gatekeeper.chart -- Chart
+  chart: "gatekeeper"
+  # gatekeeper.targetRevision -- [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version
+  targetRevision: "3.2.2"
+  # gatekeeper.values -- Helm values
+  # @default -- [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml)
   values: {}
