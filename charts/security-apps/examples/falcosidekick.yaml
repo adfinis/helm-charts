@@ -1,4 +1,4 @@
-falco:
+falcosidekick:
   enabled: true
   project: infra-falco
   values:
