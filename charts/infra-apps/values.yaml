@@ -26,7 +26,7 @@ certManager:
   name: certmgr
   destination:
     # certManager.destination.namespace -- Namespace
-    namespace: infra-certManager
+    namespace: infra-certmanager
   # certManager.repoURL -- Repo URL
   # @default -- [repo](https://charts.jetstack.io)
   repoURL: "https://charts.jetstack.io"
