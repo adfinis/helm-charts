@@ -14,6 +14,10 @@ falco:
   enabled: true
   values: {}
 
+falcosidekick:
+  enabled: true
+  value: {}
+
 gatekeeper:
   enabled: true
   values: {}

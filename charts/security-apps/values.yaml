@@ -72,10 +72,30 @@ falco:
   repoURL: "https://falcosecurity.github.io/charts"
   # falco.chart -- Chart
   chart: "falco"
-  # falco.targetRevision -- [falco Helm chart](https://github.com/falcosecurity/charts) version
+  # falco.targetRevision -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version
   targetRevision: "1.5.*"
   # falco.values -- Helm values
-  # @default -- [upstream values](https://github.com/falcosecurity/charts/tree/master/values.yaml)
+  # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml)
+  values: {}
+
+# falcosidekick -- [falcosidekick](https://github.com/falcosecurity/falcosidekick/) ([example](./examples/falcosidekick.yaml))
+# @default -- -
+falcosidekick:
+  # falcosidekick.enabled -- Enable falcosidekick
+  enabled: false
+  name: falcosidekick
+  destination:
+    # falcosidekick.destination.namespace -- Namespace
+    namespace: "infra-falco"
+  # falcosidekick.repoURL -- Repo URL
+  # @default -- [repo](https://falcosecurity.github.io/charts)
+  repoURL: "https://falcosecurity.github.io/charts"
+  # falcosidekick.chart -- Chart
+  chart: "falcosidekick"
+  # falcosidekick.targetRevision -- [falcosidekick Helm chart](https://github.com/falcosecurity/charts/tree/master/falcosidekick) version
+  targetRevision: "0.1.*"
+  # falcosidekick.values -- Helm values
+  # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.yaml)
   values: {}
 
 # gatekeeper -- [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml))
