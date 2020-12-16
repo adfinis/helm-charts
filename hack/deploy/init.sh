@@ -6,7 +6,7 @@ source hack/sh/rc.sh
 
 readonly infra_ns=$ADFINIS_CHARTS_INFRA_NS
 readonly argocd_version=$ADFINIS_CHARTS_ARGOCD_VERSION
-readonly kube_prometheus_stack_version=$ADFINIS_CHARTS_PROMETHEUS_OPERATOR_VERSION
+readonly kube_prometheus_stack_version=$ADFINIS_CHARTS_KUBE_PROMETHEUS_STACK_VERISON
 readonly secrets_store_csi_driver_version=$ADFINIS_CHARTS_SECRETS_STORE_CSI_DRIVER_VERSION
 
 set +x
