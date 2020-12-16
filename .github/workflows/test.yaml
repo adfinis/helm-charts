@@ -13,7 +13,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - uses: actions/setup-python@v1
+    - uses: actions/setup-python@v2
 
     - name: Setup environment for pre-commit
       run: hack/ci/github/setup/pre-commit.sh
@@ -35,13 +35,13 @@ jobs:
 
       - name: Run chart-testing (lint)
         id: lint
-        uses: helm/chart-testing-action@v1.0.0
+        uses: helm/chart-testing-action@v2.0.1
         with:
           command: lint
           config: hack/chart-testing/ct.yaml
 
       - name: Create kind cluster
-        uses: helm/kind-action@v1.0.0-rc.1
+        uses: helm/kind-action@v1.0.0
         if: steps.lint.outputs.changed == 'true'
 
       - name: Setup cluster for chart-testing (install)
@@ -49,7 +49,7 @@ jobs:
         if: steps.lint.outputs.changed == 'true'
 
       - name: Run chart-testing (install)
-        uses: helm/chart-testing-action@v1.0.0
+        uses: helm/chart-testing-action@v2.0.1
         with:
           command: install
           config: hack/chart-testing/ct-install.yaml
