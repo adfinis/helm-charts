@@ -6,7 +6,7 @@ source hack/sh/rc.sh
 
 readonly infra_ns=$ADFINIS_CHARTS_INFRA_NS
 readonly argocd_version=$ADFINIS_CHARTS_ARGOCD_VERSION
-readonly prometheus_operator_version=$ADFINIS_CHARTS_PROMETHEUS_OPERATOR_VERSION
+readonly kube_prometheus_stack_version=$ADFINIS_CHARTS_KUBE_PROMETHEUS_STACK_VERISON
 readonly secrets_store_csi_driver_version=$ADFINIS_CHARTS_SECRETS_STORE_CSI_DRIVER_VERSION
 
 set +x
@@ -18,7 +18,7 @@ kubectl create ns $infra_ns
 kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/v$argocd_version/manifests/crds/application-crd.yaml
 kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/v$argocd_version/manifests/crds/appproject-crd.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/release-$prometheus_operator_version/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
-kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/release-$prometheus_operator_version/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
+kubectl apply -f https://raw.githubusercontent.com/prometheus-community/helm-charts/kube-prometheus-stack-$kube_prometheus_stack_version/charts/kube-prometheus-stack/crds/crd-servicemonitors.yaml
+kubectl apply -f https://raw.githubusercontent.com/prometheus-community/helm-charts/kube-prometheus-stack-$kube_prometheus_stack_version/charts/kube-prometheus-stack/crds/crd-podmonitors.yaml
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/v$secrets_store_csi_driver_version/deploy/secrets-store.csi.x-k8s.io_secretproviderclasses.yaml
