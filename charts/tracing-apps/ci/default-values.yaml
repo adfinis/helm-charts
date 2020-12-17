@@ -1,0 +1,3 @@
+jaegerOperator:
+  enabled: true
+  values: {}

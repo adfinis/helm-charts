@@ -1,0 +1,4 @@
+The following apps are available:
+{{ if .Values.jaegerOperator.enabled }}
+* jaeger-operator
+{{ end }}

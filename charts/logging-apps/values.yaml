@@ -41,7 +41,7 @@ filebeat:
 # fluentd -- [fluentd](https://github.com/fluent/fluentd) ([example](./examples/fluentd.yaml))
 # @default -- -
 fluentd:
-  # fluentd.enabled -- Enable loki
+  # fluentd.enabled -- Enable fluentd
   enabled: false
   name: fluentd
   destination:
