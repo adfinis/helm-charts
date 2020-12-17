@@ -1267,6 +1267,27 @@ entries:
     version: 0.0.1
   misc-apps:
   - apiVersion: v2
+    appVersion: 0.2.7
+    created: "2020-12-17T10:40:49.364500103Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: d05971dcbc5bdbbabc5f5d4dd89c6225af7cd7f1b1b40ba95761086de4a67596
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/misc-apps-0.2.7/misc-apps-0.2.7.tgz
+    version: 0.2.7
+  - apiVersion: v2
     appVersion: 0.2.6
     created: "2020-11-26T16:23:41.273038467Z"
     dependencies:
