@@ -26,8 +26,9 @@ jobs:
         with:
           version: v3.4.0
 
-      - name: Add charts.adfinis.com repo
-        run: helm repo add adfinis https://charts.adfinis.com
+      - name: Add dependency chart repos
+        run: |
+          helm repo add adfinis https://charts.adfinis.com
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.1.0
