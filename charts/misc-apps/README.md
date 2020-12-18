@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.2.7](https://img.shields.io/badge/Version-0.2.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.7](https://img.shields.io/badge/AppVersion-0.2.7-informational?style=flat-square)
+![Version: 0.2.8](https://img.shields.io/badge/Version-0.2.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.8](https://img.shields.io/badge/AppVersion-0.2.8-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -27,7 +27,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | downscaler.chart | string | `"kube-downscaler"` | Chart |
 | downscaler.destination.namespace | string | `"infra-downscaler"` | Namespace |
 | downscaler.enabled | bool | `false` | Enable kube-downscaler |
-| downscaler.repoURL | string | [repo](https://charts.helm.sh/incubator/) | Repo URL |
+| downscaler.repoURL | string | [repo](https://charts.helm.sh/incubator) | Repo URL |
 | downscaler.targetRevision | string | `"0.5.*"` | [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version |
 | downscaler.values | object | [upstream values](https://github.com/helm/charts/blob/master/incubator/kube-downscaler/values.yaml) | Helm values |
 | metallb | object | - | [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml) |

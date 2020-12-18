@@ -8,8 +8,8 @@ downscaler:
     # downscaler.destination.namespace -- Namespace
     namespace: "infra-downscaler"
   # downscaler.repoURL -- Repo URL
-  # @default -- [repo](https://charts.helm.sh/incubator/)
-  repoURL: "https://charts.helm.sh/incubator/"
+  # @default -- [repo](https://charts.helm.sh/incubator)
+  repoURL: "https://charts.helm.sh/incubator"
   # downscaler.chart -- Chart
   chart: "kube-downscaler"
   # downscaler.targetRevision -- [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version
