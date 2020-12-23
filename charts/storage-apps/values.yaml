@@ -1,0 +1,19 @@
+# nfsClientProvisioner -- [nfs-client-provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner) ([example](./examples/nfs-client-provisioner.yaml))
+# @default -- -
+nfsClientProvisioner:
+  # nfsClientProvisioner.enabled -- Enable nfs-client-provisioner
+  enabled: false
+  name: nfs-client-provisioner
+  destination:
+    # nfsClientProvisioner.destination.namespace -- Namespace
+    namespace: "infra-storage"
+  # nfsClientProvisioner.repoURL -- Repo URL
+  # @default -- [repo](https://charts.helm.sh/stable)
+  repoURL: "https://charts.helm.sh/stable"
+  # nfsClientProvisioner.chart -- Chart
+  chart: "nfs-client-provisioner"
+  # nfsClientProvisioner.targetRevision -- [loki-stack Helm chart](https://github.com/grafana/loki/blob/master/production/helm/loki-stack) version
+  targetRevision: "1.2.*"
+  # nfsClientProvisioner.values -- Helm values
+  # @default -- [upstream values](https://github.com/helm/charts/blob/master/stable/nfs-client-provisioner/values.yaml)
+  values: {}
