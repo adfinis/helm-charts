@@ -9,7 +9,7 @@ argocd:
     namespace: "infra-argocd"
   # argocd.repoURL -- Repo URL
   # @default -- [repo](https://argoproj.github.io/argo-helm)
-  repoURL: "https://argoproj.github.io/argo-helm"
+  repoURL: "https://argoproj.github.io/argo-helm/"
   # argocd.chart -- Chart
   chart: "argo-cd"
   # argocd.targetRevision -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version
@@ -113,7 +113,7 @@ velero:
   # velero.chart -- Chart
   chart: velero
   # velero.targetRevision -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
-  targetRevision: '2.12.*'
+  targetRevision: '2.14.*'
   # velero.values -- Helm values
   # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
   values: {}
