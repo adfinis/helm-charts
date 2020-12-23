@@ -12,8 +12,48 @@ nfsClientProvisioner:
   repoURL: "https://charts.helm.sh/stable"
   # nfsClientProvisioner.chart -- Chart
   chart: "nfs-client-provisioner"
-  # nfsClientProvisioner.targetRevision -- [loki-stack Helm chart](https://github.com/grafana/loki/blob/master/production/helm/loki-stack) version
+  # nfsClientProvisioner.targetRevision -- [nfs-client-provisioner Helm chart](https://github.com/helm/charts/tree/master/stable/nfs-client-provisioner) version
   targetRevision: "1.2.*"
   # nfsClientProvisioner.values -- Helm values
   # @default -- [upstream values](https://github.com/helm/charts/blob/master/stable/nfs-client-provisioner/values.yaml)
+  values: {}
+
+# cephCsiRbd -- [ceph-csi-rbd](https://github.com/ceph/ceph-csi/)
+# @default -- -
+cephCsiRbd:
+  # cephCsiRbd.enabled -- Enable ceph-csi-rbd
+  enabled: false
+  name: ceph-csi-rbd
+  destination:
+    # cephCsiRbd.destination.namespace -- Namespace
+    namespace: "infra-storage"
+  # cephCsiRbd.repoURL -- Repo URL
+  # @default -- [repo](https://ceph.github.io/csi-charts)
+  repoURL: "https://ceph.github.io/csi-charts"
+  # cephCsiRbd.chart -- Chart
+  chart: "ceph-csi-rbd"
+  # cephCsiRbd.targetRevision -- [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version
+  targetRevision: "1.3.*"
+  # cephCsiRbd.values -- Helm values
+  # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/rbd/ceph-csi-rbd/values.yaml)
+  values: {}
+
+# cephCsiCephfs -- [ceph-csi-cephfs](https://github.com/ceph/ceph-csi/)
+# @default -- -
+cephCsiCephfs:
+  # cephCsiCephfs.enabled -- Enable ceph-csi-cephfs
+  enabled: false
+  name: ceph-csi-cephfs
+  destination:
+    # cephCsiCephfs.destination.namespace -- Namespace
+    namespace: "infra-storage"
+  # cephCsiCephfs.repoURL -- Repo URL
+  # @default -- [repo](https://ceph.github.io/csi-charts)
+  repoURL: "https://ceph.github.io/csi-charts"
+  # cephCsiCephfs.chart -- Chart
+  chart: "ceph-csi-cephfs"
+  # cephCsiCephfs.targetRevision -- [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version
+  targetRevision: "1.3.*"
+  # cephCsiCephfs.values -- Helm values
+  # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/cephfs/ceph-csi-cephfs/values.yaml)
   values: {}

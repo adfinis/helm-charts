@@ -1,3 +1,11 @@
 nfsClientProvisioner:
   enabled: true
   values: {}
+
+cephCsiRbd:
+  enabled: true
+  values: {}
+
+cephCsiCephfs:
+  enabled: true
+  values: {}

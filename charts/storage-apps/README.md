@@ -1,6 +1,6 @@
 # storage-apps
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
+![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.1](https://img.shields.io/badge/AppVersion-0.1.1-informational?style=flat-square)
 
 Argo CD app-of-apps config for storage applications
 
@@ -23,12 +23,26 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| cephCsiCephfs | object | - | [ceph-csi-cephfs](https://github.com/ceph/ceph-csi/) |
+| cephCsiCephfs.chart | string | `"ceph-csi-cephfs"` | Chart |
+| cephCsiCephfs.destination.namespace | string | `"infra-storage"` | Namespace |
+| cephCsiCephfs.enabled | bool | `false` | Enable ceph-csi-cephfs |
+| cephCsiCephfs.repoURL | string | [repo](https://ceph.github.io/csi-charts) | Repo URL |
+| cephCsiCephfs.targetRevision | string | `"1.3.*"` | [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version |
+| cephCsiCephfs.values | object | [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/cephfs/ceph-csi-cephfs/values.yaml) | Helm values |
+| cephCsiRbd | object | - | [ceph-csi-rbd](https://github.com/ceph/ceph-csi/) |
+| cephCsiRbd.chart | string | `"ceph-csi-rbd"` | Chart |
+| cephCsiRbd.destination.namespace | string | `"infra-storage"` | Namespace |
+| cephCsiRbd.enabled | bool | `false` | Enable ceph-csi-rbd |
+| cephCsiRbd.repoURL | string | [repo](https://ceph.github.io/csi-charts) | Repo URL |
+| cephCsiRbd.targetRevision | string | `"1.3.*"` | [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version |
+| cephCsiRbd.values | object | [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/rbd/ceph-csi-rbd/values.yaml) | Helm values |
 | nfsClientProvisioner | object | - | [nfs-client-provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner) ([example](./examples/nfs-client-provisioner.yaml)) |
 | nfsClientProvisioner.chart | string | `"nfs-client-provisioner"` | Chart |
 | nfsClientProvisioner.destination.namespace | string | `"infra-storage"` | Namespace |
 | nfsClientProvisioner.enabled | bool | `false` | Enable nfs-client-provisioner |
 | nfsClientProvisioner.repoURL | string | [repo](https://charts.helm.sh/stable) | Repo URL |
-| nfsClientProvisioner.targetRevision | string | `"1.2.*"` | [loki-stack Helm chart](https://github.com/grafana/loki/blob/master/production/helm/loki-stack) version |
+| nfsClientProvisioner.targetRevision | string | `"1.2.*"` | [nfs-client-provisioner Helm chart](https://github.com/helm/charts/tree/master/stable/nfs-client-provisioner) version |
 | nfsClientProvisioner.values | object | [upstream values](https://github.com/helm/charts/blob/master/stable/nfs-client-provisioner/values.yaml) | Helm values |
 
 ## About this chart
