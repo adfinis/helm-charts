@@ -1,0 +1,17 @@
+apiVersion: v2
+name: csi-secret-provider-class
+description: A Helm chart to create a SecretProviderClass resource
+type: application
+version: 0.1.0
+appVersion: 0.1.0
+home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/csi-secret-provider-class
+sources:
+  - https://github.com/adfinis-sygroup/helm-charts
+maintainers:
+  - name: adfinis-sygroup
+    email: support@adfinis.com
+    url: https://adfinis.com
+dependencies:
+  - name: common
+    repository: https://charts.adfinis.com
+    version: 0.0.5

@@ -1,0 +1,7 @@
+fluentd:
+  enabled: true
+  project: infra-logging
+  values:
+    tls:
+      enabled: true
+      existingSecret: mycert

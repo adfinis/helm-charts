@@ -1,0 +1,19 @@
+# jaegerOperator -- [jaeger-operator](https://www.jaegertracing.io/docs/operator) ([example](./examples/jaegerOperator.yaml))
+# @default -- -
+jaegerOperator:
+  # jaegerOperator.enabled -- Enable jaeger-operator
+  enabled: false
+  name: jaeger-operator
+  destination:
+    # jaegerOperator.destination.namespace -- Namespace
+    namespace: "infra-jaeger"
+  # jaegerOperator.repoURL -- Repo URL
+  # @default -- [repo](https://jaegertracing.github.io/helm-charts)
+  repoURL: "https://jaegertracing.github.io/helm-charts"
+  # jaegerOperator.chart -- Chart
+  chart: "jaeger-operator"
+  # jaegerOperator.targetRevision -- [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/master/charts/jaeger-operator)
+  targetRevision: "1.20.*"
+  # jaegerOperator.values -- Helm values
+  # @default -- [upstream values](https://github.com/jaegertracing/helm-charts/blob/master/charts/jaeger-operator/values.yaml)
+  values: {}

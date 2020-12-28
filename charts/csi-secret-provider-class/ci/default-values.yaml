@@ -1,0 +1,5 @@
+provider: dummy
+parameters:
+  foo: bar
+secretObjects:
+  - secretName: test

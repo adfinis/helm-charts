@@ -1,0 +1,23 @@
+dex:
+  enabled: true
+  values: {}
+
+gangway:
+  enabled: true
+  values: {}
+
+vault:
+  enabled: true
+  values: {}
+
+falco:
+  enabled: true
+  values: {}
+
+falcosidekick:
+  enabled: true
+  value: {}
+
+gatekeeper:
+  enabled: true
+  values: {}

@@ -1,0 +1,6 @@
+falcosidekick:
+  enabled: true
+  project: infra-falco
+  values:
+    config:
+      debug: false

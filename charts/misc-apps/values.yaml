@@ -3,12 +3,13 @@
 downscaler:
   # downscaler.enabled -- Enable kube-downscaler
   enabled: false
+  name: downscaler
   destination:
     # downscaler.destination.namespace -- Namespace
     namespace: "infra-downscaler"
   # downscaler.repoURL -- Repo URL
-  # @default -- [repo](https://charts.helm.sh/incubator/)
-  repoURL: "https://charts.helm.sh/incubator/"
+  # @default -- [repo](https://charts.helm.sh/incubator)
+  repoURL: "https://charts.helm.sh/incubator"
   # downscaler.chart -- Chart
   chart: "kube-downscaler"
   # downscaler.targetRevision -- [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version
@@ -22,6 +23,7 @@ downscaler:
 signalilo:
   # signalilo.enabled -- Enable signalilo
   enabled: false
+  name: signalilo
   destination:
     # signalilo.destination.namespace -- Namespace
     namespace: "infra-signalilo"
@@ -41,6 +43,7 @@ signalilo:
 sentryKubernetes:
   # sentryKubernetes.enabled -- Enable sentry-kubernetes
   enabled: false
+  name: sentry-kubernetes
   destination:
     # sentryKubernetes.destination.namespace -- Namespace
     namespace: "infra-sentry-kubernetes"
@@ -53,4 +56,24 @@ sentryKubernetes:
   targetRevision: "0.3.*"
   # sentryKubernetes.values -- Helm values
   # @default -- [upstream values](https://github.com/sentry-kubernetes/charts/blob/develop/sentry-kubernetes/values.yaml)
+  values: {}
+
+# metallb -- [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml)
+# @default -- -
+metallb:
+  # metallb.enabled -- Enable metallb
+  enabled: false
+  name: metallb
+  destination:
+    # metallb.destination.namespace -- Namespace
+    namespace: "infra-metallb"
+  # metallb.repoURL -- Repo URL
+  # @default -- [repo](https://charts.bitnami.com/bitnami)
+  repoURL: "https://charts.bitnami.com/bitnami"
+  # metallb.chart -- Chart
+  chart: "metallb"
+  # metallb.targetRevision -- [metallb Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/metallb)
+  targetRevision: "1.0.*"
+  # metallb.values -- Helm values
+  # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/metallb/values.yaml)
   values: {}

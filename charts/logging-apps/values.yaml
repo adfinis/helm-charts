@@ -1,0 +1,59 @@
+# lokiStack -- [loki-stack](https://github.com/grafana/loki) ([example](./examples/loki-stack.yaml))
+# @default -- -
+lokiStack:
+  # lokiStack.enabled -- Enable loki
+  enabled: false
+  name: loki-stack
+  destination:
+    # lokiStack.destination.namespace -- Namespace
+    namespace: "infra-logging"
+  # lokiStack.repoURL -- Repo URL
+  # @default -- [repo](https://grafana.github.io/loki/charts)
+  repoURL: "https://grafana.github.io/loki/charts"
+  # lokiStack.chart -- Chart
+  chart: "loki-stack"
+  # lokiStack.targetRevision -- [loki-stack Helm chart](https://github.com/grafana/loki/blob/master/production/helm/loki-stack) version
+  targetRevision: "2.0.*"
+  # lokiStack.values -- Helm values
+  # @default -- [upstream values](https://github.com/grafana/loki/blob/master/production/helm/loki-stack/values.yaml)
+  values: {}
+
+# filebeat -- [filebeat](https://github.com/elastic/beats/tree/master/filebeat) ([example](./examples/filebeat.yaml))
+# @default -- -
+filebeat:
+  # filebeat.enabled -- Enable loki
+  enabled: false
+  name: filebeat
+  destination:
+    # filebeat.destination.namespace -- Namespace
+    namespace: "infra-logging"
+  # filebeat.repoURL -- Repo URL
+  # @default -- [repo](https://helm.elastic.co)
+  repoURL: "https://helm.elastic.co"
+  # filebeat.chart -- Chart
+  chart: "filebeat"
+  # filebeat.targetRevision -- [filebeat Helm chart](https://github.com/elastic/helm-charts/tree/master/filebeat) version
+  targetRevision: "7.9.*"
+  # filebeat.values -- Helm values
+  # @default -- [upstream values](https://github.com/elastic/helm-charts/tree/master/filebeat/values.yaml)
+  values: {}
+
+# fluentd -- [fluentd](https://github.com/fluent/fluentd) ([example](./examples/fluentd.yaml))
+# @default -- -
+fluentd:
+  # fluentd.enabled -- Enable fluentd
+  enabled: false
+  name: fluentd
+  destination:
+    # fluentd.destination.namespace -- Namespace
+    namespace: "infra-logging"
+  # fluentd.repoURL -- Repo URL
+  # @default -- [repo](https://charts.bitnami.com/bitnami)
+  repoURL: "https://charts.bitnami.com/bitnami"
+  # fluentd.chart -- Chart
+  chart: "fluentd"
+  # fluentd.targetRevision -- [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version
+  targetRevision: "3.0.*"
+  # fluentd.values -- Helm values
+  # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/fluentd/values.yaml)
+  values: {}
