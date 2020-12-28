@@ -1,0 +1,16 @@
+# Default values for vault-csi-provider.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+
+# image -- specifies the image to use for the secrets-store-csi-driver
+image:
+  repository: hashicorp/secrets-store-csi-driver-provider-vault
+  tag: 0.0.6
+  pullPolicy: IfNotPresent
+
+# resources -- Set the limits and requests on vault csi-driver-provider pod resources
+resources: {}
+
+# csiProviderPath -- set the path where the secrets-store-csi-provider gets installed on the node
+csiProviderPath: "/etc/kubernetes/secrets-store-csi-providers"
