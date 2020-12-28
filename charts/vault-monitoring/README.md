@@ -17,28 +17,16 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| affinity | object | `{}` | specifies the affinity to be used |
 | fullnameOverride | string | `""` | specifies the full name override to be used for helm |
 | image.pullPolicy | string | `"IfNotPresent"` | set the image pullPolicy |
 | image.repository | string | `"vault"` | set the image repository |
 | image.tag | string | `""` | set the tag of the image Specify a tag to override which version of timed to deploy. If no tag is specified the appVersion from Chart.yaml is used as tag. |
 | imagePullSecrets | list | `[]` | specifies the image pull secrets to be used |
 | nameOverride | string | `""` | specifies the name override to be used for helm |
-| nodeSelector | object | `{}` | specifies the nodeSelector to be used |
-| podAnnotations | object | `{}` | specifies the Pod Annotations to be set |
-| podSecurityContext | object | `{}` | specifies the Pod Security Context to be set |
 | prometheusRules.enabled | bool | `false` | wether or not the prometheus alerts are enabled |
 | prometheusRules.labels | object | `{}` | labels to set in the prometheus alerts |
 | prometheusRules.namespace | string | `""` | set namespace where the prometheusRules will be created |
 | prometheusRules.rules | list | list of predefined alerts | set of prometheus alerts to define |
-| rbacCreate | bool | `true` | wheter the rolebindings and roles should be created |
-| replicaCount | int | `1` | specifies the replica count of the pods |
-| resources | object | `{}` | specifies the resources to be used |
-| securityContext | object | `{}` | specifies the Security Context to be set |
-| serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
-| serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
-| serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
-| tolerations | list | `[]` | specifies the tolerations to be used |
 | vault.auth.mount_path | string | `"auth/kubernetes"` | where the kubernetes auth is mounted on vault |
 | vault.auth.role | string | `"metrics"` | the vault role to use for connection |
 | vault.ca | string | `""` |  |

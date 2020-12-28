@@ -2,10 +2,6 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-
-# replicaCount -- specifies the replica count of the pods
-replicaCount: 1
-
 image:
   # image.repository -- set the image repository
   repository: vault
@@ -22,58 +18,6 @@ imagePullSecrets: []
 nameOverride: ""
 # fullnameOverride -- specifies the full name override to be used for helm
 fullnameOverride: ""
-
-serviceAccount:
-  # serviceAccount.create -- Specifies whether a service account should be created
-  create: true
-  # serviceAccount.annotations -- Annotations to add to the service account
-  annotations: {}
-  # serviceAccount.name -- The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
-  name: ""
-
-# rbacCreate -- wheter the rolebindings and roles should be created
-rbacCreate: true
-
-# podAnnotations -- specifies the Pod Annotations to be set
-podAnnotations: {}
-
-# podSecurityContext -- specifies the Pod Security Context to be set
-podSecurityContext: {}
-  # fsGroup: 2000
-
-# securityContext -- specifies the Security Context to be set
-securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
-  #
-
-# resources -- specifies the resources to be used
-resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
-
-# nodeSelector -- specifies the nodeSelector to be used
-nodeSelector: {}
-
-# tolerations -- specifies the tolerations to be used
-tolerations: []
-
-# affinity -- specifies the affinity to be used
-affinity: {}
-
 
 vault:
   # vault.serverName -- the vault servername

@@ -1,1 +1,65 @@
-vault-monitoring deployed successfully.
+vault-monitoring deployed successfully on your Kubernetes Cluster
+
+## Prometheus configuration
+
+Make sure to add the following to your kubePrometheusStack configuration:
+
+```
+  prometheus:
+    prometheusSpec:
+      secrets:
+        - vault-ca-cert
+      volumes:
+        - name: vault-agent-config
+          configMap:
+            name: vault-monitoring
+        - name: vault-ca-cert
+          secret:
+            secretName: vault-ca-cert
+      containers:
+        - name: vault-agent-auth
+          image: vault:1.6.0
+          securityContext:
+            runAsGroup: 1000
+            runAsUser: 100
+            runAsNonRoot: true
+          ports:
+            - containerPort: 443
+              name: https
+              protocol: TCP
+          volumeMounts:
+            - name: vault-agent-config
+              mountPath: /etc/vault
+            - name: vault-ca-cert
+              mountPath: /etc/vault/ssl
+            - name: config-out
+              mountPath: /home/vault/config-out
+          command: ["vault"]
+          args:
+            [
+              "agent",
+              "-config=/etc/vault/vault-agent.hcl",
+              "-log-level=debug",
+            ]
+
+```
+## Vault configuration
+
+Enable the telemetry formatting for promtheus in your vault configuration:
+
+```
+telemetry {
+  prometheus_retention_time = "24h"
+  disable_hostname = true
+}
+```
+and allow the serviceAccount used by prometheus to read the metrics on your vault:
+
+```
+cat << EOF | vault policy write metrics -
+path "/sys/metrics*" {
+  capabilities = ["read","list"]
+}
+EOF
+vault write auth/kubernetes/role/prometheus-metrics bound_service_account_names=prometheus-sa-name bound_service_account_namespaces=prometheus-ns policies=metrics ttl=24h
+```
