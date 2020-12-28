@@ -1,6 +1,7 @@
 chart-repos:
   - adfinis=https://charts.adfinis.com
   - bitnami=https://charts.bitnami.com/bitnami
+  - secrets-store-csi-driver=https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts
 excluded-charts:
   - common
   - argoconfig
