@@ -12,10 +12,10 @@ Make sure to add the following to your kubePrometheusStack configuration:
       volumes:
         - name: vault-agent-config
           configMap:
-            name: vault-monitoring
+            name: {{ include "vaultMonitoring.fullname"  . }}-config
         - name: vault-ca-cert
           secret:
-            secretName: vault-ca-cert
+            secretName: {{ include "vaultMonitoring.fullname"  . }}-ca-cert
       containers:
         - name: vault-agent-auth
           image: vault:1.6.0
