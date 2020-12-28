@@ -5,7 +5,10 @@ metadata:
   labels:
     {{- include "vaultMonitoring.labels" . | nindent 4 }}
 spec:
-  selector: {{ .Values.vault.service.selector }}
+  {{- if .Values.vault.service.selector }}
+  selector:
+    {{- toYaml .Values.vault.service.selector | nindent 4 }}
+  {{- end }}
   externalName: {{ .Values.vault.serverName }}
   ports:
   - name: {{ .Values.vault.portName }}
