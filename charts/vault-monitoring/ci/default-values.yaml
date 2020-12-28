@@ -1,5 +1,3 @@
-replicaCount: 1
-
 vault:
   serverName: vault.example.com
   port: 443
