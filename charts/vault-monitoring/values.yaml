@@ -41,8 +41,8 @@ vault:
     role: metrics
   service:
     # vault.service.type -- which type the vault service has. For connecting to an external vault server, chose externalName
-    type: externalName
-    # vault.service.selector -- definition of the  vault service selector for endpoint selection. Keep empty for using externalName
+    type: ExternalName
+    # vault.service.selector -- definition of the  vault service selector for endpoint selection. Keep empty for using ExternalName
     selector: {}
   serviceMonitor:
     # vault.serviceMonitor.labels -- labels to set on the vault serviceMonitor

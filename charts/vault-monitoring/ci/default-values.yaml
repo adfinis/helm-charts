@@ -10,7 +10,7 @@ vault:
     mount_path: auth/kuberntees
     role: metrics
   service:
-    type: externalName
+    type: ExternalName
     selector: {}
   serviceMonitor:
     labels:
