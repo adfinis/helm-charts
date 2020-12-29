@@ -13,7 +13,7 @@ argocd:
   # argocd.chart -- Chart
   chart: "argo-cd"
   # argocd.targetRevision -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version
-  targetRevision: "2.9.*"
+  targetRevision: "2.11.*"
   # argocd.values -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml)
   values: {}
@@ -53,7 +53,7 @@ ingressNginx:
   # ingressNginx.chart -- Chart
   chart: "ingress-nginx"
   # ingressNginx.targetRevision -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/master/charts/ingress-nginx) version
-  targetRevision: '3.7.*'
+  targetRevision: '3.17.*'
   # ingressNginx.values -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/master/charts/ingress-nginx/values.yaml)
   values: {}
@@ -93,7 +93,7 @@ rbacManager:
   # rbacManager.chart -- Chart
   chart: "rbac-manager"
   # rbacManager.targetRevision -- [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version
-  targetRevision: '1.5.*'
+  targetRevision: '1.7.*'
   # rbacManager.values -- Helm values
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml)
   values: {}
