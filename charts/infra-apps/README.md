@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.2.2](https://img.shields.io/badge/Version-0.2.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.2](https://img.shields.io/badge/AppVersion-0.2.2-informational?style=flat-square)
+![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -56,7 +56,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rbacManager.destination.namespace | string | `"infra-rbac"` | Namespace |
 | rbacManager.enabled | bool | `false` | Enable rbac-manager operator |
 | rbacManager.repoURL | string | [repo](https://charts.fairwinds.com/stable) | Repo URL |
-| rbacManager.targetRevision | string | `"1.5.*"` | [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version |
+| rbacManager.targetRevision | string | `"1.7.*"` | [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version |
 | rbacManager.values | object | [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml) | Helm values |
 | velero | object | [example](./examples/velero.yaml) | [Velero](https://velero.io/) |
 | velero.chart | string | `"velero"` | Chart |
