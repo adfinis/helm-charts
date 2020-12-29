@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | jaegerOperator.destination.namespace | string | `"infra-jaeger"` | Namespace |
 | jaegerOperator.enabled | bool | `false` | Enable jaeger-operator |
 | jaegerOperator.repoURL | string | [repo](https://jaegertracing.github.io/helm-charts) | Repo URL |
-| jaegerOperator.targetRevision | string | `"1.20.*"` | [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/master/charts/jaeger-operator) |
+| jaegerOperator.targetRevision | string | `"2.18.*"` | [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/master/charts/jaeger-operator) |
 | jaegerOperator.values | object | [upstream values](https://github.com/jaegertracing/helm-charts/blob/master/charts/jaeger-operator/values.yaml) | Helm values |
 
 ## About this chart

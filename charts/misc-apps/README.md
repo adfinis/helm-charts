@@ -28,14 +28,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | downscaler.destination.namespace | string | `"infra-downscaler"` | Namespace |
 | downscaler.enabled | bool | `false` | Enable kube-downscaler |
 | downscaler.repoURL | string | [repo](https://charts.helm.sh/incubator) | Repo URL |
-| downscaler.targetRevision | string | `"0.5.*"` | [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version |
+| downscaler.targetRevision | string | `"0.6.*"` | [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version |
 | downscaler.values | object | [upstream values](https://github.com/helm/charts/blob/master/incubator/kube-downscaler/values.yaml) | Helm values |
 | metallb | object | - | [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml) |
 | metallb.chart | string | `"metallb"` | Chart |
 | metallb.destination.namespace | string | `"infra-metallb"` | Namespace |
 | metallb.enabled | bool | `false` | Enable metallb |
 | metallb.repoURL | string | [repo](https://charts.bitnami.com/bitnami) | Repo URL |
-| metallb.targetRevision | string | `"1.0.*"` | [metallb Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/metallb) |
+| metallb.targetRevision | string | `"2.0.*"` | [metallb Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/metallb) |
 | metallb.values | object | [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/metallb/values.yaml) | Helm values |
 | sentryKubernetes | object | - | [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml) |
 | sentryKubernetes.chart | string | `"sentry-kubernetes"` | Chart |
