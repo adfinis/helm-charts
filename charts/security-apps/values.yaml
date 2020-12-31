@@ -98,6 +98,26 @@ falcosidekick:
   # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.yaml)
   values: {}
 
+# falcoExporter -- [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml))
+# @default -- -
+falcoExporter:
+  # falcoExporter.enabled -- Enable falco-exporter
+  enabled: false
+  name: falco-exporter
+  destination:
+    # falcoExporter.destination.namespace -- Namespace
+    namespace: "infra-falco"
+  # falcoExporter.repoURL -- Repo URL
+  # @default -- [repo](https://falcosecurity.github.io/charts)
+  repoURL: "https://falcosecurity.github.io/charts"
+  # falcoExporter.chart -- Chart
+  chart: "falco-exporter"
+  # falcoExporter.targetRevision -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version
+  targetRevision: "0.4.*"
+  # falcoExporter.values -- Helm values
+  # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco-exporter/values.yaml)
+  values: {}
+
 # gatekeeper -- [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml))
 # @default -- -
 gatekeeper:

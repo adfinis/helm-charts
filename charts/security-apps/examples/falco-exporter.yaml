@@ -1,0 +1,8 @@
+falcoExporter:
+  enabled: true
+  project: infra-falco
+  values:
+    grafanaDashboard:
+      enabled: true
+    serviceMonitor:
+      enabled: true

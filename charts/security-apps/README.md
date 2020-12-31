@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.2.2](https://img.shields.io/badge/Version-0.2.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.2](https://img.shields.io/badge/AppVersion-0.2.2-informational?style=flat-square)
+![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -37,6 +37,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | falco.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
 | falco.targetRevision | string | `"1.5.*"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version |
 | falco.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml) | Helm values |
+| falcoExporter | object | - | [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml)) |
+| falcoExporter.chart | string | `"falco-exporter"` | Chart |
+| falcoExporter.destination.namespace | string | `"infra-falco"` | Namespace |
+| falcoExporter.enabled | bool | `false` | Enable falco-exporter |
+| falcoExporter.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
+| falcoExporter.targetRevision | string | `"0.4.*"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version |
+| falcoExporter.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falco-exporter/values.yaml) | Helm values |
 | falcosidekick | object | - | [falcosidekick](https://github.com/falcosecurity/falcosidekick/) ([example](./examples/falcosidekick.yaml)) |
 | falcosidekick.chart | string | `"falcosidekick"` | Chart |
 | falcosidekick.destination.namespace | string | `"infra-falco"` | Namespace |
