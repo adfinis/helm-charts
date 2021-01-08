@@ -33,10 +33,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set Helm version
+        run: source .env && echo helm_version=$ADFINIS_CHARTS_HELM_VERSION >> $GITHUB_ENV
+
       - name: Set up Helm
         uses: azure/setup-helm@v1
         with:
-          version: v3.4.0
+          version: v${{env.helm_version}}
 
       - uses: actions/setup-python@v2
         with:
@@ -56,9 +59,15 @@ jobs:
       - name: Run chart-testing (lint)
         run: ct --config=hack/chart-testing/ct.yaml lint
 
+      - name: Set kind version
+        run: source .env && echo kind_version=$ADFINIS_CHARTS_KIND_VERSION >> $GITHUB_ENV
+        if: steps.list-changed.outputs.changed == 'true'
+
       - name: Create kind cluster
         uses: helm/kind-action@v1.1.0
         if: steps.list-changed.outputs.changed == 'true'
+        with:
+          node_image: kindest/node:v${{env.kind_version}}
 
       - name: Setup cluster for chart-testing (install)
         run: hack/deploy/init.sh
