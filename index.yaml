@@ -1012,6 +1012,27 @@ entries:
     version: 0.1.0
   infra-apps:
   - apiVersion: v2
+    appVersion: 0.3.0
+    created: "2021-01-08T07:32:08.384889042Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 01cd1bedebf6879536aaa3cf03fcac7dca3174769874695e6df04b2c5f0ce3c0
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/infra-apps-0.3.0/infra-apps-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     appVersion: 0.2.0
     created: "2020-12-15T08:28:47.232631376Z"
     dependencies:
@@ -1224,6 +1245,27 @@ entries:
     version: 0.3.1
   logging-apps:
   - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2021-01-08T07:32:08.479429693Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for logging applications
+    digest: 5ed979173e8109e67383d801c44f32326b6c8e93e276c6eefad882781fb09dc4
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.2.0/logging-apps-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 0.0.3
     created: "2020-12-17T11:15:19.220969622Z"
     dependencies:
@@ -1287,6 +1329,27 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.0.1/logging-apps-0.0.1.tgz
     version: 0.0.1
   misc-apps:
+  - apiVersion: v2
+    appVersion: 0.3.0
+    created: "2021-01-08T07:32:08.556717297Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 5fc0aef54836274154bc4c4f07ce5c73e90de07249aa9c98d5e4d0386b35aaf2
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/misc-apps-0.3.0/misc-apps-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v2
     appVersion: 0.2.8
     created: "2020-12-18T09:05:01.425605092Z"
@@ -1785,6 +1848,27 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/rmd-0.1.1/rmd-0.1.1.tgz
     version: 0.1.1
   security-apps:
+  - apiVersion: v2
+    appVersion: 0.2.3
+    created: "2021-01-08T07:32:08.669025895Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for security applications
+    digest: a055669505d57a342ca5d5e1a0765c4cb6604fb0886fe6f9b2f9928aab8ed4c6
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/security-apps-0.2.3/security-apps-0.2.3.tgz
+    version: 0.2.3
   - apiVersion: v2
     appVersion: 0.2.2
     created: "2020-12-31T09:18:55.411703952Z"
@@ -2934,6 +3018,27 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/timed-0.3.3/timed-0.3.3.tgz
     version: 0.3.3
   tracing-apps:
+  - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2021-01-08T07:32:08.750469311Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 107ccb56ccc23ea0d0421bd1ce92d7c656050a7354144bda41bec6b5f1b81468
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/tracing-apps-0.1.1/tracing-apps-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
     created: "2020-12-17T11:15:19.525585867Z"
