@@ -129,7 +129,7 @@ gatekeeper:
     namespace: "infra-gatekeeper"
   # gatekeeper.repoURL -- Repo URL
   # @default -- [repo](https://open-policy-agent.github.io/gatekeeper/charts)
-  repoURL: "https://falcosecurity.github.io/charts"
+  repoURL: "https://open-policy-agent.github.io/gatekeeper/charts"
   # gatekeeper.chart -- Chart
   chart: "gatekeeper"
   # gatekeeper.targetRevision -- [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version

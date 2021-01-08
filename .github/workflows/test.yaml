@@ -53,6 +53,9 @@ jobs:
             echo "::set-output name=changed::true"
           fi
 
+      - name: Run chart-testing (lint)
+        run: ct --config=hack/chart-testing/ct.yaml lint
+
       - name: Create kind cluster
         uses: helm/kind-action@v1.1.0
         if: steps.list-changed.outputs.changed == 'true'
