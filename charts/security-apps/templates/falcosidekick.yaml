@@ -2,7 +2,7 @@
 {{ template "argoconfig.application" (list . "security-apps.falcosidekick") }}
 {{ end }}
 
-{{- define "security-apps.falcosidekick" -}}{{- $app := unset .Values.falco "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
+{{- define "security-apps.falcosidekick" -}}{{- $app := unset .Values.falcosidekick "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
 metadata:
   name: {{ template "common.fullname" . }}-{{ $name }}
 spec:
