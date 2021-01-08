@@ -13,7 +13,7 @@ downscaler:
   # downscaler.chart -- Chart
   chart: "kube-downscaler"
   # downscaler.targetRevision -- [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version
-  targetRevision: "0.5.*"
+  targetRevision: "0.6.*"
   # downscaler.values -- Helm values
   # @default -- [upstream values](https://github.com/helm/charts/blob/master/incubator/kube-downscaler/values.yaml)
   values: {}
@@ -73,7 +73,7 @@ metallb:
   # metallb.chart -- Chart
   chart: "metallb"
   # metallb.targetRevision -- [metallb Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/metallb)
-  targetRevision: "1.0.*"
+  targetRevision: "2.0.*"
   # metallb.values -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/metallb/values.yaml)
   values: {}
