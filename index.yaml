@@ -2245,6 +2245,28 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/sentry-apps-0.1.0/sentry-apps-0.1.0.tgz
     version: 0.1.0
+  storage-apps:
+  - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2021-01-11T08:54:25.384855553Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for storage applications
+    digest: 2de5bd3f290b31b2fcb464fd4fccec899d10e71d487bf328f5ea9c7596b83eec
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/storage-apps-0.1.1/storage-apps-0.1.1.tgz
+    version: 0.1.1
   timed:
   - apiVersion: v2
     appVersion: v1.1.2
