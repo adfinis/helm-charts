@@ -2245,28 +2245,6 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/sentry-apps-0.1.0/sentry-apps-0.1.0.tgz
     version: 0.1.0
-  storage-apps:
-  - apiVersion: v2
-    appVersion: 0.1.1
-    created: "2021-01-11T08:54:25.384855553Z"
-    dependencies:
-    - name: argoconfig
-      repository: https://charts.adfinis.com
-      version: 0.7.2
-    description: Argo CD app-of-apps config for storage applications
-    digest: 2de5bd3f290b31b2fcb464fd4fccec899d10e71d487bf328f5ea9c7596b83eec
-    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/storage-apps
-    maintainers:
-    - email: support@adfinis.com
-      name: adfinis-sygroup
-      url: https://adfinis.com
-    name: storage-apps
-    sources:
-    - https://github.com/adfinis-sygroup/helm-charts
-    type: application
-    urls:
-    - https://github.com/adfinis-sygroup/helm-charts/releases/download/storage-apps-0.1.1/storage-apps-0.1.1.tgz
-    version: 0.1.1
   timed:
   - apiVersion: v2
     appVersion: v1.1.2
@@ -3120,5 +3098,20 @@ entries:
     type: application
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/tracing-apps-0.1.0/tracing-apps-0.1.0.tgz
+    version: 0.1.0
+  vault-auth:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2021-01-11T08:54:36.594337059Z"
+    description: A helm chart to install the vault-auth serviceaccount for enabling vault's kubernetes authentication endpoint
+    digest: 2ea103fbbf2272eac0064697a5e0553660c855d2674c97a53013ddb8cb10a156
+    home: https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-auth/README.md
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: vault-auth
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-auth-0.1.0/vault-auth-0.1.0.tgz
     version: 0.1.0
 generated: "2020-04-28T15:37:22.044250524Z"
