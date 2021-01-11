@@ -6,7 +6,7 @@ metadata:
   labels:
     {{- include "vaultMonitoring.labels" . | nindent 4 }}
 {{- if .Values.vault.serviceMonitor.labels }}
-    {{- toYaml .Values.vault.serviceMonitor.labels | nindent 4}}
+    {{- toYaml .Values.vaultMonitoring.serviceMonitor.labels | nindent 4}}
 {{- end }}
 spec:
   selector:
