@@ -45,6 +45,8 @@ vault:
     # vault.service.selector -- definition of the  vault service selector for endpoint selection. Keep empty for using ExternalName
     selector: {}
   serviceMonitor:
+    # vault.serviceMonitor.create -- wheter or not the serviceMonitor should be created
+    create: true
     # vault.serviceMonitor.labels -- labels to set on the vault serviceMonitor
     labels: {}
     # vault.scrapeTimeout  -- scrapeTimeout of the serviceMonitor

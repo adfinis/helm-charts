@@ -1,3 +1,4 @@
+{{- if .Values.vault.serviceMonitor.create }}
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
@@ -29,3 +30,4 @@ spec:
         caFile: {{ .Values.vault.ca_path }}
         {{- end }}
         serverName: {{ .Values.vault.serverName }}
+{{- end }}
