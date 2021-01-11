@@ -36,6 +36,7 @@ helm repo add adfinis https://charts.adfinis.com
 | [storage-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/storage-apps) | Argo CD app-of-apps config for storage applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [timed](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.1.x](https://img.shields.io/badge/app%20version-1.1.x-brightgreen) |
 | [tracing-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/tracing-apps) | Argo CD app-of-apps config for tracing applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
+| [vault-auth](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) | A helm chart to install the vault-auth serviceaccount for enabling vault's ku... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 
 ## Contributing
 
