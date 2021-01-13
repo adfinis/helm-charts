@@ -33,8 +33,10 @@ helm repo add adfinis https://charts.adfinis.com
 | [rmd](charts/rmd) | Chart for Rmd.io application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |
 | [security-apps](charts/security-apps) | Argo CD app-of-apps config for security applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [sentry-apps](charts/sentry-apps) | Sentry on premise | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 5.1.x](https://img.shields.io/badge/app%20version-5.1.x-brightgreen) |
+| [storage-apps](charts/storage-apps) | Argo CD app-of-apps config for storage applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [timed](charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.1.x](https://img.shields.io/badge/app%20version-1.1.x-brightgreen) |
 | [tracing-apps](charts/tracing-apps) | Argo CD app-of-apps config for tracing applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
+| [vault-auth](charts/vault-auth) | A helm chart to install the vault-auth serviceaccount for enabling vault's ku... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [vault-csi-provider](charts/vault-csi-provider) | A helm chart to install the vault secrets-store-csi-driver | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 
 ## Contributing

@@ -18,6 +18,10 @@ falcosidekick:
   enabled: true
   value: {}
 
+falcoExporter:
+  enabled: true
+  value: {}
+
 gatekeeper:
   enabled: true
   values: {}

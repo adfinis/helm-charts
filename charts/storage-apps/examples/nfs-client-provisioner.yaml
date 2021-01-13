@@ -1,0 +1,14 @@
+nfsClientProvisioner:
+  enabled: true
+  project: infra-storage
+  values:
+    nfs:
+      server: myserver.example
+      path: /path
+    storageClass:
+      create: true
+      defaultClass: true
+      name: nfs
+      allowVolumeExpansion: true
+      reclaimPolicy: Delete
+      archiveOnDelete: false
