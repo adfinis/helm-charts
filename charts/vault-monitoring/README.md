@@ -37,7 +37,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vault.scheme | string | `"https"` | the scheme to use for connection |
 | vault.serverName | string | `"vault.example.com"` | the vault servername |
 | vault.service.selector | object | `{}` | definition of the  vault service selector for endpoint selection. Keep empty for using ExternalName |
-| vault.service.type | string | `"ExternalName"` | which type the vault service has. For connecting to an external vault server, chose ExternalName |
+| vault.service.type | string | `"ExternalName"` | which type the vault service has. For connecting to an external vault server, choose ExternalName |
 | vault.serviceMonitor.create | bool | `true` | wheter or not the serviceMonitor should be created |
 | vault.serviceMonitor.labels | object | `{}` | labels to set on the vault serviceMonitor |
 | vault.serviceMonitor.scrapeTimeout | string | `"30s"` |  |
