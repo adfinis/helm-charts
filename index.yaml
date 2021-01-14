@@ -3114,4 +3114,22 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-auth-0.1.0/vault-auth-0.1.0.tgz
     version: 0.1.0
+  vault-monitoring:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2021-01-14T15:40:48.280946658Z"
+    description: monitor your vault server from within Kubernetes' prometheus
+    digest: 8b3efdbbaaa5b83d345d675c152d5dbf6752efae374eee378b0a046a3c97b64a
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: vault-monitoring
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
+    version: 0.1.0
 generated: "2020-04-28T15:37:22.044250524Z"
