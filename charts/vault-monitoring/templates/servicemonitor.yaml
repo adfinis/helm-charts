@@ -1,0 +1,33 @@
+{{- if .Values.vault.serviceMonitor.create }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "vaultMonitoring.name" . }}
+  labels:
+    {{- include "vaultMonitoring.labels" . | nindent 4 }}
+{{- if .Values.vault.serviceMonitor.labels }}
+    {{- toYaml .Values.vaultMonitoring.serviceMonitor.labels | nindent 4}}
+{{- end }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "vaultMonitoring.selectorLabels" . | nindent 6 }}
+  namespaceSelector:
+    matchNames:
+      - {{ .Release.Namespace }}
+  endpoints:
+    - interval: 30s
+      path: /v1/sys/metrics
+      params:
+        format:
+          - prometheus
+      port: {{ .Values.vault.portName }}
+      scheme: {{ .Values.vault.scheme }}
+      scrapeTimeout: {{ .Values.vault.serviceMonitor.scrapeTimeout }}
+      bearerTokenFile: '/etc/prometheus/config_out/.vault-token'
+      tlsConfig:
+        {{- if .Values.vault.ca }}
+        caFile: {{ .Values.vault.ca_path }}
+        {{- end }}
+        serverName: {{ .Values.vault.serverName }}
+{{- end }}
