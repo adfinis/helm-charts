@@ -3114,6 +3114,26 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-auth-0.1.0/vault-auth-0.1.0.tgz
     version: 0.1.0
+  vault-csi-provider:
+  - apiVersion: v2
+    appVersion: 0.0.6
+    created: "2021-01-14T16:48:07.760639869Z"
+    dependencies:
+    - condition: secretsStoreCsiDriver.enabled
+      name: secrets-store-csi-driver
+      repository: https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts
+      version: 0.0.18
+    description: A helm chart to install the vault secrets-store-csi-driver
+    digest: 819aa3d7743acbe6ae9990b7e59b04a62ecda10e5969c9635205c82b1b451954
+    home: https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-csi-provider/README.md
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: vault-csi-provider
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-csi-provider-0.2.0/vault-csi-provider-0.2.0.tgz
+    version: 0.2.0
   vault-monitoring:
   - apiVersion: v2
     appVersion: 0.1.0
