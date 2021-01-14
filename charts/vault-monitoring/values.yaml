@@ -40,7 +40,7 @@ vault:
     # vault.auth.role -- the vault role to use for connection
     role: metrics
   service:
-    # vault.service.type -- which type the vault service has. For connecting to an external vault server, chose externalName
+    # vault.service.type -- which type the vault service has. For connecting to an external vault server, chose ExternalName
     type: ExternalName
     # vault.service.selector -- definition of the  vault service selector for endpoint selection. Keep empty for using ExternalName
     selector: {}
