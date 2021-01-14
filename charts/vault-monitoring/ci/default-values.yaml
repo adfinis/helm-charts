@@ -1,0 +1,3 @@
+vault:
+  serviceMonitor:
+    create: true
