@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: {{ include "vault-csi-provider.fullname" . }}
+  labels:
+    {{- include "vault-csi-provider.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "vault-csi-provider.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "vault-csi-provider.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            # set TARGET_DIR env var and mount the same directory to the container
+            - name: TARGET_DIR
+              value: {{ .Values.csiProviderPath }}
+          volumeMounts:
+            - mountPath: {{ .Values.csiProviderPath }}
+              name: providervol
+      volumes:
+        - name: providervol
+          hostPath:
+            path: {{ .Values.csiProviderPath }}
