@@ -3,7 +3,7 @@ name: barman
 type: application
 description: Chart for Barman PostgreSQL Backup and Recovery Manager
 version: 0.0.13
-appVersion: 2.1
+appVersion: "2.10"
 keywords:
   - barman
   - postgresql
