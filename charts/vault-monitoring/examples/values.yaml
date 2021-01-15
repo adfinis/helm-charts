@@ -1,0 +1,21 @@
+vault:
+  serverName: vault.example.com
+  port: 443
+  portName: https
+  ca_path: /etc/vault/ssl/ca.crt
+  ip: 10.1.2.3
+  scheme: https
+  ca: ""
+  auth:
+    mount_path: auth/kuberntees
+    role: metrics
+  service:
+    type: ExternalName
+    selector: {}
+  serviceMonitor:
+    labels:
+      k8s.example.com/prometheus: kube-prometheus
+
+prometheusRules:
+  enabled: false
+  rules: []

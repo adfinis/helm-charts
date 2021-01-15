@@ -1,0 +1,31 @@
+apiVersion: "v1"
+kind: "ConfigMap"
+metadata:
+  name: {{ include "vaultMonitoring.fullname" . }}-config
+  labels:
+    {{- include "vaultMonitoring.labels" . | nindent 4 }}
+data:
+  vault-agent.hcl: |
+    pid_file = "/home/vault/pidfile"
+
+    vault = {
+      address = "{{ .Values.vault.scheme }}://{{ .Values.vault.serverName }}"
+      {{- if .Values.vault.ca }}
+      ca_cert =  "{{ .Values.vault.ca_path }}"
+      {{- end }}
+    }
+
+    auto_auth {
+        method "kubernetes" {
+            mount_path = "{{ .Values.vault.auth.mount_path }}"
+            config = {
+                role = "{{ .Values.vault.auth.role }}"
+            }
+        }
+
+        sink "file" {
+            config = {
+                path = "/home/vault/config-out/.vault-token"
+            }
+        }
+    }
