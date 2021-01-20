@@ -8,14 +8,14 @@ lokiStack:
     # lokiStack.destination.namespace -- Namespace
     namespace: "infra-logging"
   # lokiStack.repoURL -- Repo URL
-  # @default -- [repo](https://grafana.github.io/loki/charts)
-  repoURL: "https://grafana.github.io/loki/charts"
+  # @default -- [repo](https://grafana.github.io/helm-charts)
+  repoURL: "https://grafana.github.io/helm-charts"
   # lokiStack.chart -- Chart
   chart: "loki-stack"
-  # lokiStack.targetRevision -- [loki-stack Helm chart](https://github.com/grafana/loki/blob/master/production/helm/loki-stack) version
-  targetRevision: "2.0.*"
+  # lokiStack.targetRevision -- [loki-stack Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/loki-stack) version
+  targetRevision: "2.3.*"
   # lokiStack.values -- Helm values
-  # @default -- [upstream values](https://github.com/grafana/loki/blob/master/production/helm/loki-stack/values.yaml)
+  # @default -- [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/loki-stack/values.yaml)
   values: {}
 
 # filebeat -- [filebeat](https://github.com/elastic/beats/tree/master/filebeat) ([example](./examples/filebeat.yaml))
