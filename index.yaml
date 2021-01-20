@@ -1862,6 +1862,33 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/misc-apps-0.1.0/misc-apps-0.1.0.tgz
     version: 0.1.0
+  osschallenge:
+  - apiVersion: v2
+    appVersion: edge
+    created: "2021-01-20T15:01:51.998747707Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~10.2.0
+    description: Chart for OSS-Challenge application
+    digest: 4558814e6b78b99099871dae4725a79d3b8fa9163ee458e55589e71023235494
+    home: https://oss-challenge.ch
+    keywords:
+    - osschallenge
+    - postgresql
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: osschallenge
+    sources:
+    - https://github.com/adfinis-sygroup/osschallenge
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/osschallenge
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/osschallenge-0.1.0/osschallenge-0.1.0.tgz
+    version: 0.1.0
   rmd:
   - apiVersion: v2
     appVersion: edge
