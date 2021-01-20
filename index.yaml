@@ -1188,27 +1188,6 @@ entries:
     version: 0.1.0
   infra-apps:
   - apiVersion: v2
-    appVersion: 0.5.0
-    created: "2021-01-20T13:52:49.250329389Z"
-    dependencies:
-    - name: argoconfig
-      repository: https://charts.adfinis.com
-      version: 0.7.2
-    description: Argo CD app-of-apps config for infrastructure components
-    digest: e8996fdf82c97d58b071e0fc1e6ad7980faeee9c0f0591fee57d2497f97dec67
-    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/infra-apps
-    maintainers:
-    - email: support@adfinis.com
-      name: adfinis-sygroup
-      url: https://adfinis.com
-    name: infra-apps
-    sources:
-    - https://github.com/adfinis-sygroup/helm-charts
-    type: application
-    urls:
-    - https://github.com/adfinis-sygroup/helm-charts/releases/download/infra-apps-0.5.0/infra-apps-0.5.0.tgz
-    version: 0.5.0
-  - apiVersion: v2
     appVersion: 0.4.0
     created: "2021-01-20T10:20:06.948555194Z"
     dependencies:
@@ -1483,6 +1462,27 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/kasperleyn-0.3.1/kasperleyn-0.3.1.tgz
     version: 0.3.1
   logging-apps:
+  - apiVersion: v2
+    appVersion: 0.3.0
+    created: "2021-01-20T13:53:13.647410999Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for logging applications
+    digest: 7a748ded3916169d23f920891fa7874124fa7d1115ecc69bb17e9f93222e0fe0
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.3.0/logging-apps-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v2
     appVersion: 0.2.1
     created: "2021-01-18T08:41:01.186729697Z"
