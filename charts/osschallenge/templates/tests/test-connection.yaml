@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "osschallenge.fullname" . }}-test-connection"
+  labels:
+    {{- include "osschallenge.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "osschallenge.fullname" . }}:{{ .Values.osschallenge.service.externalPort }}']
+  restartPolicy: Never

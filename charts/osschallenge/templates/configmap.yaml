@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "osschallenge.fullname" . }}
+  labels:
+    {{- include "osschallenge.labels" . | nindent 4 }}
+data:
+  EMAIL_HOST: {{ .Values.osschallenge.settings.emailHost | quote }}
+  EMAIL_HOST_PORT: {{ .Values.osschallenge.settings.emailPort | quote }}
+  EMAIL_HOST_USER: {{ .Values.osschallenge.settings.emailUser | quote }}
+  DEFAULT_FROM_EMAIL: {{ .Values.osschallenge.settings.emailFrom | quote }}
+  DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}
+  DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
+  DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
+  SITE_URL: {{ .Values.osschallenge.settings.siteUrl | quote }}
+  WAIT_FOR_IT_TIMER: {{ .Values.osschallenge.image.waitForItTimeout | quote }}
+{{- if .Values.postgresql.enabled }}
+  DATABASE_HOST: {{ include "osschallenge.postgresql.fullname" . | quote }}
+{{- else }}
+  DATABASE_HOST: {{ .Values.postgresql.service.host | quote }}
+{{- end }}
