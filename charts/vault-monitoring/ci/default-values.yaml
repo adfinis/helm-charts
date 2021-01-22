@@ -1,3 +1,5 @@
 vault:
   serviceMonitor:
     create: true
+    labels:
+      k8s.example.com/prometheus: kube-prometheus
