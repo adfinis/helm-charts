@@ -3681,6 +3681,23 @@ entries:
     version: 0.2.0
   vault-monitoring:
   - apiVersion: v2
+    appVersion: 0.1.2
+    created: "2021-01-22T13:52:08.953862257Z"
+    description: monitor your vault server from within Kubernetes' prometheus
+    digest: 127e1796aff9ed2864b409dd4a878f7e062313349764de402b06e745cc1dacab
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: vault-monitoring
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.2/vault-monitoring-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     appVersion: 0.1.1
     created: "2021-01-18T08:41:02.825312739Z"
     description: monitor your vault server from within Kubernetes' prometheus
