@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.4.0](https://img.shields.io/badge/AppVersion-0.4.0-informational?style=flat-square)
+![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.0](https://img.shields.io/badge/AppVersion-0.5.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -49,7 +49,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | falcosidekick.destination.namespace | string | `"infra-falco"` | Namespace |
 | falcosidekick.enabled | bool | `false` | Enable falcosidekick |
 | falcosidekick.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
-| falcosidekick.targetRevision | string | `"0.1.*"` | [falcosidekick Helm chart](https://github.com/falcosecurity/charts/tree/master/falcosidekick) version |
+| falcosidekick.targetRevision | string | `"0.2.*"` | [falcosidekick Helm chart](https://github.com/falcosecurity/charts/tree/master/falcosidekick) version |
 | falcosidekick.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.yaml) | Helm values |
 | gangway | object | - | [gangway](https://github.com/heptiolabs/gangway/) ([example](./examples/gangway.yaml)) |
 | gangway.chart | string | `"gangway"` | Chart |
