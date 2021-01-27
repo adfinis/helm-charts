@@ -1,19 +1,14 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: {{ include "barman.fullname" . }}
   labels:
     {{- include "barman.labels" . | nindent 4 }}
 spec:
-  serviceName: {{ template "barman.fullname" . }}
   replicas: 1
   selector:
     matchLabels:
       {{- include "barman.selectorLabels" . | nindent 6 }}
-  updateStrategy:
-    type: RollingUpdate
-    rollingUpdate:
-      partition: 0
   template:
     metadata:
       labels:
@@ -89,32 +84,3 @@ spec:
       nodeSelector:
         {{- toYaml .Values.nodeSelector | nindent 8 }}
     {{- end }}
-  {{- if or .Values.persistence.data.enabled .Values.persistence.recover.enabled }}
-  volumeClaimTemplates:
-    {{- if .Values.persistence.data.enabled }}
-    - metadata:
-        name: data
-      spec:
-        accessModes:
-          - {{ .Values.persistence.data.accessMode | quote }}
-      {{- if .Values.persistence.data.storageClass }}
-        storageClassName: {{ .Values.persistence.data.storageClass | quote }}
-      {{- end }}
-        resources:
-          requests:
-            storage: {{ .Values.persistence.data.size | quote }}
-    {{- end }}
-    {{- if .Values.persistence.recover.enabled }}
-    - metadata:
-        name: recover
-      spec:
-        accessModes:
-          - {{ .Values.persistence.recover.accessMode | quote }}
-      {{- if .Values.persistence.recover.storageClass }}
-        storageClassName: {{ .Values.persistence.recover.storageClass | quote }}
-      {{- end }}
-        resources:
-          requests:
-            storage: {{ .Values.persistence.recover.size | quote }}
-    {{- end }}
-  {{- end }}
