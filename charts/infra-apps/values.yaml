@@ -9,7 +9,7 @@ argocd:
     namespace: "infra-argocd"
   # argocd.repoURL -- Repo URL
   # @default -- [repo](https://argoproj.github.io/argo-helm)
-  repoURL: "https://argoproj.github.io/argo-helm/"
+  repoURL: "https://argoproj.github.io/argo-helm"
   # argocd.chart -- Chart
   chart: "argo-cd"
   # argocd.targetRevision -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version
