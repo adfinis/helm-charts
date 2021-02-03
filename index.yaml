@@ -1188,6 +1188,27 @@ entries:
     version: 0.1.0
   infra-apps:
   - apiVersion: v2
+    appVersion: 0.7.0
+    created: "2021-02-03T08:48:12.231862086Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 20ef4ec6b0b27ae2e846ecbdbdf425fc71f46662c44078dc6b844c5be57e0be2
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/infra-apps-0.7.0/infra-apps-0.7.0.tgz
+    version: 0.7.0
+  - apiVersion: v2
     appVersion: 0.6.0
     created: "2021-01-28T06:43:34.990572216Z"
     dependencies:
@@ -1547,6 +1568,27 @@ entries:
     version: 0.3.1
   logging-apps:
   - apiVersion: v2
+    appVersion: 0.5.0
+    created: "2021-02-03T08:48:12.340722604Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for logging applications
+    digest: 29137dc27775df0c67cb969b0497895dc3915bb11e23171eb8c859da07b5dac4
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.5.0/logging-apps-0.5.0.tgz
+    version: 0.5.0
+  - apiVersion: v2
     appVersion: 0.4.0
     created: "2021-01-20T15:07:13.398647326Z"
     dependencies:
@@ -1673,6 +1715,27 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.0.1/logging-apps-0.0.1.tgz
     version: 0.0.1
   misc-apps:
+  - apiVersion: v2
+    appVersion: 0.5.0
+    created: "2021-02-03T08:48:12.458474502Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: ff9f2ac4764332308b3821f3eb95dd04ccf455026225248418aa0f8dc6a68732
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/misc-apps-0.5.0/misc-apps-0.5.0.tgz
+    version: 0.5.0
   - apiVersion: v2
     appVersion: 0.4.0
     created: "2021-01-20T13:53:43.356209217Z"
@@ -2314,6 +2377,27 @@ entries:
     version: 0.1.1
   security-apps:
   - apiVersion: v2
+    appVersion: 0.6.0
+    created: "2021-02-03T08:48:12.568741001Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for security applications
+    digest: 911111e430259254874dc1936489c1e2befc1432736c3d65141e2909aa6e002b
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/security-apps-0.6.0/security-apps-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
     appVersion: 0.5.0
     created: "2021-01-26T11:20:26.50528209Z"
     dependencies:
@@ -2777,6 +2861,27 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/sentry-apps-0.1.0/sentry-apps-0.1.0.tgz
     version: 0.1.0
   storage-apps:
+  - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2021-02-03T08:48:12.670414818Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for storage applications
+    digest: 09839f9278a69c4b2e6e11390a1fd3364fcf05729cf336fe3d3e8302c4e1c218
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/storage-apps-0.2.0/storage-apps-0.2.0.tgz
+    version: 0.2.0
   - apiVersion: v2
     appVersion: 0.1.2
     created: "2021-01-18T08:41:01.926898231Z"
