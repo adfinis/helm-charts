@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.0](https://img.shields.io/badge/AppVersion-0.5.0-informational?style=flat-square)
+![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.6.0](https://img.shields.io/badge/AppVersion-0.6.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dex.destination.namespace | string | `"infra-dex"` | Namespace |
 | dex.enabled | bool | `false` | Enable dex |
 | dex.repoURL | string | [repo](https://charts.helm.sh/stable/) | Repo URL |
-| dex.targetRevision | string | `"2.10.*"` | [dex Helm chart](https://github.com/helm/charts/tree/master/stable/dex/) version |
+| dex.targetRevision | string | `"2.15.*"` | [dex Helm chart](https://github.com/helm/charts/tree/master/stable/dex/) version |
 | dex.values | object | [upstream values](https://github.com/helm/charts/tree/master/stable/dex/values.yaml) | Helm values |
 | falco | object | - | [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml)) |
 | falco.chart | string | `"falco"` | Chart |
@@ -42,7 +42,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | falcoExporter.destination.namespace | string | `"infra-falco"` | Namespace |
 | falcoExporter.enabled | bool | `false` | Enable falco-exporter |
 | falcoExporter.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
-| falcoExporter.targetRevision | string | `"0.4.*"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version |
+| falcoExporter.targetRevision | string | `"0.5.*"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version |
 | falcoExporter.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falco-exporter/values.yaml) | Helm values |
 | falcosidekick | object | - | [falcosidekick](https://github.com/falcosecurity/falcosidekick/) ([example](./examples/falcosidekick.yaml)) |
 | falcosidekick.chart | string | `"falcosidekick"` | Chart |
@@ -70,7 +70,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vault.destination.namespace | string | `"infra-vault"` | Namespace |
 | vault.enabled | bool | `false` | Enable vault |
 | vault.repoURL | string | [repo](https://helm.releases.hashicorp.com/) | Repo URL |
-| vault.targetRevision | string | `"0.8.*"` | [vault Helm chart](https://github.com/hashicorp/vault-helm) version |
+| vault.targetRevision | string | `"0.9.*"` | [vault Helm chart](https://github.com/hashicorp/vault-helm) version |
 | vault.values | object | [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml) | Helm values |
 
 ## About this chart

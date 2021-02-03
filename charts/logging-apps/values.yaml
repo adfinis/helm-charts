@@ -53,7 +53,7 @@ fluentd:
   # fluentd.chart -- Chart
   chart: "fluentd"
   # fluentd.targetRevision -- [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version
-  targetRevision: "3.4.*"
+  targetRevision: "3.5.*"
   # fluentd.values -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/fluentd/values.yaml)
   values: {}

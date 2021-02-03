@@ -1,6 +1,6 @@
 # logging-apps
 
-![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.4.0](https://img.shields.io/badge/AppVersion-0.4.0-informational?style=flat-square)
+![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.0](https://img.shields.io/badge/AppVersion-0.5.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for logging applications
 
@@ -35,7 +35,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | fluentd.destination.namespace | string | `"infra-logging"` | Namespace |
 | fluentd.enabled | bool | `false` | Enable fluentd |
 | fluentd.repoURL | string | [repo](https://charts.bitnami.com/bitnami) | Repo URL |
-| fluentd.targetRevision | string | `"3.4.*"` | [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version |
+| fluentd.targetRevision | string | `"3.5.*"` | [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version |
 | fluentd.values | object | [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/fluentd/values.yaml) | Helm values |
 | lokiStack | object | - | [loki-stack](https://github.com/grafana/loki) ([example](./examples/loki-stack.yaml)) |
 | lokiStack.chart | string | `"loki-stack"` | Chart |
