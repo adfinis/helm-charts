@@ -6,7 +6,7 @@ metadata:
     {{- include "osschallenge.labels" . | nindent 4 }}
 data:
   EMAIL_HOST: {{ .Values.osschallenge.settings.emailHost | quote }}
-  EMAIL_HOST_PORT: {{ .Values.osschallenge.settings.emailPort | quote }}
+  EMAIL_PORT: {{ .Values.osschallenge.settings.emailPort | quote }}
   EMAIL_HOST_USER: {{ .Values.osschallenge.settings.emailUser | quote }}
   DEFAULT_FROM_EMAIL: {{ .Values.osschallenge.settings.emailFrom | quote }}
   DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}
