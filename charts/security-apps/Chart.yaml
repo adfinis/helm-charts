@@ -3,8 +3,8 @@ name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
 # version and appVersion are in sync in this chart!
-version: 0.5.0
-appVersion: 0.5.0
+version: 0.6.0
+appVersion: 0.6.0
 home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/security-apps
 sources:
   - https://github.com/adfinis-sygroup/helm-charts

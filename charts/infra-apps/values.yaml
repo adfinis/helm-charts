@@ -53,7 +53,7 @@ ingressNginx:
   # ingressNginx.chart -- Chart
   chart: "ingress-nginx"
   # ingressNginx.targetRevision -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/master/charts/ingress-nginx) version
-  targetRevision: '3.20.*'
+  targetRevision: '3.22.*'
   # ingressNginx.values -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/master/charts/ingress-nginx/values.yaml)
   values: {}
@@ -73,7 +73,7 @@ kubePrometheusStack:
   # kubePrometheusStack.chart -- Chart
   chart: "kube-prometheus-stack"
   # kubePrometheusStack.targetRevision -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: '13.3.*'
+  targetRevision: '13.4.*'
   # kubePrometheusStack.values -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
   values: {}
