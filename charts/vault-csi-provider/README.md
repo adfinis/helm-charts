@@ -1,6 +1,6 @@
 # vault-csi-provider
 
-![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![AppVersion: 0.0.6](https://img.shields.io/badge/AppVersion-0.0.6-informational?style=flat-square)
+![Version: 0.2.2](https://img.shields.io/badge/Version-0.2.2-informational?style=flat-square) ![AppVersion: 0.0.6](https://img.shields.io/badge/AppVersion-0.0.6-informational?style=flat-square)
 
 A helm chart to install the vault secrets-store-csi-driver
 
@@ -13,7 +13,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts | secrets-store-csi-driver | 0.0.18 |
+| https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts | secrets-store-csi-driver | 0.0.19 |
 
 ## Values
 
