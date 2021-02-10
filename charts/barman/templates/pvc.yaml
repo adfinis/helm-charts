@@ -1,4 +1,3 @@
-{{- if or .Values.persistence.data.enabled .Values.persistence.recover.enabled }}
 {{- if .Values.persistence.data.enabled }}
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -33,5 +32,4 @@ spec:
   {{- if .Values.persistence.recover.storageClass }}
   storageClassName: {{ .Values.persistence.recover.storageClass | quote }}
   {{- end }}
-{{- end }}
 {{- end }}
