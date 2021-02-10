@@ -5,8 +5,7 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     {{- include "barman.labels" . | nindent 4 }}
-  name: data
-  namespace: infra-barman
+  name: {{ include "barman.fullname" . }}-data
 spec:
   accessModes:
   - {{ .Values.persistence.data.accessMode | quote }}
@@ -24,8 +23,7 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     {{- include "barman.labels" . | nindent 4 }}
-  name: recover
-  namespace: infra-barman
+  name: {{ include "barman.fullname" . }}-recover
 spec:
   accessModes:
   - {{ .Values.persistence.recover.accessMode | quote }}
