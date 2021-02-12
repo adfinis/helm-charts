@@ -62,7 +62,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | prometheus.serviceMonitor.metricRelabelings | list | `[]` | MetricRelabelConfigs to apply to samples before ingestion |
 | prometheus.serviceMonitor.relabelings | list | `[]` | RelabelConfigs to apply to samples before scraping |
 | rbac.create | bool | `false` | Whether to create RBAC or not |
-| resources | object | `{}` | Resource limits and requests |
+| resources | object | `{"limits":{"ram":"256MiB"},"requests":{"cpu":"100m","ram":"128MiB"}}` | Resource limits and requests |
 
 ## About this chart
 

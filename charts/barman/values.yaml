@@ -7,7 +7,12 @@ image:
   pullPolicy: Always
 
 # resources -- Resource limits and requests
-resources: {}
+resources:
+  requests:
+    cpu: 100m
+    ram: 128MiB
+  limits:
+    ram: 256MiB
 
 persistence:
   data:
