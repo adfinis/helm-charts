@@ -6,9 +6,13 @@ See: http://docs.pgbarman.org/release/2.10/#setup-of-a-new-server-in-barman
 
 Initial backup:
 
+  * Get the pod name and export it
+
+    export BARMAN_POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "barman.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+
   * Obtain a bash shell on the running Barman pod.
 
-    kubectl --namespace {{ .Release.Namespace }} exec -it {{ template "barman.fullname" . }}-0 /bin/bash
+    kubectl --namespace {{ .Release.Namespace }} exec -it ${BARMAN_POD_NAME} /bin/bash
 
   * Switch to the Barman user.
 
@@ -28,9 +32,13 @@ Initial backup:
 
 Restore:
 
+  * Get the pod name and export it
+
+    export BARMAN_POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "barman.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+
   * Obtain a bash shell on the running Barman pod.
 
-    kubectl --namespace {{ .Release.Namespace }} exec -it {{ template "barman.fullname" . }}-0 /bin/bash
+    kubectl --namespace {{ .Release.Namespace }} exec -it ${BARMAN_POD_NAME} /bin/bash
 
   * Switch to the Barman user.
 

@@ -1,0 +1,35 @@
+{{- if .Values.persistence.data.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    {{- include "barman.labels" . | nindent 4 }}
+  name: {{ include "barman.fullname" . }}-data
+spec:
+  accessModes:
+  - {{ .Values.persistence.data.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.data.size | quote }}
+  {{- if .Values.persistence.data.storageClass }}
+  storageClassName: {{ .Values.persistence.data.storageClass | quote }}
+  {{- end }}
+{{- end }}
+---
+{{- if .Values.persistence.recover.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    {{- include "barman.labels" . | nindent 4 }}
+  name: {{ include "barman.fullname" . }}-recover
+spec:
+  accessModes:
+  - {{ .Values.persistence.recover.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.recover.size | quote }}
+  {{- if .Values.persistence.recover.storageClass }}
+  storageClassName: {{ .Values.persistence.recover.storageClass | quote }}
+  {{- end }}
+{{- end }}
