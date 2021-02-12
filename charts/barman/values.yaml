@@ -10,9 +10,9 @@ image:
 resources:
   requests:
     cpu: 100m
-    ram: 128MiB
+    memory: 128Mi
   limits:
-    ram: 256MiB
+    memory: 256Mi
 
 persistence:
   data:
