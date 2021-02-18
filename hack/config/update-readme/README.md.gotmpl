@@ -49,7 +49,7 @@ helm repo add adfinis https://charts.adfinis.com
 
 {{ $chartManifest.description }}
 
-[![{{.}}]({{ $chartManifest.icon }})]({{ print $readme.chartBaseURL . }})
+[<img alt="{{.}}" src="{{ $chartManifest.icon }}" width="128">]({{ print $readme.chartBaseURL . }})
 {{- end -}}
 {{- end -}}
 {{- end }}

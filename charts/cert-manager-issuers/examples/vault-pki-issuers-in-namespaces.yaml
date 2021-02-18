@@ -1,0 +1,27 @@
+# Vault PKI in multiple Namespaces.
+#
+# This config puts Issuers into a couple of different namespaces. You can use this set up if
+# you want to provide a bunch of issuers from a centrally managed Helm release that provides
+# issuer services in other Namespaces or projects.
+
+issuers:
+- metadata:
+    name: vault-issuer
+    namespace: demo-com
+  spec:
+    vault:
+      path: pki_int/sign/example-dot-com
+      server: https://vault.local
+      caBundle: "<base64 encoded CA Bundle PEM file>"
+      # this configuration is incomplete as no authentication methods have been added
+      auth: {}
+- metadata:
+    name: vault-issuer
+    namespace: demo-org
+  spec:
+    vault:
+      path: pki_int/sign/example-dot-org
+      server: https://vault.local
+      caBundle: "<base64 encoded CA Bundle PEM file>"
+      # this configuration is incomplete as no authentication methods have been added
+      auth: {}
