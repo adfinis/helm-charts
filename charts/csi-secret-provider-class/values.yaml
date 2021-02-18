@@ -15,7 +15,7 @@ secretObjects: []
 # @default -- raw values from `secretObjects`
 secretObjectsTpl: "{{ .Values.secretObjects | toYaml }}"
 
-# Creates a dummy deployment which uses the csiVolue. This is a hack, in case your Deployment in case your App/Chart isn't enabled to define extraVolumes
+# Creates a dummy Deployment which uses the csiVolume. This is a hack, in case your Chart doesn't support defining extraVolumes
 dummyDeployment:
   # dummyDeployment.enabled -- enable the dummy deployment
   # @default -- false
