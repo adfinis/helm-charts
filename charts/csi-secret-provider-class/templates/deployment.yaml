@@ -1,0 +1,46 @@
+{{- if .Values.dummyDeployment.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  {{ template "common.metadata" $ }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "csi-secret-provider-class.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+    {{- with .Values.dummyDeployment.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        {{- include "csi-secret-provider-class.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: dummy
+          image: {{ .Values.dummyDeployment.image.repository }}:{{ .Values.dummyDeployment.image.tag }}
+          imagePullPolicy: {{ .Values.dummyDeployment.image.pullPolicy }}
+          {{- with .Values.dummyDeployment.resources }}
+          resources:
+            {{- toYaml .Values.dummyDeployment.resources | nindent 12 }}
+          {{- end }}
+      {{- with .Values.dummyDeployment.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.dummyDeployment.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.dummyDeployment.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+        - name: csi-secret-store-volume
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: {{ include "common.fullname" . }}
+{{- end }}

@@ -14,3 +14,34 @@ secretObjects: []
 # secretObjectsTpl -- template to generate secretObjects
 # @default -- raw values from `secretObjects`
 secretObjectsTpl: "{{ .Values.secretObjects | toYaml }}"
+
+# Creates a dummy deployment which uses the csiVolue. This is a hack, in case your Deployment in case your App/Chart isn't enabled to define extraVolumes
+dummyDeployment:
+  # dummyDeployment.enabled -- enable the dummy deployment
+  # @default -- false
+  enabled: false
+  image:
+    # dummyDeployment.image.repository -- Container image to deploy
+    # @default -- k8s.gcr.io/pause
+    repository: k8s.gcr.io/pause
+    # dummyDeployment.image.tag -- sets the image tag to use
+    # @default -- 3.4.1
+    tag: 3.4.1
+    # dummyDeployment.image.pullPolicy -- When to pull the container image
+    # @defualt -- ifNotPresent
+    pullPolicy: ifNotPresent
+  # dummyDeployment.podAnnotations -- sets Pod annotations on the deployment
+  # @default -- {}
+  podAnnotations: {}
+  # dummyDeployment.nodeSelector -- sets a nodeSelector on the  deployment
+  # @default -- {}
+  nodeSelector: {}
+  # dummyDeployment.affinity -- sets affinity rules on the  deployment
+  # @default -- {}
+  affinity: {}
+  # dummyDeployment.tolerations -- sets tolerations on the  deployment
+  # @default -- []
+  tolerations: []
+  # dummyDeployment.resources -- sets resources like limits and requests on the  deployment
+  # @default -- {}
+  resources: {}
