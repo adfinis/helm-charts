@@ -25,7 +25,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 |-----|------|---------|-------------|
 | dummyDeployment.affinity | object | {} | sets affinity rules on the  deployment |
 | dummyDeployment.enabled | bool | false | enable the dummy deployment |
-| dummyDeployment.image.pullPolicy | string | `"ifNotPresent"` | When to pull the container image @defualt -- ifNotPresent |
+| dummyDeployment.image.pullPolicy | string | ifNotPresent | When to pull the container image |
 | dummyDeployment.image.repository | string | k8s.gcr.io/pause | Container image to deploy |
 | dummyDeployment.image.tag | string | 3.4.1 | sets the image tag to use |
 | dummyDeployment.nodeSelector | object | {} | sets a nodeSelector on the  deployment |
