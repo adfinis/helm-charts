@@ -1,0 +1,31 @@
+issuers:
+- spec:
+    selfSigned: {}
+- metadata:
+    name: test-with-name-and-annotations
+    annotations:
+      foo: bar
+  spec:
+    selfSigned: {}
+- metadata:
+    name: test-with-labels-in-metadata
+    labels:
+      foo: bar
+  spec:
+    selfSigned: {}
+- name: top-level-name-syntax-sugar
+  spec:
+    selfSigned: {}
+
+clusterIssuers:
+- spec:
+    selfSigned: {}
+- name: top-level-name-syntax-sugar
+  spec:
+    selfSigned: {}
+- name: top-level-name-and-metadata
+  metadata:
+    annotations:
+      foo: test
+  spec:
+    selfSigned: {}

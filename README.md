@@ -16,6 +16,13 @@ helm repo add adfinis https://charts.adfinis.com
 ```
 
 ### Available Helm charts
+#### [cert-manager-issuers](charts/cert-manager-issuers)
+
+![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.x](https://img.shields.io/badge/app%20version-1.x-brightgreen)
+
+Configure cert-manager Issuers and ClusterIssuers via Helm
+
+[<img alt="cert-manager-issuers" src="https://raw.githubusercontent.com/adfinis-sygroup/helm-charts/master/charts/cert-manager-issuers/logo.png" width="128">](charts/cert-manager-issuers)
 
 #### more charts
 

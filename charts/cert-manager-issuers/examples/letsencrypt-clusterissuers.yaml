@@ -1,0 +1,25 @@
+# Default Let's Encrypt ClusterIssuers
+#
+# Configures the common letsencrypt-staging and letsencrypt-prod ClusterIssuers
+# using a http01 solver that will work well with nginx-ingress. This is what
+# most small single-tenant clusters start with.
+
+_: &email user@example.com
+_: &solvers
+- http01:
+    ingress:
+      class: nginx
+
+clusterIssuers:
+- name: letsencrypt-prod
+  spec:
+    acme:
+      email: *email
+      server: https://acme-v02.api.letsencrypt.org/directory
+      solvers: *solvers
+- name: letsencrypt-staging
+  spec:
+    acme:
+      email: *email
+      server: https://acme-staging-v02.api.letsencrypt.org/directory
+      solvers: *solvers

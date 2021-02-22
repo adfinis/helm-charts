@@ -1,0 +1,9 @@
+{{- range .Values.clusterIssuers }}
+---
+# raw issuer: {{ . | toJson }}
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+{{ template "cert-manager-issuers.metadata" (dict "data" . "root" $) }}
+spec:
+  {{- .spec | toYaml | nindent 2 }}
+{{- end }}
