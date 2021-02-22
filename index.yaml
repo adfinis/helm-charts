@@ -1050,6 +1050,29 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/caasperli-0.6.1/caasperli-0.6.1.tgz
     version: 0.6.1
+  cert-manager-issuers:
+  - apiVersion: v2
+    appVersion: "1"
+    created: "2021-02-22T09:31:11.154396459Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.6
+    description: Configure cert-manager Issuers and ClusterIssuers via Helm
+    digest: 91df0d6672aedb790a9830c354e634c6edb5415a39dfbb5362f4ac6ac7bf5421
+    home: https://cert-manager.io/docs/configuration/
+    icon: https://raw.githubusercontent.com/adfinis-sygroup/helm-charts/master/charts/cert-manager-issuers/logo.png
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: cert-manager-issuers
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/cert-manager-issuers-0.1.0/cert-manager-issuers-0.1.0.tgz
+    version: 0.1.0
   common:
   - apiVersion: v2
     appVersion: 0.0.0
