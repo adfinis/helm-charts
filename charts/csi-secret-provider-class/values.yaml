@@ -16,7 +16,7 @@ secretObjects: []
 secretObjectsTpl: "{{ .Values.secretObjects | toYaml }}"
 
 # Creates a dummy Deployment which uses the csiVolume. This is a hack, in case your Chart doesn't support defining extraVolumes
-# DISCLAIMER: DO NOT USE THIS unless as last resort. 
+# DISCLAIMER: DO NOT USE THIS unless as last resort.
 # Always try to use extraVolume Bindings inside your already existing Chart or application to make csi-secret-store manage the secret. And if there aren't any possibilities to mount additional volumes in your chart, try and create a pull-request upstream adding the feature to the chart.
 dummyDeployment:
   # dummyDeployment.enabled -- enable the dummy deployment
