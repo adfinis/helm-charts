@@ -29,17 +29,12 @@ dummyDeployment:
     # dummyDeployment.image.pullPolicy -- When to pull the container image
     pullPolicy: IfNotPresent
   # dummyDeployment.podAnnotations -- sets Pod annotations on the deployment
-  # @default -- {}
   podAnnotations: {}
   # dummyDeployment.nodeSelector -- sets a nodeSelector on the  deployment
-  # @default -- {}
   nodeSelector: {}
   # dummyDeployment.affinity -- sets affinity rules on the  deployment
-  # @default -- {}
   affinity: {}
   # dummyDeployment.tolerations -- sets tolerations on the  deployment
-  # @default -- []
   tolerations: []
   # dummyDeployment.resources -- sets resources like limits and requests on the  deployment
-  # @default -- {}
   resources: {}
