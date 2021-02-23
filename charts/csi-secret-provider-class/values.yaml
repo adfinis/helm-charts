@@ -30,8 +30,7 @@ dummyDeployment:
     # @default -- 3.4.1
     tag: 3.4.1
     # dummyDeployment.image.pullPolicy -- When to pull the container image
-    # @default -- ifNotPresent
-    pullPolicy: ifNotPresent
+    pullPolicy: IfNotPresent
   # dummyDeployment.podAnnotations -- sets Pod annotations on the deployment
   # @default -- {}
   podAnnotations: {}
