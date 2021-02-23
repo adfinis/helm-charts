@@ -23,6 +23,10 @@ spec:
           resources:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+          volumeMounts:
+             - name: csi-secret-store-volume
+               mountPath: /vault
+               readOnly: true
       {{- with .Values.dummyDeployment.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
