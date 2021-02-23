@@ -20,14 +20,11 @@ secretObjectsTpl: "{{ .Values.secretObjects | toYaml }}"
 # Always try to use extraVolume Bindings inside your already existing Chart or application to make csi-secret-store manage the secret. And if there aren't any possibilities to mount additional volumes in your chart, try and create a pull-request upstream adding the feature to the chart.
 dummyDeployment:
   # dummyDeployment.enabled -- enable the dummy deployment
-  # @default -- false
   enabled: false
   image:
     # dummyDeployment.image.repository -- Container image to deploy
-    # @default -- k8s.gcr.io/pause
     repository: k8s.gcr.io/pause
     # dummyDeployment.image.tag -- sets the image tag to use
-    # @default -- 3.4.1
     tag: 3.4.1
     # dummyDeployment.image.pullPolicy -- When to pull the container image
     pullPolicy: IfNotPresent
