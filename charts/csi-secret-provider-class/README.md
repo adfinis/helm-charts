@@ -23,15 +23,15 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| dummyDeployment.affinity | object | {} | sets affinity rules on the  deployment |
-| dummyDeployment.enabled | bool | false | enable the dummy deployment |
-| dummyDeployment.image.pullPolicy | string | IfNotPresent | When to pull the container image |
-| dummyDeployment.image.repository | string | k8s.gcr.io/pause | Container image to deploy |
-| dummyDeployment.image.tag | string | 3.4.1 | sets the image tag to use |
-| dummyDeployment.nodeSelector | object | {} | sets a nodeSelector on the  deployment |
-| dummyDeployment.podAnnotations | object | {} | sets Pod annotations on the deployment |
-| dummyDeployment.resources | object | {} | sets resources like limits and requests on the  deployment |
-| dummyDeployment.tolerations | list | [] | sets tolerations on the  deployment |
+| dummyDeployment.affinity | object | `{}` | sets affinity rules on the  deployment |
+| dummyDeployment.enabled | bool | `false` | enable the dummy deployment |
+| dummyDeployment.image.pullPolicy | string | `"IfNotPresent"` | When to pull the container image |
+| dummyDeployment.image.repository | string | `"k8s.gcr.io/pause"` | Container image to deploy |
+| dummyDeployment.image.tag | string | `"3.4.1"` | sets the image tag to use |
+| dummyDeployment.nodeSelector | object | `{}` | sets a nodeSelector on the  deployment |
+| dummyDeployment.podAnnotations | object | `{}` | sets Pod annotations on the deployment |
+| dummyDeployment.resources | object | `{}` | sets resources like limits and requests on the  deployment |
+| dummyDeployment.tolerations | list | `[]` | sets tolerations on the  deployment |
 | parameters | object | `{}` | parameters for provider |
 | parametersTpl | string | raw values from `parameters` | template to generate parameters |
 | provider | string | `nil` | specify secret provider |
