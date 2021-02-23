@@ -21,7 +21,7 @@ spec:
           imagePullPolicy: {{ .Values.dummyDeployment.image.pullPolicy }}
           {{- with .Values.dummyDeployment.resources }}
           resources:
-            {{- toYaml .Values.dummyDeployment.resources | nindent 12 }}
+            {{- toYaml . | nindent 12 }}
           {{- end }}
       {{- with .Values.dummyDeployment.nodeSelector }}
       nodeSelector:
