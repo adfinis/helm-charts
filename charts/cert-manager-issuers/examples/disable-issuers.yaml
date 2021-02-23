@@ -1,0 +1,12 @@
+# Disable issuers using the enabled flag.
+#
+# The enabled flag makes it easy to (temporarily) disable a configured issuer.
+
+issuers:
+- name: active-issuer
+  spec:
+    selfSigned: {}
+- name: disabled-issuer
+  enabled: false
+  spec:
+    selfSigned: {}
