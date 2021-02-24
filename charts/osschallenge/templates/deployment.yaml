@@ -16,6 +16,12 @@ spec:
         {{- include "osschallenge.labels" . | nindent 8 }}
         app.kubernetes.io/component: app
     spec:
+      volumes:
+        {{- if .Values.persistence.enabled }}
+        - name: data-volume
+          persistentVolumeClaim:
+            claimName: {{ include "osschallenge.fullname" . }}
+        {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.osschallenge.image.repository }}:{{ default .Chart.AppVersion .Values.osschallenge.image.tag }}"
@@ -31,6 +37,11 @@ spec:
             - containerPort: {{ .Values.osschallenge.service.internalPort }}
               name: http
               protocol: TCP
+          {{- if .Values.persistence.enabled }}
+          volumeMounts:
+            - name: data-volume
+              mountPath: {{ .Values.persistence.mountPath }}
+          {{- end -}}
           {{- if .Values.osschallenge.livenessProbe.enabled }}
           livenessProbe:
             initialDelaySeconds: {{ .Values.osschallenge.livenessProbe.initialDelaySeconds }}

@@ -104,3 +104,16 @@ postgresql:
   postgresqlUsername: osschallenge
   # postgresql.postgresqlPassword -- Set a password for PostgreSQL
   # postgresqlPassword: ~
+
+persistence:
+  # persistence.enabled -- specifies if persistence is enabled or not
+  enabled: true
+  # persistence.mountPath -- specifies where to mount the PV
+  mountPath: "/data"
+  # persistence.size -- specifies which size the PVC should request
+  size: "10Gi"
+  # persistence.accessModes -- specifes the access mode for the PV
+  accessModes:
+  - ReadWriteOnce
+  # persistence.storageClassName -- specifies which storageClassName should be used
+  storageClassName: ""

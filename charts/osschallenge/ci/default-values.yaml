@@ -5,3 +5,6 @@ postgresql:
 osschallenge:
   settings:
     emailPassword: s3cr3t
+persistence:
+  storageClassName: "default"
+  enabled: false
