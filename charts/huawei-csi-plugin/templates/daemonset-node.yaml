@@ -1,0 +1,121 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+    app.kubernetes.io/component: "csi-node"
+spec:
+  selector:
+    matchLabels:
+      {{- include "huawei-csi-plugin.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: "csi-node"
+  template:
+    metadata:
+       {{- with .Values.node.podAnnotations }}
+       annotations:
+         {{- toYaml . | nindent 8 }}
+       {{- end }}
+      labels:
+        {{- include "huawei-csi-plugin.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: "csi-node"
+    spec:
+      serviceAccountName: {{ .Values.serviceAccount.nodeName }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml | nindent 8 }}
+      {{- end }}
+      hostNetwork: true
+      containers:
+        - name: csi-node-driver-registrar
+          image: "{{ .Values.csi_node_driver_registrar.image.repository }}:{{ .Values.csi_node_driver_registrar.image.tag }}"
+          imagePullPolicy: {{ .Values.csi_node_driver_registrar.image.pullPolicy }}
+          args:
+            - "--csi-address=/csi/csi.sock"
+            - "--kubelet-registration-path=/var/lib/kubelet/plugins/csi.huawei.com/csi.sock"
+          resources:
+            {{- toYaml .Values.csi_node_driver_registrar.resources | nindent 12 }}
+          volumeMounts:
+            - name: plugin-dir
+              mountPath: /csi
+            - name: registration-dir
+              mountPath: /registration
+
+        - name: huawei-csi-driver
+          image: "{{ .Values.csi_driver.image.repository }}:{{ .Values.csi_driver.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.csi_driver.image.pullPolicy }}
+          args:
+            - "--endpoint=/csi/csi.sock"
+            - "--containerized"
+          resources:
+            {{- toYaml .Values.csi_driver.node.resources | nindent 12 }}
+          securityContext:
+            {{- toYaml .Values.csi_driver.node.securityContext | nindent 12 }}
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sh", "-c", "rm -f /csi/csi.sock"]
+          volumeMounts:
+            - name: plugin-dir
+              mountPath: /csi
+            - name: pods-dir
+              mountPath: /var/lib/kubelet
+              mountPropagation: "Bidirectional"
+            - name: etc-dir
+              mountPath: /etc
+            - name: log-dir
+              mountPath: /var/log
+            - name: dev-dir
+              mountPath: /dev
+              mountPropagation: "HostToContainer"
+            - name: iscsi-dir
+              mountPath: /var/lib/iscsi
+            - name: config-map
+              mountPath: /etc/huawei
+
+      volumes:
+        - name: plugin-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins/csi.huawei.com
+            type: DirectoryOrCreate
+        - name: registration-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins_registry
+            type: Directory
+        - name: pods-dir
+          hostPath:
+            path: /var/lib/kubelet
+            type: Directory
+        - name: etc-dir
+          hostPath:
+            path: /etc
+            type: Directory
+        - name: dev-dir
+          hostPath:
+            path: /dev
+            type: Directory
+        - name: iscsi-dir
+          hostPath:
+            path: /var/lib/iscsi
+            type: Directory
+        - name: log-dir
+          hostPath:
+            path: /var/log/
+            type: Directory
+        - name: config-map
+          configMap:
+            name: {{ include "huawei-csi-plugin.fullname" . }}
+
+      {{- with .Values.node.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.node.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.node.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
