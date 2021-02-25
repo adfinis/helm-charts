@@ -4,7 +4,7 @@
 -->
 # Description
 
-<!-- Describe the changes you PR introduces here. -->
+<!-- Describe the changes your PR introduces here. -->
 
 # Issues
 
@@ -28,7 +28,7 @@
 * [ ] I am ready to test changes after they are applied and released
 
 <!--
-    Please open PRs as Draft while you make CI green and before finalizing
+    Please open PRs as Draft while you make CI green and/or finalise
     documentation. Your PR will be assigned to a CODEOWNER once you mark it
     as "Ready for Review".
 
