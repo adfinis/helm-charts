@@ -7,6 +7,7 @@
 /charts/barman                      @adfinis-sygroup/helm-charts @michaelimfeld @sinicis
 /charts/common                      @adfinis-sygroup/helm-charts @hairmare
 /charts/csi-secret-provider-class   @adfinis-sygroup/helm-charts @hairmare
+/charts/huawei-csi-plugin           @adfinis-sygroup/helm-charts @sinicis
 /charts/timed                       @adfinis-sygroup/helm-charts @michaelimfeld @aziiee
 /charts/vault-auth                  @adfinis-sygroup/helm-charts @eyenx
 /charts/vault-csi-provider          @adfinis-sygroup/helm-charts @pree @eyenx
