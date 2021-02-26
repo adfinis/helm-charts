@@ -1,6 +1,6 @@
 # huawei-csi-plugin
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.2.RC3](https://img.shields.io/badge/AppVersion-2.2.RC3-informational?style=flat-square)
+![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.2.RC3](https://img.shields.io/badge/AppVersion-v2.2.RC3-informational?style=flat-square)
 
 Deploy the Huawei CSI plugin
 
@@ -60,9 +60,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | node | object | - | different configuration options of node daemonset |
 | rbac.create | bool | `true` | Whether to create RBAC or not |
 | serviceAccount.annotations | object | `{}` | annotations to add to each service account |
-| serviceAccount.controllerName | string | `"huawei-csi-controller"` | The name of the service account for the controller account |
 | serviceAccount.create | bool | `true` | Whether to create serviceAccounts or not |
-| serviceAccount.nodeName | string | `"huawei-csi-node"` | The name of the service account for the node account |
 
 ## About this chart
 

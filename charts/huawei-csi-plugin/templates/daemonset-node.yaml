@@ -21,7 +21,7 @@ spec:
         {{- include "huawei-csi-plugin.selectorLabels" . | nindent 8 }}
         app.kubernetes.io/component: "csi-node"
     spec:
-      serviceAccountName: {{ .Values.serviceAccount.nodeName }}
+      serviceAccountName: {{ include "huawei-csi-plugin.fullname" . }}-node
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml | nindent 8 }}

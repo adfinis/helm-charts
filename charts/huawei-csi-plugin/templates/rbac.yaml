@@ -3,7 +3,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: huawei-csi-provisioner-runner
+  name: {{ include "huawei-csi-plugin.fullname" . }}-provisioner-runner
 rules:
   - apiGroups: [""]
     resources: ["persistentvolumes"]
@@ -55,21 +55,21 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: huawei-csi-provisioner-role
+  name: {{ include "huawei-csi-plugin.fullname" . }}-provisioner-role
 subjects:
   - kind: ServiceAccount
-    name: {{ .Values.serviceAccount.controllerName }}
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
     namespace: {{ .Release.Namespace }}
 roleRef:
   kind: ClusterRole
-  name: huawei-csi-provisioner-runner
+  name: {{ include "huawei-csi-plugin.fullname" . }}-provisioner-runner
   apiGroup: rbac.authorization.k8s.io
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: huawei-csi-attacher-runner
+  name: {{ include "huawei-csi-plugin.fullname" . }}-attacher-runner
 rules:
   - apiGroups: [""]
     resources: ["persistentvolumes"]
@@ -88,21 +88,21 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: huawei-csi-attacher-role
+  name: {{ include "huawei-csi-plugin.fullname" . }}-attacher-role
 subjects:
   - kind: ServiceAccount
-    name: {{ .Values.serviceAccount.controllerName }}
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
     namespace: {{ .Release.Namespace }}
 roleRef:
   kind: ClusterRole
-  name: huawei-csi-attacher-runner
+  name: {{ include "huawei-csi-plugin.fullname" . }}-attacher-runner
   apiGroup: rbac.authorization.k8s.io
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: huawei-csi-driver-registrar-runner
+  name: {{ include "huawei-csi-plugin.fullname" . }}-driver-registrar-runner
 rules:
   - apiGroups: [""]
     resources: ["events"]
@@ -112,14 +112,14 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: huawei-csi-driver-registrar-role
+  name: {{ include "huawei-csi-plugin.fullname" . }}-driver-registrar-role
 subjects:
   - kind: ServiceAccount
-    name: {{ .Values.serviceAccount.nodeName }}
+    name: {{ include "huawei-csi-plugin.fullname" . }}-node
     namespace: {{ .Release.Namespace }}
 roleRef:
   kind: ClusterRole
-  name: huawei-csi-driver-registrar-runner
+  name: {{ include "huawei-csi-plugin.fullname" . }}-driver-registrar-runner
   apiGroup: rbac.authorization.k8s.io
 
 {{- if .Values.features.resizing.enabled }}
@@ -127,7 +127,7 @@ roleRef:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: huawei-csi-resizer-runner
+  name: {{ include "huawei-csi-plugin.fullname" . }}-resizer-runner
 rules:
   - apiGroups: [""]
     resources: ["persistentvolumes"]
@@ -146,21 +146,21 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: huawei-csi-resizer-role
+  name: {{ include "huawei-csi-plugin.fullname" . }}-resizer-role
 subjects:
   - kind: ServiceAccount
-    name: {{ .Values.serviceAccount.controllerName }}
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
     namespace: {{ .Release.Namespace }}
 roleRef:
   kind: ClusterRole
-  name: huawei-csi-resizer-runner
+  name: {{ include "huawei-csi-plugin.fullname" . }}-resizer-runner
   apiGroup: rbac.authorization.k8s.io
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: huawei-csi-resizer-cfg
+  name: {{ include "huawei-csi-plugin.fullname" . }}-resizer-cfg
 rules:
   - apiGroups: ["coordination.k8s.io"]
     resources: ["leases"]
@@ -170,14 +170,14 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: huawei-csi-resizer-role-cfg
+  name: {{ include "huawei-csi-plugin.fullname" . }}-resizer-role-cfg
 subjects:
   - kind: ServiceAccount
-    name: {{ .Values.serviceAccount.controllerName }}
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
     namespace: {{ .Release.Namespace }}
 roleRef:
   kind: Role
-  name: huawei-csi-resizer-cfg
+  name: {{ include "huawei-csi-plugin.fullname" . }}-resizer-cfg
   apiGroup: rbac.authorization.k8s.io
 {{- end }}
 
@@ -186,7 +186,7 @@ roleRef:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: huawei-csi-snapshotter-runner
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshotter-runner
 rules:
   - apiGroups: [""]
     resources: ["events"]
@@ -205,21 +205,21 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: huawei-csi-snapshotter-role
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshotter-role
 subjects:
   - kind: ServiceAccount
-    name: {{ .Values.serviceAccount.controllerName }}
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
     namespace: {{ .Release.Namespace }}
 roleRef:
   kind: ClusterRole
-  name: huawei-csi-snapshotter-runner
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshotter-runner
   apiGroup: rbac.authorization.k8s.io
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: huawei-csi-snapshotter-leaderelection
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshotter-leaderelection
 rules:
   - apiGroups: ["coordination.k8s.io"]
     resources: ["leases"]
@@ -229,21 +229,21 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: huawei-csi-snapshotter-leaderelection
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshotter-leaderelection
 subjects:
   - kind: ServiceAccount
-    name: {{ .Values.serviceAccount.controllerName }}
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
     namespace: {{ .Release.Namespace }}
 roleRef:
   kind: Role
-  name: huawei-csi-snapshotter-leaderelection
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshotter-leaderelection
   apiGroup: rbac.authorization.k8s.io
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: snapshot-controller-runner
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshot-controller-runner
 rules:
   - apiGroups: [""]
     resources: ["persistentvolumes"]
@@ -274,21 +274,21 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: snapshot-controller-role
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshot-controller-role
 subjects:
   - kind: ServiceAccount
-    name: {{ .Values.serviceAccount.controllerName }}
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
     namespace: {{ .Release.Namespace }}
 roleRef:
   kind: ClusterRole
-  name: snapshot-controller-runner
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshot-controller-runner
   apiGroup: rbac.authorization.k8s.io
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: snapshot-controller-leaderelection
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshot-controller-leaderelection
 rules:
   - apiGroups: ["coordination.k8s.io"]
     resources: ["leases"]
@@ -298,14 +298,14 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: snapshot-controller-leaderelection
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshot-controller-leaderelection
 subjects:
   - kind: ServiceAccount
-    name: {{ .Values.serviceAccount.controllerName }}
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
     namespace: {{ .Release.Namespace }}
 roleRef:
   kind: Role
-  name: snapshot-controller-leaderelection
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshot-controller-leaderelection
   apiGroup: rbac.authorization.k8s.io
 
 ---

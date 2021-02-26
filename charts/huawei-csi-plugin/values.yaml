@@ -93,10 +93,6 @@ serviceAccount:
   create: true
   # serviceAccount.annotations -- annotations to add to each service account
   annotations: {}
-  # serviceAccount.controllerName -- The name of the service account for the controller account
-  controllerName: "huawei-csi-controller"
-  # serviceAccount.nodeName -- The name of the service account for the node account
-  nodeName: "huawei-csi-node"
 
 rbac:
   # rbac.create -- Whether to create RBAC or not
