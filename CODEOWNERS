@@ -4,7 +4,7 @@
 # Add specific owners to specific charts where ownership extends above group
 /charts/argoconfig                  @adfinis-sygroup/helm-charts @hairmare
 /charts/back8sup                    @adfinis-sygroup/helm-charts @eyenx @tongpu
-/charts/barman                      @adfinis-sygroup/helm-charts @michaelimfeld
+/charts/barman                      @adfinis-sygroup/helm-charts @michaelimfeld @sinicis
 /charts/common                      @adfinis-sygroup/helm-charts @hairmare
 /charts/csi-secret-provider-class   @adfinis-sygroup/helm-charts @hairmare
 /charts/timed                       @adfinis-sygroup/helm-charts @michaelimfeld @aziiee
