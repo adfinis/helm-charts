@@ -1,6 +1,6 @@
 <!--
     Thank you for your contribution. Please use this template to help guide
-    you towards preparing a PR that fullfills our mereability  requirements.
+    you towards preparing a PR that fullfills our merge requirements.
 -->
 # Description
 
@@ -23,7 +23,7 @@
 
 * [ ] I updated the version in Chart.yaml
 * [ ] I updated applicable README.md files using  `pre-commit run -a`
-* [ ] I documented any high-level concepts I introduce in `docs/`
+* [ ] I documented any high-level concepts I'm introducing in `docs/`
 * [ ] CI is currently green and this is ready for review
 * [ ] I am ready to test changes after they are applied and released
 
