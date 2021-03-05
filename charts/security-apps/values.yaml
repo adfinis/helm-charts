@@ -121,7 +121,7 @@ falcoExporter:
 # gatekeeper -- [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml))
 # @default -- -
 gatekeeper:
-  # gatekeeper.enabled -- Enable falco
+  # gatekeeper.enabled -- Enable gatekeeper
   enabled: false
   name: gatekeeper
   destination:
@@ -136,4 +136,24 @@ gatekeeper:
   targetRevision: "3.2.2"
   # gatekeeper.values -- Helm values
   # @default -- [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml)
+  values: {}
+
+# vaultAuth -- [vault-auth](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) ([example](./examples/vault-auth.yaml))
+# @default -- -
+vaultAuth:
+  # vaultAuth.enabled -- Enable vault-auth
+  enabled: false
+  name: vault-auth
+  destination:
+    # vault-auth.destination.namespace -- Namespace
+    namespace: "infra-vault"
+  # vaultAuth.repoURL -- Repo URL
+  # @default -- [repo](https://charts.adfinis.com/vault-auth)
+  repoURL: "https://charts.adfinis.com/vault-auth"
+  # vaultAuth.chart -- Chart
+  chart: "vault-auth"
+  # vaultAuth.targetRevision -- [vault-auth Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) version
+  targetRevision: "0.1.*"
+  # vaultAuth.values -- Helm values
+  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-auth/values.yaml)
   values: {}

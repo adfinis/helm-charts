@@ -25,3 +25,7 @@ falcoExporter:
 gatekeeper:
   enabled: true
   values: {}
+
+vaultAuth:
+  enabled: true
+  values: {}
