@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "customerCenter.fullname" . }}-backend
+  labels:
+    {{- include "customerCenter.labels" . | nindent 4 }}
+    app.kubernetes.io/component: backend
+spec:
+  replicas: {{ .Values.backend.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "customerCenter.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "customerCenter.labels" . | nindent 8 }}
+        app.kubernetes.io/component: backend
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+        - name: {{ .Chart.Name }}-backend
+          image: "{{ .Values.backend.image.repository }}:{{ default .Chart.AppVersion .Values.backend.image.tag }}"
+          envFrom:
+            - secretRef:
+                name: {{ include "customerCenter.fullname" . }}-backend
+            - configMapRef:
+                name: {{ include "customerCenter.fullname" . }}-backend
+          imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.backend.service.internalPort }}
+          {{- if .Values.backend.livenessProbe.enabled }}
+          livenessProbe:
+            initialDelaySeconds: {{ .Values.backend.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.backend.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.backend.livenessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.backend.livenessProbe.successThreshold }}
+            failureThreshold: {{ .Values.backend.livenessProbe.failureThreshold }}
+            httpGet:
+              path: {{ .Values.backend.livenessProbe.path }}
+              port: {{ .Values.backend.service.internalPort }}
+              httpHeaders:
+                - name: Host
+                  value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
+          {{- end }}
+          {{- if .Values.backend.readinessProbe.enabled }}
+          readinessProbe:
+            initialDelaySeconds: {{ .Values.backend.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.backend.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.backend.readinessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.backend.readinessProbe.successThreshold }}
+            failureThreshold: {{ .Values.backend.readinessProbe.failureThreshold }}
+            httpGet:
+              path: {{ .Values.backend.readinessProbe.path }}
+              port: {{ .Values.backend.service.internalPort }}
+              httpHeaders:
+                - name: Host
+                  value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
+          {{- end }}
+          resources:
+{{ toYaml .Values.backend.resources | indent 12 }}
+    {{- if .Values.backend.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.backend.nodeSelector | indent 8 }}
+    {{- end }}

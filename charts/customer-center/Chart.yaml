@@ -1,0 +1,24 @@
+apiVersion: v2
+name: customer-center
+description: Chart for Customer-Center application
+type: application
+version: 0.1.0
+appVersion: 2.0.0-rc.1
+keywords:
+  - customer-center
+home: https://github.com/adfinis-sygroup/customer-center
+sources:
+  - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/customer-center
+maintainers:
+  - name: adfinis-sygroup
+    email: support@adfinis.com
+    url: https://adfinis.com
+dependencies:
+  - name: postgresql
+    version: ~10.3.11
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled
+  - name: redis
+    version: ~12.8.3
+    repository: https://charts.bitnami.com/bitnami
+    condition: redis.enabled

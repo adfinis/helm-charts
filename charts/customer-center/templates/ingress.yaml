@@ -1,0 +1,35 @@
+{{- if .Values.ingress.enabled -}}
+{{- $backendServiceName := .Values.backend.service.name }}
+{{- $backendExternalPort := .Values.backend.service.externalPort }}
+{{- $frontendServiceName := .Values.frontend.service.name }}
+{{- $frontendExternalPort := .Values.frontend.service.externalPort }}
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: {{ include "customerCenter.fullname" . }}
+  labels:
+    {{- include "customerCenter.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  rules:
+    {{- range $host := .Values.ingress.hosts }}
+    - host: {{ $host }}
+      http:
+        paths:
+          - path: /api/
+            backend:
+              serviceName: {{ $backendServiceName }}
+              servicePort: {{ $backendExternalPort }}
+          - path: /
+            backend:
+              serviceName: {{ $frontendServiceName }}
+              servicePort: {{ $frontendExternalPort }}
+    {{- end -}}
+  {{- if .Values.ingress.tls }}
+  tls:
+{{ toYaml .Values.ingress.tls | indent 4 }}
+  {{- end -}}
+{{- end -}}
