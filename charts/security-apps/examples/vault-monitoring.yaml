@@ -1,0 +1,16 @@
+vaultMonitoring:
+  enabled: true
+  project: infra-vault
+  values:
+    vault:
+      serverName: vault.namespace.svc.cluster.local
+      ca: |
+        -----BEGIN CERTIFICATE-----
+        Example
+        -----END CERTIFICATE-----
+      service:
+        type: ClusterIP
+        selector:
+          app.kubernetes.io/name: vault
+    prometheusRules:
+      enabled: true
