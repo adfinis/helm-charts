@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.8.0](https://img.shields.io/badge/AppVersion-0.8.0-informational?style=flat-square)
+![Version: 0.9.0](https://img.shields.io/badge/Version-0.9.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.9.0](https://img.shields.io/badge/AppVersion-0.9.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -84,7 +84,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vaultMonitoring.repoURL | string | [repo](https://charts.adfinis.com/vault-monitoring) | Repo URL |
 | vaultMonitoring.targetRevision | string | `"0.1.*"` | [vault-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) version |
 | vaultMonitoring.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-monitoring/values.yaml) | Helm values |
-=======
 
 ## About this chart
 
