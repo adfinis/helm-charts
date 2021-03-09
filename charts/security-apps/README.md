@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.10.0](https://img.shields.io/badge/Version-0.10.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.10.0](https://img.shields.io/badge/AppVersion-0.10.0-informational?style=flat-square)
+![Version: 0.10.1](https://img.shields.io/badge/Version-0.10.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.10.1](https://img.shields.io/badge/AppVersion-0.10.1-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -75,19 +75,19 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vaultAuth | object | - | [vault-auth](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) ([example](./examples/vault-auth.yaml)) |
 | vaultAuth.chart | string | `"vault-auth"` | Chart |
 | vaultAuth.enabled | bool | `false` | Enable vault-auth |
-| vaultAuth.repoURL | string | [repo](https://charts.adfinis.com/vault-auth) | Repo URL |
+| vaultAuth.repoURL | string | [repo](https://charts.adfinis.com/) | Repo URL |
 | vaultAuth.targetRevision | string | `"0.1.*"` | [vault-auth Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) version |
 | vaultAuth.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-auth/values.yaml) | Helm values |
 | vaultCsiProvider | object | - | [vault-csi-provider](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-csi-provider) ([example](./examples/vault-csi-provider.yaml)) |
 | vaultCsiProvider.chart | string | `"vault-csi-provider"` | Chart |
 | vaultCsiProvider.enabled | bool | `false` | Enable vault-csi-provider |
-| vaultCsiProvider.repoURL | string | [repo](https://charts.adfinis.com/vault-csi-provider) | Repo URL |
+| vaultCsiProvider.repoURL | string | [repo](https://charts.adfinis.com/) | Repo URL |
 | vaultCsiProvider.targetRevision | string | `"0.2.*"` | [vault-csi-provider Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-csi-provider) version |
 | vaultCsiProvider.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-csi-provider/values.yaml) | Helm values |
 | vaultMonitoring | object | - | [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml)) |
 | vaultMonitoring.chart | string | `"vault-monitoring"` | Chart |
 | vaultMonitoring.enabled | bool | `false` | Enable vault-monitoring |
-| vaultMonitoring.repoURL | string | [repo](https://charts.adfinis.com/vault-monitoring) | Repo URL |
+| vaultMonitoring.repoURL | string | [repo](https://charts.adfinis.com/) | Repo URL |
 | vaultMonitoring.targetRevision | string | `"0.1.*"` | [vault-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) version |
 | vaultMonitoring.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-monitoring/values.yaml) | Helm values |
 
