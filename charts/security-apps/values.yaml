@@ -148,8 +148,8 @@ vaultAuth:
     # vault-auth.destination.namespace -- Namespace
     namespace: "infra-vault"
   # vaultAuth.repoURL -- Repo URL
-  # @default -- [repo](https://charts.adfinis.com/vault-auth)
-  repoURL: "https://charts.adfinis.com/vault-auth"
+  # @default -- [repo](https://charts.adfinis.com/)
+  repoURL: "https://charts.adfinis.com/"
   # vaultAuth.chart -- Chart
   chart: "vault-auth"
   # vaultAuth.targetRevision -- [vault-auth Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) version
@@ -168,8 +168,8 @@ vaultCsiProvider:
     # vault-csi-provider.destination.namespace -- Namespace
     namespace: "infra-vault"
   # vaultCsiProvider.repoURL -- Repo URL
-  # @default -- [repo](https://charts.adfinis.com/vault-csi-provider)
-  repoURL: "https://charts.adfinis.com/vault-csi-provider"
+  # @default -- [repo](https://charts.adfinis.com/)
+  repoURL: "https://charts.adfinis.com/"
   # vaultCsiProvider.chart -- Chart
   chart: "vault-csi-provider"
   # vaultCsiProvider.targetRevision -- [vault-csi-provider Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-csi-provider) version
@@ -188,8 +188,8 @@ vaultMonitoring:
     # vault-monitoring.destination.namespace -- Namespace
     namespace: "infra-vault"
   # vaultMonitoring.repoURL -- Repo URL
-  # @default -- [repo](https://charts.adfinis.com/vault-monitoring)
-  repoURL: "https://charts.adfinis.com/vault-monitoring"
+  # @default -- [repo](https://charts.adfinis.com/)
+  repoURL: "https://charts.adfinis.com/"
   # vaultMonitoring.chart -- Chart
   chart: "vault-monitoring"
   # vaultMonitoring.targetRevision -- [vault-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) version
