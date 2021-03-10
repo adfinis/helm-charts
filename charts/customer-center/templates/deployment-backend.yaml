@@ -16,8 +16,10 @@ spec:
         {{- include "customerCenter.labels" . | nindent 8 }}
         app.kubernetes.io/component: backend
     spec:
+      {{- if .Values.backend.image.pullSecret }}
       imagePullSecrets:
-      - name: regcred
+      - name: {{ .Values.backend.image.pullSecret }}
+      {{end}}
       containers:
         - name: {{ .Chart.Name }}-backend
           image: "{{ .Values.backend.image.repository }}:{{ default .Chart.AppVersion .Values.backend.image.tag }}"

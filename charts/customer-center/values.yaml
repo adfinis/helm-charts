@@ -12,6 +12,8 @@ backend:
      # tag:
     # backend.image.pullPolicy -- Backend image pull policy
     pullPolicy: IfNotPresent
+    # backend.image.pullSecret -- Secret to use to pull images
+    # pullSecret: regcred
   service:
     # Specifiy secret for authentication.
     # If not random token will be generated
@@ -146,6 +148,8 @@ frontend:
     # tag:
     # frontend.image.pullPolicy -- Frontend image pull policy
     pullPolicy: IfNotPresent
+    # frontend.image.pullSecret -- Secret to use to pull images
+    # pullSecret: regcred
   service:
     # frontend.service.name -- Frontend service name
     name: customer-center-frontend
