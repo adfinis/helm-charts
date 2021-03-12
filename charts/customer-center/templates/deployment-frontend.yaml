@@ -16,10 +16,6 @@ spec:
         {{- include "customerCenter.labels" . | nindent 8 }}
         app.kubernetes.io/component: frontend
     spec:
-      {{- if .Values.frontend.image.pullSecret }}
-      imagePullSecrets:
-      - name: {{ .Values.frontend.image.pullSecret }}
-      {{end}}
       containers:
         - name: {{ .Chart.Name }}-frontend
           image: "{{ .Values.frontend.image.repository }}:{{ default .Chart.AppVersion .Values.frontend.image.tag }}"
