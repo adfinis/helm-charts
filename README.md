@@ -16,6 +16,13 @@ helm repo add adfinis https://charts.adfinis.com
 ```
 
 ### Available Helm charts
+#### [cert-manager-issuers](charts/cert-manager-issuers)
+
+![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.x](https://img.shields.io/badge/app%20version-1.x-brightgreen)
+
+Configure cert-manager Issuers and ClusterIssuers via Helm
+
+[<img alt="cert-manager-issuers" src="https://raw.githubusercontent.com/adfinis-sygroup/helm-charts/master/charts/cert-manager-issuers/logo.png" width="128">](charts/cert-manager-issuers)
 
 #### more charts
 
@@ -28,6 +35,7 @@ helm repo add adfinis https://charts.adfinis.com
 | [common](charts/common) | Common chartbuilding components and helpers, based on incubator/common | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [csi-secret-provider-class](charts/csi-secret-provider-class) | A Helm chart to create a SecretProviderClass resource | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [customer-center](charts/customer-center) | Chart for Customer-Center application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 2.0.x](https://img.shields.io/badge/app%20version-2.0.x-brightgreen) |
+| [huawei-csi-plugin](charts/huawei-csi-plugin) | Deploy the Huawei CSI plugin | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 2.2.x](https://img.shields.io/badge/app%20version-2.2.x-brightgreen) |
 | [infra-apps](charts/infra-apps) | Argo CD app-of-apps config for infrastructure components | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [logging-apps](charts/logging-apps) | Argo CD app-of-apps config for logging applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [misc-apps](charts/misc-apps) | Argo CD app-of-apps config for miscellaneous small tools | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |

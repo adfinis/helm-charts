@@ -1,0 +1,33 @@
+{{ if .Values.vaultCsiProvider.enabled }}
+{{ template "argoconfig.application" (list . "security-apps.vaultCsiProvider") }}
+{{ end }}
+
+{{- define "security-apps.vaultCsiProvider" -}}{{- $app := unset .Values.vaultCsiProvider "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
+metadata:
+  name: {{ template "common.fullname" . }}-{{ $name }}
+spec:
+  {{- if $app.project }}
+  project: {{ $app.project | quote }}
+  {{- end }}
+  source:
+    repoURL: {{ $app.repoURL | quote }}
+    chart: {{ $app.chart | quote }}
+    targetRevision: {{ $app.targetRevision | quote }}
+    helm:
+      releaseName: {{ $name | quote }}
+      values: |-
+        nameOverride: {{ $name | quote }}
+        {{- $app.values | toYaml | nindent 8 }}
+  {{- if $app.destination }}
+  destination:
+    {{ $app.destination | toYaml | nindent 4 }}
+  {{- end }}
+  {{- if $app.syncPolicy }}
+  syncPolicy:
+    {{ $app.syncPolicy | toYaml | nindent 4 }}
+  {{- end }}
+  {{- if $app.ignoreDifferences }}
+  ignoreDifferences:
+    {{ $app.ignoreDifferences | toYaml | nindent 4 }}
+  {{- end }}
+{{- end -}}

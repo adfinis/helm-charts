@@ -1,0 +1,13 @@
+{{- range .Values.clusterIssuers }}
+---
+# raw issuer: {{ . | toJson }}
+{{- $enabled := printf "%t" .enabled }}
+{{- if regexMatch "nil" $enabled }}{{- $enabled = "true" }}{{- end }}
+{{- if (eq $enabled "true") }}
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+{{ template "cert-manager-issuers.metadata" (dict "data" . "root" $) }}
+spec:
+  {{- .spec | toYaml | nindent 2 }}
+{{- end }}
+{{- end }}

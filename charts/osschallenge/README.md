@@ -1,6 +1,6 @@
 # osschallenge
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
 
 Chart for OSS-Challenge application
 
@@ -56,6 +56,11 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | osschallenge.settings.emailPort | int | `587` | Port for the SMTP server |
 | osschallenge.settings.emailUser | string | `"example@example.com"` | Username for the SMTP server |
 | osschallenge.settings.siteUrl | string | `"https://oss-challenge.ch"` | URL for OSS-Challenge |
+| persistence.accessModes | list | `["ReadWriteOnce"]` | specifes the access mode for the PV |
+| persistence.enabled | bool | `true` | specifies if persistence is enabled or not |
+| persistence.mountPath | string | `"/data"` | specifies where to mount the PV |
+| persistence.size | string | `"10Gi"` | specifies which size the PVC should request |
+| persistence.storageClassName | string | `""` | specifies which storageClassName should be used |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
 | postgresql.postgresqlDatabase | string | `"osschallenge"` | PostgreSQL database name |
 | postgresql.postgresqlUsername | string | `"osschallenge"` | PostgreSQL user name |

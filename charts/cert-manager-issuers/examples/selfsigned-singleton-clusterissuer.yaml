@@ -1,0 +1,8 @@
+# Deploy a singleton selfSigned ClusterIssuer.
+#
+# You can leave out the name and the chart will use a generated name. Use this format
+# when you only want to deploy a single issuer per release of the chart.
+
+clusterIssuers:
+- spec:
+    selfSigned: {}

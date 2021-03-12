@@ -3,3 +3,5 @@ parameters:
   foo: bar
 secretObjects:
   - secretName: test
+dummyDeployment:
+  enabled: true
