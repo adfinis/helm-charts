@@ -37,9 +37,6 @@ spec:
             httpGet:
               path: {{ .Values.backend.livenessProbe.path }}
               port: {{ .Values.backend.service.internalPort }}
-              httpHeaders:
-                - name: Host
-                  value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
           {{- end }}
           {{- if .Values.backend.readinessProbe.enabled }}
           readinessProbe:

@@ -1,7 +1,6 @@
 {{- if .Values.ingress.enabled -}}
-{{- $backendServiceName := .Values.backend.service.name }}
+{{- $serviceName := include "customerCenter.fullname" . }}
 {{- $backendExternalPort := .Values.backend.service.externalPort }}
-{{- $frontendServiceName := .Values.frontend.service.name }}
 {{- $frontendExternalPort := .Values.frontend.service.externalPort }}
 {{- if .Capabilities.APIVersions.Has "networking.k8s.io/v1/Ingress" }}
 apiVersion: networking.k8s.io/v1
@@ -25,11 +24,11 @@ spec:
         paths:
           - path: /api/
             backend:
-              serviceName: {{ $backendServiceName }}
+              serviceName: {{ $serviceName }}-backend
               servicePort: {{ $backendExternalPort }}
           - path: /
             backend:
-              serviceName: {{ $frontendServiceName }}
+              serviceName: {{ $serviceName }}-frontend
               servicePort: {{ $frontendExternalPort }}
     {{- end -}}
   {{- if .Values.ingress.tls }}

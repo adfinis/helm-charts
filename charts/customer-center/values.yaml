@@ -6,7 +6,7 @@ backend:
   replicaCount: 1
   image:
     # backend.image.repository -- Backend image name
-    repository: docker.pkg.github.com/adfinis-sygroup/customer-center/backend
+    repository: ghcr.io/adfinis-sygroup/customer-center/backend
      # Specify a tag to override which version of customer-center to deploy.
      # If no tag is specified the appVersion from Chart.yaml is used as tag.
      # tag:
@@ -17,8 +17,6 @@ backend:
     # If not random token will be generated
     # secret:
     # backend.service.name -- Backend service name
-    name: customer-center-backend
-    # backend.service.type -- Backend service type
     type: ClusterIP
     # backend.service.externalPort -- External Port of backend service
     externalPort: 3000
@@ -140,15 +138,13 @@ frontend:
   replicaCount: 1
   image:
     # frontend.image.repository -- Frontend image name
-    repository: docker.pkg.github.com/adfinis-sygroup/customer-center/frontend
+    repository: ghcr.io/adfinis-sygroup/customer-center/frontend
     # Specify a tag to override which version of customer-center to deploy.
     # If no tag is specified the appVersion from Chart.yaml is used as tag.
     # tag:
     # frontend.image.pullPolicy -- Frontend image pull policy
     pullPolicy: IfNotPresent
   service:
-    # frontend.service.name -- Frontend service name
-    name: customer-center-frontend
     # frontend.service.type -- Frontend service type
     type: ClusterIP
     # frontend.service.externalPort -- External Port of frontend service

@@ -25,7 +25,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
-| backend.image.repository | string | `"docker.pkg.github.com/adfinis-sygroup/customer-center/backend"` | Backend image name |
+| backend.image.repository | string | `"ghcr.io/adfinis-sygroup/customer-center/backend"` | Backend image name |
 | backend.livenessProbe.enabled | bool | `true` | Enable liveness probe on backend |
 | backend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | backend.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
@@ -44,8 +44,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.resources | object | `{}` | Resource limits for backend |
 | backend.service.externalPort | int | `3000` | External Port of backend service |
 | backend.service.internalPort | int | `3000` | Internal Port of backend service |
-| backend.service.name | string | `"customer-center-backend"` | Backend service name |
-| backend.service.type | string | `"ClusterIP"` | Backend service type |
+| backend.service.type | string | `"ClusterIP"` |  |
 | backend.settings.appHost | string | `"my.example.com"` | Application host name |
 | backend.settings.appName | string | `"Customer Center"` | Application name |
 | backend.settings.auth.expirePassword | int | `3600` | Timeout in seconds before Redis key expiration |
@@ -78,7 +77,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.settings.timed.host | string | `"https://timed.example.com"` | Timed host |
 | backend.settings.timed.prefix | string | `"/api/v1"` | Timed prefix |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | Frontend image pull policy |
-| frontend.image.repository | string | `"docker.pkg.github.com/adfinis-sygroup/customer-center/frontend"` | Frontend image name |
+| frontend.image.repository | string | `"ghcr.io/adfinis-sygroup/customer-center/frontend"` | Frontend image name |
 | frontend.livenessProbe.enabled | bool | `true` | Enable liveness probe on frontend |
 | frontend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | frontend.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
@@ -95,7 +94,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | frontend.resources | object | `{}` | Resource limits for frontend |
 | frontend.service.externalPort | int | `80` | External Port of frontend service |
 | frontend.service.internalPort | int | `80` | Internal Port of frontend service |
-| frontend.service.name | string | `"customer-center-frontend"` | Frontend service name |
 | frontend.service.type | string | `"ClusterIP"` | Frontend service type |
 | ingress.annotations | object | `{}` | Ingress annotations |
 | ingress.enabled | bool | `true` | Enable ingress for customer-center |
