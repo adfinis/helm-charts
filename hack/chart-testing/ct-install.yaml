@@ -5,3 +5,8 @@ chart-repos:
 excluded-charts:
   - common
   - argoconfig
+  # the huawei-csi-plugin is currently excluded
+  # because the elevated privileges (p.e. Host-
+  # Path directories) are not available in our
+  # kind testing cluster
+  - huawei-csi-plugin

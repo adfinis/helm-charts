@@ -1,0 +1,152 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+    app.kubernetes.io/component: "csi-controller"
+spec:
+  {{- if .Values.features.multiController.enabled }}
+  replicas: {{ .Values.controller.replicaCount }}
+  {{- else }}
+  replicas: 1
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "huawei-csi-plugin.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: "csi-controller"
+  template:
+    metadata:
+    {{- with .Values.controller.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        {{- include "huawei-csi-plugin.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: "csi-controller"
+    spec:
+      serviceAccount: {{ include "huawei-csi-plugin.fullname" . }}-controller
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.controller.podSecurityContext | nindent 8 }}
+      hostNetwork: true
+      containers:
+        - name: csi-provisioner
+          image: "{{ .Values.csi_provisioner.image.repository }}:{{ .Values.csi_provisioner.image.tag }}"
+          imagePullPolicy: {{ .Values.csi_provisioner.image.pullPolicy }}
+          args:
+            - "--csi-address=$(ADDRESS)"
+            - "--timeout=6h"
+            {{- if .Values.features.multiController.enabled }}
+            - "--enable-leader-election"
+            {{- end }}
+          env:
+            - name: ADDRESS
+              value: /var/lib/csi/sockets/pluginproxy/csi.sock
+          volumeMounts:
+            - name: socket-dir
+              mountPath: /var/lib/csi/sockets/pluginproxy/
+
+        - name: csi-attacher
+          image: "{{ .Values.csi_attacher.image.repository }}:{{ .Values.csi_attacher.image.tag }}"
+          imagePullPolicy: {{ .Values.csi_attacher.image.pullPolicy }}
+          args:
+            - "--csi-address=$(ADDRESS)"
+            {{- if .Values.features.multiController.enabled }}
+            - "--leader-election"
+            - "--leader-election-type=leases"
+            {{- end }}
+          env:
+            - name: ADDRESS
+              value: /var/lib/csi/sockets/pluginproxy/csi.sock
+          volumeMounts:
+            - name: socket-dir
+              mountPath: /var/lib/csi/sockets/pluginproxy/
+
+        {{- if .Values.features.resizing.enabled }}
+        - name: csi-resizer
+          image: "{{ .Values.csi_resizer.image.repository }}:{{ .Values.csi_resizer.image.tag }}"
+          imagePullPolicy: {{ .Values.csi_resizer.image.pullPolicy }}
+          args:
+            - "--csi-address=$(ADDRESS)"
+          env:
+            - name: ADDRESS
+              value: /var/lib/csi/sockets/pluginproxy/csi.sock
+          volumeMounts:
+            - name: socket-dir
+              mountPath: /var/lib/csi/sockets/pluginproxy/
+        {{- end }}
+
+        {{- if .Values.features.snapshotting.enabled }}
+        - name: csi-snapshotter
+          image: "{{ .Values.csi_snapshotter.image.repository }}:{{ .Values.csi_snapshotter.image.tag }}"
+          imagePullPolicy: {{ .Values.csi_snapshotter.image.pullPolicy }}
+          args:
+            - "--v=5"
+            - "--csi-address=$(ADDRESS)"
+          env:
+            - name: ADDRESS
+              value: /var/lib/csi/sockets/pluginproxy/csi.sock
+          volumeMounts:
+            - mountPath: /var/lib/csi/sockets/pluginproxy/
+              name: socket-dir
+
+        - name: snapshot-controller
+          image: "{{ .Values.csi_snapshot_controller.image.repository }}:{{ .Values.csi_snapshot_controller.image.tag }}"
+          imagePullPolicy: {{ .Values.csi_snapshot_controller.image.pullPolicy }}
+          args:
+            - "--v=5"
+            - "--leader-election=false"
+          volumeMounts:
+            - mountPath: /var/lib/csi/sockets/pluginproxy/
+              name: socket-dir
+        {{- end }}
+
+        - name: huawei-csi-driver
+          image: "{{ .Values.csi_driver.image.repository }}:{{ .Values.csi_driver.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.csi_driver.image.pullPolicy }}
+          args:
+            - "--endpoint=$(CSI_ENDPOINT)"
+            - "--controller"
+            - "--containerized"
+            {{- if .Values.features.resizing.enabled }}
+            - "--backend-update-interval=120"
+            {{- end }}
+          env:
+            - name: CSI_ENDPOINT
+              value: /var/lib/csi/sockets/pluginproxy/csi.sock
+          volumeMounts:
+            - name: socket-dir
+              mountPath: /var/lib/csi/sockets/pluginproxy/
+            - name: log
+              mountPath: /var/log
+            - name: config-map
+              mountPath: /etc/huawei
+
+      volumes:
+        - name: socket-dir
+          emptyDir:
+        - name: log
+          hostPath:
+            path: /var/log/
+            type: Directory
+        - name: config-map
+          configMap:
+            name: {{ include "huawei-csi-plugin.fullname" . }}
+
+      {{- with .Values.controller.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.controller.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.controller.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

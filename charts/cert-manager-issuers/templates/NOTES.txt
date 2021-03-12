@@ -1,0 +1,12 @@
+{{- if .Values.issuers }}
+Deployed Issuers:
+{{- range .Values.issuers }}
+* {{ include "cert-manager-issuers.name" (dict "data" . "root" $) }}
+{{- end }}
+{{- end }}
+{{- if .Values.clusterIssuers }}
+Deployed ClusterIssuers:
+{{- range .Values.clusterIssuers }}
+* {{ include "cert-manager-issuers.name" (dict "data" . "root" $) }}
+{{- end }}
+{{- end }}

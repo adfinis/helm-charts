@@ -1,0 +1,350 @@
+{{- if .Values.rbac.create }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-provisioner-runner
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+rules:
+  - apiGroups: [""]
+    resources: ["persistentvolumes"]
+    {{- if .Values.features.resizing.enabled }}
+    verbs: ["get", "list", "watch", "create", "delete", "patch"]
+    {{- else }}
+    verbs: ["get", "list", "watch", "create", "delete"]
+    {{- end }}
+  - apiGroups: [""]
+    resources: ["persistentvolumeclaims"]
+    {{- if .Values.features.resizing.enabled }}
+    verbs: ["get", "list", "watch", "create", "delete", "patch"]
+    {{- else }}
+    verbs: ["get", "list", "watch", "update"]
+    {{- end }}
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["storageclasses"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["list", "watch", "create", "update", "patch"]
+  - apiGroups: ["snapshot.storage.k8s.io"]
+    resources: ["volumesnapshots"]
+    {{- if .Values.features.snapshotting.enabled }}
+    verbs: ["list", "watch", "create", "update", "patch"]
+    {{- else }}
+    verbs: ["get", "list"]
+    {{- end }}
+  - apiGroups: ["snapshot.storage.k8s.io"]
+    resources: ["volumesnapshotcontents"]
+    {{- if .Values.features.snapshotting.enabled }}
+    verbs: ["get", "list", "watch", "create", "delete", "patch"]
+    {{- else }}
+    verbs: ["get", "list"]
+    {{- end }}
+  {{- if .Values.features.snapshotting.enabled }}
+  - apiGroups: ["snapshot.storage.k8s.io"]
+    resources: ["volumesnapshots/status"]
+    verbs: ["update"]
+  {{- end }}
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["csinodes"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["nodes"]
+    verbs: ["get", "list", "watch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-provisioner-role
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: {{ include "huawei-csi-plugin.fullname" . }}-provisioner-runner
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-attacher-runner
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+rules:
+  - apiGroups: [""]
+    resources: ["persistentvolumes"]
+    verbs: ["get", "list", "watch", "update"]
+  - apiGroups: [""]
+    resources: ["nodes"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["csinodes"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["volumeattachments"]
+    verbs: ["get", "list", "watch", "update"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-attacher-role
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: {{ include "huawei-csi-plugin.fullname" . }}-attacher-runner
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-driver-registrar-runner
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+rules:
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["get", "list", "watch", "create", "update", "patch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-driver-registrar-role
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "huawei-csi-plugin.fullname" . }}-node
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: {{ include "huawei-csi-plugin.fullname" . }}-driver-registrar-runner
+  apiGroup: rbac.authorization.k8s.io
+
+{{- if .Values.features.resizing.enabled }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-resizer-runner
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+rules:
+  - apiGroups: [""]
+    resources: ["persistentvolumes"]
+    verbs: ["get", "list", "watch", "update", "patch"]
+  - apiGroups: [""]
+    resources: ["persistentvolumeclaims"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["persistentvolumeclaims/status"]
+    verbs: ["update", "patch"]
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["list", "watch", "create", "update", "patch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-resizer-role
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: {{ include "huawei-csi-plugin.fullname" . }}-resizer-runner
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-resizer-cfg
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+rules:
+  - apiGroups: ["coordination.k8s.io"]
+    resources: ["leases"]
+    verbs: ["get", "watch", "list", "delete", "update", "create"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-resizer-role-cfg
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: Role
+  name: {{ include "huawei-csi-plugin.fullname" . }}-resizer-cfg
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+
+{{- if .Values.features.snapshotting.enabled }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshotter-runner
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+rules:
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["list", "watch", "create", "update", "patch"]
+  - apiGroups: ["snapshot.storage.k8s.io"]
+    resources: ["volumesnapshotclasses"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["snapshot.storage.k8s.io"]
+    resources: ["volumesnapshotcontents"]
+    verbs: ["create", "get", "list", "watch", "update", "delete"]
+  - apiGroups: ["snapshot.storage.k8s.io"]
+    resources: ["volumesnapshotcontents/status"]
+    verbs: ["update"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshotter-role
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshotter-runner
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshotter-leaderelection
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+rules:
+  - apiGroups: ["coordination.k8s.io"]
+    resources: ["leases"]
+    verbs: ["get", "watch", "list", "delete", "update", "create"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshotter-leaderelection
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: Role
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshotter-leaderelection
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshot-controller-runner
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+rules:
+  - apiGroups: [""]
+    resources: ["persistentvolumes"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["persistentvolumeclaims"]
+    verbs: ["get", "list", "watch", "update"]
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["storageclasses"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["list", "watch", "create", "update", "patch"]
+  - apiGroups: ["snapshot.storage.k8s.io"]
+    resources: ["volumesnapshotclasses"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["snapshot.storage.k8s.io"]
+    resources: ["volumesnapshotcontents"]
+    verbs: ["create", "get", "list", "watch", "update", "delete"]
+  - apiGroups: ["snapshot.storage.k8s.io"]
+    resources: ["volumesnapshots"]
+    verbs: ["get", "list", "watch", "update"]
+  - apiGroups: ["snapshot.storage.k8s.io"]
+    resources: ["volumesnapshots/status"]
+    verbs: ["update"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshot-controller-role
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshot-controller-runner
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshot-controller-leaderelection
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+rules:
+  - apiGroups: ["coordination.k8s.io"]
+    resources: ["leases"]
+    verbs: ["get", "watch", "list", "delete", "update", "create"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshot-controller-leaderelection
+  labels:
+    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "huawei-csi-plugin.fullname" . }}-controller
+    namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: Role
+  name: {{ include "huawei-csi-plugin.fullname" . }}-snapshot-controller-leaderelection
+  apiGroup: rbac.authorization.k8s.io
+
+---
+{{- end }}
+
+{{- end }}
