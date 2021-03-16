@@ -38,6 +38,27 @@ certManager:
   # @default -- [upstream values](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
 
+# certManagerIsssuers -- [cert-manager-issuers](https://cert-manager.io/docs/configuration/)
+# @default -- [example](./examples/cert-manager-issuers.yaml)
+certManagerIssuers:
+  # certManagerIssuers.enabled -- Enable cert-manager-issuers
+  enabled: false
+  name: certmgr-issuers
+  destination:
+    # certManagerIssuers.destination.namespace -- Namespace
+    namespace: infra-certmanager
+  # certManagerIssuers.repoURL -- Repo URL
+  # @default -- [repo](https://charts.adfinis.com)
+  repoURL: "https://charts.adfinis.com"
+  # certManagerIssuers.chart -- Chart
+  chart: "cert-manager-issuers"
+  # certManagerIussers.targetRevision -- [cert-manager-issuers Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-issuers) version
+  targetRevision: '0.2.*'
+  # certManagerIssuers.values -- Helm values
+  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-issuers/values.yaml)
+  values: {}
+
+
 # ingressNginx -- [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
 # @default -- [example](./examples/nginx-ingress.yaml)
 ingressNginx:

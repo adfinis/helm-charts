@@ -1,0 +1,26 @@
+# Deploy default Let's Encrypt ClusterIssuers.
+#
+# More examples may be found in the cert-maager-issuers chart.
+
+_: &email user@example.com
+_: &solvers
+- http01:
+    ingress:
+      class: nginx
+
+certManagerIussers:
+  enabled: true
+  values:
+    clusterIssuers:
+    - name: letsencrypt-prod
+      spec:
+        acme:
+          email: *email
+          server: https://acme-v02.api.letsencrypt.org/directory
+          solvers: *solvers
+    - name: letsencrypt-staging
+      spec:
+        acme:
+          email: *email
+          server: https://acme-staging-v02.api.letsencrypt.org/directory
+          solvers: *solvers
