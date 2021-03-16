@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.8.0](https://img.shields.io/badge/AppVersion-0.8.0-informational?style=flat-square)
+![Version: 0.9.0](https://img.shields.io/badge/Version-0.9.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.9.0](https://img.shields.io/badge/AppVersion-0.9.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -37,6 +37,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | certManager.repoURL | string | [repo](https://charts.jetstack.io) | Repo URL |
 | certManager.targetRevision | string | `"1.1.*"` | [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version |
 | certManager.values | object | [upstream values](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml) | Helm values |
+| certManagerIssuers.chart | string | `"cert-manager-issuers"` | Chart |
+| certManagerIssuers.destination.namespace | string | `"infra-certmanager"` | Namespace |
+| certManagerIssuers.enabled | bool | `false` | Enable cert-manager-issuers |
+| certManagerIssuers.name | string | `"certmgr-issuers"` |  |
+| certManagerIssuers.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
+| certManagerIssuers.targetRevision | string | `"0.2.*"` |  |
+| certManagerIssuers.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-issuers/values.yaml) | Helm values |
 | ingressNginx | object | [example](./examples/nginx-ingress.yaml) | [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) |
 | ingressNginx.chart | string | `"ingress-nginx"` | Chart |
 | ingressNginx.destination.namespace | string | `"infra-ingress"` | Namespace |

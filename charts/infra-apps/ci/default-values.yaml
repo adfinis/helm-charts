@@ -9,6 +9,10 @@ certManager:
   enabled: true
   values:
     TODO: add values in values.yaml
+certManagerIssuers:
+  enabled: true
+  values:
+    TODO: add values in values.yaml
 ingressNginx:
   enabled: true
   values:
