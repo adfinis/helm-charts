@@ -1,6 +1,13 @@
+# Deploy nginx-ingress with a customer default page
+#
+# This nxing-ingress example shows how you can specify a custom default
+# backend.
+
 ingressNginx:
   enabled: true
   values:
-    controller:
-      service:
-        externalTrafficPolicy: Local
+    defaultBackend:
+      enabled: true
+      image:
+        repository: gcr.io/google-containers/defaultbackend
+        tag: "1.4"

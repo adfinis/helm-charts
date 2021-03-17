@@ -1,0 +1,23 @@
+# cert-manager on AKS
+#
+# this example can be used to deploy cert-manager on AKS togther with
+# nginx-ingress in the infra-ingress namespace.
+# For this to work you should deploy nginx-ingress as documented in
+# `nginx-ingress-on-aks.yaml` in this folder.
+
+certManager:
+  enabled: true
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: infra-ingress
+  ignoreDifferences:
+    # On AKS there is a mutating admission controller that adds the
+    # expression {"key": "control-plane", "operator": "DoesNotExist"}
+    # to webhooks.
+    # We have to ignore this in Argo CD so it does not consider webhooks
+    # as out of sync all the time.
+    - group: admissionregistration.k8s.io
+      kind: ValidatingWebhookConfiguration
+      jsonPointers:
+        - /webhooks/0/namespaceSelector/matchExpressions/2
