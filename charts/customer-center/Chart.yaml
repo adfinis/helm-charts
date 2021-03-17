@@ -8,6 +8,7 @@ keywords:
   - customer-center
 home: https://github.com/adfinis-sygroup/customer-center
 sources:
+  - https://github.com/adfinis-sygroup/customer-center
   - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/customer-center
 maintainers:
   - name: adfinis-sygroup
