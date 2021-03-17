@@ -16,5 +16,6 @@ set +e
 if [[ ! -x `which helm` ]]; then
    curl -L -o - $helm_url | tar -C $helm_target -zxf -
    chmod +x $helm_bin
+   helm plugin install https://github.com/quintush/helm-unittest
    [[ ! -x `which helm` ]] && err "Could not install helm binary. See $helm_docs for info."
 fi

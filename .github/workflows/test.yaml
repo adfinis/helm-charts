@@ -13,6 +13,16 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Set up Helm
+      uses: azure/setup-helm@v1
+      with:
+        version: v3.4.2
+
+    - name: install helm unittest
+      run: |
+        helm env
+        helm plugin install https://github.com/quintush/helm-unittest
+
     - uses: actions/setup-python@v2
 
     - name: Setup environment for pre-commit
@@ -37,6 +47,11 @@ jobs:
         uses: azure/setup-helm@v1
         with:
           version: v3.4.2
+
+      - name: install helm unittest
+        run: |
+          helm env
+          helm plugin install https://github.com/quintush/helm-unittest
 
       - uses: actions/setup-python@v2
         with:
