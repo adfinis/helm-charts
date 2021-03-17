@@ -1,0 +1,17 @@
+# nginx-ingress on AKS
+#
+# Deploys the nginx-ingress component using and external load balancer
+# like is the default on AKS.
+
+ingressNginx:
+  enabled: true
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: infra-ingress
+  values:
+    controller:
+      service:
+        # this setting is needed on AKS since the cluster is behing an
+        # external Azure LoadBalancer.
+        externalTrafficPolicy: Local
