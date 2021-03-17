@@ -1076,6 +1076,28 @@ entries:
   cert-manager-issuers:
   - apiVersion: v2
     appVersion: "1"
+    created: "2021-03-17T09:40:10.725871205Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.6
+    description: Configure cert-manager Issuers and ClusterIssuers via Helm
+    digest: 128c1eab5e5d62f0db034cb41cd030e2d331de3f6f669660201c0d17f885f837
+    home: https://cert-manager.io/docs/configuration/
+    icon: https://raw.githubusercontent.com/adfinis-sygroup/helm-charts/master/charts/cert-manager-issuers/logo.png
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: cert-manager-issuers
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/cert-manager-issuers-0.2.1/cert-manager-issuers-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: "1"
     created: "2021-02-23T19:57:39.491473774Z"
     dependencies:
     - name: common
@@ -1359,6 +1381,27 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/huawei-csi-plugin-0.0.1/huawei-csi-plugin-0.0.1.tgz
     version: 0.0.1
   infra-apps:
+  - apiVersion: v2
+    appVersion: 0.9.1
+    created: "2021-03-17T09:40:10.983942212Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 72b66bf654903991107618cf3933defcdca233c588556c95b77c86c3f510f52d
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/infra-apps-0.9.1/infra-apps-0.9.1.tgz
+    version: 0.9.1
   - apiVersion: v2
     appVersion: 0.9.0
     created: "2021-03-16T19:33:01.701726381Z"
