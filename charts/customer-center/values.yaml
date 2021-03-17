@@ -214,10 +214,8 @@ postgresql:
 redis:
   # redis.enabled -- Enable Redis for caching
   enabled: true
-  # redis.servicename -- Redis service name
-  servicename: customer-center-redis-master
-  # redis.password -- Redis passwor
+  # redis.password -- Redis password
   password: my-redis-password
-  # redis.cluster.enabled -- Use master-slave topology
+  # redis.cluster.enabled -- Use leader-follower topology
   cluster:
     enabled: false

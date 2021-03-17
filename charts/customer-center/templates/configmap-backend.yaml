@@ -21,7 +21,7 @@ data:
   POSTGRES_USERNAME: {{ .Values.postgresql.postgresqlUsername | quote }}
 {{- end }}
 {{- if .Values.redis.enabled }}
-  REDIS_HOST: {{  .Values.redis.servicename | quote }}
+  REDIS_HOST: {{  include "customerCenter.redis.fullname" . }}-master
 {{- end }}
   SMTP_HOST: {{ .Values.backend.settings.smtp.host | quote }}
   SMTP_FROM: {{ .Values.backend.settings.smtp.from | quote }}

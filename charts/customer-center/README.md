@@ -104,10 +104,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | postgresql.postgresqlDatabase | string | `"db"` |  |
 | postgresql.postgresqlPassword | string | `"password"` | Set a password for PostgreSQL |
 | postgresql.postgresqlUsername | string | `"user"` |  |
-| redis.cluster.enabled | bool | `false` | Use master-slave topology |
+| redis.cluster.enabled | bool | `false` | Use leader-follower topology |
 | redis.enabled | bool | `true` | Enable Redis for caching |
-| redis.password | string | `"my-redis-password"` | Redis passwor |
-| redis.servicename | string | `"customer-center-redis-master"` | Redis service name |
+| redis.password | string | `"my-redis-password"` | Redis password |
 
 ## About this chart
 
