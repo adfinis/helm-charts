@@ -17,10 +17,14 @@ certManagerIussers:
         acme:
           email: *email
           server: https://acme-v02.api.letsencrypt.org/directory
+          privateKeySecretRef:
+            name: letsencrypt-prod-account-key
           solvers: *solvers
     - name: letsencrypt-staging
       spec:
         acme:
           email: *email
           server: https://acme-staging-v02.api.letsencrypt.org/directory
+          privateKeySecretRef:
+            name: letsencrypt-staging-account-key
           solvers: *solvers
