@@ -45,7 +45,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.resources | object | `{}` | Resource limits for backend |
 | backend.service.externalPort | int | `3000` | External Port of backend service |
 | backend.service.internalPort | int | `3000` | Internal Port of backend service |
-| backend.service.type | string | `"ClusterIP"` |  |
+| backend.service.type | string | `"ClusterIP"` | Backend service type |
 | backend.settings.appHost | string | `"my.example.com"` | Application host name |
 | backend.settings.appName | string | `"Customer Center"` | Application name |
 | backend.settings.auth.expirePassword | int | `3600` | Timeout in seconds before Redis key expiration |

@@ -13,10 +13,7 @@ backend:
     # backend.image.pullPolicy -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
-    # Specifiy secret for authentication.
-    # If not random token will be generated
-    # secret:
-    # backend.service.name -- Backend service name
+    # backend.service.type -- Backend service type
     type: ClusterIP
     # backend.service.externalPort -- External Port of backend service
     externalPort: 3000
