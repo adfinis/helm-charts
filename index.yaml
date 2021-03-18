@@ -286,6 +286,24 @@ entries:
     version: 0.1.0
   back8sup:
   - apiVersion: v2
+    appVersion: v0.7.3
+    created: "2021-03-18T08:29:38.002243668Z"
+    description: Deploy back8sup to a Kubernetes Cluster
+    digest: 1444949ba542fe54f6036d342d54a4cf5d270a0c649565625923ab751cecf813
+    home: https://github.com/adfinis-sygroup/back8sup
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: back8sup
+    sources:
+    - https://github.com/adfinis-sygroup/back8sup
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/back8sup
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/back8sup-0.3.2/back8sup-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v2
     appVersion: v0.7.1
     created: "2021-01-18T08:41:00.254680925Z"
     description: Deploy back8sup to a Kubernetes Cluster
@@ -1340,6 +1358,36 @@ entries:
     type: application
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/csi-secret-provider-class-0.1.0/csi-secret-provider-class-0.1.0.tgz
+    version: 0.1.0
+  customer-center:
+  - apiVersion: v2
+    appVersion: v2.0.0
+    created: "2021-03-18T08:29:38.157026528Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~10.3.13
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: ~12.8.3
+    description: Chart for Customer-Center application
+    digest: ceddaf07d72011bceb3ffe5d952bc33d0b0251c8432cbab18dab9cd719f37cbb
+    home: https://github.com/adfinis-sygroup/customer-center
+    keywords:
+    - customer-center
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: customer-center
+    sources:
+    - https://github.com/adfinis-sygroup/customer-center
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/customer-center
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/customer-center-0.1.0/customer-center-0.1.0.tgz
     version: 0.1.0
   huawei-csi-plugin:
   - apiVersion: v2
