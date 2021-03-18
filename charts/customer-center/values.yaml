@@ -1,0 +1,221 @@
+# Default values for customer-center-chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+backend:
+  # backend.replicaCount -- (int) Number of Backend replicas
+  replicaCount: 1
+  image:
+    # backend.image.repository -- Backend image name
+    repository: ghcr.io/adfinis-sygroup/customer-center/backend
+     # Specify a tag to override which version of customer-center to deploy.
+     # If no tag is specified the appVersion from Chart.yaml is used as tag.
+     # tag:
+    # backend.image.pullPolicy -- Backend image pull policy
+    pullPolicy: IfNotPresent
+  service:
+    # backend.service.type -- Backend service type
+    type: ClusterIP
+    # backend.service.externalPort -- External Port of backend service
+    externalPort: 3000
+    # backend.service.internalPort -- Internal Port of backend service
+    internalPort: 3000
+  # backend.resources -- Resource limits for backend
+  resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #  cpu: 100m
+    #  memory: 128Mi
+    # requests:
+    #  cpu: 100m
+    #  memory: 128Mi
+  livenessProbe:
+    # backend.livenessProbe.enabled -- Enable liveness probe on backend
+    enabled: true
+    # backend.livenessProbe.path -- Path to probe
+    path: /api/v1/health
+    # backend.livenessProbe.initialDelaySeconds -- Number of seconds after the container has started before liveness probe is initiated
+    initialDelaySeconds: 60
+    # backend.livenessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    periodSeconds: 10
+    # backend.livenessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    timeoutSeconds: 5
+    # backend.livenessProbe.failureThreshold -- Number of tries to perform the probe
+    failureThreshold: 6
+    # backend.livenessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    successThreshold: 1
+  readinessProbe:
+    # backend.readinessProbe.enabled -- Enable readiness probe on backend
+    enabled: false
+    # backend.readinessProbe.path -- Path to probe
+    path: /api/v1/health
+    # backend.readinessProbe.initialDelaySeconds -- Number of seconds after the container has started before readiness probe is initiated
+    initialDelaySeconds: 30
+    # backend.readinessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    periodSeconds: 10
+    # backend.readinessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    timeoutSeconds: 5
+    # backend.readinessProbe.failureThreshold -- Number of tries to perform the probe
+    failureThreshold: 6
+    # backend.readinessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    successThreshold: 1
+  settings:
+    # settings for backend
+    # backend.settings.nodeEnv -- Environment for NodeJS (can be development, testing, staging, production)
+    nodeENV: production
+    # backend.settings.debug -- Verbosity of logging
+    debug: app:info,app:warn,app:error
+    # backend.settings.appName -- Application name
+    appName: Customer Center
+    # backend.settings.appHost -- Application host name
+    appHost: my.example.com
+    idp:
+      # backend.settings.idp.host -- Keycloak host
+      host: https://sso.example.com
+      # backend.settings.idp.tokenPath -- Keycloak token path
+      tokenPath: /auth/realms/example/protocol/openid-connect/token
+      # backend.settings.idp.clientID -- Keycloak client ID
+      clientID: this-is-my-client-id
+      # backend.settings.idp.clientSecret -- Keycloak client secret
+      clientSecret: this-is-my-client-secret
+    # backend.settings.timed -- Timed settings
+    timed:
+      # backend.settings.timed.host -- Timed host
+      host: https://timed.example.com
+      # backend.settings.timed.prefix -- Timed prefix
+      prefix: /api/v1
+    smtp:
+      # backend.settings.stmp.host -- SMTP server host
+      host: mail.example.com
+      # backend.settings.smtp.from -- Default email address to use for various responses
+      from: customer-center@example.com
+      # backend.settings.stmp.to -- Default destination email address
+      to: administration@example.com
+      # backend.settings.stmp.secure -- If true the connection will use TLS when connetion to server
+      secure: true
+      # backend.settings.stmp.requireTLS -- If this is true and secure is false then Nodemailer tries to use STARTTLS even if the server does not advertise support for it. If the connection can not be encrypted then message is not sent
+      requireTLS: true
+    auth:
+      # backend.settings.auth.secret -- Authentication settings
+      secret: my-super-secret
+      # backend.settings.auth.roleAdmin -- Admin role to use
+      roleAdmin: ldap-role-admin
+      # backend.settings.auth.roleEmployee -- Employee role to use
+      roleEmployee: ldap-role-employee
+      # backend.settings.auth.expirePassword -- Timeout in seconds before Redis key expiration
+      expirePassword: 3600
+      # backend.settings.auth.usersSearchBase -- Search base to find users
+      usersSearchBase: ou=staff,cn=accounts,dc=sso,dc=example,dc=com
+      # backend.settings.auth.usersSearchFilter -- Search filter to get users username
+      usersSearchFilter: (uid={{username}})
+      # backend.settings.auth.usersGroupSearchBase -- Search base to find users groups
+      usersGroupSearchBase: cn=groups,ou=staff,cn=accounts,dc=sso,dc=example,dc=com
+      # backend.settings.auth.usersGroupSearchFilter -- Search filter to get users groups name
+      usersGroupSearchFilter: (&(uniqueMember={{dn}})(objectClass=posixGroup))
+      # backend.settings.auth.usersCustomersSearchBase -- Search base to find customers users
+      usersCustomersSearchBase: ou=customers,cn=accounts,dc=sso,dc=example,dc=com
+      # backend.settings.auth.usersCustomersSearchFilter -- Search filter to get customers users name
+      usersCustomersSearchFilter: (uid={{username}})
+      # backend.settings.auth.usersCustomersSearchBase -- Search base to find customers users group
+      usersCustomersGroupSearchBase: cn=groups,ou=customers,cn=accounts,dc=sso,dc=example,dc=com
+      # backend.settings.auth.usersCustomersGroupSearchFilter -- Search filter to get customers users groups name
+      usersCustomersGroupSearchFilter: (&(uniqueMember={{dn}})(objectClass=posixGroup))
+    ldap:
+      # backend.settings.ldap.host -- LDAP host
+      host: ldaps://sso.example.com:636
+      # backend.settings.ldap.bindDN -- LDAP bindDN to authenticate to LDAP server
+      bindDN: uid=customercenter-test.ldap.auth,cn=systems,dc=sso,dc=example,dc=com
+      # backend.settings.ldap.bindCredentials -- LDAP password to authenticate to LDAP server according to bindDN
+      bindCredentials: bind-credentials
+
+frontend:
+  # frontend.replicaCount -- (int) Number of Backend replicas
+  replicaCount: 1
+  image:
+    # frontend.image.repository -- Frontend image name
+    repository: ghcr.io/adfinis-sygroup/customer-center/frontend
+    # Specify a tag to override which version of customer-center to deploy.
+    # If no tag is specified the appVersion from Chart.yaml is used as tag.
+    # tag:
+    # frontend.image.pullPolicy -- Frontend image pull policy
+    pullPolicy: IfNotPresent
+  service:
+    # frontend.service.type -- Frontend service type
+    type: ClusterIP
+    # frontend.service.externalPort -- External Port of frontend service
+    externalPort: 80
+    # frontend.service.internalPort -- Internal Port of frontend service
+    internalPort: 80
+  # frontend.resources -- Resource limits for frontend
+  resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #  cpu: 100m
+    #  memory: 128Mi
+    # requests:
+    #  cpu: 100m
+    #  memory: 128Mi
+  livenessProbe:
+    # frontend.livenessProbe.enabled -- Enable liveness probe on frontend
+    enabled: true
+    # frontend.livenessProbe.initialDelaySeconds -- Number of seconds after the container has started before liveness probe is initiated
+    initialDelaySeconds: 60
+    # frontend.livenessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    periodSeconds: 10
+    # frontend.livenessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    timeoutSeconds: 5
+    # frontend.livenessProbe.failureThreshold -- Number of tries to perform the probe
+    failureThreshold: 6
+    # frontend.livenessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    successThreshold: 1
+  readinessProbe:
+    # frontend.readinessProbe.enabled -- Enable readiness probe on frontend
+    enabled: true
+    # frontend.readinessProbe.initialDelaySeconds -- Number of seconds after the container has started before readiness probe is initiated
+    initialDelaySeconds: 30
+    # frontend.readinessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    periodSeconds: 10
+    # frontend.readinessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    timeoutSeconds: 5
+    # frontend.readinessProbe.failureThreshold -- Number of tries to perform the probe
+    failureThreshold: 6
+    # frontend.readinessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    successThreshold: 1
+
+ingress:
+  # ingress.enabled -- Enable ingress for customer-center
+  enabled: true
+  # ingress.annotations -- Ingress annotations
+  annotations: {}
+    # cert-manager.io/cluster-issuer: letsencrypt-prod
+  # ingress.hosts -- Ingress hostnames
+  hosts: ["my.example.com"]
+  # ingress.tls -- Ingress TLS options
+  tls:
+    - secretName: customer-center-tls
+      hosts:
+        - my.example.com
+
+postgresql:
+  # postgresql.enabled -- Enable PostgreSQL for persistence
+  enabled: true
+  # postgresql.username -- PostgreSQL user name
+  postgresqlUsername: user
+  # postgresql.postgresqlPassword -- Set a password for PostgreSQL
+  postgresqlPassword: password
+  # postgresql.database -- PostgreSQL database name
+  postgresqlDatabase: db
+
+redis:
+  # redis.enabled -- Enable Redis for caching
+  enabled: true
+  # redis.password -- Redis password
+  password: my-redis-password
+  # redis.cluster.enabled -- Use leader-follower topology
+  cluster:
+    enabled: false

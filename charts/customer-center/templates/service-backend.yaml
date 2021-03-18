@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "customerCenter.fullname" . }}-backend
+  labels:
+    {{- include "customerCenter.labels" . | nindent 4 }}
+    app.kubernetes.io/component: backend
+spec:
+  type: {{ .Values.backend.service.type }}
+  ports:
+    - port: {{ .Values.backend.service.externalPort }}
+      targetPort: {{ .Values.backend.service.internalPort }}
+      protocol: TCP
+      name: {{ include "customerCenter.fullname" . }}
+  selector:
+    {{- include "customerCenter.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: backend
