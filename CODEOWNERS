@@ -5,9 +5,13 @@
 /charts/argoconfig                  @adfinis-sygroup/helm-charts @hairmare
 /charts/back8sup                    @adfinis-sygroup/helm-charts @eyenx @tongpu
 /charts/barman                      @adfinis-sygroup/helm-charts @michaelimfeld @sinicis
+/charts/caasperli                   @adfinis-sygroup/helm-charts @hairmare
+/charts/cert-manager-issuers        @adfinis-sygroup/helm-charts @hairmare
 /charts/common                      @adfinis-sygroup/helm-charts @hairmare
-/charts/csi-secret-provider-class   @adfinis-sygroup/helm-charts @hairmare
+/charts/csi-secret-provider-class   @adfinis-sygroup/helm-charts @hairmare @eyenx
+/charts/customer-center             @adfinis-sygroup/helm-charts @vmaillot
 /charts/huawei-csi-plugin           @adfinis-sygroup/helm-charts @sinicis
+/charts/osschallenge                @adfinis-sygroup/helm-charts @trowik
 /charts/timed                       @adfinis-sygroup/helm-charts @michaelimfeld @aziiee
 /charts/vault-auth                  @adfinis-sygroup/helm-charts @eyenx
 /charts/vault-csi-provider          @adfinis-sygroup/helm-charts @pree @eyenx
