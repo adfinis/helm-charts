@@ -21,7 +21,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 |-----|------|---------|-------------|
 | csiProviderPath | string | `"/etc/kubernetes/secrets-store-csi-providers"` | set the path where the secrets-store-csi-provider gets installed on the node |
 | image | object | `{"pullPolicy":"IfNotPresent","repository":"hashicorp/secrets-store-csi-driver-provider-vault","tag":"0.0.7"}` | specifies the image to use for the secrets-store-csi-driver |
-| resources | object | `{"limits":{"cpu":"50m","memory":"100Mi"},"requests":{"cpu":"50m","memory":"100Mi"}}` | Set the limits and requests on vault csi-driver-provider pod resources |
+| resources | object | `{}` | Set the limits and requests on vault csi-driver-provider pod resources |
 | secretsStoreCsiDriver.enabled | bool | `true` | specifies wether or not the secrets-store-csi-driver dependency gets installed |
 
 ## About this chart

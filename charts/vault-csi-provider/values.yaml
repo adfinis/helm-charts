@@ -10,13 +10,7 @@ image:
   pullPolicy: IfNotPresent
 
 # resources -- Set the limits and requests on vault csi-driver-provider pod resources
-resources:
-  requests:
-    cpu: 50m
-    memory: 100Mi
-  limits:
-    cpu: 50m
-    memory: 100Mi
+resources: {}
 
 # csiProviderPath -- set the path where the secrets-store-csi-provider gets installed on the node
 csiProviderPath: "/etc/kubernetes/secrets-store-csi-providers"
