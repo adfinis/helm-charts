@@ -6,11 +6,17 @@
 # image -- specifies the image to use for the secrets-store-csi-driver
 image:
   repository: hashicorp/secrets-store-csi-driver-provider-vault
-  tag: 0.0.6
+  tag: 0.0.7
   pullPolicy: IfNotPresent
 
 # resources -- Set the limits and requests on vault csi-driver-provider pod resources
-resources: {}
+resources:
+  requests:
+    cpu: 50m
+    memory: 100Mi
+  limits:
+    cpu: 50m
+    memory: 100Mi
 
 # csiProviderPath -- set the path where the secrets-store-csi-provider gets installed on the node
 csiProviderPath: "/etc/kubernetes/secrets-store-csi-providers"
