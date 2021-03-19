@@ -31,4 +31,4 @@ spec:
           hostPath:
             path: {{ .Values.csiProviderPath }}
       nodeSelector:
-        beta.kubernetes.io/os: linux
+        kubernetes.io/os: linux
