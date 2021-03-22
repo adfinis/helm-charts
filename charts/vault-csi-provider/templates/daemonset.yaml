@@ -30,3 +30,5 @@ spec:
         - name: providervol
           hostPath:
             path: {{ .Values.csiProviderPath }}
+      nodeSelector:
+        kubernetes.io/os: linux

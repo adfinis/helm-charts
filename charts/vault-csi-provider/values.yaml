@@ -6,7 +6,7 @@
 # image -- specifies the image to use for the secrets-store-csi-driver
 image:
   repository: hashicorp/secrets-store-csi-driver-provider-vault
-  tag: 0.0.6
+  tag: 0.0.7
   pullPolicy: IfNotPresent
 
 # resources -- Set the limits and requests on vault csi-driver-provider pod resources

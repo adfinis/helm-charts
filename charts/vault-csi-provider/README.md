@@ -1,6 +1,6 @@
 # vault-csi-provider
 
-![Version: 0.2.2](https://img.shields.io/badge/Version-0.2.2-informational?style=flat-square) ![AppVersion: 0.0.6](https://img.shields.io/badge/AppVersion-0.0.6-informational?style=flat-square)
+![Version: 0.2.3](https://img.shields.io/badge/Version-0.2.3-informational?style=flat-square) ![AppVersion: 0.0.7](https://img.shields.io/badge/AppVersion-0.0.7-informational?style=flat-square)
 
 A helm chart to install the vault secrets-store-csi-driver
 
@@ -13,14 +13,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts | secrets-store-csi-driver | 0.0.19 |
+| https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts | secrets-store-csi-driver | 0.0.20 |
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | csiProviderPath | string | `"/etc/kubernetes/secrets-store-csi-providers"` | set the path where the secrets-store-csi-provider gets installed on the node |
-| image | object | `{"pullPolicy":"IfNotPresent","repository":"hashicorp/secrets-store-csi-driver-provider-vault","tag":"0.0.6"}` | specifies the image to use for the secrets-store-csi-driver |
+| image | object | `{"pullPolicy":"IfNotPresent","repository":"hashicorp/secrets-store-csi-driver-provider-vault","tag":"0.0.7"}` | specifies the image to use for the secrets-store-csi-driver |
 | resources | object | `{}` | Set the limits and requests on vault csi-driver-provider pod resources |
 | secretsStoreCsiDriver.enabled | bool | `true` | specifies wether or not the secrets-store-csi-driver dependency gets installed |
 
