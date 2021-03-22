@@ -33,7 +33,7 @@ certManager:
   # certManager.chart -- Chart
   chart: "cert-manager"
   # certManager.targetRevision -- [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version
-  targetRevision: '1.1.*'
+  targetRevision: '1.2.*'
   # certManager.values -- Helm values
   # @default -- [upstream values](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
