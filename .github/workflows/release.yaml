@@ -27,10 +27,7 @@ jobs:
           version: v3.4.2
 
       - name: Add dependency chart repos
-        run: |
-          helm repo add adfinis https://charts.adfinis.com && \
-          helm repo add secrets-store-csi-driver https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts && \
-          helm repo add bitnami https://charts.bitnami.com/bitnami
+        ruun: yq e '."chart-repos"[]' chart-testing/ct.yaml | tr "=" " " | xargs -L1 helm repo add
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.1.0
