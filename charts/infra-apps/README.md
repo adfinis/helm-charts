@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.10.0](https://img.shields.io/badge/Version-0.10.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.10.0](https://img.shields.io/badge/AppVersion-0.10.0-informational?style=flat-square)
+![Version: 0.11.0](https://img.shields.io/badge/Version-0.11.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.11.0](https://img.shields.io/badge/AppVersion-0.11.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -35,7 +35,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | certManager.destination.namespace | string | `"infra-certmanager"` | Namespace |
 | certManager.enabled | bool | `false` | Enable cert-manager |
 | certManager.repoURL | string | [repo](https://charts.jetstack.io) | Repo URL |
-| certManager.targetRevision | string | `"1.1.*"` | [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version |
+| certManager.targetRevision | string | `"1.2.*"` | [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version |
 | certManager.values | object | [upstream values](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml) | Helm values |
 | certManagerIssuers.chart | string | `"cert-manager-issuers"` | Chart |
 | certManagerIssuers.destination.namespace | string | `"infra-certmanager"` | Namespace |
