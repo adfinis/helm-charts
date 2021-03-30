@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.10.1](https://img.shields.io/badge/Version-0.10.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.10.1](https://img.shields.io/badge/AppVersion-0.10.1-informational?style=flat-square)
+![Version: 0.11.0](https://img.shields.io/badge/Version-0.11.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.11.0](https://img.shields.io/badge/AppVersion-0.11.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -65,6 +65,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | gatekeeper.repoURL | string | [repo](https://open-policy-agent.github.io/gatekeeper/charts) | Repo URL |
 | gatekeeper.targetRevision | string | `"3.2.2"` | [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version |
 | gatekeeper.values | object | [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml) | Helm values |
+| secretsStoreCsiDriver | object | - | [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([examplpe](./examples/secrets-store-csi-driver.yaml)) |
+| secretsStoreCsiDriver.chart | string | `"secrets-store-csi-driver"` | Chart |
+| secretsStoreCsiDriver.destination.namespace | string | `"infra-secrets-store-csi"` | Namespace |
+| secretsStoreCsiDriver.enabled | bool | `false` | Enable secrets-store-csi-driver |
+| secretsStoreCsiDriver.repoURL | string | [repo](https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts) | Repo URL |
+| secretsStoreCsiDriver.targetRevision | string | `"0.0.*"` | [vault-csi-provider Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/charts/secrets-store-csi-driver) version |
+| secretsStoreCsiDriver.values | object | [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/charts/secrets-store-csi-driver/values.yaml) | Helm values |
 | vault | object | - | [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml)) |
 | vault.chart | string | `"vault"` | Chart |
 | vault.destination.namespace | string | `"infra-vault"` | Namespace |
@@ -74,18 +81,21 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vault.values | object | [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml) | Helm values |
 | vaultAuth | object | - | [vault-auth](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) ([example](./examples/vault-auth.yaml)) |
 | vaultAuth.chart | string | `"vault-auth"` | Chart |
+| vaultAuth.destination.namespace | string | `"infra-vault"` | Namespace |
 | vaultAuth.enabled | bool | `false` | Enable vault-auth |
 | vaultAuth.repoURL | string | [repo](https://charts.adfinis.com/) | Repo URL |
 | vaultAuth.targetRevision | string | `"0.1.*"` | [vault-auth Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) version |
 | vaultAuth.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-auth/values.yaml) | Helm values |
 | vaultCsiProvider | object | - | [vault-csi-provider](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-csi-provider) ([example](./examples/vault-csi-provider.yaml)) |
 | vaultCsiProvider.chart | string | `"vault-csi-provider"` | Chart |
+| vaultCsiProvider.destination.namespace | string | `"infra-vault"` | Namespace |
 | vaultCsiProvider.enabled | bool | `false` | Enable vault-csi-provider |
 | vaultCsiProvider.repoURL | string | [repo](https://charts.adfinis.com/) | Repo URL |
 | vaultCsiProvider.targetRevision | string | `"0.2.*"` | [vault-csi-provider Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-csi-provider) version |
 | vaultCsiProvider.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-csi-provider/values.yaml) | Helm values |
 | vaultMonitoring | object | - | [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml)) |
 | vaultMonitoring.chart | string | `"vault-monitoring"` | Chart |
+| vaultMonitoring.destination.namespace | string | `"infra-vault"` | Namespace |
 | vaultMonitoring.enabled | bool | `false` | Enable vault-monitoring |
 | vaultMonitoring.repoURL | string | [repo](https://charts.adfinis.com/) | Repo URL |
 | vaultMonitoring.targetRevision | string | `"0.1.*"` | [vault-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) version |
