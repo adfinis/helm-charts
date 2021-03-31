@@ -34,6 +34,8 @@ jobs:
         key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
 
     - uses: pre-commit/action@v1.0.1
+      with:
+        extra_args: '--color always'
 
   lint-test:
     name: Lint and Install
