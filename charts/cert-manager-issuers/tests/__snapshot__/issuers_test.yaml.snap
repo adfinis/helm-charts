@@ -1,0 +1,107 @@
+should create namespaced vault issuers:
+  1: |
+    apiVersion: cert-manager.io/v1
+    kind: Issuer
+    metadata:
+      labels:
+        app.kubernetes.io/app: cert-manager-issuers
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: "1"
+        helm.sh/chart: cert-manager-issuers-0.2.2
+      name: vault-issuer
+      namespace: demo-com
+    spec:
+      vault:
+        auth: {}
+        caBundle: <base64 encoded CA Bundle PEM file>
+        path: pki_int/sign/example-dot-com
+        server: https://vault.local
+  2: |
+    apiVersion: cert-manager.io/v1
+    kind: Issuer
+    metadata:
+      labels:
+        app.kubernetes.io/app: cert-manager-issuers
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: "1"
+        helm.sh/chart: cert-manager-issuers-0.2.2
+      name: vault-issuer
+      namespace: demo-org
+    spec:
+      vault:
+        auth: {}
+        caBundle: <base64 encoded CA Bundle PEM file>
+        path: pki_int/sign/example-dot-org
+        server: https://vault.local
+should disable issuers:
+  1: |
+    apiVersion: cert-manager.io/v1
+    kind: Issuer
+    metadata:
+      labels:
+        app.kubernetes.io/app: cert-manager-issuers
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: "1"
+        helm.sh/chart: cert-manager-issuers-0.2.2
+      name: active-issuer
+    spec:
+      selfSigned: {}
+should match snapshot:
+  1: |
+    apiVersion: cert-manager.io/v1
+    kind: Issuer
+    metadata:
+      labels:
+        app.kubernetes.io/app: cert-manager-issuers
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: "1"
+        helm.sh/chart: cert-manager-issuers-0.2.2
+      name: cert-manager-issuers
+    spec:
+      selfSigned: {}
+  2: |
+    apiVersion: cert-manager.io/v1
+    kind: Issuer
+    metadata:
+      annotations:
+        foo: bar
+      labels:
+        app.kubernetes.io/app: cert-manager-issuers
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: "1"
+        helm.sh/chart: cert-manager-issuers-0.2.2
+      name: test-with-name-and-annotations
+    spec:
+      selfSigned: {}
+  3: |
+    apiVersion: cert-manager.io/v1
+    kind: Issuer
+    metadata:
+      labels:
+        app.kubernetes.io/app: cert-manager-issuers
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: "1"
+        foo: bar
+        helm.sh/chart: cert-manager-issuers-0.2.2
+      name: test-with-labels-in-metadata
+    spec:
+      selfSigned: {}
+  4: |
+    apiVersion: cert-manager.io/v1
+    kind: Issuer
+    metadata:
+      labels:
+        app.kubernetes.io/app: cert-manager-issuers
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: "1"
+        helm.sh/chart: cert-manager-issuers-0.2.2
+      name: top-level-name-syntax-sugar
+    spec:
+      selfSigned: {}

@@ -1,0 +1,41 @@
+suite: issuer tests
+templates:
+  - issuers.yaml
+tests:
+  - it: should match snapshot
+    values:
+      - ../ci/default-values.yaml
+    asserts:
+      - hasDocuments:
+          count: 4
+      - matchSnapshot: {}
+  - it: should disable issuers
+    values:
+      - ../examples/disable-issuers.yaml
+    asserts:
+      - hasDocuments:
+          count: 1
+      - matchSnapshot: {}
+  - it: should create namespaced vault issuers
+    values:
+      - ../examples/vault-pki-issuers-in-namespaces.yaml
+    asserts:
+      - hasDocuments:
+          count: 2
+      - documentIndex: 0
+        equal:
+          path: metadata.namespace
+          value: demo-com
+      - documentIndex: 0
+        equal:
+          path: spec.vault.path
+          value: pki_int/sign/example-dot-com
+      - documentIndex: 1
+        equal:
+          path: metadata.namespace
+          value: demo-org
+      - documentIndex: 1
+        equal:
+          path: spec.vault.path
+          value: pki_int/sign/example-dot-org
+      - matchSnapshot: {}

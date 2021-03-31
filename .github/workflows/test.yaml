@@ -13,6 +13,16 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Set up Helm
+      uses: azure/setup-helm@v1
+      with:
+        version: v3.4.2
+
+    - name: install helm unittest
+      run: |
+        helm env
+        helm plugin install https://github.com/quintush/helm-unittest
+
     - uses: actions/setup-python@v2
 
     - name: Setup environment for pre-commit
@@ -23,7 +33,9 @@ jobs:
         path: ~/.cache/pre-commit
         key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
 
-    - uses: pre-commit/action@v1.0.1
+    - uses: pre-commit/action@v2.0.0
+      with:
+        extra_args: '--color always'
 
   lint-test:
     name: Lint and Install
@@ -37,6 +49,11 @@ jobs:
         uses: azure/setup-helm@v1
         with:
           version: v3.4.2
+
+      - name: install helm unittest
+        run: |
+          helm env
+          helm plugin install https://github.com/quintush/helm-unittest
 
       - uses: actions/setup-python@v2
         with:
