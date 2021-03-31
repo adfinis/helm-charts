@@ -1,6 +1,10 @@
 #!/bin/bash
 
 # hacky script to update snapshots, used by pre-commit
+#
+# This script expects a list of all the changed files
+# as $@ and will use that to figure out on which charts
+# it needs to upate snapshots.
 
 set -e
 
