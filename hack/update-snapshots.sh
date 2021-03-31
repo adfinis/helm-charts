@@ -19,6 +19,7 @@ declare -a charts
 for file in $@; do
     charts+=(`echo $file | cut -d/ -f 1-2`)
 done
+charts=`echo ${charts[@]} | tr ' ' '\n' | sort | uniq`
 
 for chart in $charts; do
     # unittest needs deps to work
