@@ -16,10 +16,10 @@ set -x
 
 # grab all charts that where modified
 declare -a charts
-for file in $@; do
+for file in "$@"; do
     charts+=(`echo $file | cut -d/ -f 1-2`)
 done
-charts=`echo ${charts[@]} | tr ' ' '\n' | sort -u`
+charts=`printf '%s\n' ${charts[@]} | sort -u`
 
 for chart in $charts; do
     # unittest needs deps to work
