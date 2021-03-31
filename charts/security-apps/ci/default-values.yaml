@@ -37,3 +37,7 @@ vaultCsiProvider:
 vaultMonitoring:
   enabled: true
   values: {}
+
+secretsStoreCsiDriver:
+  enabled: true
+  values: {}

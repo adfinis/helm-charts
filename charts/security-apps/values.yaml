@@ -145,7 +145,7 @@ vaultAuth:
   enabled: false
   name: vault-auth
   destination:
-    # vault-auth.destination.namespace -- Namespace
+    # vaultAuth.destination.namespace -- Namespace
     namespace: "infra-vault"
   # vaultAuth.repoURL -- Repo URL
   # @default -- [repo](https://charts.adfinis.com/)
@@ -165,7 +165,7 @@ vaultCsiProvider:
   enabled: false
   name: vault-csi-provider
   destination:
-    # vault-csi-provider.destination.namespace -- Namespace
+    # vaultCsiProvider.destination.namespace -- Namespace
     namespace: "infra-vault"
   # vaultCsiProvider.repoURL -- Repo URL
   # @default -- [repo](https://charts.adfinis.com/)
@@ -185,7 +185,7 @@ vaultMonitoring:
   enabled: false
   name: vault-monitoring
   destination:
-    # vault-monitoring.destination.namespace -- Namespace
+    # vaultMonitoring.destination.namespace -- Namespace
     namespace: "infra-vault"
   # vaultMonitoring.repoURL -- Repo URL
   # @default -- [repo](https://charts.adfinis.com/)
@@ -196,4 +196,24 @@ vaultMonitoring:
   targetRevision: "0.1.*"
   # vaultMonitoring.values -- Helm values
   # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-monitoring/values.yaml)
+  values: {}
+
+# secretsStoreCsiDriver -- [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([examplpe](./examples/secrets-store-csi-driver.yaml))
+# @default -- -
+secretsStoreCsiDriver:
+  # secretsStoreCsiDriver.enabled -- Enable secrets-store-csi-driver
+  enabled: false
+  name: secrets-store-csi-driver
+  destination:
+    # secretsStoreCsiDriver.destination.namespace -- Namespace
+    namespace: "infra-secrets-store-csi"
+  # secretsStoreCsiDriver.repoURL -- Repo URL
+  # @default -- [repo](https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts)
+  repoURL: "https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts"
+  # secretsStoreCsiDriver.chart -- Chart
+  chart: "secrets-store-csi-driver"
+    # secretsStoreCsiDriver.targetRevision -- [vault-csi-provider Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/charts/secrets-store-csi-driver) version
+  targetRevision: "0.0.*"
+  # secretsStoreCsiDriver.values -- Helm values
+  # @default -- [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/charts/secrets-store-csi-driver/values.yaml)
   values: {}
