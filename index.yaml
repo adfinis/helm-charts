@@ -1094,6 +1094,31 @@ entries:
   cert-manager-issuers:
   - apiVersion: v2
     appVersion: "1"
+    created: "2021-03-31T11:06:01.865223177Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.6
+    description: Configure cert-manager Issuers and ClusterIssuers via Helm
+    digest: 2ff02193606a9752997a1ff86f4a6341d2e3f028eed25325219493addf53963f
+    home: https://cert-manager.io/docs/configuration/
+    icon: https://raw.githubusercontent.com/adfinis-sygroup/helm-charts/master/charts/cert-manager-issuers/logo.png
+    keywords:
+    - cert-manager
+    - tls
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: cert-manager-issuers
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/cert-manager-issuers-0.2.2/cert-manager-issuers-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: "1"
     created: "2021-03-17T09:40:10.725871205Z"
     dependencies:
     - name: common
