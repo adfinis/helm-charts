@@ -111,3 +111,12 @@ prometheus:
     metricRelabelings: []
     # prometheus.serviceMonitor.relabelings -- RelabelConfigs to apply to samples before scraping
     relabelings: []
+  rules:
+    # prometheus.rules.enabled -- Enable Alertmanager rules
+    enabled: false
+    # prometheus.rules.selector -- Selector labels for Alertmanager rules
+    selector: []
+    # prometheus.rules.additionalLabels -- Additional labels for Alertmanager rules
+    additionalLabels: []
+    # prometheus.rules.spec -- Array of Alertmanager rules
+    spec: []
