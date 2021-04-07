@@ -1,0 +1,22 @@
+{{- if and .Values.prometheus.enabled .Values.prometheus.rules.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: {{ include "barman.fullname" . }}
+   {{- if .Values.prometheus.rules.namespace }}
+  namespace: {{ .Values.prometheus.rules.namespace }}
+  {{- end }}
+  labels:
+    {{- include "barman.labels" . | nindent 4 }}
+    {{- if .Values.prometheus.rules.selector }}
+    {{- toYaml .Values.prometheus.rules.selector | nindent 4 }}
+    {{- end }}
+    {{- if .Values.prometheus.rules.additionalLabels }}
+    {{- toYaml .Values.prometheus.rules.additionalLabels | nindent 4 }}
+    {{- end }}
+spec:
+  groups:
+  - name: barman
+    rules:
+    {{- toYaml .Values.prometheus.rules.spec | nindent 4 }}
+{{- end }}
