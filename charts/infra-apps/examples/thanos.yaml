@@ -1,0 +1,5 @@
+thanos:
+  enabled: true
+  values:
+    receive:
+      enabled: true

@@ -65,6 +65,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rbacManager.repoURL | string | [repo](https://charts.fairwinds.com/stable) | Repo URL |
 | rbacManager.targetRevision | string | `"1.7.*"` | [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version |
 | rbacManager.values | object | [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml) | Helm values |
+| thanos | object | [example](./examples/thanos.yaml) | [Thanos](https://thanos.io/) |
+| thanos.chart | string | `"thanos"` | Chart |
+| thanos.destination.namespace | string | `"infra-monitoring"` | Namespace |
+| thanos.enabled | bool | `false` | Enable Thanos |
+| thanos.repoURL | string | [repo](https://charts.bitnami.com/bitnami) | Repo URL |
+| thanos.targetRevision | string | `"3.15.*"` | [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos) |
+| thanos.values | object | [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/thanos/values.yaml) | Helm values |
 | velero | object | [example](./examples/velero.yaml) | [Velero](https://velero.io/) |
 | velero.chart | string | `"velero"` | Chart |
 | velero.destination.namespace | string | `"infra-velero"` | Namespace |
