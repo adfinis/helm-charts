@@ -1,5 +1,12 @@
 thanos:
   enabled: true
   values:
+    existingObjstoreSecret: mysecret
+    storeGateway:
+      enabled: true
+    queryFrontend:
+      ingress:
+        enabled: true
+        hostname: thanos.example
     receive:
       enabled: true
