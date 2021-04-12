@@ -1,12 +1,30 @@
+# Deploy Thanos
+#
+# This takes care of deploying Thanos' store gateway, query frontend, and receiver. 
+# Usually the prometheus-operator from kube-prometheus-stack will deploy 
+# ThanosRulers and sidecars to complete the stack.
+
 thanos:
   enabled: true
   values:
-    existingObjstoreSecret: mysecret
+    objstoreConfig:
+      # configure minio client lib for S3 and other S3 compatible endpoints
+      type: S3
+      config:
+        bucket: ""
+        endpoint: ""
+        region: ""
+        access_key: ""
+    # on production, use a secret to not leak S3 credentials
+    # existingObjstoreSecret: mysecret
     storegateway:
       enabled: true
     queryFrontend:
       ingress:
         enabled: true
-        hostname: thanos.example
+        hostname: thanos.example.com
     receive:
       enabled: true
+    # for demo purposes you can use the minio subchart:
+    minio:
+      enabled: false
