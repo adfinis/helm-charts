@@ -2,7 +2,7 @@ thanos:
   enabled: true
   values:
     existingObjstoreSecret: mysecret
-    storeGateway:
+    storegateway:
       enabled: true
     queryFrontend:
       ingress:
