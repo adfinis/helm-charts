@@ -12,6 +12,6 @@ ingressNginx:
   values:
     controller:
       service:
-        # this setting is needed on AKS since the cluster is behing an
+        # this setting is needed on AKS since the cluster is behind an
         # external Azure LoadBalancer.
         externalTrafficPolicy: Local
