@@ -13,10 +13,10 @@ thanos:
       config:
         bucket: ""
         endpoint: ""
-        region: ""
         access_key: ""
+        secret_key: ""
     # on production, use a secret to not leak S3 credentials
-    # existingObjstoreSecret: mysecret
+    # existingObjstoreSecret: thanos-objstore-secret
     storegateway:
       enabled: true
     queryFrontend:
