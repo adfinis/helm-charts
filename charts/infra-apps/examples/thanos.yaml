@@ -11,6 +11,7 @@ thanos:
       # configure minio client lib for S3 and other S3 compatible endpoints
       type: S3
       config:
+        region: ""
         bucket: ""
         endpoint: ""
         access_key: ""
