@@ -28,7 +28,7 @@ jobs:
     - name: Setup environment for pre-commit
       run: hack/ci/github/setup/pre-commit.sh
 
-    - uses: actions/cache@v1
+    - uses: actions/cache@v2.1.5
       with:
         path: ~/.cache/pre-commit
         key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
