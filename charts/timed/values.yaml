@@ -313,3 +313,18 @@ redmine:
   htaccessPassword: ""
   # redmine.spenthoursField -- Spent hours field id on Redmine
   spenthoursField: 0
+
+prometheus:
+  # prometheus.enabled -- Enable Prometheus integration
+  enabled: false
+  # prometheus.extraLabels -- Labels to add to all Prometheus integration resources
+  extraLabels: {}
+  podMonitor:
+    # prometheus.podMonitor.enabled -- Enable creation of a PodMonitor CRD
+    enabled: true
+    # prometheus.podMonitor.interval -- Interval at which metrics should be scraped
+    interval: "30s"
+    # prometheus.podMonitor.metricRelabelings -- MetricRelabelConfigs to apply to samples before ingestion
+    metricRelabelings: []
+    # prometheus.podMonitor.relabelings -- RelabelConfigs to apply to samples before scraping
+    relabelings: []
