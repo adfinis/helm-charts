@@ -2,6 +2,9 @@ The following apps have been provisioned in Argo CD:
 {{ if .Values.argocd.enabled }}
 * Argo CD
 {{ end }}
+{{ if .Values.argocdNotifications.enabled }}
+* ArgoCD Notifications
+{{ end }}
 {{ if .Values.certManager.enabled }}
 * Cert Manager
 {{ end }}

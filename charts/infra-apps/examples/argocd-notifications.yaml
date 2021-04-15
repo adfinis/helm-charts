@@ -1,0 +1,63 @@
+# ArgoCD Notifications
+#
+# Set up ArgoCD notifications alongside an Argo CD deployment based on the
+# argocd.yaml example. For illustration purposes some notifications to a
+# grafana instance are given.
+
+
+_: &url https://argocd.example.com
+_: &grafanaURL https://grafana.example.com/api
+_: &grafanaKey changeme
+
+argocdNotifications:
+  enabled: true
+  values:
+    argocdUrl: *url
+    notifiers:
+      # For more information: https://argocd-notifications.readthedocs.io/en/stable/services/overview/
+      service.grafana: |
+        apiUrl: *grafanaURL
+        apiKey: *grafanaKey
+    subscriptions:
+      # For more information: https://argocd-notifications.readthedocs.io/en/stable/subscriptions/
+      - recepients:
+        - grafana:tag1
+        triggers:
+        - on-sync-status-unknown
+    templates:
+      # For more information: https://argocd-notifications.readthedocs.io/en/stable/templates/
+    triggers:
+      # For more information: https://argocd-notifications.readthedocs.io/en/stable/triggers/
+      trigger.on-deployed: |
+        - description: Application is synced and healthy. Triggered once per commit.
+          oncePer: app.status.sync.revision
+          send:
+          - app-deployed
+          when: app.status.operationState.phase in ['Succeeded'] and app.status.health.status == 'Healthy'
+      trigger.on-health-degraded: |
+      - description: Application has degraded
+        send:
+        - app-health-degraded
+        when: app.status.health.status == 'Degraded'
+      trigger.on-sync-failed: |
+        - description: Application syncing has failed
+          send:
+          - app-sync-failed
+          when: app.status.operationState.phase in ['Error', 'Failed']
+      trigger.on-sync-running: |
+        - description: Application is being synced
+          send:
+          - app-sync-running
+          when: app.status.operationState.phase in ['Running']
+      trigger.on-sync-status-unknown: |
+        - description: Application status is 'Unknown'
+          send:
+          - app-sync-status-unknown
+          when: app.status.sync.status == 'Unknown'
+      trigger.on-sync-succeeded: |
+        - description: Application syncing has succeeded
+          send:
+          - app-sync-succeeded
+          when: app.status.operationState.phase in ['Succeeded']
+    bots:
+      # For more information: https://argocd-notifications.readthedocs.io/en/stable/bots/overview/
