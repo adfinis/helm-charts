@@ -27,7 +27,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dex.chart | string | `"dex"` | Chart |
 | dex.destination.namespace | string | `"infra-dex"` | Namespace |
 | dex.enabled | bool | `false` | Enable dex |
-| dex.repoURL | string | [repo](https://charts.dexidp.io/) | Repo URL |
+| dex.repoURL | string | [repo](https://charts.dexidp.io) | Repo URL |
 | dex.targetRevision | string | `"2.18.*"` | [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version |
 | dex.values | object | [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml) | Helm values |
 | falco | object | - | [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml)) |
