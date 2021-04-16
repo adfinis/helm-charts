@@ -8,8 +8,8 @@ dex:
     # dex.destination.namespace -- Namespace
     namespace: "infra-dex"
   # dex.repoURL -- Repo URL
-  # @default -- [repo](https://charts.dexidp.io/)
-  repoURL: "https://charts.dexidp.io/"
+  # @default -- [repo](https://charts.dexidp.io)
+  repoURL: "https://charts.dexidp.io"
   # dex.chart -- Chart
   chart: "dex"
   # dex.targetRevision -- [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version
