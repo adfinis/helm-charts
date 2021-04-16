@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.4.12](https://img.shields.io/badge/Version-0.4.12-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.1.2](https://img.shields.io/badge/AppVersion-v1.1.2-informational?style=flat-square)
+![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.2.0](https://img.shields.io/badge/AppVersion-v1.2.0-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -121,6 +121,12 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | postgresql.tls.certificate.name | string | `"psql-server"` | Name of certificate |
 | postgresql.tls.certificatesSecret | string | `"psql-server"` | Name of TLS secret |
 | postgresql.tls.enabled | bool | `false` | Enable TLS for Postgresql |
+| prometheus.enabled | bool | `false` | Enable Prometheus integration |
+| prometheus.extraLabels | object | `{}` | Labels to add to all Prometheus integration resources |
+| prometheus.podMonitor.enabled | bool | `true` | Enable creation of a PodMonitor CRD |
+| prometheus.podMonitor.interval | string | `"30s"` | Interval at which metrics should be scraped |
+| prometheus.podMonitor.metricRelabelings | list | `[]` | MetricRelabelConfigs to apply to samples before ingestion |
+| prometheus.podMonitor.relabelings | list | `[]` | RelabelConfigs to apply to samples before scraping |
 | redmine.apiKey | string | `""` | Redmine API Key |
 | redmine.enabled | bool | `false` | Enable Redmine integration |
 | redmine.htaccessPassword | string | `""` | Redmine htaccess password |
