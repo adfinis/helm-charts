@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.12.0](https://img.shields.io/badge/Version-0.12.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.12.0](https://img.shields.io/badge/AppVersion-0.12.0-informational?style=flat-square)
+![Version: 0.12.1](https://img.shields.io/badge/Version-0.12.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.12.1](https://img.shields.io/badge/AppVersion-0.12.1-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -27,7 +27,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dex.chart | string | `"dex"` | Chart |
 | dex.destination.namespace | string | `"infra-dex"` | Namespace |
 | dex.enabled | bool | `false` | Enable dex |
-| dex.repoURL | string | [repo](https://charts.helm.sh/stable/) | Repo URL |
+| dex.repoURL | string | [repo](https://charts.helm.sh/stable) | Repo URL |
 | dex.targetRevision | string | `"2.15.*"` | [dex Helm chart](https://github.com/helm/charts/tree/master/stable/dex/) version |
 | dex.values | object | [upstream values](https://github.com/helm/charts/tree/master/stable/dex/values.yaml) | Helm values |
 | falco | object | - | [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml)) |
@@ -55,7 +55,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | gangway.chart | string | `"gangway"` | Chart |
 | gangway.destination.namespace | string | `"infra-gangway"` | Namespace |
 | gangway.enabled | bool | `false` | Enable gangway |
-| gangway.repoURL | string | [repo](https://charts.helm.sh/stable/) | Repo URL |
+| gangway.repoURL | string | [repo](https://charts.helm.sh/stable) | Repo URL |
 | gangway.targetRevision | string | `"0.4.*"` | [gangway Helm chart](https://github.com/helm/charts/tree/master/stable/gangway/) version |
 | gangway.values | object | [upstream values](https://github.com/helm/charts/tree/master/stable/gangway/values.yaml) | Helm values |
 | gatekeeper | object | - | [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml)) |
@@ -76,28 +76,28 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vault.chart | string | `"vault"` | Chart |
 | vault.destination.namespace | string | `"infra-vault"` | Namespace |
 | vault.enabled | bool | `false` | Enable vault |
-| vault.repoURL | string | [repo](https://helm.releases.hashicorp.com/) | Repo URL |
+| vault.repoURL | string | [repo](https://helm.releases.hashicorp.com) | Repo URL |
 | vault.targetRevision | string | `"0.10.*"` | [vault Helm chart](https://github.com/hashicorp/vault-helm) version |
 | vault.values | object | [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml) | Helm values |
 | vaultAuth | object | - | [vault-auth](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) ([example](./examples/vault-auth.yaml)) |
 | vaultAuth.chart | string | `"vault-auth"` | Chart |
 | vaultAuth.destination.namespace | string | `"infra-vault"` | Namespace |
 | vaultAuth.enabled | bool | `false` | Enable vault-auth |
-| vaultAuth.repoURL | string | [repo](https://charts.adfinis.com/) | Repo URL |
+| vaultAuth.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
 | vaultAuth.targetRevision | string | `"0.1.*"` | [vault-auth Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) version |
 | vaultAuth.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-auth/values.yaml) | Helm values |
 | vaultCsiProvider | object | - | [vault-csi-provider](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-csi-provider) ([example](./examples/vault-csi-provider.yaml)) |
 | vaultCsiProvider.chart | string | `"vault-csi-provider"` | Chart |
 | vaultCsiProvider.destination.namespace | string | `"infra-vault"` | Namespace |
 | vaultCsiProvider.enabled | bool | `false` | Enable vault-csi-provider |
-| vaultCsiProvider.repoURL | string | [repo](https://charts.adfinis.com/) | Repo URL |
+| vaultCsiProvider.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
 | vaultCsiProvider.targetRevision | string | `"0.2.*"` | [vault-csi-provider Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-csi-provider) version |
 | vaultCsiProvider.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-csi-provider/values.yaml) | Helm values |
 | vaultMonitoring | object | - | [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml)) |
 | vaultMonitoring.chart | string | `"vault-monitoring"` | Chart |
 | vaultMonitoring.destination.namespace | string | `"infra-vault"` | Namespace |
 | vaultMonitoring.enabled | bool | `false` | Enable vault-monitoring |
-| vaultMonitoring.repoURL | string | [repo](https://charts.adfinis.com/) | Repo URL |
+| vaultMonitoring.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
 | vaultMonitoring.targetRevision | string | `"0.1.*"` | [vault-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) version |
 | vaultMonitoring.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-monitoring/values.yaml) | Helm values |
 
