@@ -36,7 +36,8 @@ spec:
               subPath: workreport
           imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
           ports:
-            - containerPort: {{ .Values.backend.service.internalPort }}
+            - name: http
+              containerPort: {{ .Values.backend.service.internalPort }}
           {{- if .Values.backend.livenessProbe.enabled }}
           livenessProbe:
             initialDelaySeconds: {{ .Values.backend.livenessProbe.initialDelaySeconds }}
@@ -46,7 +47,7 @@ spec:
             failureThreshold: {{ .Values.backend.livenessProbe.failureThreshold }}
             httpGet:
               path: /admin/
-              port: {{ .Values.backend.service.internalPort }}
+              port: http
               httpHeaders:
                 - name: Host
                   value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
@@ -60,7 +61,7 @@ spec:
             failureThreshold: {{ .Values.backend.readinessProbe.failureThreshold }}
             httpGet:
               path: /admin/
-              port: {{ .Values.backend.service.internalPort }}
+              port: http
               httpHeaders:
                 - name: Host
                   value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}

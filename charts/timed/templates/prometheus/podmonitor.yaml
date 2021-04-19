@@ -15,7 +15,7 @@ spec:
       {{- include "timed.selectorLabels" . | nindent 6 }}
       app.kubernetes.io/component: backend
   podMetricsEndpoints:
-    - port: {{ .Values.backend.service.internalPort }}
+    - port: http
       {{- if .Values.prometheus.podMonitor.interval }}
       interval: {{ .Values.prometheus.podMonitor.interval }}
       {{- end }}

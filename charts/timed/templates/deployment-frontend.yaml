@@ -24,7 +24,8 @@ spec:
             - configMapRef:
                 name: {{ include "timed.fullname" . }}-frontend
           ports:
-            - containerPort: {{ .Values.frontend.service.internalPort }}
+            - name: http
+              containerPort: {{ .Values.frontend.service.internalPort }}
           {{- if .Values.frontend.livenessProbe.enabled }}
           livenessProbe:
             initialDelaySeconds: {{ .Values.frontend.livenessProbe.initialDelaySeconds }}
@@ -34,7 +35,7 @@ spec:
             failureThreshold: {{ .Values.frontend.livenessProbe.failureThreshold }}
             httpGet:
               path: /index.html
-              port: {{ .Values.frontend.service.internalPort }}
+              port: http
           {{- end }}
           {{- if .Values.frontend.readinessProbe.enabled }}
           readinessProbe:
@@ -45,7 +46,7 @@ spec:
             failureThreshold: {{ .Values.frontend.readinessProbe.failureThreshold }}
             httpGet:
               path: /index.html
-              port: {{ .Values.frontend.service.internalPort }}
+              port: http
           {{- end }}
           resources:
 {{ toYaml .Values.frontend.resources | indent 12 }}
