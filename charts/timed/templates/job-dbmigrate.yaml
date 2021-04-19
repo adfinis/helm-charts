@@ -28,6 +28,12 @@ spec:
                 secretKeyRef:
                   name: {{ include "timed.postgresql.fullname" . }}
                   key: postgresql-password
+            - name: THIS_POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: DJANGO_ALLOWED_HOSTS
+              value: '{{ join "," .Values.ingress.hosts | default "localhost" }},$(THIS_POD_IP)'
           envFrom:
             - secretRef:
                 name: {{ include "timed.fullname" . }}-backend
