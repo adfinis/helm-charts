@@ -9,7 +9,7 @@ spec:
   type: {{ .Values.backend.service.type }}
   ports:
     - port: {{ .Values.backend.service.externalPort }}
-      targetPort: {{ .Values.backend.service.internalPort }}
+      targetPort: http
       protocol: TCP
       name: {{ .Values.backend.service.name }}
   selector:
