@@ -328,3 +328,12 @@ prometheus:
     metricRelabelings: []
     # prometheus.podMonitor.relabelings -- RelabelConfigs to apply to samples before scraping
     relabelings: []
+
+# Configure if timed should be deployed with Grafana templates
+grafana:
+  # grafana.enabled -- Enable Grafana Dashboards
+  enabled: false
+  # grafana.defaultLabel -- Add a default `grafana_dashboard: 1` label
+  defaultLabel: true
+  # grafana.extraLabels -- Labels to add to all Grafana integration resources
+  extraLabels: {}

@@ -8,3 +8,9 @@ auth:
     introspect:
       client:
         secret: foo
+
+prometheus:
+  enabled: true
+
+grafana:
+  enabled: true
