@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.5.2](https://img.shields.io/badge/Version-0.5.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.2.0](https://img.shields.io/badge/AppVersion-v1.2.0-informational?style=flat-square)
+![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.2.0](https://img.shields.io/badge/AppVersion-v1.2.0-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -103,6 +103,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | frontend.service.internalPort | int | `80` | Internal Port of frontend service |
 | frontend.service.name | string | `"timed-frontend"` | Frontend service name |
 | frontend.service.type | string | `"ClusterIP"` | Frontend service type |
+| grafana.defaultLabel | bool | `true` | Add a default `grafana_dashboard: 1` label |
+| grafana.enabled | bool | `false` | Enable Grafana Dashboards |
+| grafana.extraLabels | object | `{}` | Labels to add to all Grafana integration resources |
 | ingress.annotations | object | `{}` | Ingress annotations |
 | ingress.enabled | bool | `false` | Enable ingress for timed |
 | ingress.hosts | list | `[]` | Ingress hostnames |
