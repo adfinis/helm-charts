@@ -152,7 +152,7 @@ thanos:
   # thanos.chart -- Chart
   chart: thanos
   # thanos.targetRevision -- [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos)
-  targetRevision: '3.15.*'
+  targetRevision: '3.16.*'
   # thanos.values -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/thanos/values.yaml)
   values: {}
