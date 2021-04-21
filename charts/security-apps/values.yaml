@@ -138,46 +138,6 @@ gatekeeper:
   # @default -- [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml)
   values: {}
 
-# vaultAuth -- [vault-auth](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) ([example](./examples/vault-auth.yaml))
-# @default -- -
-vaultAuth:
-  # vaultAuth.enabled -- Enable vault-auth
-  enabled: false
-  name: vault-auth
-  destination:
-    # vaultAuth.destination.namespace -- Namespace
-    namespace: "infra-vault"
-  # vaultAuth.repoURL -- Repo URL
-  # @default -- [repo](https://charts.adfinis.com)
-  repoURL: "https://charts.adfinis.com"
-  # vaultAuth.chart -- Chart
-  chart: "vault-auth"
-  # vaultAuth.targetRevision -- [vault-auth Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) version
-  targetRevision: "0.1.*"
-  # vaultAuth.values -- Helm values
-  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-auth/values.yaml)
-  values: {}
-
-# vaultCsiProvider -- [vault-csi-provider](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-csi-provider) ([example](./examples/vault-csi-provider.yaml))
-# @default -- -
-vaultCsiProvider:
-  # vaultCsiProvider.enabled -- Enable vault-csi-provider
-  enabled: false
-  name: vault-csi-provider
-  destination:
-    # vaultCsiProvider.destination.namespace -- Namespace
-    namespace: "infra-vault"
-  # vaultCsiProvider.repoURL -- Repo URL
-  # @default -- [repo](https://charts.adfinis.com)
-  repoURL: "https://charts.adfinis.com"
-  # vaultCsiProvider.chart -- Chart
-  chart: "vault-csi-provider"
-  # vaultCsiProvider.targetRevision -- [vault-csi-provider Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-csi-provider) version
-  targetRevision: "0.2.*"
-  # vaultCsiProvider.values -- Helm values
-  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-csi-provider/values.yaml)
-  values: {}
-
 # vaultMonitoring -- [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml))
 # @default -- -
 vaultMonitoring:

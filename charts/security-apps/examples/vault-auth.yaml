@@ -1,6 +1,0 @@
-vaultAuth:
-  enabled: true
-  project: infra-vault
-  values:
-    serviceAccount:
-      name: "vault-auth-example"
