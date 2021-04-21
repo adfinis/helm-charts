@@ -1,5 +1,0 @@
-vaultCsiProvider:
-  enabled: true
-  project: infra-vault
-  values:
-    csiProviderPath: "/myspecialpath/etc/kubernetes/secrets-store-csi-providers"
