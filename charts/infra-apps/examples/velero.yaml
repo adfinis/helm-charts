@@ -1,3 +1,25 @@
 velero:
   enabled: true
-  values: {}
+  values:
+    configuration:
+      backupStorageLocation:
+        bucket: example
+        config:
+          region: us-east-1
+          s3Url: https://example.com
+        name: default
+      provider: aws
+    credentials:
+      existingSecret: velero-objectstorage-credentials
+    initContainers:
+    - image: velero/velero-plugin-for-aws:v1.1.0
+      name: velero-plugin-for-aws
+      volumeMounts:
+      - mountPath: /target
+        name: plugins
+    schedules:
+      daily:
+        schedule: 0 1 * * *
+        template:
+          ttl: 24h
+    snapshotsEnabled: false
