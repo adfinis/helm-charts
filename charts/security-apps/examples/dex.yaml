@@ -42,6 +42,7 @@ dex:
           redirectURIs:
           - 'https://login.example.com/callback'
           name: 'oidc-auth-client'
+          secret: 'Secret'
       enablePasswordDB: false
       oauth2:
         alwaysShowLoginScreen: false
