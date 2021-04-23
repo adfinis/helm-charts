@@ -1,0 +1,47 @@
+dex:
+  enabled: true
+  project: infra-dex
+  values:
+    ingress:
+      enabled: true
+      hosts:
+        - dex.example.com
+      annotations:
+        kubernetes.io/ingress.class: nginx
+    grpc: false
+    config:
+      connectors:
+        - type: ldap
+          id: ldap
+          name: LDAP
+          config:
+            bindDN: ${LDAP_BINDDN}
+            bindPW: ${LDAP_BINDPW}
+            host: ${LDAP_HOST}
+            groupSearch:
+              baseDN: ${LDAP_BASEDN}
+              filter: (objectClass=group)
+              groupAttr: member
+              scope: sub
+              nameAttr: name
+              userAttr: DN
+            insecureNoSSL: true
+            insecureSkipVerify: true
+            startTLS: false
+            userSearch:
+              baseDN: ${LDAP_BASEDN}
+              emailAttr: mail
+              filter: (objectClass=person)
+              idAttr: sAMAccountName
+              nameAttr: name
+              username: sAMAccountName
+            usernamePrompt: Username
+      issuer: 'https://dex.example.com'
+      staticClients:
+        - id: "oidc-auth-client"
+          redirectURIs:
+          - 'https://login.example.com/callback'
+          name: 'oidc-auth-client'
+      enablePasswordDB: false
+      oauth2:
+        alwaysShowLoginScreen: false
