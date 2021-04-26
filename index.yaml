@@ -1410,6 +1410,35 @@ entries:
   customer-center:
   - apiVersion: v2
     appVersion: v2.0.0
+    created: "2021-04-26T14:18:04.384271713Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~10.3.18
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: ~14.1.0
+    description: Chart for Customer-Center application
+    digest: 771b9d53460a708ce4ac1499235e33727465ba9d1d569ed0564831664ce31ff4
+    home: https://github.com/adfinis-sygroup/customer-center
+    keywords:
+    - customer-center
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: customer-center
+    sources:
+    - https://github.com/adfinis-sygroup/customer-center
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/customer-center
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/customer-center-0.2.1/customer-center-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: v2.0.0
     created: "2021-04-26T12:45:14.957452119Z"
     dependencies:
     - condition: postgresql.enabled
@@ -5091,4 +5120,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-04-26T13:54:03.389322852Z"
+generated: "2021-04-26T14:18:04.385278037Z"
