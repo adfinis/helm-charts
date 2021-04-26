@@ -2,7 +2,7 @@ apiVersion: v2
 name: osschallenge
 description: Chart for OSS-Challenge application
 type: application
-version: 0.1.2
+version: 0.1.3
 appVersion: edge
 keywords:
   - osschallenge
