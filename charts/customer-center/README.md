@@ -103,19 +103,11 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
 | postgresql.postgresqlDatabase | string | `"db"` |  |
 | postgresql.postgresqlPassword | string | `"password"` | Set a password for PostgreSQL |
-| postgresql.postgresqlPostgresPassword | string | `"password"` | Set a passowrd for postgres user |
 | postgresql.postgresqlUsername | string | `"user"` |  |
-| postgresql.rbac | object | `{"create":true}` | RBAC settings |
-| postgresql.rbac.create | bool | `true` | Create Role and RoleBinding |
-| postgresql.replication | object | `{"enabled":true,"password":"password","user":"user"}` | Replication settings |
-| postgresql.replication.enabled | bool | `true` | Enable replication |
-| postgresql.replication.password | string | `"password"` | Replication password |
-| postgresql.replication.user | string | `"user"` | Replication user |
-| postgresql.serviceAccount | object | `{"enabled":true}` | ServiceAccount settings |
-| postgresql.serviceAccount.enabled | bool | `true` | Enable service account |
-| redis.cluster.enabled | bool | `false` | Use leader-follower topology |
+| redis.architecture | string | `"standalone"` | Define Redis architecture standalone or replication |
+| redis.auth.enabled | bool | `true` | Enable Redis authentication |
+| redis.auth.password | string | `"my-redis-password"` |  |
 | redis.enabled | bool | `true` | Enable Redis for caching |
-| redis.password | string | `"my-redis-password"` | Redis password |
 
 ## About this chart
 
