@@ -1,0 +1,22 @@
+gatekeeper:
+  enabled: true
+  project: infra-gangway
+  values:
+    ingress:
+      enabled: true
+      hosts:
+        - login.example.com
+      annotations:
+        kubernetes.io/ingress.class: nginx
+    config:
+      clusterName: "k8s"
+      apiServerURL: "https://api.example.com:6443"
+      authorizeURL: "https://dex.exmaple.com/auth"
+      tokenURL: "https://dex.example.com/token"
+      clientID: "oidc-auth-client"
+      clientSecret: "Secret"
+      redirectURL: "https://login.example.com/callback"
+      scopes: ["openid", "profile", "groups","email", "offline_access"]
+      usernameClaim: "email"
+      emailClaim: "email"
+      sessionSecurityKey: "verySecureKey"

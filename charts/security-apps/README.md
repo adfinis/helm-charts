@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.14.0](https://img.shields.io/badge/Version-0.14.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.14.0](https://img.shields.io/badge/AppVersion-0.14.0-informational?style=flat-square)
+![Version: 0.15.0](https://img.shields.io/badge/Version-0.15.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.15.0](https://img.shields.io/badge/AppVersion-0.15.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -55,9 +55,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | gangway.chart | string | `"gangway"` | Chart |
 | gangway.destination.namespace | string | `"infra-gangway"` | Namespace |
 | gangway.enabled | bool | `false` | Enable gangway |
-| gangway.repoURL | string | [repo](https://charts.helm.sh/stable) | Repo URL |
-| gangway.targetRevision | string | `"0.4.*"` | [gangway Helm chart](https://github.com/helm/charts/tree/master/stable/gangway/) version |
-| gangway.values | object | [upstream values](https://github.com/helm/charts/tree/master/stable/gangway/values.yaml) | Helm values |
+| gangway.repoURL | string | [repo](https://gabibbo97.github.io/charts) | Repo URL |
+| gangway.targetRevision | string | `"1.1.*"` | [gangway Helm chart](https://github.com/gabibbo97/charts/tree/master/charts/gangway/) version |
+| gangway.values | object | [upstream values](https://github.com/gabibbo97/charts/tree/master/charts/gangway/values.yaml) | Helm values |
 | gatekeeper | object | - | [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml)) |
 | gatekeeper.chart | string | `"gatekeeper"` | Chart |
 | gatekeeper.destination.namespace | string | `"infra-gatekeeper"` | Namespace |
