@@ -210,6 +210,24 @@ postgresql:
   postgresqlPassword: password
   # postgresql.database -- PostgreSQL database name
   postgresqlDatabase: db
+  # postgresql.postgresqlPostgresPassword -- Set a passowrd for postgres user
+  postgresqlPostgresPassword: password
+  # postgresql.replication -- Replication settings
+  replication:
+    # postgresql.replication.enabled -- Enable replication
+    enabled: true
+    # postgresql.replication.user -- Replication user
+    user: user
+    # postgresql.replication.password -- Replication password
+    password: password
+  # postgresql.serviceAccount -- ServiceAccount settings
+  serviceAccount:
+    # postgresql.serviceAccount.enabled -- Enable service account
+    enabled: true
+  # postgresql.rbac -- RBAC settings
+  rbac:
+    # postgresql.rbac.create -- Create Role and RoleBinding
+    create: true
 
 redis:
   # redis.enabled -- Enable Redis for caching

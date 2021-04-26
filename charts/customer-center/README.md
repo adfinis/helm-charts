@@ -1,6 +1,6 @@
 # customer-center
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.0.0](https://img.shields.io/badge/AppVersion-v2.0.0-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.0.0](https://img.shields.io/badge/AppVersion-v2.0.0-informational?style=flat-square)
 
 Chart for Customer-Center application
 
@@ -18,8 +18,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | ~10.3.13 |
-| https://charts.bitnami.com/bitnami | redis | ~12.8.3 |
+| https://charts.bitnami.com/bitnami | postgresql | ~10.3.18 |
+| https://charts.bitnami.com/bitnami | redis | ~14.1.0 |
 
 ## Values
 
@@ -103,7 +103,16 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
 | postgresql.postgresqlDatabase | string | `"db"` |  |
 | postgresql.postgresqlPassword | string | `"password"` | Set a password for PostgreSQL |
+| postgresql.postgresqlPostgresPassword | string | `"password"` | Set a passowrd for postgres user |
 | postgresql.postgresqlUsername | string | `"user"` |  |
+| postgresql.rbac | object | `{"create":true}` | RBAC settings |
+| postgresql.rbac.create | bool | `true` | Create Role and RoleBinding |
+| postgresql.replication | object | `{"enabled":true,"password":"password","user":"user"}` | Replication settings |
+| postgresql.replication.enabled | bool | `true` | Enable replication |
+| postgresql.replication.password | string | `"password"` | Replication password |
+| postgresql.replication.user | string | `"user"` | Replication user |
+| postgresql.serviceAccount | object | `{"enabled":true}` | ServiceAccount settings |
+| postgresql.serviceAccount.enabled | bool | `true` | Enable service account |
 | redis.cluster.enabled | bool | `false` | Use leader-follower topology |
 | redis.enabled | bool | `true` | Enable Redis for caching |
 | redis.password | string | `"my-redis-password"` | Redis password |
