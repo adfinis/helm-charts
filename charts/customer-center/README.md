@@ -1,6 +1,6 @@
 # customer-center
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.0.0](https://img.shields.io/badge/AppVersion-v2.0.0-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.0.0](https://img.shields.io/badge/AppVersion-v2.0.0-informational?style=flat-square)
 
 Chart for Customer-Center application
 
@@ -18,8 +18,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | ~10.3.13 |
-| https://charts.bitnami.com/bitnami | redis | ~12.8.3 |
+| https://charts.bitnami.com/bitnami | postgresql | ~10.3.18 |
+| https://charts.bitnami.com/bitnami | redis | ~14.1.0 |
 
 ## Values
 
@@ -104,9 +104,10 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | postgresql.postgresqlDatabase | string | `"db"` |  |
 | postgresql.postgresqlPassword | string | `"password"` | Set a password for PostgreSQL |
 | postgresql.postgresqlUsername | string | `"user"` |  |
-| redis.cluster.enabled | bool | `false` | Use leader-follower topology |
+| redis.architecture | string | `"standalone"` | Define Redis architecture standalone or replication |
+| redis.auth.enabled | bool | `true` | Enable Redis authentication |
+| redis.auth.password | string | `"my-redis-password"` |  |
 | redis.enabled | bool | `true` | Enable Redis for caching |
-| redis.password | string | `"my-redis-password"` | Redis password |
 
 ## About this chart
 

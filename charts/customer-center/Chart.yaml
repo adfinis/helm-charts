@@ -2,7 +2,7 @@ apiVersion: v2
 name: customer-center
 description: Chart for Customer-Center application
 type: application
-version: 0.1.0
+version: 0.2.0
 appVersion: v2.0.0
 keywords:
   - customer-center
@@ -16,10 +16,10 @@ maintainers:
     url: https://adfinis.com
 dependencies:
   - name: postgresql
-    version: ~10.3.13
+    version: ~10.3.18
     repository: https://charts.bitnami.com/bitnami
     condition: postgresql.enabled
   - name: redis
-    version: ~12.8.3
+    version: ~14.1.0
     repository: https://charts.bitnami.com/bitnami
     condition: redis.enabled

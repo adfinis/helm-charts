@@ -214,8 +214,10 @@ postgresql:
 redis:
   # redis.enabled -- Enable Redis for caching
   enabled: true
-  # redis.password -- Redis password
-  password: my-redis-password
-  # redis.cluster.enabled -- Use leader-follower topology
-  cluster:
-    enabled: false
+  auth:
+    # redis.auth.enabled -- Enable Redis authentication
+    enabled: true
+    # redis.password -- Redis password
+    password: my-redis-password
+  # redis.architecture -- Define Redis architecture standalone or replication
+  architecture: standalone
