@@ -2667,6 +2667,32 @@ entries:
   osschallenge:
   - apiVersion: v2
     appVersion: edge
+    created: "2021-04-26T13:54:03.186446722Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~10.2.0
+    description: Chart for OSS-Challenge application
+    digest: 7df78fa4875171237a63dbfd28300c5a9f6697717f0c4f2eab961c3ecd0b8741
+    home: https://oss-challenge.ch
+    keywords:
+    - osschallenge
+    - postgresql
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: osschallenge
+    sources:
+    - https://github.com/adfinis-sygroup/osschallenge
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/osschallenge
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/osschallenge-0.1.3/osschallenge-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: edge
     created: "2021-02-24T06:29:05.223986441Z"
     dependencies:
     - condition: postgresql.enabled
@@ -2744,6 +2770,32 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/osschallenge-0.1.0/osschallenge-0.1.0.tgz
     version: 0.1.0
   rmd:
+  - apiVersion: v2
+    appVersion: edge
+    created: "2021-04-26T13:54:03.388439851Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~9.1.2
+    description: Chart for Rmd.io application
+    digest: d0426e4041ac9e040d67235116a051f11befbf5973859a49c860eb12d1c61b18
+    home: https://github.com/adfinis-sygroup/rmd.io
+    keywords:
+    - rmd
+    - postgresql
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: rmd
+    sources:
+    - https://github.com/adfinis-sygroup/rmd.io
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/rmd
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/rmd-0.1.13/rmd-0.1.13.tgz
+    version: 0.1.13
   - apiVersion: v2
     appVersion: edge
     created: "2021-01-18T08:41:01.478767469Z"
@@ -5039,4 +5091,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-04-26T13:45:29.103295209Z"
+generated: "2021-04-26T13:54:03.389322852Z"
