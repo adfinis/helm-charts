@@ -74,13 +74,21 @@ backend:
     workReportPath: /etc/workreport
     # backend.settings.admins -- Django administrators, example: Jon Doe <jon.doe@example.com>
     admins: []
-    uwsgi:
-      # backend.settings.uwsgi.maxRequests -- uWSGI max requests
-      maxRequests: 2000
-      # backend.settings.uwsgi.harakiri -- uWSGI harakiri (request timeout)
-      harakiri: 60
-      # backend.settings.uwsgi.processes -- uWSGI number of worker processes
-      processes: 16
+    gunicorn:
+      # backend.settings.gunicorn.workers -- Number of gunicorn workers
+      workers: 8
+      # backend.settings.gunicorn.cmdArgs -- gunicorn additional arguments
+      cmdArgs: ""
+    sentry:
+      # backend.settings.sentry.enabled -- Enable Sentry integration
+      enabled: false
+      # backend.settings.sentry.dsn -- Sentry DSN for error reporting. Set to enable Sentry integration
+      dsn: ~
+      # backend.settings.sentry.tracesSampleRate -- Sentry trace sample rate, Set 1.0 to capture 100% of transactions
+      tracesSampleRate: 1.0
+      # backend.settings.sentry.sendDefaultPii -- Associate users to errors in Sentry
+      sendDefaultPii: "True"
+
 
   cronjobs:
     # backend.cronjobs.notifySupervisors -- Notify supervisors
@@ -146,6 +154,8 @@ frontend:
     # tag:
     # frontend.image.pullPolicy -- Frontend image pull policy
     pullPolicy: IfNotPresent
+    # frontend.image.tag -- Frontend version (optional) in case it differs from backend
+    tag: v1.1.3
   service:
     # frontend.service.name -- Frontend service name
     name: timed-frontend
@@ -307,10 +317,6 @@ redmine:
   url: redmine.example.com
   # redmine.apiKey -- Redmine API Key
   apiKey: ""
-  # redmine.htaccessUser -- Redmine htaccess user
-  htaccessUser: ""
-  # redmine.htaccessPassword -- Redmine htaccess password
-  htaccessPassword: ""
   # redmine.spenthoursField -- Spent hours field id on Redmine
   spenthoursField: 0
 

@@ -59,9 +59,12 @@ data:
   DJANGO_REDMINE_HTACCESS_USER: {{ .Values.redmine.htaccessUser | quote }}
   DJANGO_REDMINE_SPENTHOURS_FIELD: {{ .Values.redmine.spenthoursField | quote }}
 {{- end }}
-  UWSGI_MAX_REQUESTS: {{ .Values.backend.settings.uwsgi.maxRequests | quote }}
-  UWSGI_HARAKIRI: {{ .Values.backend.settings.uwsgi.harakiri | quote }}
-  UWSGI_PROCESSES: {{ .Values.backend.settings.uwsgi.processes | quote }}
+  GUNICORN_WORKERS: {{ .Values.backend.settings.gunicorn.workers | quote }}
+  GUNICORN_CMD_ARGS: {{ .Values.backend.settings.gunicorn.cmdArgs | quote }}
 {{- if .Values.backend.settings.admins }}
   DJANGO_ADMINS: {{ join "," .Values.backend.settings.admins | quote }}
+{{- end }}
+{{- if .Values.backend.settings.sentry.enabled }}
+  DJANGO_SENTRY_TRACES_SAMPLE_RATE: {{ .Values.backend.settings.sentry.tracesSampleRate | quote }}
+  DJANGO_SENTRY_SEND_DEFAULT_PII: {{ .Values.backend.settings.sentry.sendDefaultPii | quote }}
 {{- end }}

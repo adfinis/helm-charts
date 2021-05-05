@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.6.3](https://img.shields.io/badge/Version-0.6.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.1.3](https://img.shields.io/badge/AppVersion-v1.1.3-informational?style=flat-square)
+![Version: 0.7.0](https://img.shields.io/badge/Version-0.7.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.1.4](https://img.shields.io/badge/AppVersion-v1.1.4-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -78,13 +78,17 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.settings.admins | list | `[]` | Django administrators, example: Jon Doe <jon.doe@example.com> |
 | backend.settings.emailFrom | string | `"webmaster@chart-example.local"` | Default email address to use for various responses |
 | backend.settings.emailUrl | string | `"smtp://localhost:25"` | Connection string of SMTP server to send mails |
+| backend.settings.gunicorn.cmdArgs | string | `""` | gunicorn additional arguments |
+| backend.settings.gunicorn.workers | int | `8` | Number of gunicorn workers |
+| backend.settings.sentry.dsn | string | `nil` | Sentry DSN for error reporting. Set to enable Sentry integration |
+| backend.settings.sentry.enabled | bool | `false` | Enable Sentry integration |
+| backend.settings.sentry.sendDefaultPii | string | `"True"` | Associate users to errors in Sentry |
+| backend.settings.sentry.tracesSampleRate | float | `1` | Sentry trace sample rate, Set 1.0 to capture 100% of transactions |
 | backend.settings.serverEmail | string | `"webmaster@chart-example.local"` | Email address error messages are sent from |
-| backend.settings.uwsgi.harakiri | int | `60` | uWSGI harakiri (request timeout) |
-| backend.settings.uwsgi.maxRequests | int | `2000` | uWSGI max requests |
-| backend.settings.uwsgi.processes | int | `16` | uWSGI number of worker processes |
 | backend.settings.workReportPath | string | `"/etc/workreport"` | Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`. |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | Frontend image pull policy |
 | frontend.image.repository | string | `"adfinissygroup/timed-frontend"` | Frontend image name |
+| frontend.image.tag | string | `"v1.1.3"` | Frontend version (optional) in case it differs from backend |
 | frontend.livenessProbe.enabled | bool | `true` | Enable liveness probe on frontend |
 | frontend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | frontend.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
@@ -132,8 +136,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | prometheus.podMonitor.relabelings | list | `[]` | RelabelConfigs to apply to samples before scraping |
 | redmine.apiKey | string | `""` | Redmine API Key |
 | redmine.enabled | bool | `false` | Enable Redmine integration |
-| redmine.htaccessPassword | string | `""` | Redmine htaccess password |
-| redmine.htaccessUser | string | `""` | Redmine htaccess user |
 | redmine.spenthoursField | int | `0` | Spent hours field id on Redmine |
 | redmine.url | string | `"redmine.example.com"` | Redmine URL |
 
