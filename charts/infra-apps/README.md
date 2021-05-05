@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.19.0](https://img.shields.io/badge/Version-0.19.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.19.0](https://img.shields.io/badge/AppVersion-0.19.0-informational?style=flat-square)
+![Version: 0.20.0](https://img.shields.io/badge/Version-0.20.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.20.0](https://img.shields.io/badge/AppVersion-0.20.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -65,6 +65,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kubePrometheusStack.repoURL | string | [repo](https://prometheus-community.github.io/helm-charts) | Repo URL |
 | kubePrometheusStack.targetRevision | string | `"13.7.*"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
 | kubePrometheusStack.values | object | [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml) | Helm values |
+| kured | object | [example](./examples/kured.yaml) | [kured](https://github.com/weaveworks/kured) |
+| kured.chart | string | `"kured"` | Chart |
+| kured.destination.namespace | string | `"infra-kured"` | Namespace |
+| kured.enabled | bool | `false` | Enable Kured |
+| kured.repoURL | string | [repo](https://weaveworks.github.io/kured) | Repo URL |
+| kured.targetRevision | string | `"2.4.*"` | [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured) |
+| kured.values | object | [upstream values](https://github.com/weaveworks/kured/blob/main/charts/kured/values.yaml) | Helm values |
 | rbacManager | object | [example](./examples/rbac-manager.yaml) | [rbac-manager](https://fairwindsops.github.io/rbac-manager/) |
 | rbacManager.chart | string | `"rbac-manager"` | Chart |
 | rbacManager.destination.namespace | string | `"infra-rbac"` | Namespace |

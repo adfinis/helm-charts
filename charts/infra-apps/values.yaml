@@ -176,3 +176,23 @@ velero:
   # velero.values -- Helm values
   # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
   values: {}
+
+# kured -- [kured](https://github.com/weaveworks/kured)
+# @default -- [example](./examples/kured.yaml)
+kured:
+  # kured.enabled -- Enable Kured
+  enabled: false
+  name: kured
+  destination:
+    # kured.destination.namespace -- Namespace
+    namespace: infra-kured
+  # kured.repoURL -- Repo URL
+  # @default -- [repo](https://weaveworks.github.io/kured)
+  repoURL: "https://weaveworks.github.io/kured"
+  # kured.chart -- Chart
+  chart: kured
+  # kured.targetRevision -- [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured)
+  targetRevision: '2.4.*'
+  # kured.values -- Helm values
+  # @default -- [upstream values](https://github.com/weaveworks/kured/blob/main/charts/kured/values.yaml)
+  values: {}

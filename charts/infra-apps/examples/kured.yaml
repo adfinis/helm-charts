@@ -1,0 +1,16 @@
+# Make kured cordon drain and reboot nodes that need it
+
+kured:
+  enabled: true
+  values:
+    nodeSelector:
+      # kured only works on/for Linux nodes
+      beta.kubernetes.io/os: Linux
+    service:
+      # create service for the metrics endpoint
+      create: true
+    metrics:
+      # create a ServiceMonitor for kube-prometheus-stack
+      create: true
+      labels:
+        prometheus: kube-prometheus
