@@ -30,3 +30,5 @@ thanos:
   values:
     persistence:
       enabled: false
+kured:
+  enabled: true
