@@ -5,7 +5,7 @@ kured:
   values:
     nodeSelector:
       # kured only works on/for Linux nodes
-      beta.kubernetes.io/os: Linux
+      kubernetes.io/os: Linux
     service:
       # create service for the metrics endpoint
       create: true
