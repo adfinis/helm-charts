@@ -1536,6 +1536,27 @@ entries:
     version: 0.0.1
   infra-apps:
   - apiVersion: v2
+    appVersion: 0.20.1
+    created: "2021-05-06T17:41:34.736549182Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.2
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: d65211c4d225e1aa52396a7a9e348cba7e436e8b4e391d6ec67368f5973545f5
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/infra-apps-0.20.1/infra-apps-0.20.1.tgz
+    version: 0.20.1
+  - apiVersion: v2
     appVersion: 0.20.0
     created: "2021-05-05T17:54:27.386109365Z"
     dependencies:
@@ -5168,4 +5189,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-05-05T17:54:27.389159602Z"
+generated: "2021-05-06T17:41:34.738732093Z"
