@@ -1,6 +1,6 @@
 # barman
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.10](https://img.shields.io/badge/AppVersion-2.10-informational?style=flat-square)
+![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.10](https://img.shields.io/badge/AppVersion-2.10-informational?style=flat-square)
 
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
@@ -41,6 +41,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.databaseSlotName | string | `"barman"` | Database slot name to be created/used |
 | barman.lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age |
 | barman.retentionPolicy | string | `"RECOVERY WINDOW of 1 MONTH"` | Barman retention policy |
+| deployment.strategy.type | string | `"RollingUpdate"` | Specify the strategy used to replace old Pods by new ones |
 | image.pullPolicy | string | `"Always"` | Image pull policy |
 | image.repository | string | `"ubcctlt/barman"` | Image repository |
 | image.tag | string | `"latest"` | Image tag |

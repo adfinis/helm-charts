@@ -9,6 +9,8 @@ spec:
   selector:
     matchLabels:
       {{- include "barman.selectorLabels" . | nindent 6 }}
+  strategy:
+    type: {{ .Values.deployment.strategy.type | quote }}
   template:
     metadata:
       labels:
