@@ -73,7 +73,7 @@ falco:
   # falco.chart -- Chart
   chart: "falco"
   # falco.targetRevision -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version
-  targetRevision: "1.7.*"
+  targetRevision: "1.11.*"
   # falco.values -- Helm values
   # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml)
   values: {}
@@ -93,7 +93,7 @@ falcosidekick:
   # falcosidekick.chart -- Chart
   chart: "falcosidekick"
   # falcosidekick.targetRevision -- [falcosidekick Helm chart](https://github.com/falcosecurity/charts/tree/master/falcosidekick) version
-  targetRevision: "0.2.*"
+  targetRevision: "0.3.*"
   # falcosidekick.values -- Helm values
   # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.yaml)
   values: {}
