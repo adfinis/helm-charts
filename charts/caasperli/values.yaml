@@ -26,9 +26,6 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-# deploymentAnnotations -- Annotations to add to Deployment.
-deploymentAnnotations: {}
-
 # podAnnotations -- Annotations to add to Pod.
 podAnnotations: {}
 
@@ -54,14 +51,18 @@ service:
 ingress:
   # ingress.enabled -- Enable ingress
   enabled: false
+  # ingress.className -- Which Ingress class to configure for the ingress resource
+  className: ""
   # ingress.annotations -- Annotations to add to the ingress resource
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   # ingress.hosts -- List of hosts to expose via ingress
-  hosts:
-    - host: chart-example.local
-      paths: []
+  hosts: []
+  #  - host: chart-example.local
+  #    paths:
+  #      - path: /
+  #        pathType: Prefix
   # ingress.tls -- TLS configuration for ingress
   tls: []
   #  - secretName: chart-example-tls
