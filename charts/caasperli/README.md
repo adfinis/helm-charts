@@ -1,6 +1,6 @@
 # caasperli
 
-![Version: 0.8.7](https://img.shields.io/badge/Version-0.8.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 0.9.0](https://img.shields.io/badge/Version-0.9.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Deploy Caasperli to a Kubernetes Cluster
 
@@ -23,7 +23,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| deploymentAnnotations | object | `{}` | Annotations to add to Deployment. |
 | fullnameOverride | string | `""` |  |
 | grafana.defaultLabel | bool | `true` | Add a default `grafana_dashboard: 1` label |
 | grafana.enabled | bool | `false` | Enable Grafana Dashboards |
@@ -33,8 +32,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | image.tag | string | `""` | Overrides the image tag whose default is the chart version. |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` | Annotations to add to the ingress resource |
+| ingress.className | string | `""` | Which Ingress class to configure for the ingress resource |
 | ingress.enabled | bool | `false` | Enable ingress |
-| ingress.hosts | list | `[{"host":"chart-example.local","paths":[]}]` | List of hosts to expose via ingress |
+| ingress.hosts | list | `[]` | List of hosts to expose via ingress |
 | ingress.tls | list | `[]` | TLS configuration for ingress |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
