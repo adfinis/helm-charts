@@ -7,7 +7,7 @@ replicaCount: 1
 
 image:
   # image.repository -- Container image to deploy
-  repository: adfinissygroup/potz-holzoepfel-und-zipfelchape
+  repository: ghcr.io/adfinis-sygroup/potz-holzoepfel-und-zipfelchape
   # image.pullPolicy -- When to pull the container image
   pullPolicy: Always
   # image.tag -- Overrides the image tag whose default is the chart version.
