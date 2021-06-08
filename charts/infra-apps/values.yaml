@@ -132,7 +132,7 @@ rbacManager:
   # rbacManager.chart -- Chart
   chart: "rbac-manager"
   # rbacManager.targetRevision -- [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version
-  targetRevision: '1.7.*'
+  targetRevision: '1.8.*'
   # rbacManager.values -- Helm values
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml)
   values: {}
