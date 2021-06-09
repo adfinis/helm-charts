@@ -112,7 +112,7 @@ kubePrometheusStack:
   # kubePrometheusStack.chart -- Chart
   chart: "kube-prometheus-stack"
   # kubePrometheusStack.targetRevision -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: '13.7.*'
+  targetRevision: '14.0.*'
   # kubePrometheusStack.values -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
   values: {}
