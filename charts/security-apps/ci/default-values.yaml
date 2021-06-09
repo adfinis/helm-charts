@@ -14,10 +14,6 @@ falco:
   enabled: true
   values: {}
 
-falcosidekick:
-  enabled: true
-  value: {}
-
 falcoExporter:
   enabled: true
   value: {}
