@@ -192,7 +192,7 @@ kured:
   # kured.chart -- Chart
   chart: kured
   # kured.targetRevision -- [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured)
-  targetRevision: '2.4.*'
+  targetRevision: '2.6.*'
   # kured.values -- Helm values
   # @default -- [upstream values](https://github.com/weaveworks/kured/blob/main/charts/kured/values.yaml)
   values: {}
