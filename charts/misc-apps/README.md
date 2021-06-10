@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.0](https://img.shields.io/badge/AppVersion-0.5.0-informational?style=flat-square)
+![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.6.0](https://img.shields.io/badge/AppVersion-0.6.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -35,7 +35,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | metallb.destination.namespace | string | `"infra-metallb"` | Namespace |
 | metallb.enabled | bool | `false` | Enable metallb |
 | metallb.repoURL | string | [repo](https://charts.bitnami.com/bitnami) | Repo URL |
-| metallb.targetRevision | string | `"2.2.*"` | [metallb Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/metallb) |
+| metallb.targetRevision | string | `"2.4.*"` | [metallb Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/metallb) |
 | metallb.values | object | [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/metallb/values.yaml) | Helm values |
 | sentryKubernetes | object | - | [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml) |
 | sentryKubernetes.chart | string | `"sentry-kubernetes"` | Chart |
