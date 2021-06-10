@@ -1,6 +1,6 @@
 # logging-apps
 
-![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.6.0](https://img.shields.io/badge/AppVersion-0.6.0-informational?style=flat-square)
+![Version: 0.7.0](https://img.shields.io/badge/Version-0.7.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.7.0](https://img.shields.io/badge/AppVersion-0.7.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for logging applications
 
@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | filebeat.destination.namespace | string | `"infra-logging"` | Namespace |
 | filebeat.enabled | bool | `false` | Enable loki |
 | filebeat.repoURL | string | [repo](https://helm.elastic.co) | Repo URL |
-| filebeat.targetRevision | string | `"7.10.*"` | [filebeat Helm chart](https://github.com/elastic/helm-charts/tree/master/filebeat) version |
+| filebeat.targetRevision | string | `"7.13.*"` | [filebeat Helm chart](https://github.com/elastic/helm-charts/tree/master/filebeat) version |
 | filebeat.values | object | [upstream values](https://github.com/elastic/helm-charts/tree/master/filebeat/values.yaml) | Helm values |
 | fluentd | object | - | [fluentd](https://github.com/fluent/fluentd) ([example](./examples/fluentd.yaml)) |
 | fluentd.chart | string | `"fluentd"` | Chart |
