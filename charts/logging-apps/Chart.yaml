@@ -3,8 +3,8 @@ name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
 # version and appVersion are in sync in this chart!
-version: 0.7.0
-appVersion: 0.7.0
+version: 0.8.0
+appVersion: 0.8.0
 home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/logging-apps
 sources:
   - https://github.com/adfinis-sygroup/helm-charts
