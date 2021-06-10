@@ -1,6 +1,6 @@
 # logging-apps
 
-![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.0](https://img.shields.io/badge/AppVersion-0.5.0-informational?style=flat-square)
+![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.6.0](https://img.shields.io/badge/AppVersion-0.6.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for logging applications
 
@@ -42,7 +42,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | lokiStack.destination.namespace | string | `"infra-logging"` | Namespace |
 | lokiStack.enabled | bool | `false` | Enable loki |
 | lokiStack.repoURL | string | [repo](https://grafana.github.io/helm-charts) | Repo URL |
-| lokiStack.targetRevision | string | `"2.3.*"` | [loki-stack Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/loki-stack) version |
+| lokiStack.targetRevision | string | `"2.4.*"` | [loki-stack Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/loki-stack) version |
 | lokiStack.values | object | [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/loki-stack/values.yaml) | Helm values |
 
 ## About this chart
