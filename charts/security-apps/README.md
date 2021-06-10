@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.16.0](https://img.shields.io/badge/Version-0.16.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.16.0](https://img.shields.io/badge/AppVersion-0.16.0-informational?style=flat-square)
+![Version: 0.17.0](https://img.shields.io/badge/Version-0.17.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.17.0](https://img.shields.io/badge/AppVersion-0.17.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -44,13 +44,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | falcoExporter.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
 | falcoExporter.targetRevision | string | `"0.5.*"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version |
 | falcoExporter.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falco-exporter/values.yaml) | Helm values |
-| falcosidekick | object | - | [falcosidekick](https://github.com/falcosecurity/falcosidekick/) ([example](./examples/falcosidekick.yaml)) |
-| falcosidekick.chart | string | `"falcosidekick"` | Chart |
-| falcosidekick.destination.namespace | string | `"infra-falco"` | Namespace |
-| falcosidekick.enabled | bool | `false` | Enable falcosidekick |
-| falcosidekick.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
-| falcosidekick.targetRevision | string | `"0.3.*"` | [falcosidekick Helm chart](https://github.com/falcosecurity/charts/tree/master/falcosidekick) version |
-| falcosidekick.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.yaml) | Helm values |
 | gangway | object | - | [gangway](https://github.com/heptiolabs/gangway/) ([example](./examples/gangway.yaml)) |
 | gangway.chart | string | `"gangway"` | Chart |
 | gangway.destination.namespace | string | `"infra-gangway"` | Namespace |
