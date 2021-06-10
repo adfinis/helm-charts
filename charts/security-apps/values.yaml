@@ -13,7 +13,7 @@ dex:
   # dex.chart -- Chart
   chart: "dex"
   # dex.targetRevision -- [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version
-  targetRevision: "0.1.*"
+  targetRevision: "0.3.*"
   # dex.values -- Helm values
   # @default -- [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml)
   values: {}
@@ -53,7 +53,7 @@ vault:
   # vault.chart -- Chart
   chart: "vault"
   # vault.targetRevision -- [vault Helm chart](https://github.com/hashicorp/vault-helm) version
-  targetRevision: "0.10.*"
+  targetRevision: "0.12.*"
   # vault.values -- Helm values
   # @default -- [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml)
   values: {}
@@ -76,26 +76,6 @@ falco:
   targetRevision: "1.11.*"
   # falco.values -- Helm values
   # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml)
-  values: {}
-
-# falcosidekick -- [falcosidekick](https://github.com/falcosecurity/falcosidekick/) ([example](./examples/falcosidekick.yaml))
-# @default -- -
-falcosidekick:
-  # falcosidekick.enabled -- Enable falcosidekick
-  enabled: false
-  name: falcosidekick
-  destination:
-    # falcosidekick.destination.namespace -- Namespace
-    namespace: "infra-falco"
-  # falcosidekick.repoURL -- Repo URL
-  # @default -- [repo](https://falcosecurity.github.io/charts)
-  repoURL: "https://falcosecurity.github.io/charts"
-  # falcosidekick.chart -- Chart
-  chart: "falcosidekick"
-  # falcosidekick.targetRevision -- [falcosidekick Helm chart](https://github.com/falcosecurity/charts/tree/master/falcosidekick) version
-  targetRevision: "0.3.*"
-  # falcosidekick.values -- Helm values
-  # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.yaml)
   values: {}
 
 # falcoExporter -- [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml))
