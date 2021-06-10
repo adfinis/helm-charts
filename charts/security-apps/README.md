@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.20.0](https://img.shields.io/badge/Version-0.20.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.20.0](https://img.shields.io/badge/AppVersion-0.20.0-informational?style=flat-square)
+![Version: 0.21.0](https://img.shields.io/badge/Version-0.21.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.21.0](https://img.shields.io/badge/AppVersion-0.21.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -56,7 +56,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | gatekeeper.destination.namespace | string | `"infra-gatekeeper"` | Namespace |
 | gatekeeper.enabled | bool | `false` | Enable gatekeeper |
 | gatekeeper.repoURL | string | [repo](https://open-policy-agent.github.io/gatekeeper/charts) | Repo URL |
-| gatekeeper.targetRevision | string | `"3.2.2"` | [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version |
+| gatekeeper.targetRevision | string | `"3.4.*"` | [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version |
 | gatekeeper.values | object | [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml) | Helm values |
 | secretsStoreCsiDriver | object | - | [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([examplpe](./examples/secrets-store-csi-driver.yaml)) |
 | secretsStoreCsiDriver.chart | string | `"secrets-store-csi-driver"` | Chart |
