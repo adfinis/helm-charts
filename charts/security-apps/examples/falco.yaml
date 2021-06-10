@@ -4,3 +4,5 @@ falco:
   values:
     auditLog:
       enabled: true
+    falcosidekick:
+      enabled: true
