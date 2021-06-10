@@ -33,7 +33,7 @@ cephCsiRbd:
   # cephCsiRbd.chart -- Chart
   chart: "ceph-csi-rbd"
   # cephCsiRbd.targetRevision -- [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version
-  targetRevision: "3.2.*"
+  targetRevision: "3.3.*"
   # cephCsiRbd.values -- Helm values
   # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/rbd/ceph-csi-rbd/values.yaml)
   values: {}
@@ -53,7 +53,7 @@ cephCsiCephfs:
   # cephCsiCephfs.chart -- Chart
   chart: "ceph-csi-cephfs"
   # cephCsiCephfs.targetRevision -- [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version
-  targetRevision: "3.2.*"
+  targetRevision: "3.3.*"
   # cephCsiCephfs.values -- Helm values
   # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/cephfs/ceph-csi-cephfs/values.yaml)
   values: {}
