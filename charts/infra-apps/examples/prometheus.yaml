@@ -12,6 +12,7 @@ kubePrometheusStack:
           kubernetes.io/ingress.class: infra-ingress
           kubernetes.io/tls-acme: "true"
         enabled: true
+        pathType: Prefix
         hosts:
         - *alertmanagerHost
         tls:
@@ -32,6 +33,7 @@ kubePrometheusStack:
           kubernetes.io/ingress.class: infra-ingress
           kubernetes.io/tls-acme: "true"
         enabled: true
+        pathType: Prefix
         hosts:
         - *grafanaHost
         tls:
@@ -65,6 +67,7 @@ kubePrometheusStack:
           kubernetes.io/ingress.class: infra-ingress
           kubernetes.io/tls-acme: "true"
         enabled: true
+        pathType: Prefix
         hosts:
         - *prometheusHost
         tls:
