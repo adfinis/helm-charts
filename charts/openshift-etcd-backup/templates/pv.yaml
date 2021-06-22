@@ -14,7 +14,7 @@ spec:
     server: {{ .Values.persistence.nfs.server | quote }}
     path: {{ .Values.persistence.nfs.path | quote }}
   {{- end }}
-  {{- if .Values.persistence.provisionned.enabled }}
+  {{- if .Values.persistence.provisioning.enabled }}
   storageClassName: {{ .Values.persistence.storageClass }}
   {{- end }}
   capacity:

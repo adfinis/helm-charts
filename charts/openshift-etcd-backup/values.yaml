@@ -3,49 +3,49 @@
 # Declare variables to be passed into your templates.
 
 backup:
-  # Sub directory path
+  # -- Sub directory path
   subdir: "/"
-  # Directory name of single backup
+  # -- Directory name of single backup
   dirname: "+etcd-backup-%F-%H-%M-%S"
-  # expiretype could be days (keep backups newer than backup.keepdays,
+  # -- expiretype could be days (keep backups newer than backup.keepdays,
   # count (keep a number of backups with backup.keepcount),
   # never (do not expire backups, keep all of them)
   expiretype: "days"
-  # retention period
+  # -- Retention period
   keepdays: "30"
-  # count retetion if expiretype set to count
+  # -- Count retention if expiretype set to count
   keepcount: "10"
-  # backup schedule
+  # -- Backup schedule
   schedule: "0 0 * * *"
 
 persistence:
-  # Set reclaim policy (Retain or Delete)
+  # -- Set reclaim policy (Retain or Delete)
   reclaimPolicy: Retain
-  # Define the storage size
+  # -- Define the storage size
   capacity: 10Gi
   nfs:
-    # Enable nfs backend storage
+    # -- Enable nfs backend storage
     enabled: false
-    # NFS server name or IP
+    # -- NFS server name or IP
     server: example.com
-    # NFS server path
+    # -- NFS server path
     path: "/etcd-backups"
   hostPath:
-    # Enable hostPath
-    enabled: true
-    # hostPath existing path on host
-    path: "/opt/etcd-backups"
-  provisionned:
-    # Enable provisionned backend storage with default or overrided storageClass
+    # -- Enable hostPath
     enabled: false
+    # -- hostPath existing path on host
+    path: "/mnt/etcd-backups"
+  provisioning:
+    # -- Enable provisioned backend storage with default or configured storageClass
+    enabled: true
     storageClass: ""
 
 image:
-  # change repository value below with the result of the following command
+  # -- change repository value below with the result of the following command
   # `oc adm release info --image-for=tools | cut -d: -f1`
   repository: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
+  # -- Overrides the image tag whose default is the chart appVersion.
   # change tag value below with the result of the following command
   # `oc adm release info --image-for=tools | cut -d: -f2`
   tag: ""
@@ -54,18 +54,18 @@ nameOverride: ""
 fullnameOverride: ""
 
 serviceAccount:
-  # Specifies whether a service account should be created
+  # -- Specifies whether a service account should be created
   create: true
-  # Annotations to add to the service account
+  # -- Annotations to add to the service account
   annotations: {}
-  # The name of the service account to use.
+  # -- The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
 securityContext:
-  # Run pod as privileged
+  # -- Run pod as privileged
   privileged: true
-  # Set user ID
+  # -- Set user ID
   runAsUser: 0
 
 resources: {}
@@ -81,11 +81,11 @@ resources: {}
   #   memory: 128Mi
 
 nodeSelector:
-  # The backup job should run on masters as etcd runs on them
+  # -- The backup job should run on masters as etcd runs on them
   node-role.kubernetes.io/master: ""
 
 tolerations:
-  # Allow jobs running on masters
+  # -- Allow jobs running on masters
   - effect: NoSchedule
     key: node-role.kubernetes.io/master
 

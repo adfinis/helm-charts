@@ -1,8 +1,8 @@
 # openshift-etcd-backup
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
 
-Chart for openshfit-etcd-backup solution
+Chart for openshift-etcd-backup solution
 
 **Homepage:** <https://github.com/adfinis-sygroup/openshift-etcd-backup>
 
@@ -19,35 +19,34 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| backup.dirname | string | `"+etcd-backup-%F-%H-%M-%S"` |  |
-| backup.expiretype | string | `"days"` |  |
-| backup.keepcount | string | `"10"` |  |
-| backup.keepdays | string | `"30"` |  |
-| backup.schedule | string | `"0 0 * * *"` |  |
-| backup.subdir | string | `"/"` |  |
-| fullnameOverride | string | `"etcd-backup"` |  |
+| backup.dirname | string | `"+etcd-backup-%F-%H-%M-%S"` | Directory name of single backup |
+| backup.expiretype | string | `"days"` | expiretype could be days (keep backups newer than backup.keepdays, count (keep a number of backups with backup.keepcount), never (do not expire backups, keep all of them) |
+| backup.keepcount | string | `"10"` | Count retention if expiretype set to count |
+| backup.keepdays | string | `"30"` | Retention period |
+| backup.schedule | string | `"0 0 * * *"` | Backup schedule |
+| backup.subdir | string | `"/"` | Sub directory path |
+| fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256"` |  |
-| image.tag | string | `""` |  |
+| image.repository | string | `"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256"` | change repository value below with the result of the following command `oc adm release info --image-for=tools | cut -d: -f1` |
+| image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. change tag value below with the result of the following command `oc adm release info --image-for=tools | cut -d: -f2` |
 | nameOverride | string | `""` |  |
-| nodeSelector."node-role.kubernetes.io/master" | string | `""` |  |
-| persistence.capacity | string | `"10Gi"` |  |
-| persistence.hostPath.enabled | bool | `true` |  |
-| persistence.hostPath.path | string | `"/opt/etcd-backups"` |  |
-| persistence.nfs.enabled | bool | `false` |  |
-| persistence.nfs.path | string | `"/etcd-backups"` |  |
-| persistence.nfs.server | string | `"example.com"` |  |
-| persistence.provisionned.enabled | bool | `false` |  |
-| persistence.provisionned.storageClass | string | `""` |  |
-| persistence.reclaimPolicy | string | `"Retain"` |  |
+| nodeSelector."node-role.kubernetes.io/master" | string | `""` | The backup job should run on masters as etcd runs on them |
+| persistence.capacity | string | `"10Gi"` | Define the storage size |
+| persistence.hostPath.enabled | bool | `false` | Enable hostPath |
+| persistence.hostPath.path | string | `"/mnt/etcd-backups"` | hostPath existing path on host |
+| persistence.nfs.enabled | bool | `false` | Enable nfs backend storage |
+| persistence.nfs.path | string | `"/etcd-backups"` | NFS server path |
+| persistence.nfs.server | string | `"example.com"` | NFS server name or IP |
+| persistence.provisioning.enabled | bool | `true` | Enable provisioned backend storage with default or configured storageClass |
+| persistence.provisioning.storageClass | string | `""` |  |
+| persistence.reclaimPolicy | string | `"Retain"` | Set reclaim policy (Retain or Delete) |
 | resources | object | `{}` |  |
-| securityContext.privileged | bool | `true` |  |
-| securityContext.runAsUser | int | `0` |  |
-| serviceAccount.annotations | object | `{}` |  |
-| serviceAccount.create | bool | `true` |  |
-| serviceAccount.name | string | `""` |  |
-| tolerations[0].effect | string | `"NoSchedule"` |  |
-| tolerations[0].key | string | `"node-role.kubernetes.io/master"` |  |
+| securityContext.privileged | bool | `true` | Run pod as privileged |
+| securityContext.runAsUser | int | `0` | Set user ID |
+| serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
+| serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
+| serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
+| tolerations[0] | object | `{"effect":"NoSchedule","key":"node-role.kubernetes.io/master"}` | Allow jobs running on masters |
 
 ## About this chart
 
