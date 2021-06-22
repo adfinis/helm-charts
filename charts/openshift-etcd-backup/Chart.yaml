@@ -1,0 +1,19 @@
+apiVersion: v2
+name: openshift-etcd-backup
+description: Chart for openshfit-etcd-backup solution
+type: application
+version: 0.1.0
+appVersion: 1.0.0
+keywords:
+  - openshift-etcd-backup
+  - openshift
+  - backup
+  - etcd
+home: https://github.com/adfinis-sygroup/openshift-etcd-backup
+sources:
+  - https://github.com/adfinis-sygroup/openshift-etcd-backup
+  - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/openshift-etcd-backup
+maintainers:
+  - name: adfinis-sygroup
+    email: support@adfinis.com
+    url: https://adfinis.com

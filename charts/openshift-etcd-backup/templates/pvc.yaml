@@ -1,0 +1,20 @@
+{{- if or .Values.persistence.nfs.enabled .Values.persistence.provisionned.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "openshift-etcd-backup.fullname" . }}
+  labels:
+    {{- include "openshift-etcd-backup.labels" . | nindent 4 }}
+spec:
+  {{- if .Values.persistence.provisionned.enabled }}
+  storageClassName: {{ .Values.persistence.provisionned.storageClass }}
+  {{- end}}
+  {{- if .Values.persistence.nfs.enabled }}
+  volumeName: {{ include "openshift-etcd-backup.fullname" . }}
+  {{- end }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.persistence.capacity }}
+{{- end }}

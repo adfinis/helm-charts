@@ -1,0 +1,72 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "openshift-etcd-backup.fullname" . }}
+spec:
+  schedule: {{ .Values.backup.schedule | quote }}
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - command:
+            - /bin/sh
+            - /scripts/backup.sh
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            name: {{ .Chart.Name }}
+            envFrom:
+            - configMapRef:
+                name: {{ include "openshift-etcd-backup.fullname" . }}
+            resources:
+              {{- toYaml .Values.resources | nindent 14 }}
+            securityContext:
+              privileged: {{ .Values.securityContext.privileged }}
+              runAsUser: {{ .Values.securityContext.runAsUser }}
+            volumeMounts:
+            - name: host
+              mountPath: /host
+            - name: scripts
+              mountPath: /scripts
+            - name: volume-backup
+              mountPath: /backup
+          {{- with .Values.nodeSelector }}
+          nodeSelector:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.tolerations }}
+          tolerations:
+            {{- toYaml . | nindent 12 }}
+          {{- end}}
+          {{- with .Values.affinity }}
+          affinity:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          hostNetwork: true
+          hostPID: true
+          serviceAccountName: {{ include "openshift-etcd-backup.serviceAccountName" . }}
+          restartPolicy: Never
+          dnsPolicy: ClusterFirst
+          volumes:
+          - name: host
+            hostPath:
+              path: /
+              type: Directory
+            name: host
+          - name: scripts
+            configMap:
+              name: {{ include "openshift-etcd-backup.fullname" . }}
+              items:
+                - key: backup.script
+                  path: backup.sh
+          - name: volume-backup
+            {{- if or .Values.persistence.nfs.enabled .Values.persistence.provisionned.enabled }}
+            persistentVolumeClaim:
+              claimName: {{ include "openshift-etcd-backup.fullname" . }}
+            {{- end }}
+            {{- if .Values.persistence.hostPath.enabled }}
+            hostPath:
+              path: {{ .Values.persistence.hostPath.path }}
+              type: Directory
+            {{- end }}
