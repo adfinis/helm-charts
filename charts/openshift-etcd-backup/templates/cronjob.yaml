@@ -62,7 +62,7 @@ spec:
               items:
                 - key: backup.script
                   path: backup.sh
-          {{- if or .Values.persistence.nfs.enabled .Values.persistence.provisioning.enabled }}
+          {{- if or .Values.persistence.nfs.enabled .Values.persistence.hostPath.enabled .Values.persistence.provisioning.enabled }}
           - name: volume-backup
             {{- if .Values.persistence.nfs.enabled }}
             nfs:
@@ -73,9 +73,9 @@ spec:
             persistentVolumeClaim:
               claimName: {{ include "openshift-etcd-backup.fullname" . }}
             {{- end }}
-          {{- end }}
             {{- if .Values.persistence.hostPath.enabled }}
             hostPath:
-              path: {{ .Values.persistence.hostPath.path }}
+              path: {{ .Values.persistence.hostPath.path | quote }}
               type: Directory
             {{- end }}
+          {{- end }}
