@@ -1,4 +1,4 @@
-{{- if or .Values.persistence.nfs.enabled .Values.persistence.provisioning.enabled }}
+{{- if .Values.persistence.provisioning.enabled }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -9,9 +9,6 @@ spec:
   {{- if .Values.persistence.provisioning.enabled }}
   storageClassName: {{ .Values.persistence.provisioning.storageClass }}
   {{- end}}
-  {{- if .Values.persistence.nfs.enabled }}
-  volumeName: {{ include "openshift-etcd-backup.fullname" . }}
-  {{- end }}
   accessModes:
     - ReadWriteOnce
   resources:
