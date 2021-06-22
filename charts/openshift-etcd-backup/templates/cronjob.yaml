@@ -29,8 +29,10 @@ spec:
               mountPath: /host
             - name: scripts
               mountPath: /scripts
+            {{- if or .Values.persistence.nfs.enabled .Values.persistence.provisioning.enabled }}
             - name: volume-backup
               mountPath: /backup
+            {{- end }}
           {{- with .Values.nodeSelector }}
           nodeSelector:
             {{- toYaml . | nindent 12 }}
