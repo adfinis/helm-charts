@@ -32,12 +32,12 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | nameOverride | string | `""` |  |
 | nodeSelector."node-role.kubernetes.io/master" | string | `""` | The backup job should run on masters as etcd runs on them |
 | persistence.capacity | string | `"10Gi"` | Define the storage size |
-| persistence.hostPath.enabled | bool | `false` | Enable hostPath |
+| persistence.hostPath.enabled | bool | `true` | Enable hostPath |
 | persistence.hostPath.path | string | `"/mnt/etcd-backups"` | hostPath existing path on host |
 | persistence.nfs.enabled | bool | `false` | Enable nfs backend storage |
 | persistence.nfs.path | string | `"/etcd-backups"` | NFS server path |
 | persistence.nfs.server | string | `"example.com"` | NFS server name or IP |
-| persistence.provisioning.enabled | bool | `true` | Enable provisioned backend storage with default or configured storageClass |
+| persistence.provisioning.enabled | bool | `false` | Enable provisioned backend storage with default or configured storageClass |
 | persistence.provisioning.storageClass | string | `""` |  |
 | persistence.reclaimPolicy | string | `"Retain"` | Set reclaim policy (Retain or Delete) |
 | resources | object | `{}` |  |

@@ -32,12 +32,12 @@ persistence:
     path: "/etcd-backups"
   hostPath:
     # -- Enable hostPath
-    enabled: false
+    enabled: true
     # -- hostPath existing path on host
     path: "/mnt/etcd-backups"
   provisioning:
     # -- Enable provisioned backend storage with default or configured storageClass
-    enabled: true
+    enabled: false
     storageClass: ""
 
 image:
