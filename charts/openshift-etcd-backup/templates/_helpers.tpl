@@ -35,19 +35,12 @@ Common labels
 */}}
 {{- define "openshift-etcd-backup.labels" -}}
 helm.sh/chart: {{ include "openshift-etcd-backup.chart" . }}
-{{ include "openshift-etcd-backup.selectorLabels" . }}
+app.kubernetes.io/name: {{ include "openshift-etcd-backup.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
-{{- end }}
-
-{{/*
-Selector labels
-*/}}
-{{- define "openshift-etcd-backup.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "openshift-etcd-backup.name" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
