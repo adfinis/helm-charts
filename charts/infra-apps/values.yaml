@@ -92,7 +92,7 @@ ingressNginx:
   # ingressNginx.chart -- Chart
   chart: "ingress-nginx"
   # ingressNginx.targetRevision -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/master/charts/ingress-nginx) version
-  targetRevision: '3.33.*'
+  targetRevision: '3.34.*'
   # ingressNginx.values -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/master/charts/ingress-nginx/values.yaml)
   values: {}
