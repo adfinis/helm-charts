@@ -26,9 +26,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backup.schedule | string | `"0 0 * * *"` | Backup schedule |
 | backup.subdir | string | `"/"` | Sub directory path |
 | fullnameOverride | string | `""` |  |
-| image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256"` | change repository value below with the result of the following command `oc adm release info --image-for=tools | cut -d: -f1` |
-| image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. change tag value below with the result of the following command `oc adm release info --image-for=tools | cut -d: -f2` |
+| image.pullPolicy | string | `"Always"` | Image pull policy configuration |
+| image.repository | string | `"ghcr.io/adfinis-sygroup/openshift-etcd-backup"` | Repository image to use |
+| image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | nameOverride | string | `""` |  |
 | nodeSelector."node-role.kubernetes.io/master" | string | `""` | The backup job should run on masters as etcd runs on them |
 | persistence.capacity | string | `"10Gi"` | Define the storage size |

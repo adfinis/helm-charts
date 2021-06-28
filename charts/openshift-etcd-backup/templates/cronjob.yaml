@@ -12,7 +12,7 @@ spec:
           containers:
           - command:
             - /bin/sh
-            - /scripts/backup.sh
+            - /usr/local/bin/backup.sh
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
             imagePullPolicy: {{ .Values.image.pullPolicy }}
             name: {{ .Chart.Name }}
@@ -27,9 +27,7 @@ spec:
             volumeMounts:
             - name: host
               mountPath: /host
-            - name: scripts
-              mountPath: /scripts
-            {{- if or .Values.persistence.nfs.enabled .Values.persistence.provisioning.enabled }}
+            {{- if or .Values.persistence.nfs.enabled .Values.persistence.provisioning.enabled .Values.persistence.hostPath.enabled }}
             - name: volume-backup
               mountPath: /backup
             {{- end }}
@@ -56,12 +54,6 @@ spec:
               path: /
               type: Directory
             name: host
-          - name: scripts
-            configMap:
-              name: {{ include "openshift-etcd-backup.fullname" . }}
-              items:
-                - key: backup.script
-                  path: backup.sh
           {{- if or .Values.persistence.nfs.enabled .Values.persistence.hostPath.enabled .Values.persistence.provisioning.enabled }}
           - name: volume-backup
             {{- if .Values.persistence.nfs.enabled }}

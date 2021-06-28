@@ -41,13 +41,11 @@ persistence:
     storageClass: ""
 
 image:
-  # -- change repository value below with the result of the following command
-  # `oc adm release info --image-for=tools | cut -d: -f1`
-  repository: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256
-  pullPolicy: IfNotPresent
+  # -- Repository image to use
+  repository: ghcr.io/adfinis-sygroup/openshift-etcd-backup
+  # -- Image pull policy configuration
+  pullPolicy: Always
   # -- Overrides the image tag whose default is the chart appVersion.
-  # change tag value below with the result of the following command
-  # `oc adm release info --image-for=tools | cut -d: -f2`
   tag: ""
 
 nameOverride: ""
