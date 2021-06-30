@@ -1,6 +1,6 @@
 dependencies:
 - name: common
   repository: https://charts.adfinis.com
-  version: 0.0.2
-digest: sha256:dc7adcdd3e3ded79442d65049708b38389b717c703bb39f65c4925b93fb0f1e2
-generated: "2020-09-08T22:53:34.489309+02:00"
+  version: 0.0.6
+digest: sha256:4edcfcd9255737c0241e307f3995fb95bd439158e4913f5a1dd625fd386299a7
+generated: "2021-06-30T13:48:20.489841324+02:00"
