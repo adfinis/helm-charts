@@ -6,7 +6,6 @@ spec:
   schedule: {{ .Values.backup.schedule | quote }}
   jobTemplate:
     spec:
-      backoffLimit: 0
       template:
         spec:
           containers:
@@ -47,7 +46,6 @@ spec:
           hostPID: true
           serviceAccountName: {{ include "openshift-etcd-backup.serviceAccountName" . }}
           restartPolicy: Never
-          dnsPolicy: ClusterFirst
           volumes:
           - name: host
             hostPath:
@@ -60,12 +58,10 @@ spec:
             nfs:
               server: {{ .Values.persistence.nfs.server | quote }}
               path: {{ .Values.persistence.nfs.path | quote }}
-            {{- end }}
-            {{- if .Values.persistence.provisioning.enabled }}
+            {{- else if .Values.persistence.provisioning.enabled }}
             persistentVolumeClaim:
               claimName: {{ include "openshift-etcd-backup.fullname" . }}
-            {{- end }}
-            {{- if .Values.persistence.hostPath.enabled }}
+            {{- else if .Values.persistence.hostPath.enabled }}
             hostPath:
               path: {{ .Values.persistence.hostPath.path | quote }}
               type: Directory
