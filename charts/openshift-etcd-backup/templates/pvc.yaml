@@ -6,7 +6,7 @@ metadata:
   labels:
     {{- include "openshift-etcd-backup.labels" . | nindent 4 }}
 spec:
-  {{- if .Values.persistence.provisioning.enabled }}
+  {{- if .Values.persistence.provisioning.storageClass }}
   storageClassName: {{ .Values.persistence.provisioning.storageClass }}
   {{- end}}
   accessModes:
