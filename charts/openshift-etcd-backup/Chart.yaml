@@ -3,7 +3,7 @@ name: openshift-etcd-backup
 description: Chart for openshift-etcd-backup solution
 type: application
 version: 1.0.0
-appVersion: 1.0.0
+appVersion: v1.1.0
 keywords:
   - openshift-etcd-backup
   - openshift
