@@ -6,6 +6,9 @@ spec:
   schedule: {{ .Values.backup.schedule | quote }}
   jobTemplate:
     spec:
+      # Retrying this job is not considered safe, because of that we fail the
+      # job immediately if the first execution fails.
+      backoffLimit: 0
       template:
         spec:
           containers:
