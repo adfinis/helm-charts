@@ -68,7 +68,7 @@ securityContext:
 
 podSecurityContext:
   # -- Define supplemental groups (comma separated values)
-  #supplementalGroups: []
+  # supplementalGroups: []
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
