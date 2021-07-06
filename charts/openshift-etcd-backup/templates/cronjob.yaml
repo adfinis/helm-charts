@@ -12,7 +12,7 @@ spec:
       template:
         spec:
           securityContext:
-            supplementalGroups: {{- .Values.securityContext.supplementalGroups }}
+            supplementalGroups: {{ .Values.securityContext.supplementalGroups }}
           containers:
           - command:
             - /bin/sh
