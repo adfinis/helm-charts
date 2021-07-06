@@ -1,0 +1,72 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "openshift-etcd-backup.fullname" . }}
+spec:
+  schedule: {{ .Values.backup.schedule | quote }}
+  jobTemplate:
+    spec:
+      # Retrying this job is not considered safe, because of that we fail the
+      # job immediately if the first execution fails.
+      backoffLimit: 0
+      template:
+        spec:
+          containers:
+          - command:
+            - /bin/sh
+            - /usr/local/bin/backup.sh
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            name: {{ .Chart.Name }}
+            envFrom:
+            - configMapRef:
+                name: {{ include "openshift-etcd-backup.fullname" . }}
+            resources:
+              {{- toYaml .Values.resources | nindent 14 }}
+            securityContext:
+              privileged: {{ .Values.securityContext.privileged }}
+              runAsUser: {{ .Values.securityContext.runAsUser }}
+            volumeMounts:
+            - name: host
+              mountPath: /host
+            {{- if or .Values.persistence.nfs.enabled .Values.persistence.provisioning.enabled .Values.persistence.hostPath.enabled }}
+            - name: volume-backup
+              mountPath: /backup
+            {{- end }}
+          {{- with .Values.nodeSelector }}
+          nodeSelector:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.tolerations }}
+          tolerations:
+            {{- toYaml . | nindent 12 }}
+          {{- end}}
+          {{- with .Values.affinity }}
+          affinity:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          hostNetwork: true
+          hostPID: true
+          serviceAccountName: {{ include "openshift-etcd-backup.serviceAccountName" . }}
+          restartPolicy: Never
+          volumes:
+          - name: host
+            hostPath:
+              path: /
+              type: Directory
+            name: host
+          {{- if or .Values.persistence.nfs.enabled .Values.persistence.hostPath.enabled .Values.persistence.provisioning.enabled }}
+          - name: volume-backup
+            {{- if .Values.persistence.nfs.enabled }}
+            nfs:
+              server: {{ .Values.persistence.nfs.server | quote }}
+              path: {{ .Values.persistence.nfs.path | quote }}
+            {{- else if .Values.persistence.provisioning.enabled }}
+            persistentVolumeClaim:
+              claimName: {{ include "openshift-etcd-backup.fullname" . }}
+            {{- else if .Values.persistence.hostPath.enabled }}
+            hostPath:
+              path: {{ .Values.persistence.hostPath.path | quote }}
+              type: Directory
+            {{- end }}
+          {{- end }}

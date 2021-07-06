@@ -1,0 +1,90 @@
+# Default values for openshift-etcd-backup.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+backup:
+  # -- Sub directory path
+  subdir: "/"
+  # -- Directory name of single backup
+  dirname: "+etcd-backup-%F-%H-%M-%S"
+  # -- expiretype could be days (keep backups newer than backup.keepdays,
+  # count (keep a number of backups with backup.keepcount),
+  # never (do not expire backups, keep all of them)
+  expiretype: "days"
+  # -- Retention period
+  keepdays: "30"
+  # -- Count retention if expiretype set to count
+  keepcount: "10"
+  # -- Backup schedule
+  schedule: "0 0 * * *"
+
+persistence:
+  # -- Set reclaim policy (Retain or Delete)
+  reclaimPolicy: Retain
+  # -- Define the storage size
+  capacity: 10Gi
+  nfs:
+    # -- Enable nfs backend storage
+    enabled: false
+    # -- NFS server name or IP
+    server: example.com
+    # -- NFS server path
+    path: "/etcd-backups"
+  hostPath:
+    # -- Enable hostPath
+    enabled: true
+    # -- hostPath existing path on host
+    path: "/mnt/etcd-backups"
+  provisioning:
+    # -- Enable provisioned backend storage with default or configured storageClass
+    enabled: false
+    storageClass: ""
+
+image:
+  # -- Repository image to use
+  repository: ghcr.io/adfinis-sygroup/openshift-etcd-backup
+  # -- Image pull policy configuration
+  pullPolicy: Always
+  # -- Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # -- Specifies whether a service account should be created
+  create: true
+  # -- Annotations to add to the service account
+  annotations: {}
+  # -- The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+securityContext:
+  # -- Run pod as privileged
+  privileged: true
+  # -- Set user ID
+  runAsUser: 0
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector:
+  # -- The backup job should run on masters as etcd runs on them
+  node-role.kubernetes.io/master: ""
+
+tolerations:
+  # -- Allow jobs running on masters
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+
+affinity: {}
