@@ -11,6 +11,8 @@ spec:
       backoffLimit: 0
       template:
         spec:
+          securityContext:
+            supplementalGroups: {{- .Values.securityContext.supplementalGroups }}
           containers:
           - command:
             - /bin/sh
