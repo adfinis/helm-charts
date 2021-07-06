@@ -40,7 +40,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | persistence.provisioning.enabled | bool | `false` | Enable provisioned backend storage with default or configured storageClass |
 | persistence.provisioning.storageClass | string | `""` |  |
 | persistence.reclaimPolicy | string | `"Retain"` | Set reclaim policy (Retain or Delete) |
-| podSecurityContext | string | `nil` |  |
+| podSecurityContext | object | `{}` | Configure SecurityContext of the pod started by the job |
 | resources | object | `{}` |  |
 | securityContext.privileged | bool | `true` | Run pod as privileged |
 | securityContext.runAsUser | int | `0` | Set user ID |
