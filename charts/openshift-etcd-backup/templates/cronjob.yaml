@@ -12,7 +12,7 @@ spec:
       template:
         spec:
           securityContext:
-            supplementalGroups: {{ .Values.securityContext.supplementalGroups }}
+             {{- toYaml .Values.podSecurityContext | nindent 12 }}
           containers:
           - command:
             - /bin/sh

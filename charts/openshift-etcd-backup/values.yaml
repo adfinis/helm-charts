@@ -65,8 +65,10 @@ securityContext:
   privileged: true
   # -- Set user ID
   runAsUser: 0
-  # -- Define supplemental groups
-  supplementalGroups: [""]
+
+podSecurityContext:
+  # -- Define supplemental groups (comma separated values)
+  #supplementalGroups: []
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
