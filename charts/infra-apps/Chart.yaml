@@ -3,8 +3,8 @@ name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
 # version and appVersion are in sync in this chart!
-version: 0.36.0
-appVersion: 0.36.0
+version: 0.38.0
+appVersion: 0.38.0
 home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/infra-apps
 sources:
   - https://github.com/adfinis-sygroup/helm-charts
@@ -14,5 +14,5 @@ maintainers:
     url: https://adfinis.com
 dependencies:
   - name: argoconfig
-    version: 0.7.2
+    version: 0.7.4
     repository: https://charts.adfinis.com
