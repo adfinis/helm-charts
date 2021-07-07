@@ -11,6 +11,8 @@ spec:
       backoffLimit: 0
       template:
         spec:
+          securityContext:
+            {{- toYaml .Values.podSecurityContext | nindent 12 }}
           containers:
           - command:
             - /bin/sh

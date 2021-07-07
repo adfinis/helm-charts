@@ -1,6 +1,6 @@
 # openshift-etcd-backup
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.1.0](https://img.shields.io/badge/AppVersion-v1.1.0-informational?style=flat-square)
+![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.1.0](https://img.shields.io/badge/AppVersion-v1.1.0-informational?style=flat-square)
 
 Chart for openshift-etcd-backup solution
 
@@ -40,6 +40,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | persistence.provisioning.enabled | bool | `false` | Enable provisioned backend storage with default or configured storageClass |
 | persistence.provisioning.storageClass | string | `""` |  |
 | persistence.reclaimPolicy | string | `"Retain"` | Set reclaim policy (Retain or Delete) |
+| podSecurityContext | object | `{}` | Configure SecurityContext of the pod started by the job |
 | resources | object | `{}` |  |
 | securityContext.privileged | bool | `true` | Run pod as privileged |
 | securityContext.runAsUser | int | `0` | Set user ID |
