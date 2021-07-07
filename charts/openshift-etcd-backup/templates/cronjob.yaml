@@ -26,8 +26,7 @@ spec:
             resources:
               {{- toYaml .Values.resources | nindent 14 }}
             securityContext:
-              privileged: {{ .Values.securityContext.privileged }}
-              runAsUser: {{ .Values.securityContext.runAsUser }}
+              {{- toYaml .Values.securityContext | nindent 14 }}
             volumeMounts:
             - name: host
               mountPath: /host

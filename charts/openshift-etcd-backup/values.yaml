@@ -65,6 +65,8 @@ securityContext:
   privileged: true
   # -- Set user ID
   runAsUser: 0
+  # -- Set group ID
+  runAsGroup: 0
 
 # -- Configure SecurityContext of the pod started by the job
 podSecurityContext: {}
