@@ -10,3 +10,4 @@ data:
   OCP_BACKUP_EXPIRE_TYPE: {{ .Values.backup.expiretype | quote }}
   OCP_BACKUP_KEEP_DAYS: {{ .Values.backup.keepdays | quote }}
   OCP_BACKUP_KEEP_COUNT: {{ .Values.backup.keepcount | quote }}
+  OCP_BACKUP_UMASK: {{ .Values.backup.umask | quote }}

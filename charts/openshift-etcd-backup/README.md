@@ -1,6 +1,6 @@
 # openshift-etcd-backup
 
-![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.1.0](https://img.shields.io/badge/AppVersion-v1.1.0-informational?style=flat-square)
+![Version: 1.3.0](https://img.shields.io/badge/Version-1.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.2.3](https://img.shields.io/badge/AppVersion-v1.2.3-informational?style=flat-square)
 
 Chart for openshift-etcd-backup solution
 
@@ -19,12 +19,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| backup.dirname | string | `"+etcd-backup-%F-%H-%M-%S"` | Directory name of single backup |
+| backup.dirname | string | `"+etcd-backup-%FT%T%:z"` | Directory name of single backup |
 | backup.expiretype | string | `"days"` | expiretype could be days (keep backups newer than backup.keepdays, count (keep a number of backups with backup.keepcount), never (do not expire backups, keep all of them) |
 | backup.keepcount | string | `"10"` | Count retention if expiretype set to count |
 | backup.keepdays | string | `"30"` | Retention period |
 | backup.schedule | string | `"0 0 * * *"` | Backup schedule |
 | backup.subdir | string | `"/"` | Sub directory path |
+| backup.umask | string | `"0027"` | Set umask during the backup |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"Always"` | Image pull policy configuration |
 | image.repository | string | `"ghcr.io/adfinis-sygroup/openshift-etcd-backup"` | Repository image to use |
