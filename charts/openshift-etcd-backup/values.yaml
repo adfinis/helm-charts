@@ -6,7 +6,7 @@ backup:
   # -- Sub directory path
   subdir: "/"
   # -- Directory name of single backup
-  dirname: "+etcd-backup-%F-%H-%M-%S"
+  dirname: "+etcd-backup-%FT%T%:z"
   # -- expiretype could be days (keep backups newer than backup.keepdays,
   # count (keep a number of backups with backup.keepcount),
   # never (do not expire backups, keep all of them)
@@ -17,6 +17,8 @@ backup:
   keepcount: "10"
   # -- Backup schedule
   schedule: "0 0 * * *"
+  # -- Set umask during the backup
+  umask: "0027"
 
 persistence:
   # -- Set reclaim policy (Retain or Delete)
