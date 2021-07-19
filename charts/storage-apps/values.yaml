@@ -1,21 +1,21 @@
-# nfsClientProvisioner -- [nfs-client-provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner) ([example](./examples/nfs-client-provisioner.yaml))
+# nfsSubdirExternalProvisioner -- [nfs-subdir-external-provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner) ([example](./examples/nfs-subdir-external-provisioner.yaml))
 # @default -- -
-nfsClientProvisioner:
-  # nfsClientProvisioner.enabled -- Enable nfs-client-provisioner
+nfsSubdirExternalProvisioner:
+  # nfsSubdirExternalProvisioner.enabled -- Enable nfs-subdir-external-provisioner
   enabled: false
-  name: nfs-client-provisioner
+  name: nfs-subdir-external-provisioner
   destination:
-    # nfsClientProvisioner.destination.namespace -- Namespace
-    namespace: "infra-storage"
-  # nfsClientProvisioner.repoURL -- Repo URL
-  # @default -- [repo](https://charts.helm.sh/stable)
-  repoURL: "https://charts.helm.sh/stable"
-  # nfsClientProvisioner.chart -- Chart
-  chart: "nfs-client-provisioner"
-  # nfsClientProvisioner.targetRevision -- [nfs-client-provisioner Helm chart](https://github.com/helm/charts/tree/master/stable/nfs-client-provisioner) version
-  targetRevision: "1.2.*"
-  # nfsClientProvisioner.values -- Helm values
-  # @default -- [upstream values](https://github.com/helm/charts/blob/master/stable/nfs-client-provisioner/values.yaml)
+    # nfsSubdirExternalProvisioner.destination.namespace -- Namespace
+    namespace: "infra-nfs-subdir-external"
+  # nfsSubdirExternalProvisioner.repoURL -- Repo URL
+  # @default -- [repo](https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner)
+  repoURL: "https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner"
+  # nfsSubdirExternalProvisioner.chart -- Chart
+  chart: "nfs-subdir-external-provisioner"
+  # nfsSubdirExternalProvisioner.targetRevision -- [nfs-client-provisioner Helm chart](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/tree/master/charts/nfs-subdir-external-provisioner) version
+  targetRevision: "4.0.*"
+  # nfsSubdirExternalProvisioner.values -- Helm values
+  # @default -- [upstream values](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/blob/master/charts/nfs-subdir-external-provisioner/values.yaml)
   values: {}
 
 # cephCsiRbd -- [ceph-csi-rbd](https://github.com/ceph/ceph-csi/)

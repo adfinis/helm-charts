@@ -1,8 +1,8 @@
-{{ if .Values.nfsClientProvisioner.enabled }}
-{{ template "argoconfig.application" (list . "storage-apps.nfsClientProvisioner") }}
+{{ if .Values.nfsSubdirExternalProvisioner.enabled }}
+{{ template "argoconfig.application" (list . "storage-apps.nfsSubdirExternalProvisioner") }}
 {{ end }}
 
-{{- define "storage-apps.nfsClientProvisioner" -}}{{- $app := unset .Values.nfsClientProvisioner "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
+{{- define "storage-apps.nfsSubdirExternalProvisioner" -}}{{- $app := unset .Values.nfsSubdirExternalProvisioner "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
 metadata:
   name: {{ template "common.fullname" . }}-{{ $name }}
 spec:
