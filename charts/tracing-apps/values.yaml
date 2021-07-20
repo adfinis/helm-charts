@@ -12,8 +12,8 @@ jaegerOperator:
   repoURL: "https://jaegertracing.github.io/helm-charts"
   # jaegerOperator.chart -- Chart
   chart: "jaeger-operator"
-  # jaegerOperator.targetRevision -- [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/master/charts/jaeger-operator)
-  targetRevision: "2.21.*"
+  # jaegerOperator.targetRevision -- [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/main/charts/jaeger-operator)
+  targetRevision: "2.23.*"
   # jaegerOperator.values -- Helm values
-  # @default -- [upstream values](https://github.com/jaegertracing/helm-charts/blob/master/charts/jaeger-operator/values.yaml)
+  # @default -- [upstream values](https://github.com/jaegertracing/helm-charts/blob/main/charts/jaeger-operator/values.yaml)
   values: {}
