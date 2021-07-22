@@ -31,8 +31,6 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      securityContext:
-        {{- toYaml .Values.controller.podSecurityContext | nindent 8 }}
       hostNetwork: true
       containers:
         - name: csi-provisioner
@@ -126,6 +124,8 @@ spec:
               mountPath: /var/log
             - name: config-map
               mountPath: /etc/huawei
+          securityContext:
+            {{- toYaml .Values.controller.securityContext | nindent 12 }}
 
         - name: tail
           image: "{{ .Values.csi_driver.image.repository }}:{{ .Values.csi_driver.image.tag | default .Chart.AppVersion }}"
