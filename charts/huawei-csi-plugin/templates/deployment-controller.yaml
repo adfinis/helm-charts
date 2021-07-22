@@ -127,6 +127,19 @@ spec:
             - name: config-map
               mountPath: /etc/huawei
 
+        - name: tail
+          image: "{{ .Values.csi_driver.image.repository }}:{{ .Values.csi_driver.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.csi_driver.image.pullPolicy }}
+          command:
+            - "tail"
+            - "-F"
+            - "/var/log/huawei/huawei-csi-controller"
+          securityContext:
+            {{- toYaml .Values.csi_driver.node.securityContext | nindent 12 }}
+          volumeMounts:
+            - name: log
+              mountPath: /var/log
+
       volumes:
         - name: socket-dir
           emptyDir:
