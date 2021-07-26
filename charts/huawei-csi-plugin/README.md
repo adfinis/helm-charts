@@ -1,6 +1,6 @@
 # huawei-csi-plugin
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.2.RC3](https://img.shields.io/badge/AppVersion-v2.2.RC3-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.2.RC3](https://img.shields.io/badge/AppVersion-v2.2.RC3-informational?style=flat-square)
 
 Deploy the Huawei CSI plugin
 
@@ -25,6 +25,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | csi_attacher.image.tag | string | `"v1.2.1"` | Image Tag for csi-attacher |
 | csi_attacher.resources | object | `{}` | resources for csi-attacher |
 | csi_driver.controller.resources | object | `{}` | resources for csi-driver container within controller-deployment |
+| csi_driver.controller.securityContext | object | - | securityContext for the huawei-csi-driver container in the controller deployment |
 | csi_driver.image.pullPolicy | string | `"IfNotPresent"` | Image PullPolicy for csi-driver |
 | csi_driver.image.repository | string | `"ghcr.io/adfinis-sygroup/huawei-csi-plugin"` | Image Repo for csi-driver |
 | csi_driver.image.tag | string | `"v2.2.RC3"` | Image Tag for csi-driver |

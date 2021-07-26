@@ -17,6 +17,11 @@ csi_driver:
     # csi_driver.image.pullPolicy -- Image PullPolicy for csi-driver
     pullPolicy: IfNotPresent
   controller:
+    # csi_driver.controller.securityContext -- securityContext for the huawei-csi-driver container in the controller deployment
+    # @default -- -
+    securityContext:
+      runAsUser: 0
+      runAsGroup: 0
     # csi_driver.controller.resources -- resources for csi-driver container within controller-deployment
     resources: {}
   node:
