@@ -18,10 +18,9 @@ spec:
       app.kubernetes.io/component: "csi-controller"
   template:
     metadata:
-    {{- with .Values.controller.podAnnotations }}
       annotations:
-        {{- toYaml . | nindent 8 }}
-    {{- end }}
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        {{- toYaml .Values.controller.podAnnotations | nindent 8 }}
       labels:
         {{- include "huawei-csi-plugin.selectorLabels" . | nindent 8 }}
         app.kubernetes.io/component: "csi-controller"
