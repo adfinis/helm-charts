@@ -13,10 +13,11 @@ spec:
       app.kubernetes.io/component: "csi-node"
   template:
     metadata:
-       {{- with .Values.node.podAnnotations }}
-       annotations:
-         {{- toYaml . | nindent 8 }}
-       {{- end }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        {{- with .Values.node.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
       labels:
         {{- include "huawei-csi-plugin.selectorLabels" . | nindent 8 }}
         app.kubernetes.io/component: "csi-node"
