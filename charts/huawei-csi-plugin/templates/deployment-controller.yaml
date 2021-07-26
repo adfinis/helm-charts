@@ -20,7 +20,9 @@ spec:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
-        {{- toYaml .Values.controller.podAnnotations | nindent 8 }}
+        {{- with .Values.controller.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
       labels:
         {{- include "huawei-csi-plugin.selectorLabels" . | nindent 8 }}
         app.kubernetes.io/component: "csi-controller"
