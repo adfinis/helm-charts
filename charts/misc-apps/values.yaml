@@ -32,10 +32,10 @@ signalilo:
   repoURL: "https://charts.appuio.ch"
   # signalilo.chart -- Chart
   chart: "signalilo"
-  # signalilo.targetRevision -- [signalilo Helm chart](https://github.com/appuio/charts/tree/master/signalilo) version
+  # signalilo.targetRevision -- [signalilo Helm chart](https://github.com/appuio/charts/tree/master/appuio/signalilo) version
   targetRevision: "0.5.*"
   # signalilo.values -- Helm values
-  # @default -- [upstream values](https://github.com/appuio/charts/blob/master/signalilo/values.yaml)
+  # @default -- [upstream values](https://github.com/appuio/charts/blob/master/appuio/signalilo/values.yaml)
   values: {}
 
 # sentryKubernetes -- [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml)

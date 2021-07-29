@@ -18,10 +18,11 @@ spec:
       app.kubernetes.io/component: "csi-controller"
   template:
     metadata:
-    {{- with .Values.controller.podAnnotations }}
       annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        {{- with .Values.controller.podAnnotations }}
         {{- toYaml . | nindent 8 }}
-    {{- end }}
+        {{- end }}
       labels:
         {{- include "huawei-csi-plugin.selectorLabels" . | nindent 8 }}
         app.kubernetes.io/component: "csi-controller"
@@ -31,8 +32,6 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      securityContext:
-        {{- toYaml .Values.controller.podSecurityContext | nindent 8 }}
       hostNetwork: true
       containers:
         - name: csi-provisioner
@@ -126,6 +125,21 @@ spec:
               mountPath: /var/log
             - name: config-map
               mountPath: /etc/huawei
+          securityContext:
+            {{- toYaml .Values.controller.securityContext | nindent 12 }}
+
+        - name: tail
+          image: "{{ .Values.csi_driver.image.repository }}:{{ .Values.csi_driver.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.csi_driver.image.pullPolicy }}
+          command:
+            - "tail"
+            - "-F"
+            - "/var/log/huawei/huawei-csi-controller"
+          securityContext:
+            {{- toYaml .Values.csi_driver.node.securityContext | nindent 12 }}
+          volumeMounts:
+            - name: log
+              mountPath: /var/log
 
       volumes:
         - name: socket-dir
