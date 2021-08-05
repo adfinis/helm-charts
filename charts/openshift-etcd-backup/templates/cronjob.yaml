@@ -55,7 +55,6 @@ spec:
             hostPath:
               path: /
               type: Directory
-            name: host
           {{- if or .Values.persistence.nfs.enabled .Values.persistence.hostPath.enabled .Values.persistence.provisioning.enabled }}
           - name: volume-backup
             {{- if .Values.persistence.nfs.enabled }}
