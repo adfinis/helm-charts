@@ -2,7 +2,7 @@ apiVersion: v2
 name: openshift-etcd-backup
 description: Chart for openshift-etcd-backup solution
 type: application
-version: 1.4.0
+version: 1.4.1
 appVersion: v1.4.0
 keywords:
   - openshift-etcd-backup
