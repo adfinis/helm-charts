@@ -3,6 +3,7 @@ kind: CronJob
 metadata:
   name: {{ include "openshift-etcd-backup.fullname" . }}
 spec:
+  startingDeadlineSeconds: 600
   schedule: {{ .Values.backup.schedule | quote }}
   jobTemplate:
     spec:
