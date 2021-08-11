@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.25.0](https://img.shields.io/badge/Version-0.25.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.25.0](https://img.shields.io/badge/AppVersion-0.25.0-informational?style=flat-square)
+![Version: 0.26.0](https://img.shields.io/badge/Version-0.26.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.26.0](https://img.shields.io/badge/AppVersion-0.26.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -63,7 +63,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | secretsStoreCsiDriver.destination.namespace | string | `"infra-secrets-store-csi"` | Namespace |
 | secretsStoreCsiDriver.enabled | bool | `false` | Enable secrets-store-csi-driver |
 | secretsStoreCsiDriver.repoURL | string | [repo](https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts) | Repo URL |
-| secretsStoreCsiDriver.targetRevision | string | `"0.0.*"` | [vault-csi-provider Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/charts/secrets-store-csi-driver) version |
+| secretsStoreCsiDriver.targetRevision | string | `"0.1.*"` | [vault-csi-provider Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/charts/secrets-store-csi-driver) version |
 | secretsStoreCsiDriver.values | object | [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/charts/secrets-store-csi-driver/values.yaml) | Helm values |
 | vault | object | - | [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml)) |
 | vault.chart | string | `"vault"` | Chart |
