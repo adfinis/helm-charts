@@ -27,6 +27,10 @@ spec:
             - name: http
               containerPort: {{ .Values.frontend.service.internalPort }}
           {{- if .Values.frontend.livenessProbe.enabled }}
+          volumeMounts:
+            - name: staticfiles
+              mountPath: /var/www/html/static
+              subPath: staticfiles
           livenessProbe:
             initialDelaySeconds: {{ .Values.frontend.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.frontend.livenessProbe.periodSeconds }}
@@ -54,3 +58,7 @@ spec:
       nodeSelector:
 {{ toYaml .Values.frontend.nodeSelector | indent 8 }}
     {{- end }}
+      volumes:
+        - name: staticfiles
+          configMap:
+            name: {{ include "timed.fullname" .}}-staticfiles

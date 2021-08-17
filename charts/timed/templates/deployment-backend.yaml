@@ -40,6 +40,9 @@ spec:
             - name: workreport
               mountPath: {{ .Values.backend.settings.workReportPath }}
               subPath: workreport
+            - name: staticfiles
+              mountPath: /var/www/static
+              subPath: staticfiles
           imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
           ports:
             - name: http
@@ -82,3 +85,6 @@ spec:
         - name: workreport
           configMap:
             name: {{ include "timed.fullname" .}}-workreport
+        - name: staticfiles
+          configMap:
+            name: {{ include "timed.fullname" .}}-staticfiles
