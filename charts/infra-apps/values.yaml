@@ -196,3 +196,23 @@ kured:
   # kured.values -- Helm values
   # @default -- [upstream values](https://github.com/weaveworks/kured/blob/main/charts/kured/values.yaml)
   values: {}
+
+# kubeEventExporter -- [kubernetes-event-exporter](https://github.com/opsgenie/kubernetes-event-exporter)
+# @default -- [example](./examples/kubernetes-event-exporter.yaml)
+kubeEventExporter:
+  # kubeEventExporter.enabled -- Enable kubernetes-event-exporter
+  enabled: false
+  name: kube-event-exporter
+  destination:
+    # kubeEventExporter.destination.namespace -- Namespace
+    namespace: infra-kube-event-exporter
+  # kubeEventExporter.repoURL -- Repo URL
+  # @default -- [repo](https://charts.bitnami.com/bitnami)
+  repoURL: "https://charts.bitnami.com/bitnami"
+  # kubeEventExporter.chart -- Chart
+  chart: kubernetes-event-exporter
+  # kubeEventExporter.targetRevision -- [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kubernetes-event-exporter)
+  targetRevision: '0.10.*'
+  # kubeEventExporter.values -- Helm values
+  # @default -- [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/kubernetes-event-exporter/values.yaml)
+  values: {}

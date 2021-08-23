@@ -1,0 +1,20 @@
+# Deploy the opsgenie kubernetes-event-exporter
+#
+# This configuration dumps all the events to stdout where they can be picked
+# up by loki.
+
+kubeEventExporter:
+  enabled: true
+  values:
+    config:
+      logLevel: debug
+      logFormat: pretty
+      receivers:
+      - name: "dump"
+        file:
+          path: "/dev/stdout"
+        layout: {}
+      route:
+        routes:
+          - match:
+            - receiver: "dump"

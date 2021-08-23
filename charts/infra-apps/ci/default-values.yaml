@@ -32,3 +32,5 @@ thanos:
       enabled: false
 kured:
   enabled: true
+kubeEventExporter:
+  enabled: true
