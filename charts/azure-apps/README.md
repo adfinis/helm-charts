@@ -23,13 +23,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| secretsStoreCsiDriverAzure | object | - | [secrets-store-csi-driver-provider-azure](https://github.com/Azure/secrets-store-csi-driver-provider-azure) ([examplpe](./examples/secrets-store-csi-driver-provider-azure.yaml)) |
-| secretsStoreCsiDriverAzure.chart | string | `secrets-store-csi-driver-provider-azure"` | Chart |
-| secretsStoreCsiDriverAzure.destination.namespace | string | `"infra-secrets-store-csi-azure"` | Namespace |
-| secretsStoreCsiDriverAzure.enabled | bool | `false` | Enable secrets-store-csi-driver-provider-azure |
-| secretsStoreCsiDriverAzure.repoURL | string | [repo](https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/charts) | Repo URL |
-| secretsStoreCsiDriverAzure.targetRevision | string | `"0.2.*"` | [vault-csi-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version |
-| secretsStoreCsiDriverAzure.values | object | [upstream values](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/charts/csi-secrets-store-provider-azure/values.yaml) | Helm values |
+| azureKvCsiProvider | object | - | [secrets-store-csi-driver-provider-azure](https://github.com/Azure/secrets-store-csi-driver-provider-azure) ([examplpe](./examples/secrets-store-csi-driver-provider-azure.yaml)) |
+| azureKvCsiProvider.chart | string | `secrets-store-csi-driver-provider-azure"` | Chart |
+| azureKvCsiProvider.destination.namespace | string | `"infra-azure-kv-csi-provider"` | Namespace |
+| azureKvCsiProvider.enabled | bool | `false` | Enable secrets-store-csi-driver-provider-azure |
+| azureKvCsiProvider.repoURL | string | [repo](https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/charts) | Repo URL |
+| azureKvCsiProvider.targetRevision | string | `"0.2.*"` | [vault-csi-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version |
+| azureKvCsiProvider.values | object | [upstream values](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/charts/csi-secrets-store-provider-azure/values.yaml) | Helm values |
 
 ## About this chart
 

@@ -1,4 +1,4 @@
 The following apps are available:
-{{ if .Values.secretsStoreCsiDriverAzure.enabled }}
-* secretsStoreCsiDriverAzure
+{{ if .Values.azureKvCsiProvider.enabled }}
+* azureKvCsiProvider
 {{ end }}
