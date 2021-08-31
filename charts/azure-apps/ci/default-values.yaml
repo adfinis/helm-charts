@@ -1,0 +1,3 @@
+secretsStoreCsiDriverAzure:
+  enabled: true
+  values: {}

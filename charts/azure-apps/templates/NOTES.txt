@@ -1,0 +1,4 @@
+The following apps are available:
+{{ if .Values.secretsStoreCsiDriverAzure.enabled }}
+* secretsStoreCsiDriverAzure
+{{ end }}
