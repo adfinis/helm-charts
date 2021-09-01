@@ -23,7 +23,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| azureKvCsiProvider | object | - | [secrets-store-csi-driver-provider-azure](https://github.com/Azure/secrets-store-csi-driver-provider-azure) ([examplpe](./examples/secrets-store-csi-driver-provider-azure.yaml)) |
+| azureKvCsiProvider | object | - | [secrets-store-csi-driver-provider-azure](https://github.com/Azure/secrets-store-csi-driver-provider-azure) ([examplpe](./examples/azure-kv-csi-provider.yaml)) |
 | azureKvCsiProvider.chart | string | `secrets-store-csi-driver-provider-azure"` | Chart |
 | azureKvCsiProvider.destination.namespace | string | `"infra-azure-kv-csi-provider"` | Namespace |
 | azureKvCsiProvider.enabled | bool | `false` | Enable secrets-store-csi-driver-provider-azure |
