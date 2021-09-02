@@ -1,0 +1,4 @@
+The following apps are available:
+{{ if .Values.azureKvCsiProvider.enabled }}
+* secrets-store-csi-driver-provider-azure
+{{ end }}
