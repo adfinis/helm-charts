@@ -29,6 +29,7 @@ Configure cert-manager Issuers and ClusterIssuers via Helm
 | Chart | Description | Version |
 | ----- | ----------- | ------- |
 | [argoconfig](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argoconfig) | Configure Argo CD AppProjects and Applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
+| [azure-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/azure-apps) | Argo CD app-of-apps config for Azure applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [back8sup](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/back8sup) | Deploy back8sup to a Kubernetes Cluster | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [barman](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/barman) | Chart for Barman PostgreSQL Backup and Recovery Manager | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 2.1.x](https://img.shields.io/badge/app%20version-2.1.x-brightgreen) |
 | [caasperli](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/caasperli) | Deploy Caasperli to a Kubernetes Cluster | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: latest](https://img.shields.io/badge/app%20version-latest-brightgreen) |
