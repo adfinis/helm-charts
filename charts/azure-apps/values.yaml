@@ -1,0 +1,19 @@
+# azureKvCsiProvider -- [secrets-store-csi-driver-provider-azure](https://github.com/Azure/secrets-store-csi-driver-provider-azure) ([example](./examples/secrets-store-csi-driver-provider-azure.yaml))
+# @default -- -
+azureKvCsiProvider:
+  # azureKvCsiProvider.enabled -- Enable secrets-store-csi-driver-provider-azure
+  enabled: false
+  name: azure-kv-csi-provider
+  destination:
+    # azureKvCsiProvider.destination.namespace -- Namespace
+    namespace: "infra-azure-kv-csi-provider"
+  # azureKvCsiProvider.repoURL -- Repo URL
+  # @default -- [repo](https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/charts)
+  repoURL: "https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/charts"
+  # azureKvCsiProvider.chart -- Chart
+  chart: "secrets-store-csi-driver-provider-azure"
+  # azureKvCsiProvider.targetRevision -- [vault-csi-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version
+  targetRevision: "0.2.*"
+  # azureKvCsiProvider.values -- Helm values
+  # @default -- [upstream values](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/charts/csi-secrets-store-provider-azure/values.yaml)
+  values: {}

@@ -1,0 +1,9 @@
+azureKvCsiProvider:
+  enabled: true
+  project: infra-azure-kv-csi-provider
+  values:
+    secrets-store-csi-driver:
+      # Install RBAC roles and bindings required for K8S Secrets syncing if true
+      syncSecret:
+        enabled: true
+      enableSecretRotation: true
