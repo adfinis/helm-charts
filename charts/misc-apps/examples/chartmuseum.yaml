@@ -1,0 +1,31 @@
+# chartmuseum with local storage
+#
+# This example deploys a simple chartmuseum using local storage based on a
+# PVC. As such this deployment will just run anywhere as long as you provide
+# storage as well as ingress.
+
+chartmuseum:
+  enabled: true
+  project: infra-chartmuseum
+  values:
+    resources:
+      limits:
+        cpu: 100m
+        memory: 200Mi
+    env:
+      open:
+        STORAGE: local
+    persistence:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 8Gi
+    ingress:
+      enabled: false
+      annotations: {}
+        kubernetes.io/ingress.class: nginx
+        kubernetes.io/tls-acme: "true"
+      hosts:
+      - name: charts.example.com
+        path: /
+        tls: true
+        tlsSecret: chartmuseum-tls

@@ -58,7 +58,7 @@ sentryKubernetes:
   # @default -- [upstream values](https://github.com/sentry-kubernetes/charts/blob/develop/sentry-kubernetes/values.yaml)
   values: {}
 
-# metallb -- [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml)
+# metallb -- [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml))
 # @default -- -
 metallb:
   # metallb.enabled -- Enable metallb
@@ -76,4 +76,23 @@ metallb:
   targetRevision: "2.4.*"
   # metallb.values -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/metallb/values.yaml)
+  values: {}
+
+# chartmuseum -- [chartmuseum](https://chartmuseum.com) ([example](./example/chartmuseum.yaml))
+# @default -- -
+chartmuseum:
+  # chartmuseum.enabled -- Enable chartmuseum
+  enabled: false
+  name: chartmuseum
+  destination:
+    # chartmuseum.destination.namespace -- Namespace
+    namespace: "infra-chartmuseum"
+  # chartmuseum.repoURL -- [repo](https://chartmuseum.github.io/charts)
+  repoURL: https://chartmuseum.github.io/charts
+  # chartmuseum.chart -- Chart
+  chart: chartmuseum
+  # chartmuseum.targetRevision -- [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum)
+  targetRevision: "3.1.*"
+  # chartmuseum.values -- Helm values
+  # @default -- [upstream values](https://github.com/chartmuseum/charts/blob/main/src/chartmuseum/values.yaml)
   values: {}

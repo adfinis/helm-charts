@@ -13,3 +13,7 @@ sentryKubernetes:
 metallb:
   enabled: true
   values: {}
+
+chartmuseum:
+  enabled: true
+  values: {}
