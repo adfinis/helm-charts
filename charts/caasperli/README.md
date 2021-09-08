@@ -26,6 +26,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | fullnameOverride | string | `""` |  |
 | grafana.defaultLabel | bool | `true` | Add a default `grafana_dashboard: 1` label |
 | grafana.enabled | bool | `false` | Enable Grafana Dashboards |
+| grafana.extraAnnotations | object | `{}` | Annotations to add to all Grafana integration resources |
 | grafana.extraLabels | object | `{}` | Labels to add to all Grafana integration resources |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
 | image.repository | string | `"ghcr.io/adfinis-sygroup/potz-holzoepfel-und-zipfelchape"` | Container image to deploy |
@@ -41,6 +42,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | podAnnotations | object | `{}` | Annotations to add to Pod. |
 | podSecurityContext | object | `{}` | [PodSecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#podsecuritycontext-v1-core) |
 | prometheus.enabled | bool | `false` | Enable Prometheus integration |
+| prometheus.extraAnnotations | object | `{}` | Annotations to add to all Prometheus integration resources |
 | prometheus.extraLabels | object | `{}` | Labels to add to all Prometheus integration resources |
 | prometheus.podMonitor.enabled | bool | `true` | Enable creation of a PodMonitor CRD |
 | prometheus.podMonitor.interval | string | `"30s"` | Interval at which metrics should be scraped |

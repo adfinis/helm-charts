@@ -8,6 +8,10 @@ metadata:
     {{- if .Values.prometheus.extraLabels }}
     {{- .Values.prometheus.extraLabels | toYaml | nindent 4 }}
     {{- end }}
+  {{- if .Values.prometheus.extraAnnotations }}
+  annotations:
+    {{- .Values.prometheus.extraAnnotations | toYaml | nindent 4 }}
+  {{- end }}
 spec:
   selector:
     matchLabels:
