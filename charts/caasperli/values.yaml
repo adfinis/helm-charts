@@ -100,6 +100,8 @@ prometheus:
   enabled: false
   # prometheus.extraLabels -- Labels to add to all Prometheus integration resources
   extraLabels: {}
+  # prometheus.extraAnnotations -- Annotations to add to all Prometheus integration resources
+  extraAnnotations: {}
   serviceMonitor:
     # prometheus.serviceMonitor.enabled -- Enable creation of a ServiceMonitor CRD
     enabled: false
@@ -127,3 +129,5 @@ grafana:
   defaultLabel: true
   # grafana.extraLabels -- Labels to add to all Grafana integration resources
   extraLabels: {}
+  # grafana.extraAnnotations -- Annotations to add to all Grafana integration resources
+  extraAnnotations: {}
