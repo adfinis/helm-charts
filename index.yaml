@@ -988,6 +988,24 @@ entries:
   caasperli:
   - apiVersion: v2
     appVersion: latest
+    created: "2021-09-08T14:40:50.336008059Z"
+    description: Deploy Caasperli to a Kubernetes Cluster
+    digest: 2ce13b152d31ba4a1ae59ca391d221be89b99f7a68af89e7b6aa774461d5129e
+    home: https://github.com/adfinis-sygroup/potz-holzoepfel-und-zipfelchape
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: caasperli
+    sources:
+    - https://github.com/adfinis-sygroup/potz-holzoepfel-und-zipfelchape
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/caasperli
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/caasperli-0.10.0/caasperli-0.10.0.tgz
+    version: 0.10.0
+  - apiVersion: v2
+    appVersion: latest
     created: "2021-06-04T10:04:37.358878814Z"
     description: Deploy Caasperli to a Kubernetes Cluster
     digest: 1c66d38dd854f335abfba73ec0f8e7f9b086f9af39c082822458c72052add3cd
@@ -6865,4 +6883,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-09-08T14:38:16.809171368Z"
+generated: "2021-09-08T14:40:50.337724969Z"
