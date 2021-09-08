@@ -11,7 +11,7 @@ azureKvCsiProvider:
   # @default -- [repo](https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/charts)
   repoURL: "https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/charts"
   # azureKvCsiProvider.chart -- Chart
-  chart: "secrets-store-csi-driver-provider-azure"
+  chart: "csi-secrets-store-provider-azure"
   # azureKvCsiProvider.targetRevision -- [vault-csi-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version
   targetRevision: "0.2.*"
   # azureKvCsiProvider.values -- Helm values
