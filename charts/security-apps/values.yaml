@@ -113,7 +113,7 @@ gatekeeper:
   # gatekeeper.chart -- Chart
   chart: "gatekeeper"
   # gatekeeper.targetRevision -- [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version
-  targetRevision: "3.5.*"
+  targetRevision: "3.6.*"
   # gatekeeper.values -- Helm values
   # @default -- [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml)
   values: {}
