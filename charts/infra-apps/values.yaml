@@ -30,8 +30,8 @@ argocdNotifications:
   repoURL: "https://argoproj.github.io/argo-helm"
   # argocdNotifications.chart -- Chart
   chart: "argocd-notifications"
-  # argocdNotifications.targetRevision -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argocd-notifications) version
-  targetRevision: "1.4.*"
+  # argocdNotifications.targetRevision -- [argocd-notifications Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argocd-notifications) version
+  targetRevision: "1.5.*"
   # argocdNotifications.values -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argocd-notification/values.yaml)
   values: {}
