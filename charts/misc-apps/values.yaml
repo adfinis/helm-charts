@@ -68,14 +68,14 @@ metallb:
     # metallb.destination.namespace -- Namespace
     namespace: "infra-metallb"
   # metallb.repoURL -- Repo URL
-  # @default -- [repo](https://charts.bitnami.com/bitnami)
-  repoURL: "https://charts.bitnami.com/bitnami"
+  # @default -- [repo](https://metallb.github.io/metallb)
+  repoURL: "https://metallb.github.io/metallb"
   # metallb.chart -- Chart
   chart: "metallb"
-  # metallb.targetRevision -- [metallb Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/metallb)
-  targetRevision: "2.4.*"
+  # metallb.targetRevision -- [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb)
+  targetRevision: "0.10.*"
   # metallb.values -- Helm values
-  # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/metallb/values.yaml)
+  # @default -- [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml)
   values: {}
 
 # chartmuseum -- [chartmuseum](https://chartmuseum.com) ([example](./example/chartmuseum.yaml))
