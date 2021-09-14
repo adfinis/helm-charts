@@ -7,9 +7,7 @@ backend:
   image:
     # backend.image.repository -- Backend image name
     repository: adfinissygroup/timed-backend
-     # Specify a tag to override which version of timed to deploy.
-     # If no tag is specified the appVersion from Chart.yaml is used as tag.
-    # backend.image.tag -- Backend image tag
+    # backend.image.tag -- Backend version (optional) in case it differs from appVersion in Chart.yaml
     tag: v1.3.0
     # backend.image.pullPolicy -- Backend image pull policy
     pullPolicy: IfNotPresent
@@ -150,12 +148,9 @@ frontend:
   image:
     # frontend.image.repository -- Frontend image name
     repository: adfinissygroup/timed-frontend
-    # Specify a tag to override which version of timed to deploy.
-    # If no tag is specified the appVersion from Chart.yaml is used as tag.
-    # tag:
     # frontend.image.pullPolicy -- Frontend image pull policy
     pullPolicy: IfNotPresent
-    # frontend.image.tag -- Frontend version (optional) in case it differs from backend
+    # frontend.image.tag -- Frontend version (optional) in case it differs from appVersion in Chart.yaml
     tag: v1.3.1
   service:
     # frontend.service.name -- Frontend service name
