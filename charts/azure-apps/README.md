@@ -1,6 +1,6 @@
 # azure-apps
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.1](https://img.shields.io/badge/AppVersion-0.1.1-informational?style=flat-square)
+![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.2](https://img.shields.io/badge/AppVersion-0.1.2-informational?style=flat-square)
 
 Argo CD app-of-apps config for Azure applications
 
@@ -23,8 +23,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| azureKvCsiProvider | object | - | [secrets-store-csi-driver-provider-azure](https://github.com/Azure/secrets-store-csi-driver-provider-azure) ([examplpe](./examples/azure-kv-csi-provider.yaml)) |
-| azureKvCsiProvider.chart | string | `secrets-store-csi-driver-provider-azure"` | Chart |
+| azureKvCsiProvider | object | - | [secrets-store-csi-driver-provider-azure](https://github.com/Azure/secrets-store-csi-driver-provider-azure) ([example](./examples/secrets-store-csi-driver-provider-azure.yaml)) |
+| azureKvCsiProvider.chart | string | `"csi-secrets-store-provider-azure"` | Chart |
 | azureKvCsiProvider.destination.namespace | string | `"infra-azure-kv-csi-provider"` | Namespace |
 | azureKvCsiProvider.enabled | bool | `false` | Enable secrets-store-csi-driver-provider-azure |
 | azureKvCsiProvider.repoURL | string | [repo](https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/charts) | Repo URL |
