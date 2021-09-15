@@ -8,6 +8,7 @@ export ADFINIS_CHARTS_TMP_BIN=$RUNNER_WORKSPACE/bin
 mkdir -p $ADFINIS_CHARTS_TMP_BIN
 
 # Install deps
+source hack/sh/deps/pre-commit.sh
 source hack/sh/deps/helm-docs.sh
 source hack/sh/deps/gomplate.sh
 echo $ADFINIS_CHARTS_TMP_BIN >> $GITHUB_PATH
