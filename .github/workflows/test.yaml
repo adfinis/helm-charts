@@ -33,9 +33,9 @@ jobs:
         path: ~/.cache/pre-commit
         key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
 
-    - uses: pre-commit/action@v2.0.3
-      with:
-        extra_args: '--color always'
+    - name: Run pre-commit
+      run: |
+        pre-commit run --show-diff-on-failure --color=always --files $(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)
 
   lint-test:
     name: Lint and Install
