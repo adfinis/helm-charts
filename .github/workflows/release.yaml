@@ -24,7 +24,7 @@ jobs:
       - name: Install Helm
         uses: azure/setup-helm@v1.1
         with:
-          version: v3.5.3
+          version: v3.7.0
 
       - name: Add dependency chart repos
         run: yq e '."chart-repos"[]' hack/chart-testing/ct.yaml | tr "=" " " | xargs -L1 helm repo add
