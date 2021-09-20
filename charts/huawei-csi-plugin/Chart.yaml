@@ -2,8 +2,8 @@ apiVersion: v2
 name: huawei-csi-plugin
 description: Deploy the Huawei CSI plugin
 type: application
-version: 0.2.1
-appVersion: v2.2.RC3
+version: 0.3.0
+appVersion: v2.2.14
 home: https://github.com/Huawei/eSDK_K8S_Plugin
 sources:
   - https://github.com/Huawei/eSDK_K8S_Plugin

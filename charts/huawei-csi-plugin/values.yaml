@@ -13,7 +13,7 @@ csi_driver:
     # csi_driver.image.repository -- Image Repo for csi-driver
     repository: "ghcr.io/adfinis-sygroup/huawei-csi-plugin"
     # csi_driver.image.tag -- Image Tag for csi-driver
-    tag: "v2.2.RC3"
+    tag: "v2.2.14"
     # csi_driver.image.pullPolicy -- Image PullPolicy for csi-driver
     pullPolicy: IfNotPresent
   controller:
@@ -35,12 +35,22 @@ csi_driver:
       allowPrivilegeEscalation: true
     # csi_driver.node.resources -- resources for csi-driver container within node-daemonset
     resources: {}
+csi_livenessprobe:
+  image:
+    # csi_livenessprobe.image.repository -- Image Repo for livenessprobe
+    repository: "k8s.gcr.io/sig-storage/livenessprobe"
+    # csi_livenessprobe.image.tag -- Image Tag for livenessprobe
+    tag: "v2.4.0"
+    # csi_livenessprobe.image.pullPolicy -- Image PullPolicy for livenessprobe
+    pullPolicy: IfNotPresent
+  # csi_livenessprobe.resources -- resources for livenessprobe
+  resources: {}
 csi_node_driver_registrar:
   image:
     # csi_node_driver_registrar.image.repository -- Image Repo for csi-node-driver-registrar
     repository: "quay.io/k8scsi/csi-node-driver-registrar"
     # csi_node_driver_registrar.image.tag -- Image Tag for csi-node-driver-registrar
-    tag: "v1.2.0"
+    tag: "v2.0.1"
     # csi_node_driver_registrar.image.pullPolicy -- Image PullPolicy for csi-node-driver-registrar
     pullPolicy: IfNotPresent
   # csi_node_driver_registrar.resources -- resources for csi-node-driver-registrar
@@ -50,7 +60,7 @@ csi_provisioner:
     # csi_provisioner.image.repository -- Image Repo for csi-provisioner
     repository: "quay.io/k8scsi/csi-provisioner"
     # csi_provisioner.image.tag -- Image Tag for csi-provisioner
-    tag: "v1.5.0"
+    tag: "v1.6.0"
     # csi_provisioner.image.pullPolicy -- Image PullPolicy for csi-provisioner
     pullPolicy: IfNotPresent
   # csi_provisioner.resources -- resources for csi-provisioner
@@ -60,7 +70,7 @@ csi_resizer:
     # csi_resizer.image.repository -- Image Repo for csi-resizer
     repository: "quay.io/k8scsi/csi-resizer"
     # csi_resizer.image.tag -- Image Tag for csi-resizer
-    tag: "v0.5.0"
+    tag: "v1.0.1"
     # csi_resizer.image.pullPolicy -- Image PullPolicy for csi-resizer
     pullPolicy: IfNotPresent
   # csi_resizer.resources -- resources for csi-resizer
@@ -68,9 +78,9 @@ csi_resizer:
 csi_snapshot_controller:
   image:
     # csi_snapshot_controller.image.repository -- Image Repo for csi-snapshot-controller
-    repository: "quay.io/k8scsi/csi-snapshot-controller"
+    repository: "quay.io/k8scsi/snapshot-controller"
     # csi_snapshot_controller.image.tag -- Image Tag for csi-snapshot-controller
-    tag: "v2.1.0"
+    tag: "v3.0.2"
     # csi_snapshot_controller.image.pullPolicy -- Image PullPolicy for csi-snapshot-controller
     pullPolicy: IfNotPresent
   # csi_snapshot_controller.resources -- resources for csi-snapshot-controller
@@ -80,7 +90,7 @@ csi_snapshotter:
     # csi_snapshotter.image.repository -- Image Repo for csi-snapshotter
     repository: "quay.io/k8scsi/csi-snapshotter"
     # csi_snapshotter.image.tag -- Image Tag for csi-snapshotter
-    tag: "v2.1.0"
+    tag: "v3.0.2"
     # csi_snapshotter.image.pullPolicy -- Image PullPolicy for csi-snapshotter
     pullPolicy: IfNotPresent
   # csi_snapshotter.resources -- resources for csi-snapshotter
@@ -138,8 +148,7 @@ node:
 csiconfig:
   backends:
     - name: "nfs-backend-01"
-      storage: ""
-      product: ""
+      storage: "oceanstor-nas"
       replicaBackend: "nfs-backend-02"
       urls:
         - url-1
@@ -150,10 +159,11 @@ csiconfig:
         - pool-1
         - pool-2
       parameters:
-        portal: ""
+        portals:
+          - ""
+        protocols: "nfs"
     - name: "nfs-backend-02"
-      storage: ""
-      product: ""
+      storage: "oceanstor-nas"
       replicaBackend: "nfs-backend-01"
       urls:
         - url-1
@@ -164,4 +174,6 @@ csiconfig:
         - pool-1
         - pool-2
       parameters:
-        portal: ""
+        portals:
+          - ""
+        protocols: "nfs"
