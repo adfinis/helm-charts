@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: {{ include "huawei-csi-plugin.fullname" . }}
+  name: {{ include "huawei-csi-plugin.fullname" . }}-node
   labels:
     {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
-    app.kubernetes.io/component: "csi-node"
+    app.kubernetes.io/component: "huawei-csi-node"
 spec:
   selector:
     matchLabels:

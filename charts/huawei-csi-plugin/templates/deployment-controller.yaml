@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "huawei-csi-plugin.fullname" . }}
+  name: {{ include "huawei-csi-plugin.fullname" . }}-controller
   labels:
     {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
-    app.kubernetes.io/component: "csi-controller"
+    app.kubernetes.io/component: "huawei-csi-controller"
 spec:
   {{- if .Values.features.multiController.enabled }}
   replicas: {{ .Values.controller.replicaCount }}
