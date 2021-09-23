@@ -1,6 +1,6 @@
 # azure-apps
 
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.2](https://img.shields.io/badge/AppVersion-0.1.2-informational?style=flat-square)
+![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.3](https://img.shields.io/badge/AppVersion-0.1.3-informational?style=flat-square)
 
 Argo CD app-of-apps config for Azure applications
 
@@ -25,7 +25,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 |-----|------|---------|-------------|
 | azureKvCsiProvider | object | - | [secrets-store-csi-driver-provider-azure](https://github.com/Azure/secrets-store-csi-driver-provider-azure) ([example](./examples/secrets-store-csi-driver-provider-azure.yaml)) |
 | azureKvCsiProvider.chart | string | `"csi-secrets-store-provider-azure"` | Chart |
-| azureKvCsiProvider.destination.namespace | string | `"infra-azure-kv-csi-provider"` | Namespace |
+| azureKvCsiProvider.destination.namespace | string | `"kube-system"` | Namespace |
 | azureKvCsiProvider.enabled | bool | `false` | Enable secrets-store-csi-driver-provider-azure |
 | azureKvCsiProvider.repoURL | string | [repo](https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/charts) | Repo URL |
 | azureKvCsiProvider.targetRevision | string | `"0.2.*"` | [vault-csi-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version |

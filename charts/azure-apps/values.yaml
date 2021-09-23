@@ -6,7 +6,7 @@ azureKvCsiProvider:
   name: azure-kv-csi-provider
   destination:
     # azureKvCsiProvider.destination.namespace -- Namespace
-    namespace: "infra-azure-kv-csi-provider"
+    namespace: "kube-system"
   # azureKvCsiProvider.repoURL -- Repo URL
   # @default -- [repo](https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/charts)
   repoURL: "https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/charts"
