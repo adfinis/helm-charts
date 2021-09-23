@@ -1,7 +1,7 @@
 {{- $ingressHosts := .Values.ingress.hosts }}
 {{- range $key, $val := .Values.backend.cronjobs }}
 ---
-apiVersion: batch/v1
+apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: {{ include "timed.fullname" $ }}-{{ $key | lower }}

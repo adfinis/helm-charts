@@ -21,8 +21,8 @@ spec:
               servicePort: {{ $.Values.backend.service.externalPort }}
           - path: /static/
             backend:
-              serviceName: {{ $.Values.backend.service.name }}
-              servicePort: {{ $.Values.backend.service.externalPort }}
+              serviceName: {{ $.Values.static.service.name }}
+              servicePort: {{ $.Values.static.service.externalPort }}
           - path: /api/
             backend:
               serviceName: {{ $.Values.backend.service.name }}

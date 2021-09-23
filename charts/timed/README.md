@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.7.5](https://img.shields.io/badge/Version-0.7.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.3.0](https://img.shields.io/badge/AppVersion-v1.3.0-informational?style=flat-square)
+![Version: 0.7.6](https://img.shields.io/badge/Version-0.7.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.3.0](https://img.shields.io/badge/AppVersion-v1.3.0-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -139,6 +139,26 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | redmine.enabled | bool | `false` | Enable Redmine integration |
 | redmine.spenthoursField | int | `0` | Spent hours field id on Redmine |
 | redmine.url | string | `"redmine.example.com"` | Redmine URL |
+| static.image.pullPolicy | string | `"IfNotPresent"` | Static files image pull policy |
+| static.image.repository | string | `"adfinissygroup/timed-backend-static"` | Static files image name |
+| static.image.tag | string | `"v1.4.2"` | Static files version (optional) in case it differs from appVersion in Chart.yaml |
+| static.livenessProbe.enabled | bool | `true` | Enable liveness probe on static |
+| static.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
+| static.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
+| static.livenessProbe.periodSeconds | int | `10` | How often (in seconds) to perform the probe |
+| static.livenessProbe.successThreshold | int | `1` | Minimum consecutive successes for the probe to be considered successful after having failed |
+| static.livenessProbe.timeoutSeconds | int | `5` | Number of seconds after which the probe times out |
+| static.readinessProbe.enabled | bool | `true` | Enable readiness probe on static |
+| static.readinessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
+| static.readinessProbe.initialDelaySeconds | int | `30` | Number of seconds after the container has started before readiness probe is initiated |
+| static.readinessProbe.periodSeconds | int | `10` | How often (in seconds) to perform the probe |
+| static.readinessProbe.successThreshold | int | `1` | Minimum consecutive successes for the probe to be considered successful after having failed |
+| static.readinessProbe.timeoutSeconds | int | `5` | Number of seconds after which the probe times out |
+| static.replicaCount | int | `1` | (int) Number of Static files replicas |
+| static.service.externalPort | int | `80` | External Port of static service |
+| static.service.internalPort | int | `80` | Internal Port of static service |
+| static.service.name | string | `"timed-static"` | Static files service name |
+| static.service.type | string | `"ClusterIP"` | Static files service type |
 
 ## About this chart
 

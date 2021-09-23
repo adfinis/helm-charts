@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.static.service.name }}
+  labels:
+    {{- include "timed.labels" . | nindent 4 }}
+    app.kubernetes.io/component: static
+spec:
+  type: {{ .Values.static.service.type }}
+  ports:
+    - port: {{ .Values.static.service.externalPort }}
+      targetPort: http
+      protocol: TCP
+      name: {{ .Values.static.service.name }}
+  selector:
+    {{- include "timed.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: static
