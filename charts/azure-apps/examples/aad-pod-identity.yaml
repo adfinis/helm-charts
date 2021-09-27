@@ -1,0 +1,31 @@
+# This shows how to install aad-pod-identity without bells and whistles
+#
+# Since the solution is deployed to the `kube-system` namespace you should
+# set up the `infra-aas-pod-identity` project in a way that it can only
+# manage a subset of resources.
+# Specifically you would need to set `namespaceResourceWhitelist` to only
+# allow the following resources:
+# - group: ''
+#   kind: ServiceAccount
+# - group: apps
+#   kind: DaemonSet
+# - group: apps
+#   kind: Deployment
+# - group: aadpodidentity.k8s.io
+#   kind: AzurePodIdentityException
+#
+# In addition the project needs to allow managing the following cluster
+# resources:
+# - group: rbac.authorization.k8s.io
+#   kind: ClusterRole
+# - group: rbac.authorization.k8s.io
+#   kind: ClusterRoleBinding
+# - group: policy
+#   kind: PodSecurityPolicy
+#
+# The aad-pod-identity Helm chart has a lot of tuneable knobs and the
+# above permission will vary depending on your exact configuration.
+
+aadPodIdentity:
+  enabled: true
+  project: infra-aad-pod-identity

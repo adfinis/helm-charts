@@ -1,6 +1,6 @@
 # azure-apps
 
-![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.3](https://img.shields.io/badge/AppVersion-0.1.3-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.0](https://img.shields.io/badge/AppVersion-0.2.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for Azure applications
 
@@ -23,6 +23,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| aadPodIdentity | object | - | [aad-pod-identity](https://azure.github.io/aad-pod-identity/) ([example](./examples/aad-pod-identity.yaml)) |
+| aadPodIdentity.chart | string | `"aad-pod-identity"` | Chart |
+| aadPodIdentity.destination.namespace | string | `"kube-system"` | Namespace |
+| aadPodIdentity.enabled | bool | `false` | Enable aad-pod-identity |
+| aadPodIdentity.repoURL | string | [repo](https://raw.githubusercontent.com/Azure/aad-pod-identity/master/charts/) | Repo URL |
+| aadPodIdentity.targetRevision | string | `"4.1.*"` | [aad-pod-identity Helm Chart](https://github.com/Azure/aad-pod-identity/tree/master/charts/aad-pod-identity) |
+| aadPodIdentity.values | object | [upstream values](https://github.com/Azure/aad-pod-identity/tree/master/charts/aad-pod-identity/values.yaml) | Helm Values |
 | azureKvCsiProvider | object | - | [secrets-store-csi-driver-provider-azure](https://github.com/Azure/secrets-store-csi-driver-provider-azure) ([example](./examples/secrets-store-csi-driver-provider-azure.yaml)) |
 | azureKvCsiProvider.chart | string | `"csi-secrets-store-provider-azure"` | Chart |
 | azureKvCsiProvider.destination.namespace | string | `"kube-system"` | Namespace |

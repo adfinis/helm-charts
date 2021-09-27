@@ -17,3 +17,23 @@ azureKvCsiProvider:
   # azureKvCsiProvider.values -- Helm values
   # @default -- [upstream values](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/charts/csi-secrets-store-provider-azure/values.yaml)
   values: {}
+
+# aadPodIdentity -- [aad-pod-identity](https://azure.github.io/aad-pod-identity/) ([example](./examples/aad-pod-identity.yaml))
+# @default -- -
+aadPodIdentity:
+  # aadPodIdentity.enabled -- Enable aad-pod-identity
+  enabled: false
+  name: aad-pod-identity
+  destination:
+    # aadPodIdentity.destination.namespace -- Namespace
+    namespace: kube-system
+  # aadPodIdentity.repoURL -- Repo URL
+  # @default -- [repo](https://raw.githubusercontent.com/Azure/aad-pod-identity/master/charts/)
+  repoURL: "https://raw.githubusercontent.com/Azure/aad-pod-identity/master/charts/"
+  # aadPodIdentity.chart -- Chart
+  chart: "aad-pod-identity"
+  # aadPodIdentity.targetRevision -- [aad-pod-identity Helm Chart](https://github.com/Azure/aad-pod-identity/tree/master/charts/aad-pod-identity)
+  targetRevision: "4.1.*"
+  # aadPodIdentity.values -- Helm Values
+  # @default -- [upstream values](https://github.com/Azure/aad-pod-identity/tree/master/charts/aad-pod-identity/values.yaml)
+  values: {}
