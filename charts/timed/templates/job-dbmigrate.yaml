@@ -6,8 +6,8 @@ metadata:
     {{- include "timed.labels" . | nindent 4 }}
     app.kubernetes.io/component: db-migrate
   annotations:
-    "helm.sh/hook": post-install,post-upgrade
-    "helm.sh/hook-delete-policy": hook-succeeded
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   activeDeadlineSeconds: 300
   template:

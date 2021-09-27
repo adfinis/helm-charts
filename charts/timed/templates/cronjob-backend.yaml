@@ -8,6 +8,8 @@ metadata:
   labels:
     {{- include "timed.labels" $ | nindent 4 }}
     app.kubernetes.io/component: {{ $key | lower | quote }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   schedule: {{ $val.schedule | quote }}
   concurrencyPolicy: Forbid
