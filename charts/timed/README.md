@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.7.6](https://img.shields.io/badge/Version-0.7.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.3.0](https://img.shields.io/badge/AppVersion-v1.3.0-informational?style=flat-square)
+![Version: 0.7.7](https://img.shields.io/badge/Version-0.7.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.3.0](https://img.shields.io/badge/AppVersion-v1.3.0-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -115,6 +115,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingress.enabled | bool | `false` | Enable ingress for timed |
 | ingress.hosts | list | `[]` | Ingress hostnames |
 | ingress.tls | list | `[]` | Ingress TLS options |
+| kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
 | postgresql.image.tag | string | `"12.3.0"` | PostgreSQL image version to use |
 | postgresql.ingress.enabled | bool | `false` | Enable ingress |

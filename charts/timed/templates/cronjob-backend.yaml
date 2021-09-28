@@ -1,7 +1,12 @@
 {{- $ingressHosts := .Values.ingress.hosts }}
+{{- $kubeVersion := default .Capabilities.KubeVersion.Version .Values.kubeVersionOverride }}
 {{- range $key, $val := .Values.backend.cronjobs }}
 ---
+{{- if semverCompare "<1.21-0" $kubeVersion }}
+apiVersion: batch/v1beta1
+{{- else }}
 apiVersion: batch/v1
+{{- end }}
 kind: CronJob
 metadata:
   name: {{ include "timed.fullname" $ }}-{{ $key | lower }}
