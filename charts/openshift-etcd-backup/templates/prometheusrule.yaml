@@ -1,0 +1,15 @@
+{{- if .Values.monitoring.enabled -}}
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: {{ include "openshift-etcd-backup.fullname" . }}-cronjob-monitor
+spec:
+  groups:
+  - name: cronjob-fail
+    rules:
+    - alert: EtcdBackupCronJobStatusFailed
+      expr: |
+        kube_job_status_succeeded{namespace="{{ .Release.Namespace }}"} == 0
+      labels:
+        severity: critical
+{{- end }}
