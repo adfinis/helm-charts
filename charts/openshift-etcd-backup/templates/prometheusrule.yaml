@@ -1,11 +1,15 @@
-{{- if and .Values.monitoring.enabled (.Capabilities.APIVersions.Has "monitoring.coreos.com/v1") }}
+{{- if and .Values.monitoring.enabled .Values.monitoring.rules.cronjobMonitor (.Capabilities.APIVersions.Has "monitoring.coreos.com/v1") }}
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
   name: {{ include "openshift-etcd-backup.fullname" . }}-cronjob-monitor
 spec:
   groups:
-  - name: openshift-etcd-backup
+  - name: cronjob-monitor
     rules:
-{{- tpl .Values.monitoring.rules . | nindent 4 }}
+    - alert: EtcdBackupCronJobStatusFailed
+      expr: |
+        kube_job_status_succeeded{namespace="{{ .Release.Namespace }}"} == 0
+      labels:
+        severity: critical
 {{- end }}
