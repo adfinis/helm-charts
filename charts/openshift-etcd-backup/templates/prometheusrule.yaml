@@ -1,4 +1,4 @@
-{{- if and (.Values.monitoring.enabled) (.Capabilities.APIVersions.Has "monitoring.coreos.com/v1") }}
+{{- if and .Values.monitoring.enabled (.Capabilities.APIVersions.Has "monitoring.coreos.com/v1") }}
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
@@ -7,9 +7,5 @@ spec:
   groups:
   - name: openshift-etcd-backup
     rules:
-    - alert: EtcdBackupCronJobStatusFailed
-      expr: |
-        kube_job_status_succeeded{namespace="{{ .Release.Namespace }}"} == 0
-      labels:
-        severity: critical
+{{- tpl .Values.monitoring.rules . | nindent 4 }}
 {{- end }}

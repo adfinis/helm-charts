@@ -31,6 +31,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | image.repository | string | `"ghcr.io/adfinis-sygroup/openshift-etcd-backup"` | Repository image to use |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | monitoring.enabled | bool | `false` | Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis-sygroup/openshift-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml). Be sure to to have monitoring for user defined projects enabled as [described in the upstream documentation](https://docs.openshift.com/container-platform/4.6/monitoring/enabling-monitoring-for-user-defined-projects.html). |
+| monitoring.rules | string | `nil` | Define the list of rules as described below. |
 | nameOverride | string | `""` |  |
 | nodeSelector."node-role.kubernetes.io/master" | string | `""` | The backup job should run on masters as etcd runs on them |
 | persistence.capacity | string | `"10Gi"` | Define the storage size |
