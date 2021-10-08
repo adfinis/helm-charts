@@ -103,6 +103,7 @@ monitoring:
   rules:
     # -- Deploy PrometheusRule to check for cronjob fails.
     cronjobMonitor: true
+  # -- Provide custom recording or alerting rules to be deployed into the cluster.
   additionalRules:
   #  rule-name:
   #    groups:
