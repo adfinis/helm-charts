@@ -103,3 +103,10 @@ monitoring:
   rules:
     # -- Deploy PrometheusRule to check for cronjob fails.
     cronjobMonitor: true
+  additionalRules:
+  #  rule-name:
+  #    groups:
+  #    - name: my_group
+  #      rules:
+  #      - record: my_record
+  #        expr: 100 * my_record
