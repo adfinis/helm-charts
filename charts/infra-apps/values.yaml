@@ -13,7 +13,7 @@ argocd:
   # argocd.chart -- Chart
   chart: "argo-cd"
   # argocd.targetRevision -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version
-  targetRevision: "3.17.*"
+  targetRevision: "3.22.*"
   # argocd.values -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml)
   values: {}
@@ -33,7 +33,7 @@ argocdNotifications:
   # argocdNotifications.targetRevision -- [argocd-notifications Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argocd-notifications) version
   targetRevision: "1.5.*"
   # argocdNotifications.values -- Helm values
-  # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argocd-notification/values.yaml)
+  # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argocd-notifications/values.yaml)
   values: {}
 
 # certManager -- [cert-manager](https://cert-manager.io/)
@@ -112,7 +112,7 @@ kubePrometheusStack:
   # kubePrometheusStack.chart -- Chart
   chart: "kube-prometheus-stack"
   # kubePrometheusStack.targetRevision -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: '18.0.*'
+  targetRevision: '19.0.*'
   # kubePrometheusStack.values -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
   values: {}
