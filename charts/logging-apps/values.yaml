@@ -57,3 +57,23 @@ fluentd:
   # fluentd.values -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/fluentd/values.yaml)
   values: {}
+
+# fluentBit -- [fluentBit](https://github.com/fluent/fluent-bit) ([example](./examples/fluentBit.yaml))
+# @default -- -
+fluentBit:
+  # fluentBit.enabled -- Enable fluentBit
+  enabled: false
+  name: fluentBit
+  destination:
+    # fluentBit.destination.namespace -- Namespace
+    namespace: "infra-logging"
+  # fluentBit.repoURL -- Repo URL
+  # @default -- [repo](https://fluent.github.io/helm-charts)
+  repoURL: "https://fluent.github.io/helm-charts"
+  # fluentBit.chart -- Chart
+  chart: "fluent-bit"
+  # fluentBit.targetRevision -- [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version
+  targetRevision: "0.17.*"
+  # fluentBit.values -- Helm values
+  # @default -- [upstream values](https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/values.yaml)
+  values: {}

@@ -9,3 +9,7 @@ filebeat:
 fluentd:
   enabled: true
   values: {}
+
+fluent-bit:
+  enabled: true
+  values: {}
