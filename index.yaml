@@ -3303,6 +3303,27 @@ entries:
     version: 0.3.1
   logging-apps:
   - apiVersion: v2
+    appVersion: 0.13.0
+    created: "2021-10-11T13:16:07.988555146Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.4
+    description: Argo CD app-of-apps config for logging applications
+    digest: 9fa2f3d7767fa3da7a158b216ecbdc311b039d0b82cd3c83c7192ab0186fd6c0
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.13.0/logging-apps-0.13.0.tgz
+    version: 0.13.0
+  - apiVersion: v2
     appVersion: 0.12.0
     created: "2021-10-11T12:44:46.320769929Z"
     dependencies:
@@ -7476,4 +7497,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-11T12:44:46.323086731Z"
+generated: "2021-10-11T13:16:07.990431875Z"
