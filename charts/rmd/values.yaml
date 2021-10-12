@@ -1,6 +1,10 @@
 # Default values for rmd.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+
+# kubeVersionOverride -- override what version of Kubernetes to render against
+kubeVersionOverride: ~
+
 rmd:
   # rmd.replicaCount -- (int) Number of Rmd replicas
   replicaCount: 1

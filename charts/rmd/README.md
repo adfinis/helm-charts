@@ -1,6 +1,6 @@
 # rmd
 
-![Version: 0.1.13](https://img.shields.io/badge/Version-0.1.13-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
+![Version: 0.1.14](https://img.shields.io/badge/Version-0.1.14-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
 
 Chart for Rmd.io application
 
@@ -28,6 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingress.enabled | bool | `false` | Enable ingress for rmd |
 | ingress.hosts | list | `["localhost"]` | Ingress hostnames |
 | ingress.tls | list | `[]` | Ingress TLS options |
+| kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
 | postgresql.postgresqlDatabase | string | `"rmd.io"` | PostgreSQL database name |
 | postgresql.postgresqlPassword | string | `nil` | Set a password for PostgreSQL |
