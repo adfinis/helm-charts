@@ -4061,6 +4061,29 @@ entries:
     version: 0.1.0
   openshift-etcd-backup:
   - apiVersion: v2
+    appVersion: v1.5.2
+    created: "2021-10-12T13:00:42.434087187Z"
+    description: Chart for openshift-etcd-backup solution
+    digest: 2bc9407ed135e5af402da8b20f10124a8e8450c4ae83f8afe3061bf61ff099c4
+    home: https://github.com/adfinis-sygroup/openshift-etcd-backup
+    keywords:
+    - openshift-etcd-backup
+    - openshift
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: openshift-etcd-backup
+    sources:
+    - https://github.com/adfinis-sygroup/openshift-etcd-backup
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/openshift-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/openshift-etcd-backup-1.5.0/openshift-etcd-backup-1.5.0.tgz
+    version: 1.5.0
+  - apiVersion: v2
     appVersion: v1.4.1
     created: "2021-09-10T11:59:36.05984184Z"
     description: Chart for openshift-etcd-backup solution
@@ -7497,4 +7520,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-11T13:16:07.990431875Z"
+generated: "2021-10-12T13:00:42.435767985Z"
