@@ -8,3 +8,6 @@ The following apps are available:
 {{ if .Values.fluentd.enabled }}
 * fluentd
 {{ end }}
+{{ if .Values.fluentBit.enabled }}
+* fluentBit
+{{ end }}
