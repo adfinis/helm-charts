@@ -63,7 +63,7 @@ fluentd:
 fluentBit:
   # fluentBit.enabled -- Enable fluentBit
   enabled: false
-  name: fluentBit
+  name: fluentbit
   destination:
     # fluentBit.destination.namespace -- Namespace
     namespace: "infra-logging"
