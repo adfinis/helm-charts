@@ -1,5 +1,5 @@
 {{ if .Values.fluentBit.enabled }}
-{{ template "argoconfig.application" (list . "logging-apps.fluent") }}
+{{ template "argoconfig.application" (list . "logging-apps.fluentBit") }}
 {{ end }}
 
 {{- define "logging-apps.fluentBit" -}}{{- $app := unset .Values.fluentBit "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
