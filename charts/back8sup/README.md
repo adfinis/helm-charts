@@ -43,7 +43,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | image.repository | string | `"ghcr.io/adfinis-sygroup/back8sup"` | set the image repository |
 | image.tag | string | `""` | set the tag of the image Specify a tag to override which version of timed to deploy. If no tag is specified the appVersion from Chart.yaml is used as tag. |
 | imagePullSecrets | list | `[]` | specifies the image pull secrets to be used |
-| kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
 | nameOverride | string | `""` | specifies the name override to be used for helm |
 | nodeSelector | object | `{}` | specifies the nodeSelector to be used |
 | persistence.enabled | bool | `true` | specifies if persistence is enabled or not |
