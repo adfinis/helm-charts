@@ -13,7 +13,7 @@ argocd:
   # argocd.chart -- Chart
   chart: "argo-cd"
   # argocd.targetRevision -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version
-  targetRevision: "3.22.*"
+  targetRevision: "3.25.*"
   # argocd.values -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml)
   values: {}
@@ -91,10 +91,10 @@ ingressNginx:
   repoURL: "https://kubernetes.github.io/ingress-nginx"
   # ingressNginx.chart -- Chart
   chart: "ingress-nginx"
-  # ingressNginx.targetRevision -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/master/charts/ingress-nginx) version
-  targetRevision: '3.34.*'
+  # ingressNginx.targetRevision -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version
+  targetRevision: '4.0.*'
   # ingressNginx.values -- Helm values
-  # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/master/charts/ingress-nginx/values.yaml)
+  # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml)
   values: {}
 
 # kubePrometheusStack -- [prometheus-operator](https://github.com/coreos/prometheus-operator)
