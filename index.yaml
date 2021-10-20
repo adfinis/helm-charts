@@ -1542,6 +1542,27 @@ entries:
     version: 0.0.0
   csi-secret-provider-class:
   - apiVersion: v2
+    appVersion: 0.3.0
+    created: "2021-10-20T12:58:26.36605388Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.6
+    description: A Helm chart to create a SecretProviderClass resource
+    digest: 7f203971c4b55ad425b253af057134d44306bc071856628274855f2ea33ca4bd
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/csi-secret-provider-class
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: csi-secret-provider-class
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/csi-secret-provider-class-0.3.0/csi-secret-provider-class-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     appVersion: 0.2.1
     created: "2021-02-23T13:57:34.982049513Z"
     dependencies:
@@ -7627,4 +7648,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-17T21:12:36.285035192Z"
+generated: "2021-10-20T12:58:26.368470831Z"
