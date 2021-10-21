@@ -392,6 +392,24 @@ entries:
   back8sup:
   - apiVersion: v2
     appVersion: v0.7.5
+    created: "2021-10-21T11:58:37.548282184Z"
+    description: Deploy back8sup to a Kubernetes Cluster
+    digest: 185ca2d83ac056cbd006a0f3fa767f19e60f66e734c1fead496b0c09abe2f921
+    home: https://github.com/adfinis-sygroup/back8sup
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: back8sup
+    sources:
+    - https://github.com/adfinis-sygroup/back8sup
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/back8sup
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/back8sup-0.3.4/back8sup-0.3.4.tgz
+    version: 0.3.4
+  - apiVersion: v2
+    appVersion: v0.7.5
     created: "2021-07-06T16:23:45.043329401Z"
     description: Deploy back8sup to a Kubernetes Cluster
     digest: 6237b5405cc29ee839c87b7b8c26ef1b2e5f42ed8b852f4f9330019e5c9fda69
@@ -7648,4 +7666,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-20T12:58:26.368470831Z"
+generated: "2021-10-21T11:58:37.550199078Z"
