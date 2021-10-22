@@ -17,3 +17,6 @@ The following apps have been provisioned in Argo CD:
 {{ if .Values.rbacManager.enabled }}
 * rbac-manager
 {{ end }}
+{{ if .Values.velero.enabled }}
+* Velero
+{{ end }}

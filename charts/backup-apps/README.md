@@ -37,13 +37,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
 | barman.targetRevision | string | `"0.3.*"` | [Barman Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/barman) |
 | barman.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/barman/values.yaml) | Helm values |
-| velero | object | [example](./examples/velero.yaml) | [Velero](https://velero.io/) |
-| velero.chart | string | `"velero"` | Chart |
-| velero.destination.namespace | string | `"backup-velero"` | Namespace |
-| velero.enabled | bool | `false` | Enable Velero |
-| velero.repoURL | string | [repo](https://vmware-tanzu.github.io/helm-charts) | Repo URL |
-| velero.targetRevision | string | `"2.24.*"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
-| velero.values | object | [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml) | Helm values |
 
 ## About this chart
 
