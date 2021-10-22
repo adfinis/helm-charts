@@ -1,19 +1,18 @@
 # vault-csi-provider
 
-![Version: 0.2.3](https://img.shields.io/badge/Version-0.2.3-informational?style=flat-square) ![AppVersion: 0.0.7](https://img.shields.io/badge/AppVersion-0.0.7-informational?style=flat-square)
+> **:exclamation: This Helm Chart is deprecated!**
 
-A helm chart to install the vault secrets-store-csi-driver
+![Version: 0.2.4](https://img.shields.io/badge/Version-0.2.4-informational?style=flat-square) ![AppVersion: 0.0.7](https://img.shields.io/badge/AppVersion-0.0.7-informational?style=flat-square)
+
+⚠️ (OBSOLETE) installing this driver is supported by Hashicorps Vault Helm Chart
 
 **Homepage:** <https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-csi-provider/README.md>
-
-## Maintainers
-This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Requirements
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/charts | secrets-store-csi-driver | 0.0.20 |
+| https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts | secrets-store-csi-driver | 0.0.20 |
 
 ## Values
 
