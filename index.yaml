@@ -7652,6 +7652,23 @@ entries:
   vault-csi-provider:
   - apiVersion: v2
     appVersion: 0.0.7
+    created: "2021-10-22T08:54:55.426409821Z"
+    dependencies:
+    - condition: secretsStoreCsiDriver.enabled
+      name: secrets-store-csi-driver
+      repository: https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
+      version: 0.0.20
+    deprecated: true
+    description: ⚠️ (OBSOLETE) installing this driver is supported by Hashicorps Vault
+      Helm Chart
+    digest: fd86bb5646d8fb6ca74c9a8a86e49be2cf85ae100c766a4b4e0953cd37bb4d3c
+    home: https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-csi-provider/README.md
+    name: vault-csi-provider
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-csi-provider-0.2.4/vault-csi-provider-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v2
+    appVersion: 0.0.7
     created: "2021-03-22T08:29:06.20427189Z"
     dependencies:
     - condition: secretsStoreCsiDriver.enabled
@@ -7778,4 +7795,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-22T07:57:35.957751738Z"
+generated: "2021-10-22T08:54:55.428554616Z"
