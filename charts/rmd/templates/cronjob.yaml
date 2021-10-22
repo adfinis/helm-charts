@@ -1,6 +1,6 @@
 {{- range $key, $val := .Values.rmd.cronjobs }}
 ---
-{{- if $.Capabilities.APIVersions.Has "batch/v1/CronJob" }}
+{{- if $.Capabilities.APIVersions.Has "batch/v1" }}
 apiVersion: batch/v1
 {{- else }}
 apiVersion: batch/v1beta1
