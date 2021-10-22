@@ -2,7 +2,7 @@
 {{- $serviceName := include "customerCenter.fullname" . }}
 {{- $backendExternalPort := .Values.backend.service.externalPort }}
 {{- $frontendExternalPort := .Values.frontend.service.externalPort }}
-{{- if .Capabilities.APIVersions.Has "networking.k8s.io/v1/Ingress" }}
+{{- if .Capabilities.APIVersions.Has "networking.k8s.io/v1" }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
