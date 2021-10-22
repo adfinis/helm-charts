@@ -1,8 +1,8 @@
 {{ if .Values.velero.enabled }}
-{{ template "argoconfig.application" (list . "backup-apps.velero") }}
+{{ template "argoconfig.application" (list . "infra-apps.velero") }}
 {{ end }}
 
-{{- define "backup-apps.velero" -}}{{- $app := unset .Values.velero "enabled" -}}{{- $name := default $app.namespace $app.name -}}
+{{- define "infra-apps.velero" -}}{{- $app := unset .Values.velero "enabled" -}}{{- $name := default $app.namespace $app.name -}}
 metadata:
   name: {{ template "common.fullname" . }}-{{ $name }}
 spec:
