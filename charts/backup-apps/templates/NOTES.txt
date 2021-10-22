@@ -2,3 +2,6 @@ The following apps have been provisioned in Argo CD:
 {{ if .Values.barman.enabled }}
 * Barman
 {{ end }}
+{{ if .Values.back8sup.enabled }}
+* Back8sup
+{{ end }}
