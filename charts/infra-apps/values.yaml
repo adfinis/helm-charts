@@ -165,14 +165,14 @@ velero:
   name: velero
   destination:
     # velero.destination.namespace -- Namespace
-    namespace: backup-velero
+    namespace: infra-velero
   # velero.repoURL -- Repo URL
   # @default -- [repo](https://vmware-tanzu.github.io/helm-charts)
   repoURL: "https://vmware-tanzu.github.io/helm-charts"
   # velero.chart -- Chart
   chart: velero
   # velero.targetRevision -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
-  targetRevision: '2.24.*'
+  targetRevision: '2.23.*'
   # velero.values -- Helm values
   # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
   values: {}
