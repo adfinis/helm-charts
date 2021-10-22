@@ -1,0 +1,39 @@
+# barman -- [Barman](https://github.com/EnterpriseDB/barman)
+# @default -- [example](./examples/barman.yaml)
+barman:
+  # barman.enabled -- Enable Barman
+  enabled: true
+  name: barman
+  destination:
+    # barman.destination.namespace -- Namespace
+    namespace: backup-barman
+  # barman.repoURL -- Repo URL
+  # @default -- [repo](https://charts.adfinis.com)
+  repoURL: "https://charts.adfinis.com"
+  # barman.chart -- Chart
+  chart: barman
+  # barman.targetRevision -- [Barman Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/barman)
+  targetRevision: '0.3.*'
+  # barman.values -- Helm values
+  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/barman/values.yaml)
+  values: {}
+
+# velero -- [Velero](https://velero.io/)
+# @default -- [example](./examples/velero.yaml)
+velero:
+  # velero.enabled -- Enable Velero
+  enabled: false
+  name: velero
+  destination:
+    # velero.destination.namespace -- Namespace
+    namespace: backup-velero
+  # velero.repoURL -- Repo URL
+  # @default -- [repo](https://vmware-tanzu.github.io/helm-charts)
+  repoURL: "https://vmware-tanzu.github.io/helm-charts"
+  # velero.chart -- Chart
+  chart: velero
+  # velero.targetRevision -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
+  targetRevision: '2.24.*'
+  # velero.values -- Helm values
+  # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
+  values: {}

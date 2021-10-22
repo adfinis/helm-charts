@@ -1,0 +1,4 @@
+barman:
+  enabled: true
+velero:
+  enabled: true
