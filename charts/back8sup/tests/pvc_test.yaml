@@ -1,0 +1,13 @@
+suite: pvc tests
+templates:
+  - pvc.yaml
+tests:
+  - it: should match snapshot
+    values:
+      - ../ci/default-values.yaml
+    set:
+      persistence.enabled: true
+    asserts:
+      - hasDocuments:
+          count: 1
+      - matchSnapshot: {}

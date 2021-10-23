@@ -1,0 +1,66 @@
+should match snapshot:
+  1: |
+    apiVersion: batch/v1beta1
+    kind: CronJob
+    metadata:
+      labels:
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: back8sup
+        app.kubernetes.io/version: v0.7.5
+        helm.sh/chart: back8sup-0.3.5
+      name: RELEASE-NAME-back8sup
+    spec:
+      jobTemplate:
+        metadata:
+          labels:
+            app.kubernetes.io/instance: RELEASE-NAME
+            app.kubernetes.io/managed-by: Helm
+            app.kubernetes.io/name: back8sup
+            app.kubernetes.io/version: v0.7.5
+            helm.sh/chart: back8sup-0.3.5
+        spec:
+          template:
+            metadata:
+              labels:
+                app.kubernetes.io/instance: RELEASE-NAME
+                app.kubernetes.io/managed-by: Helm
+                app.kubernetes.io/name: back8sup
+                app.kubernetes.io/version: v0.7.5
+                helm.sh/chart: back8sup-0.3.5
+            spec:
+              containers:
+              - env:
+                - name: API_ENDPOINT
+                  value: https://kubernetes.default.svc.cluster.local:443
+                - name: CA_CERT
+                  value: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+                - name: TOKEN_FILE
+                  value: /var/run/secrets/kubernetes.io/serviceaccount/token
+                - name: CONFIGMAP_PATH
+                  value: /etc/config.yaml
+                - name: EXPORT_FORMAT
+                  value: yaml
+                - name: DST_FOLDER
+                  value: /mnt/back8sup
+                - name: GENERATIONS
+                  value: "30"
+                image: ghcr.io/adfinis-sygroup/back8sup:v0.7.5
+                imagePullPolicy: IfNotPresent
+                name: back8sup
+                resources: {}
+                volumeMounts:
+                - mountPath: /etc/config.yaml
+                  name: config-volume
+                  subPath: config.yaml
+                - mountPath: /mnt/back8sup
+                  name: backup-volume
+              restartPolicy: Never
+              serviceAccount: RELEASE-NAME-back8sup
+              volumes:
+              - configMap:
+                  name: RELEASE-NAME-back8sup-config
+                name: config-volume
+              - emptyDir: {}
+                name: backup-volume
+      schedule: 0 1 * * *
