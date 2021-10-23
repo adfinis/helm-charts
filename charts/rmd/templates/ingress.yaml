@@ -1,4 +1,34 @@
 {{- if .Values.ingress.enabled -}}
+{{- if .Capabilities.APIVersions.Has "networking.k8s.io/v1" }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "rmd.fullname" . }}
+  labels:
+    {{- include "rmd.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  rules:
+    {{- range $host := .Values.ingress.hosts }}
+    - host: {{ $host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "rmd.fullname" $ }}
+                port:
+                  number: {{ $.Values.rmd.service.externalPort }}
+    {{- end -}}
+  {{- if .Values.ingress.tls }}
+  tls:
+    {{ toYaml .Values.ingress.tls | nindent 4 }}
+  {{- end -}}
+{{- else }}
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
@@ -24,4 +54,5 @@ spec:
   tls:
     {{ toYaml .Values.ingress.tls | nindent 4 }}
   {{- end -}}
+{{- end -}}
 {{- end -}}
