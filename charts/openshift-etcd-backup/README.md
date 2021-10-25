@@ -30,7 +30,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | image.pullPolicy | string | `"Always"` | Image pull policy configuration |
 | image.repository | string | `"ghcr.io/adfinis-sygroup/openshift-etcd-backup"` | Repository image to use |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
-| kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
 | monitoring.additionalRules | string | `nil` | Provide custom recording or alerting rules to be deployed into the cluster. |
 | monitoring.enabled | bool | `false` | Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis-sygroup/openshift-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml). Be sure to to have monitoring for user defined projects enabled as [described in the upstream documentation](https://docs.openshift.com/container-platform/4.6/monitoring/enabling-monitoring-for-user-defined-projects.html). |
 | monitoring.rules.cronjobMonitor | bool | `true` | Deploy PrometheusRule to check for cronjob fails. |
