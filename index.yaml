@@ -4660,6 +4660,32 @@ entries:
   rmd:
   - apiVersion: v2
     appVersion: edge
+    created: "2021-10-25T08:26:04.675334099Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~9.1.2
+    description: Chart for Rmd.io application
+    digest: 64a4dd4ef908320076a432e6d6ab764746c0254b5016a424d08d37d7575836dc
+    home: https://github.com/adfinis-sygroup/rmd.io
+    keywords:
+    - rmd
+    - postgresql
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: rmd
+    sources:
+    - https://github.com/adfinis-sygroup/rmd.io
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/rmd
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/rmd-0.1.16/rmd-0.1.16.tgz
+    version: 0.1.16
+  - apiVersion: v2
+    appVersion: edge
     created: "2021-10-22T14:05:46.426182622Z"
     dependencies:
     - condition: postgresql.enabled
@@ -7891,4 +7917,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-22T14:05:46.428084909Z"
+generated: "2021-10-25T08:26:04.677266708Z"
