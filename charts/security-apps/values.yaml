@@ -53,7 +53,7 @@ vault:
   # vault.chart -- Chart
   chart: "vault"
   # vault.targetRevision -- [vault Helm chart](https://github.com/hashicorp/vault-helm) version
-  targetRevision: "0.16.*"
+  targetRevision: "0.17.*"
   # vault.values -- Helm values
   # @default -- [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml)
   values: {}
