@@ -1,0 +1,11 @@
+suite: clusterrole tests
+templates:
+  - clusterrole.yaml
+tests:
+  - it: should match snapshot
+    values:
+      - ../ci/default-values.yaml
+    asserts:
+      - hasDocuments:
+          count: 1
+      - matchSnapshot: {}
