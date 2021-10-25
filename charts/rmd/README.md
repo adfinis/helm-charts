@@ -28,6 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingress.enabled | bool | `false` | Enable ingress for rmd |
 | ingress.hosts | list | `["localhost"]` | Ingress hostnames |
 | ingress.tls | list | `[]` | Ingress TLS options |
+| kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
 | postgresql.postgresqlDatabase | string | `"rmd.io"` | PostgreSQL database name |
 | postgresql.postgresqlPassword | string | `nil` | Set a password for PostgreSQL |

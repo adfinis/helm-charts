@@ -1,9 +1,10 @@
+{{- $kubeVersion := default .Capabilities.KubeVersion.Version .Values.kubeVersionOverride }}
 {{- range $key, $val := .Values.rmd.cronjobs }}
 ---
-{{- if $.Capabilities.APIVersions.Has "batch/v1" }}
-apiVersion: batch/v1
-{{- else }}
+{{- if semverCompare "<1.21-0" $kubeVersion }}
 apiVersion: batch/v1beta1
+{{- else }}
+apiVersion: batch/v1
 {{- end }}
 kind: CronJob
 metadata:
