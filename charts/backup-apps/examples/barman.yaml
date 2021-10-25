@@ -1,0 +1,36 @@
+barman:
+  enabled: true
+  values:
+    rbac:
+      create: true
+    persistence:
+      data:
+        size: 10Gi
+      recover:
+        enabled: true
+        size: 5Gi
+    barman:
+      backupMethod: postgres
+      backupOptions: concurrent_backup
+      backupDir: /var/lib/barman
+      barmanUser: barman
+      compression: gzip
+      retentionPolicy: "RECOVERY WINDOW of 1 MONTH"
+      lastBackupMaximumAge: "1 day"
+      backupSchedule: "0 4 * * *"
+      databaseSlotName: barman
+      backups:
+        - retentionPolicy: "RECOVERY WINDOW of 1 MONTH"
+          backupMethod: postgres
+          databaseSlotName: barman
+          lastBackupMaximumAge: "1 day"
+          postgresql:
+            host: "postgresql.postgresql.svc.cluster.local"
+            port: 5432
+            superUser: postgres
+            superUserPassword: superpassword
+            superUserDatabase: postgres
+            replicationUser: barman
+            replicationPassword: replicationpassword
+          namespace: postgresql
+          serviceaccount: postgresql

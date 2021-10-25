@@ -1,0 +1,19 @@
+back8sup:
+  enabled: true
+  values:
+    configMaps:
+      config.yaml: |
+        global:
+          - pvc
+          - pv
+        namespaces:
+          - name: infra-argocd
+            kind:
+              - application
+              - appprojects
+              - configmap
+              - secret
+          - name: infra-ingress
+            kind:
+              - configmap
+              - secret

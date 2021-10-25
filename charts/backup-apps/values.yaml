@@ -1,0 +1,39 @@
+# barman -- [Barman](https://github.com/EnterpriseDB/barman)
+# @default -- [example](./examples/barman.yaml)
+barman:
+  # barman.enabled -- Enable Barman
+  enabled: true
+  name: barman
+  destination:
+    # barman.destination.namespace -- Namespace
+    namespace: backup-barman
+  # barman.repoURL -- Repo URL
+  # @default -- [repo](https://charts.adfinis.com)
+  repoURL: "https://charts.adfinis.com"
+  # barman.chart -- Chart
+  chart: barman
+  # barman.targetRevision -- [Barman Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/barman)
+  targetRevision: '0.3.*'
+  # barman.values -- Helm values
+  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/barman/values.yaml)
+  values: {}
+
+# back8sup -- [Back8sup](https://github.com/adfinis-sygroup/back8sup)
+# @default -- [example](./examples/back8sup.yaml)
+back8sup:
+  # back8sup.enabled -- Enable Back8sup
+  enabled: true
+  name: back8sup
+  destination:
+    # back8sup.destination.namespace -- Namespace
+    namespace: backup-back8sup
+  # back8sup.repoURL -- Repo URL
+  # @default -- [repo](https://charts.adfinis.com)
+  repoURL: "https://charts.adfinis.com"
+  # back8sup.chart -- Chart
+  chart: back8sup
+  # back8sup.targetRevision -- [Back8sup Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/back8sup)
+  targetRevision: '0.4.*'
+  # back8sup.values -- Helm values
+  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/back8sup/values.yaml)
+  values: {}
