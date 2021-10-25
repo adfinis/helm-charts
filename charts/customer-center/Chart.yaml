@@ -2,7 +2,7 @@ apiVersion: v2
 name: customer-center
 description: Chart for Customer-Center application
 type: application
-version: 0.2.3
+version: 0.2.4
 appVersion: v2.1.1
 keywords:
   - customer-center

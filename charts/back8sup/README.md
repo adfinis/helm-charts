@@ -1,6 +1,6 @@
 # back8sup
 
-![Version: 0.3.4](https://img.shields.io/badge/Version-0.3.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.7.5](https://img.shields.io/badge/AppVersion-v0.7.5-informational?style=flat-square)
+![Version: 0.3.5](https://img.shields.io/badge/Version-0.3.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.7.5](https://img.shields.io/badge/AppVersion-v0.7.5-informational?style=flat-square)
 
 Deploy back8sup to a Kubernetes Cluster
 
