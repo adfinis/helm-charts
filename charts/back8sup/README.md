@@ -1,6 +1,6 @@
 # back8sup
 
-![Version: 0.4.1](https://img.shields.io/badge/Version-0.4.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.7.5](https://img.shields.io/badge/AppVersion-v0.7.5-informational?style=flat-square)
+![Version: 0.4.2](https://img.shields.io/badge/Version-0.4.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.7.5](https://img.shields.io/badge/AppVersion-v0.7.5-informational?style=flat-square)
 
 Deploy back8sup to a Kubernetes Cluster
 
@@ -43,6 +43,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | image.repository | string | `"ghcr.io/adfinis-sygroup/back8sup"` | set the image repository |
 | image.tag | string | `""` | set the tag of the image Specify a tag to override which version of timed to deploy. If no tag is specified the appVersion from Chart.yaml is used as tag. |
 | imagePullSecrets | list | `[]` | specifies the image pull secrets to be used |
+| kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
 | nameOverride | string | `""` | specifies the name override to be used for helm |
 | nodeSelector | object | `{}` | specifies the nodeSelector to be used |
 | persistence.enabled | bool | `true` | specifies if persistence is enabled or not |
