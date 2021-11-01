@@ -41,7 +41,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dellCsiUnity.destination.namespace | string | `"infra-storage"` | Namespace |
 | dellCsiUnity.enabled | bool | `false` | Enable Dell CSI-Unity |
 | dellCsiUnity.repoURL | string | [repo](https://github.com/dell/csi-unity/tree/main/helm/csi-unity) | Repo URL |
-| dellCsiUnity.targetRevision | string | `"2.0.*"` | [dell-csi-unity Helm chart](https://github.com/dell/csi-unity/tree/main/helm/csi-unity) version |
+| dellCsiUnity.targetRevision | string | `"2.0.0"` | [dell-csi-unity Helm chart](https://github.com/dell/csi-unity/tree/main/helm/csi-unity) version |
 | dellCsiUnity.values | object | [upstream values](https://github.com/dell/csi-unity/tree/main/helm/csi-unity/values.yaml) | Helm values |
 | nfsClientProvisioner | object | - | [nfs-client-provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner) ([example](./examples/nfs-client-provisioner.yaml)) |
 | nfsClientProvisioner.chart | string | `"nfs-client-provisioner"` | Chart |
