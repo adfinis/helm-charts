@@ -6,4 +6,4 @@ metadata:
     {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
 data:
   csi.json: |
-    {{ .Values.csiconfig | toJson }}
+    {{ .Values.csiconfig | mustToJson }}
