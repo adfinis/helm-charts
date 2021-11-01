@@ -1,6 +1,6 @@
 # storage-apps
 
-![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.0](https://img.shields.io/badge/AppVersion-0.5.0-informational?style=flat-square)
+![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.6.0](https://img.shields.io/badge/AppVersion-0.6.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for storage applications
 
@@ -37,6 +37,12 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | cephCsiRbd.repoURL | string | [repo](https://ceph.github.io/csi-charts) | Repo URL |
 | cephCsiRbd.targetRevision | string | `"3.4.*"` | [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version |
 | cephCsiRbd.values | object | [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/rbd/ceph-csi-rbd/values.yaml) | Helm values |
+| dellCsiUnity | object | - | [dell-csi-unity](https://github.com/dell/csi-unity) |
+| dellCsiUnity.destination.namespace | string | `"infra-storage"` | Namespace |
+| dellCsiUnity.enabled | bool | `false` | Enable Dell CSI-Unity |
+| dellCsiUnity.repoURL | string | [repo](https://github.com/dell/csi-unity/tree/main/helm/csi-unity) | Repo URL |
+| dellCsiUnity.targetRevision | string | `"2.0.*"` | [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version |
+| dellCsiUnity.values | object | [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/cephfs/ceph-csi-cephfs/values.yaml) | Helm values |
 | nfsClientProvisioner | object | - | [nfs-client-provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner) ([example](./examples/nfs-client-provisioner.yaml)) |
 | nfsClientProvisioner.chart | string | `"nfs-client-provisioner"` | Chart |
 | nfsClientProvisioner.destination.namespace | string | `"infra-storage"` | Namespace |

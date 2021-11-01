@@ -57,3 +57,23 @@ cephCsiCephfs:
   # cephCsiCephfs.values -- Helm values
   # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/cephfs/ceph-csi-cephfs/values.yaml)
   values: {}
+
+# dellCsiUnity -- [dell-csi-unity](https://github.com/dell/csi-unity)
+# @default -- -
+dellCsiUnity:
+  # dellCsiUnity.enabled -- Enable Dell CSI-Unity
+  enabled: false
+  name: dell-csi-unity
+  destination:
+    # dellCsiUnity.destination.namespace -- Namespace
+    namespace: "infra-storage"
+  # dellCsiUnity.repoURL -- Repo URL
+  # @default -- [repo](https://github.com/dell/csi-unity/tree/main/helm/csi-unity)
+  repoURL: "https://github.com/dell/csi-unity/tree/main/helm"
+  # dellCsiUnity.chart -- Chart
+  path: "csi-unity"
+  # dellCsiUnity.targetRevision -- [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version
+  targetRevision: "2.0.*"
+  # dellCsiUnity.values -- Helm values
+  # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/cephfs/ceph-csi-cephfs/values.yaml)
+  values: {}

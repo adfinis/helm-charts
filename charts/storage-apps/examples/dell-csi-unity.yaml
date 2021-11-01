@@ -1,0 +1,8 @@
+dellCsiUnity:
+  enabled: true
+  project: infra-storage
+  values:
+    controller:
+      snapshot:
+        enabled: false
+        snapNamePrefix: csi-snap
