@@ -1,0 +1,38 @@
+prometheus:
+  # -- Create prometheus-operator resources
+  enabled: true
+  rule:
+    # -- Create PrometheusRule resource
+    enabled: true
+    # -- Optional Namespace for PrometheusRule resource
+    namespace: ""
+    # -- Additional Labels for PrometheusRule resource
+    additionalLabels: {}
+    alerts:
+      # -- Enable CertManagerAbsent alert
+      absent: true
+      # -- Enable CertManagerExpirySoon alert
+      expirysoon: true
+      # -- Enable CertManagerCertNotReady alert
+      certnotready: true
+      # -- Enable CertManagerHittingRateLimits alert
+      hittingratelimits: true
+    # -- Add additional alerts to the cert-manager group
+    additionalAlerts: []
+    # - alert: CertManagerCertificateReadyStatus
+    #   annotations:
+    #     description: 'Certificate for "{{`{{ $labels.name }}`}}" is not ready.'
+    #     summary: Certificate is not ready
+    #   expr: certmanager_certificate_ready_status{condition="False"} == 1
+    #   labels:
+    #     severity: critical
+
+grafana:
+  # -- Enable deploying cert-manager dashboard to Grafana
+  enabled: false
+  # -- Add `grafana_dashboard: "1"` default label
+  defaultLabel: true
+  # -- Extra labels for dashboard ConfigMap
+  extraLabels: {}
+  # -- Extra annotations for dashboard ConfigMap
+  extraAnnotations: {}
