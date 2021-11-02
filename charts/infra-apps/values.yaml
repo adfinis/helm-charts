@@ -56,7 +56,8 @@ certManager:
   # @default -- [upstream values](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
 
-# certManagerIsssuers -- [cert-manager-issuers](https://cert-manager.io/docs/configuration/)
+
+# certManagerIssuers -- [cert-manager-issuers](https://cert-manager.io/docs/configuration/)
 # @default -- [example](./examples/cert-manager-issuers.yaml)
 certManagerIssuers:
   # certManagerIssuers.enabled -- Enable cert-manager-issuers
@@ -70,10 +71,31 @@ certManagerIssuers:
   repoURL: "https://charts.adfinis.com"
   # certManagerIssuers.chart -- Chart
   chart: "cert-manager-issuers"
-  # certManagerIussers.targetRevision -- [cert-manager-issuers Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-issuers) version
+  # certManagerIssuers.targetRevision -- [cert-manager-issuers Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-issuers) version
   targetRevision: '0.2.*'
   # certManagerIssuers.values -- Helm values
   # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-issuers/values.yaml)
+  values: {}
+
+
+# certManagerMonitoring -- [cert-manager-monitoring](https://cert-manager.io/docs/configuration/)
+# @default -- [example](./examples/cert-manager-monitoring.yaml)
+certManagerMonitoring:
+  # certManagerMonitoring.enabled -- Enable cert-manager-monitoring
+  enabled: false
+  name: certmgr-monitoring
+  destination:
+    # certManagerMonitoring.destination.namespace -- Namespace
+    namespace: infra-certmanager
+  # certManagerMonitoring.repoURL -- Repo URL
+  # @default -- [repo](https://charts.adfinis.com)
+  repoURL: "https://charts.adfinis.com"
+  # certManagerMonitoring.chart -- Chart
+  chart: "cert-manager-monitoring"
+  # certManagerIussers.targetRevision -- [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-monitoring) version
+  targetRevision: '0.1.*'
+  # certManagerMonitoring.values -- Helm values
+  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-monitoring/values.yaml)
   values: {}
 
 
