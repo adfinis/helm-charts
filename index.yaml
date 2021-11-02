@@ -1518,6 +1518,29 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/cert-manager-issuers-0.1.0/cert-manager-issuers-0.1.0.tgz
     version: 0.1.0
+  cert-manager-monitoring:
+  - apiVersion: v2
+    created: "2021-11-02T16:39:12.432045256Z"
+    description: Monitor cert-manager with cert-manager-mixin.
+    digest: 31c2a6fb5dedc5da9a274e89bc23132ff028219aaa009c1be282180b3029d47f
+    home: https://github.com/jetstack/cert-manager/issues/3342
+    keywords:
+    - cert-manager
+    - tls
+    - monitoring
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: cert-manager-monitoring
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    - https://gitlab.com/uneeq-oss/cert-manager-mixin
+    - https://github.com/jetstack/cert-manager/pull/3368#issuecomment-949346251
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/cert-manager-monitoring-0.1.0/cert-manager-monitoring-0.1.0.tgz
+    version: 0.1.0
   common:
   - apiVersion: v2
     appVersion: 0.0.0
@@ -8109,4 +8132,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-02T13:16:26.021312809Z"
+generated: "2021-11-02T16:39:12.434011277Z"
