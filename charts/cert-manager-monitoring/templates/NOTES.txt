@@ -1,0 +1,13 @@
+Deployed resources:
+{{- if and .Values.prometheus.enabled .Values.prometheus.rule.enabled }}
+- monitoring.coreos.com/v1/PrometheusRule: {{ include "cert-manager-monitoring.fullname" . }}
+{{- end }}
+{{- if .Values.grafana.enabled }}
+{{- $files := .Files.Glob "grafana/dashboards/*.json" }}
+{{- if $files }}
+{{- range $path, $fileContents := $files }}
+{{- $dashboardName := regexReplaceAll "(^.*/)(.*)\\.json$" $path "${2}" }}
+- v1/ConfigMap: {{ printf "%s-%s" (include "cert-manager-monitoring.fullname" $) $dashboardName | trunc 63 | trimSuffix "-" }}
+{{- end }}
+{{- end }}
+{{- end }}

@@ -1,0 +1,18 @@
+apiVersion: v2
+name: cert-manager-monitoring
+description: Monitor cert-manager with cert-manager-mixin.
+type: application
+version: 0.1.0
+keywords:
+  - cert-manager
+  - tls
+  - monitoring
+home: https://github.com/jetstack/cert-manager/issues/3342
+sources:
+  - https://github.com/adfinis-sygroup/helm-charts
+  - https://gitlab.com/uneeq-oss/cert-manager-mixin
+  - https://github.com/jetstack/cert-manager/pull/3368#issuecomment-949346251
+maintainers:
+  - name: adfinis-sygroup
+    email: support@adfinis.com
+    url: https://adfinis.com

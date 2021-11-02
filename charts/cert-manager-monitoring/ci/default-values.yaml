@@ -1,0 +1,7 @@
+prometheus:
+  rule:
+    additionalLabels:
+      foo: bar
+
+grafana:
+  enabled: true
