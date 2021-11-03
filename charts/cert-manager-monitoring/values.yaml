@@ -17,6 +17,10 @@ prometheus:
       certnotready: true
       # -- Enable CertManagerHittingRateLimits alert
       hittingratelimits: true
+    alertConfigs:
+      absent:
+        # -- Configure job label for CertManagerAbsent alert.<F12
+        job: "cert-manager"
     # -- Add additional alerts to the cert-manager group
     additionalAlerts: []
     # - alert: CertManagerCertificateReadyStatus

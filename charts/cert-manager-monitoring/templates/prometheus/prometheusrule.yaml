@@ -17,7 +17,7 @@ spec:
     rules:
     {{- if .Values.prometheus.rule.alerts.absent }}
     - alert: CertManagerAbsent
-      expr: absent(up{job="cert-manager"})
+      expr: absent(up{job="{{ .Values.prometheus.rule.alertConfigs.absent.job }}"})
       for: 10m
       annotations:
         summary: Cert Manager has dissapeared from Prometheus service discovery.
