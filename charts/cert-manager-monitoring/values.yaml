@@ -19,7 +19,7 @@ prometheus:
       hittingratelimits: true
     alertConfigs:
       absent:
-        # -- Configure job label for CertManagerAbsent alert.<F12
+        # -- Configure job label for CertManagerAbsent alert.
         job: "cert-manager"
     # -- Add additional alerts to the cert-manager group
     additionalAlerts: []

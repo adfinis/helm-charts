@@ -26,7 +26,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | prometheus.enabled | bool | `true` | Create prometheus-operator resources |
 | prometheus.rule.additionalAlerts | list | `[]` | Add additional alerts to the cert-manager group |
 | prometheus.rule.additionalLabels | object | `{}` | Additional Labels for PrometheusRule resource |
-| prometheus.rule.alertConfigs.absent.job | string | `"cert-manager"` | Configure job label for CertManagerAbsent alert.<F12 |
+| prometheus.rule.alertConfigs.absent.job | string | `"cert-manager"` | Configure job label for CertManagerAbsent alert. |
 | prometheus.rule.alerts.absent | bool | `true` | Enable CertManagerAbsent alert |
 | prometheus.rule.alerts.certnotready | bool | `true` | Enable CertManagerCertNotReady alert |
 | prometheus.rule.alerts.expirysoon | bool | `true` | Enable CertManagerExpirySoon alert |
