@@ -2,7 +2,7 @@ apiVersion: v2
 name: cert-manager-monitoring
 description: Monitor cert-manager with cert-manager-mixin.
 type: application
-version: 0.1.0
+version: 0.1.1
 keywords:
   - cert-manager
   - tls
