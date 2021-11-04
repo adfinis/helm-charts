@@ -42,7 +42,7 @@ helm repo add adfinis https://charts.adfinis.com
 {{- range (file.ReadDir "charts/" | sort) -}}
 {{- $chartManifestPath := print "charts/" . "/Chart.yaml" -}}
 {{- if (file.Exists $chartManifestPath) -}}{{- $chartManifest := file.Read $chartManifestPath | data.YAML -}}
-{{- if has $chartManifest "icon" }}
+{{- if and (has $chartManifest "icon") (not (has $chartManifest "deprecated")) }}
 #### [{{.}}]({{ print $readme.chartBaseURL . }})
 
 ![Version: {{ template "helmcharts.shortVersion" $chartManifest.version }}](https://img.shields.io/badge/version-{{ template "helmcharts.shortVersion" $chartManifest.version }}-brightgreen){{ if has $chartManifest "appVersion" }} ![App version: {{ template "helmcharts.shortVersion" $chartManifest.appVersion }}](https://img.shields.io/badge/app%20version-{{ template "helmcharts.shortVersion" $chartManifest.appVersion }}-brightgreen){{ end }}
@@ -61,7 +61,7 @@ helm repo add adfinis https://charts.adfinis.com
 {{- range (file.ReadDir "charts/" | sort) -}}
 {{- $chartManifestPath := print "charts/" . "/Chart.yaml" -}}
 {{- if (file.Exists $chartManifestPath) -}}{{- $chartManifest := file.Read $chartManifestPath | data.YAML -}}
-{{- if not (has $chartManifest "icon") }}
+{{- if and (not (has $chartManifest "icon")) (not (has $chartManifest "deprecated")) }}
 | [{{.}}]({{ print $readme.chartBaseURL . }}) | {{ $chartManifest.description | strings.Abbrev 80 }} | ![Version: {{ template "helmcharts.shortVersion" $chartManifest.version }}](https://img.shields.io/badge/version-{{ template "helmcharts.shortVersion" $chartManifest.version }}-brightgreen){{ if has $chartManifest "appVersion" }} ![App version: {{ template "helmcharts.shortVersion" $chartManifest.appVersion }}](https://img.shields.io/badge/app%20version-{{ template "helmcharts.shortVersion" $chartManifest.appVersion }}-brightgreen){{ end }} |
 {{- end -}}
 {{- end -}}
