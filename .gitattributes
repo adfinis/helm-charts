@@ -1,0 +1,10 @@
+# we use .gitattributes for linguist for hinting, see:
+# <https://github.com/github/linguist/blob/master/docs/overrides.md>
+
+# generated files
+README.md linguist-generated=true
+charts/*/charts/README.md linguist-generated=true
+charts/*/test//__snapshot__/*.snap linguist-generated=true
+
+# override smarty/mustache language
+charts/*/templates/*.tpl linguist-language=Go
