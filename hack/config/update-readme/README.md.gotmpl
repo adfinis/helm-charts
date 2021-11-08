@@ -42,8 +42,8 @@ helm repo add adfinis https://charts.adfinis.com
 {{- range (file.ReadDir "charts/" | sort) -}}
 {{- $chartManifestPath := print "charts/" . "/Chart.yaml" -}}
 {{- if (file.Exists $chartManifestPath) -}}{{- $chartManifest := file.Read $chartManifestPath | data.YAML -}}
-{{- if and (has $chartManifest "icon") (not (has $chartManifest "deprecated")) }}
-#### [{{.}}]({{ print $readme.chartBaseURL . }})
+{{- if and (has $chartManifest "icon") (not (hasSuffix $chartManifest.name "-apps")) (not (has $chartManifest "deprecated")) }}
+#### [{{.}}]({{ print $readme.chartBaseURL . }}) chart
 
 ![Version: {{ template "helmcharts.shortVersion" $chartManifest.version }}](https://img.shields.io/badge/version-{{ template "helmcharts.shortVersion" $chartManifest.version }}-brightgreen){{ if has $chartManifest "appVersion" }} ![App version: {{ template "helmcharts.shortVersion" $chartManifest.appVersion }}](https://img.shields.io/badge/app%20version-{{ template "helmcharts.shortVersion" $chartManifest.appVersion }}-brightgreen){{ end }}
 
@@ -54,15 +54,36 @@ helm repo add adfinis https://charts.adfinis.com
 {{- end -}}
 {{- end }}
 
-#### more charts
+#### Argo CD app-of-apps charts
+
+Our [Argo CD](https://argoproj.github.io/cd/) app-of-apps Helm charts all implement the [Argo CD app-of-apps pattern](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern).
+The charts deploy Argo CD Application resources and enable configuring multiple related or "work well together" apps.
+To do this they combine Helm repository URLs with chart names and "tested" versions of the charts. In most cases some
+examples of how to configure individual apps are also provided.
+
+For now, these charts may be seen as an alternative to Argo CD ApplicationSets, [let us know](https://github.com/adfinis-sygroup/helm-charts/discussions)
+if you would like for the charts to directly support ApplicationSets.
 
 | Chart | Description | Version |
 | ----- | ----------- | ------- |
 {{- range (file.ReadDir "charts/" | sort) -}}
 {{- $chartManifestPath := print "charts/" . "/Chart.yaml" -}}
 {{- if (file.Exists $chartManifestPath) -}}{{- $chartManifest := file.Read $chartManifestPath | data.YAML -}}
-{{- if and (not (has $chartManifest "icon")) (not (has $chartManifest "deprecated")) }}
-| [{{.}}]({{ print $readme.chartBaseURL . }}) | {{ $chartManifest.description | strings.Abbrev 80 }} | ![Version: {{ template "helmcharts.shortVersion" $chartManifest.version }}](https://img.shields.io/badge/version-{{ template "helmcharts.shortVersion" $chartManifest.version }}-brightgreen){{ if has $chartManifest "appVersion" }} ![App version: {{ template "helmcharts.shortVersion" $chartManifest.appVersion }}](https://img.shields.io/badge/app%20version-{{ template "helmcharts.shortVersion" $chartManifest.appVersion }}-brightgreen){{ end }} |
+{{- if and (hasSuffix $chartManifest.name "-apps") (not (has $chartManifest "deprecated")) }}
+| [{{.}}]({{ print $readme.chartBaseURL . }}) | {{ $chartManifest.description | strings.Abbrev 80 }} | ![Version: {{ template "helmcharts.shortVersion" $chartManifest.version }}](https://img.shields.io/badge/version-{{ template "helmcharts.shortVersion" $chartManifest.version }}-brightgreen) |
+{{- end -}}
+{{- end -}}
+{{- end }}
+
+#### more charts
+
+| Chart | Description | Version | App Version |
+| ----- | ----------- | ------- | ----------- |
+{{- range (file.ReadDir "charts/" | sort) -}}
+{{- $chartManifestPath := print "charts/" . "/Chart.yaml" -}}
+{{- if (file.Exists $chartManifestPath) -}}{{- $chartManifest := file.Read $chartManifestPath | data.YAML -}}
+{{- if and (not (has $chartManifest "icon")) (not (hasSuffix $chartManifest.name "-apps")) (not (has $chartManifest "deprecated")) }}
+| [{{.}}]({{ print $readme.chartBaseURL . }}) | {{ $chartManifest.description | strings.Abbrev 35 }} | ![Version: {{ template "helmcharts.shortVersion" $chartManifest.version }}](https://img.shields.io/badge/version-{{ template "helmcharts.shortVersion" $chartManifest.version }}-brightgreen) | {{ if has $chartManifest "appVersion" }} ![App version: {{ template "helmcharts.shortVersion" $chartManifest.appVersion }}](https://img.shields.io/badge/app%20version-{{ template "helmcharts.shortVersion" $chartManifest.appVersion }}-brightgreen){{ end }} |
 {{- end -}}
 {{- end -}}
 {{- end }}
