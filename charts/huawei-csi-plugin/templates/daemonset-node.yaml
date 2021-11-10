@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: {{ include "huawei-csi-plugin.fullname" . }}
+  name: {{ include "huawei-csi-plugin.fullname" . }}-node
   labels:
     {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
-    app.kubernetes.io/component: "csi-node"
+    app.kubernetes.io/component: "huawei-csi-node"
 spec:
   selector:
     matchLabels:
@@ -28,7 +28,18 @@ spec:
         {{- toYaml | nindent 8 }}
       {{- end }}
       hostNetwork: true
+      hostPID: true
       containers:
+        - name: liveness-probe
+          image: "{{ .Values.csi_livenessprobe.image.repository }}:{{ .Values.csi_livenessprobe.image.tag }}"
+          args:
+          - --csi-address=/var/lib/csi/sockets/pluginproxy/csi.sock
+          - --health-port=9800
+          imagePullPolicy: "IfNotPresent"
+          volumeMounts:
+          - mountPath: /var/lib/csi/sockets/pluginproxy/
+            name: plugin-dir
+
         - name: csi-node-driver-registrar
           image: "{{ .Values.csi_node_driver_registrar.image.repository }}:{{ .Values.csi_node_driver_registrar.image.tag }}"
           imagePullPolicy: {{ .Values.csi_node_driver_registrar.image.pullPolicy }}
@@ -49,6 +60,15 @@ spec:
           args:
             - "--endpoint=/csi/csi.sock"
             - "--containerized"
+            - "--driver-name=csi.huawei.com"
+            - "--volume-use-multipath=true"
+            - "--loggingModule=console"
+          env:
+            - name: CSI_NODENAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: spec.nodeName
           resources:
             {{- toYaml .Values.csi_driver.node.resources | nindent 12 }}
           securityContext:
@@ -57,6 +77,18 @@ spec:
             preStop:
               exec:
                 command: ["/bin/sh", "-c", "rm -f /csi/csi.sock"]
+          ports:
+            - containerPort: 9800
+              name: healthz
+              protocol: TCP
+          livenessProbe:
+            failureThreshold: 5
+            httpGet:
+              path: /healthz
+              port: healthz
+            initialDelaySeconds: 10
+            timeoutSeconds: 3
+            periodSeconds: 60
           volumeMounts:
             - name: plugin-dir
               mountPath: /csi
@@ -65,8 +97,6 @@ spec:
               mountPropagation: "Bidirectional"
             - name: etc-dir
               mountPath: /etc
-            - name: log-dir
-              mountPath: /var/log
             - name: dev-dir
               mountPath: /dev
               mountPropagation: "HostToContainer"
@@ -74,19 +104,8 @@ spec:
               mountPath: /var/lib/iscsi
             - name: config-map
               mountPath: /etc/huawei
-
-        - name: tail
-          image: "{{ .Values.csi_driver.image.repository }}:{{ .Values.csi_driver.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.csi_driver.image.pullPolicy }}
-          command:
-            - "tail"
-            - "-F"
-            - "/var/log/huawei/huawei-csi-node"
-          securityContext:
-            {{- toYaml .Values.csi_driver.node.securityContext | nindent 12 }}
-          volumeMounts:
-            - name: log-dir
-              mountPath: /var/log
+            - name: secret
+              mountPath: /etc/huawei/secret
 
       volumes:
         - name: plugin-dir
@@ -113,13 +132,12 @@ spec:
           hostPath:
             path: /var/lib/iscsi
             type: Directory
-        - name: log-dir
-          hostPath:
-            path: /var/log/
-            type: Directory
         - name: config-map
           configMap:
-            name: {{ include "huawei-csi-plugin.fullname" . }}
+            name: {{ include "huawei-csi-plugin.fullname" . }}-configmap
+        - name: secret
+          secret:
+            secretName: huawei-csi-secret
 
       {{- with .Values.node.nodeSelector }}
       nodeSelector:
