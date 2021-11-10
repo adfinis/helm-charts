@@ -143,37 +143,35 @@ node:
   tolerations: []
   affinity: {}
 
-# csiconfig -- complete backend configuration for the csi controller (see [documentation](https://github.com/Huawei/eSDK_K8S_Plugin/tree/master/docs/en))
-# @default -- -
+# csiconfig -- backend configuration for the csi controller (see [documentation](https://github.com/Huawei/eSDK_K8S_Plugin/tree/master/docs/en))
+# @default -- `{'backends': []}`
 csiconfig:
-  backends:
-    - name: "nfs-backend-01"
-      storage: "oceanstor-nas"
-      replicaBackend: "nfs-backend-02"
-      urls:
-        - url-1
-        - url-2
-      user:
-      password:
-      pools:
-        - pool-1
-        - pool-2
-      parameters:
-        portals:
-          - ""
-        protocols: "nfs"
-    - name: "nfs-backend-02"
-      storage: "oceanstor-nas"
-      replicaBackend: "nfs-backend-01"
-      urls:
-        - url-1
-        - url-2
-      user:
-      password:
-      pools:
-        - pool-1
-        - pool-2
-      parameters:
-        portals:
-          - ""
-        protocols: "nfs"
+  backends: []
+    # Here you need to configure the list of backends that should be used by
+    # Huawei CSI. The configuration below is an example for oceanstor-nas.
+    # - name: "nfs-backend-01"
+    #   storage: "oceanstor-nas"
+    #   replicaBackend: "nfs-backend-02"
+    #   urls:
+    #     - https://storage1.example.com:8088
+    #   user:
+    #   password:
+    #   pools:
+    #     - example_pool
+    #   parameters:
+    #     portals:
+    #       - "192.0.2.116"
+    #     protocols: "nfs"
+    # - name: "nfs-backend-02"
+    #   storage: "oceanstor-nas"
+    #   replicaBackend: "nfs-backend-01"
+    #   urls:
+    #     - https://storage2.example.com:8088
+    #   user:
+    #   password:
+    #   pools:
+    #     - example_pool
+    #   parameters:
+    #     portals:
+    #       - "192.0.2.116"
+    #     protocols: "nfs"

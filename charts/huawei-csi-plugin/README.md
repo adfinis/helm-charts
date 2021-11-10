@@ -55,7 +55,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | csi_snapshotter.image.repository | string | `"quay.io/k8scsi/csi-snapshotter"` | Image Repo for csi-snapshotter |
 | csi_snapshotter.image.tag | string | `"v3.0.2"` | Image Tag for csi-snapshotter |
 | csi_snapshotter.resources | object | `{}` | resources for csi-snapshotter |
-| csiconfig | object | - | complete backend configuration for the csi controller (see [documentation](https://github.com/Huawei/eSDK_K8S_Plugin/tree/master/docs/en)) |
+| csiconfig | object | `{'backends': []}` | backend configuration for the csi controller (see [documentation](https://github.com/Huawei/eSDK_K8S_Plugin/tree/master/docs/en)) |
 | features.multiController.enabled | bool | `false` | specifies if multiController is enabled or not |
 | features.resizing.enabled | bool | `true` | specifies if resizing is enabled or not |
 | features.snapshotting.enabled | bool | `true` | specifies if snapshotting is enabled or not |
