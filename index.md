@@ -16,7 +16,7 @@ helm repo add adfinis https://charts.adfinis.com
 ```
 
 ### Available Helm charts
-#### [cert-manager-issuers](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-issuers)
+#### [cert-manager-issuers](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-issuers) chart
 
 ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.x](https://img.shields.io/badge/app%20version-1.x-brightgreen)
 
@@ -24,34 +24,45 @@ Configure cert-manager Issuers and ClusterIssuers via Helm
 
 [<img alt="cert-manager-issuers" src="https://raw.githubusercontent.com/adfinis-sygroup/helm-charts/master/charts/cert-manager-issuers/logo.png" width="128">](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-issuers)
 
-#### more charts
+#### Argo CD app-of-apps charts
+
+Our [Argo CD](https://argoproj.github.io/cd/) app-of-apps Helm charts all implement the [Argo CD app-of-apps pattern](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern).
+The charts deploy Argo CD Application resources and enable configuring multiple related or "work well together" apps.
+To do this they combine Helm repository URLs with chart names and "tested" versions of the charts. In most cases some
+examples of how to configure individual apps are also provided. Please reference [our app-of-apps documentation](./docs/argocd-app-of-apps.md)
+for more in-depth information.
 
 | Chart | Description | Version |
 | ----- | ----------- | ------- |
-| [argoconfig](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argoconfig) | Configure Argo CD AppProjects and Applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
-| [azure-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/azure-apps) | Argo CD app-of-apps config for Azure applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [back8sup](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/back8sup) | Deploy back8sup to a Kubernetes Cluster | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [backup-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/backup-apps) | Argo CD app-of-apps config for backup components | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [barman](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/barman) | Chart for Barman PostgreSQL Backup and Recovery Manager | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 2.1.x](https://img.shields.io/badge/app%20version-2.1.x-brightgreen) |
-| [caasperli](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/caasperli) | Deploy Caasperli to a Kubernetes Cluster | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: latest](https://img.shields.io/badge/app%20version-latest-brightgreen) |
-| [cert-manager-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-monitoring) | Monitor cert-manager with cert-manager-mixin. | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
-| [common](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/common) | Common chartbuilding components and helpers, based on incubator/common | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [csi-secret-provider-class](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/csi-secret-provider-class) | A Helm chart to create a SecretProviderClass resource | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [customer-center](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/customer-center) | Chart for Customer-Center application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 2.1.x](https://img.shields.io/badge/app%20version-2.1.x-brightgreen) |
-| [huawei-csi-plugin](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/huawei-csi-plugin) | Deploy the Huawei CSI plugin | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 2.2.x](https://img.shields.io/badge/app%20version-2.2.x-brightgreen) |
-| [infra-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/infra-apps) | Argo CD app-of-apps config for infrastructure components | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [logging-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/logging-apps) | Argo CD app-of-apps config for logging applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [misc-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/misc-apps) | Argo CD app-of-apps config for miscellaneous small tools | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [openshift-etcd-backup](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/openshift-etcd-backup) | Chart for openshift-etcd-backup solution | ![Version: 1.5.x](https://img.shields.io/badge/version-1.5.x-brightgreen) ![App version: 1.5.x](https://img.shields.io/badge/app%20version-1.5.x-brightgreen) |
-| [osschallenge](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/osschallenge) | Chart for OSS-Challenge application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |
-| [rmd](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/rmd) | Chart for Rmd.io application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |
-| [security-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/security-apps) | Argo CD app-of-apps config for security applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [sentry-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/sentry-apps) | Sentry on premise | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 5.1.x](https://img.shields.io/badge/app%20version-5.1.x-brightgreen) |
-| [storage-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/storage-apps) | Argo CD app-of-apps config for storage applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [timed](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.3.x](https://img.shields.io/badge/app%20version-1.3.x-brightgreen) |
-| [tracing-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/tracing-apps) | Argo CD app-of-apps config for tracing applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [vault-auth](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) | A helm chart to install the vault-auth serviceaccount for enabling vault's ku... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) | monitor your vault server from within Kubernetes' prometheus | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
+| [azure-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/azure-apps) | Argo CD app-of-apps config for Azure applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
+| [backup-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/backup-apps) | Argo CD app-of-apps config for backup components | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
+| [infra-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/infra-apps) | Argo CD app-of-apps config for infrastructure components | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
+| [logging-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/logging-apps) | Argo CD app-of-apps config for logging applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
+| [misc-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/misc-apps) | Argo CD app-of-apps config for miscellaneous small tools | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
+| [security-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/security-apps) | Argo CD app-of-apps config for security applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
+| [sentry-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/sentry-apps) | Sentry on premise | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
+| [storage-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/storage-apps) | Argo CD app-of-apps config for storage applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
+| [tracing-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/tracing-apps) | Argo CD app-of-apps config for tracing applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
+
+#### more charts
+
+| Chart | Description | Version | App Version |
+| ----- | ----------- | ------- | ----------- |
+| [argoconfig](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argoconfig) | Configure Argo CD AppProjects an... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  |
+| [back8sup](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/back8sup) | Deploy back8sup to a Kubernetes ... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
+| [barman](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/barman) | Chart for Barman PostgreSQL Back... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 2.1.x](https://img.shields.io/badge/app%20version-2.1.x-brightgreen) |
+| [caasperli](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/caasperli) | Deploy Caasperli to a Kubernetes... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: latest](https://img.shields.io/badge/app%20version-latest-brightgreen) |
+| [cert-manager-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-monitoring) | Monitor cert-manager with cert-m... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  |
+| [common](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/common) | Common chartbuilding components ... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
+| [csi-secret-provider-class](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/csi-secret-provider-class) | A Helm chart to create a SecretP... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
+| [customer-center](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/customer-center) | Chart for Customer-Center applic... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 2.1.x](https://img.shields.io/badge/app%20version-2.1.x-brightgreen) |
+| [huawei-csi-plugin](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/huawei-csi-plugin) | Deploy the Huawei CSI plugin | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 2.2.x](https://img.shields.io/badge/app%20version-2.2.x-brightgreen) |
+| [openshift-etcd-backup](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/openshift-etcd-backup) | Chart for openshift-etcd-backup ... | ![Version: 1.5.x](https://img.shields.io/badge/version-1.5.x-brightgreen) |  ![App version: 1.5.x](https://img.shields.io/badge/app%20version-1.5.x-brightgreen) |
+| [osschallenge](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/osschallenge) | Chart for OSS-Challenge application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |
+| [rmd](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/rmd) | Chart for Rmd.io application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |
+| [timed](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 1.3.x](https://img.shields.io/badge/app%20version-1.3.x-brightgreen) |
+| [vault-auth](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-auth) | A helm chart to install the vaul... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
+| [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) | monitor your vault server from w... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 
 ## Contributing
 
