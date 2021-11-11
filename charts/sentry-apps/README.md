@@ -1,13 +1,12 @@
 # sentry-apps
 
-![Version: 0.3.7](https://img.shields.io/badge/Version-0.3.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 5.1.2](https://img.shields.io/badge/AppVersion-5.1.2-informational?style=flat-square)
+> **:exclamation: This Helm Chart is deprecated!**
 
-Sentry on premise
+![Version: 0.3.8](https://img.shields.io/badge/Version-0.3.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 5.1.2](https://img.shields.io/badge/AppVersion-5.1.2-informational?style=flat-square)
+
+⚠️ (OBSOLETE) use https://github.com/sentry-kubernetes/charts directly instead
 
 **Homepage:** <https://github.com/sentry-kubernetes/charts/tree/develop/sentry>
-
-## Maintainers
-This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
