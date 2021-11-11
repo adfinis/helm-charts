@@ -12,7 +12,7 @@ backend:
     # backend.image.repository -- Backend image name
     repository: adfinissygroup/timed-backend
     # backend.image.tag -- Backend version (optional) in case it differs from appVersion in Chart.yaml
-    tag: v1.3.0
+    tag: v1.4.2
     # backend.image.pullPolicy -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
@@ -75,6 +75,8 @@ backend:
     serverEmail: webmaster@chart-example.local
     # backend.settings.workReportPath -- Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`.
     workReportPath: /etc/workreport
+    # backend.settings.maxNumberFields -- Number of fields that are sent when saving changes on a model.
+    maxNumberFields: 2000
     # backend.settings.admins -- Django administrators, example: Jon Doe <jon.doe@example.com>
     admins: []
     gunicorn:
