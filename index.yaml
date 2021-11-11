@@ -6191,6 +6191,25 @@ entries:
   sentry-apps:
   - apiVersion: v2
     appVersion: 5.1.2
+    created: "2021-11-11T21:27:25.755767149Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: ~0.6.1
+    deprecated: true
+    description: ⚠️ (OBSOLETE) use https://github.com/sentry-kubernetes/charts directly
+      instead
+    digest: 36fea2153123aba20c280eeaff88c5de117d4f8dd76d748c4fdc7507460db7ce
+    home: https://github.com/sentry-kubernetes/charts/tree/develop/sentry
+    name: sentry-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/sentry-apps
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/sentry-apps-0.3.8/sentry-apps-0.3.8.tgz
+    version: 0.3.8
+  - apiVersion: v2
+    appVersion: 5.1.2
     created: "2021-01-18T08:41:01.790263552Z"
     dependencies:
     - name: argoconfig
@@ -8238,4 +8257,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-10T14:53:09.172724867Z"
+generated: "2021-11-11T21:27:25.758586611Z"
