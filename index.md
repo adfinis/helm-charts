@@ -40,7 +40,6 @@ for more in-depth information.
 | [logging-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/logging-apps) | Argo CD app-of-apps config for logging applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
 | [misc-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/misc-apps) | Argo CD app-of-apps config for miscellaneous small tools | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
 | [security-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/security-apps) | Argo CD app-of-apps config for security applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
-| [sentry-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/sentry-apps) | Sentry on premise | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
 | [storage-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/storage-apps) | Argo CD app-of-apps config for storage applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
 | [tracing-apps](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/tracing-apps) | Argo CD app-of-apps config for tracing applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
 
