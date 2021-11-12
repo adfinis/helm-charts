@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.57.0](https://img.shields.io/badge/Version-0.57.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.57.0](https://img.shields.io/badge/AppVersion-0.57.0-informational?style=flat-square)
+![Version: 0.57.1](https://img.shields.io/badge/Version-0.57.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.57.1](https://img.shields.io/badge/AppVersion-0.57.1-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -56,6 +56,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | certManagerMonitoring.destination.namespace | string | `"infra-certmanager"` | Namespace |
 | certManagerMonitoring.enabled | bool | `false` | Enable cert-manager-monitoring |
 | certManagerMonitoring.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
+| certManagerMonitoring.targetRevision | string | `"0.1.*"` | [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-monitoring) version |
 | certManagerMonitoring.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-monitoring/values.yaml) | Helm values |
 | ingressNginx | object | [example](./examples/nginx-ingress.yaml) | [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) |
 | ingressNginx.chart | string | `"ingress-nginx"` | Chart |
