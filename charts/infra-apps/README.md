@@ -56,6 +56,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | certManagerMonitoring.destination.namespace | string | `"infra-certmanager"` | Namespace |
 | certManagerMonitoring.enabled | bool | `false` | Enable cert-manager-monitoring |
 | certManagerMonitoring.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
+| certManagerMonitoring.targetRevision | string | `"0.1.*"` | [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-monitoring) version |
 | certManagerMonitoring.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-monitoring/values.yaml) | Helm values |
 | ingressNginx | object | [example](./examples/nginx-ingress.yaml) | [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) |
 | ingressNginx.chart | string | `"ingress-nginx"` | Chart |

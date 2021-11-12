@@ -92,7 +92,7 @@ certManagerMonitoring:
   repoURL: "https://charts.adfinis.com"
   # certManagerMonitoring.chart -- Chart
   chart: "cert-manager-monitoring"
-  # certManagerIussers.targetRevision -- [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-monitoring) version
+  # certManagerMonitoring.targetRevision -- [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-monitoring) version
   targetRevision: '0.1.*'
   # certManagerMonitoring.values -- Helm values
   # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-monitoring/values.yaml)
