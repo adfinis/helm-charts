@@ -1963,6 +1963,25 @@ entries:
   huawei-csi-plugin:
   - apiVersion: v2
     appVersion: v2.2.14
+    created: "2021-11-15T13:41:52.67773744Z"
+    description: Deploy the Huawei CSI plugin
+    digest: 4495c294d68f7fbf11f4618d5b212735feb33a826226b27d4a22274be037fd1b
+    home: https://github.com/Huawei/eSDK_K8S_Plugin
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: huawei-csi-plugin
+    sources:
+    - https://github.com/Huawei/eSDK_K8S_Plugin
+    - https://github.com/adfinis-sygroup/huawei-csi-plugin
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/huawei-csi-plugin
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/huawei-csi-plugin-0.3.1/huawei-csi-plugin-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
+    appVersion: v2.2.14
     created: "2021-11-10T14:53:09.164675334Z"
     description: Deploy the Huawei CSI plugin
     digest: 1bbfc49b496981ad9a860d763d054b6f13ab7679415fab3176a417a6c558bdf1
@@ -8299,4 +8318,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-12T09:52:03.707400727Z"
+generated: "2021-11-15T13:41:52.679820812Z"
