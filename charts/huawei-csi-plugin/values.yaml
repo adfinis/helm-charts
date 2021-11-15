@@ -33,6 +33,7 @@ csi_driver:
         add:
         - "SYS_ADMIN"
       allowPrivilegeEscalation: true
+      runAsUser: 0
     # csi_driver.node.resources -- resources for csi-driver container within node-daemonset
     resources: {}
 csi_livenessprobe:
