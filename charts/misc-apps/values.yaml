@@ -92,7 +92,7 @@ chartmuseum:
   # chartmuseum.chart -- Chart
   chart: chartmuseum
   # chartmuseum.targetRevision -- [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum)
-  targetRevision: "3.1.*"
+  targetRevision: "3.3.*"
   # chartmuseum.values -- Helm values
   # @default -- [upstream values](https://github.com/chartmuseum/charts/blob/main/src/chartmuseum/values.yaml)
   values: {}
