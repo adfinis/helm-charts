@@ -1,6 +1,6 @@
 # tracing-apps
 
-![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.6.0](https://img.shields.io/badge/AppVersion-0.6.0-informational?style=flat-square)
+![Version: 0.7.0](https://img.shields.io/badge/Version-0.7.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.7.0](https://img.shields.io/badge/AppVersion-0.7.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for tracing applications
 
@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | jaegerOperator.destination.namespace | string | `"infra-jaeger"` | Namespace |
 | jaegerOperator.enabled | bool | `false` | Enable jaeger-operator |
 | jaegerOperator.repoURL | string | [repo](https://jaegertracing.github.io/helm-charts) | Repo URL |
-| jaegerOperator.targetRevision | string | `"2.26.*"` | [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/main/charts/jaeger-operator) |
+| jaegerOperator.targetRevision | string | `"2.27.*"` | [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/main/charts/jaeger-operator) |
 | jaegerOperator.values | object | [upstream values](https://github.com/jaegertracing/helm-charts/blob/main/charts/jaeger-operator/values.yaml) | Helm values |
 
 ## About this chart
