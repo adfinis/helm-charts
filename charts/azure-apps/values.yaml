@@ -17,3 +17,43 @@ azureKvCsiProvider:
   # azureKvCsiProvider.values -- Helm values
   # @default -- [upstream values](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/charts/csi-secrets-store-provider-azure/values.yaml)
   values: {}
+
+# promitorScraper -- [promitor](https://promitor.io/) scraper ([example](./examples/promitor.yaml))
+# @default -- -
+promitorScraper:
+  # promitorScraper.enabled -- Enable promitor scraper
+  enabled: false
+  name: promitor-scraper
+  destination:
+    # promitorScraper.destination.namespace -- Namespace
+    namespace: "infra-promitor"
+  # promitorScraper.repoURL -- Repo URL
+  # @default -- [repo](https://charts.promitor.io/)
+  repoURL: "https://charts.promitor.io/"
+  # promitorScraper.chart -- Chart
+  chart: "promitor-agent-scraper"
+  # promitorScraper.targetRevision -- [promitor-agent-scraper Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-scraper) version
+  targetRevision: "2.6.*"
+  # promitorScraper.values -- Helm values
+  # @default -- [upstream values](https://github.com/promitor/charts/blob/main/promitor-agent-scraper/values.yaml)
+  values: {}
+
+# promitorResourceDiscovery -- [promitor](https://promitor.io/) resource discovery ([example](./examples/promitor.yaml))
+# @default -- -
+promitorResourceDiscovery:
+  # promitorResourceDiscovery.enabled -- Enable promitor resource discovery
+  enabled: false
+  name: promitor-resource-discovery
+  destination:
+    # promitorResourceDiscovery.destination.namespace -- Namespace
+    namespace: "infra-promitor"
+  # promitorResourceDiscovery.repoURL -- Repo URL
+  # @default -- [repo](https://charts.promitor.io/)
+  repoURL: "https://charts.promitor.io/"
+  # promitorResourceDiscovery.chart -- Chart
+  chart: "promitor-agent-resource-discovery"
+  # promitorResourceDiscovery.targetRevision -- [promitor-agent-resource-discovery Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-resource-discovery) version
+  targetRevision: "0.6.*"
+  # promitorResourceDiscovery.values -- Helm values
+  # @default -- [upstream values](https://github.com/promitor/charts/blob/main/promitor-agent-resource-discovery/values.yaml)
+  values: {}

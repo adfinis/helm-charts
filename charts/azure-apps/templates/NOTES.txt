@@ -2,3 +2,9 @@ The following apps are available:
 {{ if .Values.azureKvCsiProvider.enabled }}
 * secrets-store-csi-driver-provider-azure
 {{ end }}
+{{ if .Values.promitorScraper.enabled }}
+* promitor scraper
+{{ end }}
+{{ if .Values.promitorResourceDiscovery.enabled }}
+* promitor resource discovery
+{{ end }}

@@ -1,0 +1,65 @@
+# Enable and configure promitor scraper and discovery agents
+#
+# Based on the examples from [upstream chart](https://github.com/promitor/charts/tree/main/examples).
+#
+# In addition to the values below you will also need to specify the metrics you want scraped
+# as `promitorScraper.values.metrics`. If you configure the optional resource discovery agent
+# you need to specify what it should discover as `promitorResourceDiscovery.values.resourceDiscoveryGroups`.
+
+_: &tenantId 00000000-0000-0000-0000-000000000000
+_: &subscriptionId 00000000-0000-0000-0000-000000000000
+_: &resourceGroupName rg-name
+_: &appId 00000000-0000-0000-0000-000000000000
+_: &appKey dontleakme
+
+
+promitorScraper:
+  enabled: true
+  project: infra-promitor
+  values:
+    azureMetadata:
+      tenantId: *tenantId
+      subscriptionId: *subscriptionId
+      resourceGroupName: *resourceGroupName
+    azureAuthentication:
+      appId: *appId
+      appKey: *appKey
+    metricSinks:
+      prometheusScrapingEndpoint:
+        metricUnavailableValue: -1
+        baseUriPath: /scrape
+        enableServiceDiscovery: true
+    metricDefaults:
+      aggregation:
+        interval: 00:05:00
+      scraping:
+        # Every minute
+        schedule: "0 * * ? * *"
+    metrics: []
+    service:
+      loadBalancer:
+        enabled: true
+        azure:
+          dnsPrefix: promitor-scraper
+    telemetry:
+      defaultLogLevel: information
+    resourceDiscovery:
+      enabled: true
+      host: promitor-agent-resource-discovery
+      port: 8889
+
+promitorResourceDiscovery:
+  enabled: true
+  project: infra-promitor
+  values:
+    azureAuthentication:
+      appId: *appId
+      appKey: *appKey
+    azureLandscape:
+      cloud: Global
+      tenantId: *tenantId
+      subscriptions:
+      - *subscriptionId
+    resourceDiscoveryGroups: []
+    telemetry:
+      defaultLogLevel: information

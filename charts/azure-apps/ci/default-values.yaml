@@ -1,3 +1,9 @@
 azureKvCsiProvider:
   enabled: true
   values: {}
+promitorScraper:
+  enabled: true
+  values: {}
+promitorResourceDiscovery:
+  enabled: true
+  values: {}
