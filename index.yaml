@@ -306,6 +306,27 @@ entries:
     version: 0.1.0
   azure-apps:
   - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2021-11-21T11:05:06.637554358Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.4
+    description: Argo CD app-of-apps config for Azure applications
+    digest: d8c95cfab80749cb2411dd578bfdbb4eefd3cc1fe45625b17c83a5e859235b57
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/azure-apps-0.2.0/azure-apps-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 0.1.3
     created: "2021-09-23T08:25:00.592902688Z"
     dependencies:
@@ -8420,4 +8441,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-18T14:17:25.149557163Z"
+generated: "2021-11-21T11:05:06.639528559Z"
