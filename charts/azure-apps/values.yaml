@@ -28,8 +28,8 @@ promitorScraper:
     # promitorScraper.destination.namespace -- Namespace
     namespace: "infra-promitor"
   # promitorScraper.repoURL -- Repo URL
-  # @default -- [repo](https://charts.promitor.io/)
-  repoURL: "https://charts.promitor.io/"
+  # @default -- [repo](https://charts.promitor.io)
+  repoURL: "https://charts.promitor.io"
   # promitorScraper.chart -- Chart
   chart: "promitor-agent-scraper"
   # promitorScraper.targetRevision -- [promitor-agent-scraper Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-scraper) version
@@ -48,8 +48,8 @@ promitorResourceDiscovery:
     # promitorResourceDiscovery.destination.namespace -- Namespace
     namespace: "infra-promitor"
   # promitorResourceDiscovery.repoURL -- Repo URL
-  # @default -- [repo](https://charts.promitor.io/)
-  repoURL: "https://charts.promitor.io/"
+  # @default -- [repo](https://charts.promitor.io)
+  repoURL: "https://charts.promitor.io"
   # promitorResourceDiscovery.chart -- Chart
   chart: "promitor-agent-resource-discovery"
   # promitorResourceDiscovery.targetRevision -- [promitor-agent-resource-discovery Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-resource-discovery) version
