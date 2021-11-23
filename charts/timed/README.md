@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.7.11](https://img.shields.io/badge/Version-0.7.11-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.3.0](https://img.shields.io/badge/AppVersion-v1.3.0-informational?style=flat-square)
+![Version: 0.7.12](https://img.shields.io/badge/Version-0.7.12-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.2](https://img.shields.io/badge/AppVersion-v1.4.2-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -57,7 +57,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.cronjobs.redmineReport | object | `{"command":["./manage.py","redmine_report"],"schedule":"0 1 * * 1"}` | Redmine report |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"adfinissygroup/timed-backend"` | Backend image name |
-| backend.image.tag | string | `"v1.3.0"` | Backend version (optional) in case it differs from appVersion in Chart.yaml |
+| backend.image.tag | string | `"v1.4.2"` | Backend version (optional) in case it differs from appVersion in Chart.yaml |
 | backend.livenessProbe.enabled | bool | `true` | Enable liveness probe on backend |
 | backend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | backend.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
@@ -81,6 +81,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.settings.emailUrl | string | `"smtp://localhost:25"` | Connection string of SMTP server to send mails |
 | backend.settings.gunicorn.cmdArgs | string | `""` | gunicorn additional arguments |
 | backend.settings.gunicorn.workers | int | `8` | Number of gunicorn workers |
+| backend.settings.maxNumberFields | int | `2000` | Number of fields that are sent when saving changes on a model. |
 | backend.settings.sentry.dsn | string | `nil` | Sentry DSN for error reporting. Set to enable Sentry integration |
 | backend.settings.sentry.enabled | bool | `false` | Enable Sentry integration |
 | backend.settings.sentry.sendDefaultPii | string | `"True"` | Associate users to errors in Sentry |

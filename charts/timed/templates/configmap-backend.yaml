@@ -15,6 +15,7 @@ data:
   DJANGO_DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
   DJANGO_DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
   DJANGO_WORK_REPORT_PATH: {{ .Values.backend.settings.workReportPath | quote }}
+  DJANGO_DATA_UPLOAD_MAX_NUMBER_FIELDS: {{ .Values.backend.settings.maxNumberFields | quote }}
   DJANGO_OIDC_DEFAULT_BASE_URL: {{ .Values.auth.oidc.url | quote }}
 {{- if .Values.auth.oidc.endPoints.auth }}
   DJANGO_OIDC_OP_AUTHORIZATION_ENDPOINT: {{ .Values.auth.oidc.endPoints.auth | quote }}
