@@ -35,14 +35,13 @@ dexK8sAuthenticator:
   # dexK8sAuthenticator.chart -- Chart
   chart: "dexK8sAuthenticator"
   # dexK8sAuthenticator.targetRevision -- [dex-k8s-authenticator Helm chart](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/) version
-  targetRevision: "v1.4.*"
+  targetRevision: "v1.4.0"
   # dexK8sAuthenticator.values -- Helm values
   # @default -- [upstream values](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/values.yaml)
   values: {}
 
-# This repo is DEPRECATED, use dexK8sAuthenticator instead
-# gangway -- [gangway](https://github.com/heptiolabs/gangway/) ([example](./examples/gangway.yaml))
-# @default -- -
+# gangway -- [gangway](https://github.com/heptiolabs/gangway/) is DEPRECATED, use dexK8sAuthenticator instead
+# @default -- DEPRECATED
 gangway:
   # gangway.enabled -- Enable gangway
   enabled: false

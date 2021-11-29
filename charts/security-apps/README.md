@@ -36,7 +36,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dexK8sAuthenticator.enabled | bool | `false` | Enable dex-k8s-authenticator |
 | dexK8sAuthenticator.repoPath | string | `"charts/dex-k8s-authenticator"` | Repo Path |
 | dexK8sAuthenticator.repoURL | string | [repo](https://github.com/mintel/dex-k8s-authenticator.git) | Repo URL |
-| dexK8sAuthenticator.targetRevision | string | `"v1.4.*"` | [dex-k8s-authenticator Helm chart](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/) version |
+| dexK8sAuthenticator.targetRevision | string | `"v1.4.0"` | [dex-k8s-authenticator Helm chart](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/) version |
 | dexK8sAuthenticator.values | object | [upstream values](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/values.yaml) | Helm values |
 | falco | object | - | [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml)) |
 | falco.chart | string | `"falco"` | Chart |
@@ -52,7 +52,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | falcoExporter.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
 | falcoExporter.targetRevision | string | `"0.5.*"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version |
 | falcoExporter.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falco-exporter/values.yaml) | Helm values |
-| gangway | object | - | [gangway](https://github.com/heptiolabs/gangway/) ([example](./examples/gangway.yaml)) |
+| gangway | object | DEPRECATED | [gangway](https://github.com/heptiolabs/gangway/) is DEPRECATED, use dexK8sAuthenticator instead |
 | gangway.chart | string | `"gangway"` | Chart |
 | gangway.destination.namespace | string | `"infra-gangway"` | Namespace |
 | gangway.enabled | bool | `false` | Enable gangway |
