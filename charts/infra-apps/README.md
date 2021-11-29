@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.59.0](https://img.shields.io/badge/Version-0.59.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.59.0](https://img.shields.io/badge/AppVersion-0.59.0-informational?style=flat-square)
+![Version: 0.60.0](https://img.shields.io/badge/Version-0.60.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.60.0](https://img.shields.io/badge/AppVersion-0.60.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -35,7 +35,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocdNotifications.enabled | bool | `false` | Enable ArgoCD Notifications |
 | argocdNotifications.name | string | `"argocd-notifications"` |  |
 | argocdNotifications.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocdNotifications.targetRevision | string | `"1.5.*"` | [argocd-notifications Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argocd-notifications) version |
+| argocdNotifications.targetRevision | string | `"1.6.*"` | [argocd-notifications Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argocd-notifications) version |
 | argocdNotifications.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argocd-notifications/values.yaml) | Helm values |
 | certManager | object | [example](./examples/cert-manager.yaml) | [cert-manager](https://cert-manager.io/) |
 | certManager.chart | string | `"cert-manager"` | Chart |
