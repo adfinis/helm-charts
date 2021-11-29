@@ -1,0 +1,34 @@
+dexK8sAuthenticator:
+  enabled: true
+  project: infra-dex-k8s-authenticator
+  values:
+    global:
+      deployEnv: dev
+    dexK8sAuthenticator:
+      debug: false
+      web_path_prefix: /
+      #logoUrl: http://<path-to-your-logo.png>
+      #tlsCert: /path/to/dex-client.crt
+      #tlsKey: /path/to/dex-client.key
+      clusters:
+      - name: my-cluster
+        short_description: "My Cluster"
+        description: "Example Cluster Long Description..."
+        client_secret: "client_Secret"
+        issuer: https://dex.example.com
+        k8s_master_uri: https://my-cluster.example.com
+        client_id: my-cluster
+        redirect_uri: https://login.example.com/callback/my-cluster
+        k8s_ca_uri: https://url-to-your-ca.crt
+    ingress:
+      enabled: true
+      annotations: {}
+        cert-manager.io/cluster-issuer: letsencrypt-staging
+        kubernetes.io/ingress.class: nginx
+        kubernetes.io/tls-acme: "true"
+      hosts: ["my.example.com"]
+      # ingress.tls -- Ingress TLS options
+      tls:
+        - secretName: customer-center-tls
+          hosts:
+            - my.example.com

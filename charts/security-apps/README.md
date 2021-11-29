@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.35.0](https://img.shields.io/badge/Version-0.35.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.35.0](https://img.shields.io/badge/AppVersion-0.35.0-informational?style=flat-square)
+![Version: 0.36.0](https://img.shields.io/badge/Version-0.36.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.36.0](https://img.shields.io/badge/AppVersion-0.36.0-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -30,6 +30,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dex.repoURL | string | [repo](https://charts.dexidp.io) | Repo URL |
 | dex.targetRevision | string | `"0.6.*"` | [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version |
 | dex.values | object | [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml) | Helm values |
+| dexK8sAuthenticator | object | - | [dex-k8s-authenticator](https://github.com/mintel/dex-k8s-authenticator) ([example](./examples/dex-k8s-authenticator.yaml)) |
+| dexK8sAuthenticator.chart | string | `"dexK8sAuthenticator"` | Chart |
+| dexK8sAuthenticator.destination.namespace | string | `"infra-dex-k8s-authenticator"` | Namespace |
+| dexK8sAuthenticator.enabled | bool | `false` | Enable dex-k8s-authenticator |
+| dexK8sAuthenticator.repoPath | string | `"charts/dex-k8s-authenticator"` | Repo Path |
+| dexK8sAuthenticator.repoURL | string | [repo](https://github.com/mintel/dex-k8s-authenticator.git) | Repo URL |
+| dexK8sAuthenticator.targetRevision | string | `"v1.4.*"` | [dex-k8s-authenticator Helm chart](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/) version |
+| dexK8sAuthenticator.values | object | [upstream values](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/values.yaml) | Helm values |
 | falco | object | - | [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml)) |
 | falco.chart | string | `"falco"` | Chart |
 | falco.destination.namespace | string | `"infra-falco"` | Namespace |
