@@ -27,6 +27,9 @@ dexK8sAuthenticator:
   destination:
     # dexK8sAuthenticator.destination.namespace -- Namespace
     namespace: "infra-dex-k8s-authenticator"
+  # As of December 2021, there is no upstream helm repo where we could pull
+  # for this we need to reference directly the GitHub url
+  # FFI: https://github.com/mintel/dex-k8s-authenticator/issues/185
   # dexK8sAuthenticator.repoURL -- Repo URL
   # @default -- [repo](https://github.com/mintel/dex-k8s-authenticator.git)
   repoURL: "https://github.com/mintel/dex-k8s-authenticator.git"
@@ -34,6 +37,9 @@ dexK8sAuthenticator:
   repoPath: "charts/dex-k8s-authenticator"
   # dexK8sAuthenticator.chart -- Chart
   chart: "dexK8sAuthenticator"
+  # As of December 2021, there is no upstream helm repo where we could pull
+  # for this we need to reference directly the GitHub version tag
+  # FFI: https://github.com/mintel/dex-k8s-authenticator/issues/185
   # dexK8sAuthenticator.targetRevision -- [dex-k8s-authenticator Helm chart](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/) version
   targetRevision: "v1.4.0"
   # dexK8sAuthenticator.values -- Helm values
