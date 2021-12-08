@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocd.destination.namespace | string | `"infra-argocd"` | Namespace |
 | argocd.enabled | bool | `false` | Enable Argo CD |
 | argocd.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocd.targetRevision | string | `"3.26.*"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version |
+| argocd.targetRevision | string | `"3.27.*"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version |
 | argocd.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml) | Helm values |
 | argocdNotifications.chart | string | `"argocd-notifications"` | Chart |
 | argocdNotifications.destination.namespace | string | `"infra-argocd"` | Namespace |
