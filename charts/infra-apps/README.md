@@ -98,7 +98,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | thanos.destination.namespace | string | `"infra-monitoring"` | Namespace |
 | thanos.enabled | bool | `false` | Enable Thanos |
 | thanos.repoURL | string | [repo](https://charts.bitnami.com/bitnami) | Repo URL |
-| thanos.targetRevision | string | `"3.17.*"` | [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos) |
+| thanos.targetRevision | string | `"8.2.*"` | [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos) |
 | thanos.values | object | [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/thanos/values.yaml) | Helm values |
 | velero | object | [example](./examples/velero.yaml) | [Velero](https://velero.io/) |
 | velero.chart | string | `"velero"` | Chart |
