@@ -77,6 +77,8 @@ backend:
     workReportPath: /etc/workreport
     # backend.settings.maxNumberFields -- Number of fields that are sent when saving changes on a model.
     maxNumberFields: 2000
+    # backend.settings.customerCenterEmail -- Email address to use for sending order confirmations from customer center
+    customerCenterEmail: "webmaster@chart-example.local"
     # backend.settings.admins -- Django administrators, example: Jon Doe <jon.doe@example.com>
     admins: []
     gunicorn:
