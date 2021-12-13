@@ -29,9 +29,9 @@ component.
 ## The `argoconfig` library chart
 
 Inspired by various `common` charts. The [`argoconfig` library chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argoconfig)
-helps us add keep charts that manage Argo CD `Application` resources generic to some degree.
+helps us keep charts that manage Argo CD `Application` resources generic to some degree.
 
-It provides the `argoconfig.application` helper function which scaffolds an `Application` resource like so.
+It provides the `argoconfig.application` helper function which scaffolds an `Application` resource like so:
 
 ```yaml
 apiVersion: argoproj.io/v1alpha1
@@ -45,7 +45,7 @@ spec:
   syncPolicy: {}
 ```
 
-Our app-of-apps charts invoke the function in their individual `Application` templates.
+Our app-of-apps charts invoke the function in their individual `Application` templates:
 
 ```yaml
 {{ if .Values.example.enabled }}
