@@ -14,13 +14,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 * <https://github.com/adfinis-sygroup/customer-center>
 * <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/customer-center>
 
-## Requirements
-
-| Repository | Name | Version |
-|------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | ~10.3.18 |
-| https://charts.bitnami.com/bitnami | redis | ~14.1.0 |
-
 ## Values
 
 | Key | Type | Default | Description |
@@ -48,14 +41,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingress.enabled | bool | `true` | Enable ingress for customer-center |
 | ingress.hosts | list | `["my.example.com"]` | Ingress hostnames |
 | ingress.tls | list | `[{"hosts":["my.example.com"],"secretName":"customer-center-tls"}]` | Ingress TLS options |
-| postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
-| postgresql.postgresqlDatabase | string | `"db"` |  |
-| postgresql.postgresqlPassword | string | `"password"` | Set a password for PostgreSQL |
-| postgresql.postgresqlUsername | string | `"user"` |  |
-| redis.architecture | string | `"standalone"` | Define Redis architecture standalone or replication |
-| redis.auth.enabled | bool | `true` | Enable Redis authentication |
-| redis.auth.password | string | `"my-redis-password"` |  |
-| redis.enabled | bool | `true` | Enable Redis for caching |
 
 ## About this chart
 
