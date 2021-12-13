@@ -34,6 +34,7 @@ for more in-depth information.
 
 | Chart | Description | Version |
 | ----- | ----------- | ------- |
+| [argo-apps](charts/argo-apps) | Argo CD app-of-apps config for various argo project components | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
 | [azure-apps](charts/azure-apps) | Argo CD app-of-apps config for Azure applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
 | [backup-apps](charts/backup-apps) | Argo CD app-of-apps config for backup components | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
 | [infra-apps](charts/infra-apps) | Argo CD app-of-apps config for infrastructure components | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |

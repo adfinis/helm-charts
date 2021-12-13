@@ -18,24 +18,6 @@ argocd:
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml)
   values: {}
 
-argocdNotifications:
-  # argocdNotifications.enabled -- Enable ArgoCD Notifications
-  enabled: false
-  name: argocd-notifications
-  destination:
-    # argocdNotifications.destination.namespace -- Namespace
-    namespace: "infra-argocd"
-  # argocdNotifications.repoURL -- Repo URL
-  # @default -- [repo](https://argoproj.github.io/argo-helm)
-  repoURL: "https://argoproj.github.io/argo-helm"
-  # argocdNotifications.chart -- Chart
-  chart: "argocd-notifications"
-  # argocdNotifications.targetRevision -- [argocd-notifications Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argocd-notifications) version
-  targetRevision: "1.6.*"
-  # argocdNotifications.values -- Helm values
-  # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argocd-notifications/values.yaml)
-  values: {}
-
 # certManager -- [cert-manager](https://cert-manager.io/)
 # @default -- [example](./examples/cert-manager.yaml)
 certManager:
