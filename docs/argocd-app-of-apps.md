@@ -26,6 +26,45 @@ we consider valuable on most clusters. As with all the charts, `infra-apps` can 
 depending on your exact situation, for example on Red Hat OpenShift you would typically not deploy the bundled ingress
 component.
 
+## The `argoconfig` library chart
+
+Inspired by various `common` charts. The [`argoconfig` library chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argoconfig)
+helps us add keep charts that manage Argo CD `Application` resources generic to some degree.
+
+It provides the `argoconfig.application` helper function which scaffolds an `Application` resource like so.
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+# ... common.metadata
+spec:
+  project: "default"
+  source: {}
+  destination:
+    server: "https://kubernetes.default.svc"
+  syncPolicy: {}
+```
+
+Our app-of-apps charts invoke the function in their individual `Application` templates.
+
+```yaml
+{{ if .Values.example.enabled }}
+{{ template "argoconfig.application" (list . "example-apps.example") }}
+{{ end }}
+
+{{- define "example-apps.example" -}}{{- $app := unset .Values.example "enabled" -}}{{- $name := default $app.namespace $app.name -}}
+metadata:
+  name: {{ template "common.fullname" . }}-{{ $name }}
+spec:
+  {{- if $app.project }}
+  project: {{ $app.project | quote }}
+  {{- end }}
+  # ... more overriding, check any app-of-apps chart for an example
+{{- end -}}
+```
+
+The first block in this example renders the `Application`, the second block injects a template used for rendering.
+
 ## Further Info
 
 For now, these charts may be seen as an alternative to Argo CD ApplicationSets, [let us know](https://github.com/adfinis-sygroup/helm-charts/discussions)
