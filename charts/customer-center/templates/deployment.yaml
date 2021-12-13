@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "customerCenter.fullname" . }}-frontend
+  name: {{ include "customerCenter.fullname" . }}
   labels:
     {{- include "customerCenter.labels" . | nindent 4 }}
     app.kubernetes.io/component: frontend
@@ -17,7 +17,7 @@ spec:
         app.kubernetes.io/component: frontend
     spec:
       containers:
-        - name: {{ .Chart.Name }}-frontend
+        - name: {{ .Chart.Name }}
           image: "{{ .Values.frontend.image.repository }}:{{ default .Chart.AppVersion .Values.frontend.image.tag }}"
           imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
           ports:

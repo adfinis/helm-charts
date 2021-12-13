@@ -5,10 +5,6 @@ argocd:
       ingress:
         annotations:
           k8s.adfinis.com/test-annotation: test
-argocdNotifications:
-  enabled: true
-  values:
-    TODO: add values in values.yaml
 certManager:
   enabled: true
   values:

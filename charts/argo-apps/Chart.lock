@@ -1,0 +1,6 @@
+dependencies:
+- name: argoconfig
+  repository: https://charts.adfinis.com
+  version: 0.7.4
+digest: sha256:ff96b9bda00b9801e3e84bdffc6706c70db780c1dc6885e83dd25eba453a6601
+generated: "2021-12-13T13:42:46.947237359+01:00"
