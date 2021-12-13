@@ -1,11 +1,9 @@
 apiVersion: v2
-name: infra-apps
-description: Argo CD app-of-apps config for infrastructure components
+name: argo-apps
+description: Argo CD app-of-apps config for various argo project components
 type: application
-# version and appVersion are in sync in this chart!
-version: 0.67.0
-appVersion: 0.67.0
-home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/infra-apps
+version: 0.1.0
+home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argo-apps
 sources:
   - https://github.com/adfinis-sygroup/helm-charts
 maintainers:
