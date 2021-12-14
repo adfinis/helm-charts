@@ -63,7 +63,19 @@ spec:
 {{- end -}}
 ```
 
-The first block in this example renders the `Application`, the second block injects a template used for rendering.
+The first block in this example renders the `Application`, the second block injects a template used for rendering. The first thing that
+is done in the second block is to assign everything specific to an app to `$app` so it can be referenced in the template without needing
+to write out the full `.Values.example` part over and over.
+
+In the above example the values section would contain a minimal example section as default:
+
+```yaml
+example:
+  enabled: false
+  name: example
+  # ... more values, check any app-of-apps chart for an example
+  value: {}
+```
 
 ## Further Info
 
