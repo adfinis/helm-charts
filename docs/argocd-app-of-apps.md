@@ -67,14 +67,14 @@ The first block in this example renders the `Application`, the second block inje
 is done in the second block is to assign everything specific to an app to `$app` so it can be referenced in the template without needing
 to write out the full `.Values.example` part over and over.
 
-In the above example the values section would contain a minimal example section as default:
+In the above example the `values.yaml` for an app-of-apps chart would contain a minimal section for an `example` application by default:
 
 ```yaml
 example:
   enabled: false
   name: example
   # ... more values, check any app-of-apps chart for an example
-  value: {}
+  values: {}
 ```
 
 ## Further Info
