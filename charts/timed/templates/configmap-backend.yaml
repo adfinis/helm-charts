@@ -7,6 +7,7 @@ metadata:
     app.kubernetes.io/component: backend
 data:
   EMAIL_URL: {{ .Values.backend.settings.emailUrl | quote }}
+  DJANGO_CORS_ALLOWED_ORIGINS: {{ join "," .Values.backend.settings.corsAllowedOrigins | quote }}
   DJANGO_HOST_DOMAIN: {{ mustFirst .Values.ingress.hosts | default "localhost" | quote }}
   DJANGO_HOST_PROTOCOL: http{{- if .Values.ingress.tls }}s{{- end }}
   DJANGO_DEFAULT_FROM_EMAIL: {{ .Values.backend.settings.emailFrom | quote }}
