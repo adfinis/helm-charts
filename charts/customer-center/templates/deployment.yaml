@@ -20,6 +20,9 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.frontend.image.repository }}:{{ default .Chart.AppVersion .Values.frontend.image.tag }}"
           imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "customerCenter.fullname" . }}
           ports:
             - containerPort: {{ .Values.frontend.service.internalPort }}
           {{- if .Values.frontend.livenessProbe.enabled }}

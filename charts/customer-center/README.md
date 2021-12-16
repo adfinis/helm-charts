@@ -1,6 +1,6 @@
 # customer-center
 
-![Version: 0.2.10](https://img.shields.io/badge/Version-0.2.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.0.5](https://img.shields.io/badge/AppVersion-v3.0.5-informational?style=flat-square)
+![Version: 0.2.11](https://img.shields.io/badge/Version-0.2.11-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.0.5](https://img.shields.io/badge/AppVersion-v3.0.5-informational?style=flat-square)
 
 Chart for Customer-Center application
 
@@ -18,15 +18,17 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| auth.oidcClient | string | `"cc"` |  |
+| auth.oidcClient | string | `"cc"` | Configure oidc client for customer-center frontend |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | Frontend image pull policy |
 | frontend.image.repository | string | `"ghcr.io/adfinis-sygroup/customer-center/frontend"` | Frontend image name |
+| frontend.livenessProbe | object | `{"enabled":true,"failureThreshold":6,"initialDelaySeconds":60,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":5}` | Liveness probe configuration |
 | frontend.livenessProbe.enabled | bool | `true` | Enable liveness probe on frontend |
 | frontend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | frontend.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
 | frontend.livenessProbe.periodSeconds | int | `10` | How often (in seconds) to perform the probe |
 | frontend.livenessProbe.successThreshold | int | `1` | Minimum consecutive successes for the probe to be considered successful after having failed |
 | frontend.livenessProbe.timeoutSeconds | int | `5` | Number of seconds after which the probe times out |
+| frontend.readinessProbe | object | `{"enabled":true,"failureThreshold":6,"initialDelaySeconds":30,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":5}` | Readiness probe configuration |
 | frontend.readinessProbe.enabled | bool | `true` | Enable readiness probe on frontend |
 | frontend.readinessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | frontend.readinessProbe.initialDelaySeconds | int | `30` | Number of seconds after the container has started before readiness probe is initiated |
