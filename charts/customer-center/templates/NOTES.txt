@@ -9,6 +9,6 @@ Open following URL to start using Customer-Center:
 
 You did not enable ingress. Your Customer-Center instance should be available using kubectl port-forward:
 
-kubectl port-forward service/{{ include "customerCenter.fullname" .}}-frontend 7000:{{ .Values.frontend.service.externalPort }}
+kubectl port-forward service/{{ include "customerCenter.fullname" .}} 7000:{{ .Values.frontend.service.externalPort }}
 
 {{- end }}
