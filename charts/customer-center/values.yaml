@@ -71,3 +71,5 @@ ingress:
     - secretName: customer-center-tls
       hosts:
         - my.example.com
+auth:
+  oidcClient: cc
