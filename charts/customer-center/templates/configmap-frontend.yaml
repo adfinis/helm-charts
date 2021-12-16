@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ include "customerCenter.fullname" . }}-frontend
+  name: {{ include "customerCenter.fullname" . }}
   labels:
     {{- include "customerCenter.labels" . | nindent 4 }}
-    app.kubernetes.io/component: timed
+    app.kubernetes.io/component: frontend
 data:
   OIDC_CLIENT: {{ .Values.auth.oidcClient | quote }}
