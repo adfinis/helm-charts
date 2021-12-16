@@ -7282,6 +7282,26 @@ entries:
     version: 0.1.0
   storage-apps:
   - apiVersion: v2
+    created: "2021-12-16T19:14:36.73605307Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.4
+    description: Argo CD app-of-apps config for storage applications
+    digest: 76fdf7b54bdd088dc4d3d8b4968f699006165d4388e681f87f75f00935ffa361
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/storage-apps-0.6.0/storage-apps-0.6.0.tgz
+    version: 0.6.0
+  - apiVersion: v2
     created: "2021-12-14T08:38:15.366938997Z"
     dependencies:
     - name: argoconfig
@@ -9198,4 +9218,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-16T17:43:57.085423027Z"
+generated: "2021-12-16T19:14:36.738430305Z"
