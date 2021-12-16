@@ -1929,6 +1929,26 @@ entries:
   customer-center:
   - apiVersion: v2
     appVersion: v3.0.5
+    created: "2021-12-16T16:33:06.21826101Z"
+    description: Chart for Customer-Center application
+    digest: 9b171687a42144ee49daf44b0cdf435e512b5f281fb3d403473b288bbc34fe02
+    home: https://github.com/adfinis-sygroup/customer-center
+    keywords:
+    - customer-center
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: customer-center
+    sources:
+    - https://github.com/adfinis-sygroup/customer-center
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/customer-center
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/customer-center-0.2.11/customer-center-0.2.11.tgz
+    version: 0.2.11
+  - apiVersion: v2
+    appVersion: v3.0.5
     created: "2021-12-16T14:22:50.191768219Z"
     description: Chart for Customer-Center application
     digest: 39594925d726b8b9efb6a883f489b1d4062a9185a93bca73b81e3e9122a68027
@@ -9158,4 +9178,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-16T14:22:50.194157881Z"
+generated: "2021-12-16T16:33:06.220857855Z"
