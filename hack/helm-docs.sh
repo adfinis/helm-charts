@@ -12,4 +12,6 @@ readonly template_file=$HELM_DOCS_TEMPLATE_FILE
 
 set -x
 
+[ ! -f $HELM_DOCS_TEMPLATE_FILE ] && echo "Missing template '$HELM_DOCS_TEMPLATE_FILE' bailing out" && exit 1
+
 helm-docs --template-files=$template_file
