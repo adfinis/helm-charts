@@ -53,7 +53,7 @@ promitorResourceDiscovery:
   # promitorResourceDiscovery.chart -- Chart
   chart: "promitor-agent-resource-discovery"
   # promitorResourceDiscovery.targetRevision -- [promitor-agent-resource-discovery Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-resource-discovery) version
-  targetRevision: "0.6.*"
+  targetRevision: "0.7.*"
   # promitorResourceDiscovery.values -- Helm values
   # @default -- [upstream values](https://github.com/promitor/charts/blob/main/promitor-agent-resource-discovery/values.yaml)
   values: {}
