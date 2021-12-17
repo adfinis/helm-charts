@@ -6,14 +6,14 @@ argocd:
   name: argocd
   destination:
     # argocd.destination.namespace -- Namespace
-    namespace: "infra-argocd"
+    namespace: infra-argocd
   # argocd.repoURL -- Repo URL
   # @default -- [repo](https://argoproj.github.io/argo-helm)
-  repoURL: "https://argoproj.github.io/argo-helm"
+  repoURL: https://argoproj.github.io/argo-helm
   # argocd.chart -- Chart
-  chart: "argo-cd"
+  chart: argo-cd
   # argocd.targetRevision -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version
-  targetRevision: "3.28.*"
+  targetRevision: 3.29.*
   # argocd.values -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml)
   values: {}
@@ -29,11 +29,11 @@ certManager:
     namespace: infra-certmanager
   # certManager.repoURL -- Repo URL
   # @default -- [repo](https://charts.jetstack.io)
-  repoURL: "https://charts.jetstack.io"
+  repoURL: https://charts.jetstack.io
   # certManager.chart -- Chart
-  chart: "cert-manager"
+  chart: cert-manager
   # certManager.targetRevision -- [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version
-  targetRevision: '1.6.*'
+  targetRevision: 1.6.*
   # certManager.values -- Helm values
   # @default -- [upstream values](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
@@ -50,11 +50,11 @@ certManagerIssuers:
     namespace: infra-certmanager
   # certManagerIssuers.repoURL -- Repo URL
   # @default -- [repo](https://charts.adfinis.com)
-  repoURL: "https://charts.adfinis.com"
+  repoURL: https://charts.adfinis.com
   # certManagerIssuers.chart -- Chart
-  chart: "cert-manager-issuers"
+  chart: cert-manager-issuers
   # certManagerIssuers.targetRevision -- [cert-manager-issuers Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-issuers) version
-  targetRevision: '0.2.*'
+  targetRevision: 0.2.*
   # certManagerIssuers.values -- Helm values
   # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-issuers/values.yaml)
   values: {}
@@ -71,11 +71,11 @@ certManagerMonitoring:
     namespace: infra-certmanager
   # certManagerMonitoring.repoURL -- Repo URL
   # @default -- [repo](https://charts.adfinis.com)
-  repoURL: "https://charts.adfinis.com"
+  repoURL: https://charts.adfinis.com
   # certManagerMonitoring.chart -- Chart
-  chart: "cert-manager-monitoring"
+  chart: cert-manager-monitoring
   # certManagerMonitoring.targetRevision -- [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-monitoring) version
-  targetRevision: '0.1.*'
+  targetRevision: 0.1.*
   # certManagerMonitoring.values -- Helm values
   # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-monitoring/values.yaml)
   values: {}
@@ -92,11 +92,11 @@ ingressNginx:
     namespace: infra-ingress
   # ingressNginx.repoURL -- Repo URL
   # @default -- [repo](https://kubernetes.github.io/ingress-nginx)
-  repoURL: "https://kubernetes.github.io/ingress-nginx"
+  repoURL: https://kubernetes.github.io/ingress-nginx
   # ingressNginx.chart -- Chart
-  chart: "ingress-nginx"
+  chart: ingress-nginx
   # ingressNginx.targetRevision -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version
-  targetRevision: '4.0.*'
+  targetRevision: 4.0.*
   # ingressNginx.values -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml)
   values: {}
@@ -112,11 +112,11 @@ kubePrometheusStack:
     namespace: infra-monitoring
   # kubePrometheusStack.repoURL -- Repo URL
   # @default -- [repo](https://prometheus-community.github.io/helm-charts)
-  repoURL: "https://prometheus-community.github.io/helm-charts"
+  repoURL: https://prometheus-community.github.io/helm-charts
   # kubePrometheusStack.chart -- Chart
-  chart: "kube-prometheus-stack"
+  chart: kube-prometheus-stack
   # kubePrometheusStack.targetRevision -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: '23.1.*'
+  targetRevision: 23.1.*
   # kubePrometheusStack.values -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
   values: {}
@@ -132,11 +132,11 @@ rbacManager:
     namespace: infra-rbac
   # rbacManager.repoURL -- Repo URL
   # @default -- [repo](https://charts.fairwinds.com/stable)
-  repoURL: "https://charts.fairwinds.com/stable"
+  repoURL: https://charts.fairwinds.com/stable
   # rbacManager.chart -- Chart
-  chart: "rbac-manager"
+  chart: rbac-manager
   # rbacManager.targetRevision -- [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version
-  targetRevision: '1.9.*'
+  targetRevision: 1.9.*
   # rbacManager.values -- Helm values
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml)
   values: {}
@@ -152,11 +152,11 @@ thanos:
     namespace: infra-monitoring
   # thanos.repoURL -- Repo URL
   # @default -- [repo](https://charts.bitnami.com/bitnami)
-  repoURL: "https://charts.bitnami.com/bitnami"
+  repoURL: https://charts.bitnami.com/bitnami
   # thanos.chart -- Chart
   chart: thanos
   # thanos.targetRevision -- [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos)
-  targetRevision: '8.2.*'
+  targetRevision: 8.2.*
   # thanos.values -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/thanos/values.yaml)
   values: {}
@@ -172,11 +172,11 @@ velero:
     namespace: infra-velero
   # velero.repoURL -- Repo URL
   # @default -- [repo](https://vmware-tanzu.github.io/helm-charts)
-  repoURL: "https://vmware-tanzu.github.io/helm-charts"
+  repoURL: https://vmware-tanzu.github.io/helm-charts
   # velero.chart -- Chart
   chart: velero
   # velero.targetRevision -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
-  targetRevision: '2.27.*'
+  targetRevision: 2.27.*
   # velero.values -- Helm values
   # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
   values: {}
@@ -192,11 +192,11 @@ kured:
     namespace: infra-kured
   # kured.repoURL -- Repo URL
   # @default -- [repo](https://weaveworks.github.io/kured)
-  repoURL: "https://weaveworks.github.io/kured"
+  repoURL: https://weaveworks.github.io/kured
   # kured.chart -- Chart
   chart: kured
   # kured.targetRevision -- [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured)
-  targetRevision: '2.10.*'
+  targetRevision: 2.10.*
   # kured.values -- Helm values
   # @default -- [upstream values](https://github.com/weaveworks/kured/blob/main/charts/kured/values.yaml)
   values: {}
@@ -212,11 +212,11 @@ kubeEventExporter:
     namespace: infra-kube-event-exporter
   # kubeEventExporter.repoURL -- Repo URL
   # @default -- [repo](https://charts.bitnami.com/bitnami)
-  repoURL: "https://charts.bitnami.com/bitnami"
+  repoURL: https://charts.bitnami.com/bitnami
   # kubeEventExporter.chart -- Chart
   chart: kubernetes-event-exporter
   # kubeEventExporter.targetRevision -- [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kubernetes-event-exporter)
-  targetRevision: '1.2.*'
+  targetRevision: 1.2.*
   # kubeEventExporter.values -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/kubernetes-event-exporter/values.yaml)
   values: {}
