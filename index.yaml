@@ -7449,6 +7449,33 @@ entries:
   timed:
   - apiVersion: v2
     appVersion: v1.4.5
+    created: "2021-12-17T15:04:57.944042098Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~9.1.2
+    description: Chart for Timed application
+    digest: e95842b8db23254bb13d36c8d38a06796735d1ed8d6044544fa553cdac95606d
+    home: https://github.com/adfinis-sygroup/timed-frontend
+    keywords:
+    - timed
+    - tracking
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: timed
+    sources:
+    - https://github.com/adfinis-sygroup/timed-backend
+    - https://github.com/adfinis-sygroup/timed-frontend
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/timed
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/timed-0.7.15/timed-0.7.15.tgz
+    version: 0.7.15
+  - apiVersion: v2
+    appVersion: v1.4.5
     created: "2021-12-14T14:26:08.699245872Z"
     dependencies:
     - condition: postgresql.enabled
@@ -9238,4 +9265,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2021-12-17T13:04:24.626804097Z"
+generated: "2021-12-17T15:04:57.946121797Z"
