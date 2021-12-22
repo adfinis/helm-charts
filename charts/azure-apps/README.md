@@ -35,7 +35,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | promitorResourceDiscovery.destination.namespace | string | `"infra-promitor"` | Namespace |
 | promitorResourceDiscovery.enabled | bool | `false` | Enable promitor resource discovery |
 | promitorResourceDiscovery.repoURL | string | [repo](https://charts.promitor.io) | Repo URL |
-| promitorResourceDiscovery.targetRevision | string | `"0.6.*"` | [promitor-agent-resource-discovery Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-resource-discovery) version |
+| promitorResourceDiscovery.targetRevision | string | `"0.7.*"` | [promitor-agent-resource-discovery Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-resource-discovery) version |
 | promitorResourceDiscovery.values | object | [upstream values](https://github.com/promitor/charts/blob/main/promitor-agent-resource-discovery/values.yaml) | Helm values |
 | promitorScraper | object | - | [promitor](https://promitor.io/) scraper ([example](./examples/promitor.yaml)) |
 | promitorScraper.chart | string | `"promitor-agent-scraper"` | Chart |
