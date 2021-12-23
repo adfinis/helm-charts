@@ -1,6 +1,6 @@
 # barman
 
-![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.10](https://img.shields.io/badge/AppVersion-2.10-informational?style=flat-square)
+![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.17](https://img.shields.io/badge/AppVersion-v2.17-informational?style=flat-square)
 
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
@@ -42,9 +42,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age |
 | barman.retentionPolicy | string | `"RECOVERY WINDOW of 1 MONTH"` | Barman retention policy |
 | deployment.strategy.type | string | `"RollingUpdate"` | Specify the strategy used to replace old Pods by new ones |
-| image.pullPolicy | string | `"Always"` | Image pull policy |
-| image.repository | string | `"ubcctlt/barman"` | Image repository |
-| image.tag | string | `"latest"` | Image tag |
+| image.pullPolicy | string | `"Always"` | When to pull the container image |
+| image.repository | string | `"ubcctlt/barman"` | Container image to deploy |
+| image.tag | string | `""` | Overrides the image tag whose default is the chart version. |
 | persistence.data.accessMode | string | `"ReadWriteOnce"` | Access mode for persistent storage |
 | persistence.data.enabled | bool | `true` | Enable persistent storage for backup data |
 | persistence.data.size | string | `"20Gi"` | Size of storage volume |

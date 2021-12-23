@@ -18,8 +18,10 @@ spec:
     spec:
       containers:
         - name: barman
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          # workaround for https://github.com/ubc/barman-docker/pull/4
+          command: ["tini", "--", "/entrypoint.sh"]
           {{- if .Values.prometheus.enabled }}
           ports:
             - name: prom-exporter
