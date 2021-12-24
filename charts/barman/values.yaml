@@ -1,10 +1,10 @@
 image:
-  # image.repository -- Image repository
+  # image.repository -- Container image to deploy
   repository: ubcctlt/barman
-  # image.tag -- Image tag
-  tag: "latest"
-  # image.pullPolicy -- Image pull policy
+  # image.pullPolicy -- When to pull the container image
   pullPolicy: Always
+  # image.tag -- Overrides the image tag whose default is the chart version.
+  tag: ""
 
 # resources -- Resource limits and requests
 resources:

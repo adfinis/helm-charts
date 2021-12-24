@@ -1,8 +1,8 @@
-{{ if .Values.nfsClientProvisioner.enabled }}
-{{ template "argoconfig.application" (list . "storage-apps.nfsClientProvisioner") }}
+{{ if .Values.argoRollouts.enabled }}
+{{ template "argoconfig.application" (list . "argo-apps.argoRollouts") }}
 {{ end }}
 
-{{- define "storage-apps.nfsClientProvisioner" -}}{{- $app := unset .Values.nfsClientProvisioner "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
+{{- define "argo-apps.argoRollouts" -}}{{- $app := unset .Values.argoRollouts "enabled" -}}{{- $name := default $app.namespace $app.name -}}
 metadata:
   name: {{ template "common.fullname" . }}-{{ $name }}
 spec:

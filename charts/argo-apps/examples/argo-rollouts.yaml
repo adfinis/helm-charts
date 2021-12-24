@@ -1,0 +1,15 @@
+# Argo Rollouts
+#
+# Set up Argo Rollouts, the progressive delivery controller for Kubernetes.
+
+argoRollouts:
+  enabled: true
+  values:
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+        additionalLabels:
+          k8s.adfinis.com/prometheus: kube-prometheus
+    dashboard:
+      enabled: true

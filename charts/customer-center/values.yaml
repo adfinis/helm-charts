@@ -31,6 +31,7 @@ frontend:
     # requests:
     #  cpu: 100m
     #  memory: 128Mi
+  # frontend.livenessProbe -- Liveness probe configuration
   livenessProbe:
     # frontend.livenessProbe.enabled -- Enable liveness probe on frontend
     enabled: true
@@ -44,6 +45,7 @@ frontend:
     failureThreshold: 6
     # frontend.livenessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
     successThreshold: 1
+  # frontend.readinessProbe -- Readiness probe configuration
   readinessProbe:
     # frontend.readinessProbe.enabled -- Enable readiness probe on frontend
     enabled: true
@@ -71,3 +73,6 @@ ingress:
     - secretName: customer-center-tls
       hosts:
         - my.example.com
+auth:
+  # auth.oidcClient -- Configure oidc client for customer-center frontend
+  oidcClient: cc
