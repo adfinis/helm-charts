@@ -22,6 +22,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           # workaround for https://github.com/ubc/barman-docker/pull/4
           command: ["tini", "--", "/entrypoint.sh"]
+          args: ["cron", "-L", "4", "-f"]
           {{- if .Values.prometheus.enabled }}
           ports:
             - name: prom-exporter
