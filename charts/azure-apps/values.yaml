@@ -33,7 +33,7 @@ promitorScraper:
   # promitorScraper.chart -- Chart
   chart: "promitor-agent-scraper"
   # promitorScraper.targetRevision -- [promitor-agent-scraper Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-scraper) version
-  targetRevision: "2.6.*"
+  targetRevision: "2.7.*"
   # promitorScraper.values -- Helm values
   # @default -- [upstream values](https://github.com/promitor/charts/blob/main/promitor-agent-scraper/values.yaml)
   values: {}
