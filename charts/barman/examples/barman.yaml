@@ -12,7 +12,7 @@ persistence:
     size: 5Gi
 deployment:
   strategy:
-    # deployment.strategy needs to be set to Rereate if the underlying PVC does
+    # deployment.strategy needs to be set to Recreate if the underlying PVC does
     # not support multi-attach.
     type: Recreate
 resources:
@@ -89,9 +89,9 @@ barman:
         host: "pghost"
         port: 5432
         superUser: postgres
-        # add this if you set `secret.enable=true`
+        # add this if you set `secret.create=true`
         #superUserPassword: 'SECRET'
         superUserDatabase: postgres
         replicationUser: barman
-        # add this if you set `secret.enable=true`
+        # add this if you set `secret.create=true`
         #replicationPassword: 'SECRET'
