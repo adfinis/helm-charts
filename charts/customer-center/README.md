@@ -1,6 +1,6 @@
 # customer-center
 
-![Version: 0.2.14](https://img.shields.io/badge/Version-0.2.14-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.0.9](https://img.shields.io/badge/AppVersion-v3.0.9-informational?style=flat-square)
+![Version: 0.2.18](https://img.shields.io/badge/Version-0.2.18-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.1.7](https://img.shields.io/badge/AppVersion-v3.1.7-informational?style=flat-square)
 
 Chart for Customer-Center application
 

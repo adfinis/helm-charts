@@ -42,7 +42,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | promitorScraper.destination.namespace | string | `"infra-promitor"` | Namespace |
 | promitorScraper.enabled | bool | `false` | Enable promitor scraper |
 | promitorScraper.repoURL | string | [repo](https://charts.promitor.io) | Repo URL |
-| promitorScraper.targetRevision | string | `"2.6.*"` | [promitor-agent-scraper Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-scraper) version |
+| promitorScraper.targetRevision | string | `"2.7.*"` | [promitor-agent-scraper Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-scraper) version |
 | promitorScraper.values | object | [upstream values](https://github.com/promitor/charts/blob/main/promitor-agent-scraper/values.yaml) | Helm values |
 
 ## About this chart
