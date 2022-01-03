@@ -67,7 +67,7 @@ exampleApp:
     ingress:
       enabled: true
       annotations:
-        kubernetes.io/ingress.class: infra-ingress
+        kubernetes.io/ingress.class: nginx
         kubernetes.io/tls-acme: "true"
       pathType: Prefix
       hosts:
