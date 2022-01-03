@@ -1,0 +1,97 @@
+# Deploy a simple monitored barman instance with PVC backed storage
+
+rbac:
+  create: true
+persistence:
+  data:
+    # this needs to exceed the total storage used by barman backups
+    size: 125Gi
+  recover:
+    # set to true to create a data recovery PVC
+    enabled: false
+    size: 5Gi
+deployment:
+  strategy:
+    # deployment.strategy needs to be set to Rereate if the underlying PVC does
+    # not support multi-attach.
+    type: Recreate
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    # this value should be based on the actual usage as seen on the
+    # Kubernetes / Compute Resources / Namespace (Workloads)
+    # dashboard in grafana. 1 cpu / 1Gi of memory  will usually leave
+    # ample headroom but might need further tuning based on the size
+    # of the largest database to backup.
+    cpu: 1
+    memory: 1Gi
+prometheus:
+  serviceMonitor:
+    extraLabels:
+      # make a default Adfinis kube-prometheus-stack deployment scrape barman
+      k8s.adfinis.com/prometheus: kube-prometheus
+  rules:
+    enabled: true
+    selector:
+      k8s.adfinis.com/prometheus: kube-prometheus
+    spec:
+      # configure backup monitoring for barman
+      - alert: BarmanBackupMissing
+        expr: |
+          absent(barman_last_backup)
+        for: 24h
+        labels:
+          severity: critical
+        annotations:
+          summary: "[{{$labels.server}}] No successful PostgreSQL backup in the last 24h"
+          description: >
+            Barman has not created a backup within the last 24h which
+            means that it must be down or not functioning properly. This needs to be
+            resolved for this cloud to continue to make PostgreSQL backups.
+secret:
+  # disabled so it doesn't create a secret via helm, you will need to manage
+  # the secret manually:
+  # ```
+  # kubectl create secret generic barman-pgpass-secret \
+  #   --from-file=.pgpass=.pgpass
+  # ```
+  # the referenced .pgpass file needs to contain the following entry once per
+  # backuped database:
+  # ```
+  # pghost:pgport:*:superUsername:superPassword
+  # pghost:pgport:*:replicationUser:replicationPassword
+  # ```
+  create: false
+barman:
+  # global barman setting, tune to your liking
+  backupMethod: postgres
+  backupOptions: concurrent_backup
+  backupDir: /var/lib/barman
+  barmanUser: barman
+  compression: gzip
+  retentionPolicy: "RECOVERY WINDOW of 2 WEEKS"
+  lastBackupMaximumAge: "1 day"
+  backupSchedule: "0 4 * * *"
+  databaseSlotName: barman
+  # server specific backup configs, add an entry for each db you backup
+  backups:
+    - backupMethod: postgres
+      backupSchedule: "0 4 * * *"
+      databaseSlotName: barman
+      lastBackupMaximumAge: "1 day"
+      # namespace the db is in
+      namespace: default
+      # service account used to exec into the target db
+      serviceaccount: app-postgresql
+      postgresql:
+        host: "pghost"
+        port: 5432
+        superUser: postgres
+        # add this if you set `secret.enable=true`
+        #superUserPassword: 'SECRET'
+        superUserDatabase: postgres
+        replicationUser: barman
+        # add this if you set `secret.enable=true`
+        #replicationPassword: 'SECRET'
