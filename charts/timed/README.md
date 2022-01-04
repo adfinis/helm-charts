@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.7.18](https://img.shields.io/badge/Version-0.7.18-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.5](https://img.shields.io/badge/AppVersion-v1.4.5-informational?style=flat-square)
+![Version: 0.7.19](https://img.shields.io/badge/Version-0.7.19-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.5](https://img.shields.io/badge/AppVersion-v1.4.5-informational?style=flat-square)
 
 Chart for Timed application
 
