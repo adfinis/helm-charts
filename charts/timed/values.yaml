@@ -12,7 +12,7 @@ backend:
     # backend.image.repository -- Backend image name
     repository: adfinissygroup/timed-backend
     # backend.image.tag -- Backend version (optional) in case it differs from appVersion in Chart.yaml
-    tag: v1.5.1
+    tag: v1.5.4
     # backend.image.pullPolicy -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
