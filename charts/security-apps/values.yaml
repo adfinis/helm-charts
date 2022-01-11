@@ -13,7 +13,7 @@ dex:
   # dex.chart -- Chart
   chart: "dex"
   # dex.targetRevision -- [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version
-  targetRevision: "0.7.*"
+  targetRevision: "0.6.*"
   # dex.values -- Helm values
   # @default -- [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml)
   values: {}
@@ -121,7 +121,7 @@ falcoExporter:
   # falcoExporter.chart -- Chart
   chart: "falco-exporter"
   # falcoExporter.targetRevision -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version
-  targetRevision: "0.6.*"
+  targetRevision: "0.7.*"
   # falcoExporter.values -- Helm values
   # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco-exporter/values.yaml)
   values: {}
