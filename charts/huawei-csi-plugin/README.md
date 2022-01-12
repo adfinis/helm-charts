@@ -1,13 +1,12 @@
 # huawei-csi-plugin
 
-![Version: 0.3.1](https://img.shields.io/badge/Version-0.3.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.2.14](https://img.shields.io/badge/AppVersion-v2.2.14-informational?style=flat-square)
+> **:exclamation: This Helm Chart is deprecated!**
 
-Deploy the Huawei CSI plugin
+![Version: 0.3.2](https://img.shields.io/badge/Version-0.3.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.2.14](https://img.shields.io/badge/AppVersion-v2.2.14-informational?style=flat-square)
+
+⚠️ (OBSOLETE) request for upstream chart is https://github.com/Huawei/eSDK_K8S_Plugin/issues/16
 
 **Homepage:** <https://github.com/Huawei/eSDK_K8S_Plugin>
-
-## Maintainers
-This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
