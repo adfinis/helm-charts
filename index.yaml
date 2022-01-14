@@ -896,6 +896,26 @@ entries:
     version: 0.1.0
   backup-apps:
   - apiVersion: v2
+    created: "2022-01-14T13:04:26.548923627Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.4
+    description: Argo CD app-of-apps config for backup components
+    digest: 4cc99f48cae0aba51c2d8797232b4847b2729d30bc17d4076e5b059636e6c5de
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/backup-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: backup-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/backup-apps-0.2.0/backup-apps-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     created: "2021-12-14T08:38:14.527670186Z"
     dependencies:
     - name: argoconfig
@@ -9738,4 +9758,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-12T11:02:39.969933553Z"
+generated: "2022-01-14T13:04:26.550926134Z"
