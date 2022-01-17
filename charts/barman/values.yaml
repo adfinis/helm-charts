@@ -43,6 +43,10 @@ rbac:
   # rbac.create -- Whether to create RBAC or not
   create: false
 
+secret:
+  # secret.create -- Whether to create and manage the barman-pgpass-secret
+  create: true
+
 barman:
   # barman.backupMethod -- Barman backup method
   backupMethod: postgres
