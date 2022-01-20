@@ -13,7 +13,7 @@ argocd:
   # argocd.chart -- Chart
   chart: argo-cd
   # argocd.targetRevision -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version
-  targetRevision: 3.29.*
+  targetRevision: 3.30.*
   # argocd.values -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml)
   values: {}
@@ -116,7 +116,7 @@ kubePrometheusStack:
   # kubePrometheusStack.chart -- Chart
   chart: kube-prometheus-stack
   # kubePrometheusStack.targetRevision -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: 23.1.*
+  targetRevision: 30.0.*
   # kubePrometheusStack.values -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
   values: {}
@@ -216,7 +216,7 @@ kubeEventExporter:
   # kubeEventExporter.chart -- Chart
   chart: kubernetes-event-exporter
   # kubeEventExporter.targetRevision -- [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kubernetes-event-exporter)
-  targetRevision: 1.2.*
+  targetRevision: 1.3.*
   # kubeEventExporter.values -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/kubernetes-event-exporter/values.yaml)
   values: {}
