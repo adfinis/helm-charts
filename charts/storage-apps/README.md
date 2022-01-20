@@ -28,14 +28,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | cephCsiCephfs.destination.namespace | string | `"infra-storage"` | Namespace |
 | cephCsiCephfs.enabled | bool | `false` | Enable ceph-csi-cephfs |
 | cephCsiCephfs.repoURL | string | [repo](https://ceph.github.io/csi-charts) | Repo URL |
-| cephCsiCephfs.targetRevision | string | `"3.4.*"` | [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version |
+| cephCsiCephfs.targetRevision | string | `"3.5.0"` | [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version |
 | cephCsiCephfs.values | object | [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/cephfs/ceph-csi-cephfs/values.yaml) | Helm values |
 | cephCsiRbd | object | - | [ceph-csi-rbd](https://github.com/ceph/ceph-csi/) |
 | cephCsiRbd.chart | string | `"ceph-csi-rbd"` | Chart |
 | cephCsiRbd.destination.namespace | string | `"infra-storage"` | Namespace |
 | cephCsiRbd.enabled | bool | `false` | Enable ceph-csi-rbd |
 | cephCsiRbd.repoURL | string | [repo](https://ceph.github.io/csi-charts) | Repo URL |
-| cephCsiRbd.targetRevision | string | `"3.4.*"` | [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version |
+| cephCsiRbd.targetRevision | string | `"3.5.0"` | [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version |
 | cephCsiRbd.values | object | [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/rbd/ceph-csi-rbd/values.yaml) | Helm values |
 
 ## About this chart
