@@ -2684,6 +2684,26 @@ entries:
     version: 0.0.1
   infra-apps:
   - apiVersion: v2
+    created: "2022-01-20T12:49:57.049025902Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.4
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 7286d15d45cf5db978445c9054ace3bc8c9d3e3d30f07f032f6e08f0a1838008
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/infra-apps-0.72.0/infra-apps-0.72.0.tgz
+    version: 0.72.0
+  - apiVersion: v2
     created: "2022-01-17T16:42:31.220347231Z"
     dependencies:
     - name: argoconfig
@@ -4715,6 +4735,26 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/kasperleyn-0.3.1/kasperleyn-0.3.1.tgz
     version: 0.3.1
   logging-apps:
+  - apiVersion: v2
+    created: "2022-01-20T12:49:57.141327414Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.4
+    description: Argo CD app-of-apps config for logging applications
+    digest: b4600181a196bf351fb600febb11ce326a3cfb6b4c864136782c52e0290ab1f0
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.15.0/logging-apps-0.15.0.tgz
+    version: 0.15.0
   - apiVersion: v2
     created: "2022-01-17T15:37:30.300337246Z"
     dependencies:
@@ -9878,4 +9918,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-01-20T12:43:39.990104072Z"
+generated: "2022-01-20T12:49:57.146459765Z"
