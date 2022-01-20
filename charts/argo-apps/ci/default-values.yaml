@@ -1,0 +1,8 @@
+argocdNotifications:
+  enabled: true
+  values:
+    TODO: add values in values.yaml
+argoRollouts:
+  enabled: true
+  values:
+    TODO: add values in values.yaml

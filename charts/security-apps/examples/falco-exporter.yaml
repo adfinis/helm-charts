@@ -4,5 +4,9 @@ falcoExporter:
   values:
     grafanaDashboard:
       enabled: true
+      additionalLabels:
+        k8s.adfinis.com/prometheus: kube-prometheus
     serviceMonitor:
+      enabled: true
+    prometheusRules:
       enabled: true

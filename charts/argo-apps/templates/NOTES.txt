@@ -1,0 +1,4 @@
+The following apps have been provisioned in Argo CD:
+{{ if .Values.argocdNotifications.enabled }}
+* ArgoCD Notifications
+{{ end }}

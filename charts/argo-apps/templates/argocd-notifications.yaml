@@ -1,8 +1,8 @@
 {{ if .Values.argocdNotifications.enabled }}
-{{ template "argoconfig.application" (list . "infra-apps.argocdNotifications") }}
+{{ template "argoconfig.application" (list . "argo-apps.argocdNotifications") }}
 {{ end }}
 
-{{- define "infra-apps.argocdNotifications" -}}{{- $app := unset .Values.argocdNotifications "enabled" -}}{{- $name := default $app.namespace $app.name -}}
+{{- define "argo-apps.argocdNotifications" -}}{{- $app := unset .Values.argocdNotifications "enabled" -}}{{- $name := default $app.namespace $app.name -}}
 metadata:
   name: {{ template "common.fullname" . }}-{{ $name }}
 spec:

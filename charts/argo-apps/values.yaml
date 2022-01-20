@@ -1,0 +1,35 @@
+argocdNotifications:
+  # argocdNotifications.enabled -- Enable ArgoCD Notifications
+  enabled: false
+  name: argocd-notifications
+  destination:
+    # argocdNotifications.destination.namespace -- Namespace
+    namespace: "infra-argocd"
+  # argocdNotifications.repoURL -- Repo URL
+  # @default -- [repo](https://argoproj.github.io/argo-helm)
+  repoURL: "https://argoproj.github.io/argo-helm"
+  # argocdNotifications.chart -- Chart
+  chart: "argocd-notifications"
+  # argocdNotifications.targetRevision -- [argocd-notifications Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argocd-notifications) version
+  targetRevision: "1.6.*"
+  # argocdNotifications.values -- Helm values
+  # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argocd-notifications/values.yaml)
+  values: {}
+
+argoRollouts:
+  # argoRollouts.enabled -- Enable Argo Rollouts
+  enabled: false
+  name: argo-rollouts
+  destination:
+    # argoRollouts.destination.namespace -- Namespace
+    namespace: "infra-argo-rollouts"
+  # argoRollouts.repoURL -- Repo URL
+  # @default -- [repo](https://argoproj.github.io/argo-helm)
+  repoURL: "https://argoproj.github.io/argo-helm"
+  # argoRollouts.chart -- Chart
+  chart: "argo-rollouts"
+  # argoRollouts.targetRevision -- [argo-rollouts Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-rollouts) version
+  targetRevision: "2.9.*"
+  # argoRollouts.values -- Helm values
+  # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-rollouts/values.yaml)
+  values: {}

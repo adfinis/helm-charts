@@ -1,6 +1,6 @@
 # storage-apps
 
-![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.0](https://img.shields.io/badge/AppVersion-0.5.0-informational?style=flat-square)
+![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for storage applications
 
@@ -37,13 +37,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | cephCsiRbd.repoURL | string | [repo](https://ceph.github.io/csi-charts) | Repo URL |
 | cephCsiRbd.targetRevision | string | `"3.4.*"` | [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version |
 | cephCsiRbd.values | object | [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/rbd/ceph-csi-rbd/values.yaml) | Helm values |
-| nfsClientProvisioner | object | - | [nfs-client-provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner) ([example](./examples/nfs-client-provisioner.yaml)) |
-| nfsClientProvisioner.chart | string | `"nfs-client-provisioner"` | Chart |
-| nfsClientProvisioner.destination.namespace | string | `"infra-storage"` | Namespace |
-| nfsClientProvisioner.enabled | bool | `false` | Enable nfs-client-provisioner |
-| nfsClientProvisioner.repoURL | string | [repo](https://charts.helm.sh/stable) | Repo URL |
-| nfsClientProvisioner.targetRevision | string | `"1.2.*"` | [nfs-client-provisioner Helm chart](https://github.com/helm/charts/tree/master/stable/nfs-client-provisioner) version |
-| nfsClientProvisioner.values | object | [upstream values](https://github.com/helm/charts/blob/master/stable/nfs-client-provisioner/values.yaml) | Helm values |
 
 ## About this chart
 

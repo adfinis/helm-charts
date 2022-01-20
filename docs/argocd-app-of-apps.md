@@ -26,6 +26,122 @@ we consider valuable on most clusters. As with all the charts, `infra-apps` can 
 depending on your exact situation, for example on Red Hat OpenShift you would typically not deploy the bundled ingress
 component.
 
+### Structure of app-of-app charts
+
+The charts all share a similar structure that looks as follows:
+
+```
+.
+├── README.md
+├── Chart.lock
+├── Chart.yaml
+├── values.yaml
+├── ci
+│   └── default-values.yaml
+├── examples
+│   └── example-app.yaml
+└── templates
+    ├── NOTES.txt
+    └── example-app.yaml
+```
+
+In this example the chart contains a single application called `example-app`. Most files correspond to their regular
+helm chart counterparts but there are some special files. App names are dasherized in file names and camel cased
+when used in YAML keys. As an example, the application "Example App" has files names using `example-app` and keys
+using `exampleApp` throughout this documentation.
+
+`ci/defauls-values.yaml` is not specific to app-of-apps charts but it enables each app during chart testing with
+GitHub Actions:
+```yaml
+exampleApp:
+  enabled: true
+  values: {}
+    # values needed for testing defined here
+```
+
+`examples/example-app.yaml` contains an example on how to configure the given app using the chart:
+```yaml
+exampleApp:
+  enabled: true
+  values:
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        kubernetes.io/tls-acme: "true"
+      pathType: Prefix
+      hosts:
+      - example-app.example.com
+      tls:
+      - hosts:
+        - example-app.example.com
+        secretName: example-app-cert
+```
+
+`templates/NOTES.txt` highlights what apps where installed:
+```
+The following apps have been provisioned in Argo CD:
+{{ if .Values.exampleApp.enabled }}
+* Example App
+{{ end }}
+```
+
+The values file and the remainder of the templates are based on the `argoconfig` library chart. Their structure
+is described below.
+
+### The `argoconfig` library chart
+
+Inspired by various `common` charts. The [`argoconfig` library chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argoconfig)
+helps us keep charts that manage Argo CD `Application` resources generic to some degree.
+
+It provides the `argoconfig.application` helper function which scaffolds an `Application` resource like so:
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+# ... common.metadata
+spec:
+  project: "default"
+  source: {}
+  destination:
+    server: "https://kubernetes.default.svc"
+  syncPolicy: {}
+```
+
+Our app-of-apps charts invoke the function in their individual `Application` templates:
+
+```yaml
+{{ if .Values.exampleApp.enabled }}
+{{ template "argoconfig.application" (list . "example-apps.exampleApp") }}
+{{ end }}
+
+{{- define "example-apps.exampleApp" -}}{{- $app := unset .Values.exampleApp "enabled" -}}{{- $name := default $app.namespace $app.name -}}
+metadata:
+  name: {{ template "common.fullname" . }}-{{ $name }}
+spec:
+  {{- if $app.project }}
+  project: {{ $app.project | quote }}
+  {{- end }}
+  # ... more overriding, check any app-of-apps chart for an example
+{{- end -}}
+```
+
+The `Application` template for `exampleApp` would be stored in `templates/example-app.yaml` in a downstream app-of-apps chart.
+
+The first block in this example renders the `Application`, the second block injects a template used for rendering. The first thing that
+is done in the second block is to assign everything specific to an app to `$app` so it can be referenced in the template without needing
+to write out the full `.Values.exampleApp` part over and over.
+
+In the above example the `values.yaml` for an app-of-apps chart would contain a minimal section for an `exampleApp` application by default:
+
+```yaml
+exampleApp:
+  enabled: false
+  name: example
+  # ... more values, check any app-of-apps chart for an example
+  values: {}
+```
+
 ## Further Info
 
 For now, these charts may be seen as an alternative to Argo CD ApplicationSets, [let us know](https://github.com/adfinis-sygroup/helm-charts/discussions)
