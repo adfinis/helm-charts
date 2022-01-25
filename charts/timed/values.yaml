@@ -73,6 +73,8 @@ backend:
     emailFrom: webmaster@chart-example.local
     # backend.settings.serverEmail -- Email address error messages are sent from
     serverEmail: webmaster@chart-example.local
+    # backend.settings.emailUseTls -- TLS option for email server
+    emailUseTls: "True"
     # backend.settings.workReportPath -- Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`.
     workReportPath: /etc/workreport
     # backend.settings.maxNumberFields -- Number of fields that are sent when saving changes on a model.
