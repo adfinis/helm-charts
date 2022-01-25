@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.7.19](https://img.shields.io/badge/Version-0.7.19-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.5](https://img.shields.io/badge/AppVersion-v1.4.5-informational?style=flat-square)
+![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.5](https://img.shields.io/badge/AppVersion-v1.4.5-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -81,6 +81,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.settings.customerCenterEmail | string | `"webmaster@chart-example.local"` | Email address to use for sending order confirmations from customer center |
 | backend.settings.emailFrom | string | `"webmaster@chart-example.local"` | Default email address to use for various responses |
 | backend.settings.emailUrl | string | `"smtp://localhost:25"` | Connection string of SMTP server to send mails |
+| backend.settings.emailUseTls | string | `"True"` | TLS option for email server |
 | backend.settings.gunicorn.cmdArgs | string | `""` | gunicorn additional arguments |
 | backend.settings.gunicorn.workers | int | `8` | Number of gunicorn workers |
 | backend.settings.maxNumberFields | int | `2000` | Number of fields that are sent when saving changes on a model. |
