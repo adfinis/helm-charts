@@ -11,7 +11,7 @@ spec:
     - port: {{ .Values.backend.service.externalPort }}
       targetPort: http
       protocol: TCP
-      name: {{ .Values.backend.service.name }}
+      name: http
   selector:
     {{- include "timed.selectorLabels" . | nindent 4 }}
     app.kubernetes.io/component: backend

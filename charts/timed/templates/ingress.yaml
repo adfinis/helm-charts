@@ -17,25 +17,35 @@ spec:
         paths:
           - path: /admin/
             backend:
-              serviceName: {{ $.Values.backend.service.name }}
-              servicePort: {{ $.Values.backend.service.externalPort }}
+              service:
+                name: {{ $.Values.backend.service.name }}
+                port:
+                  name: http
           - path: /static/
             backend:
-              serviceName: {{ $.Values.backend.service.name }}
-              servicePort: {{ $.Values.backend.service.externalPort }}
+              service:
+                name: {{ $.Values.backend.service.name }}
+                port:
+                  name: http
           - path: /api/
             backend:
-              serviceName: {{ $.Values.backend.service.name }}
-              servicePort: {{ $.Values.backend.service.externalPort }}
+              service:
+                name: {{ $.Values.backend.service.name }}
+                port:
+                  name: http
           - path: /oidc/
             backend:
-              serviceName: {{ $.Values.backend.service.name }}
-              servicePort: {{ $.Values.backend.service.externalPort }}
+              service:
+                name: {{ $.Values.backend.service.name }}
+                port:
+                  name: http
           # frontend service as catch all backend
           - path: /
             backend:
-              serviceName: {{ $.Values.frontend.service.name }}
-              servicePort: {{ $.Values.frontend.service.externalPort }}
+              service:
+                name: {{ $.Values.frontend.service.name }}
+                port:
+                  name: http
     {{- end -}}
   {{- if .Values.ingress.tls }}
   tls:
