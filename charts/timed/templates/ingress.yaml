@@ -16,24 +16,28 @@ spec:
       http:
         paths:
           - path: /admin/
+            pathType: Prefix
             backend:
               service:
                 name: {{ $.Values.backend.service.name }}
                 port:
                   name: http
           - path: /static/
+            pathType: Prefix
             backend:
               service:
                 name: {{ $.Values.backend.service.name }}
                 port:
                   name: http
           - path: /api/
+            pathType: Prefix
             backend:
               service:
                 name: {{ $.Values.backend.service.name }}
                 port:
                   name: http
           - path: /oidc/
+            pathType: Prefix
             backend:
               service:
                 name: {{ $.Values.backend.service.name }}
@@ -41,6 +45,7 @@ spec:
                   name: http
           # frontend service as catch all backend
           - path: /
+            pathType: Prefix
             backend:
               service:
                 name: {{ $.Values.frontend.service.name }}
