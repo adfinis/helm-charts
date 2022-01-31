@@ -17,3 +17,23 @@ jaegerOperator:
   # jaegerOperator.values -- Helm values
   # @default -- [upstream values](https://github.com/jaegertracing/helm-charts/blob/main/charts/jaeger-operator/values.yaml)
   values: {}
+
+# opentelemetryCollector -- [opentelemetry-collector](https://opentelemetry.io/docs/collector/) ([example](./examples/opentelemetryCollector.yaml))
+# @default -- -
+opentelemetryCollector:
+  # opentelemetryCollector.enabled -- Enable otel-exporter
+  enabled: false
+  name: otel-collector
+  destination:
+    # opentelemetryCollector.destination.namespace -- Namespace
+    namespace: "infra-otel-operator"
+  # opentelemetryCollector.repoURL -- Repo URL
+  # @default -- [repo](https://open-telemetry.github.io/opentelemetry-helm-charts)
+  repoURL: "https://open-telemetry.github.io/opentelemetry-helm-charts"
+  # opentelemetryCollector.chart -- Chart
+  chart: "opentelemetry-collector"
+  # opentelemetryCollector.targetRevision -- [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector)
+  targetRevision: "0.8.*"
+  # opentelemetryCollector.values -- Helm values
+  # @default -- [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml)
+  values: {}

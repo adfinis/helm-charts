@@ -1,0 +1,11 @@
+# Basic otel-collector installation
+#
+# See upstream chart values for a bunch of possible values.
+
+opentelemetryCollector:
+  enabled: true
+  values:
+    serviceMonitor:
+      enabled: true
+      extraLabels:
+        k8s.adfinis.com/prometheus: kube-prometheus
