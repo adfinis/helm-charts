@@ -4,3 +4,4 @@ chart-repos:
   - secrets-store-csi-driver=https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
 additional-commands:
   - helm unittest --helm3 --color {{ .Path }}
+  - hack/pluto.sh {{ .Path }}
