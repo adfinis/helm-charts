@@ -1,6 +1,6 @@
 # vault-monitoring
 
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.2](https://img.shields.io/badge/AppVersion-0.1.2-informational?style=flat-square)
+![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 monitor your vault server from within Kubernetes' prometheus
 
@@ -18,10 +18,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | fullnameOverride | string | `""` | specifies the full name override to be used for helm |
-| image.pullPolicy | string | `"IfNotPresent"` | set the image pullPolicy |
-| image.repository | string | `"vault"` | set the image repository |
-| image.tag | string | `""` | set the tag of the image Specify a tag to override which version of timed to deploy. If no tag is specified the appVersion from Chart.yaml is used as tag. |
-| imagePullSecrets | list | `[]` | specifies the image pull secrets to be used |
 | nameOverride | string | `""` | specifies the name override to be used for helm |
 | prometheusRules.enabled | bool | `false` | wether or not the prometheus alerts are enabled |
 | prometheusRules.labels | object | `{}` | labels to set in the prometheus alerts |
