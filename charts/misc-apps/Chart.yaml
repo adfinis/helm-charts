@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.14.2
+version: 0.15.0
 home: https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/misc-apps
 sources:
   - https://github.com/adfinis-sygroup/helm-charts

@@ -78,7 +78,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vault.destination.namespace | string | `"infra-vault"` | Namespace |
 | vault.enabled | bool | `false` | Enable vault |
 | vault.repoURL | string | [repo](https://helm.releases.hashicorp.com) | Repo URL |
-| vault.targetRevision | string | `"0.18.*"` | [vault Helm chart](https://github.com/hashicorp/vault-helm) version |
+| vault.targetRevision | string | `"0.19.*"` | [vault Helm chart](https://github.com/hashicorp/vault-helm) version |
 | vault.values | object | [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml) | Helm values |
 | vaultMonitoring | object | - | [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml)) |
 | vaultMonitoring.chart | string | `"vault-monitoring"` | Chart |
