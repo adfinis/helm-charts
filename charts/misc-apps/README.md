@@ -42,7 +42,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | metallb.destination.namespace | string | `"infra-metallb"` | Namespace |
 | metallb.enabled | bool | `false` | Enable metallb |
 | metallb.repoURL | string | [repo](https://metallb.github.io/metallb) | Repo URL |
-| metallb.targetRevision | string | `"0.11.*"` | [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb) |
+| metallb.targetRevision | string | `"0.12.*"` | [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb) |
 | metallb.values | object | [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml) | Helm values |
 | sentryKubernetes | object | - | [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml) |
 | sentryKubernetes.chart | string | `"sentry-kubernetes"` | Chart |
