@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.40.0](https://img.shields.io/badge/Version-0.40.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.42.0](https://img.shields.io/badge/Version-0.42.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -43,14 +43,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | falco.destination.namespace | string | `"infra-falco"` | Namespace |
 | falco.enabled | bool | `false` | Enable falco |
 | falco.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
-| falco.targetRevision | string | `"1.16.*"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version |
+| falco.targetRevision | string | `"1.17.*"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version |
 | falco.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml) | Helm values |
 | falcoExporter | object | - | [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml)) |
 | falcoExporter.chart | string | `"falco-exporter"` | Chart |
 | falcoExporter.destination.namespace | string | `"infra-falco"` | Namespace |
 | falcoExporter.enabled | bool | `false` | Enable falco-exporter |
 | falcoExporter.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
-| falcoExporter.targetRevision | string | `"0.7.*"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version |
+| falcoExporter.targetRevision | string | `"0.8.*"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version |
 | falcoExporter.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falco-exporter/values.yaml) | Helm values |
 | gangway | object | DEPRECATED | [gangway](https://github.com/heptiolabs/gangway/) is DEPRECATED, use dexK8sAuthenticator instead |
 | gangway.chart | string | `"gangway"` | Chart |
