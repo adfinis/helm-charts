@@ -73,7 +73,7 @@ metallb:
   # metallb.chart -- Chart
   chart: "metallb"
   # metallb.targetRevision -- [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb)
-  targetRevision: "0.11.*"
+  targetRevision: "0.12.*"
   # metallb.values -- Helm values
   # @default -- [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml)
   values: {}
