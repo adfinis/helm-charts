@@ -121,7 +121,7 @@ falcoExporter:
   # falcoExporter.chart -- Chart
   chart: "falco-exporter"
   # falcoExporter.targetRevision -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version
-  targetRevision: "0.7.*"
+  targetRevision: "0.8.*"
   # falcoExporter.values -- Helm values
   # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco-exporter/values.yaml)
   values: {}
