@@ -11,7 +11,7 @@ argocdNotifications:
   # argocdNotifications.chart -- Chart
   chart: "argocd-notifications"
   # argocdNotifications.targetRevision -- [argocd-notifications Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argocd-notifications) version
-  targetRevision: "1.7.*"
+  targetRevision: "1.8.*"
   # argocdNotifications.values -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argocd-notifications/values.yaml)
   values: {}
