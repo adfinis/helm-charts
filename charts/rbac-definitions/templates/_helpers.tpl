@@ -2,7 +2,7 @@
 {{/*
 Return the name of the RBACDefinition
 */}}
-{{- define "rbacdefinitions.name" -}}
+{{- define "rbac-definitions.name" -}}
 {{- $name := include "common.name" .root }}
 {{- with .data }}
 {{- if .metadata }}
@@ -20,9 +20,9 @@ Return the name of the RBACDefinition
 {{/*
 Return a deepmerged metadata block based on common.metadata with local overrides.
 */}}
-{{- define "rbacdefinitions.metadata" -}}
+{{- define "rbac-definitions.metadata" -}}
 {{- $metadata := (include "common.metadata" .root | fromYaml) }}
-{{- $name := include "rbacdefinitions.name" . }}
+{{- $name := include "rbac-definitions.name" . }}
 {{- if .data.metadata }}
 {{- $metadata = mergeOverwrite $metadata (dict "metadata" .data.metadata) }}
 {{- end }}

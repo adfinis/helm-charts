@@ -1,12 +1,11 @@
 {{- range .Values.rbacDefinitions }}
 ---
-# raw rbacDefinition: {{ . | toJson }}
 {{- $enabled := printf "%t" .enabled }}
 {{- if regexMatch "nil" $enabled }}{{- $enabled = "true" }}{{- end }}
 {{- if (eq $enabled "true") }}
 apiVersion: rbacmanager.reactiveops.io/v1beta1
 kind: RBACDefinition
-{{ template "rbacdefinitions.metadata" (dict "data" . "root" $) }}
+{{ template "rbac-definitions.metadata" (dict "data" . "root" $) }}
 rbacBindings:
   {{- .rbacBindings |  toYaml | nindent 2 }}
 {{- end }}

@@ -4,11 +4,11 @@ should create one RBACDefinition:
     kind: RBACDefinition
     metadata:
       labels:
-        app.kubernetes.io/app: rbacdefinitions
+        app.kubernetes.io/app: rbac-definitions
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: 1beta1
-        helm.sh/chart: rbacdefinitions-0.1.0
+        helm.sh/chart: rbac-definitions-0.1.0
       name: cluster-editors
     rbacBindings:
     - clusterRoleBindings:
@@ -22,11 +22,11 @@ should create one RBACDefinition:
     kind: RBACDefinition
     metadata:
       labels:
-        app.kubernetes.io/app: rbacdefinitions
+        app.kubernetes.io/app: rbac-definitions
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: 1beta1
-        helm.sh/chart: rbacdefinitions-0.1.0
+        helm.sh/chart: rbac-definitions-0.1.0
       name: cluster-admins
     rbacBindings:
     - clusterRoleBindings:
@@ -41,11 +41,11 @@ should create one RBACDefinition with a namespace selector:
     kind: RBACDefinition
     metadata:
       labels:
-        app.kubernetes.io/app: rbacdefinitions
+        app.kubernetes.io/app: rbac-definitions
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: 1beta1
-        helm.sh/chart: rbacdefinitions-0.1.0
+        helm.sh/chart: rbac-definitions-0.1.0
       name: devs-edit
     rbacBindings:
     - name: devs
@@ -63,11 +63,11 @@ should match snapshot:
     kind: RBACDefinition
     metadata:
       labels:
-        app.kubernetes.io/app: rbacdefinitions
+        app.kubernetes.io/app: rbac-definitions
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: 1beta1
-        helm.sh/chart: rbacdefinitions-0.1.0
+        helm.sh/chart: rbac-definitions-0.1.0
       name: ci-example
     rbacBindings:
     - clusterRoleBindings:

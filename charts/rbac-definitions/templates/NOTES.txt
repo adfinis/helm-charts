@@ -1,6 +1,6 @@
 {{- if .Values.rbacDefinitions }}
 Deployed RBACDefinitions:
 {{- range .Values.rbacDefinitions }}
-* {{ include "rbacdefinitions.name" (dict "data" . "root" $) }}
+* {{ include "rbac-definitions.name" (dict "data" . "root" $) }}
 {{- end }}
 {{- end }}

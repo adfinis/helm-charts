@@ -1,5 +1,5 @@
 apiVersion: v2
-name: rbacdefinitions
+name: rbac-definitions
 description: Deploy RBACDefinitions via Helm
 type: application
 version: 0.1.0
