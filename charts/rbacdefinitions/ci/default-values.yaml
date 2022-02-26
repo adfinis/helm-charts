@@ -1,0 +1,9 @@
+rbacDefinitions:
+  - name: ci-example
+    rbacBindings:
+      - name: edit
+        subjects:
+          - kind: User
+            name: ci@example.com
+        clusterRoleBindings:
+          - clusterRole: edit

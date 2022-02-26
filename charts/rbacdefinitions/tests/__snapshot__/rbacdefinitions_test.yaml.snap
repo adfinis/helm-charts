@@ -1,0 +1,78 @@
+should create one RBACDefinition:
+  1: |
+    apiVersion: rbacmanager.reactiveops.io/v1beta1
+    kind: RBACDefinition
+    metadata:
+      labels:
+        app.kubernetes.io/app: rbacdefinitions
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: 1beta1
+        helm.sh/chart: rbacdefinitions-0.1.0
+      name: cluster-editors
+    rbacBindings:
+    - clusterRoleBindings:
+      - clusterRole: edit
+      name: editors
+      subjects:
+      - kind: User
+        name: maxime@example.com
+  2: |
+    apiVersion: rbacmanager.reactiveops.io/v1beta1
+    kind: RBACDefinition
+    metadata:
+      labels:
+        app.kubernetes.io/app: rbacdefinitions
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: 1beta1
+        helm.sh/chart: rbacdefinitions-0.1.0
+      name: cluster-admins
+    rbacBindings:
+    - clusterRoleBindings:
+      - clusterRole: cluster-admin
+      name: admins
+      subjects:
+      - kind: User
+        name: jane@example.com
+should create one RBACDefinition with a namespace selector:
+  1: |
+    apiVersion: rbacmanager.reactiveops.io/v1beta1
+    kind: RBACDefinition
+    metadata:
+      labels:
+        app.kubernetes.io/app: rbacdefinitions
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: 1beta1
+        helm.sh/chart: rbacdefinitions-0.1.0
+      name: devs-edit
+    rbacBindings:
+    - name: devs
+      roleBindings:
+      - clusterRole: edit
+        namespaceSelector:
+          matchLabels:
+            k8s.example.com/owner: devs
+      subjects:
+      - kind: Group
+        name: devs
+should match snapshot:
+  1: |
+    apiVersion: rbacmanager.reactiveops.io/v1beta1
+    kind: RBACDefinition
+    metadata:
+      labels:
+        app.kubernetes.io/app: rbacdefinitions
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: 1beta1
+        helm.sh/chart: rbacdefinitions-0.1.0
+      name: ci-example
+    rbacBindings:
+    - clusterRoleBindings:
+      - clusterRole: edit
+      name: edit
+      subjects:
+      - kind: User
+        name: ci@example.com

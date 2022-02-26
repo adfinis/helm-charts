@@ -1,0 +1,21 @@
+apiVersion: v2
+name: rbacdefinitions
+description: Deploy RBACDefinitions via Helm
+type: application
+version: 0.1.0
+# matches apiVersion: rbacmanager.reactiveops.io/v1beta1
+appVersion: "1beta1"
+keywords:
+  - rbac-manager
+home: https://rbac-manager.docs.fairwinds.com/
+icon: https://rbac-manager.docs.fairwinds.com/img/rbac-manager-logo.svg
+sources:
+  - https://github.com/adfinis-sygroup/helm-charts
+maintainers:
+  - name: adfinis-sygroup
+    email: support@adfinis.com
+    url: https://adfinis.com
+dependencies:
+  - name: common
+    repository: https://charts.adfinis.com
+    version: 0.0.6

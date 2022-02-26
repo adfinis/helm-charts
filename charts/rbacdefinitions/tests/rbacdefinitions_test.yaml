@@ -1,0 +1,41 @@
+suite: RBACDefinitions tests
+templates:
+  - rbacdefinitions.yaml
+tests:
+  - it: should match snapshot
+    values:
+      - ../ci/default-values.yaml
+    asserts:
+      - hasDocuments:
+          count: 1
+      - matchSnapshot: {}
+  - it: should create one RBACDefinition
+    values:
+      - ../examples/clusterrolebinding.yaml
+    asserts:
+      - hasDocuments:
+          count: 2
+      - matchSnapshot: {}
+  - it: should create one RBACDefinition with a namespace selector
+    values:
+      - ../examples/namespaceselector.yaml
+    asserts:
+      - hasDocuments:
+          count: 1
+      - documentIndex: 0
+        equal:
+          path: metadata.name
+          value: devs-edit
+      - documentIndex: 0
+        equal:
+          path: rbacBindings[0].name
+          value: devs
+      - documentIndex: 0
+        equal:
+          path: rbacBindings[0].subjects[0].name
+          value: devs
+      - documentIndex: 0
+        equal:
+          path: rbacBindings[0].roleBindings[0].clusterRole
+          value: edit
+      - matchSnapshot: {}

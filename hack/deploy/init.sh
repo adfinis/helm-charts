@@ -9,6 +9,7 @@ readonly argocd_version=$ADFINIS_CHARTS_ARGOCD_VERSION
 readonly kube_prometheus_stack_version=$ADFINIS_CHARTS_KUBE_PROMETHEUS_STACK_VERISON
 readonly secrets_store_csi_driver_version=$ADFINIS_CHARTS_SECRETS_STORE_CSI_DRIVER_VERSION
 readonly cert_manager_version=$ADFINIS_CHARTS_CERT_MANAGER_VERSION
+readonly rbac_manager_version=$ADFINIS_CHARTS_RBAC_MANAGER_VERSION
 
 set +x
 
@@ -26,3 +27,5 @@ kubectl apply -f https://raw.githubusercontent.com/prometheus-community/helm-cha
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/v$secrets_store_csi_driver_version/deploy/secrets-store.csi.x-k8s.io_secretproviderclasses.yaml
 
 kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v$cert_manager_version/cert-manager.crds.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/FairwindsOps/rbac-manager/v$rbac_manager_version/deploy/2_crd.yaml
