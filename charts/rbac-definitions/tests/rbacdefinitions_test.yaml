@@ -9,6 +9,13 @@ tests:
       - hasDocuments:
           count: 1
       - matchSnapshot: {}
+  - it: should only create one RBACDefinition
+    values:
+      - ../examples/enabled-and-disabled.yaml
+    asserts:
+      - hasDocuments:
+          count: 1
+      - matchSnapshot: {}
   - it: should create one RBACDefinition
     values:
       - ../examples/clusterrolebinding.yaml

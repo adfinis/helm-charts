@@ -76,3 +76,22 @@ should match snapshot:
       subjects:
       - kind: User
         name: ci@example.com
+should only create one RBACDefinition:
+  1: |
+    apiVersion: rbacmanager.reactiveops.io/v1beta1
+    kind: RBACDefinition
+    metadata:
+      labels:
+        app.kubernetes.io/app: rbac-definitions
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: 1beta1
+        helm.sh/chart: rbac-definitions-0.1.0
+      name: cluster-admins
+    rbacBindings:
+    - clusterRoleBindings:
+      - clusterRole: cluster-admin
+      name: admins
+      subjects:
+      - kind: User
+        name: jane@example.com

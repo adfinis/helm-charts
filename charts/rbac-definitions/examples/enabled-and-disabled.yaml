@@ -1,0 +1,20 @@
+# Create clusterrolebindings
+rbacDefinitions:
+  - name: cluster-editors
+    enabled: false
+    rbacBindings:
+      - name: editors
+        subjects:
+          - kind: User
+            name: maxime@example.com
+        clusterRoleBindings:
+          - clusterRole: edit
+  - name: cluster-admins
+    enabled: true
+    rbacBindings:
+      - name: admins
+        subjects:
+          - kind: User
+            name: jane@example.com
+        clusterRoleBindings:
+          - clusterRole: cluster-admin
