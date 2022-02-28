@@ -27,7 +27,7 @@ Configure cert-manager Issuers and ClusterIssuers via Helm
 
 ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1b.x](https://img.shields.io/badge/app%20version-1b.x-brightgreen)
 
-Deploy RBACDefinitions via Helm
+Deploy rbac-manager RBACDefinitions via Helm
 
 [<img alt="rbac-definitions" src="https://rbac-manager.docs.fairwinds.com/img/rbac-manager-logo.svg" width="128">](charts/rbac-definitions)
 
