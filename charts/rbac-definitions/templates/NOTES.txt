@@ -1,0 +1,10 @@
+{{- if .Values.rbacDefinitions }}
+Deployed RBACDefinitions:
+{{- range .Values.rbacDefinitions }}
+{{- $enabled := printf "%t" .enabled }}
+{{- if regexMatch "nil" $enabled }}{{- $enabled = "true" }}{{- end }}
+{{- if (eq $enabled "true") }}
+* {{ include "rbac-definitions.name" (dict "data" . "root" $) }}
+{{- end }}
+{{- end }}
+{{- end }}

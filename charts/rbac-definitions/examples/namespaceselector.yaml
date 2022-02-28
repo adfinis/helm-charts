@@ -1,0 +1,13 @@
+# Create rolebinding based on a namespaceSelector
+rbacDefinitions:
+- name: devs-edit
+  rbacBindings:
+    - name: devs
+      subjects:
+        - kind: Group
+          name: devs
+      roleBindings:
+        - clusterRole: edit
+          namespaceSelector:
+            matchLabels:
+              k8s.example.com/owner: devs
