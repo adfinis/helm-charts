@@ -1,7 +1,8 @@
 # nginx-ingress on AKS
 #
 # Deploys the nginx-ingress component using and external load balancer
-# like is the default on AKS.
+# like is the default on AKS. Also marks the ingress as the default so
+# it may be uses without explicitly specifying it.
 
 ingressNginx:
   enabled: true
@@ -15,3 +16,5 @@ ingressNginx:
         # this setting is needed on AKS since the cluster is behind an
         # external Azure LoadBalancer.
         externalTrafficPolicy: Local
+    ingressClassResource:
+      default: true
