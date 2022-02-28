@@ -2,7 +2,7 @@
 #
 # Deploys the nginx-ingress component using and external load balancer
 # like is the default on AKS. Also marks the ingress as the default so
-# it may be uses without explicitly specifying it.
+# it may be used without explicitly specifying it.
 
 ingressNginx:
   enabled: true

@@ -2,7 +2,7 @@
 #
 # This nxing-ingress example shows how you can specify a custom default
 # backend. Also marks the ingress as the default so
-# it may be uses without explicitly specifying it.
+# it may be used without explicitly specifying it.
 
 ingressNginx:
   enabled: true
