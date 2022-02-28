@@ -6471,6 +6471,31 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/osschallenge-0.1.0/osschallenge-0.1.0.tgz
     version: 0.1.0
+  rbac-definitions:
+  - apiVersion: v2
+    appVersion: 1beta1
+    created: "2022-02-28T10:48:32.178801714Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.6
+    description: Deploy rbac-manager RBACDefinitions via Helm
+    digest: 7876947e7e3e1aee9ad4806ccd79358b13e2eb741a445bc718f6df63a76a9769
+    home: https://rbac-manager.docs.fairwinds.com/rbacdefinitions/
+    icon: https://rbac-manager.docs.fairwinds.com/img/rbac-manager-logo.svg
+    keywords:
+    - rbac-manager
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: rbac-definitions
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/rbac-definitions-0.1.0/rbac-definitions-0.1.0.tgz
+    version: 0.1.0
   rmd:
   - apiVersion: v2
     appVersion: edge
@@ -10483,4 +10508,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-02-23T13:48:54.49412155Z"
+generated: "2022-02-28T10:48:32.182427488Z"
