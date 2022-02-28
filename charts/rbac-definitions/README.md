@@ -4,7 +4,7 @@
 
 Deploy rbac-manager RBACDefinitions via Helm
 
-**Homepage:** <https://rbac-manager.docs.fairwinds.com/>
+**Homepage:** <https://rbac-manager.docs.fairwinds.com/rbacdefinitions/>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
