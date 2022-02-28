@@ -7,3 +7,4 @@ Deployed RBACDefinitions:
 * {{ include "rbac-definitions.name" (dict "data" . "root" $) }}
 {{- end }}
 {{- end }}
+{{- end }}
