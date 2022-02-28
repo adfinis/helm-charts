@@ -23,6 +23,13 @@ helm repo add adfinis https://charts.adfinis.com
 Configure cert-manager Issuers and ClusterIssuers via Helm
 
 [<img alt="cert-manager-issuers" src="https://raw.githubusercontent.com/adfinis-sygroup/helm-charts/master/charts/cert-manager-issuers/logo.png" width="128">](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-issuers)
+#### [rbac-definitions](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/rbac-definitions) chart
+
+![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1b.x](https://img.shields.io/badge/app%20version-1b.x-brightgreen)
+
+Deploy rbac-manager RBACDefinitions via Helm
+
+[<img alt="rbac-definitions" src="https://rbac-manager.docs.fairwinds.com/img/rbac-manager-logo.svg" width="128">](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/rbac-definitions)
 
 #### Argo CD app-of-apps charts
 
