@@ -16,5 +16,5 @@ ingressNginx:
         # this setting is needed on AKS since the cluster is behind an
         # external Azure LoadBalancer.
         externalTrafficPolicy: Local
-    ingressClassResource:
-      default: true
+      ingressClassResource:
+        default: true

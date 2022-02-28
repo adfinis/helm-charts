@@ -12,5 +12,5 @@ ingressNginx:
       image:
         repository: gcr.io/google-containers/defaultbackend
         tag: "1.4"
-    ingressClassResource:
-      default: true
+      ingressClassResource:
+        default: true
