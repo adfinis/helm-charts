@@ -1,0 +1,20 @@
+prom2teams:
+  enabled: true
+  project: infra-prom2teams
+  values:
+    resources:
+      limits:
+        cpu: 100m
+        memory: 200Mi
+    prom2teams:
+      host: 0.0.0.0
+      port: 8089
+      connector:
+      connectors: {}
+      # group_alerts_by can be one of
+      # ("name" | "description" | "instance" | "severity" | "status" | "summary" | "fingerprint" | "runbook_url")
+      group_alerts_by:
+      # loglevel can be one of (DEBUG | INFO | WARNING | ERROR | CRITICAL)
+      loglevel: INFO
+      templatepath: /opt/prom2teams/helmconfig/teams.j2
+      config: /opt/prom2teams/helmconfig/config.ini

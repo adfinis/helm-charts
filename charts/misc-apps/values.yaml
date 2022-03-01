@@ -96,3 +96,22 @@ chartmuseum:
   # chartmuseum.values -- Helm values
   # @default -- [upstream values](https://github.com/chartmuseum/charts/blob/main/src/chartmuseum/values.yaml)
   values: {}
+
+# prom2teams -- [prom2teams](https://github.com/idealista/prom2teams) ([example](./example/prom2teams.yaml))
+# @default -- -
+prom2teams:
+  # prom2teams.enabled -- Enable prom2teams
+  enabled: false
+  name: prom2teams
+  destination:
+    # prom2teams.destination.namespace -- Namespace
+    namespace: "infra-prom2teams"
+  # prom2teams.repoURL -- [repo](https://prometheus-msteams.github.io/prometheus-msteams)
+  repoURL: https://prometheus-msteams.github.io/prometheus-msteams
+  # prom2teams.chart -- Chart
+  chart: prom2teams
+  # prom2teams.targetRevision -- [prom2teams Helm chart](https://github.com/idealista/prom2teams/tree/master/helm)
+  targetRevision: "3.2.*"
+  # prom2teams.values -- Helm values
+  # @default -- [upstream values](https://github.com/idealista/prom2teams/blob/master/helm/values.yaml)
+  values: {}
