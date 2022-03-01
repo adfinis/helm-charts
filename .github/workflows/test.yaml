@@ -23,7 +23,7 @@ jobs:
         helm env
         helm plugin install https://github.com/quintush/helm-unittest
 
-    - uses: actions/setup-python@v2.3.2
+    - uses: actions/setup-python@v3
 
     - name: Setup environment for pre-commit
       run: hack/ci/github/setup/pre-commit.sh
@@ -55,7 +55,7 @@ jobs:
           helm env
           helm plugin install https://github.com/quintush/helm-unittest
 
-      - uses: actions/setup-python@v2.3.2
+      - uses: actions/setup-python@v3
         with:
           python-version: 3.7
 
