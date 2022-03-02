@@ -44,13 +44,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | metallb.repoURL | string | [repo](https://metallb.github.io/metallb) | Repo URL |
 | metallb.targetRevision | string | `"0.12.*"` | [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb) |
 | metallb.values | object | [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml) | Helm values |
-| prom2teams | object | - | [prom2teams](https://github.com/idealista/prom2teams) ([example](./example/prom2teams.yaml)) |
+| prom2teams | object | - | [prom2teams](https://github.com/prometheus-msteams/prometheus-msteams) ([example](./example/prom2teams.yaml)) |
 | prom2teams.chart | string | `"prom2teams"` | Chart |
 | prom2teams.destination.namespace | string | `"infra-prom2teams"` | Namespace |
 | prom2teams.enabled | bool | `false` | Enable prom2teams |
 | prom2teams.repoURL | string | `"https://prometheus-msteams.github.io/prometheus-msteams"` | [repo](https://prometheus-msteams.github.io/prometheus-msteams) |
-| prom2teams.targetRevision | string | `"3.2.*"` | [prom2teams Helm chart](https://github.com/idealista/prom2teams/tree/master/helm) |
-| prom2teams.values | object | [upstream values](https://github.com/idealista/prom2teams/blob/master/helm/values.yaml) | Helm values |
+| prom2teams.targetRevision | string | `"1.3.*"` | [prom2teams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams) |
+| prom2teams.values | object | [upstream values](https://github.com/prometheus-msteams/prometheus-msteams/blob/master/chart/prometheus-msteams/values.yaml) | Helm values |
 | sentryKubernetes | object | - | [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml) |
 | sentryKubernetes.chart | string | `"sentry-kubernetes"` | Chart |
 | sentryKubernetes.destination.namespace | string | `"infra-sentry-kubernetes"` | Namespace |
