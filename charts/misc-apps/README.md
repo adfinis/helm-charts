@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.15.0](https://img.shields.io/badge/Version-0.15.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.16.0](https://img.shields.io/badge/Version-0.16.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -44,6 +44,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | metallb.repoURL | string | [repo](https://metallb.github.io/metallb) | Repo URL |
 | metallb.targetRevision | string | `"0.12.*"` | [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb) |
 | metallb.values | object | [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml) | Helm values |
+| prometheusMsteams | object | - | [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) ([example](./example/prometheus-msteams.yaml)) |
+| prometheusMsteams.chart | string | `"prometheus-msteams"` | Chart |
+| prometheusMsteams.destination.namespace | string | `"infra-prometheus-msteams"` | Namespace |
+| prometheusMsteams.enabled | bool | `false` | Enable prometheus-msteams |
+| prometheusMsteams.repoURL | string | `"https://prometheus-msteams.github.io/prometheus-msteams"` | [repo](https://prometheus-msteams.github.io/prometheus-msteams) |
+| prometheusMsteams.targetRevision | string | `"1.3.*"` | [prometheus-msteams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams) |
+| prometheusMsteams.values | object | [upstream values](https://github.com/prometheus-msteams/prometheus-msteams/blob/master/chart/prometheus-msteams/values.yaml) | Helm values |
 | sentryKubernetes | object | - | [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml) |
 | sentryKubernetes.chart | string | `"sentry-kubernetes"` | Chart |
 | sentryKubernetes.destination.namespace | string | `"infra-sentry-kubernetes"` | Namespace |
