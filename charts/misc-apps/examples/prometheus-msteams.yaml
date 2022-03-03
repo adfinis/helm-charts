@@ -1,6 +1,6 @@
-prom2teams:
+prometheusMsteams:
   enabled: true
-  project: infra-prom2teams
+  project: infra-prometheus-msteams
   values:
     resources:
       limits:

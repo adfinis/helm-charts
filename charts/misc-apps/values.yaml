@@ -97,21 +97,21 @@ chartmuseum:
   # @default -- [upstream values](https://github.com/chartmuseum/charts/blob/main/src/chartmuseum/values.yaml)
   values: {}
 
-# prom2teams -- [prom2teams](https://github.com/prometheus-msteams/prometheus-msteams) ([example](./example/prom2teams.yaml))
+# prometheusMsteams -- [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) ([example](./example/prometheus-msteams.yaml))
 # @default -- -
-prom2teams:
-  # prom2teams.enabled -- Enable prom2teams
+prometheusMsteams:
+  # prometheusMsteams.enabled -- Enable prometheus-msteams
   enabled: false
-  name: prom2teams
+  name: prometheus-msteams
   destination:
-    # prom2teams.destination.namespace -- Namespace
-    namespace: "infra-prom2teams"
-  # prom2teams.repoURL -- [repo](https://prometheus-msteams.github.io/prometheus-msteams)
+    # prometheusMsteams.destination.namespace -- Namespace
+    namespace: "infra-prometheus-msteams"
+  # prometheusMsteams.repoURL -- [repo](https://prometheus-msteams.github.io/prometheus-msteams)
   repoURL: https://prometheus-msteams.github.io/prometheus-msteams
-  # prom2teams.chart -- Chart
-  chart: prom2teams
-  # prom2teams.targetRevision -- [prom2teams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams)
+  # prometheusMsteams.chart -- Chart
+  chart: prometheus-msteams
+  # prometheusMsteams.targetRevision -- [prometheus-msteams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams)
   targetRevision: "1.3.*"
-  # prom2teams.values -- Helm values
+  # prometheusMsteams.values -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-msteams/prometheus-msteams/blob/master/chart/prometheus-msteams/values.yaml)
   values: {}
