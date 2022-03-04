@@ -74,6 +74,8 @@ rmd:
     emailHost: smtp.examplexample.ch
     # rmd.settings.emailPort -- Port for the SMTP server
     emailPort: 587
+    # rmd.settings.emailUseTls -- TLS option for email server
+    emailUseTls: "True"
     # rmd.settings.emailFrom -- Default email address to use for various responses
     emailFrom: maildelay@rmd.io
     # rmd.settings.emailUser -- Username for the SMTP server

@@ -1,0 +1,18 @@
+prometheusMsteams:
+  enabled: true
+  project: infra-prometheus-msteams
+  values:
+    resources:
+      limits:
+        cpu: 100m
+        memory: 200Mi
+
+    connectors:
+    # in alertmanager, this will be used as http://prometheus-msteams:2000/bar
+    - bar: https://outlook.office.com/webhook/xxxx/xxxx
+    # in alertmanager, this will be used as http://prometheus-msteams:2000/foo
+    - foo: https://outlook.office.com/webhook/xxxx/xxxx
+
+    metrics:
+      serviceMonitor:
+        enabled: true
