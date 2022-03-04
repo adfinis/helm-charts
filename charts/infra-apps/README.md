@@ -98,7 +98,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | velero.destination.namespace | string | `"infra-velero"` | Namespace |
 | velero.enabled | bool | `false` | Enable Velero |
 | velero.repoURL | string | [repo](https://vmware-tanzu.github.io/helm-charts) | Repo URL |
-| velero.targetRevision | string | `"2.27.*"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
+| velero.targetRevision | string | `"2.28.*"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
 | velero.values | object | [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml) | Helm values |
 
 ## About this chart
