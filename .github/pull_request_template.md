@@ -21,10 +21,10 @@
     be prepared to add more items.
 -->
 
+* [ ] This PR contains a description of the changes I'm making
 * [ ] I updated the version in Chart.yaml
 * [ ] I updated applicable README.md files using  `pre-commit run`
 * [ ] I documented any high-level concepts I'm introducing in `docs/`
-* [ ] If I updated a dependency tool, or app, this PR contains a short summary of the changes I'm pulling
 * [ ] CI is currently green and this is ready for review
 * [ ] I am ready to test changes after they are applied and released
 
