@@ -116,7 +116,7 @@ kubePrometheusStack:
   # kubePrometheusStack.chart -- Chart
   chart: kube-prometheus-stack
   # kubePrometheusStack.targetRevision -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: 33.2.*
+  targetRevision: 34.0.*
   # kubePrometheusStack.values -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
   values: {}
@@ -136,7 +136,7 @@ rbacManager:
   # rbacManager.chart -- Chart
   chart: rbac-manager
   # rbacManager.targetRevision -- [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version
-  targetRevision: 1.10.*
+  targetRevision: 1.11.*
   # rbacManager.values -- Helm values
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml)
   values: {}
