@@ -116,7 +116,7 @@ kubePrometheusStack:
   # kubePrometheusStack.chart -- Chart
   chart: kube-prometheus-stack
   # kubePrometheusStack.targetRevision -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: 33.2.*
+  targetRevision: 34.0.*
   # kubePrometheusStack.values -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
   values: {}
@@ -136,7 +136,7 @@ rbacManager:
   # rbacManager.chart -- Chart
   chart: rbac-manager
   # rbacManager.targetRevision -- [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version
-  targetRevision: 1.10.*
+  targetRevision: 1.11.*
   # rbacManager.values -- Helm values
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml)
   values: {}
@@ -156,7 +156,7 @@ thanos:
   # thanos.chart -- Chart
   chart: thanos
   # thanos.targetRevision -- [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos)
-  targetRevision: 9.0.*
+  targetRevision: 10.1.*
   # thanos.values -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/thanos/values.yaml)
   values: {}
@@ -196,7 +196,7 @@ kured:
   # kured.chart -- Chart
   chart: kured
   # kured.targetRevision -- [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured)
-  targetRevision: 2.11.*
+  targetRevision: 2.12.*
   # kured.values -- Helm values
   # @default -- [upstream values](https://github.com/weaveworks/kured/blob/main/charts/kured/values.yaml)
   values: {}
