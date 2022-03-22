@@ -27,7 +27,11 @@ spec:
                 {{- include "rmd.djangoDatabasePassword" $ | nindent 16 }}
               envFrom:
                 - secretRef:
+                    {{- if $.Values.rmd.existingSecret }}
+                    name: {{ $.Values.rmd.existingSecret }}
+                    {{- else }}
                     name: {{ include "rmd.fullname" $ }}
+                    {{- end }}
                 - configMapRef:
                     name: {{ include "rmd.fullname" $ }}
               command: {{ $val.command | toYaml | nindent 16 }}

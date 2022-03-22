@@ -84,6 +84,8 @@ rmd:
     emailPassword: ~
     # -- Folder name on the SMTP server
     emailFolder: "INBOX"
+  # -- Use an existing secret of creating one with this chart
+  existingSecret: ""
   cronjobs:
     importMails:
       # -- when to import mails
