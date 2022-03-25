@@ -60,7 +60,7 @@ prometheusRules:
         severity: critical
       annotations:
         summary: Autopilot Vault Raft node unhealthy
-        description: There are less than 5 healthy Autopilot Vault Raft nodes
+        description: At least one of the Autopilot Vault Raft nodes is unhealthy
     - alert: VaultLeadershipLoss
       expr: sum(increase(vault_core_leadership_lost_count{job="vault-monitoring"}[1h])) > 5
       for: 1m
