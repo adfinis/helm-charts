@@ -81,7 +81,7 @@ tolerations: []
 
 affinity: {}
 
-# configuration
+# configuration - Configure mopsos
 config:
   dbdsn: "file::memory:?cache-shared"
   dbmigrate: false
@@ -90,3 +90,6 @@ config:
   otelcollector: "localhost:30079"
   debug: false
   verbose: false
+
+# existingSecret - use an existing Secret instead of creating one
+# existingSecret: "mysecret"
