@@ -4,6 +4,16 @@
 
 Deploy Mopsos to a Kubernetes Cluster
 
+**Homepage:** <https://github.com/adfinis-sygroup/mopsos>
+
+## Maintainers
+This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
+
+## Source Code
+
+* <https://github.com/adfinis-sygroup/mopsos>
+* <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/mopsos>
+
 ## Values
 
 | Key | Type | Default | Description |
@@ -13,6 +23,13 @@ Deploy Mopsos to a Kubernetes Cluster
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| config.dbdsn | string | `"file::memory:?cache-shared"` |  |
+| config.dbmigrate | bool | `false` |  |
+| config.dbprovider | string | `"sqlite"` |  |
+| config.debug | bool | `false` |  |
+| config.otel | bool | `false` |  |
+| config.otelcollector | string | `"localhost:30079"` |  |
+| config.verbose | bool | `false` |  |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"ghcr.io/adfins-sygroup/mopsos"` |  |
@@ -32,7 +49,7 @@ Deploy Mopsos to a Kubernetes Cluster
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
-| service.port | int | `80` |  |
+| service.port | int | `8080` |  |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
