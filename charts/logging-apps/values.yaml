@@ -1,79 +1,79 @@
-# lokiStack -- [loki-stack](https://github.com/grafana/loki) ([example](./examples/loki-stack.yaml))
+# -- [loki-stack](https://github.com/grafana/loki) ([example](./examples/loki-stack.yaml))
 # @default -- -
 lokiStack:
-  # lokiStack.enabled -- Enable loki
+  # -- Enable loki
   enabled: false
   name: loki-stack
   destination:
-    # lokiStack.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-logging"
-  # lokiStack.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://grafana.github.io/helm-charts)
   repoURL: "https://grafana.github.io/helm-charts"
-  # lokiStack.chart -- Chart
+  # -- Chart
   chart: "loki-stack"
-  # lokiStack.targetRevision -- [loki-stack Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/loki-stack) version
+  # -- [loki-stack Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/loki-stack) version
   targetRevision: "2.6.*"
-  # lokiStack.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/loki-stack/values.yaml)
   values: {}
 
-# filebeat -- [filebeat](https://github.com/elastic/beats/tree/master/filebeat) ([example](./examples/filebeat.yaml))
+# -- [filebeat](https://github.com/elastic/beats/tree/master/filebeat) ([example](./examples/filebeat.yaml))
 # @default -- -
 filebeat:
-  # filebeat.enabled -- Enable loki
+  # -- Enable loki
   enabled: false
   name: filebeat
   destination:
-    # filebeat.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-logging"
-  # filebeat.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://helm.elastic.co)
   repoURL: "https://helm.elastic.co"
-  # filebeat.chart -- Chart
+  # -- Chart
   chart: "filebeat"
-  # filebeat.targetRevision -- [filebeat Helm chart](https://github.com/elastic/helm-charts/tree/master/filebeat) version
+  # -- [filebeat Helm chart](https://github.com/elastic/helm-charts/tree/master/filebeat) version
   targetRevision: "7.16.*"
-  # filebeat.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/elastic/helm-charts/tree/master/filebeat/values.yaml)
   values: {}
 
-# fluentd -- [fluentd](https://github.com/fluent/fluentd) ([example](./examples/fluentd.yaml))
+# -- [fluentd](https://github.com/fluent/fluentd) ([example](./examples/fluentd.yaml))
 # @default -- -
 fluentd:
-  # fluentd.enabled -- Enable fluentd
+  # -- Enable fluentd
   enabled: false
   name: fluentd
   destination:
-    # fluentd.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-logging"
-  # fluentd.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.bitnami.com/bitnami)
   repoURL: "https://charts.bitnami.com/bitnami"
-  # fluentd.chart -- Chart
+  # -- Chart
   chart: "fluentd"
-  # fluentd.targetRevision -- [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version
+  # -- [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version
   targetRevision: "5.0.*"
-  # fluentd.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/fluentd/values.yaml)
   values: {}
 
-# fluentBit -- [fluentBit](https://github.com/fluent/fluent-bit) ([example](./examples/fluentBit.yaml))
+# -- [fluentBit](https://github.com/fluent/fluent-bit) ([example](./examples/fluentBit.yaml))
 # @default -- -
 fluentBit:
-  # fluentBit.enabled -- Enable fluentBit
+  # -- Enable fluentBit
   enabled: false
   name: fluentbit
   destination:
-    # fluentBit.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-logging"
-  # fluentBit.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://fluent.github.io/helm-charts)
   repoURL: "https://fluent.github.io/helm-charts"
-  # fluentBit.chart -- Chart
+  # -- Chart
   chart: "fluent-bit"
-  # fluentBit.targetRevision -- [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version
+  # -- [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version
   targetRevision: "0.19.*"
-  # fluentBit.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/values.yaml)
   values: {}

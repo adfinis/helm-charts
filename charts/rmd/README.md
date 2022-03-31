@@ -1,6 +1,6 @@
 # rmd
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
+![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
 
 Chart for Rmd.io application
 
@@ -12,7 +12,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 ## Source Code
 
 * <https://github.com/adfinis-sygroup/rmd.io>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/rmd>
+* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/rmd>
 
 ## Requirements
 
@@ -31,7 +31,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
 | postgresql.postgresqlDatabase | string | `"rmd.io"` | PostgreSQL database name |
 | postgresql.postgresqlPassword | string | `nil` | Set a password for PostgreSQL |
-| postgresql.postgresqlPort | int | `5432` |  |
+| postgresql.postgresqlPort | int | `5432` | PostgreSQL database port |
 | postgresql.postgresqlUsername | string | `"postgres"` | PostgreSQL user name |
 | rmd.cronjobs.importMails.command[0] | string | `"app/manage.py"` |  |
 | rmd.cronjobs.importMails.command[1] | string | `"import"` |  |

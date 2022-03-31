@@ -3,28 +3,28 @@
 # Declare variables to be passed into your templates.
 
 rmd:
-  # rmd.replicaCount -- (int) Number of Rmd replicas
+  # -- (int) Number of Rmd replicas
   replicaCount: 1
   image:
-    # rmd.image.repository -- Rmd image name
+    # -- Rmd image name
     repository: adfinissygroup/rmd
-    # rmd.image.tag -- Specify a tag to override which version of rmd to deploy.
+    # -- Specify a tag to override which version of rmd to deploy.
     # @default -- appVersion from Chart.yaml
     tag: ~
-    # rmd.image.pullPolicy -- Rmd image pull policy
+    # -- Rmd image pull policy
     pullPolicy: IfNotPresent
-    # rmd.image.waitForItTimeout -- Timeout for wait-for-it.sh
+    # -- Timeout for wait-for-it.sh
     waitForItTimeout: 60
   service:
-    # rmd.service.name -- Rmd service name
+    # -- Rmd service name
     name: rmd
-    # rmd.service.type -- Rmd service type
+    # -- Rmd service type
     type: ClusterIP
-    # rmd.service.externalPort -- External Port of rmd service
+    # -- External Port of rmd service
     externalPort: 8000
-    # rmd.service.internalPort -- Internal Port of rmd service
+    # -- Internal Port of rmd service
     internalPort: 8000
-  # rmd.resources -- Resource limits for rmd
+  # -- Resource limits for rmd
   resources: {}
     # We usually recommend not to specify default resources and to leave this as a conscious
     # choice for the user. This also increases chances charts run on environments with little
@@ -37,91 +37,91 @@ rmd:
     #  cpu: 100m
     #  memory: 128Mi
   livenessProbe:
-    # rmd.livenessProbe.enabled -- Enable liveness probe on rmd
+    # -- Enable liveness probe on rmd
     enabled: true
-    # rmd.livenessProbe.initialDelaySeconds -- Number of seconds after the container has started before liveness probe is initiated
+    # -- Number of seconds after the container has started before liveness probe is initiated
     initialDelaySeconds: 60
-    # rmd.livenessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    # -- How often (in seconds) to perform the probe
     periodSeconds: 10
-    # rmd.livenessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    # -- Number of seconds after which the probe times out
     timeoutSeconds: 5
-    # rmd.livenessProbe.failureThreshold -- Number of tries to perform the probe
+    # -- Number of tries to perform the probe
     failureThreshold: 6
-    # rmd.livenessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    # -- Minimum consecutive successes for the probe to be considered successful after having failed
     successThreshold: 1
   readinessProbe:
-    # rmd.readinessProbe.enabled -- Enable readiness probe on rmd
+    # -- Enable readiness probe on rmd
     enabled: true
-    # rmd.readinessProbe.initialDelaySeconds -- Number of seconds after the container has started before readiness probe is initiated
+    # -- Number of seconds after the container has started before readiness probe is initiated
     initialDelaySeconds: 30
-    # rmd.readinessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    # -- How often (in seconds) to perform the probe
     periodSeconds: 10
-    # rmd.readinessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    # -- Number of seconds after which the probe times out
     timeoutSeconds: 5
-    # rmd.readinessProbe.failureThreshold -- Number of tries to perform the probe
+    # -- Number of tries to perform the probe
     failureThreshold: 6
-    # rmd.readinessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    # -- Minimum consecutive successes for the probe to be considered successful after having failed
     successThreshold: 1
   settings:
     # django settings for rmd
-    # rmd.settings.sentry -- sentry dsn
+    # -- sentry dsn
     sentry: ~
-    # rmd.settings.secret -- django secret key
+    # -- django secret key
     secret: ~
-    # rmd.settings.siteUrl -- URL for Rmd.io
+    # -- URL for Rmd.io
     siteUrl: http://localhost:8000
-    # rmd.settings.emailHost -- Connection string of SMTP server to send mails
+    # -- Connection string of SMTP server to send mails
     emailHost: smtp.examplexample.ch
-    # rmd.settings.emailPort -- Port for the SMTP server
+    # -- Port for the SMTP server
     emailPort: 587
-    # rmd.settings.emailUseTls -- TLS option for email server
+    # -- TLS option for email server
     emailUseTls: "True"
-    # rmd.settings.emailFrom -- Default email address to use for various responses
+    # -- Default email address to use for various responses
     emailFrom: maildelay@rmd.io
-    # rmd.settings.emailUser -- Username for the SMTP server
+    # -- Username for the SMTP server
     emailUser: maildelay@dev.rmd.io
-    # rmd.settings.emailPassword -- Password for the SMTP server
+    # -- Password for the SMTP server
     emailPassword: ~
-    # rmd.settings.emailFolder -- Folder name on the SMTP server
+    # -- Folder name on the SMTP server
     emailFolder: "INBOX"
   cronjobs:
     importMails:
-      # rmd.cronjobs.importMails.schedule -- when to import mails
+      # -- when to import mails
       schedule: "0 * * * *"
       command:
         - "app/manage.py"
         - "import"
     sendMails:
-      # rmd.cronjobs.sendMails.schedule -- when to send mails
+      # -- when to send mails
       schedule: "10 * * * *"
       command:
         - "app/manage.py"
         - "sendmail"
 
 ingress:
-  # ingress.enabled -- Enable ingress for rmd
+  # -- Enable ingress for rmd
   enabled: false
-  # ingress.annotations -- Ingress annotations
+  # -- Ingress annotations
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  # ingress.hosts -- Ingress hostnames
+  # -- Ingress hostnames
   hosts: ["localhost"]
   #  - rmd-test.example.com
-  # ingress.tls -- Ingress TLS options
+  # -- Ingress TLS options
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - rmd-test.example.com
 
 postgresql:
-  # postgresql.enabled -- Enable PostgreSQL for persistence
+  # -- Enable PostgreSQL for persistence
   enabled: true
-  # postgresql.postgresqlDatabase -- PostgreSQL database name
+  # -- PostgreSQL database name
   postgresqlDatabase: rmd.io
-  # postgresql.postgresqlUsername -- PostgreSQL user name
+  # -- PostgreSQL user name
   postgresqlUsername: postgres
-  # postgresql.postgresqlPassword -- Set a password for PostgreSQL
+  # -- Set a password for PostgreSQL
   postgresqlPassword: ~
-  # postgresql.postgresqlPort-- PostgreSQL database port
+  # -- PostgreSQL database port
   postgresqlPort: 5432

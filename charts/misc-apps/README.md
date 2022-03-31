@@ -1,10 +1,10 @@
 # misc-apps
 
-![Version: 0.16.1](https://img.shields.io/badge/Version-0.16.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.16.2](https://img.shields.io/badge/Version-0.16.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
-**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/misc-apps>
+**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/misc-apps>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
@@ -27,7 +27,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | chartmuseum.chart | string | `"chartmuseum"` | Chart |
 | chartmuseum.destination.namespace | string | `"infra-chartmuseum"` | Namespace |
 | chartmuseum.enabled | bool | `false` | Enable chartmuseum |
-| chartmuseum.repoURL | string | `"https://chartmuseum.github.io/charts"` | [repo](https://chartmuseum.github.io/charts) |
 | chartmuseum.targetRevision | string | `"3.6.*"` | [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum) |
 | chartmuseum.values | object | [upstream values](https://github.com/chartmuseum/charts/blob/main/src/chartmuseum/values.yaml) | Helm values |
 | downscaler | object | - | [kube-downscaler](https://github.com/hjacobs/kube-downscaler) ([example](./examples/kube-downscaler.yaml)) |
@@ -48,7 +47,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | prometheusMsteams.chart | string | `"prometheus-msteams"` | Chart |
 | prometheusMsteams.destination.namespace | string | `"infra-prometheus-msteams"` | Namespace |
 | prometheusMsteams.enabled | bool | `false` | Enable prometheus-msteams |
-| prometheusMsteams.repoURL | string | `"https://prometheus-msteams.github.io/prometheus-msteams"` | [repo](https://prometheus-msteams.github.io/prometheus-msteams) |
 | prometheusMsteams.targetRevision | string | `"1.3.*"` | [prometheus-msteams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams) |
 | prometheusMsteams.values | object | [upstream values](https://github.com/prometheus-msteams/prometheus-msteams/blob/master/chart/prometheus-msteams/values.yaml) | Helm values |
 | sentryKubernetes | object | - | [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml) |

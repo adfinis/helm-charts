@@ -2,7 +2,7 @@ apiVersion: v2
 name: barman
 type: application
 description: Chart for Barman PostgreSQL Backup and Recovery Manager
-version: 0.6.0
+version: 0.6.1
 appVersion: "v2.17"
 keywords:
   - barman
@@ -12,7 +12,7 @@ home: http://www.pgbarman.org/
 sources:
   - https://github.com/2ndquadrant-it/barman
   - https://github.com/ubc/barman-docker
-  - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/barman
+  - https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/barman
 maintainers:
   - name: adfinis
     email: support@adfinis.com

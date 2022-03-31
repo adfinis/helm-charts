@@ -2,15 +2,15 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# replicaCount -- How many caasperlis to deploy
+# -- How many caasperlis to deploy
 replicaCount: 1
 
 image:
-  # image.repository -- Container image to deploy
+  # -- Container image to deploy
   repository: ghcr.io/adfinis-sygroup/potz-holzoepfel-und-zipfelchape
-  # image.pullPolicy -- When to pull the container image
+  # -- When to pull the container image
   pullPolicy: Always
-  # image.tag -- Overrides the image tag whose default is the chart version.
+  # -- Overrides the image tag whose default is the chart version.
   tag: ""
 
 imagePullSecrets: []
@@ -18,22 +18,22 @@ nameOverride: ""
 fullnameOverride: ""
 
 serviceAccount:
-  # serviceAccount.create -- Specifies whether a service account should be created
+  # -- Specifies whether a service account should be created
   create: true
-  # serviceAccount.annotations -- Annotations to add to the service account
+  # -- Annotations to add to the service account
   annotations: {}
-  # serviceAccount.name -- The name of the service account to use.
+  # -- The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-# podAnnotations -- Annotations to add to Pod.
+# -- Annotations to add to Pod.
 podAnnotations: {}
 
-# podSecurityContext -- [PodSecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#podsecuritycontext-v1-core)
+# -- [PodSecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#podsecuritycontext-v1-core)
 podSecurityContext: {}
   # fsGroup: 2000
 
-# securityContext -- [SecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#securitycontext-v1-core)
+# -- [SecurityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#securitycontext-v1-core)
 securityContext: {}
   # capabilities:
   #   drop:
@@ -43,27 +43,27 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  # service.type -- Type of the service to create
+  # -- Type of the service to create
   type: ClusterIP
-  # service.port -- Port the service will expose
+  # -- Port the service will expose
   port: 80
 
 ingress:
-  # ingress.enabled -- Enable ingress
+  # -- Enable ingress
   enabled: false
-  # ingress.className -- Which Ingress class to configure for the ingress resource
+  # -- Which Ingress class to configure for the ingress resource
   className: ""
-  # ingress.annotations -- Annotations to add to the ingress resource
+  # -- Annotations to add to the ingress resource
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  # ingress.hosts -- List of hosts to expose via ingress
+  # -- List of hosts to expose via ingress
   hosts: []
   #  - host: chart-example.local
   #    paths:
   #      - path: /
   #        pathType: Prefix
-  # ingress.tls -- TLS configuration for ingress
+  # -- TLS configuration for ingress
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
@@ -96,38 +96,38 @@ affinity: {}
 
 # Configure how Caasperli is to be monitored using Prometheus
 prometheus:
-  # prometheus.enabled -- Enable Prometheus integration
+  # -- Enable Prometheus integration
   enabled: false
-  # prometheus.extraLabels -- Labels to add to all Prometheus integration resources
+  # -- Labels to add to all Prometheus integration resources
   extraLabels: {}
-  # prometheus.extraAnnotations -- Annotations to add to all Prometheus integration resources
+  # -- Annotations to add to all Prometheus integration resources
   extraAnnotations: {}
   serviceMonitor:
-    # prometheus.serviceMonitor.enabled -- Enable creation of a ServiceMonitor CRD
+    # -- Enable creation of a ServiceMonitor CRD
     enabled: false
-    # prometheus.serviceMonitor.interval -- Interval at which metrics should be scraped
+    # -- Interval at which metrics should be scraped
     interval: "30s"
-    # prometheus.serviceMonitor.metricRelabelings -- MetricRelabelConfigs to apply to samples before ingestion
+    # -- MetricRelabelConfigs to apply to samples before ingestion
     metricRelabelings: []
-    # prometheus.serviceMonitor.relabelings -- RelabelConfigs to apply to samples before scraping
+    # -- RelabelConfigs to apply to samples before scraping
     relabelings: []
   podMonitor:
-    # prometheus.podMonitor.enabled -- Enable creation of a PodMonitor CRD
+    # -- Enable creation of a PodMonitor CRD
     enabled: true
-    # prometheus.podMonitor.interval -- Interval at which metrics should be scraped
+    # -- Interval at which metrics should be scraped
     interval: "30s"
-    # prometheus.podMonitor.metricRelabelings -- MetricRelabelConfigs to apply to samples before ingestion
+    # -- MetricRelabelConfigs to apply to samples before ingestion
     metricRelabelings: []
-    # prometheus.podMonitor.relabelings -- RelabelConfigs to apply to samples before scraping
+    # -- RelabelConfigs to apply to samples before scraping
     relabelings: []
 
 # Configure if Caasperli should be deployed with Grafana templates
 grafana:
-  # grafana.enabled -- Enable Grafana Dashboards
+  # -- Enable Grafana Dashboards
   enabled: false
-  # grafana.defaultLabel -- Add a default `grafana_dashboard: 1` label
+  # -- Add a default `grafana_dashboard: 1` label
   defaultLabel: true
-  # grafana.extraLabels -- Labels to add to all Grafana integration resources
+  # -- Labels to add to all Grafana integration resources
   extraLabels: {}
-  # grafana.extraAnnotations -- Annotations to add to all Grafana integration resources
+  # -- Annotations to add to all Grafana integration resources
   extraAnnotations: {}

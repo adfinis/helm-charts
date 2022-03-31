@@ -1,39 +1,39 @@
-# jaegerOperator -- [jaeger-operator](https://www.jaegertracing.io/docs/operator) ([example](./examples/jaegerOperator.yaml))
+# -- [jaeger-operator](https://www.jaegertracing.io/docs/operator) ([example](./examples/jaegerOperator.yaml))
 # @default -- -
 jaegerOperator:
-  # jaegerOperator.enabled -- Enable jaeger-operator
+  # -- Enable jaeger-operator
   enabled: false
   name: jaeger-operator
   destination:
-    # jaegerOperator.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-jaeger"
-  # jaegerOperator.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://jaegertracing.github.io/helm-charts)
   repoURL: "https://jaegertracing.github.io/helm-charts"
-  # jaegerOperator.chart -- Chart
+  # -- Chart
   chart: "jaeger-operator"
-  # jaegerOperator.targetRevision -- [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/main/charts/jaeger-operator)
+  # -- [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/main/charts/jaeger-operator)
   targetRevision: "2.29.*"
-  # jaegerOperator.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/jaegertracing/helm-charts/blob/main/charts/jaeger-operator/values.yaml)
   values: {}
 
-# opentelemetryCollector -- [opentelemetry-collector](https://opentelemetry.io/docs/collector/) ([example](./examples/opentelemetryCollector.yaml))
+# -- [opentelemetry-collector](https://opentelemetry.io/docs/collector/) ([example](./examples/opentelemetryCollector.yaml))
 # @default -- -
 opentelemetryCollector:
-  # opentelemetryCollector.enabled -- Enable otel-exporter
+  # -- Enable otel-exporter
   enabled: false
   name: otel-collector
   destination:
-    # opentelemetryCollector.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-otel-operator"
-  # opentelemetryCollector.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://open-telemetry.github.io/opentelemetry-helm-charts)
   repoURL: "https://open-telemetry.github.io/opentelemetry-helm-charts"
-  # opentelemetryCollector.chart -- Chart
+  # -- Chart
   chart: "opentelemetry-collector"
-  # opentelemetryCollector.targetRevision -- [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector)
+  # -- [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector)
   targetRevision: "0.9.*"
-  # opentelemetryCollector.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml)
   values: {}
