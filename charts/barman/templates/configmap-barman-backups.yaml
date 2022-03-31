@@ -26,6 +26,6 @@ data:
       retention_policy = {{ .retentionPolicy }}
       {{- end }}
       {{- if hasKey . "additionalConfiguration" }}
-{{ .additionalConfiguration | indent 6 }}
+      {{- .additionalConfiguration | nindent 6 }}
       {{- end }}
   {{- end }}
