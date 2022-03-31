@@ -1,6 +1,6 @@
 # mopsos
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.1](https://img.shields.io/badge/AppVersion-0.2.1-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.1](https://img.shields.io/badge/AppVersion-0.2.1-informational?style=flat-square)
 
 Deploy Mopsos to a Kubernetes Cluster
 
@@ -37,7 +37,7 @@ Kubernetes: `>= 1.21.0`
 | existingSecret | string | `""` | use an existing Secret instead of creating one |
 | fullnameOverride | string | `""` | fullnameOverride configuration |
 | image.pullPolicy | string | `"IfNotPresent"` | pullPolicy to use |
-| image.repository | string | `"ghcr.io/adfins-sygroup/mopsos"` | repository where the image is located |
+| image.repository | string | `"ghcr.io/adfinis-sygroup/mopsos"` | repository where the image is located |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` | imagePullSecrets for pulling the image |
 | ingress.annotations | object | `{}` | ingress annotations |
