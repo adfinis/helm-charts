@@ -22,43 +22,42 @@ Kubernetes: `>= 1.22.0`
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| affinity | object | `{}` |  |
-| autoscaling.enabled | bool | `false` |  |
-| autoscaling.maxReplicas | int | `100` |  |
-| autoscaling.minReplicas | int | `1` |  |
-| autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| config.dbdsn | string | `"file::memory:?cache-shared"` |  |
-| config.dbmigrate | bool | `false` |  |
-| config.dbprovider | string | `"sqlite"` |  |
-| config.debug | bool | `false` |  |
-| config.otel | bool | `false` |  |
-| config.otelcollector | string | `"localhost:30079"` |  |
-| config.verbose | bool | `false` |  |
-| fullnameOverride | string | `""` |  |
-| image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"ghcr.io/adfins-sygroup/mopsos"` |  |
-| image.tag | string | `""` |  |
-| imagePullSecrets | list | `[]` |  |
-| ingress.annotations | object | `{}` |  |
-| ingress.className | string | `""` |  |
-| ingress.enabled | bool | `false` |  |
-| ingress.hosts[0].host | string | `"mopsos.local"` |  |
-| ingress.hosts[0].paths[0].path | string | `"/"` |  |
-| ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
-| ingress.tls | list | `[]` |  |
-| nameOverride | string | `""` |  |
-| nodeSelector | object | `{}` |  |
-| podAnnotations | object | `{}` |  |
-| podSecurityContext | object | `{}` |  |
-| replicaCount | int | `1` |  |
-| resources | object | `{}` |  |
-| securityContext | object | `{}` |  |
-| service.port | int | `8080` |  |
-| service.type | string | `"ClusterIP"` |  |
-| serviceAccount.annotations | object | `{}` |  |
-| serviceAccount.create | bool | `true` |  |
-| serviceAccount.name | string | `""` |  |
-| tolerations | list | `[]` |  |
+| affinity | object | `{}` | Pod affinity configuration |
+| autoscaling.enabled | bool | `false` | enable Pod autoscaling |
+| autoscaling.maxReplicas | int | `100` | maixmal count of replicas for Pod autoscaling |
+| autoscaling.minReplicas | int | `1` | minimal count of replicas for Pod autoscaling |
+| autoscaling.targetCPUUtilizationPercentage | int | `80` | CPU threshold for scaling up |
+| config.dbdsn | string | `"file::memory:?cache-shared"` | Connection string for Database |
+| config.dbmigrate | bool | `false` | wheter or not to migrate the DB upon bootup |
+| config.dbprovider | string | `"sqlite"` | DB Provider to use (sqlite/postgres) |
+| config.debug | bool | `false` | enable debugging loglevel |
+| config.otel | bool | `false` | enable otel metrics |
+| config.otelcollector | string | `"localhost:30079"` | define otel collector endpoint |
+| config.verbose | bool | `false` | enable verbose |
+| existingSecret | string | `""` | use an existing Secret instead of creating one |
+| fullnameOverride | string | `""` | fullnameOverride configuration |
+| image.pullPolicy | string | `"IfNotPresent"` | pullPolicy to use |
+| image.repository | string | `"ghcr.io/adfins-sygroup/mopsos"` | repository where the image is located |
+| image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
+| imagePullSecrets | list | `[]` | imagePullSecrets for pulling the image |
+| ingress.annotations | object | `{}` | ingress annotations |
+| ingress.className | string | `""` | which ingressClassname to use |
+| ingress.enabled | bool | `false` | enable ingress for mopsos |
+| ingress.hosts | list | `[{"host":"mopsos.local","paths":[{"path":"/","pathType":"ImplementationSpecific"}]}]` | ingress hostnames |
+| ingress.tls | list | `[]` | ingress TLS configuration |
+| nameOverride | string | `""` | nameOverride configuration |
+| nodeSelector | object | `{}` | Pod nodeSelector configuration |
+| podAnnotations | object | `{}` | Pod annotations to add |
+| podSecurityContext | object | `{}` | Pod securityContext configuration |
+| replicaCount | int | `1` | number of replicas to launch |
+| resources | object | `{}` | Pod resources to define |
+| securityContext | object | `{}` | Deployment securityContext configuration |
+| service.port | int | `8080` | port where the service listens to |
+| service.type | string | `"ClusterIP"` | service type of the application |
+| serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
+| serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
+| serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
+| tolerations | list | `[]` | Pod tolerations configuration |
 
 ## About this chart
 
