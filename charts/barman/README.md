@@ -1,6 +1,6 @@
 # barman
 
-![Version: 0.5.1](https://img.shields.io/badge/Version-0.5.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.17](https://img.shields.io/badge/AppVersion-v2.17-informational?style=flat-square)
+![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.17](https://img.shields.io/badge/AppVersion-v2.17-informational?style=flat-square)
 
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
@@ -23,6 +23,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.backupMethod | string | `"postgres"` | Barman backup method |
 | barman.backupOptions | string | `"concurrent_backup"` | Barman backup options |
 | barman.backupSchedule | string | `"0 4 * * *"` | Barman backup schedule |
+| barman.backups[0].additionalConfiguration | string | `""` | Barman additional Parameters for configuration File |
 | barman.backups[0].backupMethod | string | `"postgres"` | Barman backup method |
 | barman.backups[0].databaseSlotName | string | `"barman"` | Database slot name to be created/used |
 | barman.backups[0].lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age |
@@ -41,6 +42,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.databaseSlotName | string | `"barman"` | Database slot name to be created/used |
 | barman.lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age |
 | barman.retentionPolicy | string | `"RECOVERY WINDOW of 1 MONTH"` | Barman retention policy |
+| deployment.additionalVolumeMounts | list | `[]` | Specify additional VolumeMounts for the barman container |
+| deployment.additionalVolumes | list | `[]` | Specify additional Volumes for the deployment |
 | deployment.strategy.type | string | `"RollingUpdate"` | Specify the strategy used to replace old Pods by new ones |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
 | image.repository | string | `"ubcctlt/barman"` | Container image to deploy |

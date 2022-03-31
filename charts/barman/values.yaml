@@ -18,6 +18,10 @@ deployment:
   strategy:
     # deployment.strategy.type -- Specify the strategy used to replace old Pods by new ones
     type: RollingUpdate
+  # deployment.additionalVolumeMounts -- Specify additional VolumeMounts for the barman container
+  additionalVolumeMounts: []
+  # deployment.additionalVolumes -- Specify additional Volumes for the deployment
+  additionalVolumes: []
 
 persistence:
   data:
@@ -76,6 +80,8 @@ barman:
       databaseSlotName: barman
       # barman.backups[0].lastBackupMaximumAge -- Barman last backup maximum age
       lastBackupMaximumAge: "1 day"
+      # barman.backups[0].additionalConfiguration -- Barman additional Parameters for configuration File
+      additionalConfiguration: ""
       postgresql:
         # barman.backups[0].postgresql.host -- Postgresql host
         host: postgresql
