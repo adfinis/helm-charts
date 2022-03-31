@@ -1,6 +1,6 @@
 # mopsos
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.2.2](https://img.shields.io/badge/AppVersion-v0.2.2-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.0](https://img.shields.io/badge/AppVersion-v0.3.0-informational?style=flat-square)
 
 Deploy Mopsos to a Kubernetes Cluster
 
@@ -27,6 +27,7 @@ Kubernetes: `>= 1.21.0`
 | autoscaling.maxReplicas | int | `100` | maixmal count of replicas for Pod autoscaling |
 | autoscaling.minReplicas | int | `1` | minimal count of replicas for Pod autoscaling |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | CPU threshold for scaling up |
+| config.basicauthusers | string | `""` | HTTP Basic Auth Users. Comma-separated list of clusters and tokens, e.g. 'cluster1:token1,cluster2:token2' |
 | config.dbdsn | string | `"file::memory:?cache-shared"` | Connection string for Database |
 | config.dbmigrate | bool | `false` | wheter or not to migrate the DB upon bootup |
 | config.dbprovider | string | `"sqlite"` | DB Provider to use (sqlite/postgres) |

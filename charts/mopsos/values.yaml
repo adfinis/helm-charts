@@ -122,6 +122,8 @@ config:
   debug: false
   # -- enable verbose
   verbose: false
+  # -- HTTP Basic Auth Users. Comma-separated list of clusters and tokens, e.g. 'cluster1:token1,cluster2:token2'
+  basicauthusers: ""
 
 # -- use an existing Secret instead of creating one
 existingSecret: ""
