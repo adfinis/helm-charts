@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "mopsos.fullname" . }}-config
+  labels:
+    {{- include "mopsos.labels" . | nindent 4 }}
+data:
+  MOPSOS_DB_MIGRATE: {{ .Values.config.dbmigrate | quote }}
+  MOPSOS_DB_PROVIDER: {{ .Values.config.dbprovider | quote }}
+  MOPSOS_OTEL_COLLECTOR: {{ .Values.config.otelcollector | quote  }}
+  MOPSOS_DEBUG: {{ .Values.config.debug  | quote }}
+  MOPSOS_VERBOSE: {{ .Values.config.verbose | quote }}

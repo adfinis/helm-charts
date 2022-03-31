@@ -1,0 +1,15 @@
+apiVersion: v2
+name: mopsos
+description: Deploy Mopsos to a Kubernetes Cluster
+type: application
+version: 0.1.0
+appVersion: "v0.3.0"
+kubeVersion: ">= 1.21.0"
+home: https://github.com/adfinis-sygroup/mopsos
+sources:
+  - https://github.com/adfinis-sygroup/mopsos
+  - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/mopsos
+maintainers:
+  - name: adfinis-sygroup
+    email: support@adfinis.com
+    url: https://adfinis.com
