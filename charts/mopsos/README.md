@@ -14,6 +14,10 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 * <https://github.com/adfinis-sygroup/mopsos>
 * <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/mopsos>
 
+## Requirements
+
+Kubernetes: `>= 1.22.0`
+
 ## Values
 
 | Key | Type | Default | Description |

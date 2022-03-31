@@ -4,6 +4,7 @@ description: Deploy Mopsos to a Kubernetes Cluster
 type: application
 version: 0.1.0
 appVersion: "0.1.0"
+kubeVersion: ">= 1.22.0"
 home: https://github.com/adfinis-sygroup/mopsos
 sources:
   - https://github.com/adfinis-sygroup/mopsos
