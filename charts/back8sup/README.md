@@ -19,9 +19,22 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | specifies the affinity to be used |
-| configMaps."config.yaml" | string | `"global:\n  - pvc\n  - pv\nnamespaces:\n  - name: default\n    kind:\n      - deployment\n      - cm\n      - secret\n"` | specifies the config.yaml to be used |
+| configMaps."config.yaml" | string | example that backups pvcs, and pvs globally and deployments, configmaps, and secrets in the default namespace | specifies the config.yaml to be used |
 | cronjob.concurrencyPolicy | string | `""` | specifies the concurrencyPolicy of the cronjob |
-| cronjob.environment | list | `[{"name":"API_ENDPOINT","value":"https://kubernetes.default.svc.cluster.local:443"},{"name":"CA_CERT","value":"/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"},{"name":"TOKEN_FILE","value":"/var/run/secrets/kubernetes.io/serviceaccount/token"},{"name":"CONFIGMAP_PATH","value":"/etc/config.yaml"},{"name":"EXPORT_FORMAT","value":"yaml"},{"name":"DST_FOLDER","value":"/mnt/back8sup"},{"name":"GENERATIONS","value":"30"}]` | specifies the different environment variable to configure the cronjob |
+| cronjob.environment[0].name | string | `"API_ENDPOINT"` |  |
+| cronjob.environment[0].value | string | `"https://kubernetes.default.svc.cluster.local:443"` |  |
+| cronjob.environment[1].name | string | `"CA_CERT"` |  |
+| cronjob.environment[1].value | string | `"/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"` |  |
+| cronjob.environment[2].name | string | `"TOKEN_FILE"` |  |
+| cronjob.environment[2].value | string | `"/var/run/secrets/kubernetes.io/serviceaccount/token"` |  |
+| cronjob.environment[3].name | string | `"CONFIGMAP_PATH"` |  |
+| cronjob.environment[3].value | string | `"/etc/config.yaml"` |  |
+| cronjob.environment[4].name | string | `"EXPORT_FORMAT"` |  |
+| cronjob.environment[4].value | string | `"yaml"` |  |
+| cronjob.environment[5].name | string | `"DST_FOLDER"` |  |
+| cronjob.environment[5].value | string | `"/mnt/back8sup"` |  |
+| cronjob.environment[6].name | string | `"GENERATIONS"` |  |
+| cronjob.environment[6].value | string | `"30"` |  |
 | cronjob.failedJobsHistoryLimit | string | `""` | specifies the failedJobsHistoryLimit of the cronjob |
 | cronjob.schedule | string | `"0 1 * * *"` | on which schedule the cronjob gets run |
 | cronjob.successfulJobsHistoryLimit | string | `""` | specifies the successfulJobsHistoryLimit of the cronjob |

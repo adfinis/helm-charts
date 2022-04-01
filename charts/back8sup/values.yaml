@@ -44,7 +44,6 @@ cronjob:
   failedJobsHistoryLimit: ""
   # -- specifies the successfulJobsHistoryLimit of the cronjob
   successfulJobsHistoryLimit: ""
-  # -- specifies the different environment variable to configure the cronjob
   environment:
     - name: API_ENDPOINT
       value: https://kubernetes.default.svc.cluster.local:443
@@ -73,6 +72,7 @@ persistence:
 
 configMaps:
   # -- specifies the config.yaml to be used
+  # @default -- example that backups pvcs, and pvs globally and deployments, configmaps, and secrets in the default namespace
   config.yaml: |
     global:
       - pvc

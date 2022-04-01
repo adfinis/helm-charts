@@ -11,7 +11,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/helm-charts>
+* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/cert-manager-issuers>
 
 ## Requirements
 
