@@ -87,6 +87,7 @@ chartmuseum:
   destination:
     # -- Namespace
     namespace: "infra-chartmuseum"
+  # -- Repo URL
   # @default -- [repo](https://chartmuseum.github.io/charts)
   repoURL: https://chartmuseum.github.io/charts
   # -- Chart
@@ -106,6 +107,7 @@ prometheusMsteams:
   destination:
     # -- Namespace
     namespace: "infra-prometheus-msteams"
+  # -- Repo URL
   # @default -- [repo](https://prometheus-msteams.github.io/prometheus-msteams)
   repoURL: https://prometheus-msteams.github.io/prometheus-msteams
   # -- Chart
