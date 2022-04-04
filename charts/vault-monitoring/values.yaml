@@ -2,52 +2,52 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# nameOverride -- specifies the name override to be used for helm
+# -- specifies the name override to be used for helm
 nameOverride: ""
-# fullnameOverride -- specifies the full name override to be used for helm
+# -- specifies the full name override to be used for helm
 fullnameOverride: ""
 
 vault:
-  # vault.serverName -- the vault servername
+  # -- the vault servername
   serverName: vault.example.com
-  # vault.port -- the vault port  to connect to
+  # -- the vault port  to connect to
   port: 443
-  # vault.portName -- the vault portName to use in the services
+  # -- the vault portName to use in the services
   portName: https
-  # vault.ca_path -- the CA path to include in the configuration
+  # -- the CA path to include in the configuration
   ca_path: /etc/vault/ssl/ca.crt
-  # vault.ip -- the vault ip to connect to
+  # -- the vault ip to connect to
   ip: 10.1.2.3
-  # vault.scheme -- the scheme to use for connection
+  # -- the scheme to use for connection
   scheme: https
-  # vault.ca -- the vault CA to trust -- if set a secret is created that must be mounted in Prometheus for the ServiceMonitoring to work
+  # -- if set a secret is created that must be mounted in Prometheus for the ServiceMonitoring to work
   ca: ""
   auth:
-    # vault.auth.mount_path -- where the kubernetes auth is mounted on vault
+    # -- where the kubernetes auth is mounted on vault
     mount_path: auth/kubernetes
-    # vault.auth.role -- the vault role to use for connection
+    # -- the vault role to use for connection
     role: metrics
   service:
-    # vault.service.type -- which type the vault service has. For connecting to an external vault server, choose ExternalName
+    # -- which type the vault service has. For connecting to an external vault server, choose ExternalName
     type: ExternalName
-    # vault.service.selector -- definition of the  vault service selector for endpoint selection. Keep empty for using ExternalName
+    # -- definition of the  vault service selector for endpoint selection. Keep empty for using ExternalName
     selector: {}
   serviceMonitor:
-    # vault.serviceMonitor.create -- wheter or not the serviceMonitor should be created
+    # -- wheter or not the serviceMonitor should be created
     create: true
-    # vault.serviceMonitor.labels -- labels to set on the vault serviceMonitor
+    # -- labels to set on the vault serviceMonitor
     labels: {}
-    # vault.scrapeTimeout  -- scrapeTimeout of the serviceMonitor
+    # -- scrapeTimeout of the serviceMonitor
     scrapeTimeout: 30s
 
 prometheusRules:
-  # prometheusRules.enabled -- wether or not the prometheus alerts are enabled
+  # -- wether or not the prometheus alerts are enabled
   enabled: false
-  # prometheusRules.namespace -- set namespace where the prometheusRules will be created
+  # -- set namespace where the prometheusRules will be created
   namespace: ""
-  # prometheusRules.labels --  labels to set in the prometheus alerts
+  # --  labels to set in the prometheus alerts
   labels: {}
-  # prometheusRules.rules -- set of prometheus alerts to define
+  # -- set of prometheus alerts to define
   # @default -- list of predefined alerts
   rules:
     - alert: VaultAutopilotNodeHealthy

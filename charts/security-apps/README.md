@@ -1,10 +1,10 @@
 # security-apps
 
-![Version: 0.42.0](https://img.shields.io/badge/Version-0.42.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.42.2](https://img.shields.io/badge/Version-0.42.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
-**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/security-apps>
+**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/security-apps>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
@@ -17,7 +17,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.adfinis.com | argoconfig | 0.7.4 |
+| https://charts.adfinis.com | argoconfig | 0.7.6 |
 
 ## Values
 
@@ -80,13 +80,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vault.repoURL | string | [repo](https://helm.releases.hashicorp.com) | Repo URL |
 | vault.targetRevision | string | `"0.19.*"` | [vault Helm chart](https://github.com/hashicorp/vault-helm) version |
 | vault.values | object | [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml) | Helm values |
-| vaultMonitoring | object | - | [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml)) |
+| vaultMonitoring | object | - | [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml)) |
 | vaultMonitoring.chart | string | `"vault-monitoring"` | Chart |
 | vaultMonitoring.destination.namespace | string | `"infra-vault"` | Namespace |
 | vaultMonitoring.enabled | bool | `false` | Enable vault-monitoring |
 | vaultMonitoring.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
-| vaultMonitoring.targetRevision | string | `"0.1.*"` | [vault-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) version |
-| vaultMonitoring.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-monitoring/values.yaml) | Helm values |
+| vaultMonitoring.targetRevision | string | `"0.1.*"` | [vault-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring) version |
+| vaultMonitoring.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/vault-monitoring/values.yaml) | Helm values |
 
 ## About this chart
 

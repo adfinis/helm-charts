@@ -1,10 +1,10 @@
 # infra-apps
 
-![Version: 0.87.2](https://img.shields.io/badge/Version-0.87.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.87.4](https://img.shields.io/badge/Version-0.87.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
-**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/infra-apps>
+**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/infra-apps>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
@@ -17,7 +17,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.adfinis.com | argoconfig | 0.7.4 |
+| https://charts.adfinis.com | argoconfig | 0.7.6 |
 
 ## Values
 
@@ -42,15 +42,15 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | certManagerIssuers.destination.namespace | string | `"infra-certmanager"` | Namespace |
 | certManagerIssuers.enabled | bool | `false` | Enable cert-manager-issuers |
 | certManagerIssuers.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
-| certManagerIssuers.targetRevision | string | `"0.2.*"` | [cert-manager-issuers Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-issuers) version |
-| certManagerIssuers.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-issuers/values.yaml) | Helm values |
+| certManagerIssuers.targetRevision | string | `"0.2.*"` | [cert-manager-issuers Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/cert-manager-issuers) version |
+| certManagerIssuers.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/cert-manager-issuers/values.yaml) | Helm values |
 | certManagerMonitoring | object | [example](./examples/cert-manager-monitoring.yaml) | [cert-manager-monitoring](https://cert-manager.io/docs/configuration/) |
 | certManagerMonitoring.chart | string | `"cert-manager-monitoring"` | Chart |
 | certManagerMonitoring.destination.namespace | string | `"infra-certmanager"` | Namespace |
 | certManagerMonitoring.enabled | bool | `false` | Enable cert-manager-monitoring |
 | certManagerMonitoring.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
-| certManagerMonitoring.targetRevision | string | `"0.1.*"` | [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-monitoring) version |
-| certManagerMonitoring.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-monitoring/values.yaml) | Helm values |
+| certManagerMonitoring.targetRevision | string | `"0.1.*"` | [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/cert-manager-monitoring) version |
+| certManagerMonitoring.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/cert-manager-monitoring/values.yaml) | Helm values |
 | ingressNginx | object | [example](./examples/nginx-ingress.yaml) | [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) |
 | ingressNginx.chart | string | `"ingress-nginx"` | Chart |
 | ingressNginx.destination.namespace | string | `"infra-ingress"` | Namespace |

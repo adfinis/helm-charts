@@ -2,32 +2,32 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# kubeVersionOverride -- override what version of Kubernetes to render against
+# -- override what version of Kubernetes to render against
 kubeVersionOverride: ~
 
 backend:
-  # backend.replicaCount -- (int) Number of Backend replicas
+  # -- (int) Number of Backend replicas
   replicaCount: 1
   image:
-    # backend.image.repository -- Backend image name
+    # -- Backend image name
     repository: adfinissygroup/timed-backend
-    # backend.image.tag -- Backend version (optional) in case it differs from appVersion in Chart.yaml
+    # -- Backend version (optional) in case it differs from appVersion in Chart.yaml
     tag: v1.5.4
-    # backend.image.pullPolicy -- Backend image pull policy
+    # -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
     # Specifiy secret for authentication.
     # If not random token will be generated
     # secret:
-    # backend.service.name -- Backend service name
+    # -- Backend service name
     name: timed-backend
-    # backend.service.type -- Backend service type
+    # -- Backend service type
     type: ClusterIP
-    # backend.service.externalPort -- External Port of backend service
+    # -- External Port of backend service
     externalPort: 80
-    # backend.service.internalPort -- Internal Port of backend service
+    # -- Internal Port of backend service
     internalPort: 80
-  # backend.resources -- Resource limits for backend
+  # -- Resource limits for backend
   resources: {}
     # We usually recommend not to specify default resources and to leave this as a conscious
     # choice for the user. This also increases chances charts run on environments with little
@@ -40,114 +40,114 @@ backend:
     #  cpu: 100m
     #  memory: 128Mi
   livenessProbe:
-    # backend.livenessProbe.enabled -- Enable liveness probe on backend
+    # -- Enable liveness probe on backend
     enabled: true
-    # backend.livenessProbe.initialDelaySeconds -- Number of seconds after the container has started before liveness probe is initiated
+    # -- Number of seconds after the container has started before liveness probe is initiated
     initialDelaySeconds: 60
-    # backend.livenessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    # -- How often (in seconds) to perform the probe
     periodSeconds: 10
-    # backend.livenessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    # -- Number of seconds after which the probe times out
     timeoutSeconds: 5
-    # backend.livenessProbe.failureThreshold -- Number of tries to perform the probe
+    # -- Number of tries to perform the probe
     failureThreshold: 6
-    # backend.livenessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    # -- Minimum consecutive successes for the probe to be considered successful after having failed
     successThreshold: 1
   readinessProbe:
-    # backend.readinessProbe.enabled -- Enable readiness probe on backend
+    # -- Enable readiness probe on backend
     enabled: true
-    # backend.readinessProbe.initialDelaySeconds -- Number of seconds after the container has started before readiness probe is initiated
+    # -- Number of seconds after the container has started before readiness probe is initiated
     initialDelaySeconds: 30
-    # backend.readinessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    # -- How often (in seconds) to perform the probe
     periodSeconds: 10
-    # backend.readinessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    # -- Number of seconds after which the probe times out
     timeoutSeconds: 5
-    # backend.readinessProbe.failureThreshold -- Number of tries to perform the probe
+    # -- Number of tries to perform the probe
     failureThreshold: 6
-    # backend.readinessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    # -- Minimum consecutive successes for the probe to be considered successful after having failed
     successThreshold: 1
   settings:
     # django settings for backend
-    # backend.settings.emailUrl -- Connection string of SMTP server to send mails
+    # -- Connection string of SMTP server to send mails
     emailUrl: smtp://localhost:25
-    # backend.settings.emailFrom -- Default email address to use for various responses
+    # -- Default email address to use for various responses
     emailFrom: webmaster@chart-example.local
-    # backend.settings.serverEmail -- Email address error messages are sent from
+    # -- Email address error messages are sent from
     serverEmail: webmaster@chart-example.local
-    # backend.settings.emailUseTls -- TLS option for email server
+    # -- TLS option for email server
     emailUseTls: "True"
-    # backend.settings.workReportPath -- Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`.
+    # -- Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`.
     workReportPath: /etc/workreport
-    # backend.settings.maxNumberFields -- Number of fields that are sent when saving changes on a model.
+    # -- Number of fields that are sent when saving changes on a model.
     maxNumberFields: 2000
-    # backend.settings.customerCenterEmail -- Email address to use for sending order confirmations from customer center
+    # -- Email address to use for sending order confirmations from customer center
     customerCenterEmail: "webmaster@chart-example.local"
-    # backend.settings.admins -- Django administrators, example: Jon Doe <jon.doe@example.com>
+    # -- Django administrators, example: Jon Doe <jon.doe@example.com>
     admins: []
-    # backend.settings.corsAllowedOrigins -- Define allowed domains for CORS
+    # -- Define allowed domains for CORS
     corsAllowedOrigins: []
     gunicorn:
-      # backend.settings.gunicorn.workers -- Number of gunicorn workers
+      # -- Number of gunicorn workers
       workers: 8
-      # backend.settings.gunicorn.cmdArgs -- gunicorn additional arguments
+      # -- gunicorn additional arguments
       cmdArgs: ""
     sentry:
-      # backend.settings.sentry.enabled -- Enable Sentry integration
+      # -- Enable Sentry integration
       enabled: false
-      # backend.settings.sentry.dsn -- Sentry DSN for error reporting. Set to enable Sentry integration
+      # -- Sentry DSN for error reporting. Set to enable Sentry integration
       dsn: ~
-      # backend.settings.sentry.tracesSampleRate -- Sentry trace sample rate, Set 1.0 to capture 100% of transactions
+      # -- Sentry trace sample rate, Set 1.0 to capture 100% of transactions
       tracesSampleRate: 1.0
-      # backend.settings.sentry.sendDefaultPii -- Associate users to errors in Sentry
+      # -- Associate users to errors in Sentry
       sendDefaultPii: "True"
 
 
   cronjobs:
-    # backend.cronjobs.notifySupervisors -- Notify supervisors
+    # -- Notify supervisors
     notifySupervisors:
       schedule: "0 8 * * 4"
       command:
         - "./manage.py"
         - "notify_supervisors_shorttime"
-    # backend.cronjobs.notifyReviewersFirst -- Notify reviewers first stage
+    # -- Notify reviewers first stage
     notifyReviewersFirst:
       schedule: "0 8 4 * *"
       command:
         - "./manage.py"
         - "notify_reviewers_unverified"
         - "--offset"
-        # backend.cronjobs.notifyReviewersFirst.command[3] -- Period will end today minus given offset
+        # -- Period will end today minus given offset
         - "5"
-    # backend.cronjobs.notifyReviewersSecond -- Notify reviewers second stage
+    # -- Notify reviewers second stage
     notifyReviewersSecond:
       schedule: "0 8 11 * *"
       command:
         - "./manage.py"
         - "notify_reviewers_unverified"
         - "--offset"
-        # backend.cronjobs.notifyReviewersSecond.command[3] -- Period will end today minus given offset
+        # -- Period will end today minus given offset
         - "12"
         - "--message"
-        # backend.cronjobs.notifyReviewersSecond.command[5] -- Additional message to send if there are unverified reports
+        # -- Additional message to send if there are unverified reports
         - "'Please verify your reports.'"
-    # backend.cronjobs.notifyReviewersThird -- Notify reviewers third stage
+    # -- Notify reviewers third stage
     notifyReviewersThird:
       schedule: "0 8 18 * *"
       command:
         - "./manage.py"
         - "notify_reviewers_unverified"
         - "--offset"
-        # backend.cronjobs.notifyReviewersThird.command[3] -- Period will end today minus given offset
+        # -- Period will end today minus given offset
         - "19"
         - "--message"
-        # backend.cronjobs.notifyReviewersThird.command[5] -- Additional message to send if there are unverified reports
+        # -- Additional message to send if there are unverified reports
         - "'Please verify your reports immediately!'"
-    # backend.cronjobs.redmineReport -- Redmine report
+    # -- Redmine report
     redmineReport:
       schedule: "0 1 * * 1"
       command:
         - "./manage.py"
         - "redmine_report"
-    # backend.cronjobs.notifyChangedEmployments -- Notify changed employments
+    # -- Notify changed employments
     notifyChangedEmployments:
       schedule: "0 2 * * 1"
       command:
@@ -155,25 +155,25 @@ backend:
         - "notify_changed_employments"
 
 frontend:
-  # frontend.replicaCount -- (int) Number of Backend replicas
+  # -- (int) Number of Backend replicas
   replicaCount: 1
   image:
-    # frontend.image.repository -- Frontend image name
+    # -- Frontend image name
     repository: adfinissygroup/timed-frontend
-    # frontend.image.pullPolicy -- Frontend image pull policy
+    # -- Frontend image pull policy
     pullPolicy: IfNotPresent
-    # frontend.image.tag -- Frontend version (optional) in case it differs from appVersion in Chart.yaml
+    # -- Frontend version (optional) in case it differs from appVersion in Chart.yaml
     tag: v1.3.1
   service:
-    # frontend.service.name -- Frontend service name
+    # -- Frontend service name
     name: timed-frontend
-    # frontend.service.type -- Frontend service type
+    # -- Frontend service type
     type: ClusterIP
-    # frontend.service.externalPort -- External Port of frontend service
+    # -- External Port of frontend service
     externalPort: 80
-    # frontend.service.internalPort -- Internal Port of frontend service
+    # -- Internal Port of frontend service
     internalPort: 80
-  # frontend.resources -- Resource limits for frontend
+  # -- Resource limits for frontend
   resources: {}
     # We usually recommend not to specify default resources and to leave this as a conscious
     # choice for the user. This also increases chances charts run on environments with little
@@ -186,85 +186,85 @@ frontend:
     #  cpu: 100m
     #  memory: 128Mi
   livenessProbe:
-    # frontend.livenessProbe.enabled -- Enable liveness probe on frontend
+    # -- Enable liveness probe on frontend
     enabled: true
-    # frontend.livenessProbe.initialDelaySeconds -- Number of seconds after the container has started before liveness probe is initiated
+    # -- Number of seconds after the container has started before liveness probe is initiated
     initialDelaySeconds: 60
-    # frontend.livenessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    # -- How often (in seconds) to perform the probe
     periodSeconds: 10
-    # frontend.livenessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    # -- Number of seconds after which the probe times out
     timeoutSeconds: 5
-    # frontend.livenessProbe.failureThreshold -- Number of tries to perform the probe
+    # -- Number of tries to perform the probe
     failureThreshold: 6
-    # frontend.livenessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    # -- Minimum consecutive successes for the probe to be considered successful after having failed
     successThreshold: 1
   readinessProbe:
-    # frontend.readinessProbe.enabled -- Enable readiness probe on frontend
+    # -- Enable readiness probe on frontend
     enabled: true
-    # frontend.readinessProbe.initialDelaySeconds -- Number of seconds after the container has started before readiness probe is initiated
+    # -- Number of seconds after the container has started before readiness probe is initiated
     initialDelaySeconds: 30
-    # frontend.readinessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    # -- How often (in seconds) to perform the probe
     periodSeconds: 10
-    # frontend.readinessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    # -- Number of seconds after which the probe times out
     timeoutSeconds: 5
-    # frontend.readinessProbe.failureThreshold -- Number of tries to perform the probe
+    # -- Number of tries to perform the probe
     failureThreshold: 6
-    # frontend.readinessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    # -- Minimum consecutive successes for the probe to be considered successful after having failed
     successThreshold: 1
 
 ingress:
-  # ingress.enabled -- Enable ingress for timed
+  # -- Enable ingress for timed
   enabled: false
-  # ingress.annotations -- Ingress annotations
+  # -- Ingress annotations
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  # ingress.hosts -- Ingress hostnames
+  # -- Ingress hostnames
   hosts: []
   #  - timed-test.example.com
-  # ingress.tls -- Ingress TLS options
+  # -- Ingress TLS options
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - timed-test.example.com
 
 postgresql:
-  # postgresql.enabled -- Enable PostgreSQL for persistence
+  # -- Enable PostgreSQL for persistence
   enabled: true
-  # postgresql.postgresqlDatabase -- PostgreSQL database name
+  # -- PostgreSQL database name
   postgresqlDatabase: timed
-  # postgresql.postgresqlUsername -- PostgreSQL user name
+  # -- PostgreSQL user name
   postgresqlUsername: postgres
-  # postgresql.postgresqlPassword -- Set a password for PostgreSQL
+  # -- Set a password for PostgreSQL
   # postgresqlPassword: s3cr3t
   image:
     # Use Postgresql 12
-    # postgresql.image.tag -- PostgreSQL image version to use
+    # -- PostgreSQL image version to use
     tag: 12.3.0
   ingress:
-    # postgresql.ingress.enabled -- Enable ingress
+    # -- Enable ingress
     enabled: false
-    # postgresql.ingress.loadBalancerSourceRanges -- Whitelist specific IP ranges
+    # -- Whitelist specific IP ranges
     loadBalancerSourceRanges: []
-    # postgresql.ingress.selector -- Service selector labels
+    # -- Service selector labels
     selector:
       app.kubernetes.io/name: postgresql
       role: slave
   tls:
-    # postgresql.tls.enabled -- Enable TLS for Postgresql
+    # -- Enable TLS for Postgresql
     enabled: false
-    # postgresql.tls.certificatesSecret -- Name of TLS secret
+    # -- Name of TLS secret
     certificatesSecret: psql-server
-    # postgresql.tls.certFilename -- Cert file name
+    # -- Cert file name
     certFilename: "tls.crt"
-    # postgresql.tls.certKeyFilename -- Cert key filename
+    # -- Cert key filename
     certKeyFilename: "tls.key"
     certificate:
-      # postgresql.tls.certificate.name -- Name of certificate
+      # -- Name of certificate
       name: psql-server
-      # postgresql.tls.certificate.dnsNames -- DNS names of certificate
+      # -- DNS names of certificate
       dnsNames: []
-      # postgresql.tls.certificate.issuerRef -- Issuer ref
+      # -- Issuer ref
       # @default -- cert-manager
       issuerRef:
         group: cert-manager.io
@@ -272,82 +272,82 @@ postgresql:
         name: letsencrypt-prod
 
 auth:
-  # auth.allowLocalLogin -- Allow local Django login
+  # -- Allow local Django login
   allowLocalLogin: "False"
   oidc:
-    # auth.oidc.host -- OIDC host
+    # -- OIDC host
     url: https://example.com/auth/realms/timed/protocol/openid-connect
     endPoints:
-      # auth.oidc.endPoints.auth -- OIDC /auth endpoint
+      # -- OIDC /auth endpoint
       auth: ~
-      # auth.oidc.endPoints.token -- OIDC /token endpoint
+      # -- OIDC /token endpoint
       token: ~
-      # auth.oidc.endPoints.userInfo -- OIDC /userinfo endpoint
+      # -- OIDC /userinfo endpoint
       userInfo: ~
-      # auth.oidc.endPoints.jwks -- OIDC /certs endpoint
+      # -- OIDC /certs endpoint
       jwks: ~
 
-    # auth.oidc.createUser -- OIDC create user in timed db if it does not already exist
+    # -- OIDC create user in timed db if it does not already exist
     createUser: "False"
-    # auth.oidc.adminLoginRedirectUrl -- URL of the django-admin, to which the user is redirected after successful admin login
+    # -- URL of the django-admin, to which the user is redirected after successful admin login
     adminLoginRedirectUrl: https://example.com/admin/
     client:
-      # auth.oidc.client.id -- OIDC client id
+      # -- OIDC client id
       id: timed
-    # auth.oidc.signAlgorithm -- Algorithm the OIDC provider uses to sign ID tokens
+    # -- Algorithm the OIDC provider uses to sign ID tokens
     signAlgorithm: RS256
-    # auth.oidc.verifySSL -- OIDC verify SSL
+    # -- OIDC verify SSL
     verifySSL: "True"
     introspect:
-      # auth.oidc.introspect.enabled -- Enable OIDC introspect
+      # -- Enable OIDC introspect
       enabled: true
       client:
-        # auth.oidc.introspect.client.id -- OIDC introspect client id
+        # -- OIDC introspect client id
         id: timed-confidential
-        # auth.oidc.introspect.client.secret -- OIDC introspect client secret
+        # -- OIDC introspect client secret
         secret: ~
-      # auth.oidc.introspect.endpoint -- OIDC introspect endpoint
+      # -- OIDC introspect endpoint
       endpoint: ~
     claims:
-      # auth.oidc.claims.firstname -- OIDC firstname claim name
+      # -- OIDC firstname claim name
       firstname: given_name
-      # auth.oidc.claims.lastname -- OIDC lastname claim name
+      # -- OIDC lastname claim name
       lastname: family_name
-      # auth.oidc.claims.username -- OIDC username claim name
+      # -- OIDC username claim name
       username: preferred_username
-      # auth.oidc.claims.email -- OIDC email claim name
+      # -- OIDC email claim name
       email: email
 
 redmine:
-  # redmine.enabled -- Enable Redmine integration
+  # -- Enable Redmine integration
   enabled: false
-  # redmine.url -- Redmine URL
+  # -- Redmine URL
   url: redmine.example.com
-  # redmine.apiKey -- Redmine API Key
+  # -- Redmine API Key
   apiKey: ""
-  # redmine.spenthoursField -- Spent hours field id on Redmine
+  # -- Spent hours field id on Redmine
   spenthoursField: 0
 
 prometheus:
-  # prometheus.enabled -- Enable Prometheus integration
+  # -- Enable Prometheus integration
   enabled: false
-  # prometheus.extraLabels -- Labels to add to all Prometheus integration resources
+  # -- Labels to add to all Prometheus integration resources
   extraLabels: {}
   podMonitor:
-    # prometheus.podMonitor.enabled -- Enable creation of a PodMonitor CRD
+    # -- Enable creation of a PodMonitor CRD
     enabled: true
-    # prometheus.podMonitor.interval -- Interval at which metrics should be scraped
+    # -- Interval at which metrics should be scraped
     interval: "30s"
-    # prometheus.podMonitor.metricRelabelings -- MetricRelabelConfigs to apply to samples before ingestion
+    # -- MetricRelabelConfigs to apply to samples before ingestion
     metricRelabelings: []
-    # prometheus.podMonitor.relabelings -- RelabelConfigs to apply to samples before scraping
+    # -- RelabelConfigs to apply to samples before scraping
     relabelings: []
 
 # Configure if timed should be deployed with Grafana templates
 grafana:
-  # grafana.enabled -- Enable Grafana Dashboards
+  # -- Enable Grafana Dashboards
   enabled: false
-  # grafana.defaultLabel -- Add a default `grafana_dashboard: 1` label
+  # -- Add a default `grafana_dashboard: 1` label
   defaultLabel: true
-  # grafana.extraLabels -- Labels to add to all Grafana integration resources
+  # -- Labels to add to all Grafana integration resources
   extraLabels: {}

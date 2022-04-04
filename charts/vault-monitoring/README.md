@@ -4,14 +4,14 @@
 
 monitor your vault server from within Kubernetes' prometheus
 
-**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring>
+**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring>
+* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring>
 
 ## Values
 
@@ -25,7 +25,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | prometheusRules.rules | list | list of predefined alerts | set of prometheus alerts to define |
 | vault.auth.mount_path | string | `"auth/kubernetes"` | where the kubernetes auth is mounted on vault |
 | vault.auth.role | string | `"metrics"` | the vault role to use for connection |
-| vault.ca | string | `""` |  |
+| vault.ca | string | `""` | if set a secret is created that must be mounted in Prometheus for the ServiceMonitoring to work |
 | vault.ca_path | string | `"/etc/vault/ssl/ca.crt"` | the CA path to include in the configuration |
 | vault.ip | string | `"10.1.2.3"` | the vault ip to connect to |
 | vault.port | int | `443` | the vault port  to connect to |
@@ -36,7 +36,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vault.service.type | string | `"ExternalName"` | which type the vault service has. For connecting to an external vault server, choose ExternalName |
 | vault.serviceMonitor.create | bool | `true` | wheter or not the serviceMonitor should be created |
 | vault.serviceMonitor.labels | object | `{}` | labels to set on the vault serviceMonitor |
-| vault.serviceMonitor.scrapeTimeout | string | `"30s"` |  |
+| vault.serviceMonitor.scrapeTimeout | string | `"30s"` | scrapeTimeout of the serviceMonitor |
 
 ## About this chart
 
