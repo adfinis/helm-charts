@@ -11,8 +11,8 @@ backend:
   image:
     # -- Backend image name
     repository: adfinissygroup/timed-backend
-    # -- Backend version (optional) in case it differs from appVersion in Chart.yaml
-    tag: v1.5.4
+    # -- Backend version.
+    tag: v1.6.2
     # -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
@@ -162,8 +162,8 @@ frontend:
     repository: adfinissygroup/timed-frontend
     # -- Frontend image pull policy
     pullPolicy: IfNotPresent
-    # -- Frontend version (optional) in case it differs from appVersion in Chart.yaml
-    tag: v1.3.1
+    # -- Frontend version.
+    tag: v2.1.2
   service:
     # -- Frontend service name
     name: timed-frontend
