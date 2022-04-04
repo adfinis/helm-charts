@@ -7290,6 +7290,30 @@ entries:
   rbac-definitions:
   - apiVersion: v2
     appVersion: 1beta1
+    created: "2022-04-04T10:59:47.147677253Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.7
+    description: Deploy rbac-manager RBACDefinitions via Helm
+    digest: 70bf1769838078b11bc444e95623c3bda212c8e1bdb4295a6a57c090a41dc739
+    home: https://rbac-manager.docs.fairwinds.com/rbacdefinitions/
+    icon: https://rbac-manager.docs.fairwinds.com/img/rbac-manager-logo.svg
+    keywords:
+    - rbac-manager
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: rbac-definitions
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/rbac-definitions-0.1.2/rbac-definitions-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1beta1
     created: "2022-04-04T07:11:29.510801055Z"
     dependencies:
     - name: common
@@ -11598,4 +11622,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-04T10:57:28.528595594Z"
+generated: "2022-04-04T10:59:47.151199977Z"
