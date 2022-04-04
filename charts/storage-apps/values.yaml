@@ -1,39 +1,39 @@
-# cephCsiRbd -- [ceph-csi-rbd](https://github.com/ceph/ceph-csi/)
+# -- [ceph-csi-rbd](https://github.com/ceph/ceph-csi/)
 # @default -- -
 cephCsiRbd:
-  # cephCsiRbd.enabled -- Enable ceph-csi-rbd
+  # -- Enable ceph-csi-rbd
   enabled: false
   name: ceph-csi-rbd
   destination:
-    # cephCsiRbd.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-storage"
-  # cephCsiRbd.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://ceph.github.io/csi-charts)
   repoURL: "https://ceph.github.io/csi-charts"
-  # cephCsiRbd.chart -- Chart
+  # -- Chart
   chart: "ceph-csi-rbd"
-  # cephCsiRbd.targetRevision -- [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version
+  # -- [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version
   targetRevision: "3.5.*"
-  # cephCsiRbd.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/rbd/ceph-csi-rbd/values.yaml)
   values: {}
 
-# cephCsiCephfs -- [ceph-csi-cephfs](https://github.com/ceph/ceph-csi/)
+# -- [ceph-csi-cephfs](https://github.com/ceph/ceph-csi/)
 # @default -- -
 cephCsiCephfs:
-  # cephCsiCephfs.enabled -- Enable ceph-csi-cephfs
+  # -- Enable ceph-csi-cephfs
   enabled: false
   name: ceph-csi-cephfs
   destination:
-    # cephCsiCephfs.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-storage"
-  # cephCsiCephfs.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://ceph.github.io/csi-charts)
   repoURL: "https://ceph.github.io/csi-charts"
-  # cephCsiCephfs.chart -- Chart
+  # -- Chart
   chart: "ceph-csi-cephfs"
-  # cephCsiCephfs.targetRevision -- [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version
+  # -- [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version
   targetRevision: "3.5.*"
-  # cephCsiCephfs.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/cephfs/ceph-csi-cephfs/values.yaml)
   values: {}

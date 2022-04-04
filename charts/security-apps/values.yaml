@@ -1,187 +1,187 @@
-# dex -- [dex](https://github.com/dexidp/dex/) ([example](./examples/dex.yaml))
+# -- [dex](https://github.com/dexidp/dex/) ([example](./examples/dex.yaml))
 # @default -- -
 dex:
-  # dex.enabled -- Enable dex
+  # -- Enable dex
   enabled: false
   name: dex
   destination:
-    # dex.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-dex"
-  # dex.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.dexidp.io)
   repoURL: "https://charts.dexidp.io"
-  # dex.chart -- Chart
+  # -- Chart
   chart: "dex"
-  # dex.targetRevision -- [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version
+  # -- [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version
   targetRevision: "0.6.*"
-  # dex.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml)
   values: {}
 
-# dexK8sAuthenticator -- [dex-k8s-authenticator](https://github.com/mintel/dex-k8s-authenticator) ([example](./examples/dex-k8s-authenticator.yaml))
+# -- [dex-k8s-authenticator](https://github.com/mintel/dex-k8s-authenticator) ([example](./examples/dex-k8s-authenticator.yaml))
 # @default -- -
 dexK8sAuthenticator:
-  # dexK8sAuthenticator.enabled -- Enable dex-k8s-authenticator
+  # -- Enable dex-k8s-authenticator
   enabled: false
   name: dex-k8s-authenticator
   destination:
-    # dexK8sAuthenticator.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-dex-k8s-authenticator"
   # As of December 2021, there is no upstream helm repo where we could pull
   # for this we need to reference directly the GitHub url
   # FFI: https://github.com/mintel/dex-k8s-authenticator/issues/185
-  # dexK8sAuthenticator.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://github.com/mintel/dex-k8s-authenticator.git)
   repoURL: "https://github.com/mintel/dex-k8s-authenticator.git"
-  # dexK8sAuthenticator.repoPath -- Repo Path
+  # -- Repo Path
   repoPath: "charts/dex-k8s-authenticator"
-  # dexK8sAuthenticator.chart -- Chart
+  # -- Chart
   chart: "dexK8sAuthenticator"
   # As of December 2021, there is no upstream helm repo where we could pull
   # for this we need to reference directly the GitHub version tag
   # FFI: https://github.com/mintel/dex-k8s-authenticator/issues/185
-  # dexK8sAuthenticator.targetRevision -- [dex-k8s-authenticator Helm chart](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/) version
+  # -- [dex-k8s-authenticator Helm chart](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/) version
   targetRevision: "v1.4.0"
-  # dexK8sAuthenticator.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/values.yaml)
   values: {}
 
-# gangway -- [gangway](https://github.com/heptiolabs/gangway/) is DEPRECATED, use dexK8sAuthenticator instead
+# -- [gangway](https://github.com/heptiolabs/gangway/) is DEPRECATED, use dexK8sAuthenticator instead
 # @default -- DEPRECATED
 gangway:
-  # gangway.enabled -- Enable gangway
+  # -- Enable gangway
   enabled: false
   name: gangway
   destination:
-    # gangway.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-gangway"
-  # gangway.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://gabibbo97.github.io/charts)
   repoURL: "https://gabibbo97.github.io/charts"
-  # gangway.chart -- Chart
+  # -- Chart
   chart: "gangway"
-  # gangway.targetRevision -- [gangway Helm chart](https://github.com/gabibbo97/charts/tree/master/charts/gangway/) version
+  # -- [gangway Helm chart](https://github.com/gabibbo97/charts/tree/master/charts/gangway/) version
   targetRevision: "1.1.*"
-  # gangway.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/gabibbo97/charts/tree/master/charts/gangway/values.yaml)
   values: {}
 
-# vault -- [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml))
+# -- [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml))
 # @default -- -
 vault:
-  # vault.enabled -- Enable vault
+  # -- Enable vault
   enabled: false
   name: vault
   destination:
-    # vault.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-vault"
-  # vault.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://helm.releases.hashicorp.com)
   repoURL: "https://helm.releases.hashicorp.com"
-  # vault.chart -- Chart
+  # -- Chart
   chart: "vault"
-  # vault.targetRevision -- [vault Helm chart](https://github.com/hashicorp/vault-helm) version
+  # -- [vault Helm chart](https://github.com/hashicorp/vault-helm) version
   targetRevision: "0.19.*"
-  # vault.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml)
   values: {}
 
-# falco -- [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml))
+# -- [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml))
 # @default -- -
 falco:
-  # falco.enabled -- Enable falco
+  # -- Enable falco
   enabled: false
   name: falco
   destination:
-    # falco.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-falco"
-  # falco.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://falcosecurity.github.io/charts)
   repoURL: "https://falcosecurity.github.io/charts"
-  # falco.chart -- Chart
+  # -- Chart
   chart: "falco"
-  # falco.targetRevision -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version
+  # -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version
   targetRevision: "1.17.*"
-  # falco.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml)
   values: {}
 
-# falcoExporter -- [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml))
+# -- [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml))
 # @default -- -
 falcoExporter:
-  # falcoExporter.enabled -- Enable falco-exporter
+  # -- Enable falco-exporter
   enabled: false
   name: falco-exporter
   destination:
-    # falcoExporter.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-falco"
-  # falcoExporter.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://falcosecurity.github.io/charts)
   repoURL: "https://falcosecurity.github.io/charts"
-  # falcoExporter.chart -- Chart
+  # -- Chart
   chart: "falco-exporter"
-  # falcoExporter.targetRevision -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version
+  # -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version
   targetRevision: "0.8.*"
-  # falcoExporter.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco-exporter/values.yaml)
   values: {}
 
-# gatekeeper -- [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml))
+# -- [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml))
 # @default -- -
 gatekeeper:
-  # gatekeeper.enabled -- Enable gatekeeper
+  # -- Enable gatekeeper
   enabled: false
   name: gatekeeper
   destination:
-    # gatekeeper.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-gatekeeper"
-  # gatekeeper.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://open-policy-agent.github.io/gatekeeper/charts)
   repoURL: "https://open-policy-agent.github.io/gatekeeper/charts"
-  # gatekeeper.chart -- Chart
+  # -- Chart
   chart: "gatekeeper"
-  # gatekeeper.targetRevision -- [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version
+  # -- [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version
   targetRevision: "3.7.*"
-  # gatekeeper.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml)
   values: {}
 
-# vaultMonitoring -- [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml))
+# -- [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml))
 # @default -- -
 vaultMonitoring:
-  # vaultMonitoring.enabled -- Enable vault-monitoring
+  # -- Enable vault-monitoring
   enabled: false
   name: vault-monitoring
   destination:
-    # vaultMonitoring.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-vault"
-  # vaultMonitoring.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.adfinis.com)
   repoURL: "https://charts.adfinis.com"
-  # vaultMonitoring.chart -- Chart
+  # -- Chart
   chart: "vault-monitoring"
-  # vaultMonitoring.targetRevision -- [vault-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/vault-monitoring) version
+  # -- [vault-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring) version
   targetRevision: "0.1.*"
-  # vaultMonitoring.values -- Helm values
-  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/vault-monitoring/values.yaml)
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/vault-monitoring/values.yaml)
   values: {}
 
-# secretsStoreCsiDriver -- [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([examplpe](./examples/secrets-store-csi-driver.yaml))
+# -- [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([examplpe](./examples/secrets-store-csi-driver.yaml))
 # @default -- -
 secretsStoreCsiDriver:
-  # secretsStoreCsiDriver.enabled -- Enable secrets-store-csi-driver
+  # -- Enable secrets-store-csi-driver
   enabled: false
   name: secrets-store-csi-driver
   destination:
-    # secretsStoreCsiDriver.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-secrets-store-csi"
-  # secretsStoreCsiDriver.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts)
   repoURL: "https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts"
-  # secretsStoreCsiDriver.chart -- Chart
+  # -- Chart
   chart: "secrets-store-csi-driver"
-    # secretsStoreCsiDriver.targetRevision -- [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version
+    # -- [vault-csi-provider Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version
   targetRevision: "1.1.*"
-  # secretsStoreCsiDriver.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver/values.yaml)
   values: {}

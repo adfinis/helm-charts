@@ -16,3 +16,4 @@
 /charts/vault-auth                  @adfinis-sygroup/helm-charts @eyenx
 /charts/vault-csi-provider          @adfinis-sygroup/helm-charts @pree @eyenx
 /charts/vault-monitoring            @adfinis-sygroup/helm-charts @pree @eyenx
+/charts/mopsos                      @adfinis-sygroup/helm-charts @hairmare @eyenx

@@ -91,7 +91,7 @@ is described below.
 
 ### The `argoconfig` library chart
 
-Inspired by various `common` charts. The [`argoconfig` library chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/argoconfig)
+Inspired by various `common` charts. The [`argoconfig` library chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/argoconfig)
 helps us keep charts that manage Argo CD `Application` resources generic to some degree.
 
 It provides the `argoconfig.application` helper function which scaffolds an `Application` resource like so:

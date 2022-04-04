@@ -1,117 +1,119 @@
-# downscaler -- [kube-downscaler](https://github.com/hjacobs/kube-downscaler) ([example](./examples/kube-downscaler.yaml))
+# -- [kube-downscaler](https://github.com/hjacobs/kube-downscaler) ([example](./examples/kube-downscaler.yaml))
 # @default -- -
 downscaler:
-  # downscaler.enabled -- Enable kube-downscaler
+  # -- Enable kube-downscaler
   enabled: false
   name: downscaler
   destination:
-    # downscaler.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-downscaler"
-  # downscaler.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.helm.sh/incubator)
   repoURL: "https://charts.helm.sh/incubator"
-  # downscaler.chart -- Chart
+  # -- Chart
   chart: "kube-downscaler"
-  # downscaler.targetRevision -- [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version
+  # -- [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version
   targetRevision: "0.6.*"
-  # downscaler.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/helm/charts/blob/master/incubator/kube-downscaler/values.yaml)
   values: {}
 
-# signalilo -- [sigalilo](https://github.com/vshn/signalilo) ([example](./examples/signalilo.yaml))
+# -- [sigalilo](https://github.com/vshn/signalilo) ([example](./examples/signalilo.yaml))
 # @default -- -
 signalilo:
-  # signalilo.enabled -- Enable signalilo
+  # -- Enable signalilo
   enabled: false
   name: signalilo
   destination:
-    # signalilo.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-signalilo"
-  # signalilo.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.appuio.ch)
   repoURL: "https://charts.appuio.ch"
-  # signalilo.chart -- Chart
+  # -- Chart
   chart: "signalilo"
-  # signalilo.targetRevision -- [signalilo Helm chart](https://github.com/appuio/charts/tree/master/appuio/signalilo) version
+  # -- [signalilo Helm chart](https://github.com/appuio/charts/tree/master/appuio/signalilo) version
   targetRevision: "0.7.*"
-  # signalilo.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/appuio/charts/blob/master/appuio/signalilo/values.yaml)
   values: {}
 
-# sentryKubernetes -- [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml)
+# -- [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml)
 # @default -- -
 sentryKubernetes:
-  # sentryKubernetes.enabled -- Enable sentry-kubernetes
+  # -- Enable sentry-kubernetes
   enabled: false
   name: sentry-kubernetes
   destination:
-    # sentryKubernetes.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-sentry-kubernetes"
-  # sentryKubernetes.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://sentry-kubernetes.github.io/charts)
   repoURL: "https://sentry-kubernetes.github.io/charts"
-  # sentryKubernetes.chart -- Chart
+  # -- Chart
   chart: "sentry-kubernetes"
-  # sentryKubernetes.targetRevision -- [sentry-kubernetes Helm chart](https://github.com/sentry-kubernetes/charts/tree/develop/sentry-kubernetes)
+  # -- [sentry-kubernetes Helm chart](https://github.com/sentry-kubernetes/charts/tree/develop/sentry-kubernetes)
   targetRevision: "0.3.*"
-  # sentryKubernetes.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/sentry-kubernetes/charts/blob/develop/sentry-kubernetes/values.yaml)
   values: {}
 
-# metallb -- [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml))
+# -- [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml))
 # @default -- -
 metallb:
-  # metallb.enabled -- Enable metallb
+  # -- Enable metallb
   enabled: false
   name: metallb
   destination:
-    # metallb.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-metallb"
-  # metallb.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://metallb.github.io/metallb)
   repoURL: "https://metallb.github.io/metallb"
-  # metallb.chart -- Chart
+  # -- Chart
   chart: "metallb"
-  # metallb.targetRevision -- [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb)
+  # -- [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb)
   targetRevision: "0.12.*"
-  # metallb.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml)
   values: {}
 
-# chartmuseum -- [chartmuseum](https://chartmuseum.com) ([example](./example/chartmuseum.yaml))
+# -- [chartmuseum](https://chartmuseum.com) ([example](./example/chartmuseum.yaml))
 # @default -- -
 chartmuseum:
-  # chartmuseum.enabled -- Enable chartmuseum
+  # -- Enable chartmuseum
   enabled: false
   name: chartmuseum
   destination:
-    # chartmuseum.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-chartmuseum"
-  # chartmuseum.repoURL -- [repo](https://chartmuseum.github.io/charts)
+  # -- Repo URL
+  # @default -- [repo](https://chartmuseum.github.io/charts)
   repoURL: https://chartmuseum.github.io/charts
-  # chartmuseum.chart -- Chart
+  # -- Chart
   chart: chartmuseum
-  # chartmuseum.targetRevision -- [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum)
+  # -- [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum)
   targetRevision: "3.6.*"
-  # chartmuseum.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/chartmuseum/charts/blob/main/src/chartmuseum/values.yaml)
   values: {}
 
-# prometheusMsteams -- [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) ([example](./example/prometheus-msteams.yaml))
+# -- [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) ([example](./example/prometheus-msteams.yaml))
 # @default -- -
 prometheusMsteams:
-  # prometheusMsteams.enabled -- Enable prometheus-msteams
+  # -- Enable prometheus-msteams
   enabled: false
   name: prometheus-msteams
   destination:
-    # prometheusMsteams.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-prometheus-msteams"
-  # prometheusMsteams.repoURL -- [repo](https://prometheus-msteams.github.io/prometheus-msteams)
+  # -- Repo URL
+  # @default -- [repo](https://prometheus-msteams.github.io/prometheus-msteams)
   repoURL: https://prometheus-msteams.github.io/prometheus-msteams
-  # prometheusMsteams.chart -- Chart
+  # -- Chart
   chart: prometheus-msteams
-  # prometheusMsteams.targetRevision -- [prometheus-msteams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams)
+  # -- [prometheus-msteams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams)
   targetRevision: "1.3.*"
-  # prometheusMsteams.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-msteams/prometheus-msteams/blob/master/chart/prometheus-msteams/values.yaml)
   values: {}

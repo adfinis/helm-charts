@@ -1,6 +1,6 @@
 # back8sup
 
-![Version: 0.4.3](https://img.shields.io/badge/Version-0.4.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.7.9](https://img.shields.io/badge/AppVersion-v0.7.9-informational?style=flat-square)
+![Version: 0.4.4](https://img.shields.io/badge/Version-0.4.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.7.9](https://img.shields.io/badge/AppVersion-v0.7.9-informational?style=flat-square)
 
 Deploy back8sup to a Kubernetes Cluster
 
@@ -12,14 +12,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 ## Source Code
 
 * <https://github.com/adfinis-sygroup/back8sup>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/back8sup>
+* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/back8sup>
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | specifies the affinity to be used |
-| configMaps."config.yaml" | string | `"global:\n  - pvc\n  - pv\nnamespaces:\n  - name: default\n    kind:\n      - deployment\n      - cm\n      - secret\n"` |  |
+| configMaps."config.yaml" | string | example that backups pvcs, and pvs globally and deployments, configmaps, and secrets in the default namespace | specifies the config.yaml to be used |
 | cronjob.concurrencyPolicy | string | `""` | specifies the concurrencyPolicy of the cronjob |
 | cronjob.environment[0].name | string | `"API_ENDPOINT"` |  |
 | cronjob.environment[0].value | string | `"https://kubernetes.default.svc.cluster.local:443"` |  |
