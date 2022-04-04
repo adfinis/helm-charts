@@ -28,7 +28,7 @@ jobs:
     - name: Setup environment for pre-commit
       run: hack/ci/github/setup/pre-commit.sh
 
-    - uses: actions/cache@v2.1.7
+    - uses: actions/cache@v3
       with:
         path: ~/.cache/pre-commit
         key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
@@ -60,7 +60,7 @@ jobs:
           python-version: 3.7
 
       - name: Install chart-testing
-        uses: helm/chart-testing-action@v2.2.0
+        uses: helm/chart-testing-action@v2.2.1
 
       - name: Run chart-testing (list-changed)
         id: list-changed

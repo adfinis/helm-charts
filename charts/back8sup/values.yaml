@@ -2,49 +2,48 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# replicaCount -- specifies the replica count of the pods
+# -- specifies the replica count of the pods
 replicaCount: 1
 
 image:
-  # image.repository -- set the image repository
+  # -- set the image repository
   repository: ghcr.io/adfinis-sygroup/back8sup
-  # image.pullPolicy -- set the image pullPolicy
+  # -- set the image pullPolicy
   pullPolicy: IfNotPresent
-  # image.tag -- set the tag of the image
+  # -- set the tag of the image
   # Specify a tag to override which version of timed to deploy.
   # If no tag is specified the appVersion from Chart.yaml is used as tag.
   tag: ""
 
-# imagePullSecrets -- specifies the image pull secrets to be used
+# -- specifies the image pull secrets to be used
 imagePullSecrets: []
-# nameOverride -- specifies the name override to be used for helm
+# -- specifies the name override to be used for helm
 nameOverride: ""
-# fullnameOverride -- specifies the full name override to be used for helm
+# -- specifies the full name override to be used for helm
 fullnameOverride: ""
 
 serviceAccount:
-  # serviceAccount.create -- Specifies whether a service account should be created
+  # -- Specifies whether a service account should be created
   create: true
-  # serviceAccount.annotations -- Annotations to add to the service account
+  # -- Annotations to add to the service account
   annotations: {}
-  # serviceAccount.name -- The name of the service account to use.
+  # -- The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-# rbacCreate -- wheter the rolebindings and roles should be created
+# -- wheter the rolebindings and roles should be created
 rbacCreate: true
 
 
 cronjob:
-  # cronjob.schedule -- on which schedule the cronjob gets run
+  # -- on which schedule the cronjob gets run
   schedule: "0 1 * * *"
-  # cronjob.concurrencyPolicy -- specifies the concurrencyPolicy of the cronjob
+  # -- specifies the concurrencyPolicy of the cronjob
   concurrencyPolicy: ""
-  # cronjob.failedJobsHistoryLimit -- specifies the failedJobsHistoryLimit of the cronjob
+  # -- specifies the failedJobsHistoryLimit of the cronjob
   failedJobsHistoryLimit: ""
-  # cronjob.successfulJobsHistoryLimit -- specifies the successfulJobsHistoryLimit of the cronjob
+  # -- specifies the successfulJobsHistoryLimit of the cronjob
   successfulJobsHistoryLimit: ""
-  # cronjob.environment  -- specifies the different environment variable to configure the cronjob
   environment:
     - name: API_ENDPOINT
       value: https://kubernetes.default.svc.cluster.local:443
@@ -62,17 +61,18 @@ cronjob:
       value: "30"
 
 persistence:
-  # persistence.enabled -- specifies if persistence is enabled or not
+  # -- specifies if persistence is enabled or not
   enabled: true
-  # persistence.mountPath -- specifies where to mount the PV
+  # -- specifies where to mount the PV
   mountPath: "/mnt/back8sup"
-  # persistence.size -- specifies which size the PVC should request
+  # -- specifies which size the PVC should request
   size: "10Gi"
-  # persistence.storageClassName -- specifies which storageClassName should be used
+  # -- specifies which storageClassName should be used
   #  storageClassName: "default"
 
 configMaps:
-  # configMaps.config.yaml -- specifies the config.yaml to be used
+  # -- specifies the config.yaml to be used
+  # @default -- example that backups pvcs, and pvs globally and deployments, configmaps, and secrets in the default namespace
   config.yaml: |
     global:
       - pvc
@@ -84,14 +84,14 @@ configMaps:
           - cm
           - secret
 
-# podAnnotations -- specifies the Pod Annotations to be set
+# -- specifies the Pod Annotations to be set
 podAnnotations: {}
 
-# podSecurityContext -- specifies the Pod Security Context to be set
+# -- specifies the Pod Security Context to be set
 podSecurityContext: {}
   # fsGroup: 2000
 
-# securityContext -- specifies the Security Context to be set
+# -- specifies the Security Context to be set
 securityContext: {}
   # capabilities:
   #   drop:
@@ -101,7 +101,7 @@ securityContext: {}
   # runAsUser: 1000
   #
 
-# resources -- specifies the resources to be used
+# -- specifies the resources to be used
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
@@ -114,11 +114,11 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-# nodeSelector -- specifies the nodeSelector to be used
+# -- specifies the nodeSelector to be used
 nodeSelector: {}
 
-# tolerations -- specifies the tolerations to be used
+# -- specifies the tolerations to be used
 tolerations: []
 
-# affinity -- specifies the affinity to be used
+# -- specifies the affinity to be used
 affinity: {}

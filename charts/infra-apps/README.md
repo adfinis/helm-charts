@@ -1,10 +1,10 @@
 # infra-apps
 
-![Version: 0.82.0](https://img.shields.io/badge/Version-0.82.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.87.3](https://img.shields.io/badge/Version-0.87.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
-**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/infra-apps>
+**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/infra-apps>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocd.destination.namespace | string | `"infra-argocd"` | Namespace |
 | argocd.enabled | bool | `false` | Enable Argo CD |
 | argocd.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocd.targetRevision | string | `"3.35.*"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version |
+| argocd.targetRevision | string | `"4.2.*"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version |
 | argocd.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml) | Helm values |
 | certManager | object | [example](./examples/cert-manager.yaml) | [cert-manager](https://cert-manager.io/) |
 | certManager.chart | string | `"cert-manager"` | Chart |
@@ -42,15 +42,15 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | certManagerIssuers.destination.namespace | string | `"infra-certmanager"` | Namespace |
 | certManagerIssuers.enabled | bool | `false` | Enable cert-manager-issuers |
 | certManagerIssuers.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
-| certManagerIssuers.targetRevision | string | `"0.2.*"` | [cert-manager-issuers Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-issuers) version |
-| certManagerIssuers.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-issuers/values.yaml) | Helm values |
+| certManagerIssuers.targetRevision | string | `"0.2.*"` | [cert-manager-issuers Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/cert-manager-issuers) version |
+| certManagerIssuers.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/cert-manager-issuers/values.yaml) | Helm values |
 | certManagerMonitoring | object | [example](./examples/cert-manager-monitoring.yaml) | [cert-manager-monitoring](https://cert-manager.io/docs/configuration/) |
 | certManagerMonitoring.chart | string | `"cert-manager-monitoring"` | Chart |
 | certManagerMonitoring.destination.namespace | string | `"infra-certmanager"` | Namespace |
 | certManagerMonitoring.enabled | bool | `false` | Enable cert-manager-monitoring |
 | certManagerMonitoring.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
-| certManagerMonitoring.targetRevision | string | `"0.1.*"` | [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-monitoring) version |
-| certManagerMonitoring.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-monitoring/values.yaml) | Helm values |
+| certManagerMonitoring.targetRevision | string | `"0.1.*"` | [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/cert-manager-monitoring) version |
+| certManagerMonitoring.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/cert-manager-monitoring/values.yaml) | Helm values |
 | ingressNginx | object | [example](./examples/nginx-ingress.yaml) | [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) |
 | ingressNginx.chart | string | `"ingress-nginx"` | Chart |
 | ingressNginx.destination.namespace | string | `"infra-ingress"` | Namespace |
@@ -70,28 +70,28 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kubePrometheusStack.destination.namespace | string | `"infra-monitoring"` | Namespace |
 | kubePrometheusStack.enabled | bool | `false` | Enable prometheus-operator |
 | kubePrometheusStack.repoURL | string | [repo](https://prometheus-community.github.io/helm-charts) | Repo URL |
-| kubePrometheusStack.targetRevision | string | `"33.2.*"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
+| kubePrometheusStack.targetRevision | string | `"34.0.*"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
 | kubePrometheusStack.values | object | [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml) | Helm values |
 | kured | object | [example](./examples/kured.yaml) | [kured](https://github.com/weaveworks/kured) |
 | kured.chart | string | `"kured"` | Chart |
 | kured.destination.namespace | string | `"infra-kured"` | Namespace |
 | kured.enabled | bool | `false` | Enable Kured |
 | kured.repoURL | string | [repo](https://weaveworks.github.io/kured) | Repo URL |
-| kured.targetRevision | string | `"2.11.*"` | [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured) |
+| kured.targetRevision | string | `"2.12.*"` | [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured) |
 | kured.values | object | [upstream values](https://github.com/weaveworks/kured/blob/main/charts/kured/values.yaml) | Helm values |
 | rbacManager | object | [example](./examples/rbac-manager.yaml) | [rbac-manager](https://fairwindsops.github.io/rbac-manager/) |
 | rbacManager.chart | string | `"rbac-manager"` | Chart |
 | rbacManager.destination.namespace | string | `"infra-rbac"` | Namespace |
 | rbacManager.enabled | bool | `false` | Enable rbac-manager operator |
 | rbacManager.repoURL | string | [repo](https://charts.fairwinds.com/stable) | Repo URL |
-| rbacManager.targetRevision | string | `"1.10.*"` | [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version |
+| rbacManager.targetRevision | string | `"1.11.*"` | [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version |
 | rbacManager.values | object | [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml) | Helm values |
 | thanos | object | [example](./examples/thanos.yaml) | [Thanos](https://thanos.io/) |
 | thanos.chart | string | `"thanos"` | Chart |
 | thanos.destination.namespace | string | `"infra-monitoring"` | Namespace |
 | thanos.enabled | bool | `false` | Enable Thanos |
 | thanos.repoURL | string | [repo](https://charts.bitnami.com/bitnami) | Repo URL |
-| thanos.targetRevision | string | `"9.0.*"` | [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos) |
+| thanos.targetRevision | string | `"10.1.*"` | [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos) |
 | thanos.values | object | [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/thanos/values.yaml) | Helm values |
 | velero | object | [example](./examples/velero.yaml) | [Velero](https://velero.io/) |
 | velero.chart | string | `"velero"` | Chart |

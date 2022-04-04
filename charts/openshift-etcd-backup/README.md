@@ -1,6 +1,6 @@
 # openshift-etcd-backup
 
-![Version: 1.6.0](https://img.shields.io/badge/Version-1.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.6.0](https://img.shields.io/badge/AppVersion-v1.6.0-informational?style=flat-square)
+![Version: 1.6.1](https://img.shields.io/badge/Version-1.6.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.6.0](https://img.shields.io/badge/AppVersion-v1.6.0-informational?style=flat-square)
 
 Chart for openshift-etcd-backup solution
 
@@ -12,7 +12,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 ## Source Code
 
 * <https://github.com/adfinis-sygroup/openshift-etcd-backup>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/openshift-etcd-backup>
+* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/openshift-etcd-backup>
 
 ## Values
 

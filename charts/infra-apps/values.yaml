@@ -1,222 +1,222 @@
-# argocd -- [Argo CD](https://argoproj.github.io/argo-cd/)
+# -- [Argo CD](https://argoproj.github.io/argo-cd/)
 # @default -- [example](./examples/argocd.yaml)
 argocd:
-  # argocd.enabled -- Enable Argo CD
+  # -- Enable Argo CD
   enabled: false
   name: argocd
   destination:
-    # argocd.destination.namespace -- Namespace
+    # -- Namespace
     namespace: infra-argocd
-  # argocd.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://argoproj.github.io/argo-helm)
   repoURL: https://argoproj.github.io/argo-helm
-  # argocd.chart -- Chart
+  # -- Chart
   chart: argo-cd
-  # argocd.targetRevision -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version
-  targetRevision: 3.35.*
-  # argocd.values -- Helm values
+  # -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version
+  targetRevision: 4.2.*
+  # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml)
   values: {}
 
-# certManager -- [cert-manager](https://cert-manager.io/)
+# -- [cert-manager](https://cert-manager.io/)
 # @default -- [example](./examples/cert-manager.yaml)
 certManager:
-  # certManager.enabled -- Enable cert-manager
+  # -- Enable cert-manager
   enabled: false
   name: certmgr
   destination:
-    # certManager.destination.namespace -- Namespace
+    # -- Namespace
     namespace: infra-certmanager
-  # certManager.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.jetstack.io)
   repoURL: https://charts.jetstack.io
-  # certManager.chart -- Chart
+  # -- Chart
   chart: cert-manager
-  # certManager.targetRevision -- [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version
+  # -- [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version
   targetRevision: 1.7.*
-  # certManager.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
 
 
-# certManagerIssuers -- [cert-manager-issuers](https://cert-manager.io/docs/configuration/)
+# -- [cert-manager-issuers](https://cert-manager.io/docs/configuration/)
 # @default -- [example](./examples/cert-manager-issuers.yaml)
 certManagerIssuers:
-  # certManagerIssuers.enabled -- Enable cert-manager-issuers
+  # -- Enable cert-manager-issuers
   enabled: false
   name: certmgr-issuers
   destination:
-    # certManagerIssuers.destination.namespace -- Namespace
+    # -- Namespace
     namespace: infra-certmanager
-  # certManagerIssuers.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.adfinis.com)
   repoURL: https://charts.adfinis.com
-  # certManagerIssuers.chart -- Chart
+  # -- Chart
   chart: cert-manager-issuers
-  # certManagerIssuers.targetRevision -- [cert-manager-issuers Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-issuers) version
+  # -- [cert-manager-issuers Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/cert-manager-issuers) version
   targetRevision: 0.2.*
-  # certManagerIssuers.values -- Helm values
-  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-issuers/values.yaml)
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/cert-manager-issuers/values.yaml)
   values: {}
 
 
-# certManagerMonitoring -- [cert-manager-monitoring](https://cert-manager.io/docs/configuration/)
+# -- [cert-manager-monitoring](https://cert-manager.io/docs/configuration/)
 # @default -- [example](./examples/cert-manager-monitoring.yaml)
 certManagerMonitoring:
-  # certManagerMonitoring.enabled -- Enable cert-manager-monitoring
+  # -- Enable cert-manager-monitoring
   enabled: false
   name: certmgr-monitoring
   destination:
-    # certManagerMonitoring.destination.namespace -- Namespace
+    # -- Namespace
     namespace: infra-certmanager
-  # certManagerMonitoring.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.adfinis.com)
   repoURL: https://charts.adfinis.com
-  # certManagerMonitoring.chart -- Chart
+  # -- Chart
   chart: cert-manager-monitoring
-  # certManagerMonitoring.targetRevision -- [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/cert-manager-monitoring) version
+  # -- [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/cert-manager-monitoring) version
   targetRevision: 0.1.*
-  # certManagerMonitoring.values -- Helm values
-  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/master/charts/cert-manager-monitoring/values.yaml)
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/cert-manager-monitoring/values.yaml)
   values: {}
 
 
-# ingressNginx -- [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
+# -- [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
 # @default -- [example](./examples/nginx-ingress.yaml)
 ingressNginx:
-  # ingressNginx.enabled -- Configure nginx-ingress
+  # -- Configure nginx-ingress
   enabled: false
   name: ingress
   destination:
-    # ingressNginx.destination.namespace -- Namespace
+    # -- Namespace
     namespace: infra-ingress
-  # ingressNginx.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://kubernetes.github.io/ingress-nginx)
   repoURL: https://kubernetes.github.io/ingress-nginx
-  # ingressNginx.chart -- Chart
+  # -- Chart
   chart: ingress-nginx
-  # ingressNginx.targetRevision -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version
+  # -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version
   targetRevision: 4.0.*
-  # ingressNginx.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml)
   values: {}
 
-# kubePrometheusStack -- [prometheus-operator](https://github.com/coreos/prometheus-operator)
+# -- [prometheus-operator](https://github.com/coreos/prometheus-operator)
 # @default -- [example](./examples/prometheus.yaml)
 kubePrometheusStack:
-  # kubePrometheusStack.enabled -- Enable prometheus-operator
+  # -- Enable prometheus-operator
   enabled: false
   name: monitoring
   destination:
-    # kubePrometheusStack.destination.namespace -- Namespace
+    # -- Namespace
     namespace: infra-monitoring
-  # kubePrometheusStack.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://prometheus-community.github.io/helm-charts)
   repoURL: https://prometheus-community.github.io/helm-charts
-  # kubePrometheusStack.chart -- Chart
+  # -- Chart
   chart: kube-prometheus-stack
-  # kubePrometheusStack.targetRevision -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: 33.2.*
-  # kubePrometheusStack.values -- Helm values
+  # -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
+  targetRevision: 34.0.*
+  # -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
   values: {}
 
-# rbacManager -- [rbac-manager](https://fairwindsops.github.io/rbac-manager/)
+# -- [rbac-manager](https://fairwindsops.github.io/rbac-manager/)
 # @default -- [example](./examples/rbac-manager.yaml)
 rbacManager:
-  # rbacManager.enabled -- Enable rbac-manager operator
+  # -- Enable rbac-manager operator
   enabled: false
   name: rbac-manager
   destination:
-    # rbacManager.destination.namespace -- Namespace
+    # -- Namespace
     namespace: infra-rbac
-  # rbacManager.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.fairwinds.com/stable)
   repoURL: https://charts.fairwinds.com/stable
-  # rbacManager.chart -- Chart
+  # -- Chart
   chart: rbac-manager
-  # rbacManager.targetRevision -- [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version
-  targetRevision: 1.10.*
-  # rbacManager.values -- Helm values
+  # -- [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version
+  targetRevision: 1.11.*
+  # -- Helm values
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml)
   values: {}
 
-# thanos -- [Thanos](https://thanos.io/)
+# -- [Thanos](https://thanos.io/)
 # @default -- [example](./examples/thanos.yaml)
 thanos:
-  # thanos.enabled -- Enable Thanos
+  # -- Enable Thanos
   enabled: false
   name: thanos
   destination:
-    # thanos.destination.namespace -- Namespace
+    # -- Namespace
     namespace: infra-monitoring
-  # thanos.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.bitnami.com/bitnami)
   repoURL: https://charts.bitnami.com/bitnami
-  # thanos.chart -- Chart
+  # -- Chart
   chart: thanos
-  # thanos.targetRevision -- [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos)
-  targetRevision: 9.0.*
-  # thanos.values -- Helm values
+  # -- [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos)
+  targetRevision: 10.1.*
+  # -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/thanos/values.yaml)
   values: {}
 
-# velero -- [Velero](https://velero.io/)
+# -- [Velero](https://velero.io/)
 # @default -- [example](./examples/velero.yaml)
 velero:
-  # velero.enabled -- Enable Velero
+  # -- Enable Velero
   enabled: false
   name: velero
   destination:
-    # velero.destination.namespace -- Namespace
+    # -- Namespace
     namespace: infra-velero
-  # velero.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://vmware-tanzu.github.io/helm-charts)
   repoURL: https://vmware-tanzu.github.io/helm-charts
-  # velero.chart -- Chart
+  # -- Chart
   chart: velero
-  # velero.targetRevision -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
+  # -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
   targetRevision: 2.28.*
-  # velero.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
   values: {}
 
-# kured -- [kured](https://github.com/weaveworks/kured)
+# -- [kured](https://github.com/weaveworks/kured)
 # @default -- [example](./examples/kured.yaml)
 kured:
-  # kured.enabled -- Enable Kured
+  # -- Enable Kured
   enabled: false
   name: kured
   destination:
-    # kured.destination.namespace -- Namespace
+    # -- Namespace
     namespace: infra-kured
-  # kured.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://weaveworks.github.io/kured)
   repoURL: https://weaveworks.github.io/kured
-  # kured.chart -- Chart
+  # -- Chart
   chart: kured
-  # kured.targetRevision -- [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured)
-  targetRevision: 2.11.*
-  # kured.values -- Helm values
+  # -- [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured)
+  targetRevision: 2.12.*
+  # -- Helm values
   # @default -- [upstream values](https://github.com/weaveworks/kured/blob/main/charts/kured/values.yaml)
   values: {}
 
-# kubeEventExporter -- [kubernetes-event-exporter](https://github.com/opsgenie/kubernetes-event-exporter)
+# -- [kubernetes-event-exporter](https://github.com/opsgenie/kubernetes-event-exporter)
 # @default -- [example](./examples/kubernetes-event-exporter.yaml)
 kubeEventExporter:
-  # kubeEventExporter.enabled -- Enable kubernetes-event-exporter
+  # -- Enable kubernetes-event-exporter
   enabled: false
   name: kube-event-exporter
   destination:
-    # kubeEventExporter.destination.namespace -- Namespace
+    # -- Namespace
     namespace: infra-kube-event-exporter
-  # kubeEventExporter.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.bitnami.com/bitnami)
   repoURL: https://charts.bitnami.com/bitnami
-  # kubeEventExporter.chart -- Chart
+  # -- Chart
   chart: kubernetes-event-exporter
-  # kubeEventExporter.targetRevision -- [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kubernetes-event-exporter)
+  # -- [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kubernetes-event-exporter)
   targetRevision: 1.4.*
-  # kubeEventExporter.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/kubernetes-event-exporter/values.yaml)
   values: {}

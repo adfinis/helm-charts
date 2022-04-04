@@ -1,0 +1,49 @@
+should match snapshot:
+  1: |
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      labels:
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: mopsos
+        app.kubernetes.io/version: v0.3.0
+        helm.sh/chart: mopsos-0.1.1
+      name: RELEASE-NAME-mopsos
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app.kubernetes.io/instance: RELEASE-NAME
+          app.kubernetes.io/name: mopsos
+      template:
+        metadata:
+          labels:
+            app.kubernetes.io/instance: RELEASE-NAME
+            app.kubernetes.io/name: mopsos
+        spec:
+          containers:
+          - envFrom:
+            - secretRef:
+                name: RELEASE-NAME-mopsos-secret
+            - configMapRef:
+                name: RELEASE-NAME-mopsos-config
+            image: ghcr.io/adfinis-sygroup/mopsos:v0.3.0
+            imagePullPolicy: IfNotPresent
+            livenessProbe:
+              httpGet:
+                path: /health
+                port: http
+            name: mopsos
+            ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+            readinessProbe:
+              httpGet:
+                path: /health
+                port: http
+            resources: {}
+            securityContext: {}
+          securityContext: {}
+          serviceAccountName: RELEASE-NAME-mopsos

@@ -4,7 +4,7 @@
 
 Argo CD app-of-apps config for Azure applications
 
-**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/azure-apps>
+**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/azure-apps>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).

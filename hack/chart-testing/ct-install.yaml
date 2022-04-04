@@ -5,7 +5,3 @@ chart-repos:
 excluded-charts:
   - common
   - argoconfig
-  # The huawei-csi-plugin is excluded from chart testing, because the way
-  # Huawei generates the secret using the secretGenerate binary is not
-  # compatible with Helm and because of that the installation will always fail
-  - huawei-csi-plugin

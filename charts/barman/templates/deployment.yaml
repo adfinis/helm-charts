@@ -61,6 +61,9 @@ spec:
             - mountPath: /etc/cron.d/barman
               name: barman-cron-config
               subPath: barman
+          {{- with .Values.deployment.additionalVolumeMounts }}
+            {{- toYaml . | nindent 12 }}
+          {{- end  }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
@@ -91,6 +94,9 @@ spec:
         - name: barman-cron-config
           configMap:
             name: {{ include "barman.fullname" . }}-cron-config
+      {{- with .Values.deployment.additionalVolumes }}
+        {{- toYaml . | nindent 8 }}
+      {{- end  }}
     {{- if .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml .Values.nodeSelector | nindent 8 }}

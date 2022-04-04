@@ -1,12 +1,12 @@
 image:
-  # image.repository -- Container image to deploy
+  # -- Container image to deploy
   repository: ubcctlt/barman
-  # image.pullPolicy -- When to pull the container image
+  # -- When to pull the container image
   pullPolicy: Always
-  # image.tag -- Overrides the image tag whose default is the chart version.
+  # -- Overrides the image tag whose default is the chart version.
   tag: ""
 
-# resources -- Resource limits and requests
+# -- Resource limits and requests
 resources:
   requests:
     cpu: 100m
@@ -16,116 +16,122 @@ resources:
 
 deployment:
   strategy:
-    # deployment.strategy.type -- Specify the strategy used to replace old Pods by new ones
+    # -- Specify the strategy used to replace old Pods by new ones
     type: RollingUpdate
+  # -- Specify additional VolumeMounts for the barman container
+  additionalVolumeMounts: []
+  # -- Specify additional Volumes for the deployment
+  additionalVolumes: []
 
 persistence:
   data:
-    # persistence.data.enabled -- Enable persistent storage for backup data
+    # -- Enable persistent storage for backup data
     enabled: true
-    # persistence.data.accessMode -- Access mode for persistent storage
+    # -- Access mode for persistent storage
     accessMode: ReadWriteOnce
-    # persistence.data.size -- Size of storage volume
+    # -- Size of storage volume
     size: 20Gi
-    # persistence.data.storageClass -- Storage class
+    # -- Storage class
     storageClass: ""
   recover:
-    # persistence.recover.enabled -- Enable persistent storage for recovery
+    # -- Enable persistent storage for recovery
     enabled: false
-    # persistence.recover.accessMode -- Access mode for persistent storage
+    # -- Access mode for persistent storage
     accessMode: ReadWriteOnce
-    # persistence.recover.size -- Size of storage volume
+    # -- Size of storage volume
     size: 4Gi
-    # persistence.recover.storageClass -- Storage class
+    # -- Storage class
     storageClass: ""
 
 rbac:
-  # rbac.create -- Whether to create RBAC or not
+  # -- Whether to create RBAC or not
   create: false
 
 secret:
-  # secret.create -- Whether to create and manage the barman-pgpass-secret
+  # -- Whether to create and manage the barman-pgpass-secret
   create: true
 
 barman:
-  # barman.backupMethod -- Barman backup method
+  # -- Barman backup method
   backupMethod: postgres
-  # barman.backupOptions -- Barman backup options
+  # -- Barman backup options
   backupOptions: concurrent_backup
-  # barman.backupDir -- Barman home directory
+  # -- Barman home directory
   backupDir: /var/lib/barman
-  # barman.barmanUser -- Barman user
+  # -- Barman user
   barmanUser: barman
-  # barman.compression -- Barman backup compression
+  # -- Barman backup compression
   compression: gzip
-  # barman.retentionPolicy -- Barman retention policy
+  # -- Barman retention policy
   retentionPolicy: "RECOVERY WINDOW of 1 MONTH"
-  # barman.lastBackupMaximumAge -- Barman last backup maximum age
+  # -- Barman last backup maximum age
   lastBackupMaximumAge: "1 day"
-  # barman.backupSchedule -- Barman backup schedule
+  # -- Barman backup schedule
   backupSchedule: "0 4 * * *"
-  # barman.databaseSlotName -- Database slot name to be created/used
+  # -- Database slot name to be created/used
   databaseSlotName: barman
 
   backups:
-      # barman.backups[0].retentionPolicy -- Barman retention policy
+      # -- Barman retention policy
     - retentionPolicy: "RECOVERY WINDOW of 1 MONTH"
-      # barman.backups[0].backupMethod -- Barman backup method
+      # -- Barman backup method
       backupMethod: postgres
-      # barman.backups[0].databaseSlotName -- Database slot name to be created/used
+      # -- Database slot name to be created/used
       databaseSlotName: barman
-      # barman.backups[0].lastBackupMaximumAge -- Barman last backup maximum age
+      # -- Barman last backup maximum age
       lastBackupMaximumAge: "1 day"
+      # -- Barman additional Parameters for configuration File
+      additionalConfiguration: ""
       postgresql:
-        # barman.backups[0].postgresql.host -- Postgresql host
+        # -- Postgresql host
         host: postgresql
-        # barman.backups[0].postgresql.port -- Postgresql port
+        # -- Postgresql port
         port: 5432
-        # barman.backups[0].postgresql.superUser -- Postgresql super user
+        # -- Postgresql super user
         superUser: postgres
-        # barman.backups[0].postgresql.superUserPassword -- Postgresql super user password
+        # -- Postgresql super user password
         superUserPassword: postgres
-        # barman.backups[0].postgresql.superUserDatabase -- Postgresql super user database
+        # -- Postgresql super user database
         superUserDatabase: postgres
-        # barman.backups[0].postgresql.replicationUser -- Postgresql replication user
+        # -- Postgresql replication user
         replicationUser: barman
-        # barman.backups[0].postgresql.replicationPassword -- Postgresql replication password
+        # -- Postgresql replication password
         replicationPassword: barman
-      # barman.backups[0].namespace -- namespace where postgresql is deployed
+      # -- namespace where postgresql is deployed
       ## not active when barman.createRbac is false
       namespace: postgresql
-      # barman.backups[0].serviceaccount -- service account of the postgresql deployment
+      # -- service account of the postgresql deployment
       ## not active when barman.createRbac is false
       serviceaccount: postgresql
 
 
 prometheus:
-  # prometheus.enabled -- Enable Prometheus integration
+  # -- Enable Prometheus integration
   enabled: true
   service:
-    # prometheus.service.name -- Prometheus exporter service name
+    # -- Prometheus exporter service name
     name: barman-exporter
-    # prometheus.service.internalPort -- Prometheus exporter service internal port
+    # -- Prometheus exporter service internal port
     internalPort: 9780
-    # prometheus.service.externalPort -- Prometheus exporter service external port
+    # -- Prometheus exporter service external port
     externalPort: 9780
-    # prometheus.service.type -- Prometheus exporter service type
+    # -- Prometheus exporter service type
     type: ClusterIP
   serviceMonitor:
-    # prometheus.serviceMonitor.extraLabels -- Labels to add to service monitor
+    # -- Labels to add to service monitor
     extraLabels: {}
-    # prometheus.serviceMonitor.interval -- Interval at which metrics should be scraped
+    # -- Interval at which metrics should be scraped
     interval: "30s"
-    # prometheus.serviceMonitor.metricRelabelings -- MetricRelabelConfigs to apply to samples before ingestion
+    # -- MetricRelabelConfigs to apply to samples before ingestion
     metricRelabelings: []
-    # prometheus.serviceMonitor.relabelings -- RelabelConfigs to apply to samples before scraping
+    # -- RelabelConfigs to apply to samples before scraping
     relabelings: []
   rules:
-    # prometheus.rules.enabled -- Enable Alertmanager rules
+    # -- Enable Alertmanager rules
     enabled: false
-    # prometheus.rules.selector -- Selector labels for Alertmanager rules
+    # -- Selector labels for Alertmanager rules
     selector: []
-    # prometheus.rules.additionalLabels -- Additional labels for Alertmanager rules
+    # -- Additional labels for Alertmanager rules
     additionalLabels: []
-    # prometheus.rules.spec -- Array of Alertmanager rules
+    # -- Array of Alertmanager rules
     spec: []

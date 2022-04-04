@@ -2,7 +2,7 @@ apiVersion: v2
 name: rbac-definitions
 description: Deploy rbac-manager RBACDefinitions via Helm
 type: application
-version: 0.1.0
+version: 0.1.1
 # matches apiVersion: rbacmanager.reactiveops.io/v1beta1
 appVersion: "1beta1"
 keywords:
