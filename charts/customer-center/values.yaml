@@ -2,24 +2,24 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 frontend:
-  # frontend.replicaCount -- (int) Number of Backend replicas
+  # -- (int) Number of Backend replicas
   replicaCount: 1
   image:
-    # frontend.image.repository -- Frontend image name
+    # -- Frontend image name
     repository: ghcr.io/adfinis-sygroup/customer-center/frontend
     # Specify a tag to override which version of customer-center to deploy.
     # If no tag is specified the appVersion from Chart.yaml is used as tag.
     # tag:
-    # frontend.image.pullPolicy -- Frontend image pull policy
+    # -- Frontend image pull policy
     pullPolicy: IfNotPresent
   service:
-    # frontend.service.type -- Frontend service type
+    # -- Frontend service type
     type: ClusterIP
-    # frontend.service.externalPort -- External Port of frontend service
+    # -- External Port of frontend service
     externalPort: 80
-    # frontend.service.internalPort -- Internal Port of frontend service
+    # -- Internal Port of frontend service
     internalPort: 80
-  # frontend.resources -- Resource limits for frontend
+  # -- Resource limits for frontend
   resources: {}
     # We usually recommend not to specify default resources and to leave this as a conscious
     # choice for the user. This also increases chances charts run on environments with little
@@ -31,48 +31,48 @@ frontend:
     # requests:
     #  cpu: 100m
     #  memory: 128Mi
-  # frontend.livenessProbe -- Liveness probe configuration
+  # -- Liveness probe configuration
   livenessProbe:
-    # frontend.livenessProbe.enabled -- Enable liveness probe on frontend
+    # -- Enable liveness probe on frontend
     enabled: true
-    # frontend.livenessProbe.initialDelaySeconds -- Number of seconds after the container has started before liveness probe is initiated
+    # -- Number of seconds after the container has started before liveness probe is initiated
     initialDelaySeconds: 60
-    # frontend.livenessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    # -- How often (in seconds) to perform the probe
     periodSeconds: 10
-    # frontend.livenessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    # -- Number of seconds after which the probe times out
     timeoutSeconds: 5
-    # frontend.livenessProbe.failureThreshold -- Number of tries to perform the probe
+    # -- Number of tries to perform the probe
     failureThreshold: 6
-    # frontend.livenessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    # -- Minimum consecutive successes for the probe to be considered successful after having failed
     successThreshold: 1
-  # frontend.readinessProbe -- Readiness probe configuration
+  # -- Readiness probe configuration
   readinessProbe:
-    # frontend.readinessProbe.enabled -- Enable readiness probe on frontend
+    # -- Enable readiness probe on frontend
     enabled: true
-    # frontend.readinessProbe.initialDelaySeconds -- Number of seconds after the container has started before readiness probe is initiated
+    # -- Number of seconds after the container has started before readiness probe is initiated
     initialDelaySeconds: 30
-    # frontend.readinessProbe.periodSeconds -- How often (in seconds) to perform the probe
+    # -- How often (in seconds) to perform the probe
     periodSeconds: 10
-    # frontend.readinessProbe.timeoutSeconds -- Number of seconds after which the probe times out
+    # -- Number of seconds after which the probe times out
     timeoutSeconds: 5
-    # frontend.readinessProbe.failureThreshold -- Number of tries to perform the probe
+    # -- Number of tries to perform the probe
     failureThreshold: 6
-    # frontend.readinessProbe.successThreshold -- Minimum consecutive successes for the probe to be considered successful after having failed
+    # -- Minimum consecutive successes for the probe to be considered successful after having failed
     successThreshold: 1
 
 ingress:
-  # ingress.enabled -- Enable ingress for customer-center
+  # -- Enable ingress for customer-center
   enabled: true
-  # ingress.annotations -- Ingress annotations
+  # -- Ingress annotations
   annotations: {}
     # cert-manager.io/cluster-issuer: letsencrypt-prod
-  # ingress.hosts -- Ingress hostnames
+  # -- Ingress hostnames
   hosts: ["my.example.com"]
-  # ingress.tls -- Ingress TLS options
+  # -- Ingress TLS options
   tls:
     - secretName: customer-center-tls
       hosts:
         - my.example.com
 auth:
-  # auth.oidcClient -- Configure oidc client for customer-center frontend
+  # -- Configure oidc client for customer-center frontend
   oidcClient: cc

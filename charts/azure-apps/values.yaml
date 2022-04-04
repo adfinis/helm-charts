@@ -1,59 +1,59 @@
-# azureKvCsiProvider -- [secrets-store-csi-driver-provider-azure](https://github.com/Azure/secrets-store-csi-driver-provider-azure) ([example](./examples/secrets-store-csi-driver-provider-azure.yaml))
+# -- [secrets-store-csi-driver-provider-azure](https://github.com/Azure/secrets-store-csi-driver-provider-azure) ([example](./examples/secrets-store-csi-driver-provider-azure.yaml))
 # @default -- -
 azureKvCsiProvider:
-  # azureKvCsiProvider.enabled -- Enable secrets-store-csi-driver-provider-azure
+  # -- Enable secrets-store-csi-driver-provider-azure
   enabled: false
   name: azure-kv-csi-provider
   destination:
-    # azureKvCsiProvider.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "kube-system"
-  # azureKvCsiProvider.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/charts)
   repoURL: "https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/charts"
-  # azureKvCsiProvider.chart -- Chart
+  # -- Chart
   chart: "csi-secrets-store-provider-azure"
-  # azureKvCsiProvider.targetRevision -- [vault-csi-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version
+  # -- [vault-csi-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version
   targetRevision: "1.0.*"
-  # azureKvCsiProvider.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/charts/csi-secrets-store-provider-azure/values.yaml)
   values: {}
 
-# promitorScraper -- [promitor](https://promitor.io/) scraper ([example](./examples/promitor.yaml))
+# -- [promitor](https://promitor.io/) scraper ([example](./examples/promitor.yaml))
 # @default -- -
 promitorScraper:
-  # promitorScraper.enabled -- Enable promitor scraper
+  # -- Enable promitor scraper
   enabled: false
   name: promitor-scraper
   destination:
-    # promitorScraper.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-promitor"
-  # promitorScraper.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.promitor.io)
   repoURL: "https://charts.promitor.io"
-  # promitorScraper.chart -- Chart
+  # -- Chart
   chart: "promitor-agent-scraper"
-  # promitorScraper.targetRevision -- [promitor-agent-scraper Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-scraper) version
+  # -- [promitor-agent-scraper Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-scraper) version
   targetRevision: "2.7.*"
-  # promitorScraper.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/promitor/charts/blob/main/promitor-agent-scraper/values.yaml)
   values: {}
 
-# promitorResourceDiscovery -- [promitor](https://promitor.io/) resource discovery ([example](./examples/promitor.yaml))
+# -- [promitor](https://promitor.io/) resource discovery ([example](./examples/promitor.yaml))
 # @default -- -
 promitorResourceDiscovery:
-  # promitorResourceDiscovery.enabled -- Enable promitor resource discovery
+  # -- Enable promitor resource discovery
   enabled: false
   name: promitor-resource-discovery
   destination:
-    # promitorResourceDiscovery.destination.namespace -- Namespace
+    # -- Namespace
     namespace: "infra-promitor"
-  # promitorResourceDiscovery.repoURL -- Repo URL
+  # -- Repo URL
   # @default -- [repo](https://charts.promitor.io)
   repoURL: "https://charts.promitor.io"
-  # promitorResourceDiscovery.chart -- Chart
+  # -- Chart
   chart: "promitor-agent-resource-discovery"
-  # promitorResourceDiscovery.targetRevision -- [promitor-agent-resource-discovery Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-resource-discovery) version
+  # -- [promitor-agent-resource-discovery Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-resource-discovery) version
   targetRevision: "0.7.*"
-  # promitorResourceDiscovery.values -- Helm values
+  # -- Helm values
   # @default -- [upstream values](https://github.com/promitor/charts/blob/main/promitor-agent-resource-discovery/values.yaml)
   values: {}

@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.8.3](https://img.shields.io/badge/Version-0.8.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.5](https://img.shields.io/badge/AppVersion-v1.4.5-informational?style=flat-square)
+![Version: 0.8.4](https://img.shields.io/badge/Version-0.8.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.5](https://img.shields.io/badge/AppVersion-v1.4.5-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -13,7 +13,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 * <https://github.com/adfinis-sygroup/timed-backend>
 * <https://github.com/adfinis-sygroup/timed-frontend>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/timed>
+* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/timed>
 
 ## Requirements
 
@@ -42,7 +42,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | auth.oidc.introspect.enabled | bool | `true` | Enable OIDC introspect |
 | auth.oidc.introspect.endpoint | string | `nil` | OIDC introspect endpoint |
 | auth.oidc.signAlgorithm | string | `"RS256"` | Algorithm the OIDC provider uses to sign ID tokens |
-| auth.oidc.url | string | `"https://example.com/auth/realms/timed/protocol/openid-connect"` |  |
+| auth.oidc.url | string | `"https://example.com/auth/realms/timed/protocol/openid-connect"` | OIDC host |
 | auth.oidc.verifySSL | string | `"True"` | OIDC verify SSL |
 | backend.cronjobs.notifyChangedEmployments | object | `{"command":["./manage.py","notify_changed_employments"],"schedule":"0 2 * * 1"}` | Notify changed employments |
 | backend.cronjobs.notifyReviewersFirst | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","5"],"schedule":"0 8 4 * *"}` | Notify reviewers first stage |
@@ -121,6 +121,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingress.tls | list | `[]` | Ingress TLS options |
 | kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
+| postgresql.image | object | `{"tag":"12.3.0"}` | Set a password for PostgreSQL postgresqlPassword: s3cr3t |
 | postgresql.image.tag | string | `"12.3.0"` | PostgreSQL image version to use |
 | postgresql.ingress.enabled | bool | `false` | Enable ingress |
 | postgresql.ingress.loadBalancerSourceRanges | list | `[]` | Whitelist specific IP ranges |

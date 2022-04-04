@@ -1,9 +1,0 @@
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: {{ include "huawei-csi-plugin.fullname" . }}-configmap
-  labels:
-    {{- include "huawei-csi-plugin.labels" . | nindent 4 }}
-data:
-  csi.json: |
-    {{ .Values.csiconfig | mustToJson }}

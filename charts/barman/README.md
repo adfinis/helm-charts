@@ -1,6 +1,6 @@
 # barman
 
-![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.17](https://img.shields.io/badge/AppVersion-v2.17-informational?style=flat-square)
+![Version: 0.6.1](https://img.shields.io/badge/Version-0.6.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.17](https://img.shields.io/badge/AppVersion-v2.17-informational?style=flat-square)
 
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
@@ -13,7 +13,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 * <https://github.com/2ndquadrant-it/barman>
 * <https://github.com/ubc/barman-docker>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/barman>
+* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/barman>
 
 ## Values
 
@@ -23,6 +23,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.backupMethod | string | `"postgres"` | Barman backup method |
 | barman.backupOptions | string | `"concurrent_backup"` | Barman backup options |
 | barman.backupSchedule | string | `"0 4 * * *"` | Barman backup schedule |
+| barman.backups[0] | object | `{"additionalConfiguration":"","backupMethod":"postgres","databaseSlotName":"barman","lastBackupMaximumAge":"1 day","namespace":"postgresql","postgresql":{"host":"postgresql","port":5432,"replicationPassword":"barman","replicationUser":"barman","superUser":"postgres","superUserDatabase":"postgres","superUserPassword":"postgres"},"retentionPolicy":"RECOVERY WINDOW of 1 MONTH","serviceaccount":"postgresql"}` | Barman retention policy |
 | barman.backups[0].additionalConfiguration | string | `""` | Barman additional Parameters for configuration File |
 | barman.backups[0].backupMethod | string | `"postgres"` | Barman backup method |
 | barman.backups[0].databaseSlotName | string | `"barman"` | Database slot name to be created/used |
@@ -35,7 +36,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.backups[0].postgresql.superUser | string | `"postgres"` | Postgresql super user |
 | barman.backups[0].postgresql.superUserDatabase | string | `"postgres"` | Postgresql super user database |
 | barman.backups[0].postgresql.superUserPassword | string | `"postgres"` | Postgresql super user password |
-| barman.backups[0].retentionPolicy | string | `"RECOVERY WINDOW of 1 MONTH"` | Barman retention policy |
 | barman.backups[0].serviceaccount | string | `"postgresql"` | service account of the postgresql deployment |
 | barman.barmanUser | string | `"barman"` | Barman user |
 | barman.compression | string | `"gzip"` | Barman backup compression |

@@ -1,17 +1,17 @@
-# provider -- specify secret provider
+# -- specify secret provider
 provider: ~
 
-# parameters -- parameters for provider
+# -- parameters for provider
 parameters: {}
 
-# parametersTpl -- template to generate parameters
+# -- template to generate parameters
 # @default -- raw values from `parameters`
 parametersTpl: "{{ .Values.parameters | toYaml }}"
 
-# secretObjects -- secretObjects for for SecretProviderClass
+# -- secretObjects for for SecretProviderClass
 secretObjects: []
 
-# secretObjectsTpl -- template to generate secretObjects
+# -- template to generate secretObjects
 # @default -- raw values from `secretObjects`
 secretObjectsTpl: "{{ .Values.secretObjects | toYaml }}"
 
@@ -19,22 +19,22 @@ secretObjectsTpl: "{{ .Values.secretObjects | toYaml }}"
 # DISCLAIMER: DO NOT USE THIS unless as last resort.
 # Always try to use extraVolume Bindings inside your already existing Chart or application to make csi-secret-store manage the secret. And if there aren't any possibilities to mount additional volumes in your chart, try and create a pull-request upstream adding the feature to the chart.
 dummyDeployment:
-  # dummyDeployment.enabled -- enable the dummy deployment
+  # -- enable the dummy deployment
   enabled: false
   image:
-    # dummyDeployment.image.repository -- Container image to deploy
+    # -- Container image to deploy
     repository: k8s.gcr.io/pause
-    # dummyDeployment.image.tag -- sets the image tag to use
+    # -- sets the image tag to use
     tag: 3.4.1
-    # dummyDeployment.image.pullPolicy -- When to pull the container image
+    # -- When to pull the container image
     pullPolicy: IfNotPresent
-  # dummyDeployment.podAnnotations -- sets Pod annotations on the deployment
+  # -- sets Pod annotations on the deployment
   podAnnotations: {}
-  # dummyDeployment.nodeSelector -- sets a nodeSelector on the  deployment
+  # -- sets a nodeSelector on the  deployment
   nodeSelector: {}
-  # dummyDeployment.affinity -- sets affinity rules on the  deployment
+  # -- sets affinity rules on the  deployment
   affinity: {}
-  # dummyDeployment.tolerations -- sets tolerations on the  deployment
+  # -- sets tolerations on the  deployment
   tolerations: []
-  # dummyDeployment.resources -- sets resources like limits and requests on the  deployment
+  # -- sets resources like limits and requests on the  deployment
   resources: {}
