@@ -2,8 +2,8 @@ apiVersion: v2
 name: barman
 type: application
 description: Chart for Barman PostgreSQL Backup and Recovery Manager
-version: 0.6.1
-appVersion: "v2.17"
+version: 0.7.0
+appVersion: "v2.19"
 keywords:
   - barman
   - postgresql
