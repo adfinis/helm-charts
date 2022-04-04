@@ -8,7 +8,7 @@ should create one selfsigned clusterissuer:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.3
+        helm.sh/chart: cert-manager-issuers-0.2.4
       name: cert-manager-issuers
     spec:
       selfSigned: {}
@@ -22,7 +22,7 @@ should create two letsencrypt clusterissuers:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.3
+        helm.sh/chart: cert-manager-issuers-0.2.4
       name: letsencrypt-prod
     spec:
       acme:
@@ -43,7 +43,7 @@ should create two letsencrypt clusterissuers:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.3
+        helm.sh/chart: cert-manager-issuers-0.2.4
       name: letsencrypt-staging
     spec:
       acme:
@@ -65,7 +65,7 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.3
+        helm.sh/chart: cert-manager-issuers-0.2.4
       name: cert-manager-issuers
     spec:
       selfSigned: {}
@@ -78,7 +78,7 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.3
+        helm.sh/chart: cert-manager-issuers-0.2.4
       name: top-level-name-syntax-sugar
     spec:
       selfSigned: {}
@@ -93,7 +93,7 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.3
+        helm.sh/chart: cert-manager-issuers-0.2.4
       name: top-level-name-and-metadata
     spec:
       selfSigned: {}
