@@ -2,7 +2,7 @@ apiVersion: v2
 name: backup-apps
 description: Argo CD app-of-apps config for backup components
 type: application
-version: 0.2.1
+version: 0.2.2
 home: https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/backup-apps
 sources:
   - https://github.com/adfinis-sygroup/helm-charts
@@ -12,5 +12,5 @@ maintainers:
     url: https://adfinis.com
 dependencies:
   - name: argoconfig
-    version: 0.7.4
+    version: 0.7.6
     repository: https://charts.adfinis.com
