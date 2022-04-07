@@ -6,8 +6,10 @@ metadata:
     {{- include "barman.labels" . | nindent 4 }}
 data:
   barman: |
-      * * * * * barman /usr/local/bin/barman receive-wal --create-slot pg; /usr/local/bin/barman cron
       {{- range .Values.barman.backups }}
+      {{- if .createDatabaseSlot }}
+      * * * * * barman /usr/local/bin/barman receive-wal --create-slot {{ .postgresql.host }}; /usr/local/bin/barman cron
+      {{- end }}
       {{- if hasKey . "backupSchedule" }}
       {{ .backupSchedule }} barman /usr/local/bin/barman backup {{ .postgresql.host }}
       {{- else }}
