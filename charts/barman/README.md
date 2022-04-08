@@ -46,6 +46,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.retentionPolicy | string | `"RECOVERY WINDOW of 1 MONTH"` | Barman retention policy |
 | deployment.additionalVolumeMounts | list | `[]` | Specify additional VolumeMounts for the barman container |
 | deployment.additionalVolumes | list | `[]` | Specify additional Volumes for the deployment |
+| deployment.annotations | object | `{}` | Specify deployment annotations |
+| deployment.podAnnotations | object | `{}` | Specify pod annotations |
 | deployment.strategy.type | string | `"RollingUpdate"` | Specify the strategy used to replace old Pods by new ones |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
 | image.repository | string | `"ubcctlt/barman"` | Container image to deploy |

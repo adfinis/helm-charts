@@ -4,6 +4,9 @@ metadata:
   name: {{ include "barman.fullname" . }}
   labels:
     {{- include "barman.labels" . | nindent 4 }}
+  {{- with .Values.deployment.annotations }}
+  annotations: {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   replicas: 1
   selector:
@@ -13,6 +16,9 @@ spec:
     type: {{ .Values.deployment.strategy.type | quote }}
   template:
     metadata:
+      {{- with .Values.deployment.podAnnotations }}
+      annotations: {{- toYaml . | nindent 8 }}
+      {{- end }}
       labels:
         {{- include "barman.labels" . | nindent 8 }}
     spec:

@@ -22,6 +22,10 @@ deployment:
   additionalVolumeMounts: []
   # -- Specify additional Volumes for the deployment
   additionalVolumes: []
+  # -- Specify deployment annotations
+  annotations: {}
+  # -- Specify pod annotations
+  podAnnotations: {}
 
 persistence:
   data:
