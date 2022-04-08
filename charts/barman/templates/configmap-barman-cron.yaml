@@ -7,8 +7,14 @@ metadata:
 data:
   barman: |
       {{- range .Values.barman.backups }}
+      {{- if hasKey . "createDatabaseSlot" }}
       {{- if .createDatabaseSlot }}
       * * * * * barman /usr/local/bin/barman receive-wal --create-slot {{ .postgresql.host }}; /usr/local/bin/barman cron
+      {{- end }}
+      {{- else }}
+      {{- if $.Values.barman.createDatabaseSlot }}
+      * * * * * barman /usr/local/bin/barman receive-wal --create-slot {{ .postgresql.host }}; /usr/local/bin/barman cron
+      {{- end }}
       {{- end }}
       {{- if hasKey . "backupSchedule" }}
       {{ .backupSchedule }} barman /usr/local/bin/barman backup {{ .postgresql.host }}
