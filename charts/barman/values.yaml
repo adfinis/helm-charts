@@ -22,6 +22,10 @@ deployment:
   additionalVolumeMounts: []
   # -- Specify additional Volumes for the deployment
   additionalVolumes: []
+  # -- Specify deployment annotations
+  annotations: {}
+  # -- Specify pod annotations
+  podAnnotations: {}
 
 persistence:
   data:
@@ -70,6 +74,8 @@ barman:
   backupSchedule: "0 4 * * *"
   # -- Database slot name to be created/used
   databaseSlotName: barman
+  # -- Create Database slot
+  createDatabaseSlot: true
 
   backups:
       # -- Barman retention policy
@@ -78,6 +84,8 @@ barman:
       backupMethod: postgres
       # -- Database slot name to be created/used
       databaseSlotName: barman
+      # -- Create Database slot
+      createDatabaseSlot: true
       # -- Barman last backup maximum age
       lastBackupMaximumAge: "1 day"
       # -- Barman additional Parameters for configuration File
