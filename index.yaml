@@ -1255,6 +1255,29 @@ entries:
   barman:
   - apiVersion: v2
     appVersion: v2.19
+    created: "2022-04-11T05:15:57.520947541Z"
+    description: Chart for Barman PostgreSQL Backup and Recovery Manager
+    digest: b691470b6139c03117c8f98925cb255f7945e54ec27faec67046cc69facd020a
+    home: http://www.pgbarman.org/
+    keywords:
+    - barman
+    - postgresql
+    - postgres
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: barman
+    sources:
+    - https://github.com/2ndquadrant-it/barman
+    - https://github.com/ubc/barman-docker
+    - https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/barman
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/barman-0.7.1/barman-0.7.1.tgz
+    version: 0.7.1
+  - apiVersion: v2
+    appVersion: v2.19
     created: "2022-04-04T11:38:10.61687965Z"
     description: Chart for Barman PostgreSQL Backup and Recovery Manager
     digest: 2882e5b7b00b4401239fb71920a4ad473b7e25a5070f3c5e304446613e664671
@@ -11804,4 +11827,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-06T10:44:52.994556067Z"
+generated: "2022-04-11T05:15:57.525641597Z"
