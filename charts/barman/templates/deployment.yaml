@@ -22,7 +22,13 @@ spec:
       labels:
         {{- include "barman.labels" . | nindent 8 }}
     spec:
+    {{- with .Values.deployment.imagePullSecrets }}
+      imagePullSecrets: {{- toYaml . | nindent 8 }}
+    {{- end }}
       containers:
+        {{- with .Values.deployment.sidecars }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
         - name: barman
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}

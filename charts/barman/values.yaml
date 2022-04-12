@@ -26,6 +26,10 @@ deployment:
   annotations: {}
   # -- Specify pod annotations
   podAnnotations: {}
+  # -- Specify sidecars for the deployment
+  sidecars: {}
+  # -- Specify imagePullSecrets for the deployment
+  imagePullSecrets: []
 
 persistence:
   data:
