@@ -47,9 +47,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | deployment.additionalVolumeMounts | list | `[]` | Specify additional VolumeMounts for the barman container |
 | deployment.additionalVolumes | list | `[]` | Specify additional Volumes for the deployment |
 | deployment.annotations | object | `{}` | Specify deployment annotations |
+| deployment.extraContainers | object | `{}` | Specify sidecars for the deployment |
 | deployment.imagePullSecrets | list | `[]` | Specify imagePullSecrets for the deployment |
 | deployment.podAnnotations | object | `{}` | Specify pod annotations |
-| deployment.sidecars | object | `{}` | Specify sidecars for the deployment |
 | deployment.strategy.type | string | `"RollingUpdate"` | Specify the strategy used to replace old Pods by new ones |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
 | image.repository | string | `"ubcctlt/barman"` | Container image to deploy |
@@ -78,6 +78,15 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rbac.create | bool | `false` | Whether to create RBAC or not |
 | resources | object | `{"limits":{"memory":"256Mi"},"requests":{"cpu":"100m","memory":"128Mi"}}` | Resource limits and requests |
 | secret.create | bool | `true` | Whether to create and manage the barman-pgpass-secret |
+| service.annotations | object | `{}` | Service annotations |
+| service.clusterIP | string | `nil` | Only for type ClusterIP |
+| service.create | bool | `false` | Specify if a Service should be created |
+| service.loadBalancerIP | string | `nil` |  |
+| service.ports[0] | object | `{"name":"http","port":80,"protocol":"TCP","targetPort":"http"}` | specify targetPort |
+| service.ports[0].name | string | `"http"` | specify port Name |
+| service.ports[0].port | int | `80` | specify port |
+| service.ports[0].protocol | string | `"TCP"` | specify port protocol |
+| service.type | string | `"ClusterIP"` | Type of service |
 
 ## About this chart
 

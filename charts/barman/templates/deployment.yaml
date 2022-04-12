@@ -26,7 +26,7 @@ spec:
       imagePullSecrets: {{- toYaml . | nindent 8 }}
     {{- end }}
       containers:
-        {{- with .Values.deployment.sidecars }}
+        {{- with .Values.deployment.extraContainers }}
           {{- toYaml . | nindent 8 }}
         {{- end }}
         - name: barman
