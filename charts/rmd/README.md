@@ -1,6 +1,6 @@
 # rmd
 
-![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
+![Version: 0.2.2](https://img.shields.io/badge/Version-0.2.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
 
 Chart for Rmd.io application
 
@@ -39,6 +39,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rmd.cronjobs.sendMails.command[0] | string | `"app/manage.py"` |  |
 | rmd.cronjobs.sendMails.command[1] | string | `"sendmail"` |  |
 | rmd.cronjobs.sendMails.schedule | string | `"10 * * * *"` | when to send mails |
+| rmd.existingSecret | string | `""` | Use an existing secret of creating one with this chart |
 | rmd.image.pullPolicy | string | `"IfNotPresent"` | Rmd image pull policy |
 | rmd.image.repository | string | `"adfinissygroup/rmd"` | Rmd image name |
 | rmd.image.tag | string | appVersion from Chart.yaml | Specify a tag to override which version of rmd to deploy. |
