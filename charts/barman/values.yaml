@@ -26,6 +26,31 @@ deployment:
   annotations: {}
   # -- Specify pod annotations
   podAnnotations: {}
+  # -- Specify sidecars for the deployment
+  extraContainers: {}
+  # -- Specify imagePullSecrets for the deployment
+  imagePullSecrets: []
+
+service:
+  # -- Specify if a Service should be created
+  create: false
+  # -- Type of service
+  type: ClusterIP
+  # -- Service annotations
+  annotations: {}
+  ports:
+      # -- specify targetPort
+    - targetPort: http
+      # -- specify port protocol
+      protocol: TCP
+      # -- specify port Name
+      name: http
+      # -- specify port
+      port: 80
+  # -- Only for type ClusterIP
+  clusterIP: ~
+  ## -- Only for type LoadBalancer
+  loadBalancerIP: ~
 
 persistence:
   data:
