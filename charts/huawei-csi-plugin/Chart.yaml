@@ -1,0 +1,17 @@
+apiVersion: v2
+appVersion: v2.2.15
+deprecated: true
+description: ⚠️ (OBSOLETE) request for upstream chart is https://github.com/Huawei/eSDK_K8S_Plugin/issues/16
+home: https://github.com/Huawei/eSDK_K8S_Plugin
+name: huawei-csi-plugin
+sources:
+- https://github.com/Huawei/eSDK_K8S_Plugin
+- https://github.com/adfinis-sygroup/huawei-csi-plugin
+- https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/huawei-csi-plugin
+type: application
+version: 0.3.3
+annotations:
+  artifacthub.io/images: |
+    - name: csi-attacher
+      repo: quay.io/k8scsi/csi-attacher:v1.2.1
+      whitelisted: true
