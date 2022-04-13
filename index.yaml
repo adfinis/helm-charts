@@ -3172,6 +3172,27 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/customer-center-0.1.0/customer-center-0.1.0.tgz
     version: 0.1.0
   huawei-csi-plugin:
+  - annotations:
+      artifacthub.io/images: |
+        - name: csi-attacher
+          repo: quay.io/k8scsi/csi-attacher:v1.2.1
+          whitelisted: true
+    apiVersion: v2
+    appVersion: v2.2.15
+    created: "2022-04-13T08:41:43.896679285Z"
+    deprecated: true
+    description: ⚠️ (OBSOLETE) request for upstream chart is https://github.com/Huawei/eSDK_K8S_Plugin/issues/16
+    digest: 404288260686c3d4438a5de4cbe551fe697a2a0fb6a721766f2ab157259362e0
+    home: https://github.com/Huawei/eSDK_K8S_Plugin
+    name: huawei-csi-plugin
+    sources:
+    - https://github.com/Huawei/eSDK_K8S_Plugin
+    - https://github.com/adfinis-sygroup/huawei-csi-plugin
+    - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/huawei-csi-plugin
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/huawei-csi-plugin-0.3.3/huawei-csi-plugin-0.3.3.tgz
+    version: 0.3.3
   - apiVersion: v2
     appVersion: v2.2.14
     created: "2022-01-12T07:18:22.821963044Z"
@@ -11915,4 +11936,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-13T06:44:46.171312247Z"
+generated: "2022-04-13T08:41:43.904031246Z"
