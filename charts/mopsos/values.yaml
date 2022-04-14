@@ -164,6 +164,6 @@ grafana:
           url: ~
           database: mopsos
           user: mopsos_ro
-          password: $POSTRESQL_RO_PASSWORD
+          password: $POSTGRESQL_RO_PASSWORD
   # -- Load mopsos secrets into grafana env
   envFromSecret: mopsos-secret
