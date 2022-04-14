@@ -2,7 +2,7 @@ apiVersion: v2
 name: mopsos
 description: Deploy Mopsos to a Kubernetes Cluster
 type: application
-version: 0.1.2
+version: 0.2.0
 appVersion: "v0.3.2"
 kubeVersion: ">= 1.21.0"
 home: https://github.com/adfinis-sygroup/mopsos
@@ -13,3 +13,8 @@ maintainers:
   - name: adfinis-sygroup
     email: support@adfinis.com
     url: https://adfinis.com
+dependencies:
+- name: grafana
+  version: "6.26.*"
+  repository: https://grafana.github.io/helm-charts
+  condition: grafana.enabled
