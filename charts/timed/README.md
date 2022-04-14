@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.8.4](https://img.shields.io/badge/Version-0.8.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.5](https://img.shields.io/badge/AppVersion-v1.4.5-informational?style=flat-square)
+![Version: 0.8.6](https://img.shields.io/badge/Version-0.8.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -57,7 +57,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.cronjobs.redmineReport | object | `{"command":["./manage.py","redmine_report"],"schedule":"0 1 * * 1"}` | Redmine report |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"adfinissygroup/timed-backend"` | Backend image name |
-| backend.image.tag | string | `"v1.5.4"` | Backend version (optional) in case it differs from appVersion in Chart.yaml |
+| backend.image.tag | string | `"v1.6.2"` | Backend version. |
 | backend.livenessProbe.enabled | bool | `true` | Enable liveness probe on backend |
 | backend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | backend.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
@@ -93,7 +93,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.settings.workReportPath | string | `"/etc/workreport"` | Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`. |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | Frontend image pull policy |
 | frontend.image.repository | string | `"adfinissygroup/timed-frontend"` | Frontend image name |
-| frontend.image.tag | string | `"v1.3.1"` | Frontend version (optional) in case it differs from appVersion in Chart.yaml |
+| frontend.image.tag | string | `"v2.1.2"` | Frontend version. |
 | frontend.livenessProbe.enabled | bool | `true` | Enable liveness probe on frontend |
 | frontend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | frontend.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
