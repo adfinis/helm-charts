@@ -163,7 +163,7 @@ grafana:
           # -- `hostname:port` for postgresql server to be used
           url: ~
           database: mopsos
-          user: mopsos
-          password: $POSTRESQL_PASSWORD
+          user: mopsos_ro
+          password: $POSTRESQL_RO_PASSWORD
   # -- Load mopsos secrets into grafana env
   envFromSecret: mopsos-secret
