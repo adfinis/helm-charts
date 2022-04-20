@@ -164,7 +164,15 @@ grafana:
           url: ~
           database: mopsos
           user: mopsos_ro
-          secureJson:
+          secureJsonData:
             password: $POSTGRESQL_RO_PASSWORD
   # -- Load mopsos secrets into grafana env
   envFromSecret: mopsos-secret
+  sidecar:
+    dashboards:
+      # -- Deploy dashboards via ConfigMap
+      enabled: true
+      # -- Label used to discover dashboards
+      label: k8s.adfinis.com/grafana_dashboards
+      # -- Value of ConfigMap label
+      labelValue: mopsos
