@@ -2,7 +2,7 @@ apiVersion: v2
 name: mopsos
 description: Deploy Mopsos to a Kubernetes Cluster
 type: application
-version: 0.3.0
+version: 0.4.0
 appVersion: "v0.3.2"
 kubeVersion: ">= 1.21.0"
 home: https://github.com/adfinis-sygroup/mopsos
