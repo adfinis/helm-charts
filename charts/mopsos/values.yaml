@@ -153,7 +153,7 @@ grafana:
   # @default -- see values.yaml
   datasources:
     datasources.yaml:
-      apiVersion: v1
+      apiVersion: 1
       datasources:
         - name: Mopsos
           uid: mopsos
@@ -164,6 +164,7 @@ grafana:
           url: ~
           database: mopsos
           user: mopsos_ro
-          password: $POSTGRESQL_RO_PASSWORD
+          secureJson:
+            password: $POSTGRESQL_RO_PASSWORD
   # -- Load mopsos secrets into grafana env
   envFromSecret: mopsos-secret
