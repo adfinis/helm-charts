@@ -1,6 +1,6 @@
 # mopsos
 
-![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.2](https://img.shields.io/badge/AppVersion-v0.3.2-informational?style=flat-square)
+![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.2](https://img.shields.io/badge/AppVersion-v0.3.2-informational?style=flat-square)
 
 Deploy Mopsos to a Kubernetes Cluster
 
@@ -50,6 +50,9 @@ Kubernetes: `>= 1.21.0`
 | grafana.ingress | object | see values.yaml | Grafana Ingress config |
 | grafana.ingress.enabled | bool | `false` | Enable Grafana Ingress creation |
 | grafana.ingress.hosts | list | `[]` | Hostnames for Grafana Ingress |
+| grafana.sidecar.dashboards.enabled | bool | `true` | Deploy dashboards via ConfigMap |
+| grafana.sidecar.dashboards.label | string | `"k8s.adfinis.com/grafana_dashboards"` | Label used to discover dashboards |
+| grafana.sidecar.dashboards.labelValue | string | `"mopsos"` | Value of ConfigMap label |
 | image.pullPolicy | string | `"IfNotPresent"` | pullPolicy to use |
 | image.repository | string | `"ghcr.io/adfinis-sygroup/mopsos"` | repository where the image is located |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |

@@ -1,0 +1,155 @@
+
+{
+    "annotations": {
+      "list": []
+    },
+    "editable": false,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 1,
+    "iteration": 1650458891481,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "displayMode": "auto"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 21,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true
+        },
+        "pluginVersion": "8.4.6",
+        "targets": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "mopsos"
+            },
+            "format": "table",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "SELECT\n  updated_at AS \"time\",\n  cluster_name,\n  instance_id,\n  application_name,\n  application_instance,\n  application_version\nFROM records\nWHERE\n  $__timeFilter(updated_at)\nAND cluster_name = '${cluster}'\nAND application_name = '${application}'\nORDER BY 1,2,3,4,5,6",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "id"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "records",
+            "timeColumn": "updated_at",
+            "timeColumnType": "timestamptz",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "title": "Mopsos Data",
+        "transparent": true,
+        "type": "table"
+      }
+    ],
+    "schemaVersion": 35,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "allValue": "%",
+          "current": {
+            "selected": false,
+            "text": "aks-adfch-k8s-int-prod-02.cloud.adfinis.com",
+            "value": "aks-adfch-k8s-int-prod-02.cloud.adfinis.com"
+          },
+          "definition": "SELECT DISTINCT cluster_name FROM records;",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "cluster",
+          "options": [],
+          "query": "SELECT DISTINCT cluster_name FROM records;",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "allValue": "%",
+          "current": {
+            "selected": false,
+            "text": "app-mopsos",
+            "value": "app-mopsos"
+          },
+          "definition": "SELECT DISTINCT application_name FROM records;",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "application",
+          "options": [],
+          "query": "SELECT DISTINCT application_name FROM records;",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-90d",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Mopsos Data",
+    "uid": "hO5YS4wnz",
+    "version": 7,
+    "weekStart": ""
+  }
