@@ -109,11 +109,11 @@ affinity: {}
 
 config:
   # -- Connection string for Database
-  dbdsn: "file::memory:?cache-shared"
+  dbdsn: ~
   # -- wheter or not to migrate the DB upon bootup
   dbmigrate: false
   # -- DB Provider to use (sqlite/postgres)
-  dbprovider: "sqlite"
+  dbprovider: "postgres"
   # -- enable otel metrics
   otel: false
   # -- define otel collector endpoint
@@ -127,3 +127,43 @@ config:
 
 # -- use an existing Secret instead of creating one
 existingSecret: ""
+
+grafana:
+  enabled: true
+  # -- Grafana Ingress config
+  # @default -- see values.yaml
+  ingress:
+    # -- Enable Grafana Ingress creation
+    enabled: false
+    annotations: {}
+    labels: {}
+    # -- Hostnames for Grafana Ingress
+    hosts: []
+    path: /grafana
+    tls: []
+  grafana.ini:
+    # -- Grafana service config
+    # @default -- see values.yaml
+    server:
+      # -- hostname for Grafana, must match Ingress
+      domain: ~
+      root_url: "%(protocol)s://%(domain)s:%(http_port)s/grafana/"
+      serve_from_sub_path: true
+  # -- Configure postgres datasource for Grafana
+  # @default -- see values.yaml
+  datasources:
+    datasources.yaml:
+      apiVersion: v1
+      datasources:
+        - name: Mopsos
+          uid: mopsos
+          type: postgres
+          isDefault: true
+          access: proxy
+          # -- `hostname:port` for postgresql server to be used
+          url: ~
+          database: mopsos
+          user: mopsos_ro
+          password: $POSTGRESQL_RO_PASSWORD
+  # -- Load mopsos secrets into grafana env
+  envFromSecret: mopsos-secret
