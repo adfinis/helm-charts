@@ -152,6 +152,9 @@ grafana:
   # -- Configure postgres datasource for Grafana
   # @default -- see values.yaml
   datasources:
+    grafana.ini:
+      dashboards:
+        default_home_dashboard_path: /tmp/dashboards/mopsos-data.json
     datasources.yaml:
       apiVersion: 1
       datasources:
