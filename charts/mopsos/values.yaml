@@ -149,12 +149,11 @@ grafana:
       domain: ~
       root_url: "%(protocol)s://%(domain)s:%(http_port)s/grafana/"
       serve_from_sub_path: true
+    dashboards:
+      default_home_dashboard_path: /tmp/dashboards/mopsos-data.json
   # -- Configure postgres datasource for Grafana
   # @default -- see values.yaml
   datasources:
-    grafana.ini:
-      dashboards:
-        default_home_dashboard_path: /tmp/dashboards/mopsos-data.json
     datasources.yaml:
       apiVersion: 1
       datasources:

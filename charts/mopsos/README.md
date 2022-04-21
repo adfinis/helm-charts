@@ -1,6 +1,6 @@
 # mopsos
 
-![Version: 0.5.1](https://img.shields.io/badge/Version-0.5.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.3](https://img.shields.io/badge/AppVersion-v0.3.3-informational?style=flat-square)
+![Version: 0.5.2](https://img.shields.io/badge/Version-0.5.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.3](https://img.shields.io/badge/AppVersion-v0.3.3-informational?style=flat-square)
 
 Deploy Mopsos to a Kubernetes Cluster
 
@@ -41,6 +41,7 @@ Kubernetes: `>= 1.21.0`
 | config.verbose | bool | `false` | enable verbose |
 | existingSecret | string | `""` | use an existing Secret instead of creating one |
 | fullnameOverride | string | `""` | fullnameOverride configuration |
+| grafana."grafana.ini".dashboards.default_home_dashboard_path | string | `"/tmp/dashboards/mopsos-data.json"` |  |
 | grafana."grafana.ini".server | object | see values.yaml | Grafana service config |
 | grafana."grafana.ini".server.domain | string | `nil` | hostname for Grafana, must match Ingress |
 | grafana.datasources | object | see values.yaml | Configure postgres datasource for Grafana |
