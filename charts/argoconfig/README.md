@@ -1,6 +1,6 @@
 # argoconfig
 
-![Version: 0.7.6](https://img.shields.io/badge/Version-0.7.6-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square)
+![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square)
 
 Configure Argo CD AppProjects and Applications
 
@@ -18,6 +18,12 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Repository | Name | Version |
 |------------|------|---------|
 | https://charts.adfinis.com | common | 0.0.7 |
+
+## Values
+
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| argoconfig.application.annotations | object | `{}` | Optional annotations to add to Application metadata. |
 
 ## About this chart
 
