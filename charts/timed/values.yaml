@@ -12,7 +12,7 @@ backend:
     # -- Backend image name
     repository: adfinissygroup/timed-backend
     # -- Backend version.
-    tag: v1.6.2
+    tag: v1.6.3
     # -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
