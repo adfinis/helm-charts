@@ -1,1 +1,6 @@
-# empty library chart values for testing
+# library chart values are purely for documentation purposes
+
+argoconfig:
+  application:
+    # -- Optional annotations to add to Application metadata.
+    annotations: {}
