@@ -96,7 +96,7 @@ ingressNginx:
   # -- Chart
   chart: ingress-nginx
   # -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version
-  targetRevision: 4.0.*
+  targetRevision: 4.1.*
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml)
   values: {}
