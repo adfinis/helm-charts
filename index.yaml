@@ -183,6 +183,26 @@ entries:
     version: 0.1.0
   argoconfig:
   - apiVersion: v2
+    created: "2022-04-25T15:18:50.750266339Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.7
+    description: Configure Argo CD AppProjects and Applications
+    digest: da949e76e1bede64534d8a57a34b04ddcf5102ff48cc4e034028714306cec2c6
+    home: https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: argoconfig
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/argoconfig
+    type: library
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/argoconfig-0.8.0/argoconfig-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
     created: "2022-04-04T09:35:07.437226636Z"
     dependencies:
     - name: common
@@ -12190,4 +12210,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-25T09:54:36.272167708Z"
+generated: "2022-04-25T15:18:50.755077462Z"
