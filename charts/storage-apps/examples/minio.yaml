@@ -4,7 +4,7 @@ minio:
   values:
     mode: distributed
     replicas: 4
-    persitence:
+    persistence:
       enabled: true
       storageClass: default
       size: 10Gi
