@@ -5,3 +5,7 @@ cephCsiRbd:
 cephCsiCephfs:
   enabled: true
   values: {}
+
+minio:
+  enabled: true
+  values: {}
