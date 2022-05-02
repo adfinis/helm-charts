@@ -1,0 +1,13 @@
+minio:
+  enabled: true
+  project: infra-storage
+  values:
+    mode: distributed
+    replicas: 4
+    persitence:
+      enabled: true
+      storageClass: default
+      size: 10Gi
+    resources:
+      requests:
+        memory: 2Gi
