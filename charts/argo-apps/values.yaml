@@ -1,25 +1,29 @@
+argoconfig:
+  application:
+    # -- Optional annotations to add to all Applications metadata.
+    annotations: {}
+
+# -- [Argo CD Notifications](https://argocd-notifications.readthedocs.io/en/stable/) is DEPRECATED, use Argo CD directly instead.
+# @default -- DEPRECATED
 argocdNotifications:
-  # -- Enable ArgoCD Notifications
   enabled: false
   name: argocd-notifications
+  annotations: {}
   destination:
-    # -- Namespace
     namespace: "infra-argocd"
-  # -- Repo URL
-  # @default -- [repo](https://argoproj.github.io/argo-helm)
   repoURL: "https://argoproj.github.io/argo-helm"
-  # -- Chart
   chart: "argocd-notifications"
-  # -- [argocd-notifications Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argocd-notifications) version
   targetRevision: "1.8.*"
-  # -- Helm values
-  # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argocd-notifications/values.yaml)
   values: {}
 
+# -- [Argo Rollouts](https://argoproj.github.io/argo-rollouts/) ([example](./examples/argo-rollouts.yaml))
+# @default -- -
 argoRollouts:
   # -- Enable Argo Rollouts
   enabled: false
   name: argo-rollouts
+  # -- Annotations for Argo Rollouts app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: "infra-argo-rollouts"
@@ -29,7 +33,7 @@ argoRollouts:
   # -- Chart
   chart: "argo-rollouts"
   # -- [argo-rollouts Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-rollouts) version
-  targetRevision: "2.12.*"
+  targetRevision: "2.14.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-rollouts/values.yaml)
   values: {}
