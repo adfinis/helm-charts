@@ -33,7 +33,7 @@ filebeat:
   # -- Chart
   chart: "filebeat"
   # -- [filebeat Helm chart](https://github.com/elastic/helm-charts/tree/master/filebeat) version
-  targetRevision: "7.16.*"
+  targetRevision: "7.17.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/elastic/helm-charts/tree/master/filebeat/values.yaml)
   values: {}
