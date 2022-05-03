@@ -2,7 +2,7 @@ apiVersion: v2
 name: storage-apps
 description: Argo CD app-of-apps config for storage applications
 type: application
-version: 0.7.2
+version: 0.8.0
 home: https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/storage-apps
 sources:
   - https://github.com/adfinis-sygroup/helm-charts
