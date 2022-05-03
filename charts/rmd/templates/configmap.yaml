@@ -9,7 +9,6 @@ data:
   EMAIL_PORT: {{ .Values.rmd.settings.emailPort | quote }}
   EMAIL_FOLDER: {{ .Values.rmd.settings.emailFolder | quote }}
   EMAIL_HOST_USER: {{ .Values.rmd.settings.emailUser | quote }}
-  EMAIL_HOST_PASSWORD: {{ .Values.rmd.settings.emailPassword | quote }}
   EMAIL_USE_TLS: {{ .Values.rmd.settings.emailUseTls | quote }}
   DEFAULT_FROM_EMAIL: {{ .Values.rmd.settings.emailFrom | quote }}
   DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}

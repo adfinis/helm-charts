@@ -4,6 +4,9 @@ metadata:
   name: {{ include "barman.fullname" . }}
   labels:
     {{- include "barman.labels" . | nindent 4 }}
+  {{- with .Values.deployment.annotations }}
+  annotations: {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   replicas: 1
   selector:
@@ -13,10 +16,19 @@ spec:
     type: {{ .Values.deployment.strategy.type | quote }}
   template:
     metadata:
+      {{- with .Values.deployment.podAnnotations }}
+      annotations: {{- toYaml . | nindent 8 }}
+      {{- end }}
       labels:
         {{- include "barman.labels" . | nindent 8 }}
     spec:
+    {{- with .Values.deployment.imagePullSecrets }}
+      imagePullSecrets: {{- toYaml . | nindent 8 }}
+    {{- end }}
       containers:
+        {{- with .Values.deployment.extraContainers }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
         - name: barman
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}

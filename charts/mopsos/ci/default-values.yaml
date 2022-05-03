@@ -1,0 +1,5 @@
+config:
+  dbprovider: sqlite
+  dbdsn: "file::memory:?cache-shared"
+grafana:
+  enabled: false

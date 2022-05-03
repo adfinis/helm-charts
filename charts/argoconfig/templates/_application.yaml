@@ -2,6 +2,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 {{ template "common.metadata" . }}
+{{ if .Values.argoconfig -}}
+{{ if .Values.argoconfig.application -}}
+{{ if .Values.argoconfig.application.annotations }}
+  annotations:
+    {{ toYaml .Values.argoconfig.application.annotations | indent 4 }}
+{{ end -}}
+{{ end -}}
+{{ end -}}
 spec:
   project: "default"
   source: {}

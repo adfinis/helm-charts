@@ -71,9 +71,17 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 Django database password
 */}}
 {{- define "rmd.djangoDatabasePassword" -}}
+{{- if .Values.existingSecret -}}
+- name: DATABASE_PASSWORD
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.existingSecret }}
+      key: postgresql-password
+{{- else }}
 - name: DATABASE_PASSWORD
   valueFrom:
     secretKeyRef:
       name: {{ include "rmd.postgresql.fullname" . }}
       key: postgresql-password
+{{- end -}}
 {{- end -}}
