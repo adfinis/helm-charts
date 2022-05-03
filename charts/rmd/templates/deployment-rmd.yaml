@@ -23,7 +23,11 @@ spec:
             {{- include "rmd.djangoDatabasePassword" . | nindent 12 }}
           envFrom:
             - secretRef:
+                {{- if .Values.rmd.existingSecret }}
+                name: {{ .Values.rmd.existingSecret }}
+                {{- else }}
                 name: {{ include "rmd.fullname" . }}
+                {{- end }}
             - configMapRef:
                 name: {{ include "rmd.fullname" . }}
           imagePullPolicy: {{ .Values.rmd.image.pullPolicy }}

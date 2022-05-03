@@ -1,6 +1,6 @@
 # storage-apps
 
-![Version: 0.7.2](https://img.shields.io/badge/Version-0.7.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for storage applications
 
@@ -37,6 +37,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | cephCsiRbd.repoURL | string | [repo](https://ceph.github.io/csi-charts) | Repo URL |
 | cephCsiRbd.targetRevision | string | `"3.5.*"` | [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version |
 | cephCsiRbd.values | object | [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/rbd/ceph-csi-rbd/values.yaml) | Helm values |
+| minio | object | - | [minio](https://github.com/minio/minio) |
+| minio.chart | string | `"minio"` | Chart |
+| minio.destination.namespace | string | `"infra-storage"` | Namespace |
+| minio.enabled | bool | `false` | Enable minio |
+| minio.repoURL | string | [repo](https://github.com/minio/minio/tree/master/helm/minio) | Repo URL |
+| minio.targetRevision | string | `"4.0.*"` | [minio Helm chart](https://github.com/minio/minio/tree/master/helm-releases) version |
+| minio.values | object | [upstream values](https://github.com/minio/minio/blob/master/helm/minio/values.yaml) | Helm values |
 
 ## About this chart
 

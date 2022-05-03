@@ -1,6 +1,6 @@
 # barman
 
-![Version: 0.7.0](https://img.shields.io/badge/Version-0.7.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.19](https://img.shields.io/badge/AppVersion-v2.19-informational?style=flat-square)
+![Version: 0.7.2](https://img.shields.io/badge/Version-0.7.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.19](https://img.shields.io/badge/AppVersion-v2.19-informational?style=flat-square)
 
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
@@ -23,9 +23,10 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.backupMethod | string | `"postgres"` | Barman backup method |
 | barman.backupOptions | string | `"concurrent_backup"` | Barman backup options |
 | barman.backupSchedule | string | `"0 4 * * *"` | Barman backup schedule |
-| barman.backups[0] | object | `{"additionalConfiguration":"","backupMethod":"postgres","databaseSlotName":"barman","lastBackupMaximumAge":"1 day","namespace":"postgresql","postgresql":{"host":"postgresql","port":5432,"replicationPassword":"barman","replicationUser":"barman","superUser":"postgres","superUserDatabase":"postgres","superUserPassword":"postgres"},"retentionPolicy":"RECOVERY WINDOW of 1 MONTH","serviceaccount":"postgresql"}` | Barman retention policy |
+| barman.backups[0] | object | `{"additionalConfiguration":"","backupMethod":"postgres","createDatabaseSlot":true,"databaseSlotName":"barman","lastBackupMaximumAge":"1 day","namespace":"postgresql","postgresql":{"host":"postgresql","port":5432,"replicationPassword":"barman","replicationUser":"barman","superUser":"postgres","superUserDatabase":"postgres","superUserPassword":"postgres"},"retentionPolicy":"RECOVERY WINDOW of 1 MONTH","serviceaccount":"postgresql"}` | Barman retention policy |
 | barman.backups[0].additionalConfiguration | string | `""` | Barman additional Parameters for configuration File |
 | barman.backups[0].backupMethod | string | `"postgres"` | Barman backup method |
+| barman.backups[0].createDatabaseSlot | bool | `true` | Create Database slot |
 | barman.backups[0].databaseSlotName | string | `"barman"` | Database slot name to be created/used |
 | barman.backups[0].lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age |
 | barman.backups[0].namespace | string | `"postgresql"` | namespace where postgresql is deployed |
@@ -39,11 +40,16 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.backups[0].serviceaccount | string | `"postgresql"` | service account of the postgresql deployment |
 | barman.barmanUser | string | `"barman"` | Barman user |
 | barman.compression | string | `"gzip"` | Barman backup compression |
+| barman.createDatabaseSlot | bool | `true` | Create Database slot |
 | barman.databaseSlotName | string | `"barman"` | Database slot name to be created/used |
 | barman.lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age |
 | barman.retentionPolicy | string | `"RECOVERY WINDOW of 1 MONTH"` | Barman retention policy |
 | deployment.additionalVolumeMounts | list | `[]` | Specify additional VolumeMounts for the barman container |
 | deployment.additionalVolumes | list | `[]` | Specify additional Volumes for the deployment |
+| deployment.annotations | object | `{}` | Specify deployment annotations |
+| deployment.extraContainers | object | `{}` | Specify sidecars for the deployment |
+| deployment.imagePullSecrets | list | `[]` | Specify imagePullSecrets for the deployment |
+| deployment.podAnnotations | object | `{}` | Specify pod annotations |
 | deployment.strategy.type | string | `"RollingUpdate"` | Specify the strategy used to replace old Pods by new ones |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
 | image.repository | string | `"ubcctlt/barman"` | Container image to deploy |
@@ -72,6 +78,15 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rbac.create | bool | `false` | Whether to create RBAC or not |
 | resources | object | `{"limits":{"memory":"256Mi"},"requests":{"cpu":"100m","memory":"128Mi"}}` | Resource limits and requests |
 | secret.create | bool | `true` | Whether to create and manage the barman-pgpass-secret |
+| service.annotations | object | `{}` | Service annotations |
+| service.clusterIP | string | `nil` | Only for type ClusterIP |
+| service.create | bool | `false` | Specify if a Service should be created |
+| service.loadBalancerIP | string | `nil` |  |
+| service.ports[0] | object | `{"name":"http","port":80,"protocol":"TCP","targetPort":"http"}` | specify targetPort |
+| service.ports[0].name | string | `"http"` | specify port Name |
+| service.ports[0].port | int | `80` | specify port |
+| service.ports[0].protocol | string | `"TCP"` | specify port protocol |
+| service.type | string | `"ClusterIP"` | Type of service |
 
 ## About this chart
 

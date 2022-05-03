@@ -37,3 +37,23 @@ cephCsiCephfs:
   # -- Helm values
   # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/cephfs/ceph-csi-cephfs/values.yaml)
   values: {}
+
+# -- [minio](https://github.com/minio/minio)
+# @default -- -
+minio:
+  # -- Enable minio
+  enabled: false
+  name: minio
+  destination:
+    # -- Namespace
+    namespace: "infra-storage"
+  # -- Repo URL
+  # @default -- [repo](https://github.com/minio/minio/tree/master/helm/minio)
+  repoURL: "https://charts.min.io"
+  # -- Chart
+  chart: "minio"
+  # -- [minio Helm chart](https://github.com/minio/minio/tree/master/helm-releases) version
+  targetRevision: "4.0.*"
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/minio/minio/blob/master/helm/minio/values.yaml)
+  values: {}
