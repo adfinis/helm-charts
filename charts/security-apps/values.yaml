@@ -180,8 +180,8 @@ secretsStoreCsiDriver:
   repoURL: "https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts"
   # -- Chart
   chart: "secrets-store-csi-driver"
-    # -- [vault-csi-provider Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version
-  targetRevision: "1.0.*"
+  # -- [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version
+  targetRevision: "1.1.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver/values.yaml)
   values: {}
