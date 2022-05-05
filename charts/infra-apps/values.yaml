@@ -1,9 +1,16 @@
+argoconfig:
+  application:
+    # -- Optional annotations to add to all Applications metadata.
+    annotations: {}
+
 # -- [Argo CD](https://argoproj.github.io/argo-cd/)
 # @default -- [example](./examples/argocd.yaml)
 argocd:
   # -- Enable Argo CD
   enabled: false
   name: argocd
+  # -- Annotations for Argo CD app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: infra-argocd
@@ -24,6 +31,8 @@ certManager:
   # -- Enable cert-manager
   enabled: false
   name: certmgr
+  # -- Annotations for cert-manager app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: infra-certmanager
@@ -42,9 +51,11 @@ certManager:
 # -- [cert-manager-issuers](https://cert-manager.io/docs/configuration/)
 # @default -- [example](./examples/cert-manager-issuers.yaml)
 certManagerIssuers:
-  # -- Enable cert-manager-issuers
+  # -- Enable cert-manager-issuers app
   enabled: false
   name: certmgr-issuers
+  # -- Annotations for cert-manager-issuers app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: infra-certmanager
@@ -66,6 +77,8 @@ certManagerMonitoring:
   # -- Enable cert-manager-monitoring
   enabled: false
   name: certmgr-monitoring
+  # -- Annotations for cert-manager-monitoring app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: infra-certmanager
@@ -87,6 +100,8 @@ ingressNginx:
   # -- Configure nginx-ingress
   enabled: false
   name: ingress
+  # -- Annotations for nginx-ingress app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: infra-ingress
@@ -107,6 +122,8 @@ kubePrometheusStack:
   # -- Enable prometheus-operator
   enabled: false
   name: monitoring
+  # -- Annotations for prometheus-operator app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: infra-monitoring
@@ -116,7 +133,7 @@ kubePrometheusStack:
   # -- Chart
   chart: kube-prometheus-stack
   # -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: 34.0.*
+  targetRevision: 35.0.*
   # -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
   values: {}
@@ -127,6 +144,8 @@ rbacManager:
   # -- Enable rbac-manager operator
   enabled: false
   name: rbac-manager
+  # -- Annotations for rbac-manager app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: infra-rbac
@@ -147,6 +166,8 @@ thanos:
   # -- Enable Thanos
   enabled: false
   name: thanos
+  # -- Annotations for Thanos app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: infra-monitoring
@@ -156,7 +177,7 @@ thanos:
   # -- Chart
   chart: thanos
   # -- [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos)
-  targetRevision: 10.1.*
+  targetRevision: 10.3.*
   # -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/thanos/values.yaml)
   values: {}
@@ -167,6 +188,8 @@ velero:
   # -- Enable Velero
   enabled: false
   name: velero
+  # -- Annotations for Velero app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: infra-velero
@@ -187,6 +210,8 @@ kured:
   # -- Enable Kured
   enabled: false
   name: kured
+  # -- Annotations for Kured app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: infra-kured
@@ -207,6 +232,8 @@ kubeEventExporter:
   # -- Enable kubernetes-event-exporter
   enabled: false
   name: kube-event-exporter
+  # -- Annotations for kubernetes-event-exporter app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: infra-kube-event-exporter

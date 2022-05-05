@@ -13,7 +13,7 @@ dex:
   # -- Chart
   chart: "dex"
   # -- [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version
-  targetRevision: "0.6.*"
+  targetRevision: "0.8.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml)
   values: {}
@@ -101,7 +101,7 @@ falco:
   # -- Chart
   chart: "falco"
   # -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version
-  targetRevision: "1.17.*"
+  targetRevision: "1.18.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml)
   values: {}
@@ -180,8 +180,8 @@ secretsStoreCsiDriver:
   repoURL: "https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts"
   # -- Chart
   chart: "secrets-store-csi-driver"
-    # -- [vault-csi-provider Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version
-  targetRevision: "1.0.*"
+  # -- [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version
+  targetRevision: "1.1.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver/values.yaml)
   values: {}

@@ -1,14 +1,10 @@
-{{ if .Values.argocdNotifications.enabled }}
-{{ template "argoconfig.application" (list . "argo-apps.argocdNotifications") }}
+{{ if .Values.minio.enabled }}
+{{ template "argoconfig.application" (list . "storage-apps.minio") }}
 {{ end }}
 
-{{- define "argo-apps.argocdNotifications" -}}{{- $app := unset .Values.argocdNotifications "enabled" -}}{{- $name := default $app.namespace $app.name -}}
+{{- define "storage-apps.minio" -}}{{- $app := unset .Values.minio "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
 metadata:
   name: {{ template "common.fullname" . }}-{{ $name }}
-  {{- with $app.annotations }}
-  annotations:
-    {{ toYaml . | nindent 4 }}
-  {{- end }}
 spec:
   {{- if $app.project }}
   project: {{ $app.project | quote }}
