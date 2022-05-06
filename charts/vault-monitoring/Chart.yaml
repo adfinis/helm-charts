@@ -2,7 +2,7 @@ apiVersion: v2
 name: vault-monitoring
 description: monitor your vault server from within Kubernetes' prometheus
 type: application
-version: 0.1.4
+version: 0.2.0
 home: https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring
 sources:
   - https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring

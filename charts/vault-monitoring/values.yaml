@@ -50,6 +50,16 @@ prometheusRules:
   # -- set of prometheus alerts to define
   # @default -- list of predefined alerts
   rules:
+    - alert: VaultAutopilotNodeHealthy
+      # Set to 1 if Autopilot considers all nodes healthy
+      # https://www.vaultproject.io/docs/internals/telemetry#integrated-storage-raft-autopilot
+      expr: vault_autopilot_healthy < 1
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: Autopilot Vault Raft node unhealthy
+        description: At least one of the Autopilot Vault Raft nodes is unhealthy
     - alert: VaultLeadershipLoss
       expr: sum(increase(vault_core_leadership_lost_count{job="vault-monitoring"}[1h])) > 5
       for: 1m
