@@ -231,6 +231,8 @@ ingress:
 postgresql:
   # -- Enable PostgreSQL for persistence
   enabled: true
+  # -- Use an existing PostgreSQL instance
+  # existingHost:
   # -- PostgreSQL database name
   postgresqlDatabase: timed
   # -- PostgreSQL user name
@@ -255,10 +257,6 @@ postgresql:
     enabled: false
     # -- Name of TLS secret
     certificatesSecret: psql-server
-    # -- Cert file name
-    certFilename: "tls.crt"
-    # -- Cert key filename
-    certKeyFilename: "tls.key"
     certificate:
       # -- Name of certificate
       name: psql-server
