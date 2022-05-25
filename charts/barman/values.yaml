@@ -62,6 +62,8 @@ persistence:
     size: 20Gi
     # -- Storage class
     storageClass: ""
+    # -- Add annotations to backup data PVC
+    annotations: {}
   recover:
     # -- Enable persistent storage for recovery
     enabled: false
@@ -71,6 +73,8 @@ persistence:
     size: 4Gi
     # -- Storage class
     storageClass: ""
+    # -- Add annotations to recovery PVC
+    annotations: {}
 
 rbac:
   # -- Whether to create RBAC or not

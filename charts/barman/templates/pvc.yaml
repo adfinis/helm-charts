@@ -2,9 +2,13 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  name: {{ include "barman.fullname" . }}-data
   labels:
     {{- include "barman.labels" . | nindent 4 }}
-  name: {{ include "barman.fullname" . }}-data
+  {{- with .Values.persistence.data.annotations }}
+  annotations:
+    {{ . | nindent 4 }}
+  {{- end }}
 spec:
   accessModes:
   - {{ .Values.persistence.data.accessMode | quote }}
@@ -20,9 +24,13 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  name: {{ include "barman.fullname" . }}-recover
   labels:
     {{- include "barman.labels" . | nindent 4 }}
-  name: {{ include "barman.fullname" . }}-recover
+  {{- with .Values.persistence.recover.annotations }}
+  annotations:
+    {{ . | nindent 4 }}
+  {{- end }}
 spec:
   accessModes:
   - {{ .Values.persistence.recover.accessMode | quote }}

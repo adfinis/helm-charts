@@ -1,6 +1,6 @@
 # barman
 
-![Version: 0.7.2](https://img.shields.io/badge/Version-0.7.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.19](https://img.shields.io/badge/AppVersion-v2.19-informational?style=flat-square)
+![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.19](https://img.shields.io/badge/AppVersion-v2.19-informational?style=flat-square)
 
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
@@ -55,10 +55,12 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | image.repository | string | `"ubcctlt/barman"` | Container image to deploy |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart version. |
 | persistence.data.accessMode | string | `"ReadWriteOnce"` | Access mode for persistent storage |
+| persistence.data.annotations | object | `{}` | Add annotations to backup data PVC |
 | persistence.data.enabled | bool | `true` | Enable persistent storage for backup data |
 | persistence.data.size | string | `"20Gi"` | Size of storage volume |
 | persistence.data.storageClass | string | `""` | Storage class |
 | persistence.recover.accessMode | string | `"ReadWriteOnce"` | Access mode for persistent storage |
+| persistence.recover.annotations | object | `{}` | Add annotations to recovery PVC |
 | persistence.recover.enabled | bool | `false` | Enable persistent storage for recovery |
 | persistence.recover.size | string | `"4Gi"` | Size of storage volume |
 | persistence.recover.storageClass | string | `""` | Storage class |
