@@ -231,6 +231,8 @@ ingress:
 postgresql:
   # -- Enable PostgreSQL for persistence
   enabled: true
+  # -- Use an existing PostgreSQL instance
+  # existingHost:
   # -- PostgreSQL database name
   postgresqlDatabase: timed
   # -- PostgreSQL user name
