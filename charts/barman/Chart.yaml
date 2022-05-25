@@ -14,6 +14,6 @@ sources:
   - https://github.com/ubc/barman-docker
   - https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/barman
 maintainers:
-  - name: adfinis
+  - name: adfinis-sygroup
     email: support@adfinis.com
     url: https://adfinis.com
