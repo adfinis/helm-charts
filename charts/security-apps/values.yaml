@@ -196,8 +196,8 @@ neuvector:
     # -- Namespace
     namespace: "infra-neuvector"
   # -- Repo URL
-  # @default -- [repo](https://neuvector.github.io/neuvector-helm/)
-  repoURL: "https://neuvector.github.io/neuvector-helm/"
+  # @default -- [repo](https://neuvector.github.io/neuvector-helm)
+  repoURL: "https://neuvector.github.io/neuvector-helm"
   # -- Chart
   chart: "core"
   # -- [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version
@@ -216,8 +216,8 @@ neuvectorMonitor:
     # -- Namespace
     namespace: "infra-neuvector"
   # -- Repo URL
-  # @default -- [repo](https://neuvector.github.io/neuvector-helm/)
-  repoURL: "https://neuvector.github.io/neuvector-helm/"
+  # @default -- [repo](https://neuvector.github.io/neuvector-helm)
+  repoURL: "https://neuvector.github.io/neuvector-helm"
   # -- Chart
   chart: "monitor"
   # -- [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version
