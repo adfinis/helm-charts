@@ -166,7 +166,7 @@ vaultMonitoring:
   # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/vault-monitoring/values.yaml)
   values: {}
 
-# -- [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([examplpe](./examples/secrets-store-csi-driver.yaml))
+# -- [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([example](./examples/secrets-store-csi-driver.yaml))
 # @default -- -
 secretsStoreCsiDriver:
   # -- Enable secrets-store-csi-driver
@@ -184,4 +184,44 @@ secretsStoreCsiDriver:
   targetRevision: "1.1.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver/values.yaml)
+  values: {}
+
+# -- [NeuVector](https://github.com/neuvector/neuvector) ([example](./example/neuvector.yaml))
+# @default -- -
+neuvector:
+  # -- Enable neuvector
+  enabled: false
+  name: neuvector
+  destination:
+    # -- Namespace
+    namespace: "infra-neuvector"
+  # -- Repo URL
+  # @default -- [repo](https://neuvector.github.io/neuvector-helm/)
+  repoURL: "https://neuvector.github.io/neuvector-helm/"
+  # -- Chart
+  chart: "core"
+  # -- [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version
+  targetRevision: "2.2.*"
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/core/values.yaml)
+  values: {}
+
+# -- [NeuVector monitor](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) ([example](./example/neuvector.yaml))
+# @default -- -
+neuvectorMonitor:
+  # -- Enable neuvector/monitor
+  enabled: false
+  name: neuvector-monitor
+  destination:
+    # -- Namespace
+    namespace: "infra-neuvector"
+  # -- Repo URL
+  # @default -- [repo](https://neuvector.github.io/neuvector-helm/)
+  repoURL: "https://neuvector.github.io/neuvector-helm/"
+  # -- Chart
+  chart: "monitor"
+  # -- [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version
+  targetRevision: "2.2.*"
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/monitor/values.yaml)
   values: {}

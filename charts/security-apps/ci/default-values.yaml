@@ -29,3 +29,11 @@ vaultMonitoring:
 secretsStoreCsiDriver:
   enabled: true
   values: {}
+
+neuvector:
+  enabled: true
+  values: {}
+
+neuvectorMonitor:
+  enabled: true
+  values: {}

@@ -1,0 +1,24 @@
+# This example deploys a minimal neuvector deployment
+
+neuvector:
+  enabled: true
+  values:
+    manager:
+      ingress:
+        enabled: true
+        host: neuvector.example.com
+    containerd:
+      enabled: true
+
+neuvectorMonitor:
+  enabled: true
+  values:
+    registry: docker.io
+    exporter:
+      enabled: true
+      image:
+        repository: neuvector/prometheus-exporter
+        tag: 4.2.2
+      # TODO: replace with readonly user
+      CTRL_USERNAME: admin
+      CTRL_PASSWORD: admin
