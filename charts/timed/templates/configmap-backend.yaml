@@ -53,11 +53,16 @@ data:
 {{- end }}
   DJANGO_OIDC_ADMIN_LOGIN_REDIRECT_URL: {{ .Values.auth.oidc.adminLoginRedirectUrl | quote }}
 
+{{- if and .Values.postgresql.enabled .Values.postgresql.existingSecret }}
+{{ fail "postgresql.enabled and postgresql.existingSecret are mutually exclusive, please pick one" }}
+{{- end }}
+
 {{- if .Values.postgresql.enabled }}
   DJANGO_DATABASE_HOST: {{ include "timed.postgresql.fullname" . | quote }}
-{{- else }}
-  DJANGO_DATABASE_HOST: {{ .Values.postgresql.service.host | quote }}
+{{- else if .Values.postgresql.existingHost}}
+  DJANGO_DATABASE_HOST: {{ .Values.postgresql.existingHost | quote }}
 {{- end }}
+
 {{- if .Values.redmine.enabled }}
   DJANGO_REDMINE_URL: {{ .Values.redmine.url | quote }}
   DJANGO_REDMINE_HTACCESS_USER: {{ .Values.redmine.htaccessUser | quote }}
