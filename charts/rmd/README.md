@@ -1,6 +1,6 @@
 # rmd
 
-![Version: 0.2.2](https://img.shields.io/badge/Version-0.2.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
+![Version: 0.2.3](https://img.shields.io/badge/Version-0.2.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
 
 Chart for Rmd.io application
 
@@ -56,7 +56,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rmd.readinessProbe.periodSeconds | int | `10` | How often (in seconds) to perform the probe |
 | rmd.readinessProbe.successThreshold | int | `1` | Minimum consecutive successes for the probe to be considered successful after having failed |
 | rmd.readinessProbe.timeoutSeconds | int | `5` | Number of seconds after which the probe times out |
-| rmd.replicaCount | int | `1` | (int) Number of Rmd replicas |
+| rmd.replicaCount | int | `1` | Number of Rmd replicas |
 | rmd.resources | object | `{}` | Resource limits for rmd |
 | rmd.service.externalPort | int | `8000` | External Port of rmd service |
 | rmd.service.internalPort | int | `8000` | Internal Port of rmd service |

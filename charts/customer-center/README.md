@@ -1,6 +1,6 @@
 # customer-center
 
-![Version: 0.2.24](https://img.shields.io/badge/Version-0.2.24-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.2.3](https://img.shields.io/badge/AppVersion-v3.2.3-informational?style=flat-square)
+![Version: 0.2.25](https://img.shields.io/badge/Version-0.2.25-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.2.3](https://img.shields.io/badge/AppVersion-v3.2.3-informational?style=flat-square)
 
 Chart for Customer-Center application
 
@@ -35,7 +35,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | frontend.readinessProbe.periodSeconds | int | `10` | How often (in seconds) to perform the probe |
 | frontend.readinessProbe.successThreshold | int | `1` | Minimum consecutive successes for the probe to be considered successful after having failed |
 | frontend.readinessProbe.timeoutSeconds | int | `5` | Number of seconds after which the probe times out |
-| frontend.replicaCount | int | `1` | (int) Number of Backend replicas |
+| frontend.replicaCount | int | `1` | Number of Backend replicas |
 | frontend.resources | object | `{}` | Resource limits for frontend |
 | frontend.service.externalPort | int | `80` | External Port of frontend service |
 | frontend.service.internalPort | int | `80` | Internal Port of frontend service |
