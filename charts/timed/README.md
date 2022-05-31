@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.8.8](https://img.shields.io/badge/Version-0.8.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.9.0](https://img.shields.io/badge/Version-0.9.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -70,7 +70,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.readinessProbe.periodSeconds | int | `10` | How often (in seconds) to perform the probe |
 | backend.readinessProbe.successThreshold | int | `1` | Minimum consecutive successes for the probe to be considered successful after having failed |
 | backend.readinessProbe.timeoutSeconds | int | `5` | Number of seconds after which the probe times out |
-| backend.replicaCount | int | `1` | Number of Backend replicas |
+| backend.replicaCount | int | `1` | (int) Number of Backend replicas |
 | backend.resources | object | `{}` | Resource limits for backend |
 | backend.service.externalPort | int | `80` | External Port of backend service |
 | backend.service.internalPort | int | `80` | Internal Port of backend service |
@@ -106,7 +106,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | frontend.readinessProbe.periodSeconds | int | `10` | How often (in seconds) to perform the probe |
 | frontend.readinessProbe.successThreshold | int | `1` | Minimum consecutive successes for the probe to be considered successful after having failed |
 | frontend.readinessProbe.timeoutSeconds | int | `5` | Number of seconds after which the probe times out |
-| frontend.replicaCount | int | `1` | Number of Backend replicas |
+| frontend.replicaCount | int | `1` | (int) Number of Backend replicas |
 | frontend.resources | object | `{}` | Resource limits for frontend |
 | frontend.service.externalPort | int | `80` | External Port of frontend service |
 | frontend.service.internalPort | int | `80` | Internal Port of frontend service |
@@ -121,7 +121,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingress.tls | list | `[]` | Ingress TLS options |
 | kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
-| postgresql.existingHost | string | `nil` | Use an existing PostgreSQL instance |
+| postgresql.existingHost | string | `""` | Use an existing PostgreSQL instance |
 | postgresql.image | object | `{"tag":"12.3.0"}` | Set a password for PostgreSQL postgresqlPassword: s3cr3t |
 | postgresql.image.tag | string | `"12.3.0"` | PostgreSQL image version to use |
 | postgresql.ingress.enabled | bool | `false` | Enable ingress |
