@@ -1,6 +1,6 @@
 # barman
 
-![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.19](https://img.shields.io/badge/AppVersion-v2.19-informational?style=flat-square)
+![Version: 0.8.1](https://img.shields.io/badge/Version-0.8.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.19](https://img.shields.io/badge/AppVersion-v2.19-informational?style=flat-square)
 
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.backups[0].createDatabaseSlot | bool | `true` | Create Database slot |
 | barman.backups[0].databaseSlotName | string | `"barman"` | Database slot name to be created/used |
 | barman.backups[0].lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age |
-| barman.backups[0].namespace | string | `"postgresql"` | namespace where postgresql is deployed |
+| barman.backups[0].namespace | string | `"postgresql"` | namespace where postgresql is deployed, not active when barman.createRbac is false |
 | barman.backups[0].postgresql.host | string | `"postgresql"` | Postgresql host |
 | barman.backups[0].postgresql.port | int | `5432` | Postgresql port |
 | barman.backups[0].postgresql.replicationPassword | string | `"barman"` | Postgresql replication password |
@@ -37,7 +37,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.backups[0].postgresql.superUser | string | `"postgres"` | Postgresql super user |
 | barman.backups[0].postgresql.superUserDatabase | string | `"postgres"` | Postgresql super user database |
 | barman.backups[0].postgresql.superUserPassword | string | `"postgres"` | Postgresql super user password |
-| barman.backups[0].serviceaccount | string | `"postgresql"` | service account of the postgresql deployment |
+| barman.backups[0].serviceaccount | string | `"postgresql"` | service account of the postgresql deployment, not active when barman.createRbac is false |
 | barman.barmanUser | string | `"barman"` | Barman user |
 | barman.compression | string | `"gzip"` | Barman backup compression |
 | barman.createDatabaseSlot | bool | `true` | Create Database slot |
@@ -83,7 +83,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | service.annotations | object | `{}` | Service annotations |
 | service.clusterIP | string | `nil` | Only for type ClusterIP |
 | service.create | bool | `false` | Specify if a Service should be created |
-| service.loadBalancerIP | string | `nil` |  |
+| service.loadBalancerIP | string | `nil` | Only for type LoadBalancer |
 | service.ports[0] | object | `{"name":"http","port":80,"protocol":"TCP","targetPort":"http"}` | specify targetPort |
 | service.ports[0].name | string | `"http"` | specify port Name |
 | service.ports[0].port | int | `80` | specify port |

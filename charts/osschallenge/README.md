@@ -1,6 +1,6 @@
 # osschallenge
 
-![Version: 0.1.4](https://img.shields.io/badge/Version-0.1.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
+![Version: 0.1.5](https://img.shields.io/badge/Version-0.1.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
 
 Chart for OSS-Challenge application
 
@@ -44,7 +44,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | osschallenge.readinessProbe.periodSeconds | int | `10` | How often (in seconds) to perform the probe |
 | osschallenge.readinessProbe.successThreshold | int | `1` | Minimum consecutive successes for the probe to be considered successful after having failed |
 | osschallenge.readinessProbe.timeoutSeconds | int | `5` | Number of seconds after which the probe times out |
-| osschallenge.replicaCount | int | `1` | (int) Number of OSS-Challenge replicas |
+| osschallenge.replicaCount | int | `1` | Number of OSS-Challenge replicas |
 | osschallenge.resources | object | `{}` | Resource limits for osschallenge |
 | osschallenge.service.externalPort | int | `8000` | External Port of osschallenge service |
 | osschallenge.service.internalPort | int | `8000` | Internal Port of osschallenge service |
