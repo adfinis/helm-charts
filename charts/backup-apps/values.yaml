@@ -13,7 +13,7 @@ barman:
   # -- Chart
   chart: barman
   # -- [Barman Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/barman)
-  targetRevision: '0.5.*'
+  targetRevision: '0.8.*'
   # -- Helm values
   # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/barman/values.yaml)
   values: {}
