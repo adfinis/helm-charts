@@ -6641,6 +6641,26 @@ entries:
     version: 0.0.1
   misc-apps:
   - apiVersion: v2
+    created: "2022-06-03T12:06:45.165694098Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 6926fc5fb8298f8908a8ac4612202975596d9c9ef20fa8c906a5fdb8a128fd1d
+    home: https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis-sygroup/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/misc-apps-0.17.0/misc-apps-0.17.0.tgz
+    version: 0.17.0
+  - apiVersion: v2
     created: "2022-04-04T10:57:28.242800085Z"
     dependencies:
     - name: argoconfig
@@ -12860,4 +12880,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-31T13:20:13.034062961Z"
+generated: "2022-06-03T12:06:45.169368144Z"
