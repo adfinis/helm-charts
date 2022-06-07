@@ -180,11 +180,11 @@ grafana:
       labelValue: mopsos
 
 rollout:
-  # -- Enable Argo Rollout based delivery
+  # -- Enable Argo Rollouts based delivery
   enabled: false
-  # -- Delivery mode to use for rollout
+  # -- Delivery mode to use for Argo Rollouts
   mode: "blueGreen"
-  # -- Configure rollout strategy, applied with `tpl`
+  # -- Configure Argo Rollouts strategy, applied with `tpl`
   # @default -- basic blue-green config
   strategy: |
     blueGreen:

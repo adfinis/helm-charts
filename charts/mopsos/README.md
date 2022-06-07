@@ -69,9 +69,9 @@ Kubernetes: `>= 1.21.0`
 | podSecurityContext | object | `{}` | Pod securityContext configuration |
 | replicaCount | int | `1` | number of replicas to launch |
 | resources | object | `{}` | Pod resources to define |
-| rollout.enabled | bool | `false` | Enable Argo Rollout based delivery |
-| rollout.mode | string | `"blueGreen"` | Delivery mode to use for rollout |
-| rollout.strategy | string | basic blue-green config | Configure rollout strategy, applied with `tpl` |
+| rollout.enabled | bool | `false` | Enable Argo Rollouts based delivery |
+| rollout.mode | string | `"blueGreen"` | Delivery mode to use for Argo Rollouts |
+| rollout.strategy | string | basic blue-green config | Configure Argo Rollouts strategy, applied with `tpl` |
 | securityContext | object | `{}` | Deployment securityContext configuration |
 | service.port | int | `8080` | port where the service listens to |
 | service.type | string | `"ClusterIP"` | service type of the application |
