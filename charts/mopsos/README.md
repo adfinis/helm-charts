@@ -1,6 +1,6 @@
 # mopsos
 
-![Version: 0.5.3](https://img.shields.io/badge/Version-0.5.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.4](https://img.shields.io/badge/AppVersion-v0.3.4-informational?style=flat-square)
+![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.5](https://img.shields.io/badge/AppVersion-v0.3.5-informational?style=flat-square)
 
 Deploy Mopsos to a Kubernetes Cluster
 
@@ -69,6 +69,9 @@ Kubernetes: `>= 1.21.0`
 | podSecurityContext | object | `{}` | Pod securityContext configuration |
 | replicaCount | int | `1` | number of replicas to launch |
 | resources | object | `{}` | Pod resources to define |
+| rollout.enabled | bool | `false` | Enable Argo Rollout based delivery |
+| rollout.mode | string | `"blueGreen"` | Delivery mode to use for rollout |
+| rollout.strategy | string | basic blue-green config | Configure rollout strategy, applied with `tpl` |
 | securityContext | object | `{}` | Deployment securityContext configuration |
 | service.port | int | `8080` | port where the service listens to |
 | service.type | string | `"ClusterIP"` | service type of the application |

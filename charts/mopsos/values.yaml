@@ -178,3 +178,15 @@ grafana:
       label: k8s.adfinis.com/grafana_dashboards
       # -- Value of ConfigMap label
       labelValue: mopsos
+
+rollout:
+  # -- Enable Argo Rollout based delivery
+  enabled: false
+  # -- Delivery mode to use for rollout
+  mode: "blueGreen"
+  # -- Configure rollout strategy, applied with `tpl`
+  # @default -- basic blue-green config
+  strategy: |
+    blueGreen:
+      activeService: {{ template "mopsos.fullname" . }}
+      previewService: {{ template "mopsos.fullname" . }}-preview
