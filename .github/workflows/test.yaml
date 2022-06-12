@@ -24,6 +24,8 @@ jobs:
         helm plugin install https://github.com/quintush/helm-unittest
 
     - uses: actions/setup-python@v4
+      with:
+        python-version:  '3.x'
 
     - name: Setup environment for pre-commit
       run: hack/ci/github/setup/pre-commit.sh
@@ -57,7 +59,7 @@ jobs:
 
       - uses: actions/setup-python@v4
         with:
-          python-version: 3.7
+          python-version: '3.x'
 
       - name: Install chart-testing
         uses: helm/chart-testing-action@v2.2.1
