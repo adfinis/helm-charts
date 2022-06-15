@@ -53,14 +53,19 @@ data:
 {{- end }}
   DJANGO_OIDC_ADMIN_LOGIN_REDIRECT_URL: {{ .Values.auth.oidc.adminLoginRedirectUrl | quote }}
 
-{{- if and .Values.postgresql.enabled .Values.postgresql.existingSecret }}
-{{ fail "postgresql.enabled and postgresql.existingSecret are mutually exclusive, please pick one" }}
+{{- if and .Values.postgresql.enabled .Values.backend.postgresql.postgresqlExistingHost }}
+{{ fail "postgresql.enabled and backend.postgresql.postgresqlExistingHost are mutually exclusive, please pick one" }}
 {{- end }}
 
 {{- if .Values.postgresql.enabled }}
   DJANGO_DATABASE_HOST: {{ include "timed.postgresql.fullname" . | quote }}
-{{- else if .Values.postgresql.existingHost}}
-  DJANGO_DATABASE_HOST: {{ .Values.postgresql.existingHost | quote }}
+  DJANGO_DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
+  DJANGO_DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}
+{{- else if .Values.backend.postgresql.postgresqlExistingHost}}
+  DJANGO_DATABASE_HOST: {{ .Values.backend.postgresql.postgresqlExistingHost | quote }}
+  DJANGO_DATABASE_USER: {{ .Values.backend.postgresql.postgresqlUsername | quote }}
+  DJANGO_DATABASE_NAME: {{ .Values.backend.postgresql.postgresqlDatabase | quote }}
+  DJANGO_DATABASE_PORT: {{ .Values.backend.postgresql.postgresqlPort | quote }}
 {{- end }}
 
 {{- if .Values.redmine.enabled }}
