@@ -319,7 +319,7 @@ auth:
         # -- OIDC introspect client id
         id: timed-confidential
         # -- OIDC introspect client secret
-        secret: ~
+        secret: ""
       # -- OIDC introspect endpoint
       endpoint: ~
     claims:

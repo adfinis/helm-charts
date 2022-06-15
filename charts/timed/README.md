@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.10.0](https://img.shields.io/badge/Version-0.10.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.10.1](https://img.shields.io/badge/Version-0.10.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -32,7 +32,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | auth.oidc.endPoints.token | string | `nil` | OIDC /token endpoint |
 | auth.oidc.endPoints.userInfo | string | `nil` | OIDC /userinfo endpoint |
 | auth.oidc.introspect.client.id | string | `"timed-confidential"` | OIDC introspect client id |
-| auth.oidc.introspect.client.secret | string | `nil` | OIDC introspect client secret |
+| auth.oidc.introspect.client.secret | string | `""` | OIDC introspect client secret |
 | auth.oidc.introspect.enabled | bool | `true` | Enable OIDC introspect |
 | auth.oidc.introspect.endpoint | string | `nil` | OIDC introspect endpoint |
 | auth.oidc.signAlgorithm | string | `"RS256"` | Algorithm the OIDC provider uses to sign ID tokens |
