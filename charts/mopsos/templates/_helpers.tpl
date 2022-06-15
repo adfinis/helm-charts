@@ -60,3 +60,65 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Define PodTemplateSpec for use in Deployment or Rollout
+*/}}
+{{- define "mopsos.podTemplateSpec" -}}
+metadata:
+  {{- with .Values.podAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  labels:
+    {{- include "mopsos.selectorLabels" . | nindent 4 }}
+spec:
+  {{- with .Values.imagePullSecrets }}
+  imagePullSecrets:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  serviceAccountName: {{ include "mopsos.serviceAccountName" . }}
+  securityContext:
+    {{- toYaml .Values.podSecurityContext | nindent 4 }}
+  containers:
+    - name: {{ .Chart.Name }}
+      securityContext:
+        {{- toYaml .Values.securityContext | nindent 8 }}
+      image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+      imagePullPolicy: {{ .Values.image.pullPolicy }}
+      envFrom:
+        - secretRef:
+            {{- if .Values.existingSecret }}
+            name: {{ .Values.existingSecret }}
+            {{- else }}
+            name: {{ include "mopsos.fullname" . }}-secret
+            {{- end }}
+        - configMapRef:
+            name: {{ include "mopsos.fullname" . }}-config
+      ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+      livenessProbe:
+        httpGet:
+          path: /health
+          port: http
+      readinessProbe:
+        httpGet:
+          path: /health
+          port: http
+      resources:
+        {{- toYaml .Values.resources | nindent 8 }}
+  {{- with .Values.nodeSelector }}
+  nodeSelector:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.affinity }}
+  affinity:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.tolerations }}
+  tolerations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+{{- end }}
