@@ -30,9 +30,8 @@ deployment:
   extraContainers: {}
   # -- Specify imagePullSecrets for the deployment
   imagePullSecrets: []
-  # -- Specify additional envs
+  # -- Specify additional ENVs for the Deployment
   additionalENVs: {}
-    # TZ: "Asia/Tehran"
 
 service:
   # -- Specify if a Service should be created
@@ -108,17 +107,15 @@ barman:
   databaseSlotName: barman
   # -- Create Database slot
   createDatabaseSlot: true
-  # -- postBackupRetryScript
+  # -- Barman post_backup_retry_script
   postBackupRetryScript: ""
-  ## example: tar -zcvf data.tar.gz -C /var/lib/barman/pg/base/$BARMAN_BACKUP_ID/data . --remove-files
-  #    preRecoveryRetryScript
+  # -- Barman pre_recovery_retry_script
   preRecoveryRetryScript: ""
-  ## example: mkdir /var/lib/barman/pg/base/$BARMAN_BACKUP_ID/data; tar -xvzf data.tar.gz -C /var/lib/barman/pg/base/$BARMAN_BACKUP_ID/data; rm data.tar.gz
 
   backups:
       # -- Barman retention policy
     - retentionPolicy: "RECOVERY WINDOW of 1 MONTH"
-      # -- name of scope
+      # -- Postgresql server scope-name
       scopeName: "pg"
       # -- Barman backup method
       backupMethod: postgres

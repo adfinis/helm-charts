@@ -1,6 +1,6 @@
 # barman
 
-![Version: 0.8.1](https://img.shields.io/badge/Version-0.8.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.19](https://img.shields.io/badge/AppVersion-v2.19-informational?style=flat-square)
+![Version: 0.8.2](https://img.shields.io/badge/Version-0.8.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.19](https://img.shields.io/badge/AppVersion-v2.19-informational?style=flat-square)
 
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
@@ -23,15 +23,16 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.backupMethod | string | `"postgres"` | Barman backup method |
 | barman.backupOptions | string | `"concurrent_backup"` | Barman backup options |
 | barman.backupSchedule | string | `"0 4 * * *"` | Barman backup schedule |
-| barman.postBackupRetryScript | string | `""` | Barman `post_backup_retry_script` |
-| barman.preRecoveryRetryScript | string | `""` | Barman `pre_recovery_retry_script` |
-| barman.backups[0] | object | `{"additionalConfiguration":"","backupMethod":"postgres","createDatabaseSlot":true,"databaseSlotName":"barman","lastBackupMaximumAge":"1 day","namespace":"postgresql","postgresql":{"host":"postgresql","port":5432,"replicationPassword":"barman","replicationUser":"barman","superUser":"postgres","superUserDatabase":"postgres","superUserPassword":"postgres"},"retentionPolicy":"RECOVERY WINDOW of 1 MONTH","serviceaccount":"postgresql"}` | Barman retention policy |
+| barman.postBackupRetryScript | string | `""` | Barman post_backup_retry_script |
+| barman.preRecoveryRetryScript | string | `""` | Barman pre_recovery_retry_script |
+| barman.backups[0] | object | `{"additionalConfiguration":"","backupMethod":"postgres","createDatabaseSlot":true,"databaseSlotName":"barman","lastBackupMaximumAge":"1 day","namespace":"postgresql","postgresql":{"host":"postgresql","port":5432,"replicationPassword":"barman","replicationUser":"barman","superUser":"postgres","superUserDatabase":"postgres","superUserPassword":"postgres"},"retentionPolicy":"RECOVERY WINDOW of 1 MONTH","scopeName":"pg","serviceaccount":"postgresql"}` | Barman retention policy |
 | barman.backups[0].additionalConfiguration | string | `""` | Barman additional Parameters for configuration File |
 | barman.backups[0].backupMethod | string | `"postgres"` | Barman backup method |
 | barman.backups[0].createDatabaseSlot | bool | `true` | Create Database slot |
 | barman.backups[0].databaseSlotName | string | `"barman"` | Database slot name to be created/used |
 | barman.backups[0].lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age |
 | barman.backups[0].namespace | string | `"postgresql"` | namespace where postgresql is deployed, not active when barman.createRbac is false |
+| barman.backups[0].scopeName | string | `"pg"` | Postgresql server scope-name |
 | barman.backups[0].postgresql.host | string | `"postgresql"` | Postgresql host |
 | barman.backups[0].postgresql.port | int | `5432` | Postgresql port |
 | barman.backups[0].postgresql.replicationPassword | string | `"barman"` | Postgresql replication password |
@@ -40,7 +41,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.backups[0].postgresql.superUserDatabase | string | `"postgres"` | Postgresql super user database |
 | barman.backups[0].postgresql.superUserPassword | string | `"postgres"` | Postgresql super user password |
 | barman.backups[0].serviceaccount | string | `"postgresql"` | service account of the postgresql deployment, not active when barman.createRbac is false |
-| barman.backups[0].postgresql.scopeName | string | `"pg"` | Postgresql server scope-name |
 | barman.barmanUser | string | `"barman"` | Barman user |
 | barman.compression | string | `"gzip"` | Barman backup compression |
 | barman.createDatabaseSlot | bool | `true` | Create Database slot |
@@ -54,7 +54,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | deployment.imagePullSecrets | list | `[]` | Specify imagePullSecrets for the deployment |
 | deployment.podAnnotations | object | `{}` | Specify pod annotations |
 | deployment.strategy.type | string | `"RollingUpdate"` | Specify the strategy used to replace old Pods by new ones |
-| deployment.additionalENVs | object | `{}` | Specify additional ENVs for Barman Deployment |
+| deployment.additionalENVs | object | `{}` | Specify additional ENVs for the Deployment |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
 | image.repository | string | `"ubcctlt/barman"` | Container image to deploy |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart version. |
