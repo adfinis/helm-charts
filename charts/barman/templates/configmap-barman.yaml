@@ -19,15 +19,23 @@ data:
 
       barman_user = {{ .Values.barman.barmanUser }}
 
+      {{- if hasKey .Values.barman "postBackupRetryScript" }}
+      post_backup_retry_script = {{ .Values.barman.postBackupRetryScript }}
+      {{- end }}
+
+      {{- if hasKey .Values.barman "preRecoveryRetryScript" }}
+      pre_recovery_retry_script = {{ .Values.barman.preRecoveryRetryScript }}
+      {{- end }}
+
       ; barman_lock_directory = %(barman_home)s
       compression = {{ .Values.barman.compression }}
       configuration_files_directory = /etc/barman/barman.d
       last_backup_maximum_age = {{ .Values.barman.lastBackupMaximumAge }}
-      minimum_redundancy = 1
+      minimum_redundancy = 0
       ;network_compression = true
       retention_policy = {{ .Values.barman.retentionPolicy }}
       ; retention_policy_mode = auto
-      ;reuse_backup = link
+      ; reuse_backup = link
       streaming_archiver = on
       ; wal_retention_policy = main
 
