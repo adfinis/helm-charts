@@ -109,10 +109,10 @@ barman:
   # -- Create Database slot
   createDatabaseSlot: true
   # -- postBackupRetryScript
-  postBackupRetryScript: 
+  postBackupRetryScript: ""
   ## example: tar -zcvf data.tar.gz -C /var/lib/barman/pg/base/$BARMAN_BACKUP_ID/data . --remove-files
   #    preRecoveryRetryScript
-  preRecoveryRetryScript:
+  preRecoveryRetryScript: ""
   ## example: mkdir /var/lib/barman/pg/base/$BARMAN_BACKUP_ID/data; tar -xvzf data.tar.gz -C /var/lib/barman/pg/base/$BARMAN_BACKUP_ID/data; rm data.tar.gz
 
   backups:
