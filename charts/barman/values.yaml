@@ -108,10 +108,18 @@ barman:
   databaseSlotName: barman
   # -- Create Database slot
   createDatabaseSlot: true
+  # -- postBackupRetryScript
+  postBackupRetryScript: 
+  ## example: tar -zcvf data.tar.gz -C /var/lib/barman/pg/base/$BARMAN_BACKUP_ID/data . --remove-files
+  #    preRecoveryRetryScript
+  preRecoveryRetryScript:
+  ## example: mkdir /var/lib/barman/pg/base/$BARMAN_BACKUP_ID/data; tar -xvzf data.tar.gz -C /var/lib/barman/pg/base/$BARMAN_BACKUP_ID/data; rm data.tar.gz
 
   backups:
       # -- Barman retention policy
     - retentionPolicy: "RECOVERY WINDOW of 1 MONTH"
+      # -- name of scope
+      scopeName: "pg"
       # -- Barman backup method
       backupMethod: postgres
       # -- Database slot name to be created/used
