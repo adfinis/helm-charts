@@ -6,3 +6,6 @@ metadata:
     {{- include "barman.labels" . | nindent 4 }}
 data:
   BARMAN_BACKUP_SCHEDULE: {{ .Values.barman.backupSchedule | quote }}
+  {{- range $i, $val := .Values.deployment.additionalENVs }}
+  {{ $i }}: {{ $val }}
+  {{- end }}

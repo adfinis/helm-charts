@@ -30,6 +30,9 @@ deployment:
   extraContainers: {}
   # -- Specify imagePullSecrets for the deployment
   imagePullSecrets: []
+  # -- Specify additional envs
+  additionalENVs: {}
+    # TZ: "Asia/Tehran"
 
 service:
   # -- Specify if a Service should be created
