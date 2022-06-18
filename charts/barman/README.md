@@ -23,6 +23,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.backupMethod | string | `"postgres"` | Barman backup method |
 | barman.backupOptions | string | `"concurrent_backup"` | Barman backup options |
 | barman.backupSchedule | string | `"0 4 * * *"` | Barman backup schedule |
+| barman.postBackupRetryScript | string | `""` | Barman `post_backup_retry_script` |
+| barman.preRecoveryRetryScript | string | `""` | Barman `pre_recovery_retry_script` |
 | barman.backups[0] | object | `{"additionalConfiguration":"","backupMethod":"postgres","createDatabaseSlot":true,"databaseSlotName":"barman","lastBackupMaximumAge":"1 day","namespace":"postgresql","postgresql":{"host":"postgresql","port":5432,"replicationPassword":"barman","replicationUser":"barman","superUser":"postgres","superUserDatabase":"postgres","superUserPassword":"postgres"},"retentionPolicy":"RECOVERY WINDOW of 1 MONTH","serviceaccount":"postgresql"}` | Barman retention policy |
 | barman.backups[0].additionalConfiguration | string | `""` | Barman additional Parameters for configuration File |
 | barman.backups[0].backupMethod | string | `"postgres"` | Barman backup method |
@@ -38,6 +40,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman.backups[0].postgresql.superUserDatabase | string | `"postgres"` | Postgresql super user database |
 | barman.backups[0].postgresql.superUserPassword | string | `"postgres"` | Postgresql super user password |
 | barman.backups[0].serviceaccount | string | `"postgresql"` | service account of the postgresql deployment, not active when barman.createRbac is false |
+| barman.backups[0].postgresql.scopeName | string | `"pg"` | Postgresql server scope-name |
 | barman.barmanUser | string | `"barman"` | Barman user |
 | barman.compression | string | `"gzip"` | Barman backup compression |
 | barman.createDatabaseSlot | bool | `true` | Create Database slot |
@@ -51,6 +54,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | deployment.imagePullSecrets | list | `[]` | Specify imagePullSecrets for the deployment |
 | deployment.podAnnotations | object | `{}` | Specify pod annotations |
 | deployment.strategy.type | string | `"RollingUpdate"` | Specify the strategy used to replace old Pods by new ones |
+| deployment.additionalENVs | object | `{}` | Specify additional ENVs for Barman Deployment |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
 | image.repository | string | `"ubcctlt/barman"` | Container image to deploy |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart version. |
