@@ -31,7 +31,7 @@ data:
       compression = {{ .Values.barman.compression }}
       configuration_files_directory = /etc/barman/barman.d
       last_backup_maximum_age = {{ .Values.barman.lastBackupMaximumAge }}
-      minimum_redundancy = 0
+      minimum_redundancy = 1
       ;network_compression = true
       retention_policy = {{ .Values.barman.retentionPolicy }}
       ; retention_policy_mode = auto
