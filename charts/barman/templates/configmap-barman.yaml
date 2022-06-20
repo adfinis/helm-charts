@@ -35,7 +35,7 @@ data:
       ;network_compression = true
       retention_policy = {{ .Values.barman.retentionPolicy }}
       ; retention_policy_mode = auto
-      ; reuse_backup = link
+      ;reuse_backup = link
       streaming_archiver = on
       ; wal_retention_policy = main
 
