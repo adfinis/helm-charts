@@ -247,12 +247,8 @@ postgresql:
   postgresqlDatabase: timed
   # -- PostgreSQL user name
   postgresqlUsername: postgres
-  # -- Set a password for PostgreSQL
+  # Set a password for PostgreSQL
   # postgresqlPassword: s3cr3t
-  image:
-    # Use Postgresql 12
-    # -- PostgreSQL image version to use
-    tag: 12.3.0
   ingress:
     # -- Enable ingress
     enabled: false

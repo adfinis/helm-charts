@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.10.2](https://img.shields.io/badge/Version-0.10.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.10.3](https://img.shields.io/badge/Version-0.10.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -19,7 +19,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | ~9.1.2 |
+| https://charts.bitnami.com/bitnami | postgresql | ~11.6.7 |
 
 ## Values
 
@@ -126,8 +126,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingress.tls | list | `[]` | Ingress TLS options |
 | kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL Helm Chart (https://bitnami.com/stack/postgresql) for persistence |
-| postgresql.image | object | `{"tag":"12.3.0"}` | Set a password for PostgreSQL postgresqlPassword: s3cr3t |
-| postgresql.image.tag | string | `"12.3.0"` | PostgreSQL image version to use |
 | postgresql.ingress.enabled | bool | `false` | Enable ingress |
 | postgresql.ingress.loadBalancerSourceRanges | list | `[]` | Whitelist specific IP ranges |
 | postgresql.ingress.selector | object | `{"app.kubernetes.io/name":"postgresql","role":"slave"}` | Service selector labels |
