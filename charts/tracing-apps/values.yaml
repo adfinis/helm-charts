@@ -13,7 +13,7 @@ jaegerOperator:
   # -- Chart
   chart: "jaeger-operator"
   # -- [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/main/charts/jaeger-operator)
-  targetRevision: "2.29.*"
+  targetRevision: "2.32.2"
   # -- Helm values
   # @default -- [upstream values](https://github.com/jaegertracing/helm-charts/blob/main/charts/jaeger-operator/values.yaml)
   values: {}
