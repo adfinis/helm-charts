@@ -1,6 +1,6 @@
 # tracing-apps
 
-![Version: 0.12.0](https://img.shields.io/badge/Version-0.12.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.13.0](https://img.shields.io/badge/Version-0.13.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for tracing applications
 
@@ -35,7 +35,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | opentelemetryCollector.destination.namespace | string | `"infra-otel-operator"` | Namespace |
 | opentelemetryCollector.enabled | bool | `false` | Enable otel-exporter |
 | opentelemetryCollector.repoURL | string | [repo](https://open-telemetry.github.io/opentelemetry-helm-charts) | Repo URL |
-| opentelemetryCollector.targetRevision | string | `"0.15.*"` | [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector) |
+| opentelemetryCollector.targetRevision | string | `"0.20.1"` | [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector) |
 | opentelemetryCollector.values | object | [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml) | Helm values |
 
 ## About this chart
