@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.10.4](https://img.shields.io/badge/Version-0.10.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.10.5](https://img.shields.io/badge/Version-0.10.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -125,12 +125,12 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingress.hosts | list | `[]` | Ingress hostnames |
 | ingress.tls | list | `[]` | Ingress TLS options |
 | kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
+| postgresql.auth.database | string | `"timed"` | PostgreSQL database name |
+| postgresql.auth.username | string | `"postgres"` | PostgreSQL user name |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL Helm Chart (https://bitnami.com/stack/postgresql) for persistence |
 | postgresql.ingress.enabled | bool | `false` | Enable ingress |
 | postgresql.ingress.loadBalancerSourceRanges | list | `[]` | Whitelist specific IP ranges |
 | postgresql.ingress.selector | object | `{"app.kubernetes.io/name":"postgresql","role":"slave"}` | Service selector labels |
-| postgresql.postgresqlDatabase | string | `"timed"` | PostgreSQL database name |
-| postgresql.postgresqlUsername | string | `"postgres"` | PostgreSQL user name |
 | postgresql.service.port | int | `5432` |  |
 | postgresql.tls.certFilename | string | `"tls.crt"` | Cert file name |
 | postgresql.tls.certKeyFilename | string | `"tls.key"` | Cert key filename |

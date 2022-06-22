@@ -13,8 +13,8 @@ data:
   DJANGO_DEFAULT_FROM_EMAIL: {{ .Values.backend.settings.emailFrom | quote }}
   DJANGO_SERVER_EMAIL: {{ .Values.backend.settings.serverEmail | quote }}
   DJANGO_EMAIL_USE_TLS: {{ .Values.backend.settings.emailUseTls | quote }}
-  DJANGO_DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}
-  DJANGO_DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
+  DJANGO_DATABASE_NAME: {{ .Values.postgresql.auth.database | quote }}
+  DJANGO_DATABASE_USER: {{ .Values.postgresql.auth.username | quote }}
   DJANGO_DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
   DJANGO_WORK_REPORT_PATH: {{ .Values.backend.settings.workReportPath | quote }}
   DJANGO_DATA_UPLOAD_MAX_NUMBER_FIELDS: {{ .Values.backend.settings.maxNumberFields | quote }}
@@ -59,8 +59,8 @@ data:
 
 {{- if .Values.postgresql.enabled }}
   DJANGO_DATABASE_HOST: {{ include "timed.postgresql.fullname" . | quote }}
-  DJANGO_DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
-  DJANGO_DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}
+  DJANGO_DATABASE_USER: {{ .Values.postgresql.auth.database | quote }}
+  DJANGO_DATABASE_NAME: {{ .Values.postgresql.auth.password | quote }}
 {{- else if .Values.backend.postgresql.postgresqlExistingHost}}
   DJANGO_DATABASE_HOST: {{ .Values.backend.postgresql.postgresqlExistingHost | quote }}
   DJANGO_DATABASE_USER: {{ .Values.backend.postgresql.postgresqlUsername | quote }}

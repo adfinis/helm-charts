@@ -243,12 +243,13 @@ ingress:
 postgresql:
   # -- Enable PostgreSQL Helm Chart (https://bitnami.com/stack/postgresql) for persistence
   enabled: true
-  # -- PostgreSQL database name
-  postgresqlDatabase: timed
-  # -- PostgreSQL user name
-  postgresqlUsername: postgres
-  # Set a password for PostgreSQL
-  # postgresqlPassword: s3cr3t
+  auth:
+    # -- PostgreSQL database name
+    database: timed
+    # -- PostgreSQL user name
+    username: postgres
+    # -- Set a password for PostgreSQL
+    # password: s3cr3t
   ingress:
     # -- Enable ingress
     enabled: false
