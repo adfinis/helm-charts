@@ -27,7 +27,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: {{ include "timed.postgresql.fullname" . }}
-                  key: postgresql-password
+                  key: postgres-password
             - name: THIS_POD_IP
               valueFrom:
                 fieldRef:
