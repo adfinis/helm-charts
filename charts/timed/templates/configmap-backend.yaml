@@ -59,8 +59,8 @@ data:
 
 {{- if .Values.postgresql.enabled }}
   DJANGO_DATABASE_HOST: {{ include "timed.postgresql.fullname" . | quote }}
-  DJANGO_DATABASE_USER: {{ .Values.postgresql.auth.database | quote }}
-  DJANGO_DATABASE_NAME: {{ .Values.postgresql.auth.password | quote }}
+  DJANGO_DATABASE_USER: {{ .Values.postgresql.auth.username | quote }}
+  DJANGO_DATABASE_NAME: {{ .Values.postgresql.auth.database | quote }}
 {{- else if .Values.backend.postgresql.postgresqlExistingHost}}
   DJANGO_DATABASE_HOST: {{ .Values.backend.postgresql.postgresqlExistingHost | quote }}
   DJANGO_DATABASE_USER: {{ .Values.backend.postgresql.postgresqlUsername | quote }}
