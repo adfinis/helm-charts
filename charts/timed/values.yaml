@@ -43,7 +43,7 @@ backend:
     # -- Enable existing PostgreSQL instance for persistence
     postgresqlExistingHost: ""
     # --  You need to manually create the secret before deploying this (or use vault)
-    # kubectl create secret generic --namespace=timed $(CHART-RELEASE-NAME)-postgresql --from-literal=postgres-password=$SECRET
+    # kubectl create secret generic --namespace=timed $(CHART-RELEASE-NAME)-postgresql --from-literal=password=$SECRET
     postgresqlExistingSecret: ""
     # -- PostgreSQL database name for existing instance
     postgresqlDatabase: timed

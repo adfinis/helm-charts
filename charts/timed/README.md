@@ -66,7 +66,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.livenessProbe.timeoutSeconds | int | `5` | Number of seconds after which the probe times out |
 | backend.postgresql.postgresqlDatabase | string | `"timed"` | PostgreSQL database name for existing instance |
 | backend.postgresql.postgresqlExistingHost | string | `""` | Enable existing PostgreSQL instance for persistence |
-| backend.postgresql.postgresqlExistingSecret | string | `""` | You need to manually create the secret before deploying this (or use vault) kubectl create secret generic --namespace=timed $(CHART-RELEASE-NAME)-postgresql --from-literal=postgres-password=$SECRET |
+| backend.postgresql.postgresqlExistingSecret | string | `""` | You need to manually create the secret before deploying this (or use vault) kubectl create secret generic --namespace=timed $(CHART-RELEASE-NAME)-postgresql --from-literal=password=$SECRET |
 | backend.postgresql.postgresqlPort | int | `5432` | PostgreSQL Port for existing instance |
 | backend.postgresql.postgresqlUsername | string | `"timed"` | PostgreSQL user name for existing instance |
 | backend.readinessProbe.enabled | bool | `true` | Enable readiness probe on backend |
