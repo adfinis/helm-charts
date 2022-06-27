@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.104.0](https://img.shields.io/badge/Version-0.104.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.105.0](https://img.shields.io/badge/Version-0.105.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -102,7 +102,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | thanos.destination.namespace | string | `"infra-monitoring"` | Namespace |
 | thanos.enabled | bool | `false` | Enable Thanos |
 | thanos.repoURL | string | [repo](https://charts.bitnami.com/bitnami) | Repo URL |
-| thanos.targetRevision | string | `"10.4.*"` | [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos) |
+| thanos.targetRevision | string | `"10.5.*"` | [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos) |
 | thanos.values | object | [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/thanos/values.yaml) | Helm values |
 | velero | object | [example](./examples/velero.yaml) | [Velero](https://velero.io/) |
 | velero.annotations | object | `{}` | Annotations for Velero app |

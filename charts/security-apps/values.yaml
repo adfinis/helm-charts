@@ -13,7 +13,7 @@ dex:
   # -- Chart
   chart: "dex"
   # -- [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version
-  targetRevision: "0.8.*"
+  targetRevision: "0.9.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml)
   values: {}
@@ -81,7 +81,7 @@ vault:
   # -- Chart
   chart: "vault"
   # -- [vault Helm chart](https://github.com/hashicorp/vault-helm) version
-  targetRevision: "0.19.*"
+  targetRevision: "0.20.1"
   # -- Helm values
   # @default -- [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml)
   values: {}

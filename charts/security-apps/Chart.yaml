@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.49.0
+version: 0.51.0
 home: https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis-sygroup/helm-charts

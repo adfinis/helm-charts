@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.20.0
+version: 0.20.1
 home: https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis-sygroup/helm-charts
