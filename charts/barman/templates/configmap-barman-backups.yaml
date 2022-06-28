@@ -6,8 +6,8 @@ metadata:
     {{- include "barman.labels" . | nindent 4 }}
 data:
   {{- range .Values.barman.backups }}
-  {{ .postgresql.host }}.conf: |
-      [{{ .postgresql.host }}]
+  {{ .scopeName }}.conf: |
+      [{{ .scopeName }}]
       active = true
       description = "PostgreSQL Database (Streaming-Only)"
       conninfo = host={{ .postgresql.host }} user={{ .postgresql.superUser }} dbname={{ .postgresql.superUserDatabase }}

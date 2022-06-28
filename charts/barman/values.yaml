@@ -30,6 +30,8 @@ deployment:
   extraContainers: {}
   # -- Specify imagePullSecrets for the deployment
   imagePullSecrets: []
+  # -- Specify additional ENVs for the Deployment
+  additionalENVs: {}
 
 service:
   # -- Specify if a Service should be created
@@ -105,10 +107,16 @@ barman:
   databaseSlotName: barman
   # -- Create Database slot
   createDatabaseSlot: true
+  # -- Barman post_backup_retry_script
+  postBackupRetryScript: ""
+  # -- Barman pre_recovery_retry_script
+  preRecoveryRetryScript: ""
 
   backups:
       # -- Barman retention policy
     - retentionPolicy: "RECOVERY WINDOW of 1 MONTH"
+      # -- Postgresql server scope-name
+      scopeName: "pg"
       # -- Barman backup method
       backupMethod: postgres
       # -- Database slot name to be created/used
