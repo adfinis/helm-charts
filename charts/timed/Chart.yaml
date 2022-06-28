@@ -2,7 +2,7 @@ apiVersion: v2
 name: timed
 description: Chart for Timed application
 type: application
-version: 0.9.1
+version: 0.10.0
 keywords:
   - timed
   - tracking
@@ -17,6 +17,6 @@ maintainers:
     url: https://adfinis.com
 dependencies:
   - name: postgresql
-    version: ~9.1.2
+    version: ~11.6.7
     repository: https://charts.bitnami.com/bitnami
     condition: postgresql.enabled
