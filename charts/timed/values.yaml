@@ -247,7 +247,7 @@ postgresql:
     # -- PostgreSQL database name
     database: timed
     # -- PostgreSQL user name
-    username: postgres
+    username: timed
     # -- Set a password for PostgreSQL
     # password: s3cr3t
   ingress:

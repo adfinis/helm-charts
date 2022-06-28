@@ -126,7 +126,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingress.tls | list | `[]` | Ingress TLS options |
 | kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
 | postgresql.auth.database | string | `"timed"` | PostgreSQL database name |
-| postgresql.auth.username | string | `"postgres"` | PostgreSQL user name |
+| postgresql.auth.username | string | `"timed"` | PostgreSQL user name |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL Helm Chart (https://bitnami.com/stack/postgresql) for persistence |
 | postgresql.ingress.enabled | bool | `false` | Enable ingress |
 | postgresql.ingress.loadBalancerSourceRanges | list | `[]` | Whitelist specific IP ranges |
