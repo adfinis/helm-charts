@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.17.0](https://img.shields.io/badge/Version-0.17.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.18.0](https://img.shields.io/badge/Version-0.18.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -30,13 +30,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | chartmuseum.repoURL | string | [repo](https://chartmuseum.github.io/charts) | Repo URL |
 | chartmuseum.targetRevision | string | `"3.8.*"` | [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum) |
 | chartmuseum.values | object | [upstream values](https://github.com/chartmuseum/charts/blob/main/src/chartmuseum/values.yaml) | Helm values |
-| downscaler | object | - | [kube-downscaler](https://github.com/hjacobs/kube-downscaler) ([example](./examples/kube-downscaler.yaml)) |
+| downscaler | object | - | [kube-downscaler](https://codeberg.org/hjacobs/kube-downscaler) ([example](./examples/kube-downscaler.yaml)) |
 | downscaler.chart | string | `"kube-downscaler"` | Chart |
 | downscaler.destination.namespace | string | `"infra-downscaler"` | Namespace |
 | downscaler.enabled | bool | `false` | Enable kube-downscaler |
-| downscaler.repoURL | string | [repo](https://charts.helm.sh/incubator) | Repo URL |
-| downscaler.targetRevision | string | `"0.6.*"` | [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version |
-| downscaler.values | object | [upstream values](https://github.com/helm/charts/blob/master/incubator/kube-downscaler/values.yaml) | Helm values |
+| downscaler.repoURL | string | [repo](https://charts.deliveryhero.io) | Repo URL |
+| downscaler.targetRevision | string | `"0.5.*"` | [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version |
+| downscaler.values | object | [upstream values](https://github.com/deliveryhero/helm-charts/blob/master/stable/kube-downscaler/values.yaml) | Helm values |
 | metallb | object | - | [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml)) |
 | metallb.chart | string | `"metallb"` | Chart |
 | metallb.destination.namespace | string | `"infra-metallb"` | Namespace |
