@@ -7589,6 +7589,30 @@ entries:
     version: 0.1.0
   mopsos:
   - apiVersion: v2
+    appVersion: v0.3.7
+    created: "2022-07-04T21:29:00.772984853Z"
+    dependencies:
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.26.*
+    description: Deploy Mopsos to a Kubernetes Cluster
+    digest: a0c0a3a1c57fa6f51f0e890cbee48648a7e53d77eba7bc6a31facf656e611e10
+    home: https://github.com/adfinis-sygroup/mopsos
+    kubeVersion: '>= 1.21.0'
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis-sygroup
+      url: https://adfinis.com
+    name: mopsos
+    sources:
+    - https://github.com/adfinis-sygroup/mopsos
+    - https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/mopsos
+    type: application
+    urls:
+    - https://github.com/adfinis-sygroup/helm-charts/releases/download/mopsos-0.6.2/mopsos-0.6.2.tgz
+    version: 0.6.2
+  - apiVersion: v2
     appVersion: v0.3.6
     created: "2022-06-21T11:07:21.872093167Z"
     dependencies:
@@ -13377,4 +13401,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-06-29T15:55:37.872996606Z"
+generated: "2022-07-04T21:29:00.775944289Z"
