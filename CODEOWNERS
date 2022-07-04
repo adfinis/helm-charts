@@ -4,7 +4,6 @@
 # Add specific owners to specific charts where ownership extends above group
 /charts/argoconfig                  @adfinis-sygroup/helm-charts @hairmare
 /charts/back8sup                    @adfinis-sygroup/helm-charts @eyenx @tongpu
-/charts/barman                      @adfinis-sygroup/helm-charts @michaelimfeld
 /charts/caasperli                   @adfinis-sygroup/helm-charts @hairmare
 /charts/cert-manager-issuers        @adfinis-sygroup/helm-charts @hairmare
 /charts/common                      @adfinis-sygroup/helm-charts @hairmare
@@ -12,7 +11,7 @@
 /charts/customer-center             @adfinis-sygroup/helm-charts @vmaillot
 /charts/huawei-csi-plugin           @adfinis-sygroup/helm-charts @tongpu
 /charts/osschallenge                @adfinis-sygroup/helm-charts @trowik
-/charts/timed                       @adfinis-sygroup/helm-charts @michaelimfeld @aziiee
+/charts/timed                       @adfinis-sygroup/helm-charts @aziiee
 /charts/vault-auth                  @adfinis-sygroup/helm-charts @eyenx
 /charts/vault-csi-provider          @adfinis-sygroup/helm-charts @pree @eyenx
 /charts/vault-monitoring            @adfinis-sygroup/helm-charts @pree @eyenx
