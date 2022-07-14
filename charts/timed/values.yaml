@@ -39,6 +39,19 @@ backend:
     # requests:
     #  cpu: 100m
     #  memory: 128Mi
+  postgresql:
+    # -- Enable existing PostgreSQL instance for persistence
+    postgresqlExistingHost: ""
+    # --  You need to manually create the secret before deploying this (or use vault)
+    # kubectl create secret generic --namespace=timed $(CHART-RELEASE-NAME)-postgresql --from-literal=password=$SECRET
+    postgresqlExistingSecret: ""
+    # -- PostgreSQL database name for existing instance
+    postgresqlDatabase: timed
+    # -- PostgreSQL user name for existing instance
+    postgresqlUsername: timed
+    # -- PostgreSQL Port for existing instance
+    postgresqlPort: 5432
+
   livenessProbe:
     # -- Enable liveness probe on backend
     enabled: true
@@ -99,7 +112,6 @@ backend:
       tracesSampleRate: 1.0
       # -- Associate users to errors in Sentry
       sendDefaultPii: "True"
-
 
   cronjobs:
     # -- Notify supervisors
@@ -229,20 +241,15 @@ ingress:
   #      - timed-test.example.com
 
 postgresql:
-  # -- Enable PostgreSQL for persistence
+  # -- Enable PostgreSQL Helm Chart (https://bitnami.com/stack/postgresql) for persistence
   enabled: true
-  # -- Use an existing PostgreSQL instance
-  existingHost: ""
-  # -- PostgreSQL database name
-  postgresqlDatabase: timed
-  # -- PostgreSQL user name
-  postgresqlUsername: postgres
-  # -- Set a password for PostgreSQL
-  # postgresqlPassword: s3cr3t
-  image:
-    # Use Postgresql 12
-    # -- PostgreSQL image version to use
-    tag: 12.3.0
+  auth:
+    # -- PostgreSQL database name
+    database: timed
+    # -- PostgreSQL user name
+    username: timed
+    # -- Set a password for PostgreSQL
+    # password: s3cr3t
   ingress:
     # -- Enable ingress
     enabled: false
@@ -252,6 +259,8 @@ postgresql:
     selector:
       app.kubernetes.io/name: postgresql
       role: slave
+  service:
+    port: 5432
   tls:
     # -- Enable TLS for Postgresql
     enabled: false
@@ -307,7 +316,7 @@ auth:
         # -- OIDC introspect client id
         id: timed-confidential
         # -- OIDC introspect client secret
-        secret: ~
+        secret: ""
       # -- OIDC introspect endpoint
       endpoint: ~
     claims:

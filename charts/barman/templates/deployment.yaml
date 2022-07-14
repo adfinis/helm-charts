@@ -73,6 +73,9 @@ spec:
             - mountPath: /etc/cron.d/barman
               name: barman-cron-config
               subPath: barman
+            - mountPath: /entrypoint.sh
+              name: barman-entrypoint
+              subPath: entrypoint.sh
           {{- with .Values.deployment.additionalVolumeMounts }}
             {{- toYaml . | nindent 12 }}
           {{- end  }}
@@ -106,6 +109,10 @@ spec:
         - name: barman-cron-config
           configMap:
             name: {{ include "barman.fullname" . }}-cron-config
+        - name: barman-entrypoint
+          configMap:
+            name: {{ include "barman.fullname" . }}-entrypoint
+            defaultMode: 0775
       {{- with .Values.deployment.additionalVolumes }}
         {{- toYaml . | nindent 8 }}
       {{- end  }}

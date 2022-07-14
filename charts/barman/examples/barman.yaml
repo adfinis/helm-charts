@@ -15,6 +15,8 @@ deployment:
     # deployment.strategy needs to be set to Recreate if the underlying PVC does
     # not support multi-attach.
     type: Recreate
+    additionalENVs:
+      TZ: "Asia/Tehran"
 resources:
   requests:
     cpu: 100m
@@ -75,10 +77,13 @@ barman:
   lastBackupMaximumAge: "1 day"
   backupSchedule: "0 4 * * *"
   databaseSlotName: barman
+  postBackupRetryScript: tar -zcvf data.tar.gz -C /var/lib/barman/pg/base/$BARMAN_BACKUP_ID/data . --remove-files
+  preRecoveryRetryScript: mkdir /var/lib/barman/pg/base/$BARMAN_BACKUP_ID/data; tar -xvzf data.tar.gz -C /var/lib/barman/pg/base/$BARMAN_BACKUP_ID/data; rm data.tar.gz
   # server specific backup configs, add an entry for each db you backup
   backups:
     - backupMethod: postgres
       backupSchedule: "0 4 * * *"
+      scopeName: "pg"
       databaseSlotName: barman
       lastBackupMaximumAge: "1 day"
       # namespace the db is in

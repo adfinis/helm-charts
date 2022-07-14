@@ -1,4 +1,4 @@
-# -- [kube-downscaler](https://github.com/hjacobs/kube-downscaler) ([example](./examples/kube-downscaler.yaml))
+# -- [kube-downscaler](https://codeberg.org/hjacobs/kube-downscaler) ([example](./examples/kube-downscaler.yaml))
 # @default -- -
 downscaler:
   # -- Enable kube-downscaler
@@ -8,14 +8,14 @@ downscaler:
     # -- Namespace
     namespace: "infra-downscaler"
   # -- Repo URL
-  # @default -- [repo](https://charts.helm.sh/incubator)
-  repoURL: "https://charts.helm.sh/incubator"
+  # @default -- [repo](https://charts.deliveryhero.io)
+  repoURL: "https://charts.deliveryhero.io"
   # -- Chart
   chart: "kube-downscaler"
-  # -- [kube-downscaler Helm chart](https://github.com/helm/charts/tree/master/incubator/kube-downscaler) version
-  targetRevision: "0.6.*"
+  # -- [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version
+  targetRevision: "0.5.*"
   # -- Helm values
-  # @default -- [upstream values](https://github.com/helm/charts/blob/master/incubator/kube-downscaler/values.yaml)
+  # @default -- [upstream values](https://github.com/deliveryhero/helm-charts/blob/master/stable/kube-downscaler/values.yaml)
   values: {}
 
 # -- [sigalilo](https://github.com/vshn/signalilo) ([example](./examples/signalilo.yaml))

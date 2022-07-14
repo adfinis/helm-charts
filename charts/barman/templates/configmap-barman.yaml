@@ -19,6 +19,14 @@ data:
 
       barman_user = {{ .Values.barman.barmanUser }}
 
+      {{- if hasKey .Values.barman "postBackupRetryScript" }}
+      post_backup_retry_script = {{ .Values.barman.postBackupRetryScript }}
+      {{- end }}
+
+      {{- if hasKey .Values.barman "preRecoveryRetryScript" }}
+      pre_recovery_retry_script = {{ .Values.barman.preRecoveryRetryScript }}
+      {{- end }}
+
       ; barman_lock_directory = %(barman_home)s
       compression = {{ .Values.barman.compression }}
       configuration_files_directory = /etc/barman/barman.d

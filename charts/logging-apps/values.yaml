@@ -53,7 +53,7 @@ fluentd:
   # -- Chart
   chart: "fluentd"
   # -- [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version
-  targetRevision: "5.0.*"
+  targetRevision: "5.1.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/fluentd/values.yaml)
   values: {}
@@ -73,7 +73,7 @@ fluentBit:
   # -- Chart
   chart: "fluent-bit"
   # -- [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version
-  targetRevision: "0.19.*"
+  targetRevision: "0.20.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/values.yaml)
   values: {}

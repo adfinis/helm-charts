@@ -19,7 +19,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | ~9.1.2 |
+| https://charts.bitnami.com/bitnami | postgresql | ~11.6.7 |
 
 ## Values
 
@@ -38,7 +38,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | auth.oidc.endPoints.token | string | `nil` | OIDC /token endpoint |
 | auth.oidc.endPoints.userInfo | string | `nil` | OIDC /userinfo endpoint |
 | auth.oidc.introspect.client.id | string | `"timed-confidential"` | OIDC introspect client id |
-| auth.oidc.introspect.client.secret | string | `nil` | OIDC introspect client secret |
+| auth.oidc.introspect.client.secret | string | `""` | OIDC introspect client secret |
 | auth.oidc.introspect.enabled | bool | `true` | Enable OIDC introspect |
 | auth.oidc.introspect.endpoint | string | `nil` | OIDC introspect endpoint |
 | auth.oidc.signAlgorithm | string | `"RS256"` | Algorithm the OIDC provider uses to sign ID tokens |
@@ -64,6 +64,11 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.livenessProbe.periodSeconds | int | `10` | How often (in seconds) to perform the probe |
 | backend.livenessProbe.successThreshold | int | `1` | Minimum consecutive successes for the probe to be considered successful after having failed |
 | backend.livenessProbe.timeoutSeconds | int | `5` | Number of seconds after which the probe times out |
+| backend.postgresql.postgresqlDatabase | string | `"timed"` | PostgreSQL database name for existing instance |
+| backend.postgresql.postgresqlExistingHost | string | `""` | Enable existing PostgreSQL instance for persistence |
+| backend.postgresql.postgresqlExistingSecret | string | `""` | You need to manually create the secret before deploying this (or use vault) kubectl create secret generic --namespace=timed $(CHART-RELEASE-NAME)-postgresql --from-literal=password=$SECRET |
+| backend.postgresql.postgresqlPort | int | `5432` | PostgreSQL Port for existing instance |
+| backend.postgresql.postgresqlUsername | string | `"timed"` | PostgreSQL user name for existing instance |
 | backend.readinessProbe.enabled | bool | `true` | Enable readiness probe on backend |
 | backend.readinessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | backend.readinessProbe.initialDelaySeconds | int | `30` | Number of seconds after the container has started before readiness probe is initiated |
@@ -120,15 +125,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingress.hosts | list | `[]` | Ingress hostnames |
 | ingress.tls | list | `[]` | Ingress TLS options |
 | kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
-| postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
-| postgresql.existingHost | string | `""` | Use an existing PostgreSQL instance |
-| postgresql.image | object | `{"tag":"12.3.0"}` | Set a password for PostgreSQL postgresqlPassword: s3cr3t |
-| postgresql.image.tag | string | `"12.3.0"` | PostgreSQL image version to use |
+| postgresql.auth.database | string | `"timed"` | PostgreSQL database name |
+| postgresql.auth.username | string | `"timed"` | PostgreSQL user name |
+| postgresql.enabled | bool | `true` | Enable PostgreSQL Helm Chart (https://bitnami.com/stack/postgresql) for persistence |
 | postgresql.ingress.enabled | bool | `false` | Enable ingress |
 | postgresql.ingress.loadBalancerSourceRanges | list | `[]` | Whitelist specific IP ranges |
 | postgresql.ingress.selector | object | `{"app.kubernetes.io/name":"postgresql","role":"slave"}` | Service selector labels |
-| postgresql.postgresqlDatabase | string | `"timed"` | PostgreSQL database name |
-| postgresql.postgresqlUsername | string | `"postgres"` | PostgreSQL user name |
+| postgresql.service.port | int | `5432` |  |
 | postgresql.tls.certFilename | string | `"tls.crt"` | Cert file name |
 | postgresql.tls.certKeyFilename | string | `"tls.key"` | Cert key filename |
 | postgresql.tls.certificate.dnsNames | list | `[]` | DNS names of certificate |
