@@ -1,6 +1,6 @@
 # csi-secret-provider-class
 
-![Version: 0.3.2](https://img.shields.io/badge/Version-0.3.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
+![Version: 0.3.3](https://img.shields.io/badge/Version-0.3.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
 
 A Helm chart to create a SecretProviderClass resource
 
@@ -25,9 +25,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 |-----|------|---------|-------------|
 | dummyDeployment.affinity | object | `{}` | sets affinity rules on the  deployment |
 | dummyDeployment.enabled | bool | `false` | enable the dummy deployment |
-| dummyDeployment.image.pullPolicy | string | `"IfNotPresent"` | When to pull the container image |
-| dummyDeployment.image.repository | string | `"k8s.gcr.io/pause"` | Container image to deploy |
-| dummyDeployment.image.tag | string | `"3.4.1"` | sets the image tag to use |
+| dummyDeployment.image.pullPolicy | string | `"IfNotPresent"` | When to pull the container imag |
+| dummyDeployment.image.repository | string | `"registry.k8s.io/pause"` | Container image to deploy |
+| dummyDeployment.image.tag | float | `3.7` | sets the image tag to use |
 | dummyDeployment.nodeSelector | object | `{}` | sets a nodeSelector on the  deployment |
 | dummyDeployment.podAnnotations | object | `{}` | sets Pod annotations on the deployment |
 | dummyDeployment.resources | object | `{}` | sets resources like limits and requests on the  deployment |
