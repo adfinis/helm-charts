@@ -23,10 +23,10 @@ dummyDeployment:
   enabled: false
   image:
     # -- Container image to deploy
-    repository: k8s.gcr.io/pause
+    repository: registry.k8s.io/pause
     # -- sets the image tag to use
-    tag: 3.4.1
-    # -- When to pull the container image
+    tag: 3.7
+    # -- When to pull the container imag
     pullPolicy: IfNotPresent
   # -- sets Pod annotations on the deployment
   podAnnotations: {}
