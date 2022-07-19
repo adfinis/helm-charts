@@ -2,7 +2,10 @@ falco:
   enabled: true
   project: infra-falco
   values:
-    auditLog:
-      enabled: true
+    services:
+     - name: k8saudit-webhook
+       ports:
+         - port: 9765
+           protocol: TCP
     falcosidekick:
       enabled: true
