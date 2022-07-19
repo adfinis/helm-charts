@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.52.0](https://img.shields.io/badge/Version-0.52.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.53.0](https://img.shields.io/badge/Version-0.53.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -87,6 +87,20 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | secretsStoreCsiDriver.repoURL | string | [repo](https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts) | Repo URL |
 | secretsStoreCsiDriver.targetRevision | string | `"1.1.*"` | [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version |
 | secretsStoreCsiDriver.values | object | [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver/values.yaml) | Helm values |
+| stackroxCentralServices | object | `{"chart":"central-services","destination":{"namespace":"infra-stackrox"},"enabled":false,"name":"stackrox-central-services","repoURL":"https://charts.stackrox.io","targetRevision":"70.0.0","values":{}}` | [StackRox central-services](https://www.stackrox.io/) ([example/stackrox.yaml)) |
+| stackroxCentralServices.chart | string | `"central-services"` | Chart |
+| stackroxCentralServices.destination.namespace | string | `"infra-stackrox"` | Namespace |
+| stackroxCentralServices.enabled | bool | `false` | Enable StackRox central-services |
+| stackroxCentralServices.repoURL | string | [repo](https://charts.stackrox.io) | Repo URL |
+| stackroxCentralServices.targetRevision | string | `"70.0.0"` | [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
+| stackroxCentralServices.values | object | [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-central/values.yaml) | Helm values |
+| stackroxSecuredClusterServices | object | `{"chart":"secured-cluster-services","destination":{"namespace":"infra-stackrox"},"enabled":false,"name":"stackrox-secured-cluster-services","repoURL":"https://charts.stackrox.io","targetRevision":"70.0.0","values":{}}` | [StackRox secured-cluster-services](https://www.stackrox.io/) ([example/stackrox.yaml)) |
+| stackroxSecuredClusterServices.chart | string | `"secured-cluster-services"` | Chart |
+| stackroxSecuredClusterServices.destination.namespace | string | `"infra-stackrox"` | Namespace |
+| stackroxSecuredClusterServices.enabled | bool | `false` | Enable StackRox secured-cluster-services |
+| stackroxSecuredClusterServices.repoURL | string | [repo](https://charts.stackrox.io) | Repo URL |
+| stackroxSecuredClusterServices.targetRevision | string | `"70.0.0"` | [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
+| stackroxSecuredClusterServices.values | object | [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-secured-cluster/values.yaml.htpl) | Helm values |
 | vault | object | - | [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml)) |
 | vault.chart | string | `"vault"` | Chart |
 | vault.destination.namespace | string | `"infra-vault"` | Namespace |
