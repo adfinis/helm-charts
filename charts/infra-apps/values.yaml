@@ -247,3 +247,25 @@ kubeEventExporter:
   # -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/kubernetes-event-exporter/values.yaml)
   values: {}
+
+# -- [mimir](https://github.com/grafana/mimir)
+# @default -- [example](./examples/mimir.yaml)
+mimir:
+  # -- Enable mimir
+  enabled: false
+  name: mimir
+  # -- Annotations for mimir app
+  annotations: {}
+  destination:
+    # -- Namespace
+    namespace: infra-mimir
+  # -- Repo URL
+  # @default -- [repo](https://grafana.github.io/helm-charts)
+  repoURL: https://grafana.github.io/helm-charts
+  # -- Chart
+  chart: mimir-distributed
+  # -- [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed)
+  targetRevision: 2.1.*
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml)
+  values: {}

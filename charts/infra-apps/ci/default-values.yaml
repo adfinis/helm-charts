@@ -32,3 +32,76 @@ kubeEventExporter:
   enabled: true
 velero:
   enabled: true
+global:
+  extraEnvFrom:
+    - secretRef:
+        name: mimir-minio-secret
+  podAnnotations:
+    minio-secret-version: '42'
+mimir:
+  enabled: true
+  values:
+    # taken from https://github.com/grafana/mimir/blob/main/operations/helm/charts/mimir-distributed/ci/test-oss-values.yaml
+    global:
+      extraEnvFrom:
+        - secretRef:
+            name: mimir-minio-secret
+      podAnnotations:
+        minio-secret-version: '42'
+    mimir:
+      structuredConfig:
+        alertmanager_storage:
+          s3:
+            access_key_id: "${MINIO_ACCESS_KEY_ID}"
+            secret_access_key: "${MINIO_SECRET_ACCESS_KEY}"
+        blocks_storage:
+          s3:
+            access_key_id: "${MINIO_ACCESS_KEY_ID}"
+            secret_access_key: "${MINIO_SECRET_ACCESS_KEY}"
+        ruler_storage:
+          s3:
+            access_key_id: "${MINIO_ACCESS_KEY_ID}"
+            secret_access_key: "${MINIO_SECRET_ACCESS_KEY}"
+    alertmanager:
+      persistentVolume:
+        enabled: false
+    compactor:
+      persistentVolume:
+        enabled: false
+    ingester:
+      persistentVolume:
+        enabled: false
+      resources:
+        requests:
+          cpu: 10m
+    store_gateway:
+      persistentVolume:
+        enabled: false
+    # For testing only
+    testing:
+      minio:
+        use_secret: true
+    chunks-cache:
+      enabled: true
+      allocatedMemory: 10
+      resources:
+        requests:
+          cpu: 10m
+    index-cache:
+      enabled: true
+      allocatedMemory: 30
+      resources:
+        requests:
+          cpu: 10m
+    metadata-cache:
+      enabled: true
+      allocatedMemory: 10
+      resources:
+        requests:
+          cpu: 10m
+    results-cache:
+      enabled: true
+      allocatedMemory: 10
+      resources:
+        requests:
+          cpu: 10m
