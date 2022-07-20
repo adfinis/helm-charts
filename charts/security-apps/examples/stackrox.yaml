@@ -1,0 +1,15 @@
+# This example deploys a minimal stackrox deployment
+
+stackroxCentralServices:
+  enabled: true
+  values:
+    env:
+      openshift: false
+      istio: false
+
+stackroxSecuredClusterServices:
+  enabled: true
+  values:
+    endpoint:
+      central: "central.infra-stackrox.svc:443"
+      advertised: "sensor.infra-stackrox.svc:443"
