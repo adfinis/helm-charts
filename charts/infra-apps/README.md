@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.109.0](https://img.shields.io/badge/Version-0.109.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.110.0](https://img.shields.io/badge/Version-0.110.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -88,6 +88,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kured.repoURL | string | [repo](https://weaveworks.github.io/kured) | Repo URL |
 | kured.targetRevision | string | `"2.17.*"` | [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured) |
 | kured.values | object | [upstream values](https://github.com/weaveworks/kured/blob/main/charts/kured/values.yaml) | Helm values |
+| mimir | object | [example](./examples/mimir.yaml) | [mimir](https://github.com/grafana/mimir) |
+| mimir.annotations | object | `{}` | Annotations for mimir app |
+| mimir.chart | string | `"mimir-distributed"` | Chart |
+| mimir.destination.namespace | string | `"infra-mimir"` | Namespace |
+| mimir.enabled | bool | `false` | Enable mimir |
+| mimir.repoURL | string | [repo](https://grafana.github.io/helm-charts) | Repo URL |
+| mimir.targetRevision | string | `"2.1.*"` | [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed) |
+| mimir.values | object | [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml) | Helm values |
 | rbacManager | object | [example](./examples/rbac-manager.yaml) | [rbac-manager](https://fairwindsops.github.io/rbac-manager/) |
 | rbacManager.annotations | object | `{}` | Annotations for rbac-manager app |
 | rbacManager.chart | string | `"rbac-manager"` | Chart |

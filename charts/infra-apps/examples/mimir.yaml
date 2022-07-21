@@ -1,0 +1,37 @@
+# Deploy Mimir
+#
+# This takes care of deploying Grafana Mimir' store gateway, query frontend, querier, ingesters and distributors
+
+mimir:
+  enabled: true
+  values:
+    # -- Configuration is loaded from the secret called 'externalConfigSecretName'. If 'useExternalConfig' is true, then the configuration is not generated, just consumed.
+    useExternalConfig: true
+    # -- Name of the secret that contains the configuration (used for naming even if config is internal).
+    # create this secret with `kubectl create secret generic mimir-config --from-file=mimir.yaml -n infra-mimir`
+    externalConfigSecretName: mimir-config
+    # -- When 'useExternalConfig' is true, then changing 'externalConfigVersion' triggers restart of services - otherwise changes to the configuration cause a restart.
+    # create this version with `cat mimir.yaml | sha256sum`
+    externalConfigVersion: "3af4987d588a7c5d0e16bf2a723c2351e216eaf266f696a410f4c71bb278938f"
+    # ServiceMonitor configuration
+    serviceMonitor:
+      # -- If enabled, ServiceMonitor resources for Prometheus Operator are created
+      enabled: true
+      labels:
+        k8s.adfinis.com/prometheus: kube-prometheus
+    alertmanager:
+      enabled: false
+    distributor:
+      replicas: 1
+    ingester:
+      replicas: 3
+    overrides_exporter:
+      enabled: false
+    ruler:
+      enabled: false
+    querier:
+      replicas: 1
+    minio:
+      enabled: false
+    nginx:
+      enabled: false
