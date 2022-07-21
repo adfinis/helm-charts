@@ -3,6 +3,11 @@
 stackroxCentralServices:
   enabled: true
   values:
+    allowNonstandardNamespace: true
+    imagePullSecrets:
+      allowNone: true
+    image:
+      registry: quay.io/stackrox-io
     env:
       openshift: false
       istio: false
@@ -10,6 +15,12 @@ stackroxCentralServices:
 stackroxSecuredClusterServices:
   enabled: true
   values:
+    allowNonstandardNamespace: true
+    mainImagePullSecrets:
+      allowNone: true
+    collectorImagePullSecrets:
+      allowNone: true
+    clusterName: cluster-name
     endpoint:
       central: "central.infra-stackrox.svc:443"
       advertised: "sensor.infra-stackrox.svc:443"
