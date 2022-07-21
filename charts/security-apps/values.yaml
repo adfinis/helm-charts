@@ -225,3 +225,41 @@ neuvectorMonitor:
   # -- Helm values
   # @default -- [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/monitor/values.yaml)
   values: {}
+
+# -- [StackRox central-services](https://www.stackrox.io/) ([example/stackrox.yaml))
+stackroxCentralServices:
+  # -- Enable StackRox central-services
+  enabled: false
+  name: stackrox-central-services
+  destination:
+    # -- Namespace
+    namespace: infra-stackrox
+  # -- Repo URL
+  # @default -- [repo](https://charts.stackrox.io)
+  repoURL: https://charts.stackrox.io
+  # -- Chart
+  chart: central-services
+  # -- [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version
+  targetRevision: 70.0.0
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-central/values.yaml)
+  values: {}
+
+# -- [StackRox secured-cluster-services](https://www.stackrox.io/) ([example/stackrox.yaml))
+stackroxSecuredClusterServices:
+  # -- Enable StackRox secured-cluster-services
+  enabled: false
+  name: stackrox-secured-cluster-services
+  destination:
+    # -- Namespace
+    namespace: infra-stackrox
+  # -- Repo URL
+  # @default -- [repo](https://charts.stackrox.io)
+  repoURL: https://charts.stackrox.io
+  # -- Chart
+  chart: secured-cluster-services
+  # -- [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version
+  targetRevision: 70.0.0
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-secured-cluster/values.yaml.htpl)
+  values: {}
