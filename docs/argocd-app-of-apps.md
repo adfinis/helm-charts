@@ -142,6 +142,34 @@ exampleApp:
   values: {}
 ```
 
+## Component Deprecation
+
+From time to time the app-of-apps charts will contain components that we want to get rid of.
+These changes are breaking by definition so we want to take care of communicating this properly and give potential users enough heads up to follow along.
+
+First we mark the component as DEPRECATED in the README.md and describe a replacement in the docs:
+
+```yaml
+# -- [component](https://example.com/) is DEPRECATED, use "improved solution" instead
+# @default -- DEPRECATED
+component:
+  enabled: false
+```
+
+We will still keep the app available in the app-of-apps chart for at least 6 months so users can take time to replace it.
+During this time the component does not get regular updates unless there are egregious security issues that need addressing.
+
+Once we are ready to fully remove it we replace the components template with a `fail` template:
+
+```yaml
+{{ if .Values.component.enabled }}
+{{ fail("component is DEPRECATED, use "improved solution" instead") }}
+{{ end }}
+```
+
+On charts that already have a >1.x release, the change to `fail` is considered breaking so we bump the major version of the chart.
+After switching the deprecated component to `fail` we keep it for >12 months. Then we remove the components template which isn't considered a breaking change since we gave everyone ample warning.
+
 ## Further Info
 
 For now, these charts may be seen as an alternative to Argo CD ApplicationSets, [let us know](https://github.com/adfinis-sygroup/helm-charts/discussions)
