@@ -1,6 +1,6 @@
 # back8sup
 
-![Version: 0.4.4](https://img.shields.io/badge/Version-0.4.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.7.9](https://img.shields.io/badge/AppVersion-v0.7.9-informational?style=flat-square)
+![Version: 0.4.5](https://img.shields.io/badge/Version-0.4.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.7.9](https://img.shields.io/badge/AppVersion-v0.7.9-informational?style=flat-square)
 
 Deploy back8sup to a Kubernetes Cluster
 
@@ -49,7 +49,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | persistence.mountPath | string | `"/mnt/back8sup"` | specifies where to mount the PV |
 | persistence.size | string | `"10Gi"` | specifies which size the PVC should request |
 | podAnnotations | object | `{}` | specifies the Pod Annotations to be set |
-| podSecurityContext | object | `{}` | specifies the Pod Security Context to be set |
+| podSecurityContext | object | `{"fsGroup":65534}` | specifies the Pod Security Context to be set |
 | rbacCreate | bool | `true` | wheter the rolebindings and roles should be created |
 | replicaCount | int | `1` | specifies the replica count of the pods |
 | resources | object | `{}` | specifies the resources to be used |
