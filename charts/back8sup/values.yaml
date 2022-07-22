@@ -88,8 +88,8 @@ configMaps:
 podAnnotations: {}
 
 # -- specifies the Pod Security Context to be set
-podSecurityContext: {}
-  # fsGroup: 2000
+podSecurityContext:
+  fsGroup: 65534
 
 # -- specifies the Security Context to be set
 securityContext: {}

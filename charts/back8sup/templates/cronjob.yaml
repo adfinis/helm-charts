@@ -33,6 +33,8 @@ spec:
             {{- toYaml .Values.podAnnotations | nindent 12 }}
         {{- end }}
         spec:
+          securityContext:
+            {{- toYaml .Values.podSecurityContext | nindent 12 }}
           volumes:
             - name: config-volume
               configMap:
@@ -51,6 +53,8 @@ spec:
           serviceAccount: {{ include "back8sup.serviceAccountName" . }}
           containers:
             - name: {{ .Chart.Name }}
+              securityContext:
+                {{- toYaml .Values.securityContext | nindent 16 }}
               image: "{{ .Values.image.repository }}:{{ default .Chart.AppVersion .Values.image.tag }}"
               imagePullPolicy: {{ .Values.image.pullPolicy }}
               volumeMounts:
