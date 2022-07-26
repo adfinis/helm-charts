@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.10.0
+version: 0.11.0
 home: https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis-sygroup/helm-charts
