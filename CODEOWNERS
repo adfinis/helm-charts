@@ -11,7 +11,6 @@
 /charts/customer-center             @adfinis-sygroup/helm-charts @vmaillot
 /charts/huawei-csi-plugin           @adfinis-sygroup/helm-charts @tongpu
 /charts/osschallenge                @adfinis-sygroup/helm-charts @trowik
-/charts/timed                       @adfinis-sygroup/helm-charts @aziiee
 /charts/vault-auth                  @adfinis-sygroup/helm-charts @eyenx
 /charts/vault-csi-provider          @adfinis-sygroup/helm-charts @pree @eyenx
 /charts/vault-monitoring            @adfinis-sygroup/helm-charts @pree @eyenx
