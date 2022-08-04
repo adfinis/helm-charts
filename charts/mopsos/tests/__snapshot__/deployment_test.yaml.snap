@@ -8,7 +8,7 @@ should match snapshot:
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: mopsos
         app.kubernetes.io/version: v0.3.7
-        helm.sh/chart: mopsos-0.6.2
+        helm.sh/chart: mopsos-0.6.3
       name: RELEASE-NAME-mopsos
     spec:
       replicas: 1
@@ -28,7 +28,7 @@ should match snapshot:
                 name: RELEASE-NAME-mopsos-secret
             - configMapRef:
                 name: RELEASE-NAME-mopsos-config
-            image: ghcr.io/adfinis-sygroup/mopsos:v0.3.7
+            image: ghcr.io/adfinis/mopsos:v0.3.7
             imagePullPolicy: IfNotPresent
             livenessProbe:
               httpGet:

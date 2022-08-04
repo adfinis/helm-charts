@@ -11,7 +11,7 @@ csi_attacher:
 csi_driver:
   image:
     # csi_driver.image.repository -- Image Repo for csi-driver
-    repository: "ghcr.io/adfinis-sygroup/huawei-csi-plugin"
+    repository: "ghcr.io/adfinis/huawei-csi-plugin"
     # csi_driver.image.tag -- Image Tag for csi-driver
     tag: "v2.2.14"
     # csi_driver.image.pullPolicy -- Image PullPolicy for csi-driver

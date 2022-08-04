@@ -9,7 +9,7 @@ sources:
 - https://github.com/adfinis-sygroup/huawei-csi-plugin
 - https://github.com/adfinis-sygroup/helm-charts/tree/master/charts/huawei-csi-plugin
 type: application
-version: 0.3.3
+version: 0.3.4
 annotations:
   artifacthub.io/images: |
     - name: csi-attacher

@@ -1,6 +1,6 @@
 # caasperli
 
-![Version: 0.10.2](https://img.shields.io/badge/Version-0.10.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 0.10.3](https://img.shields.io/badge/Version-0.10.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Deploy Caasperli to a Kubernetes Cluster
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | grafana.extraAnnotations | object | `{}` | Annotations to add to all Grafana integration resources |
 | grafana.extraLabels | object | `{}` | Labels to add to all Grafana integration resources |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
-| image.repository | string | `"ghcr.io/adfinis-sygroup/potz-holzoepfel-und-zipfelchape"` | Container image to deploy |
+| image.repository | string | `"ghcr.io/adfinis/potz-holzoepfel-und-zipfelchape"` | Container image to deploy |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart version. |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` | Annotations to add to the ingress resource |
