@@ -2,6 +2,9 @@ backend:
   settings:
     admins:
       - "Jon Doe <jon.doe@example.com>"
+  jobs:
+    dbmigrate:
+      enabled: false
 
 auth:
   oidc:

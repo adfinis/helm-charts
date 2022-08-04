@@ -1,18 +1,18 @@
 # mopsos
 
-![Version: 0.6.2](https://img.shields.io/badge/Version-0.6.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.7](https://img.shields.io/badge/AppVersion-v0.3.7-informational?style=flat-square)
+![Version: 0.6.4](https://img.shields.io/badge/Version-0.6.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.7](https://img.shields.io/badge/AppVersion-v0.3.7-informational?style=flat-square)
 
 Deploy Mopsos to a Kubernetes Cluster
 
-**Homepage:** <https://github.com/adfinis-sygroup/mopsos>
+**Homepage:** <https://github.com/adfinis/mopsos>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/mopsos>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/mopsos>
+* <https://github.com/adfinis/mopsos>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/mopsos>
 
 ## Requirements
 
@@ -55,7 +55,7 @@ Kubernetes: `>= 1.21.0`
 | grafana.sidecar.dashboards.label | string | `"k8s.adfinis.com/grafana_dashboards"` | Label used to discover dashboards |
 | grafana.sidecar.dashboards.labelValue | string | `"mopsos"` | Value of ConfigMap label |
 | image.pullPolicy | string | `"IfNotPresent"` | pullPolicy to use |
-| image.repository | string | `"ghcr.io/adfinis-sygroup/mopsos"` | repository where the image is located |
+| image.repository | string | `"ghcr.io/adfinis/mopsos"` | repository where the image is located |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` | imagePullSecrets for pulling the image |
 | ingress.annotations | object | `{}` | ingress annotations |

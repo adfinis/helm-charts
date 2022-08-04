@@ -4,14 +4,14 @@
 
 Argo CD app-of-apps config for security applications
 
-**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/security-apps>
+**Homepage:** <https://github.com/adfinis/helm-charts/tree/main/charts/security-apps>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/helm-charts>
+* <https://github.com/adfinis/helm-charts>
 
 ## Requirements
 
@@ -108,13 +108,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vault.repoURL | string | [repo](https://helm.releases.hashicorp.com) | Repo URL |
 | vault.targetRevision | string | `"0.20.1"` | [vault Helm chart](https://github.com/hashicorp/vault-helm) version |
 | vault.values | object | [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml) | Helm values |
-| vaultMonitoring | object | - | [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml)) |
+| vaultMonitoring | object | - | [vault-monitoring](https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml)) |
 | vaultMonitoring.chart | string | `"vault-monitoring"` | Chart |
 | vaultMonitoring.destination.namespace | string | `"infra-vault"` | Namespace |
 | vaultMonitoring.enabled | bool | `false` | Enable vault-monitoring |
 | vaultMonitoring.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
-| vaultMonitoring.targetRevision | string | `"0.2.*"` | [vault-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring) version |
-| vaultMonitoring.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/vault-monitoring/values.yaml) | Helm values |
+| vaultMonitoring.targetRevision | string | `"0.2.*"` | [vault-monitoring Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring) version |
+| vaultMonitoring.values | object | [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/vault-monitoring/values.yaml) | Helm values |
 
 ## About this chart
 

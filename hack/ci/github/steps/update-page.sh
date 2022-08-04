@@ -27,7 +27,7 @@ git add index.md docs/images/lunkwill_helm_shirt.png
 `git diff --cached --quiet` && exit 0
 git commit --message="Update site" --signoff
 
-readonly repo_url="https://x-access-token:$CR_TOKEN@github.com/adfinis-sygroup/helm-charts"
+readonly repo_url="https://x-access-token:$CR_TOKEN@github.com/adfinis/helm-charts"
 git push "$repo_url" gh-pages
 
 popd > /dev/null

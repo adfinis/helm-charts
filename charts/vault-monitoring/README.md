@@ -1,17 +1,17 @@
 # vault-monitoring
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 monitor your vault server from within Kubernetes' prometheus
 
-**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring>
+**Homepage:** <https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring>
 
 ## Values
 

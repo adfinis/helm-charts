@@ -1,6 +1,6 @@
 # argoconfig
 
-![Version: 0.8.1](https://img.shields.io/badge/Version-0.8.1-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square)
+![Version: 0.8.2](https://img.shields.io/badge/Version-0.8.2-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square)
 
 Configure Argo CD AppProjects and Applications
 
@@ -11,7 +11,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/argoconfig>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/argoconfig>
 
 ## Requirements
 

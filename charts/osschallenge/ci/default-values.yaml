@@ -1,10 +1,16 @@
 postgresql:
-  postgresqlPassword: s3cr3t
+  auth:
+    password: s3cr3t
   persistence:
     enabled: false
+  service:
+    port: 5432
 osschallenge:
   settings:
     emailPassword: s3cr3t
+  jobs:
+    dbmigrate:
+      enabled: false
 persistence:
   storageClassName: "default"
   enabled: false

@@ -12,13 +12,13 @@ barman:
   repoURL: "https://charts.adfinis.com"
   # -- Chart
   chart: barman
-  # -- [Barman Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/barman)
+  # -- [Barman Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/barman)
   targetRevision: '0.8.*'
   # -- Helm values
-  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/barman/values.yaml)
+  # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/barman/values.yaml)
   values: {}
 
-# -- [Back8sup](https://github.com/adfinis-sygroup/back8sup)
+# -- [Back8sup](https://github.com/adfinis/back8sup)
 # @default -- [example](./examples/back8sup.yaml)
 back8sup:
   # -- Enable Back8sup
@@ -32,8 +32,8 @@ back8sup:
   repoURL: "https://charts.adfinis.com"
   # -- Chart
   chart: back8sup
-  # -- [Back8sup Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/back8sup)
+  # -- [Back8sup Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/back8sup)
   targetRevision: '0.4.*'
   # -- Helm values
-  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/back8sup/values.yaml)
+  # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/back8sup/values.yaml)
   values: {}

@@ -1,6 +1,6 @@
 # common
 
-![Version: 0.0.7](https://img.shields.io/badge/Version-0.0.7-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square) ![AppVersion: 0.0.0](https://img.shields.io/badge/AppVersion-0.0.0-informational?style=flat-square)
+![Version: 0.0.8](https://img.shields.io/badge/Version-0.0.8-informational?style=flat-square) ![Type: library](https://img.shields.io/badge/Type-library-informational?style=flat-square) ![AppVersion: 0.0.0](https://img.shields.io/badge/AppVersion-0.0.0-informational?style=flat-square)
 
 Common chartbuilding components and helpers, based on incubator/common
 
@@ -11,7 +11,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/common>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/common>
 
 ## About this chart
 

@@ -1,6 +1,6 @@
 # osschallenge
 
-![Version: 0.1.5](https://img.shields.io/badge/Version-0.1.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
+![Version: 0.1.6](https://img.shields.io/badge/Version-0.1.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
 
 Chart for OSS-Challenge application
 
@@ -11,14 +11,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/osschallenge>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/osschallenge>
+* <https://github.com/adfinis/osschallenge>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/osschallenge>
 
 ## Requirements
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | ~10.2.0 |
+| https://charts.bitnami.com/bitnami | postgresql | ~11.6.7 |
 
 ## Values
 
@@ -32,6 +32,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | osschallenge.image.repository | string | `"adfinissygroup/oss-challenge"` | OSS-Challenge image name |
 | osschallenge.image.tag | string | appVersion from Chart.yaml | Specify a tag to override which version of osschallenge to deploy. |
 | osschallenge.image.waitForItTimeout | int | `60` | Timeout for wait-for-it.sh |
+| osschallenge.jobs.dbmigrate.enabled | bool | `true` | Enable the dbmigrate Job. This is configurable because osschallenge can also run this on startup. |
 | osschallenge.livenessProbe.enabled | bool | `true` | Enable liveness probe on osschallenge |
 | osschallenge.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | osschallenge.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
@@ -61,9 +62,10 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | persistence.mountPath | string | `"/data"` | specifies where to mount the PV |
 | persistence.size | string | `"10Gi"` | specifies which size the PVC should request |
 | persistence.storageClassName | string | `""` | specifies which storageClassName should be used |
+| postgresql.auth.database | string | `"osschallenge"` | PostgreSQL database name |
+| postgresql.auth.password | string | `nil` | Set a password for PostgreSQL |
+| postgresql.auth.username | string | `"osschallenge"` | PostgreSQL user name |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
-| postgresql.postgresqlDatabase | string | `"osschallenge"` | PostgreSQL database name |
-| postgresql.postgresqlUsername | string | `"osschallenge"` | PostgreSQL user name |
 
 ## About this chart
 

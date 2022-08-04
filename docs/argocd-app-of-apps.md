@@ -91,7 +91,7 @@ is described below.
 
 ### The `argoconfig` library chart
 
-Inspired by various `common` charts. The [`argoconfig` library chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/argoconfig)
+Inspired by various `common` charts. The [`argoconfig` library chart](https://github.com/adfinis/helm-charts/tree/main/charts/argoconfig)
 helps us keep charts that manage Argo CD `Application` resources generic to some degree.
 
 It provides the `argoconfig.application` helper function which scaffolds an `Application` resource like so:
@@ -172,5 +172,5 @@ After switching the deprecated component to `fail` we keep it for >12 months. Th
 
 ## Further Info
 
-For now, these charts may be seen as an alternative to Argo CD ApplicationSets, [let us know](https://github.com/adfinis-sygroup/helm-charts/discussions)
+For now, these charts may be seen as an alternative to Argo CD ApplicationSets, [let us know](https://github.com/adfinis/helm-charts/discussions)
 if you would like for the charts to directly support ApplicationSets.

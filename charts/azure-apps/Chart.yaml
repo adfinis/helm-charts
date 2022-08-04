@@ -2,12 +2,12 @@ apiVersion: v2
 name: azure-apps
 description: Argo CD app-of-apps config for Azure applications
 type: application
-version: 0.5.0
-home: https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/azure-apps
+version: 0.5.1
+home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
 sources:
-  - https://github.com/adfinis-sygroup/helm-charts
+  - https://github.com/adfinis/helm-charts
 maintainers:
-  - name: adfinis-sygroup
+  - name: adfinis
     email: support@adfinis.com
     url: https://adfinis.com
 dependencies:

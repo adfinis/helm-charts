@@ -1,10 +1,10 @@
 apiVersion: v2
 name: vault-auth
-home: https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/vault-auth/README.md
+home: https://github.com/adfinis/helm-charts/blob/main/charts/vault-auth/README.md
 description: A helm chart to install the vault-auth serviceaccount for enabling vault's kubernetes authentication endpoint
-version: 0.1.2
+version: 0.1.3
 appVersion: 0.1.1
 maintainers:
-  - name: adfinis-sygroup
+  - name: adfinis
     email: support@adfinis.com
     url: https://adfinis.com

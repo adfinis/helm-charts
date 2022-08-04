@@ -2,15 +2,15 @@ apiVersion: v2
 name: customer-center
 description: Chart for Customer-Center application
 type: application
-version: 0.2.25
+version: 0.2.27
 appVersion: v3.2.3
 keywords:
   - customer-center
-home: https://github.com/adfinis-sygroup/customer-center
+home: https://github.com/adfinis/customer-center
 sources:
-  - https://github.com/adfinis-sygroup/customer-center
-  - https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/customer-center
+  - https://github.com/adfinis/customer-center
+  - https://github.com/adfinis/helm-charts/tree/main/charts/customer-center
 maintainers:
-  - name: adfinis-sygroup
+  - name: adfinis
     email: support@adfinis.com
     url: https://adfinis.com
