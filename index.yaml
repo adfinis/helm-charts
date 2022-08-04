@@ -2,6 +2,26 @@ apiVersion: v1
 entries:
   argo-apps:
   - apiVersion: v2
+    created: "2022-08-04T15:51:54.959244668Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.8.0
+    description: Argo CD app-of-apps config for various argo project components
+    digest: bbe4bb0850cd3555ec18fff6ab64ab94d7018145ac657bbfddddb3fdae11d760
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.10.1/argo-apps-0.10.1.tgz
+    version: 0.10.1
+  - apiVersion: v2
     created: "2022-06-20T09:31:29.846987756Z"
     dependencies:
     - name: argoconfig
@@ -242,6 +262,26 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/argo-apps-0.1.0/argo-apps-0.1.0.tgz
     version: 0.1.0
   argoconfig:
+  - apiVersion: v2
+    created: "2022-08-04T15:51:55.054783941Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.7
+    description: Configure Argo CD AppProjects and Applications
+    digest: e503d557f1af4b424d17cbc01306a210152c67945c8a0fcb975ea483de409089
+    home: https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argoconfig
+    sources:
+    - https://github.com/adfinis/helm-charts/tree/main/charts/argoconfig
+    type: library
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argoconfig-0.8.2/argoconfig-0.8.2.tgz
+    version: 0.8.2
   - apiVersion: v2
     created: "2022-05-10T10:32:10.13438343Z"
     dependencies:
@@ -627,6 +667,26 @@ entries:
     version: 0.1.0
   azure-apps:
   - apiVersion: v2
+    created: "2022-08-04T15:51:55.151209631Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for Azure applications
+    digest: 9f0b7d59c090e5fb476b52836cfc301b1e72f3d74adb6b04fd859ec1c9e48b15
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.5.1/azure-apps-0.5.1.tgz
+    version: 0.5.1
+  - apiVersion: v2
     created: "2022-05-03T11:03:18.049417641Z"
     dependencies:
     - name: argoconfig
@@ -893,6 +953,24 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/azure-apps-0.1.0/azure-apps-0.1.0.tgz
     version: 0.1.0
   back8sup:
+  - apiVersion: v2
+    appVersion: v0.7.9
+    created: "2022-08-04T15:51:55.253269025Z"
+    description: Deploy back8sup to a Kubernetes Cluster
+    digest: e6573864918daa17229014d3045084dbc06accbba850f46b2d90cfb097054877
+    home: https://github.com/adfinis/back8sup
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: back8sup
+    sources:
+    - https://github.com/adfinis/back8sup
+    - https://github.com/adfinis/helm-charts/tree/main/charts/back8sup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/back8sup-0.4.7/back8sup-0.4.7.tgz
+    version: 0.4.7
   - apiVersion: v2
     appVersion: v0.7.9
     created: "2022-08-04T10:06:44.13376689Z"
@@ -1308,6 +1386,26 @@ entries:
     version: 0.1.0
   backup-apps:
   - apiVersion: v2
+    created: "2022-08-04T15:51:55.337695093Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for backup components
+    digest: 4f5b281eca5505d9278b6a81f8388545183a43c0117e856f9a1c01146e0672de
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/backup-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: backup-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/backup-apps-0.3.1/backup-apps-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
     created: "2022-06-03T12:40:20.004708203Z"
     dependencies:
     - name: argoconfig
@@ -1429,6 +1527,29 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/backup-apps-0.1.0/backup-apps-0.1.0.tgz
     version: 0.1.0
   barman:
+  - apiVersion: v2
+    appVersion: v2.19
+    created: "2022-08-04T15:51:55.425555823Z"
+    description: Chart for Barman PostgreSQL Backup and Recovery Manager
+    digest: 36634858d458c5a79a88edbd5f4b48ad5172819608fbb3535d629a6dd06265cd
+    home: http://www.pgbarman.org/
+    keywords:
+    - barman
+    - postgresql
+    - postgres
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: barman
+    sources:
+    - https://github.com/2ndquadrant-it/barman
+    - https://github.com/ubc/barman-docker
+    - https://github.com/adfinis/helm-charts/tree/main/charts/barman
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/barman-0.9.1/barman-0.9.1.tgz
+    version: 0.9.1
   - apiVersion: v2
     appVersion: v2.19
     created: "2022-06-27T10:39:56.968719799Z"
@@ -2093,6 +2214,24 @@ entries:
   caasperli:
   - apiVersion: v2
     appVersion: latest
+    created: "2022-08-04T15:51:55.518164843Z"
+    description: Deploy Caasperli to a Kubernetes Cluster
+    digest: 60b2a010e4684c8c853f2944e64efbfbbabfe833ba9e5f24a9186077439944ca
+    home: https://github.com/adfinis/potz-holzoepfel-und-zipfelchape
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: caasperli
+    sources:
+    - https://github.com/adfinis/potz-holzoepfel-und-zipfelchape
+    - https://github.com/adfinis/helm-charts/tree/main/charts/caasperli
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/caasperli-0.10.4/caasperli-0.10.4.tgz
+    version: 0.10.4
+  - apiVersion: v2
+    appVersion: latest
     created: "2022-08-04T10:06:44.224784562Z"
     description: Deploy Caasperli to a Kubernetes Cluster
     digest: bfe9d06dac860495873ffce347a14bbfefd715ae24b551f9473272d681b48348
@@ -2434,6 +2573,31 @@ entries:
   cert-manager-issuers:
   - apiVersion: v2
     appVersion: "1"
+    created: "2022-08-04T15:51:55.611592377Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.7
+    description: Configure cert-manager Issuers and ClusterIssuers via Helm
+    digest: 8ee5c4546d75ac533f091c65bcc0fa886759aee0369d91a2569ac363d92228a9
+    home: https://cert-manager.io/docs/configuration/
+    icon: https://raw.githubusercontent.com/adfinis/helm-charts/main/charts/cert-manager-issuers/logo.png
+    keywords:
+    - cert-manager
+    - tls
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: cert-manager-issuers
+    sources:
+    - https://github.com/adfinis/helm-charts/tree/main/charts/cert-manager-issuers
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/cert-manager-issuers-0.2.5/cert-manager-issuers-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v2
+    appVersion: "1"
     created: "2022-04-04T11:34:57.855769011Z"
     dependencies:
     - name: common
@@ -2575,6 +2739,28 @@ entries:
     version: 0.1.0
   cert-manager-monitoring:
   - apiVersion: v2
+    created: "2022-08-04T15:51:55.714935895Z"
+    description: Monitor cert-manager with cert-manager-mixin.
+    digest: 74c13769e1c2ebbfe39ccb03c3ab947f9eaa30c382d01978c29389cf6fd33391
+    home: https://github.com/jetstack/cert-manager/issues/3342
+    keywords:
+    - cert-manager
+    - tls
+    - monitoring
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: cert-manager-monitoring
+    sources:
+    - https://github.com/adfinis/helm-charts
+    - https://gitlab.com/uneeq-oss/cert-manager-mixin
+    - https://github.com/jetstack/cert-manager/pull/3368#issuecomment-949346251
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/cert-manager-monitoring-0.1.2/cert-manager-monitoring-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     created: "2021-11-03T09:49:32.676888599Z"
     description: Monitor cert-manager with cert-manager-mixin.
     digest: 0d7800d1b2e3dabf5eeb70277faf3df26c27941e07f5d18cbec4b791143cd5a7
@@ -2619,6 +2805,23 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/cert-manager-monitoring-0.1.0/cert-manager-monitoring-0.1.0.tgz
     version: 0.1.0
   common:
+  - apiVersion: v2
+    appVersion: 0.0.0
+    created: "2022-08-04T15:51:55.81595847Z"
+    description: Common chartbuilding components and helpers, based on incubator/common
+    digest: 44c91b1a2dd78734b4fbbba26db2d9d81b4522c0b16bf9dbf8bb43befb61e6a1
+    home: https://helm.sh
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: common
+    sources:
+    - https://github.com/adfinis/helm-charts/tree/main/charts/common
+    type: library
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/common-0.0.8/common-0.0.8.tgz
+    version: 0.0.8
   - apiVersion: v2
     appVersion: 0.0.0
     created: "2022-04-04T07:11:28.33834033Z"
@@ -2752,6 +2955,27 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/common-0.0.0/common-0.0.0.tgz
     version: 0.0.0
   csi-secret-provider-class:
+  - apiVersion: v2
+    appVersion: 0.3.0
+    created: "2022-08-04T15:51:55.919852099Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.7
+    description: A Helm chart to create a SecretProviderClass resource
+    digest: b3b34f9fa33abbd1b82343434fe8a83fa3b4e87ced8b941bb1e733098617c327
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/csi-secret-provider-class
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: csi-secret-provider-class
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/csi-secret-provider-class-0.3.4/csi-secret-provider-class-0.3.4.tgz
+    version: 0.3.4
   - apiVersion: v2
     appVersion: 0.3.0
     created: "2022-07-19T18:52:38.870578888Z"
@@ -2921,6 +3145,26 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/csi-secret-provider-class-0.1.0/csi-secret-provider-class-0.1.0.tgz
     version: 0.1.0
   customer-center:
+  - apiVersion: v2
+    appVersion: v3.2.3
+    created: "2022-08-04T15:51:56.018833836Z"
+    description: Chart for Customer-Center application
+    digest: ea4fd97b43f12ef2d4f6b8030dd036431d885fac7f41aa9bd8310386324aab58
+    home: https://github.com/adfinis/customer-center
+    keywords:
+    - customer-center
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: customer-center
+    sources:
+    - https://github.com/adfinis/customer-center
+    - https://github.com/adfinis/helm-charts/tree/main/charts/customer-center
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/customer-center-0.2.27/customer-center-0.2.27.tgz
+    version: 0.2.27
   - apiVersion: v2
     appVersion: v3.2.3
     created: "2022-08-04T10:06:44.337785958Z"
@@ -3690,6 +3934,26 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/huawei-csi-plugin-0.0.1/huawei-csi-plugin-0.0.1.tgz
     version: 0.0.1
   infra-apps:
+  - apiVersion: v2
+    created: "2022-08-04T15:51:56.099542634Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.8.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: ca8ea661a80b96eed31930c16988913b21a67d3d844dc95bbdb01ad613c3eb7f
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.110.2/infra-apps-0.110.2.tgz
+    version: 0.110.2
   - apiVersion: v2
     created: "2022-07-27T11:26:57.390049898Z"
     dependencies:
@@ -6563,6 +6827,26 @@ entries:
     version: 0.3.1
   logging-apps:
   - apiVersion: v2
+    created: "2022-08-04T15:51:56.196909742Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for logging applications
+    digest: bda4eafcd1be8cc2df258eec48c48ee2532ff49315def096c893177ca512f274
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.20.2/logging-apps-0.20.2.tgz
+    version: 0.20.2
+  - apiVersion: v2
     created: "2022-06-22T09:25:36.313428419Z"
     dependencies:
     - name: argoconfig
@@ -7119,6 +7403,26 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.0.1/logging-apps-0.0.1.tgz
     version: 0.0.1
   misc-apps:
+  - apiVersion: v2
+    created: "2022-08-04T15:51:56.299500846Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: fd2ba48b7714bf5d319e1ba7841d824cfe3200e5879df61c166cd4db899374b4
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.18.1/misc-apps-0.18.1.tgz
+    version: 0.18.1
   - apiVersion: v2
     created: "2022-06-29T15:55:37.869807688Z"
     dependencies:
@@ -7806,6 +8110,30 @@ entries:
   mopsos:
   - apiVersion: v2
     appVersion: v0.3.7
+    created: "2022-08-04T15:51:56.392528073Z"
+    dependencies:
+    - condition: grafana.enabled
+      name: grafana
+      repository: https://grafana.github.io/helm-charts
+      version: 6.26.*
+    description: Deploy Mopsos to a Kubernetes Cluster
+    digest: 2e25abbf9ecc4b10ccd6c1597f8076d808666d00e2f4ac2f857837bce4e0a104
+    home: https://github.com/adfinis/mopsos
+    kubeVersion: '>= 1.21.0'
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: mopsos
+    sources:
+    - https://github.com/adfinis/mopsos
+    - https://github.com/adfinis/helm-charts/tree/main/charts/mopsos
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/mopsos-0.6.4/mopsos-0.6.4.tgz
+    version: 0.6.4
+  - apiVersion: v2
+    appVersion: v0.3.7
     created: "2022-08-04T10:06:44.54726153Z"
     dependencies:
     - condition: grafana.enabled
@@ -8150,6 +8478,29 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/mopsos-0.1.0/mopsos-0.1.0.tgz
     version: 0.1.0
   openshift-etcd-backup:
+  - apiVersion: v2
+    appVersion: v1.6.0
+    created: "2022-08-04T15:51:56.486537518Z"
+    description: Chart for openshift-etcd-backup solution
+    digest: 0358f41a24241d8ece379ec896862675fc06e77ad7a042eaa9aaae1008365251
+    home: https://github.com/adfinis/openshift-etcd-backup
+    keywords:
+    - openshift-etcd-backup
+    - openshift
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: openshift-etcd-backup
+    sources:
+    - https://github.com/adfinis/openshift-etcd-backup
+    - https://github.com/adfinis/helm-charts/tree/main/charts/openshift-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/openshift-etcd-backup-1.6.3/openshift-etcd-backup-1.6.3.tgz
+    version: 1.6.3
   - apiVersion: v2
     appVersion: v1.6.0
     created: "2022-08-04T11:28:46.195421657Z"
@@ -8590,6 +8941,32 @@ entries:
   osschallenge:
   - apiVersion: v2
     appVersion: edge
+    created: "2022-08-04T15:51:56.585909963Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~11.6.7
+    description: Chart for OSS-Challenge application
+    digest: 54d163aeb9daff5f583446ce06809601249d6d610bee2f470b9d591950a0e1c1
+    home: https://oss-challenge.ch
+    keywords:
+    - osschallenge
+    - postgresql
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: osschallenge
+    sources:
+    - https://github.com/adfinis/osschallenge
+    - https://github.com/adfinis/helm-charts/tree/main/charts/osschallenge
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/osschallenge-0.1.6/osschallenge-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: edge
     created: "2022-05-31T13:20:12.708299582Z"
     dependencies:
     - condition: postgresql.enabled
@@ -8747,6 +9124,30 @@ entries:
   rbac-definitions:
   - apiVersion: v2
     appVersion: 1beta1
+    created: "2022-08-04T15:51:56.680145012Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.7
+    description: Deploy rbac-manager RBACDefinitions via Helm
+    digest: 81595fbca7e186fbbedc6177d791149d177afc3836151f3de947eb84e8e6cb11
+    home: https://rbac-manager.docs.fairwinds.com/rbacdefinitions/
+    icon: https://rbac-manager.docs.fairwinds.com/img/rbac-manager-logo.svg
+    keywords:
+    - rbac-manager
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: rbac-definitions
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/rbac-definitions-0.1.3/rbac-definitions-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1beta1
     created: "2022-04-04T10:59:47.147677253Z"
     dependencies:
     - name: common
@@ -8818,6 +9219,29 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/rbac-definitions-0.1.0/rbac-definitions-0.1.0.tgz
     version: 0.1.0
   rmd:
+  - apiVersion: v2
+    appVersion: edge
+    created: "2022-08-04T15:51:56.79584576Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~11.6.7
+    deprecated: true
+    description: ⚠️ (OBSOLETE) Chart for Rmd.io application
+    digest: 3f53f94ad99045a16a98ee4bcfde5646050a916ec8813e8355cb83f1ea4270ad
+    home: https://github.com/adfinis/rmd.io
+    keywords:
+    - rmd
+    - postgresql
+    name: rmd
+    sources:
+    - https://github.com/adfinis/rmd.io
+    - https://github.com/adfinis/helm-charts/tree/main/charts/rmd
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/rmd-0.2.4/rmd-0.2.4.tgz
+    version: 0.2.4
   - apiVersion: v2
     appVersion: edge
     created: "2022-05-31T13:20:12.865010281Z"
@@ -9339,6 +9763,26 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/rmd-0.1.1/rmd-0.1.1.tgz
     version: 0.1.1
   security-apps:
+  - apiVersion: v2
+    created: "2022-08-04T15:51:56.905673698Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for security applications
+    digest: 7d1b7c974e6a4c3f1fda32a8f9b77a3ee55e8b8cadf1353daa8a5278e226e45a
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.53.2/security-apps-0.53.2.tgz
+    version: 0.53.2
   - apiVersion: v2
     created: "2022-07-21T13:22:04.902903863Z"
     dependencies:
@@ -10998,6 +11442,26 @@ entries:
     version: 0.1.0
   storage-apps:
   - apiVersion: v2
+    created: "2022-08-04T15:51:56.999168534Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for storage applications
+    digest: a7dabe8e66b7499e2170289d791077d0c30e656eb388b27f21ff5406275759b1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.9.1/storage-apps-0.9.1.tgz
+    version: 0.9.1
+  - apiVersion: v2
     created: "2022-05-09T08:16:47.48517067Z"
     dependencies:
     - name: argoconfig
@@ -11243,6 +11707,32 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/storage-apps-0.1.2/storage-apps-0.1.2.tgz
     version: 0.1.2
   timed:
+  - apiVersion: v2
+    created: "2022-08-04T15:51:57.119130661Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~11.6.7
+    description: Chart for Timed application
+    digest: 7f6a4a16b0c3c48c01561ef1c52371d3fed6c1ff926fdb1afb6faaebb778e182
+    home: https://github.com/adfinis/timed-frontend
+    keywords:
+    - timed
+    - tracking
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: timed
+    sources:
+    - https://github.com/adfinis/timed-backend
+    - https://github.com/adfinis/timed-frontend
+    - https://github.com/adfinis/helm-charts/tree/main/charts/timed
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/timed-0.11.1/timed-0.11.1.tgz
+    version: 0.11.1
   - apiVersion: v2
     created: "2022-07-14T08:32:43.866628474Z"
     dependencies:
@@ -13102,6 +13592,26 @@ entries:
     version: 0.3.3
   tracing-apps:
   - apiVersion: v2
+    created: "2022-08-04T15:51:57.198245429Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 0f32d6a8b22fac729813345c17088951309b9a78d1fff96e710d93df2acfc9a7
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.15.1/tracing-apps-0.15.1.tgz
+    version: 0.15.1
+  - apiVersion: v2
     created: "2022-07-27T11:39:45.81945458Z"
     dependencies:
     - name: argoconfig
@@ -13533,6 +14043,21 @@ entries:
   vault-auth:
   - apiVersion: v2
     appVersion: 0.1.1
+    created: "2022-08-04T15:51:57.297236467Z"
+    description: A helm chart to install the vault-auth serviceaccount for enabling
+      vault's kubernetes authentication endpoint
+    digest: 4a7a46569ee5f4941482d71c59ec2f41d6ec5b88ce0b9357615f30e662dbe330
+    home: https://github.com/adfinis/helm-charts/blob/main/charts/vault-auth/README.md
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: vault-auth
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/vault-auth-0.1.3/vault-auth-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.1.1
     created: "2022-04-04T07:11:30.305883957Z"
     description: A helm chart to install the vault-auth serviceaccount for enabling
       vault's kubernetes authentication endpoint
@@ -13672,6 +14197,22 @@ entries:
     version: 0.2.0
   vault-monitoring:
   - apiVersion: v2
+    created: "2022-08-04T15:51:57.383032659Z"
+    description: monitor your vault server from within Kubernetes' prometheus
+    digest: 33d96248e8b8e26a558b9fa58eb08983316375c5d4982ed9d1ae94c00940adde
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: vault-monitoring
+    sources:
+    - https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/vault-monitoring-0.2.1/vault-monitoring-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     created: "2022-05-06T14:46:50.385653033Z"
     description: monitor your vault server from within Kubernetes' prometheus
     digest: fd938275e0779804a08e59080f7ae1838c6e3e5029019a000580403d780f5df9
@@ -13770,4 +14311,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-04T11:28:46.200352499Z"
+generated: "2022-08-04T15:51:57.38952268Z"
