@@ -75,5 +75,5 @@ Django database password
   valueFrom:
     secretKeyRef:
       name: {{ include "osschallenge.postgresql.fullname" . }}
-      key: postgres-password
+      key: password
 {{- end -}}

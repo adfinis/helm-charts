@@ -117,6 +117,7 @@ backend:
     dbmigrate:
       # -- Enable the dbmigrate Job. This is configurable because timed can also run this on startup if so preferred.
       enable: true
+
   cronjobs:
     # -- Notify supervisors
     notifySupervisors:

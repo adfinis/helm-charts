@@ -78,6 +78,10 @@ osschallenge:
     emailPassword: ~
     # -- URL for OSS-Challenge
     siteUrl: https://oss-challenge.ch
+  jobs:
+    dbmigrate:
+      # -- Enable the dbmigrate Job. This is configurable because osschallenge can also run this on startup.
+      enabled: true
 
 ingress:
   # -- Enable ingress for osschallenge
@@ -104,7 +108,7 @@ postgresql:
     # -- PostgreSQL user name
     username: osschallenge
     # -- Set a password for PostgreSQL
-    # password: ~
+    password: ~
 
 persistence:
   # -- specifies if persistence is enabled or not

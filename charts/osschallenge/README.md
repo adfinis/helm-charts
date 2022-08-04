@@ -32,6 +32,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | osschallenge.image.repository | string | `"adfinissygroup/oss-challenge"` | OSS-Challenge image name |
 | osschallenge.image.tag | string | appVersion from Chart.yaml | Specify a tag to override which version of osschallenge to deploy. |
 | osschallenge.image.waitForItTimeout | int | `60` | Timeout for wait-for-it.sh |
+| osschallenge.jobs.dbmigrate.enabled | bool | `true` | Enable the dbmigrate Job. This is configurable because osschallenge can also run this on startup. |
 | osschallenge.livenessProbe.enabled | bool | `true` | Enable liveness probe on osschallenge |
 | osschallenge.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | osschallenge.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
@@ -62,6 +63,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | persistence.size | string | `"10Gi"` | specifies which size the PVC should request |
 | persistence.storageClassName | string | `""` | specifies which storageClassName should be used |
 | postgresql.auth.database | string | `"osschallenge"` | PostgreSQL database name |
+| postgresql.auth.password | string | `nil` | Set a password for PostgreSQL |
 | postgresql.auth.username | string | `"osschallenge"` | PostgreSQL user name |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
 
