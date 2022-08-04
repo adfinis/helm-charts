@@ -1,4 +1,4 @@
-{{- if .Values.backend.jobs.bdmigrate.enable }}
+{{- if .Values.backend.jobs.dbmigrate.enable }}
 apiVersion: batch/v1
 kind: Job
 metadata:
