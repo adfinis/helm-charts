@@ -18,7 +18,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | ~10.2.0 |
+| https://charts.bitnami.com/bitnami | postgresql | ~11.6.7 |
 
 ## Values
 
@@ -61,9 +61,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | persistence.mountPath | string | `"/data"` | specifies where to mount the PV |
 | persistence.size | string | `"10Gi"` | specifies which size the PVC should request |
 | persistence.storageClassName | string | `""` | specifies which storageClassName should be used |
+| postgresql.auth.database | string | `"osschallenge"` | PostgreSQL database name |
+| postgresql.auth.username | string | `"osschallenge"` | PostgreSQL user name |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
-| postgresql.postgresqlDatabase | string | `"osschallenge"` | PostgreSQL database name |
-| postgresql.postgresqlUsername | string | `"osschallenge"` | PostgreSQL user name |
 
 ## About this chart
 

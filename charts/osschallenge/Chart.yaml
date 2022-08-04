@@ -17,6 +17,6 @@ maintainers:
     url: https://adfinis.com
 dependencies:
   - name: postgresql
-    version: ~10.2.0
+    version: ~11.6.7
     repository: https://charts.bitnami.com/bitnami
     condition: postgresql.enabled

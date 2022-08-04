@@ -1,5 +1,6 @@
 postgresql:
-  postgresqlPassword: s3cr3t
+  auth:
+    password: s3cr3t
   persistence:
     enabled: false
 osschallenge:
