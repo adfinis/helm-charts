@@ -7,7 +7,7 @@ replicaCount: 1
 
 image:
   # -- set the image repository
-  repository: ghcr.io/adfinis-sygroup/back8sup
+  repository: ghcr.io/adfinis/back8sup
   # -- set the image pullPolicy
   pullPolicy: IfNotPresent
   # -- set the tag of the image

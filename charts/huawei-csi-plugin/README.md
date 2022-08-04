@@ -2,7 +2,7 @@
 
 > **:exclamation: This Helm Chart is deprecated!**
 
-![Version: 0.3.3](https://img.shields.io/badge/Version-0.3.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.2.15](https://img.shields.io/badge/AppVersion-v2.2.15-informational?style=flat-square)
+![Version: 0.3.4](https://img.shields.io/badge/Version-0.3.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.2.15](https://img.shields.io/badge/AppVersion-v2.2.15-informational?style=flat-square)
 
 ⚠️ (OBSOLETE) request for upstream chart is https://github.com/Huawei/eSDK_K8S_Plugin/issues/16
 
@@ -26,7 +26,7 @@
 | csi_driver.controller.resources | object | `{}` | resources for csi-driver container within controller-deployment |
 | csi_driver.controller.securityContext | object | - | securityContext for the huawei-csi-driver container in the controller deployment |
 | csi_driver.image.pullPolicy | string | `"IfNotPresent"` | Image PullPolicy for csi-driver |
-| csi_driver.image.repository | string | `"ghcr.io/adfinis-sygroup/huawei-csi-plugin"` | Image Repo for csi-driver |
+| csi_driver.image.repository | string | `"ghcr.io/adfinis/huawei-csi-plugin"` | Image Repo for csi-driver |
 | csi_driver.image.tag | string | `"v2.2.14"` | Image Tag for csi-driver |
 | csi_driver.node.resources | object | `{}` | resources for csi-driver container within node-daemonset |
 | csi_driver.node.securityContext | object | - | securityContext esacalates all the privileges for csi-driver container within node-daemonset |

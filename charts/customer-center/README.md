@@ -1,6 +1,6 @@
 # customer-center
 
-![Version: 0.2.25](https://img.shields.io/badge/Version-0.2.25-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.2.3](https://img.shields.io/badge/AppVersion-v3.2.3-informational?style=flat-square)
+![Version: 0.2.26](https://img.shields.io/badge/Version-0.2.26-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.2.3](https://img.shields.io/badge/AppVersion-v3.2.3-informational?style=flat-square)
 
 Chart for Customer-Center application
 
@@ -20,7 +20,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 |-----|------|---------|-------------|
 | auth.oidcClient | string | `"cc"` | Configure oidc client for customer-center frontend |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | Frontend image pull policy |
-| frontend.image.repository | string | `"ghcr.io/adfinis-sygroup/customer-center/frontend"` | Frontend image name |
+| frontend.image.repository | string | `"ghcr.io/adfinis/customer-center/frontend"` | Frontend image name |
 | frontend.livenessProbe | object | `{"enabled":true,"failureThreshold":6,"initialDelaySeconds":60,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":5}` | Liveness probe configuration |
 | frontend.livenessProbe.enabled | bool | `true` | Enable liveness probe on frontend |
 | frontend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
