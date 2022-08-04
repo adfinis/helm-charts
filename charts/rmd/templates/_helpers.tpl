@@ -82,6 +82,6 @@ Django database password
   valueFrom:
     secretKeyRef:
       name: {{ include "rmd.postgresql.fullname" . }}
-      key: postgresql-password
+      key: postgres-password
 {{- end -}}
 {{- end -}}
