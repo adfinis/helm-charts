@@ -3,6 +3,8 @@ postgresql:
     password: s3cr3t
   persistence:
     enabled: false
+  service:
+    port: 5432
 osschallenge:
   settings:
     emailPassword: s3cr3t

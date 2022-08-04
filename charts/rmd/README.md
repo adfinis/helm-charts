@@ -8,9 +8,6 @@
 
 **Homepage:** <https://github.com/adfinis/rmd.io>
 
-## Maintainers
-This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
-
 ## Source Code
 
 * <https://github.com/adfinis/rmd.io>
