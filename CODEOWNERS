@@ -1,17 +1,17 @@
 # All helm chart related stuff should belong to the helm charts team
-* @adfinis-sygroup/helm-charts
+* @adfinis/helm-charts
 
 # Add specific owners to specific charts where ownership extends above group
-/charts/argoconfig                  @adfinis-sygroup/helm-charts @hairmare
-/charts/back8sup                    @adfinis-sygroup/helm-charts @eyenx @tongpu
-/charts/caasperli                   @adfinis-sygroup/helm-charts @hairmare
-/charts/cert-manager-issuers        @adfinis-sygroup/helm-charts @hairmare
-/charts/common                      @adfinis-sygroup/helm-charts @hairmare
-/charts/csi-secret-provider-class   @adfinis-sygroup/helm-charts @hairmare @eyenx
-/charts/customer-center             @adfinis-sygroup/helm-charts @vmaillot
-/charts/huawei-csi-plugin           @adfinis-sygroup/helm-charts @tongpu
-/charts/osschallenge                @adfinis-sygroup/helm-charts @trowik
-/charts/vault-auth                  @adfinis-sygroup/helm-charts @eyenx
-/charts/vault-csi-provider          @adfinis-sygroup/helm-charts @pree @eyenx
-/charts/vault-monitoring            @adfinis-sygroup/helm-charts @pree @eyenx
-/charts/mopsos                      @adfinis-sygroup/helm-charts @hairmare @eyenx
+/charts/argoconfig                  @adfinis/helm-charts @hairmare
+/charts/back8sup                    @adfinis/helm-charts @eyenx @tongpu
+/charts/caasperli                   @adfinis/helm-charts @hairmare
+/charts/cert-manager-issuers        @adfinis/helm-charts @hairmare
+/charts/common                      @adfinis/helm-charts @hairmare
+/charts/csi-secret-provider-class   @adfinis/helm-charts @hairmare @eyenx
+/charts/customer-center             @adfinis/helm-charts @vmaillot
+/charts/huawei-csi-plugin           @adfinis/helm-charts @tongpu
+/charts/osschallenge                @adfinis/helm-charts @trowik
+/charts/vault-auth                  @adfinis/helm-charts @eyenx
+/charts/vault-csi-provider          @adfinis/helm-charts @pree @eyenx
+/charts/vault-monitoring            @adfinis/helm-charts @pree @eyenx
+/charts/mopsos                      @adfinis/helm-charts @hairmare @eyenx

@@ -1,19 +1,19 @@
 # timed
 
-![Version: 0.11.0](https://img.shields.io/badge/Version-0.11.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.11.1](https://img.shields.io/badge/Version-0.11.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
-**Homepage:** <https://github.com/adfinis-sygroup/timed-frontend>
+**Homepage:** <https://github.com/adfinis/timed-frontend>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/timed-backend>
-* <https://github.com/adfinis-sygroup/timed-frontend>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/timed>
+* <https://github.com/adfinis/timed-backend>
+* <https://github.com/adfinis/timed-frontend>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/timed>
 
 ## Requirements
 
@@ -58,6 +58,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"adfinissygroup/timed-backend"` | Backend image name |
 | backend.image.tag | string | `"v2.0.0"` | Backend version. |
+| backend.jobs.dbmigrate.enable | bool | `true` | Enable the dbmigrate Job. This is configurable because timed can also run this on startup if so preferred. |
 | backend.livenessProbe.enabled | bool | `true` | Enable liveness probe on backend |
 | backend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | backend.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |

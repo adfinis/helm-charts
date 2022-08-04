@@ -1,17 +1,17 @@
 # backup-apps
 
-![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.3.1](https://img.shields.io/badge/Version-0.3.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for backup components
 
-**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/backup-apps>
+**Homepage:** <https://github.com/adfinis/helm-charts/tree/main/charts/backup-apps>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/helm-charts>
+* <https://github.com/adfinis/helm-charts>
 
 ## Requirements
 
@@ -23,20 +23,20 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| back8sup | object | [example](./examples/back8sup.yaml) | [Back8sup](https://github.com/adfinis-sygroup/back8sup) |
+| back8sup | object | [example](./examples/back8sup.yaml) | [Back8sup](https://github.com/adfinis/back8sup) |
 | back8sup.chart | string | `"back8sup"` | Chart |
 | back8sup.destination.namespace | string | `"backup-back8sup"` | Namespace |
 | back8sup.enabled | bool | `true` | Enable Back8sup |
 | back8sup.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
-| back8sup.targetRevision | string | `"0.4.*"` | [Back8sup Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/back8sup) |
-| back8sup.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/back8sup/values.yaml) | Helm values |
+| back8sup.targetRevision | string | `"0.4.*"` | [Back8sup Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/back8sup) |
+| back8sup.values | object | [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/back8sup/values.yaml) | Helm values |
 | barman | object | [example](./examples/barman.yaml) | [Barman](https://github.com/EnterpriseDB/barman) |
 | barman.chart | string | `"barman"` | Chart |
 | barman.destination.namespace | string | `"backup-barman"` | Namespace |
 | barman.enabled | bool | `true` | Enable Barman |
 | barman.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
-| barman.targetRevision | string | `"0.8.*"` | [Barman Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/barman) |
-| barman.values | object | [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/barman/values.yaml) | Helm values |
+| barman.targetRevision | string | `"0.8.*"` | [Barman Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/barman) |
+| barman.values | object | [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/barman/values.yaml) | Helm values |
 
 ## About this chart
 

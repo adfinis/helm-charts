@@ -1,7 +1,10 @@
 postgresql:
-  postgresqlPassword: s3cr3t
+  auth:
+    password: s3cr3t
   persistence:
     enabled: false
+  service:
+    port: 5432
 rmd:
   settings:
     emailPassword: s3cr3t

@@ -146,7 +146,7 @@ gatekeeper:
   # @default -- [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml)
   values: {}
 
-# -- [vault-monitoring](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml))
+# -- [vault-monitoring](https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml))
 # @default -- -
 vaultMonitoring:
   # -- Enable vault-monitoring
@@ -160,10 +160,10 @@ vaultMonitoring:
   repoURL: "https://charts.adfinis.com"
   # -- Chart
   chart: "vault-monitoring"
-  # -- [vault-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/vault-monitoring) version
+  # -- [vault-monitoring Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring) version
   targetRevision: "0.2.*"
   # -- Helm values
-  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/vault-monitoring/values.yaml)
+  # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/vault-monitoring/values.yaml)
   values: {}
 
 # -- [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([example](./examples/secrets-store-csi-driver.yaml))

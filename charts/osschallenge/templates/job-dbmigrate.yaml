@@ -1,3 +1,4 @@
+{{- if .Values.osschallenge.jobs.dbmigrate.enabled }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -28,3 +29,4 @@ spec:
             - configMapRef:
                 name: {{ include "osschallenge.fullname" . }}
           command: ["./manage.py", "migrate"]
+{{- end }}

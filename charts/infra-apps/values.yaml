@@ -64,10 +64,10 @@ certManagerIssuers:
   repoURL: https://charts.adfinis.com
   # -- Chart
   chart: cert-manager-issuers
-  # -- [cert-manager-issuers Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/cert-manager-issuers) version
+  # -- [cert-manager-issuers Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/cert-manager-issuers) version
   targetRevision: 0.2.*
   # -- Helm values
-  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/cert-manager-issuers/values.yaml)
+  # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/cert-manager-issuers/values.yaml)
   values: {}
 
 
@@ -87,10 +87,10 @@ certManagerMonitoring:
   repoURL: https://charts.adfinis.com
   # -- Chart
   chart: cert-manager-monitoring
-  # -- [cert-manager-monitoring Helm chart](https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/cert-manager-monitoring) version
+  # -- [cert-manager-monitoring Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/cert-manager-monitoring) version
   targetRevision: 0.1.*
   # -- Helm values
-  # @default -- [upstream values](https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/cert-manager-monitoring/values.yaml)
+  # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/cert-manager-monitoring/values.yaml)
   values: {}
 
 

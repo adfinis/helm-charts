@@ -1,18 +1,18 @@
 # mopsos
 
-![Version: 0.6.3](https://img.shields.io/badge/Version-0.6.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.7](https://img.shields.io/badge/AppVersion-v0.3.7-informational?style=flat-square)
+![Version: 0.6.4](https://img.shields.io/badge/Version-0.6.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.7](https://img.shields.io/badge/AppVersion-v0.3.7-informational?style=flat-square)
 
 Deploy Mopsos to a Kubernetes Cluster
 
-**Homepage:** <https://github.com/adfinis-sygroup/mopsos>
+**Homepage:** <https://github.com/adfinis/mopsos>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/mopsos>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/mopsos>
+* <https://github.com/adfinis/mopsos>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/mopsos>
 
 ## Requirements
 
