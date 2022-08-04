@@ -1,8 +1,10 @@
 # rmd
 
+> **:exclamation: This Helm Chart is deprecated!**
+
 ![Version: 0.2.4](https://img.shields.io/badge/Version-0.2.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
 
-Chart for Rmd.io application
+⚠️ (OBSOLETE) Chart for Rmd.io application
 
 **Homepage:** <https://github.com/adfinis/rmd.io>
 
@@ -18,7 +20,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | ~9.1.2 |
+| https://charts.bitnami.com/bitnami | postgresql | ~11.6.7 |
 
 ## Values
 
@@ -28,11 +30,10 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingress.enabled | bool | `false` | Enable ingress for rmd |
 | ingress.hosts | list | `["localhost"]` | Ingress hostnames |
 | ingress.tls | list | `[]` | Ingress TLS options |
+| postgresql.auth.database | string | `"rmd.io"` | PostgreSQL database name |
+| postgresql.auth.password | string | `nil` | Set a password for PostgreSQL |
+| postgresql.auth.username | string | `"postgres"` | PostgreSQL user name |
 | postgresql.enabled | bool | `true` | Enable PostgreSQL for persistence |
-| postgresql.postgresqlDatabase | string | `"rmd.io"` | PostgreSQL database name |
-| postgresql.postgresqlPassword | string | `nil` | Set a password for PostgreSQL |
-| postgresql.postgresqlPort | int | `5432` | PostgreSQL database port |
-| postgresql.postgresqlUsername | string | `"postgres"` | PostgreSQL user name |
 | rmd.cronjobs.importMails.command[0] | string | `"app/manage.py"` |  |
 | rmd.cronjobs.importMails.command[1] | string | `"import"` |  |
 | rmd.cronjobs.importMails.schedule | string | `"0 * * * *"` | when to import mails |
