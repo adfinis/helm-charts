@@ -1,18 +1,18 @@
 # customer-center
 
-![Version: 0.2.26](https://img.shields.io/badge/Version-0.2.26-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.2.3](https://img.shields.io/badge/AppVersion-v3.2.3-informational?style=flat-square)
+![Version: 0.2.27](https://img.shields.io/badge/Version-0.2.27-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.2.3](https://img.shields.io/badge/AppVersion-v3.2.3-informational?style=flat-square)
 
 Chart for Customer-Center application
 
-**Homepage:** <https://github.com/adfinis-sygroup/customer-center>
+**Homepage:** <https://github.com/adfinis/customer-center>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/customer-center>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/customer-center>
+* <https://github.com/adfinis/customer-center>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/customer-center>
 
 ## Values
 

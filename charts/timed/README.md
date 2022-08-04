@@ -1,19 +1,19 @@
 # timed
 
-![Version: 0.11.0](https://img.shields.io/badge/Version-0.11.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.11.1](https://img.shields.io/badge/Version-0.11.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
-**Homepage:** <https://github.com/adfinis-sygroup/timed-frontend>
+**Homepage:** <https://github.com/adfinis/timed-frontend>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/timed-backend>
-* <https://github.com/adfinis-sygroup/timed-frontend>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/timed>
+* <https://github.com/adfinis/timed-backend>
+* <https://github.com/adfinis/timed-frontend>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/timed>
 
 ## Requirements
 

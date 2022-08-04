@@ -2,17 +2,17 @@ apiVersion: v2
 name: timed
 description: Chart for Timed application
 type: application
-version: 0.11.0
+version: 0.11.1
 keywords:
   - timed
   - tracking
-home: https://github.com/adfinis-sygroup/timed-frontend
+home: https://github.com/adfinis/timed-frontend
 sources:
-  - https://github.com/adfinis-sygroup/timed-backend
-  - https://github.com/adfinis-sygroup/timed-frontend
-  - https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/timed
+  - https://github.com/adfinis/timed-backend
+  - https://github.com/adfinis/timed-frontend
+  - https://github.com/adfinis/helm-charts/tree/main/charts/timed
 maintainers:
-  - name: adfinis-sygroup
+  - name: adfinis
     email: support@adfinis.com
     url: https://adfinis.com
 dependencies:

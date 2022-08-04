@@ -1,17 +1,17 @@
 # csi-secret-provider-class
 
-![Version: 0.3.3](https://img.shields.io/badge/Version-0.3.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
+![Version: 0.3.4](https://img.shields.io/badge/Version-0.3.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
 
 A Helm chart to create a SecretProviderClass resource
 
-**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/csi-secret-provider-class>
+**Homepage:** <https://github.com/adfinis/helm-charts/tree/main/charts/csi-secret-provider-class>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/helm-charts>
+* <https://github.com/adfinis/helm-charts>
 
 ## Requirements
 

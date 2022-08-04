@@ -2,17 +2,17 @@ apiVersion: v2
 name: rmd
 description: Chart for Rmd.io application
 type: application
-version: 0.2.3
+version: 0.2.4
 appVersion: edge
 keywords:
   - rmd
   - postgresql
-home: https://github.com/adfinis-sygroup/rmd.io
+home: https://github.com/adfinis/rmd.io
 sources:
-  - https://github.com/adfinis-sygroup/rmd.io
-  - https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/rmd
+  - https://github.com/adfinis/rmd.io
+  - https://github.com/adfinis/helm-charts/tree/main/charts/rmd
 maintainers:
-  - name: adfinis-sygroup
+  - name: adfinis
     email: support@adfinis.com
     url: https://adfinis.com
 dependencies:

@@ -1,18 +1,18 @@
 # openshift-etcd-backup
 
-![Version: 1.6.2](https://img.shields.io/badge/Version-1.6.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.6.0](https://img.shields.io/badge/AppVersion-v1.6.0-informational?style=flat-square)
+![Version: 1.6.3](https://img.shields.io/badge/Version-1.6.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.6.0](https://img.shields.io/badge/AppVersion-v1.6.0-informational?style=flat-square)
 
 Chart for openshift-etcd-backup solution
 
-**Homepage:** <https://github.com/adfinis-sygroup/openshift-etcd-backup>
+**Homepage:** <https://github.com/adfinis/openshift-etcd-backup>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/openshift-etcd-backup>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/openshift-etcd-backup>
+* <https://github.com/adfinis/openshift-etcd-backup>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/openshift-etcd-backup>
 
 ## Values
 
@@ -31,7 +31,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | image.repository | string | `"ghcr.io/adfinis/openshift-etcd-backup"` | Repository image to use |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | monitoring.additionalRules | string | `nil` | Provide custom recording or alerting rules to be deployed into the cluster. |
-| monitoring.enabled | bool | `false` | Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis-sygroup/openshift-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml). Be sure to to have monitoring for user defined projects enabled as [described in the upstream documentation](https://docs.openshift.com/container-platform/4.6/monitoring/enabling-monitoring-for-user-defined-projects.html). |
+| monitoring.enabled | bool | `false` | Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis/openshift-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml). Be sure to to have monitoring for user defined projects enabled as [described in the upstream documentation](https://docs.openshift.com/container-platform/4.6/monitoring/enabling-monitoring-for-user-defined-projects.html). |
 | monitoring.rules.cronjobMonitor | bool | `true` | Deploy PrometheusRule to check for cronjob fails. |
 | nameOverride | string | `""` |  |
 | nodeSelector."node-role.kubernetes.io/master" | string | `""` | The backup job should run on masters as etcd runs on them |

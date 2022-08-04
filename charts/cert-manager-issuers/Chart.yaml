@@ -2,18 +2,18 @@ apiVersion: v2
 name: cert-manager-issuers
 description: Configure cert-manager Issuers and ClusterIssuers via Helm
 type: application
-version: 0.2.4
+version: 0.2.5
 # matches apiVersion: cert-manager.io/v1
 appVersion: "1"
 keywords:
   - cert-manager
   - tls
 home: https://cert-manager.io/docs/configuration/
-icon: https://raw.githubusercontent.com/adfinis-sygroup/helm-charts/main/charts/cert-manager-issuers/logo.png
+icon: https://raw.githubusercontent.com/adfinis/helm-charts/main/charts/cert-manager-issuers/logo.png
 sources:
-  - https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/cert-manager-issuers
+  - https://github.com/adfinis/helm-charts/tree/main/charts/cert-manager-issuers
 maintainers:
-  - name: adfinis-sygroup
+  - name: adfinis
     email: support@adfinis.com
     url: https://adfinis.com
 dependencies:

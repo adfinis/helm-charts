@@ -1,7 +1,7 @@
 # Adfinis Helm Charts
 
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/adfinis)](https://artifacthub.io/packages/search?repo=adfinis)
-![Release Charts](https://github.com/adfinis-sygroup/helm-charts/workflows/Release%20Charts/badge.svg)
+![Release Charts](https://github.com/adfinis/helm-charts/workflows/Release%20Charts/badge.svg)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 ![Lunkwill wearing a Helm shirt](docs/images/lunkwill_helm_shirt.png)
@@ -23,7 +23,7 @@ helm repo add adfinis https://charts.adfinis.com
 
 Configure cert-manager Issuers and ClusterIssuers via Helm
 
-[<img alt="cert-manager-issuers" src="https://raw.githubusercontent.com/adfinis-sygroup/helm-charts/main/charts/cert-manager-issuers/logo.png" width="128">](charts/cert-manager-issuers)
+[<img alt="cert-manager-issuers" src="https://raw.githubusercontent.com/adfinis/helm-charts/main/charts/cert-manager-issuers/logo.png" width="128">](charts/cert-manager-issuers)
 #### [rbac-definitions](charts/rbac-definitions) chart
 
 ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1b.x](https://img.shields.io/badge/app%20version-1b.x-brightgreen)
@@ -79,7 +79,7 @@ Have a look at the [documentation](./docs/) to get started.
 
 ```bash
 # clone repo
-git clone git@github.com:adfinis-sygroup/helm-charts.git
+git clone git@github.com:adfinis/helm-charts.git
 cd helm-charts
 
 # initialize pre-commit
@@ -96,7 +96,7 @@ hack/update-readme.sh
 hack/helm-docs.sh
 ```
 
-We track issues with this chart repository in the [issue tracker](https://github.com/adfinis-sygroup/helm-charts/issues).
+We track issues with this chart repository in the [issue tracker](https://github.com/adfinis/helm-charts/issues).
 
 ## About this repository
 

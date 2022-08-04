@@ -1,6 +1,6 @@
 # osschallenge
 
-![Version: 0.1.5](https://img.shields.io/badge/Version-0.1.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
+![Version: 0.1.6](https://img.shields.io/badge/Version-0.1.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: edge](https://img.shields.io/badge/AppVersion-edge-informational?style=flat-square)
 
 Chart for OSS-Challenge application
 
@@ -11,8 +11,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/osschallenge>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/osschallenge>
+* <https://github.com/adfinis/osschallenge>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/osschallenge>
 
 ## Requirements
 

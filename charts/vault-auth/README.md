@@ -1,10 +1,10 @@
 # vault-auth
 
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![AppVersion: 0.1.1](https://img.shields.io/badge/AppVersion-0.1.1-informational?style=flat-square)
+![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![AppVersion: 0.1.1](https://img.shields.io/badge/AppVersion-0.1.1-informational?style=flat-square)
 
 A helm chart to install the vault-auth serviceaccount for enabling vault's kubernetes authentication endpoint
 
-**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/blob/main/charts/vault-auth/README.md>
+**Homepage:** <https://github.com/adfinis/helm-charts/blob/main/charts/vault-auth/README.md>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
