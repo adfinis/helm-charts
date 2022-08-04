@@ -44,7 +44,7 @@ persistence:
 
 image:
   # -- Repository image to use
-  repository: ghcr.io/adfinis-sygroup/openshift-etcd-backup
+  repository: ghcr.io/adfinis/openshift-etcd-backup
   # -- Image pull policy configuration
   pullPolicy: Always
   # -- Overrides the image tag whose default is the chart appVersion.
