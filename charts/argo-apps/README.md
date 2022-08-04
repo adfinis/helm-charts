@@ -4,14 +4,14 @@
 
 Argo CD app-of-apps config for various argo project components
 
-**Homepage:** <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/argo-apps>
+**Homepage:** <https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/adfinis-sygroup/helm-charts>
+* <https://github.com/adfinis/helm-charts>
 
 ## Requirements
 

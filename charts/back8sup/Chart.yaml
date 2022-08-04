@@ -2,13 +2,13 @@ apiVersion: v2
 name: back8sup
 description: Deploy back8sup to a Kubernetes Cluster
 type: application
-version: 0.4.5
+version: 0.4.7
 appVersion: v0.7.9
-home: https://github.com/adfinis-sygroup/back8sup
+home: https://github.com/adfinis/back8sup
 sources:
-  - https://github.com/adfinis-sygroup/back8sup
-  - https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/back8sup
+  - https://github.com/adfinis/back8sup
+  - https://github.com/adfinis/helm-charts/tree/main/charts/back8sup
 maintainers:
-  - name: adfinis-sygroup
+  - name: adfinis
     email: support@adfinis.com
     url: https://adfinis.com

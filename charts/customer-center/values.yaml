@@ -6,7 +6,7 @@ frontend:
   replicaCount: 1
   image:
     # -- Frontend image name
-    repository: ghcr.io/adfinis-sygroup/customer-center/frontend
+    repository: ghcr.io/adfinis/customer-center/frontend
     # Specify a tag to override which version of customer-center to deploy.
     # If no tag is specified the appVersion from Chart.yaml is used as tag.
     # tag:

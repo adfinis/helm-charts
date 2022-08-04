@@ -4,7 +4,7 @@
 
 ```bash
 # clone repo
-git clone git@github.com:adfinis-sygroup/helm-charts.git
+git clone git@github.com:adfinis/helm-charts.git
 cd helm-charts
 
 # add personal fork to working copy

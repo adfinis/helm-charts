@@ -1,6 +1,6 @@
 # barman
 
-![Version: 0.9.0](https://img.shields.io/badge/Version-0.9.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.19](https://img.shields.io/badge/AppVersion-v2.19-informational?style=flat-square)
+![Version: 0.9.1](https://img.shields.io/badge/Version-0.9.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.19](https://img.shields.io/badge/AppVersion-v2.19-informational?style=flat-square)
 
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
@@ -13,7 +13,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 * <https://github.com/2ndquadrant-it/barman>
 * <https://github.com/ubc/barman-docker>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/barman>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/barman>
 
 ## Values
 

@@ -11,8 +11,8 @@ data:
   EMAIL_HOST_USER: {{ .Values.rmd.settings.emailUser | quote }}
   EMAIL_USE_TLS: {{ .Values.rmd.settings.emailUseTls | quote }}
   DEFAULT_FROM_EMAIL: {{ .Values.rmd.settings.emailFrom | quote }}
-  DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase | quote }}
-  DATABASE_USER: {{ .Values.postgresql.postgresqlUsername | quote }}
+  DATABASE_NAME: {{ .Values.postgresql.auth.database | quote }}
+  DATABASE_USER: {{ .Values.postgresql.auth.username | quote }}
   DATABASE_PORT: {{ .Values.postgresql.service.port | quote }}
   WAIT_FOR_IT_TIMER: {{ .Values.rmd.image.waitForItTimeout | quote }}
   SITE_URL: {{ .Values.rmd.settings.siteUrl | quote }}

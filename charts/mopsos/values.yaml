@@ -8,7 +8,7 @@ replicaCount: 1
 
 image:
   # -- repository where the image is located
-  repository: ghcr.io/adfinis-sygroup/mopsos
+  repository: ghcr.io/adfinis/mopsos
   # -- pullPolicy to use
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart appVersion.

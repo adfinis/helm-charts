@@ -119,11 +119,10 @@ ingress:
 postgresql:
   # -- Enable PostgreSQL for persistence
   enabled: true
-  # -- PostgreSQL database name
-  postgresqlDatabase: rmd.io
-  # -- PostgreSQL user name
-  postgresqlUsername: postgres
-  # -- Set a password for PostgreSQL
-  postgresqlPassword: ~
-  # -- PostgreSQL database port
-  postgresqlPort: 5432
+  auth:
+    # -- PostgreSQL database name
+    database: rmd.io
+    # -- PostgreSQL user name
+    username: postgres
+    # -- Set a password for PostgreSQL
+    password: ~
