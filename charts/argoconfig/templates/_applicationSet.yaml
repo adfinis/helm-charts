@@ -1,0 +1,11 @@
+{{- define "argoconfig.applicationSet.tpl" -}}
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+{{ template "common.metadata" . }}
+spec:
+  generators: []
+  template: {}
+{{- end }}
+{{- define "argoconfig.applicationSet" -}}
+{{- include "common.util.merge" (append . "argoconfig.applicationSet.tpl") -}}
+{{- end -}}
