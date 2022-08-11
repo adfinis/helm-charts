@@ -19,10 +19,10 @@ argocd:
   repoURL: https://argoproj.github.io/argo-helm
   # -- Chart
   chart: argo-cd
-  # -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd) version
+  # -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version
   targetRevision: 4.10.*
   # -- Helm values
-  # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-cd/values.yaml)
+  # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml)
   values: {}
 
 # -- [cert-manager](https://cert-manager.io/)
@@ -42,7 +42,7 @@ certManager:
   # -- Chart
   chart: cert-manager
   # -- [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version
-  targetRevision: 1.8.*
+  targetRevision: 1.9.*
   # -- Helm values
   # @default -- [upstream values](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
