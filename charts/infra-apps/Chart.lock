@@ -1,6 +1,6 @@
 dependencies:
 - name: argoconfig
   repository: https://charts.adfinis.com
-  version: 0.8.0
-digest: sha256:37c21a26597653d172bbbd91bdae6613a06606913b43977eac524f145534f353
-generated: "2022-04-25T17:22:14.83886611+02:00"
+  version: 0.8.2
+digest: sha256:0764d63560d4c602b8f8526ddabcec0e910282345b340c43afe18c89cad7004c
+generated: "2022-08-11T16:40:28.17348135+02:00"
