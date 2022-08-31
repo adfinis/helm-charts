@@ -99,7 +99,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | oauth2-proxy | object | [example](./examples/.yaml) | [oauth2-proxy] (https://github.com/oauth2-proxy/oauth2-proxy) |
 | oauth2-proxy.annotations | object | `{}` | Annotations for oauth2-proxy app |
 | oauth2-proxy.chart | string | `"oauth2-proxy"` | Chart |
-| oauth2-proxy.desitnation.namespace | string | `"infra-oauth2-proxy"` | Namespace |
+| oauth2-proxy.destination.namespace | string | `"infra-oauth2-proxy"` | Namespace |
 | oauth2-proxy.enabled | bool | `false` | Enable oauth2-proxy |
 | oauth2-proxy.repoURL | string | [repo] (https://https://oauth2-proxy.github.io/manifests) | Repo URL |
 | oauth2-proxy.targetRevision | string | `"6.2.*"` | [oauth2-proxy Helm chart] (https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy) |

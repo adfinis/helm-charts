@@ -278,7 +278,7 @@ oauth2-proxy:
   name: oauth2-proxy
   # -- Annotations for oauth2-proxy app
   annotations: {}
-  desitnation:
+  destination:
     # -- Namespace
     namespace: infra-oauth2-proxy
   # -- Repo URL
