@@ -271,7 +271,7 @@ mimir:
   values: {}
 
 # -- [oauth2-proxy] (https://github.com/oauth2-proxy/oauth2-proxy)
-# @default -- [example](./examples/.yaml)
+# @default -- [example](./examples/oauth2-proxy.yaml.yaml)
 oauth2-proxy:
   # -- Enable oauth2-proxy
   enabled: false
