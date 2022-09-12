@@ -17,7 +17,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.adfinis.com | argoconfig | 0.7.6 |
+| https://charts.adfinis.com | argoconfig | 0.9.0 |
 
 ## Values
 
