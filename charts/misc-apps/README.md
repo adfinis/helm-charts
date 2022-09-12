@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.19.0](https://img.shields.io/badge/Version-0.19.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.20.0](https://img.shields.io/badge/Version-0.20.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -23,6 +23,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| argocdApps | object | [example](./examples/argocd-apps.yaml) | [Argo CD Declarative Setup](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/) |
+| argocdApps.annotations | object | `{}` | Annotations for Argo CD Apps app |
+| argocdApps.chart | string | `"argocd-apps"` | Chart |
+| argocdApps.destination.namespace | string | `"infra-argocd"` | Namespace |
+| argocdApps.enabled | bool | `false` | Enable Argo CD Apps |
+| argocdApps.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
+| argocdApps.targetRevision | string | `"5.4.*"` | [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version |
+| argocdApps.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argocd-apps/values.yaml) | Helm values |
 | chartmuseum | object | - | [chartmuseum](https://chartmuseum.com) ([example](./example/chartmuseum.yaml)) |
 | chartmuseum.chart | string | `"chartmuseum"` | Chart |
 | chartmuseum.destination.namespace | string | `"infra-chartmuseum"` | Namespace |

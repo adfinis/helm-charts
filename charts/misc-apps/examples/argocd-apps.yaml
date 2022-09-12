@@ -1,0 +1,5 @@
+argocdApps:
+  enabled: true
+  values:
+    applications: []
+    projects: []
