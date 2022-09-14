@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.18.1](https://img.shields.io/badge/Version-0.18.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.19.0](https://img.shields.io/badge/Version-0.19.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -17,7 +17,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.adfinis.com | argoconfig | 0.7.6 |
+| https://charts.adfinis.com | argoconfig | 0.9.0 |
 
 ## Values
 
@@ -63,7 +63,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | signalilo.destination.namespace | string | `"infra-signalilo"` | Namespace |
 | signalilo.enabled | bool | `false` | Enable signalilo |
 | signalilo.repoURL | string | [repo](https://charts.appuio.ch) | Repo URL |
-| signalilo.targetRevision | string | `"0.7.*"` | [signalilo Helm chart](https://github.com/appuio/charts/tree/master/appuio/signalilo) version |
+| signalilo.targetRevision | string | `"0.8.*"` | [signalilo Helm chart](https://github.com/appuio/charts/tree/master/appuio/signalilo) version |
 | signalilo.values | object | [upstream values](https://github.com/appuio/charts/blob/master/appuio/signalilo/values.yaml) | Helm values |
 
 ## About this chart
