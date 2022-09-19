@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | azureKvCsiProvider.destination.namespace | string | `"kube-system"` | Namespace |
 | azureKvCsiProvider.enabled | bool | `false` | Enable secrets-store-csi-driver-provider-azure |
 | azureKvCsiProvider.repoURL | string | [repo](https://azure.github.io/secrets-store-csi-driver-provider-azure/charts) | Repo URL |
-| azureKvCsiProvider.targetRevision | string | `"1.2.0"` | [csi-secrets-store-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version |
+| azureKvCsiProvider.targetRevision | string | `"1.3.0"` | [csi-secrets-store-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version |
 | azureKvCsiProvider.values | object | [upstream values](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/charts/csi-secrets-store-provider-azure/values.yaml) | Helm values |
 | promitorResourceDiscovery | object | - | [promitor](https://promitor.io/) resource discovery ([example](./examples/promitor.yaml)) |
 | promitorResourceDiscovery.chart | string | `"promitor-agent-resource-discovery"` | Chart |
