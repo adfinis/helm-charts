@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.111.0](https://img.shields.io/badge/Version-0.111.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.112.0](https://img.shields.io/badge/Version-0.112.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocd.destination.namespace | string | `"infra-argocd"` | Namespace |
 | argocd.enabled | bool | `false` | Enable Argo CD |
 | argocd.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocd.targetRevision | string | `"4.10.*"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
+| argocd.targetRevision | string | `"5.4.*"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
 | argocd.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml) | Helm values |
 | argoconfig.application.annotations | object | `{}` | Optional annotations to add to all Applications metadata. |
 | certManager | object | [example](./examples/cert-manager.yaml) | [cert-manager](https://cert-manager.io/) |
