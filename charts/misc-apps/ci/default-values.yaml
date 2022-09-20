@@ -22,3 +22,7 @@ metallb:
 chartmuseum:
   enabled: true
   values: {}
+
+keda:
+  enabled: true
+  values: {}
