@@ -217,7 +217,7 @@ kured:
     namespace: infra-kured
   # -- Repo URL
   # @default -- [repo](https://weaveworks.github.io/kured)
-  repoURL: https://kubereboot.github.io/kured
+  repoURL: https://kubereboot.github.io/charts
   # -- Chart
   chart: kured
   # -- [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured)
