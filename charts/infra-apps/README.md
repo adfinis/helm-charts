@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.115.0](https://img.shields.io/badge/Version-0.115.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.115.1](https://img.shields.io/badge/Version-0.115.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -80,14 +80,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kubePrometheusStack.repoURL | string | [repo](https://prometheus-community.github.io/helm-charts) | Repo URL |
 | kubePrometheusStack.targetRevision | string | `"36.0.*"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
 | kubePrometheusStack.values | object | [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml) | Helm values |
-| kured | object | [example](./examples/kured.yaml) | [kured](https://github.com/weaveworks/kured) |
+| kured | object | [example](./examples/kured.yaml) | [kured](https://github.com/kubereboot/kured) |
 | kured.annotations | object | `{}` | Annotations for Kured app |
 | kured.chart | string | `"kured"` | Chart |
 | kured.destination.namespace | string | `"infra-kured"` | Namespace |
 | kured.enabled | bool | `false` | Enable Kured |
-| kured.repoURL | string | [repo](https://weaveworks.github.io/kured) | Repo URL |
-| kured.targetRevision | string | `"4.0.1"` | [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured) |
-| kured.values | object | [upstream values](https://github.com/weaveworks/kured/blob/main/charts/kured/values.yaml) | Helm values |
+| kured.repoURL | string | [repo](https://kubereboot.github.io/charts) | Repo URL |
+| kured.targetRevision | string | `"4.0.1"` | [Kured Helm chart](https://github.com/kubereboot/kured/tree/main/charts/kured) |
+| kured.values | object | [upstream values](https://github.com/kubereboot/kured/blob/main/charts/kured/values.yaml) | Helm values |
 | mimir | object | [example](./examples/mimir.yaml) | [mimir](https://github.com/grafana/mimir) |
 | mimir.annotations | object | `{}` | Annotations for mimir app |
 | mimir.chart | string | `"mimir-distributed"` | Chart |
