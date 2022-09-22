@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.21.0](https://img.shields.io/badge/Version-0.21.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.22.0](https://img.shields.io/badge/Version-0.22.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -45,6 +45,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | downscaler.repoURL | string | [repo](https://charts.deliveryhero.io) | Repo URL |
 | downscaler.targetRevision | string | `"0.5.*"` | [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version |
 | downscaler.values | object | [upstream values](https://github.com/deliveryhero/helm-charts/blob/master/stable/kube-downscaler/values.yaml) | Helm values |
+| keda | object | [example](./examples/keda.yaml) | [KEDA](https://keda.sh/) |
+| keda.annotations | object | `{}` | Annotations for KEDA app |
+| keda.chart | string | `"keda"` | Chart |
+| keda.destination.namespace | string | `"infra-keda"` | Namespace |
+| keda.enabled | bool | `false` | Enable KEDA |
+| keda.repoURL | string | [repo](https://kedacore.github.io/charts) | Repo URL |
+| keda.targetRevision | string | `"2.8.*"` | [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version |
+| keda.values | object | [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml) | Helm values |
 | metallb | object | - | [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml)) |
 | metallb.chart | string | `"metallb"` | Chart |
 | metallb.destination.namespace | string | `"infra-metallb"` | Namespace |
