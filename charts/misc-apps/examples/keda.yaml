@@ -1,0 +1,23 @@
+# keda watching one single namespace
+#
+# This example deploys the keda operator watching one single namespace with
+# metricsServer & operator podmonitors enabled
+
+keda:
+  enabled: true
+  project: infra-keda
+  values:
+    watchNamespace: "myapp"
+    prometheus:
+      metricsServer:
+        enabled: true
+        podMonitor:
+          enabled: true
+          additionalLabels:
+            k8s.example.com/prometheus: kube-prometheus
+      operator:
+        enabled: true
+        podMonitor:
+          enabled: true
+          additionalLabels:
+            k8s.example.com/prometheus: kube-prometheus

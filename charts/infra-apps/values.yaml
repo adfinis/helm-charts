@@ -20,7 +20,7 @@ argocd:
   # -- Chart
   chart: argo-cd
   # -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version
-  targetRevision: 4.10.*
+  targetRevision: 5.4.*
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml)
   values: {}
@@ -199,12 +199,12 @@ velero:
   # -- Chart
   chart: velero
   # -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
-  targetRevision: 2.30.*
+  targetRevision: 2.31.*
   # -- Helm values
   # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
   values: {}
 
-# -- [kured](https://github.com/weaveworks/kured)
+# -- [kured](https://github.com/kubereboot/kured)
 # @default -- [example](./examples/kured.yaml)
 kured:
   # -- Enable Kured
@@ -216,14 +216,14 @@ kured:
     # -- Namespace
     namespace: infra-kured
   # -- Repo URL
-  # @default -- [repo](https://weaveworks.github.io/kured)
-  repoURL: https://weaveworks.github.io/kured
+  # @default -- [repo](https://kubereboot.github.io/charts)
+  repoURL: https://kubereboot.github.io/charts
   # -- Chart
   chart: kured
-  # -- [Kured Helm chart](https://github.com/weaveworks/kured/tree/main/charts/kured)
-  targetRevision: 2.17.*
+  # -- [Kured Helm chart](https://github.com/kubereboot/kured/tree/main/charts/kured)
+  targetRevision: 4.0.1
   # -- Helm values
-  # @default -- [upstream values](https://github.com/weaveworks/kured/blob/main/charts/kured/values.yaml)
+  # @default -- [upstream values](https://github.com/kubereboot/kured/blob/main/charts/kured/values.yaml)
   values: {}
 
 # -- [kubernetes-event-exporter](https://github.com/opsgenie/kubernetes-event-exporter)

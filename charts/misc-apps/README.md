@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.19.0](https://img.shields.io/badge/Version-0.19.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.22.0](https://img.shields.io/badge/Version-0.22.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -23,12 +23,20 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| argocdApps | object | [example](./examples/argocd-apps.yaml) | [Argo CD Declarative Setup](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/) |
+| argocdApps.annotations | object | `{}` | Annotations for Argo CD Apps app |
+| argocdApps.chart | string | `"argocd-apps"` | Chart |
+| argocdApps.destination.namespace | string | `"infra-argocd"` | Namespace |
+| argocdApps.enabled | bool | `false` | Enable Argo CD Apps |
+| argocdApps.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
+| argocdApps.targetRevision | string | `"5.4.*"` | [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version |
+| argocdApps.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argocd-apps/values.yaml) | Helm values |
 | chartmuseum | object | - | [chartmuseum](https://chartmuseum.com) ([example](./example/chartmuseum.yaml)) |
 | chartmuseum.chart | string | `"chartmuseum"` | Chart |
 | chartmuseum.destination.namespace | string | `"infra-chartmuseum"` | Namespace |
 | chartmuseum.enabled | bool | `false` | Enable chartmuseum |
 | chartmuseum.repoURL | string | [repo](https://chartmuseum.github.io/charts) | Repo URL |
-| chartmuseum.targetRevision | string | `"3.8.*"` | [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum) |
+| chartmuseum.targetRevision | string | `"3.9.0"` | [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum) |
 | chartmuseum.values | object | [upstream values](https://github.com/chartmuseum/charts/blob/main/src/chartmuseum/values.yaml) | Helm values |
 | downscaler | object | - | [kube-downscaler](https://codeberg.org/hjacobs/kube-downscaler) ([example](./examples/kube-downscaler.yaml)) |
 | downscaler.chart | string | `"kube-downscaler"` | Chart |
@@ -37,6 +45,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | downscaler.repoURL | string | [repo](https://charts.deliveryhero.io) | Repo URL |
 | downscaler.targetRevision | string | `"0.5.*"` | [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version |
 | downscaler.values | object | [upstream values](https://github.com/deliveryhero/helm-charts/blob/master/stable/kube-downscaler/values.yaml) | Helm values |
+| keda | object | [example](./examples/keda.yaml) | [KEDA](https://keda.sh/) |
+| keda.annotations | object | `{}` | Annotations for KEDA app |
+| keda.chart | string | `"keda"` | Chart |
+| keda.destination.namespace | string | `"infra-keda"` | Namespace |
+| keda.enabled | bool | `false` | Enable KEDA |
+| keda.repoURL | string | [repo](https://kedacore.github.io/charts) | Repo URL |
+| keda.targetRevision | string | `"2.8.*"` | [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version |
+| keda.values | object | [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml) | Helm values |
 | metallb | object | - | [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml)) |
 | metallb.chart | string | `"metallb"` | Chart |
 | metallb.destination.namespace | string | `"infra-metallb"` | Namespace |

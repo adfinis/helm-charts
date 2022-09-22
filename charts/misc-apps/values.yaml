@@ -93,7 +93,7 @@ chartmuseum:
   # -- Chart
   chart: chartmuseum
   # -- [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum)
-  targetRevision: "3.8.*"
+  targetRevision: "3.9.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/chartmuseum/charts/blob/main/src/chartmuseum/values.yaml)
   values: {}
@@ -116,4 +116,48 @@ prometheusMsteams:
   targetRevision: "1.3.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-msteams/prometheus-msteams/blob/master/chart/prometheus-msteams/values.yaml)
+  values: {}
+
+# -- [Argo CD Declarative Setup](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/)
+# @default -- [example](./examples/argocd-apps.yaml)
+argocdApps:
+  # -- Enable Argo CD Apps
+  enabled: false
+  name: argocd-apps
+  # -- Annotations for Argo CD Apps app
+  annotations: {}
+  destination:
+    # -- Namespace
+    namespace: infra-argocd
+  # -- Repo URL
+  # @default -- [repo](https://argoproj.github.io/argo-helm)
+  repoURL: https://argoproj.github.io/argo-helm
+  # -- Chart
+  chart: argocd-apps
+  # -- [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version
+  targetRevision: 5.4.*
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argocd-apps/values.yaml)
+  values: {}
+
+# -- [KEDA](https://keda.sh/)
+# @default -- [example](./examples/keda.yaml)
+keda:
+  # -- Enable KEDA
+  enabled: false
+  name: keda
+  # -- Annotations for KEDA app
+  annotations: {}
+  destination:
+    # -- Namespace
+    namespace: infra-keda
+  # -- Repo URL
+  # @default -- [repo](https://kedacore.github.io/charts)
+  repoURL: https://kedacore.github.io/charts
+  # -- Chart
+  chart: keda
+  # -- [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version
+  targetRevision: 2.8.*
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml)
   values: {}
