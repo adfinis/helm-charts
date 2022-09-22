@@ -1,10 +1,6 @@
 # infra-apps
 
-<<<<<<< HEAD
-![Version: 0.112.0](https://img.shields.io/badge/Version-0.112.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
-=======
 ![Version: 0.115.1](https://img.shields.io/badge/Version-0.115.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
->>>>>>> main
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -100,14 +96,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | mimir.repoURL | string | [repo](https://grafana.github.io/helm-charts) | Repo URL |
 | mimir.targetRevision | string | `"2.1.*"` | [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed) |
 | mimir.values | object | [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml) | Helm values |
-| oauth2-proxy | object | [example](./examples/oauth2-proxy.yaml.yaml) | [oauth2-proxy] (https://github.com/oauth2-proxy/oauth2-proxy) |
-| oauth2-proxy.annotations | object | `{}` | Annotations for oauth2-proxy app |
-| oauth2-proxy.chart | string | `"oauth2-proxy"` | Chart |
-| oauth2-proxy.destination.namespace | string | `"infra-oauth2-proxy"` | Namespace |
-| oauth2-proxy.enabled | bool | `false` | Enable oauth2-proxy |
-| oauth2-proxy.repoURL | string | [repo] (https://https://oauth2-proxy.github.io/manifests) | Repo URL |
-| oauth2-proxy.targetRevision | string | `"6.2.*"` | [oauth2-proxy Helm chart] (https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy) |
-| oauth2-proxy.values | object | [upstream values](https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/values.yaml) | Helm values |
 | rbacManager | object | [example](./examples/rbac-manager.yaml) | [rbac-manager](https://fairwindsops.github.io/rbac-manager/) |
 | rbacManager.annotations | object | `{}` | Annotations for rbac-manager app |
 | rbacManager.chart | string | `"rbac-manager"` | Chart |
