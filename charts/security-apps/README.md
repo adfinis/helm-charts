@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.55.0](https://img.shields.io/badge/Version-0.55.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.5666666.0](https://img.shields.io/badge/Version-0.5666666.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -80,6 +80,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | neuvectorMonitor.repoURL | string | [repo](https://neuvector.github.io/neuvector-helm) | Repo URL |
 | neuvectorMonitor.targetRevision | string | `"2.2.*"` | [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version |
 | neuvectorMonitor.values | object | [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/monitor/values.yaml) | Helm values |
+| oauth2-proxy | object | [example](./examples/oauth2-proxy.yaml.yaml) | [oauth2-proxy] (https://github.com/oauth2-proxy/oauth2-proxy) |
+| oauth2-proxy.annotations | object | `{}` | Annotations for oauth2-proxy app |
+| oauth2-proxy.chart | string | `"oauth2-proxy"` | Chart |
+| oauth2-proxy.enabled | bool | `false` | Enable oauth2-proxy |
+| oauth2-proxy.namespace | string | `"infra-oauth2-proxy"` | Namespace |
+| oauth2-proxy.repoURL | string | [repo] (https://https://oauth2-proxy.github.io/manifests) | Repo URL |
+| oauth2-proxy.targetRevision | string | `"6.2.*"` | [oauth2-proxy Helm chart] (https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy) |
+| oauth2-proxy.values | object | [upstream values](https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/values.yaml) | Helm values |
 | secretsStoreCsiDriver | object | - | [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([example](./examples/secrets-store-csi-driver.yaml)) |
 | secretsStoreCsiDriver.chart | string | `"secrets-store-csi-driver"` | Chart |
 | secretsStoreCsiDriver.destination.namespace | string | `"infra-secrets-store-csi"` | Namespace |
