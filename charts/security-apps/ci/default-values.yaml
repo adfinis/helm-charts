@@ -37,3 +37,7 @@ neuvector:
 neuvectorMonitor:
   enabled: true
   values: {}
+
+oaut2-proxy:
+  enabled: true
+  values: {}
