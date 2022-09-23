@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.115.1](https://img.shields.io/badge/Version-0.115.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.116.0](https://img.shields.io/badge/Version-0.116.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -102,7 +102,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rbacManager.destination.namespace | string | `"infra-rbac"` | Namespace |
 | rbacManager.enabled | bool | `false` | Enable rbac-manager operator |
 | rbacManager.repoURL | string | [repo](https://charts.fairwinds.com/stable) | Repo URL |
-| rbacManager.targetRevision | string | `"1.11.*"` | [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version |
+| rbacManager.targetRevision | string | `"1.13.1"` | [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version |
 | rbacManager.values | object | [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml) | Helm values |
 | thanos | object | [example](./examples/thanos.yaml) | [Thanos](https://thanos.io/) |
 | thanos.annotations | object | `{}` | Annotations for Thanos app |
