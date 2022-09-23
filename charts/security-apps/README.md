@@ -80,7 +80,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | neuvectorMonitor.repoURL | string | [repo](https://neuvector.github.io/neuvector-helm) | Repo URL |
 | neuvectorMonitor.targetRevision | string | `"2.2.*"` | [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version |
 | neuvectorMonitor.values | object | [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/monitor/values.yaml) | Helm values |
-| oauth2-proxy | object | [example](./examples/oauth2-proxy.yaml.yaml) | [oauth2-proxy] (https://github.com/oauth2-proxy/oauth2-proxy) |
+| oauth2-proxy | object | [example](./examples/oauth2-proxy.yaml) | [oauth2-proxy] (https://github.com/oauth2-proxy/oauth2-proxy) |
 | oauth2-proxy.annotations | object | `{}` | Annotations for oauth2-proxy app |
 | oauth2-proxy.chart | string | `"oauth2-proxy"` | Chart |
 | oauth2-proxy.enabled | bool | `false` | Enable oauth2-proxy |
