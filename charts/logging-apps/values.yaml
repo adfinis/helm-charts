@@ -13,7 +13,7 @@ lokiStack:
   # -- Chart
   chart: "loki-stack"
   # -- [loki-stack Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/loki-stack) version
-  targetRevision: "2.7.*"
+  targetRevision: "2.8.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/loki-stack/values.yaml)
   values: {}
