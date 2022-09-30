@@ -62,7 +62,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install chart-testing
-        uses: helm/chart-testing-action@v2.3.0
+        uses: helm/chart-testing-action@v2.3.1
 
       - name: Run chart-testing (list-changed)
         id: list-changed
