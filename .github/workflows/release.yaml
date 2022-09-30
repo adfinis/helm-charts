@@ -30,7 +30,7 @@ jobs:
         run: yq e '."chart-repos"[]' hack/chart-testing/ct.yaml | tr "=" " " | xargs -L1 helm repo add
 
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.4.0
+        uses: helm/chart-releaser-action@v1.4.1
         env:
           CR_TOKEN: "${{ secrets.CR_TOKEN }}"
 
