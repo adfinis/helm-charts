@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dex.destination.namespace | string | `"infra-dex"` | Namespace |
 | dex.enabled | bool | `false` | Enable dex |
 | dex.repoURL | string | [repo](https://charts.dexidp.io) | Repo URL |
-| dex.targetRevision | string | `"0.11.*"` | [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version |
+| dex.targetRevision | string | `"0.12.*"` | [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version |
 | dex.values | object | [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml) | Helm values |
 | dexK8sAuthenticator | object | - | [dex-k8s-authenticator](https://github.com/mintel/dex-k8s-authenticator) ([example](./examples/dex-k8s-authenticator.yaml)) |
 | dexK8sAuthenticator.chart | string | `"dexK8sAuthenticator"` | Chart |
