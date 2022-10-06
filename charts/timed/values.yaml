@@ -57,6 +57,8 @@ backend:
   startupProbe:
     # -- Enable startup probe on backend
     enabled: true
+    # -- Number of times to perform the probe
+    failureThreshold: 6
 
   livenessProbe:
     # -- Enable liveness probe on backend
