@@ -10,9 +10,9 @@ backend:
   replicaCount: 1
   image:
     # -- Backend image name
-    repository: adfinissygroup/timed-backend
+    repository: ghcr.io/adfinis/timed-backend
     # -- Backend version.
-    tag: v2.0.0
+    tag: v3.0.0-rc1
     # -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
@@ -27,6 +27,8 @@ backend:
     externalPort: 80
     # -- Internal Port of backend service
     internalPort: 80
+    # -- Internal Port of backend service probes
+    probesPort: 81
   # -- Resource limits for backend
   resources: {}
     # We usually recommend not to specify default resources and to leave this as a conscious
@@ -52,6 +54,10 @@ backend:
     # -- PostgreSQL Port for existing instance
     postgresqlPort: 5432
 
+  startupProbe:
+    # -- Enable startup probe on backend
+    enabled: true
+
   livenessProbe:
     # -- Enable liveness probe on backend
     enabled: true
@@ -68,8 +74,6 @@ backend:
   readinessProbe:
     # -- Enable readiness probe on backend
     enabled: true
-    # -- Number of seconds after the container has started before readiness probe is initiated
-    initialDelaySeconds: 30
     # -- How often (in seconds) to perform the probe
     periodSeconds: 10
     # -- Number of seconds after which the probe times out

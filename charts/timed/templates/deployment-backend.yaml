@@ -46,33 +46,45 @@ spec:
           ports:
             - name: http
               containerPort: {{ .Values.backend.service.internalPort }}
+            - name: probe
+              containerPort: {{ .Values.backend.service.probesPort }}
+          {{- if .Values.backend.startupProbe.enabled }}
+          startupProbe:
+            httpGet:
+              httpHeaders:
+                - name: Host
+                  value:  {{ mustFirst .Values.ingress.hosts | default "localhost" }}
+              path: /startup
+              port: probe
+              scheme: HTTP
+          {{- end}}
           {{- if .Values.backend.livenessProbe.enabled }}
           livenessProbe:
-            initialDelaySeconds: {{ .Values.backend.livenessProbe.initialDelaySeconds }}
+            httpGet:
+              httpHeaders:
+                - name: Host
+                  value:  {{ mustFirst .Values.ingress.hosts | default "localhost" }}
+              path: /alive
+              port: probe
+              scheme: HTTP
             periodSeconds: {{ .Values.backend.livenessProbe.periodSeconds }}
             timeoutSeconds: {{ .Values.backend.livenessProbe.timeoutSeconds }}
             successThreshold: {{ .Values.backend.livenessProbe.successThreshold }}
             failureThreshold: {{ .Values.backend.livenessProbe.failureThreshold }}
-            httpGet:
-              path: /admin/
-              port: http
-              httpHeaders:
-                - name: Host
-                  value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
           {{- end }}
           {{- if .Values.backend.readinessProbe.enabled }}
           readinessProbe:
-            initialDelaySeconds: {{ .Values.backend.readinessProbe.initialDelaySeconds }}
+            httpGet:
+              httpHeaders:
+                - name: Host
+                  value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
+              path: /ready
+              port: probe
+              scheme: HTTP
             periodSeconds: {{ .Values.backend.readinessProbe.periodSeconds }}
             timeoutSeconds: {{ .Values.backend.readinessProbe.timeoutSeconds }}
             successThreshold: {{ .Values.backend.readinessProbe.successThreshold }}
             failureThreshold: {{ .Values.backend.readinessProbe.failureThreshold }}
-            httpGet:
-              path: /admin/
-              port: http
-              httpHeaders:
-                - name: Host
-                  value: {{ mustFirst .Values.ingress.hosts | default "localhost" }}
           {{- end }}
           resources:
 {{ toYaml .Values.backend.resources | indent 12 }}
