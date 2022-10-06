@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.11.1](https://img.shields.io/badge/Version-0.11.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.12.0](https://img.shields.io/badge/Version-0.12.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -56,8 +56,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.cronjobs.notifySupervisors | object | `{"command":["./manage.py","notify_supervisors_shorttime"],"schedule":"0 8 * * 4"}` | Notify supervisors |
 | backend.cronjobs.redmineReport | object | `{"command":["./manage.py","redmine_report"],"schedule":"0 1 * * 1"}` | Redmine report |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
-| backend.image.repository | string | `"adfinissygroup/timed-backend"` | Backend image name |
-| backend.image.tag | string | `"v2.0.0"` | Backend version. |
+| backend.image.repository | string | `"ghcr.io/adfinis/timed-backend"` | Backend image name |
+| backend.image.tag | string | `"v3.0.0-rc1"` | Backend version. |
 | backend.jobs.dbmigrate.enable | bool | `true` | Enable the dbmigrate Job. This is configurable because timed can also run this on startup if so preferred. |
 | backend.livenessProbe.enabled | bool | `true` | Enable liveness probe on backend |
 | backend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
@@ -72,7 +72,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.postgresql.postgresqlUsername | string | `"timed"` | PostgreSQL user name for existing instance |
 | backend.readinessProbe.enabled | bool | `true` | Enable readiness probe on backend |
 | backend.readinessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
-| backend.readinessProbe.initialDelaySeconds | int | `30` | Number of seconds after the container has started before readiness probe is initiated |
 | backend.readinessProbe.periodSeconds | int | `10` | How often (in seconds) to perform the probe |
 | backend.readinessProbe.successThreshold | int | `1` | Minimum consecutive successes for the probe to be considered successful after having failed |
 | backend.readinessProbe.timeoutSeconds | int | `5` | Number of seconds after which the probe times out |
@@ -81,6 +80,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.service.externalPort | int | `80` | External Port of backend service |
 | backend.service.internalPort | int | `80` | Internal Port of backend service |
 | backend.service.name | string | `"timed-backend"` | Backend service name |
+| backend.service.probesPort | int | `81` | Internal Port of backend service probes |
 | backend.service.type | string | `"ClusterIP"` | Backend service type |
 | backend.settings.admins | list | `[]` | Django administrators, example: Jon Doe <jon.doe@example.com> |
 | backend.settings.corsAllowedOrigins | list | `[]` | Define allowed domains for CORS |
@@ -97,6 +97,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.settings.sentry.tracesSampleRate | float | `1` | Sentry trace sample rate, Set 1.0 to capture 100% of transactions |
 | backend.settings.serverEmail | string | `"webmaster@chart-example.local"` | Email address error messages are sent from |
 | backend.settings.workReportPath | string | `"/etc/workreport"` | Path where the workreport shall be loaded from. The contents of the default path is filled from `configmap-workreport.yaml`. |
+| backend.startupProbe.enabled | bool | `true` | Enable startup probe on backend |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | Frontend image pull policy |
 | frontend.image.repository | string | `"adfinissygroup/timed-frontend"` | Frontend image name |
 | frontend.image.tag | string | `"v2.1.3"` | Frontend version. |
