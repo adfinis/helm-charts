@@ -57,6 +57,7 @@ spec:
               path: /startup
               port: probe
               scheme: HTTP
+            failureThreshold: {{ .Values.backend.startupProbe.failureThreshold }}
           {{- end}}
           {{- if .Values.backend.livenessProbe.enabled }}
           livenessProbe:
