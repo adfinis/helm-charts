@@ -12,7 +12,7 @@ backend:
     # -- Backend image name
     repository: ghcr.io/adfinis/timed-backend
     # -- Backend version.
-    tag: v3.0.0-rc1
+    tag: v3.0.0-rc2
     # -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
@@ -104,11 +104,9 @@ backend:
     admins: []
     # -- Define allowed domains for CORS
     corsAllowedOrigins: []
-    gunicorn:
-      # -- Number of gunicorn workers
-      workers: 8
-      # -- gunicorn additional arguments
-      cmdArgs: ""
+    hurricane:
+      # -- request queue length before hurricane denies requests and toggles readiness
+      reqQueueLen: 250
     sentry:
       # -- Enable Sentry integration
       enabled: false

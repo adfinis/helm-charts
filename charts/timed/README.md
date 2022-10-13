@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.12.1](https://img.shields.io/badge/Version-0.12.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.13.0](https://img.shields.io/badge/Version-0.13.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -57,7 +57,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.cronjobs.redmineReport | object | `{"command":["./manage.py","redmine_report"],"schedule":"0 1 * * 1"}` | Redmine report |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"ghcr.io/adfinis/timed-backend"` | Backend image name |
-| backend.image.tag | string | `"v3.0.0-rc1"` | Backend version. |
+| backend.image.tag | string | `"v3.0.0-rc2"` | Backend version. |
 | backend.jobs.dbmigrate.enable | bool | `true` | Enable the dbmigrate Job. This is configurable because timed can also run this on startup if so preferred. |
 | backend.livenessProbe.enabled | bool | `true` | Enable liveness probe on backend |
 | backend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
@@ -88,8 +88,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.settings.emailFrom | string | `"webmaster@chart-example.local"` | Default email address to use for various responses |
 | backend.settings.emailUrl | string | `"smtp://localhost:25"` | Connection string of SMTP server to send mails |
 | backend.settings.emailUseTls | string | `"True"` | TLS option for email server |
-| backend.settings.gunicorn.cmdArgs | string | `""` | gunicorn additional arguments |
-| backend.settings.gunicorn.workers | int | `8` | Number of gunicorn workers |
+| backend.settings.hurricane.reqQueueLen | int | `250` | request queue length before hurricane denies requests and toggles readiness |
 | backend.settings.maxNumberFields | int | `2000` | Number of fields that are sent when saving changes on a model. |
 | backend.settings.sentry.dsn | string | `nil` | Sentry DSN for error reporting. Set to enable Sentry integration |
 | backend.settings.sentry.enabled | bool | `false` | Enable Sentry integration |
