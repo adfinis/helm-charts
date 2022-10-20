@@ -3919,6 +3919,26 @@ entries:
     version: 0.1.0
   infra-apps:
   - apiVersion: v2
+    created: "2022-10-20T09:49:36.706088272Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 0a4a110cdc78ea2732249504c470d04825c0ad8ac4c96d25d3956b9731ee26d6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.122.0/infra-apps-0.122.0.tgz
+    version: 0.122.0
+  - apiVersion: v2
     created: "2022-10-20T09:37:19.645119998Z"
     dependencies:
     - name: argoconfig
@@ -7667,6 +7687,26 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.0.1/logging-apps-0.0.1.tgz
     version: 0.0.1
   misc-apps:
+  - apiVersion: v2
+    created: "2022-10-20T09:49:36.955695601Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: cadaaf01391ab5ca92381146553fbf11ff9fc958a05ccb69eaf7324932c7170c
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.24.0/misc-apps-0.24.0.tgz
+    version: 0.24.0
   - apiVersion: v2
     created: "2022-10-20T05:54:19.380346965Z"
     dependencies:
@@ -14953,4 +14993,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-10-20T09:37:19.646357889Z"
+generated: "2022-10-20T09:49:36.957422623Z"
