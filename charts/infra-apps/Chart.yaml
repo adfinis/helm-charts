@@ -12,5 +12,5 @@ maintainers:
     url: https://adfinis.com
 dependencies:
   - name: argoconfig
-    version: 0.8.2
+    version: 0.9.0
     repository: https://charts.adfinis.com
