@@ -13,7 +13,7 @@ azureKvCsiProvider:
   # -- Chart
   chart: "csi-secrets-store-provider-azure"
   # -- [csi-secrets-store-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version
-  targetRevision: "1.3.0"
+  targetRevision: "1.3.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/charts/csi-secrets-store-provider-azure/values.yaml)
   values: {}
