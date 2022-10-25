@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.22.0](https://img.shields.io/badge/Version-0.22.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.24.0](https://img.shields.io/badge/Version-0.24.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocdApps.destination.namespace | string | `"infra-argocd"` | Namespace |
 | argocdApps.enabled | bool | `false` | Enable Argo CD Apps |
 | argocdApps.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocdApps.targetRevision | string | `"5.4.*"` | [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version |
+| argocdApps.targetRevision | string | `"0.0.*"` | [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version |
 | argocdApps.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argocd-apps/values.yaml) | Helm values |
 | chartmuseum | object | - | [chartmuseum](https://chartmuseum.com) ([example](./example/chartmuseum.yaml)) |
 | chartmuseum.chart | string | `"chartmuseum"` | Chart |
@@ -58,7 +58,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | metallb.destination.namespace | string | `"infra-metallb"` | Namespace |
 | metallb.enabled | bool | `false` | Enable metallb |
 | metallb.repoURL | string | [repo](https://metallb.github.io/metallb) | Repo URL |
-| metallb.targetRevision | string | `"0.12.*"` | [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb) |
+| metallb.targetRevision | string | `"0.13.*"` | [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb) |
 | metallb.values | object | [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml) | Helm values |
 | prometheusMsteams | object | - | [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) ([example](./example/prometheus-msteams.yaml)) |
 | prometheusMsteams.chart | string | `"prometheus-msteams"` | Chart |

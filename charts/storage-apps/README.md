@@ -1,6 +1,6 @@
 # storage-apps
 
-![Version: 0.9.1](https://img.shields.io/badge/Version-0.9.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.11.0](https://img.shields.io/badge/Version-0.11.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for storage applications
 
@@ -28,15 +28,22 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | cephCsiCephfs.destination.namespace | string | `"infra-storage"` | Namespace |
 | cephCsiCephfs.enabled | bool | `false` | Enable ceph-csi-cephfs |
 | cephCsiCephfs.repoURL | string | [repo](https://ceph.github.io/csi-charts) | Repo URL |
-| cephCsiCephfs.targetRevision | string | `"3.6.*"` | [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version |
+| cephCsiCephfs.targetRevision | string | `"3.7.*"` | [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version |
 | cephCsiCephfs.values | object | [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/cephfs/ceph-csi-cephfs/values.yaml) | Helm values |
 | cephCsiRbd | object | - | [ceph-csi-rbd](https://github.com/ceph/ceph-csi/) |
 | cephCsiRbd.chart | string | `"ceph-csi-rbd"` | Chart |
 | cephCsiRbd.destination.namespace | string | `"infra-storage"` | Namespace |
 | cephCsiRbd.enabled | bool | `false` | Enable ceph-csi-rbd |
 | cephCsiRbd.repoURL | string | [repo](https://ceph.github.io/csi-charts) | Repo URL |
-| cephCsiRbd.targetRevision | string | `"3.6.*"` | [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version |
+| cephCsiRbd.targetRevision | string | `"3.7.*"` | [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version |
 | cephCsiRbd.values | object | [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/rbd/ceph-csi-rbd/values.yaml) | Helm values |
+| csiDriverSmb | object | [example](./examples/csi-driver-smb.yaml) | [csi-driver-smb](https://github.com/kubernetes-csi/csi-driver-smb) |
+| csiDriverSmb.chart | string | `"csi-driver-smb"` | Chart |
+| csiDriverSmb.destination.namespace | string | `"infra-csi-driver-smb"` | Namespace |
+| csiDriverSmb.enabled | bool | `false` | Enable csi-driver-smb |
+| csiDriverSmb.repoURL | string | [repo](https://raw.githubusercontent.com/kubernetes-csi/csi-driver-smb/master/charts) | Repo URL |
+| csiDriverSmb.targetRevision | string | `"1.9.*"` | [csi-driver-smb Helm chart](https://github.com/kubernetes-csi/csi-driver-smb/tree/master/charts) version |
+| csiDriverSmb.values | object | [upstream values](https://github.com/kubernetes-csi/csi-driver-smb/blob/master/charts/latest/csi-driver-smb/values.yaml) | Helm values |
 | minio | object | - | [minio](https://github.com/minio/minio) |
 | minio.chart | string | `"minio"` | Chart |
 | minio.destination.namespace | string | `"infra-storage"` | Namespace |

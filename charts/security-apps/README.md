@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.58.0](https://img.shields.io/badge/Version-0.58.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.60.0](https://img.shields.io/badge/Version-0.60.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -17,7 +17,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.adfinis.com | argoconfig | 0.7.6 |
+| https://charts.adfinis.com | argoconfig | 0.9.0 |
 
 ## Values
 
@@ -80,13 +80,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | neuvectorMonitor.repoURL | string | [repo](https://neuvector.github.io/neuvector-helm) | Repo URL |
 | neuvectorMonitor.targetRevision | string | `"2.2.*"` | [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version |
 | neuvectorMonitor.values | object | [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/monitor/values.yaml) | Helm values |
-| oauth2-proxy | object | [example](./examples/oauth2-proxy.yaml) | [oauth2-proxy] (https://github.com/oauth2-proxy/oauth2-proxy) |
+| oauth2-proxy | object | [example](./examples/oauth2-proxy.yaml) | [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) |
 | oauth2-proxy.annotations | object | `{}` | Annotations for oauth2-proxy app |
 | oauth2-proxy.chart | string | `"oauth2-proxy"` | Chart |
 | oauth2-proxy.enabled | bool | `false` | Enable oauth2-proxy |
 | oauth2-proxy.namespace | string | `"infra-oauth2-proxy"` | Namespace |
-| oauth2-proxy.repoURL | string | [repo] (https://https://oauth2-proxy.github.io/manifests) | Repo URL |
-| oauth2-proxy.targetRevision | string | `"6.2.*"` | [oauth2-proxy Helm chart] (https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy) |
+| oauth2-proxy.repoURL | string | [repo](https://https://oauth2-proxy.github.io/manifests) | Repo URL |
+| oauth2-proxy.targetRevision | string | `"6.2.*"` | [oauth2-proxy Helm chart](https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy) |
 | oauth2-proxy.values | object | [upstream values](https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/values.yaml) | Helm values |
 | secretsStoreCsiDriver | object | - | [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([example](./examples/secrets-store-csi-driver.yaml)) |
 | secretsStoreCsiDriver.chart | string | `"secrets-store-csi-driver"` | Chart |
@@ -100,21 +100,21 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | stackroxCentralServices.destination.namespace | string | `"infra-stackrox"` | Namespace |
 | stackroxCentralServices.enabled | bool | `false` | Enable StackRox central-services |
 | stackroxCentralServices.repoURL | string | [repo](https://charts.stackrox.io) | Repo URL |
-| stackroxCentralServices.targetRevision | string | `"71.0.0"` | [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
+| stackroxCentralServices.targetRevision | string | `"72.0.0"` | [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
 | stackroxCentralServices.values | object | [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-central/values.yaml) | Helm values |
 | stackroxSecuredClusterServices | object | - | [StackRox secured-cluster-services](https://www.stackrox.io/) ([example/stackrox.yaml)) |
 | stackroxSecuredClusterServices.chart | string | `"stackrox-secured-cluster-services"` | Chart |
 | stackroxSecuredClusterServices.destination.namespace | string | `"infra-stackrox"` | Namespace |
 | stackroxSecuredClusterServices.enabled | bool | `false` | Enable StackRox secured-cluster-services |
 | stackroxSecuredClusterServices.repoURL | string | [repo](https://charts.stackrox.io) | Repo URL |
-| stackroxSecuredClusterServices.targetRevision | string | `"71.0.0"` | [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
+| stackroxSecuredClusterServices.targetRevision | string | `"72.0.0"` | [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
 | stackroxSecuredClusterServices.values | object | [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-secured-cluster/values.yaml.htpl) | Helm values |
 | vault | object | - | [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml)) |
 | vault.chart | string | `"vault"` | Chart |
 | vault.destination.namespace | string | `"infra-vault"` | Namespace |
 | vault.enabled | bool | `false` | Enable vault |
 | vault.repoURL | string | [repo](https://helm.releases.hashicorp.com) | Repo URL |
-| vault.targetRevision | string | `"0.20.1"` | [vault Helm chart](https://github.com/hashicorp/vault-helm) version |
+| vault.targetRevision | string | `"0.22.*"` | [vault Helm chart](https://github.com/hashicorp/vault-helm) version |
 | vault.values | object | [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml) | Helm values |
 | vaultMonitoring | object | - | [vault-monitoring](https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml)) |
 | vaultMonitoring.chart | string | `"vault-monitoring"` | Chart |

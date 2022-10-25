@@ -13,7 +13,7 @@ cephCsiRbd:
   # -- Chart
   chart: "ceph-csi-rbd"
   # -- [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version
-  targetRevision: "3.6.*"
+  targetRevision: "3.7.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/rbd/ceph-csi-rbd/values.yaml)
   values: {}
@@ -33,9 +33,29 @@ cephCsiCephfs:
   # -- Chart
   chart: "ceph-csi-cephfs"
   # -- [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version
-  targetRevision: "3.6.*"
+  targetRevision: "3.7.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/cephfs/ceph-csi-cephfs/values.yaml)
+  values: {}
+
+# -- [csi-driver-smb](https://github.com/kubernetes-csi/csi-driver-smb)
+# @default -- [example](./examples/csi-driver-smb.yaml)
+csiDriverSmb:
+  # -- Enable csi-driver-smb
+  enabled: false
+  name: csi-driver-smb
+  destination:
+    # -- Namespace
+    namespace: "infra-csi-driver-smb"
+  # -- Repo URL
+  # @default -- [repo](https://raw.githubusercontent.com/kubernetes-csi/csi-driver-smb/master/charts)
+  repoURL: "https://raw.githubusercontent.com/kubernetes-csi/csi-driver-smb/master/charts"
+  # -- Chart
+  chart: "csi-driver-smb"
+  # -- [csi-driver-smb Helm chart](https://github.com/kubernetes-csi/csi-driver-smb/tree/master/charts) version
+  targetRevision: "1.9.*"
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/kubernetes-csi/csi-driver-smb/blob/master/charts/latest/csi-driver-smb/values.yaml)
   values: {}
 
 # -- [minio](https://github.com/minio/minio)

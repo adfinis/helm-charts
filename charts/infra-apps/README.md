@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.119.0](https://img.shields.io/badge/Version-0.119.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.122.0](https://img.shields.io/badge/Version-0.122.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -17,7 +17,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.adfinis.com | argoconfig | 0.8.2 |
+| https://charts.adfinis.com | argoconfig | 0.9.0 |
 
 ## Values
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocd.destination.namespace | string | `"infra-argocd"` | Namespace |
 | argocd.enabled | bool | `false` | Enable Argo CD |
 | argocd.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocd.targetRevision | string | `"5.5.*"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
+| argocd.targetRevision | string | `"5.6.*"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
 | argocd.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml) | Helm values |
 | argoconfig.application.annotations | object | `{}` | Optional annotations to add to all Applications metadata. |
 | certManager | object | [example](./examples/cert-manager.yaml) | [cert-manager](https://cert-manager.io/) |
@@ -38,7 +38,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | certManager.destination.namespace | string | `"infra-certmanager"` | Namespace |
 | certManager.enabled | bool | `false` | Enable cert-manager |
 | certManager.repoURL | string | [repo](https://charts.jetstack.io) | Repo URL |
-| certManager.targetRevision | string | `"1.9.*"` | [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version |
+| certManager.targetRevision | string | `"1.10.*"` | [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version |
 | certManager.values | object | [upstream values](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml) | Helm values |
 | certManagerIssuers | object | [example](./examples/cert-manager-issuers.yaml) | [cert-manager-issuers](https://cert-manager.io/docs/configuration/) |
 | certManagerIssuers.annotations | object | `{}` | Annotations for cert-manager-issuers app |
@@ -94,7 +94,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | mimir.destination.namespace | string | `"infra-mimir"` | Namespace |
 | mimir.enabled | bool | `false` | Enable mimir |
 | mimir.repoURL | string | [repo](https://grafana.github.io/helm-charts) | Repo URL |
-| mimir.targetRevision | string | `"2.1.*"` | [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed) |
+| mimir.targetRevision | string | `"3.1.*"` | [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed) |
 | mimir.values | object | [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml) | Helm values |
 | rbacManager | object | [example](./examples/rbac-manager.yaml) | [rbac-manager](https://fairwindsops.github.io/rbac-manager/) |
 | rbacManager.annotations | object | `{}` | Annotations for rbac-manager app |

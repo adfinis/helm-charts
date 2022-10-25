@@ -73,7 +73,7 @@ metallb:
   # -- Chart
   chart: "metallb"
   # -- [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb)
-  targetRevision: "0.12.*"
+  targetRevision: "0.13.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml)
   values: {}
@@ -135,7 +135,7 @@ argocdApps:
   # -- Chart
   chart: argocd-apps
   # -- [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version
-  targetRevision: 5.4.*
+  targetRevision: 0.0.*
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argocd-apps/values.yaml)
   values: {}
