@@ -57,7 +57,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.cronjobs.redmineReport | object | `{"command":["./manage.py","redmine_report"],"schedule":"0 1 * * 1"}` | Redmine report |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"ghcr.io/adfinis/timed-backend"` | Backend image name |
-| backend.image.tag | string | `"v3.0.0-rc2"` | Backend version. |
+| backend.image.tag | string | `"v3.0.0-rc3"` | Backend version. |
 | backend.jobs.dbmigrate.enable | bool | `true` | Enable the dbmigrate Job. This is configurable because timed can also run this on startup if so preferred. |
 | backend.livenessProbe.enabled | bool | `true` | Enable liveness probe on backend |
 | backend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
