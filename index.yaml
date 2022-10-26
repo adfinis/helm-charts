@@ -3938,6 +3938,43 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/customer-center-0.1.0/customer-center-0.1.0.tgz
     version: 0.1.0
   infra-apps:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: feat: Upgrade Argo CD to 2.5.0
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1568
+        - kind: changed
+          description: fix: Chart NOTES nil references
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1582
+        - kind: changed
+          description: feat: Move argocd-cm and argocd-rbac-cm to config section
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1528
+    apiVersion: v2
+    created: "2022-10-26T15:06:39.51875068Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: c20f762fbb853b398420273893437101f77a02852648c38c702abb3c75deee73
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.123.0/infra-apps-0.123.0.tgz
+    version: 0.123.0
   - apiVersion: v2
     created: "2022-10-20T09:49:36.706088272Z"
     dependencies:
@@ -15033,4 +15070,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-10-24T15:07:13.389289003Z"
+generated: "2022-10-26T15:06:39.520049899Z"
