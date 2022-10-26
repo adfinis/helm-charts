@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.122.0
+version: 0.123.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -14,3 +14,20 @@ dependencies:
   - name: argoconfig
     version: 0.9.0
     repository: https://charts.adfinis.com
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: feat: Upgrade Argo CD to 2.5.0
+      links:
+        - name: GitHub PR
+          url: https://github.com/argoproj/argo-helm/pull/1568
+    - kind: changed
+      description: fix: Chart NOTES nil references
+      links:
+        - name: GitHub PR
+          url: https://github.com/argoproj/argo-helm/pull/1582
+    - kind: changed
+      description: feat: Move argocd-cm and argocd-rbac-cm to config section
+      links:
+        - name: GitHub PR
+          url: https://github.com/argoproj/argo-helm/pull/1528
