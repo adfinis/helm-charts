@@ -73,8 +73,7 @@ data:
   DJANGO_REDMINE_HTACCESS_USER: {{ .Values.redmine.htaccessUser | quote }}
   DJANGO_REDMINE_SPENTHOURS_FIELD: {{ .Values.redmine.spenthoursField | quote }}
 {{- end }}
-  GUNICORN_WORKERS: {{ .Values.backend.settings.gunicorn.workers | quote }}
-  GUNICORN_CMD_ARGS: {{ .Values.backend.settings.gunicorn.cmdArgs | quote }}
+  HURRICANE_REQ_QUEUE_LEN: {{ .Values.backend.settings.hurricane.reqQueueLen | quote }}
 {{- if .Values.backend.settings.admins }}
   DJANGO_ADMINS: {{ join "," .Values.backend.settings.admins | quote }}
 {{- end }}
