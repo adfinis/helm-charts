@@ -6,5 +6,5 @@ chart-repos:
   - grafana=https://grafana.github.io/helm-charts
 additional-commands:
   - helm unittest --helm3 --color {{ .Path }}
-  - ah lint -p {{ .Path }}
+  - .tmp/bin/ah lint -p {{ .Path }}
   - hack/pluto.sh {{ .Path }}

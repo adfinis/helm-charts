@@ -1,6 +1,6 @@
 #/bin/bash
 
-set -xe
+set -e
 
 source hack/sh/_functions.sh
 
