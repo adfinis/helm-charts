@@ -133,7 +133,7 @@ the tests that the chart testing tool `ct` does.
 
 Additionally to `helm unittest` we also automatically check if there are any depracated or removed `apiVersions` used in the charts with [pluto](https://pluto.docs.fairwinds.com/).
 
-If you are using [artifacthub annotations](https://blog.artifacthub.io/blog/ah-cli/) then an they get checked using the [`ah lint`](https://blog.artifacthub.io/blog/ah-cli/) command.
+If you are using [artifacthub annotations](https://blog.artifacthub.io/blog/ah-cli/) then they get checked using the [`ah lint`](https://blog.artifacthub.io/blog/ah-cli/) command.
 
 ### Documentation
 
