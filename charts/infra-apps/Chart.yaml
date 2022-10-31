@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.123.1
+version: 0.124.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,19 +17,32 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: 'fix: no special chars in annotations, remaining changes were already in 0.123.0'
-    - kind: changed
-      description: 'feat: Upgrade Argo CD to 2.5.0'
+      description: "fix(argo-cd): Don't install CRDs for disabled components"
       links:
         - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1568
+          url: https://github.com/argoproj/argo-helm/pull/1596
     - kind: changed
-      description: 'fix: Chart NOTES nil references'
+      description: 'feat(argo-cd): Support manually managed TLS certificate for Server'
       links:
         - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1582
+          url: https://github.com/argoproj/argo-helm/pull/1534
     - kind: changed
-      description: 'feat: Move argocd-cm and argocd-rbac-cm to config section'
+      description: 'feat(argo-cd): Support custom TLS certificates for Dex'
       links:
         - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1528
+          url: https://github.com/argoproj/argo-helm/pull/1477
+    - kind: changed
+      description: 'feat(argo-cd): Set container security contexts'
+      links:
+        - name: GitHub PR
+          url: https://github.com/argoproj/argo-helm/pull/1579
+    - kind: changed
+      description: 'chore(argo-cd): Remove liveness probe from application controller'
+      links:
+        - name: GitHub PR
+          url: https://github.com/argoproj/argo-helm/pull/1532
+    - kind: changed
+      description: 'feat(argo-cd): Add probes for ApplicationSet controller'
+      links:
+        - name: GitHub PR
+          url: https://github.com/argoproj/argo-helm/pull/1532
