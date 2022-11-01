@@ -3941,6 +3941,58 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "fix(argo-cd): Don't install CRDs for disabled components"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1596
+        - kind: changed
+          description: 'feat(argo-cd): Support manually managed TLS certificate for Server'
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1534
+        - kind: changed
+          description: 'feat(argo-cd): Support custom TLS certificates for Dex'
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1477
+        - kind: changed
+          description: 'feat(argo-cd): Set container security contexts'
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1579
+        - kind: changed
+          description: 'chore(argo-cd): Remove liveness probe from application controller'
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1532
+        - kind: changed
+          description: 'feat(argo-cd): Add probes for ApplicationSet controller'
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1532
+    apiVersion: v2
+    created: "2022-11-01T06:46:53.546805213Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 6dc23c093fbf32a055e7ed740dc88f6127bf1c78174c9f82b49643d46e1aea53
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.124.0/infra-apps-0.124.0.tgz
+    version: 0.124.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: 'fix: no special chars in annotations, remaining changes were already in 0.123.0'
         - kind: changed
           description: 'feat: Upgrade Argo CD to 2.5.0'
@@ -15135,4 +15187,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-10-28T10:18:36.476573105Z"
+generated: "2022-11-01T06:46:53.548340375Z"
