@@ -14499,6 +14499,43 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/timed-0.3.3/timed-0.3.3.tgz
     version: 0.3.3
   tracing-apps:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "Update Jaeger Operator to 1.36.0"
+          links:
+            - name: GitHub PR
+              url: https://github.com/jaegertracing/helm-charts/pull/392
+        - kind: changed
+          description: "Update Jaeger Operator to 1.37.0"
+          links:
+            - name: GitHub PR
+              url: https://github.com/jaegertracing/helm-charts/pull/398
+        - kind: changed
+          description: "Update Jaeger Operator to 1.38.0"
+          links:
+            - name: GitHub PR
+              url: https://github.com/jaegertracing/helm-charts/pull/405
+    apiVersion: v2
+    created: "2022-11-02T14:05:18.528120045Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 2d142122c19dc87fda79ae4378b5878f7d425c75d690bacaf30a1140ac26b73f
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.16.0/tracing-apps-0.16.0.tgz
+    version: 0.16.0
   - apiVersion: v2
     created: "2022-08-04T15:51:57.198245429Z"
     dependencies:
@@ -15219,4 +15256,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-02T12:10:08.387893711Z"
+generated: "2022-11-02T14:05:18.529519827Z"
