@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.124.0
+version: 0.124.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,32 +17,12 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix(argo-cd): Don't install CRDs for disabled components"
+      description: "fix(argo-cd): Upgrade Argo Image to the latest version 2.5.1"
       links:
         - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1596
-    - kind: changed
-      description: 'feat(argo-cd): Support manually managed TLS certificate for Server'
+          url: https://github.com/argoproj/argo-helm/pull/1614
+    - kind: added
+      description: "feat(argo-cd): Add revisionHistoryLimit"
       links:
         - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1534
-    - kind: changed
-      description: 'feat(argo-cd): Support custom TLS certificates for Dex'
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1477
-    - kind: changed
-      description: 'feat(argo-cd): Set container security contexts'
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1579
-    - kind: changed
-      description: 'chore(argo-cd): Remove liveness probe from application controller'
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1532
-    - kind: changed
-      description: 'feat(argo-cd): Add probes for ApplicationSet controller'
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1532
+          url: https://github.com/argoproj/argo-helm/pull/1599
