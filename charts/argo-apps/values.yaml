@@ -33,7 +33,7 @@ argoRollouts:
   # -- Chart
   chart: "argo-rollouts"
   # -- [argo-rollouts Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-rollouts) version
-  targetRevision: "2.20.*"
+  targetRevision: "2.21.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-rollouts/values.yaml)
   values: {}
