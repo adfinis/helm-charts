@@ -2,7 +2,7 @@ apiVersion: v2
 name: timed
 description: Chart for Timed application
 type: application
-version: 0.13.2
+version: 0.13.3
 keywords:
   - timed
   - tracking
@@ -23,7 +23,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: added
-      description: "added cronjob for budget check"
+      description: "added cronjob for updating project expenditures"
       links:
         - name: GitHub PR
-          url: https://github.com/adfinis/timed-backend/pull/901
+          url: https://github.com/adfinis/timed-backend/pull/908

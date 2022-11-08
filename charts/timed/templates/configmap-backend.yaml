@@ -72,6 +72,8 @@ data:
   DJANGO_REDMINE_URL: {{ .Values.redmine.url | quote }}
   DJANGO_REDMINE_HTACCESS_USER: {{ .Values.redmine.htaccessUser | quote }}
   DJANGO_REDMINE_SPENTHOURS_FIELD: {{ .Values.redmine.spenthoursField | quote }}
+  DJANGO_REDMINE_AMOUNT_OFFERED_FIELD: {{ .Values.redmine.amountOfferedField | quote }}
+  DJANGO_REDMINE_AMOUNT_INVOICED_FIELD: {{ .Values.redmine.amountInvoicedField | quote }}
 {{- end }}
   HURRICANE_REQ_QUEUE_LEN: {{ .Values.backend.settings.hurricane.reqQueueLen | quote }}
 {{- if .Values.backend.settings.admins }}
