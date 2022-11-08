@@ -33,7 +33,7 @@ opentelemetryCollector:
   # -- Chart
   chart: "opentelemetry-collector"
   # -- [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector)
-  targetRevision: "0.20.2"
+  targetRevision: "0.38.1"
   # -- Helm values
   # @default -- [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml)
   values: {}
