@@ -127,13 +127,13 @@ backend:
     notifySupervisors:
       schedule: "0 8 * * 4"
       command:
-        - "./manage.py"
+        - "poetry run python manage.py"
         - "notify_supervisors_shorttime"
     # -- Notify reviewers first stage
     notifyReviewersFirst:
       schedule: "0 8 4 * *"
       command:
-        - "./manage.py"
+        - "poetry run python manage.py"
         - "notify_reviewers_unverified"
         - "--offset"
         # -- Period will end today minus given offset
@@ -142,7 +142,7 @@ backend:
     notifyReviewersSecond:
       schedule: "0 8 11 * *"
       command:
-        - "./manage.py"
+        - "poetry run python manage.py"
         - "notify_reviewers_unverified"
         - "--offset"
         # -- Period will end today minus given offset
@@ -154,7 +154,7 @@ backend:
     notifyReviewersThird:
       schedule: "0 8 18 * *"
       command:
-        - "./manage.py"
+        - "poetry run python manage.py"
         - "notify_reviewers_unverified"
         - "--offset"
         # -- Period will end today minus given offset
@@ -166,13 +166,13 @@ backend:
     redmineReport:
       schedule: "0 1 * * 1"
       command:
-        - "./manage.py"
+        - "poetry run python manage.py"
         - "redmine_report"
     # -- Notify changed employments
     notifyChangedEmployments:
       schedule: "0 2 * * 1"
       command:
-        - "./manage.py"
+        - "poetry run python manage.py"
         - "notify_changed_employments"
 
 frontend:
