@@ -10600,6 +10600,33 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/rmd-0.1.1/rmd-0.1.1.tgz
     version: 0.1.1
   security-apps:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "upgrade StackRox from 3.72.0 to 3.72.1"
+          links:
+            - name: Bugs resolved in 3.72.1
+              url: https://docs.openshift.com/acs/3.72/release_notes/372-release-notes.html#resolved-in-version-3721
+    apiVersion: v2
+    created: "2022-11-17T09:59:35.743541433Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: eea032a4db31d5c8334b658430fc1aeb0e88673186429cd238bff031091e4a46
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.61.0/security-apps-0.61.0.tgz
+    version: 0.61.0
   - apiVersion: v2
     created: "2022-10-20T05:56:25.329548543Z"
     dependencies:
@@ -15621,4 +15648,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-17T09:32:09.025314095Z"
+generated: "2022-11-17T09:59:35.747946269Z"
