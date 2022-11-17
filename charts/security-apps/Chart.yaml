@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.60.0
+version: 0.61.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -14,3 +14,10 @@ dependencies:
   - name: argoconfig
     version: 0.9.0
     repository: https://charts.adfinis.com
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "upgrade StackRox from 3.72.0 to 3.72.1"
+      links:
+        - name: Bugs resolved in 3.72.1
+          url: https://docs.openshift.com/acs/3.72/release_notes/372-release-notes.html#resolved-in-version-3721
