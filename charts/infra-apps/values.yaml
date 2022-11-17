@@ -160,8 +160,8 @@ rbacManager:
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml)
   values: {}
 
-# -- [Thanos](https://thanos.io/)
-# @default -- [example](./examples/thanos.yaml)
+# -- [Thanos](https://thanos.io/) is DEPRECATED, use mimir instead
+# @default -- DEPRECATED
 thanos:
   # -- Enable Thanos
   enabled: false
