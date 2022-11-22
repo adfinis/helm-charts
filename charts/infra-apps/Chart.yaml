@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.128.0
+version: 0.129.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,12 +17,12 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore(argo-cd): Consolidated GPG configuration"
+      description: "feat(ingress): Release 1.4.0"
       links:
         - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1609
+          url: https://github.com/kubernetes/ingress-nginx/pull/9108
     - kind: changed
-      description: "fix(argo-cd): Invalid argocd-gpg-keys-cm template"
+      description: "feat(ingress): release 1.5.1"
       links:
         - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1656
+          url: https://github.com/kubernetes/ingress-nginx/pull/9280
