@@ -3973,6 +3973,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore(argo-cd): Consolidated GPG configuration"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1609
+        - kind: changed
+          description: "fix(argo-cd): Invalid argocd-gpg-keys-cm template"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1656
+    apiVersion: v2
+    created: "2022-11-22T12:37:46.046275717Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: cda73357377588b8bed5ce3c9e9b8bab031e246c4d597f8ff8238a78ace158e6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.128.0/infra-apps-0.128.0.tgz
+    version: 0.128.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "bump grafana chart dependency to 6.43.5"
           links:
             - name: GitHub PR
@@ -15972,4 +16004,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-21T09:15:42.825635035Z"
+generated: "2022-11-22T12:37:46.0475611Z"
