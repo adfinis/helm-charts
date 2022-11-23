@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.126.0](https://img.shields.io/badge/Version-0.126.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.129.0](https://img.shields.io/badge/Version-0.129.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocd.destination.namespace | string | `"infra-argocd"` | Namespace |
 | argocd.enabled | bool | `false` | Enable Argo CD |
 | argocd.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocd.targetRevision | string | `"5.13.*"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
+| argocd.targetRevision | string | `"5.14.1"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
 | argocd.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml) | Helm values |
 | argoconfig.application.annotations | object | `{}` | Optional annotations to add to all Applications metadata. |
 | certManager | object | [example](./examples/cert-manager.yaml) | [cert-manager](https://cert-manager.io/) |
@@ -62,7 +62,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingressNginx.destination.namespace | string | `"infra-ingress"` | Namespace |
 | ingressNginx.enabled | bool | `false` | Configure nginx-ingress |
 | ingressNginx.repoURL | string | [repo](https://kubernetes.github.io/ingress-nginx) | Repo URL |
-| ingressNginx.targetRevision | string | `"4.2.*"` | [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version |
+| ingressNginx.targetRevision | string | `"4.4.0"` | [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version |
 | ingressNginx.values | object | [upstream values](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml) | Helm values |
 | kubeEventExporter | object | [example](./examples/kubernetes-event-exporter.yaml) | [kubernetes-event-exporter](https://github.com/opsgenie/kubernetes-event-exporter) |
 | kubeEventExporter.annotations | object | `{}` | Annotations for kubernetes-event-exporter app |
@@ -70,7 +70,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kubeEventExporter.destination.namespace | string | `"infra-kube-event-exporter"` | Namespace |
 | kubeEventExporter.enabled | bool | `false` | Enable kubernetes-event-exporter |
 | kubeEventExporter.repoURL | string | [repo](https://charts.bitnami.com/bitnami) | Repo URL |
-| kubeEventExporter.targetRevision | string | `"1.4.*"` | [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kubernetes-event-exporter) |
+| kubeEventExporter.targetRevision | string | `"1.5.*"` | [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kubernetes-event-exporter) |
 | kubeEventExporter.values | object | [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/kubernetes-event-exporter/values.yaml) | Helm values |
 | kubePrometheusStack | object | [example](./examples/prometheus.yaml) | [prometheus-operator](https://github.com/coreos/prometheus-operator) |
 | kubePrometheusStack.annotations | object | `{}` | Annotations for prometheus-operator app |
