@@ -15224,6 +15224,37 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: 'Bump collector version to 0.64.1'
+          links:
+            - name: GitHub PR
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/495
+            - name: GitHub PR
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/510
+            - name: GitHub PR
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/513
+    apiVersion: v2
+    created: "2022-11-23T12:02:16.42667381Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for tracing applications
+    digest: c34496ce8df34e47165262c150cab603bdb5ebeaf4a46d95f680c81e9a7733a4
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.17.1/tracing-apps-0.17.1.tgz
+    version: 0.17.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: 'add support for hostnetworking in deployment and statefulset mode'
           links:
             - name: GitHub PR
@@ -16110,4 +16141,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-23T10:27:50.617211251Z"
+generated: "2022-11-23T12:02:16.428887257Z"
