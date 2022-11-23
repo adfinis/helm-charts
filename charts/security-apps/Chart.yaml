@@ -17,7 +17,17 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "upgrade StackRox from 3.72.0 to 3.72.1"
+      description: "Update falco from v2.2.* to v2.3.0"
       links:
-        - name: Bugs resolved in 3.72.1
-          url: https://docs.openshift.com/acs/3.72/release_notes/372-release-notes.html#resolved-in-version-3721
+        - name: Add variable namespaceOverride to allow setting release namespace in values
+          url: https://github.com/falcosecurity/charts/blob/master/falco/CHANGELOG.md#v230
+    - kind: changed
+      description: "Update falco from v2.1.* to v2.2.*"
+      links:
+        - name: Breaking change the grpc socket path from unix:///var/run/falco/falco.soc to unix:///run/falco/falco.sock.
+          url: https://github.com/falcosecurity/charts/blob/master/falco/CHANGELOG.md#v220
+    - kind: changed
+      description: "Update falco from v2.0.* to v2.1.*"
+      links:
+        - name: Bump Falco to 0.33.0
+          url: https://github.com/falcosecurity/charts/blob/master/falco/CHANGELOG.md#v210
