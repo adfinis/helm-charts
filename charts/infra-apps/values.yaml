@@ -221,7 +221,7 @@ kured:
   # -- Chart
   chart: kured
   # -- [Kured Helm chart](https://github.com/kubereboot/kured/tree/main/charts/kured)
-  targetRevision: 4.0.1
+  targetRevision: 4.1.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubereboot/kured/blob/main/charts/kured/values.yaml)
   values: {}
