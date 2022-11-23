@@ -12927,6 +12927,38 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/sentry-apps-0.1.0/sentry-apps-0.1.0.tgz
     version: 0.1.0
   storage-apps:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "Update minio from 5.0.0 to 5.0.1"
+          links:
+            - name: Bump MinIO version to RELEASE.2022-11-11T03-44-20Z
+              url: https://github.com/minio/minio/commit/f7db12c7effaca8410d6f11a7edd76d338e11ba0
+        - kind: changed
+          description: "Update minio from 4.1.0 to 5.0.0"
+          links:
+            - name: Remove gateway completely
+              url: https://github.com/minio/minio/commit/23b329b9df262246c7ce7f76daf7efaf732b6e5f
+    apiVersion: v2
+    created: "2022-11-23T12:50:35.801284137Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for storage applications
+    digest: 582b22336fc133d0d40fa88f416988eb3bbef8ca45e151a563a0c9d3e42b1848
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.12.0/storage-apps-0.12.0.tgz
+    version: 0.12.0
   - apiVersion: v2
     created: "2022-10-24T15:07:13.387706684Z"
     dependencies:
@@ -16141,4 +16173,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-23T12:02:16.428887257Z"
+generated: "2022-11-23T12:50:35.803110063Z"
