@@ -3973,6 +3973,48 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(kured): update chart to 1.11.0"
+          links:
+            - name: GitHub Commit
+              url: https://github.com/kubereboot/charts/commit/c3656490312fb42ad79605cf3609ed0d55c9395e
+        - kind: added
+          description: "feat(kured): Add hostNetwork option"
+          links:
+            - name: GitHub PR
+              url: https://github.com/kubereboot/charts/pull/16
+        - kind: changed
+          description: "feat(ingress): fix wrong indention on skipWaitForDeleteTimeout"
+          links:
+            - name: GitHub PR
+              url: https://github.com/kubereboot/charts/pull/17
+        - kind: changed
+          description: "feat(ingress): Revert 'Temporarily revert to dockerhub'"
+          links:
+            - name: GitHub PR
+              url: https://github.com/kubereboot/charts/pull/4
+    apiVersion: v2
+    created: "2022-11-23T09:04:52.920718764Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: b1a7dbb946c2a95637c181dd6b38c8233741d5127f6024ca213d48833e411f91
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.130.0/infra-apps-0.130.0.tgz
+    version: 0.130.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(ingress): Release 1.4.0"
           links:
             - name: GitHub PR
@@ -16036,4 +16078,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-22T17:02:23.297456459Z"
+generated: "2022-11-23T09:04:52.923390185Z"
