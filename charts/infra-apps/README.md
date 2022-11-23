@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.129.0](https://img.shields.io/badge/Version-0.129.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.130.0](https://img.shields.io/badge/Version-0.130.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -86,7 +86,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kured.destination.namespace | string | `"infra-kured"` | Namespace |
 | kured.enabled | bool | `false` | Enable Kured |
 | kured.repoURL | string | [repo](https://kubereboot.github.io/charts) | Repo URL |
-| kured.targetRevision | string | `"4.0.1"` | [Kured Helm chart](https://github.com/kubereboot/kured/tree/main/charts/kured) |
+| kured.targetRevision | string | `"4.1.0"` | [Kured Helm chart](https://github.com/kubereboot/kured/tree/main/charts/kured) |
 | kured.values | object | [upstream values](https://github.com/kubereboot/kured/blob/main/charts/kured/values.yaml) | Helm values |
 | mimir | object | [example](./examples/mimir.yaml) | [mimir](https://github.com/grafana/mimir) |
 | mimir.annotations | object | `{}` | Annotations for mimir app |
