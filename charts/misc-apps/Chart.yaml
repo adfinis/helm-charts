@@ -14,3 +14,10 @@ dependencies:
   - name: argoconfig
     version: 0.9.0
     repository: https://charts.adfinis.com
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "[stable/kube-downscaler] Do not override default config deliveryhero/helm-charts#408"
+      links:
+        - name: GitHub PR
+          url: https://github.com/deliveryhero/helm-charts/pull/408
