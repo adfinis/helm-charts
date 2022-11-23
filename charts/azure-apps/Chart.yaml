@@ -14,3 +14,30 @@ dependencies:
   - name: argoconfig
     version: 0.7.6
     repository: https://charts.adfinis.com
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: "feat: add support for docker image pull secret in promitor-agent-resource-discovery "
+      links:
+        - name: GitHub PR
+          url: https://github.com/promitor/charts/pull/128
+    - kind: added
+      description: "feat: Ship Resource Discovery v0.8.1 chart"
+      links:
+        - name: GitHub PR
+          url: https://github.com/promitor/charts/pull/129
+    - kind: changed
+      description: "chore: Bump versions for Scraper to use v2.8.0"
+      links:
+        - name: GitHub PR
+          url: https://github.com/promitor/charts/pull/131
+    - kind: added
+      description: "feat: Provide capability to use OpenTelemetry Collector metric sink"
+      links:
+        - name: GitHub PR
+          url: https://github.com/promitor/charts/pull/124
+    - kind: added
+      description: "feat: Ship Scraper v2.9.0 Helm chart"
+      links:
+        - name: GitHub PR
+          url: https://github.com/promitor/charts/pull/132
