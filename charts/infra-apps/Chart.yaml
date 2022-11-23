@@ -17,7 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "mimir chart 3.3.0 with GEM 2.4.0"
+      description: "mimir chart 3.3.0 with mimir 2.4.0"
       links:
         - name: GitHub PR
           url: https://github.com/grafana/mimir/pull/3445
