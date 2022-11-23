@@ -2,7 +2,7 @@ apiVersion: v2
 name: tracing-apps
 description: Argo CD app-of-apps config for tracing applications
 type: application
-version: 0.17.0
+version: 0.17.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,112 +17,11 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: 'add support for hostnetworking in deployment and statefulset mode'
+      description: 'Bump collector version to 0.64.1'
       links:
         - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/469
-    - kind: changed
-      description: 'Bump collector version to 0.63.1'
-      links:
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/495
         - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/475
-    - kind: changed
-      description: 'add kubeletMetrics preset'
-      links:
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/510
         - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/468
-    - kind: changed
-      description: 'Reorder preset processors'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/471
-    - kind: changed
-      description: 'add cluster metrics preset'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/454
-    - kind: changed
-      description: 'cleanup log preset attributes'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/455
-    - kind: changed
-      description: 'Add annotations to statefulsets and daemonsets'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/424
-    - kind: changed
-      description: 'Allow service/ingress exposure in any mode'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/427
-    - kind: changed
-      description: 'Bump collector version to 0.62.1'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/428
-    - kind: changed
-      description: 'Bump collector version to 0.62.0'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/418
-    - kind: changed
-      description: 'add kubernetes attributes processor'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/412
-    - kind: changed
-      description: 'Use tpl with configmap'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/395
-    - kind: changed
-      description: 'bump collector version'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/393
-    - kind: changed
-      description: 'Add Update Strategy to Control Rollout'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/382
-    - kind: changed
-      description: 'fix: Use port number instead of name in targetPort'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/378
-    - kind: changed
-      description: 'fix: logsCollection use resouce attributes'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/375
-    - kind: changed
-      description: 'fix: logsCollection CRI regex'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/377
-    - kind: changed
-      description: 'fixed volumeClaimTemplate of the statefulset mode'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/373
-    - kind: changed
-      description: 'Remove deprecated containerLogs option'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/366
-    - kind: changed
-      description: '[chore] Bump default image for opentelemetry-collector chart'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/364
-    - kind: changed
-      description: 'bump version to 0.59.0'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/349
-    - kind: changed
-      description: 'set proper resources for collector'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/273
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/513
