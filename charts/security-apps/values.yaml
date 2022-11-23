@@ -101,7 +101,7 @@ falco:
   # -- Chart
   chart: "falco"
   # -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version
-  targetRevision: "2.0.*"
+  targetRevision: "2.3.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml)
   values: {}
