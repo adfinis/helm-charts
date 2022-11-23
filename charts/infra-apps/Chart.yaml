@@ -27,12 +27,12 @@ annotations:
         - name: GitHub PR
           url: https://github.com/prometheus-community/helm-charts/pull/2691
     - kind: added
-      description: "[kube-prometheus-stack] : enable "hostNetwork" support for "Prometheus" CR Object"
+      description: "[kube-prometheus-stack] : enable hostNetwork support for Prometheus CR Object"
       links:
         - name: GitHub PR
           url: https://github.com/prometheus-community/helm-charts/pull/2693
     - kind: added
-      description: "[kube-prometheus-stack] add support for additional labels on operator's ServiceMonitor"
+      description: "[kube-prometheus-stack] add support for additional labels on operator ServiceMonitor"
       links:
         - name: GitHub PR
           url: https://github.com/prometheus-community/helm-charts/pull/2687
