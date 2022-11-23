@@ -17,22 +17,22 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(kured): update chart to 1.11.0"
+      description: "[stable/rbac-manager] Update to v1.4.2"
       links:
-        - name: GitHub Commit
-          url: https://github.com/kubereboot/charts/commit/c3656490312fb42ad79605cf3609ed0d55c9395e
+        - name: GitHub PR
+          url: https://github.com/FairwindsOps/charts/pull/1020
     - kind: added
-      description: "feat(kured): Add hostNetwork option"
+      description: "[stable/rbac-manager] Make securityContext configurable"
       links:
         - name: GitHub PR
-          url: https://github.com/kubereboot/charts/pull/16
+          url: https://github.com/FairwindsOps/charts/pull/1007
+    - kind: added
+      description: "[stable/rbac-manager] Add deploymentLabels on the Deployment resource."
+      links:
+        - name: GitHub PR
+          url: https://github.com/FairwindsOps/charts/pull/1002
     - kind: changed
-      description: "feat(ingress): fix wrong indention on skipWaitForDeleteTimeout"
+      description: "[stable/rbac-manager] fix indent issue"
       links:
         - name: GitHub PR
-          url: https://github.com/kubereboot/charts/pull/17
-    - kind: changed
-      description: "feat(ingress): Revert 'Temporarily revert to dockerhub'"
-      links:
-        - name: GitHub PR
-          url: https://github.com/kubereboot/charts/pull/4
+          url: https://github.com/FairwindsOps/charts/pull/1005
