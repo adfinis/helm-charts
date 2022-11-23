@@ -14,7 +14,6 @@ dependencies:
   - name: argoconfig
     version: 0.7.6
     repository: https://charts.adfinis.com
-    annotations:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
