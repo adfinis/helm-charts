@@ -21,7 +21,7 @@ annotations:
       links:
         - name: GitHub PR
           url: https://github.com/FairwindsOps/charts/pull/1020
-    - kind: added
+    - kind: changed
       description: "[stable/rbac-manager] Make securityContext configurable"
       links:
         - name: GitHub PR
