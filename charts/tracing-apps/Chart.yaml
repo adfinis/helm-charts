@@ -17,11 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: 'Bump collector version to 0.64.1'
+      description: 'Update Jaeger Operator to v1.39.0'
       links:
         - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/495
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/510
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/513
+          url: https://github.com/jaegertracing/helm-charts/pull/411
