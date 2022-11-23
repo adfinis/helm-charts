@@ -14,3 +14,16 @@ dependencies:
   - name: argoconfig
     version: 0.7.6
     repository: https://charts.adfinis.com
+    annotations:
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: 'use new elasticsearch credentials'
+      links:
+        - name: GitHub PR
+          url: https://github.com/elastic/helm-charts/pull/1400
+    - kind: changed
+      description: 'using https to connect to elasticsearch'
+      links:
+        - name: GitHub PR
+          url: https://github.com/elastic/helm-charts/pull/1627
