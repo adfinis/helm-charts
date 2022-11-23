@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | filebeat.destination.namespace | string | `"infra-logging"` | Namespace |
 | filebeat.enabled | bool | `false` | Enable loki |
 | filebeat.repoURL | string | [repo](https://helm.elastic.co) | Repo URL |
-| filebeat.targetRevision | string | `"8.5.*"` | [filebeat Helm chart](https://github.com/elastic/helm-charts/tree/master/filebeat) version |
+| filebeat.targetRevision | string | `"8.5.1"` | [filebeat Helm chart](https://github.com/elastic/helm-charts/tree/master/filebeat) version |
 | filebeat.values | object | [upstream values](https://github.com/elastic/helm-charts/tree/master/filebeat/values.yaml) | Helm values |
 | fluentBit | object | - | [fluentBit](https://github.com/fluent/fluent-bit) ([example](./examples/fluentBit.yaml)) |
 | fluentBit.chart | string | `"fluent-bit"` | Chart |
