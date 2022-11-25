@@ -11097,6 +11097,43 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Update falco from v2.2.* to v2.3.0"
+          links:
+            - name: Add variable namespaceOverride to allow setting release namespace in values
+              url: https://github.com/falcosecurity/charts/blob/master/falco/CHANGELOG.md#v230
+        - kind: changed
+          description: "Update falco from v2.1.* to v2.2.*"
+          links:
+            - name: Breaking change the grpc socket path from unix:///var/run/falco/falco.soc to unix:///run/falco/falco.sock.
+              url: https://github.com/falcosecurity/charts/blob/master/falco/CHANGELOG.md#v220
+        - kind: changed
+          description: "Update falco from v2.0.* to v2.1.*"
+          links:
+            - name: Bump Falco to 0.33.0
+              url: https://github.com/falcosecurity/charts/blob/master/falco/CHANGELOG.md#v210
+    apiVersion: v2
+    created: "2022-11-25T09:11:04.409465208Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: 9c9440edd0a03f7a92c667ba2014460f571efbf7daf6aa676d2e44f12af9f6e5
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.62.0/security-apps-0.62.0.tgz
+    version: 0.62.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "upgrade StackRox from 3.72.0 to 3.72.1"
           links:
             - name: Bugs resolved in 3.72.1
@@ -16232,4 +16269,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-25T09:07:28.440504855Z"
+generated: "2022-11-25T09:11:04.414700951Z"
