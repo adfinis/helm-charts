@@ -8634,6 +8634,33 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.0.1/logging-apps-0.0.1.tgz
     version: 0.0.1
   misc-apps:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "[stable/kube-downscaler] Do not override default config deliveryhero/helm-charts#408"
+          links:
+            - name: GitHub PR
+              url: https://github.com/deliveryhero/helm-charts/pull/408
+    apiVersion: v2
+    created: "2022-11-25T13:24:11.070671271Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: ee50d26b608ac72015464a5b64ecd801e73c0efbd38206c376f8ca001ad50d78
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.25.0/misc-apps-0.25.0.tgz
+    version: 0.25.0
   - apiVersion: v2
     created: "2022-10-20T09:49:36.955695601Z"
     dependencies:
@@ -16385,4 +16412,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-25T13:16:28.556119984Z"
+generated: "2022-11-25T13:24:11.072521075Z"
