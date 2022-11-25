@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.130.0
+version: 0.132.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,23 +16,23 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: "feat(kured): update chart to 1.11.0"
-      links:
-        - name: GitHub Commit
-          url: https://github.com/kubereboot/charts/commit/c3656490312fb42ad79605cf3609ed0d55c9395e
     - kind: added
-      description: "feat(kured): Add hostNetwork option"
+      description: "[kube-prometheus-stack] Add local and global image registry support"
       links:
         - name: GitHub PR
-          url: https://github.com/kubereboot/charts/pull/16
+          url: https://github.com/prometheus-community/helm-charts/pull/2692
     - kind: changed
-      description: "feat(ingress): fix wrong indention on skipWaitForDeleteTimeout"
+      description: "[kube-prometheus-stack] Fix PSP deprecation after k8s 1.25+"
       links:
         - name: GitHub PR
-          url: https://github.com/kubereboot/charts/pull/17
-    - kind: changed
-      description: "feat(ingress): Revert 'Temporarily revert to dockerhub'"
+          url: https://github.com/prometheus-community/helm-charts/pull/2691
+    - kind: added
+      description: "[kube-prometheus-stack] : enable hostNetwork support for Prometheus CR Object"
       links:
         - name: GitHub PR
-          url: https://github.com/kubereboot/charts/pull/4
+          url: https://github.com/prometheus-community/helm-charts/pull/2693
+    - kind: added
+      description: "[kube-prometheus-stack] add support for additional labels on operator ServiceMonitor"
+      links:
+        - name: GitHub PR
+          url: https://github.com/prometheus-community/helm-charts/pull/2687
