@@ -11097,6 +11097,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "upgrade Gatekeeper from 3.9.* to 3.10.0"
+          links:
+            - name: Bugs resolved in 3.10.0
+              url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.10.0
+    apiVersion: v2
+    created: "2022-11-25T10:22:59.310299727Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: 3685a2bf087c8624e2c9c404adce8a915a44b33effd6e8e20702d468aed7cc3b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.63.0/security-apps-0.63.0.tgz
+    version: 0.63.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Update falco from v2.2.* to v2.3.0"
           links:
             - name: Add variable namespaceOverride to allow setting release namespace in values
@@ -16269,4 +16296,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-25T09:11:04.414700951Z"
+generated: "2022-11-25T10:22:59.312117741Z"
