@@ -3973,6 +3973,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Release 2.1.1 updating components"
+          links:
+            - name: GitHub Commit
+              url: https://github.com/bitnami/charts/commit/44a9026c188de0a48aecf57f79af9e88314ee035
+        - kind: changed
+          description: "Release 2.0.0 updating components"
+          links:
+            - name: GitHub Commit
+              url: https://github.com/bitnami/charts/commit/ddb940777affe8eba10c69afc1d5195e8fd35d0c
+    apiVersion: v2
+    created: "2022-11-25T09:07:28.438709831Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 5a55324960070e6fa4215521d95504e209e1b5b17abf871587ddbc5d29e24329
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.131.0/infra-apps-0.131.0.tgz
+    version: 0.131.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(kured): update chart to 1.11.0"
           links:
             - name: GitHub Commit
@@ -16200,4 +16232,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-25T09:02:53.12688868Z"
+generated: "2022-11-25T09:07:28.440504855Z"
