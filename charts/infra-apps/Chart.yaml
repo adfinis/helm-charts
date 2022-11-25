@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.132.0
+version: 0.133.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,23 +16,23 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: added
-      description: "[kube-prometheus-stack] Add local and global image registry support"
-      links:
-        - name: GitHub PR
-          url: https://github.com/prometheus-community/helm-charts/pull/2692
     - kind: changed
-      description: "[kube-prometheus-stack] Fix PSP deprecation after k8s 1.25+"
+      description: "[stable/rbac-manager] Update to v1.4.2"
       links:
         - name: GitHub PR
-          url: https://github.com/prometheus-community/helm-charts/pull/2691
+          url: https://github.com/FairwindsOps/charts/pull/1020
+    - kind: changed
+      description: "[stable/rbac-manager] Make securityContext configurable"
+      links:
+        - name: GitHub PR
+          url: https://github.com/FairwindsOps/charts/pull/1007
     - kind: added
-      description: "[kube-prometheus-stack] : enable hostNetwork support for Prometheus CR Object"
+      description: "[stable/rbac-manager] Add deploymentLabels on the Deployment resource."
       links:
         - name: GitHub PR
-          url: https://github.com/prometheus-community/helm-charts/pull/2693
-    - kind: added
-      description: "[kube-prometheus-stack] add support for additional labels on operator ServiceMonitor"
+          url: https://github.com/FairwindsOps/charts/pull/1002
+    - kind: changed
+      description: "[stable/rbac-manager] fix indent issue"
       links:
         - name: GitHub PR
-          url: https://github.com/prometheus-community/helm-charts/pull/2687
+          url: https://github.com/FairwindsOps/charts/pull/1005
