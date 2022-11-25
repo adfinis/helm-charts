@@ -23,6 +23,7 @@
 
 * [ ] This PR contains a description of the changes I'm making
 * [ ] I updated the version in Chart.yaml
+* [ ] I updated the changelog according to the `artifacthub.io/changes` annotation
 * [ ] I updated applicable README.md files using  `pre-commit run`
 * [ ] I documented any high-level concepts I'm introducing in `docs/`
 * [ ] CI is currently green and this is ready for review

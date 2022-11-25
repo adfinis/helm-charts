@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.130.0
+version: 0.131.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,22 +17,12 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(kured): update chart to 1.11.0"
+      description: "Release 2.1.1 updating components"
       links:
         - name: GitHub Commit
-          url: https://github.com/kubereboot/charts/commit/c3656490312fb42ad79605cf3609ed0d55c9395e
-    - kind: added
-      description: "feat(kured): Add hostNetwork option"
-      links:
-        - name: GitHub PR
-          url: https://github.com/kubereboot/charts/pull/16
+          url: https://github.com/bitnami/charts/commit/44a9026c188de0a48aecf57f79af9e88314ee035
     - kind: changed
-      description: "feat(ingress): fix wrong indention on skipWaitForDeleteTimeout"
+      description: "Release 2.0.0 updating components"
       links:
-        - name: GitHub PR
-          url: https://github.com/kubereboot/charts/pull/17
-    - kind: changed
-      description: "feat(ingress): Revert 'Temporarily revert to dockerhub'"
-      links:
-        - name: GitHub PR
-          url: https://github.com/kubereboot/charts/pull/4
+        - name: GitHub Commit
+          url: https://github.com/bitnami/charts/commit/ddb940777affe8eba10c69afc1d5195e8fd35d0c
