@@ -3972,6 +3972,48 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: added
+          description: "[kube-prometheus-stack] Add local and global image registry support"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2692
+        - kind: changed
+          description: "[kube-prometheus-stack] Fix PSP deprecation after k8s 1.25+"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2691
+        - kind: added
+          description: "[kube-prometheus-stack] : enable hostNetwork support for Prometheus CR Object"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2693
+        - kind: added
+          description: "[kube-prometheus-stack] add support for additional labels on operator ServiceMonitor"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2687
+    apiVersion: v2
+    created: "2022-11-25T13:10:25.436837754Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: f8056e8191054657a8864c94f728555e782c6d3276002d370210c1d5c9a31d1e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.132.0/infra-apps-0.132.0.tgz
+    version: 0.132.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "Release 2.1.1 updating components"
           links:
@@ -16296,4 +16338,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-25T10:22:59.312117741Z"
+generated: "2022-11-25T13:10:25.43913038Z"
