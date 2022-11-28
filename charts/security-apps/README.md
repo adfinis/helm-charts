@@ -83,8 +83,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | oauth2Proxy | object | [example](./examples/oauth2-proxy.yaml) | [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) |
 | oauth2Proxy.annotations | object | `{}` | Annotations for oauth2-proxy app |
 | oauth2Proxy.chart | string | `"oauth2-proxy"` | Chart |
+| oauth2Proxy.destination.namespace | string | `"infra-oauth2-proxy"` | Namespace |
 | oauth2Proxy.enabled | bool | `false` | Enable oauth2-proxy |
-| oauth2Proxy.namespace | string | `"infra-oauth2-proxy"` | Namespace |
 | oauth2Proxy.repoURL | string | [repo](https://https://oauth2-proxy.github.io/manifests) | Repo URL |
 | oauth2Proxy.targetRevision | string | `"6.5.0"` | [oauth2-proxy Helm chart](https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy) |
 | oauth2Proxy.values | object | [upstream values](https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/values.yaml) | Helm values |

@@ -276,7 +276,7 @@ oauth2Proxy:
   annotations: {}
   destination:
   # -- Namespace
-  namespace: infra-oauth2-proxy
+    namespace: infra-oauth2-proxy
   # -- Repo URL
   # @default -- [repo](https://https://oauth2-proxy.github.io/manifests)
   repoURL: https://oauth2-proxy.github.io/manifests
