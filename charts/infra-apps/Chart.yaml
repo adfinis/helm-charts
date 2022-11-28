@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.134.0
+version: 0.135.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,17 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "[kube-prometheus-stack] Prevent helm diff on monitoring.coreos.com/ServiceMonitor/monitoring/kube-prometheus-stack-kubelet"
+      description: "mimir chart 3.3.0 with mimir 2.4.0"
       links:
         - name: GitHub PR
-          url: https://github.com/prometheus-community/helm-charts/commit/e438ead1685e9ea341ccb2fe4fb2fc34070cde81
-    - kind: changed
-      description: "[kube-prometheus-stack] Add missing upgrade to 42.x info"
-      links:
-        - name: GitHub PR
-          url: https://github.com/prometheus-community/helm-charts/commit/1daee72cce53f00c1b2dff3f81faeffc13512bff
-    - kind: changed
-      description: "[kube-prometheus-stack] Add local and global image registry support"
-      links:
-        - name: GitHub PR
-          url: https://github.com/prometheus-community/helm-charts/commit/f528fe820fa0f8d4eabada1b158854487e0563d8
+          url: https://github.com/grafana/mimir/pull/3445
