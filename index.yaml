@@ -4020,6 +4020,43 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "[kube-prometheus-stack] Prevent helm diff on monitoring.coreos.com/ServiceMonitor/monitoring/kube-prometheus-stack-kubelet"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/commit/e438ead1685e9ea341ccb2fe4fb2fc34070cde81
+        - kind: changed
+          description: "[kube-prometheus-stack] Add missing upgrade to 42.x info"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/commit/1daee72cce53f00c1b2dff3f81faeffc13512bff
+        - kind: changed
+          description: "[kube-prometheus-stack] Add local and global image registry support"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/commit/f528fe820fa0f8d4eabada1b158854487e0563d8
+    apiVersion: v2
+    created: "2022-11-28T08:59:51.318866746Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 132de09483f66c4ea0895901a65d082f85d815d1bfb33fa00b5de7987f6f7faf
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.134.0/infra-apps-0.134.0.tgz
+    version: 0.134.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "[stable/rbac-manager] Update to v1.4.2"
           links:
             - name: GitHub PR
@@ -16454,4 +16491,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-25T13:30:31.356237304Z"
+generated: "2022-11-28T08:59:51.320933756Z"
