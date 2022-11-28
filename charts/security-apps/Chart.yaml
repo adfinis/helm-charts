@@ -22,7 +22,7 @@ annotations:
         - name: Github PR
           url: https://github.com/oauth2-proxy/manifests/pull/95
     - kind: changed
-      descritpion: "[oauth2-proxy] Set https port to 4443"
+      description: "[oauth2-proxy] Set https port to 4443"
       links:
         - name: Github PR
           url: https://github.com/oauth2-proxy/manifests/pull/117
