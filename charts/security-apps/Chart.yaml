@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.63.0
+version: 0.64.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,8 +16,23 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: "upgrade Gatekeeper from 3.9.* to 3.10.0"
+    - kind: added
+      description: "[oauth2-proxy] add support for topologySpreadConstraints in deployments"
       links:
-        - name: Bugs resolved in 3.10.0
-          url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.10.0
+        - name: Github PR
+          url: https://github.com/oauth2-proxy/manifests/pull/95
+    - kind: changed
+      description: "[oauth2-proxy] Set https port to 4443"
+      links:
+        - name: Github PR
+          url: https://github.com/oauth2-proxy/manifests/pull/117
+    - kind: added
+      description: "[oauth2-proxy] Optional nodePort selection for the service"
+      links:
+        - name: Github PR
+          url: https://github.com/oauth2-proxy/manifests/pull/118
+    - kind: changed
+      description: "[oauth2-proxy] Make password key in Kubernetes secret configurable"
+      links:
+        - name: Github PR
+          url: https://github.com/oauth2-proxy/manifests/pull/116

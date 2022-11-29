@@ -268,7 +268,7 @@ stackroxSecuredClusterServices:
 
 # -- [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy)
 # @default -- [example](./examples/oauth2-proxy.yaml)
-oauth2-proxy:
+oauth2Proxy:
   # -- Enable oauth2-proxy
   enabled: false
   name: oauth2-proxy
@@ -276,14 +276,14 @@ oauth2-proxy:
   annotations: {}
   destination:
   # -- Namespace
-  namespace: infra-oauth2-proxy
+    namespace: infra-oauth2-proxy
   # -- Repo URL
   # @default -- [repo](https://https://oauth2-proxy.github.io/manifests)
   repoURL: https://oauth2-proxy.github.io/manifests
   # -- Chart
   chart: oauth2-proxy
   # -- [oauth2-proxy Helm chart](https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy)
-  targetRevision: 6.2.*
+  targetRevision: 6.5.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/values.yaml)
   values: {}
