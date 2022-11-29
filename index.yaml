@@ -11318,6 +11318,48 @@ entries:
   security-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: added
+          description: "[oauth2-proxy] add support for topologySpreadConstraints in deployments"
+          links:
+            - name: Github PR
+              url: https://github.com/oauth2-proxy/manifests/pull/95
+        - kind: changed
+          description: "[oauth2-proxy] Set https port to 4443"
+          links:
+            - name: Github PR
+              url: https://github.com/oauth2-proxy/manifests/pull/117
+        - kind: added
+          description: "[oauth2-proxy] Optional nodePort selection for the service"
+          links:
+            - name: Github PR
+              url: https://github.com/oauth2-proxy/manifests/pull/118
+        - kind: changed
+          description: "[oauth2-proxy] Make password key in Kubernetes secret configurable"
+          links:
+            - name: Github PR
+              url: https://github.com/oauth2-proxy/manifests/pull/116
+    apiVersion: v2
+    created: "2022-11-29T08:39:51.106158027Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: 996918895dc28c57eae996672e7f3512276ff30cad1191b541973f15e257db0e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.64.0/security-apps-0.64.0.tgz
+    version: 0.64.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "upgrade Gatekeeper from 3.9.* to 3.10.0"
           links:
@@ -16518,4 +16560,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-28T12:23:46.868958101Z"
+generated: "2022-11-29T08:39:51.107861616Z"
