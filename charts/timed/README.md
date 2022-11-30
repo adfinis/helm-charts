@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.13.1](https://img.shields.io/badge/Version-0.13.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.13.2](https://img.shields.io/badge/Version-0.13.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -44,6 +44,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | auth.oidc.signAlgorithm | string | `"RS256"` | Algorithm the OIDC provider uses to sign ID tokens |
 | auth.oidc.url | string | `"https://example.com/auth/realms/timed/protocol/openid-connect"` | OIDC host |
 | auth.oidc.verifySSL | string | `"True"` | OIDC verify SSL |
+| backend.cronjobs.budgetCheck | object | `{"command":["./manage.py","budget_check"],"schedule":"0 3 * * *"}` | Budget Check |
 | backend.cronjobs.notifyChangedEmployments | object | `{"command":["./manage.py","notify_changed_employments"],"schedule":"0 2 * * 1"}` | Notify changed employments |
 | backend.cronjobs.notifyReviewersFirst | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","5"],"schedule":"0 8 4 * *"}` | Notify reviewers first stage |
 | backend.cronjobs.notifyReviewersFirst.command[3] | string | `"5"` | Period will end today minus given offset |

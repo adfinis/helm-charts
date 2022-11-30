@@ -2,7 +2,7 @@ apiVersion: v2
 name: timed
 description: Chart for Timed application
 type: application
-version: 0.13.1
+version: 0.13.2
 keywords:
   - timed
   - tracking
@@ -20,3 +20,10 @@ dependencies:
     version: ~11.6.7
     repository: https://charts.bitnami.com/bitnami
     condition: postgresql.enabled
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: "added cronjob for budget check"
+      links:
+        - name: GitHub PR
+          url: https://github.com/adfinis/timed-backend/pull/901
