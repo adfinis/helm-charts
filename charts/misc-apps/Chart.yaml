@@ -17,7 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: added
-      description: "Implement support for multiple Icinga2 Master API URLs"
+      description: "[signalilo] Implement support for multiple Icinga2 Master API URLs"
       links:
         - name: GitHub PR
           url: https://github.com/vshn/signalilo/pull/114
