@@ -11318,6 +11318,53 @@ entries:
   security-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: "[secrets-store-csi-driver] Update to version 1.2.4"
+          links:
+            - name: Github Release
+              url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.2.4
+        - kind: changed
+          description: "[secrets-store-csi-driver] Update to version 1.2.3"
+          links:
+            - name: Github Release
+              url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.2.3
+        - kind: changed
+          description: "[secrets-store-csi-driver] Update to version 1.2.2"
+          links:
+            - name: Github Release
+              url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.2.2
+        - kind: changed
+          description: "[secrets-store-csi-driver] Update to version 1.2.1"
+          links:
+            - name: Github Release
+              url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.2.1
+        - kind: changed
+          description: "[secrets-store-csi-driver] Update to version 1.2.0"
+          links:
+            - name: Github Release
+              url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.2.0
+    apiVersion: v2
+    created: "2022-12-07T14:31:57.280042931Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: ff6680b086958de4486ff1ca946c4265a751df7193527d3c18c1a1eb65e9fe09
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.65.0/security-apps-0.65.0.tgz
+    version: 0.65.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: "[oauth2-proxy] add support for topologySpreadConstraints in deployments"
           links:
@@ -16593,4 +16640,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-07T09:47:14.100556012Z"
+generated: "2022-12-07T14:31:57.282154438Z"
