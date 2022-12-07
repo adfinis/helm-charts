@@ -27,7 +27,7 @@ annotations:
         - name: GitHub PR
           url: https://github.com/vshn/signalilo/pull/109
     - kind: changed
-      description: "Update module github.com/stretchr/testify to v1.8.0"
+      description: "[signalilo] Update module github.com/stretchr/testify to v1.8.0"
       links:
         - name: GitHub PR
           url: https://github.com/vshn/signalilo/pull/112
