@@ -32,7 +32,7 @@ annotations:
         - name: GitHub PR
           url: https://github.com/vshn/signalilo/pull/112
     - kind: changed
-      description: "Update golang docker tag to v1.19"
+      description: "[signalilo] Update golang docker tag to v1.19"
       links:
         - name: GitHub PR
           url: https://github.com/vshn/signalilo/pull/112
