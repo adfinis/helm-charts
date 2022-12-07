@@ -8742,6 +8742,48 @@ entries:
   misc-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: added
+          description: "[signalilo] Implement support for multiple Icinga2 Master API URLs"
+          links:
+            - name: GitHub PR
+              url: https://github.com/vshn/signalilo/pull/114
+        - kind: changed
+          description: "[signalilo] Update module github.com/sirupsen/logrus to v1.9.0"
+          links:
+            - name: GitHub PR
+              url: https://github.com/vshn/signalilo/pull/109
+        - kind: changed
+          description: "[signalilo] Update module github.com/stretchr/testify to v1.8.0"
+          links:
+            - name: GitHub PR
+              url: https://github.com/vshn/signalilo/pull/112
+        - kind: changed
+          description: "[signalilo] Update golang docker tag to v1.19"
+          links:
+            - name: GitHub PR
+              url: https://github.com/vshn/signalilo/pull/112
+    apiVersion: v2
+    created: "2022-12-07T15:25:37.023693465Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: a3f55a4dc64297ae2d172e06541be6685ffaa7515684ce8ef7838cdb3b55e0d0
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.26.0/misc-apps-0.26.0.tgz
+    version: 0.26.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "[stable/kube-downscaler] Do not override default config deliveryhero/helm-charts#408"
           links:
@@ -16640,4 +16682,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-07T14:31:57.282154438Z"
+generated: "2022-12-07T15:25:37.02533769Z"
