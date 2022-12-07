@@ -13625,6 +13625,39 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/storage-apps-0.1.2/storage-apps-0.1.2.tgz
     version: 0.1.2
   timed:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: "added cronjob for budget check"
+          links:
+            - name: GitHub PR
+              url: https://github.com/adfinis/timed-backend/pull/901
+    apiVersion: v2
+    created: "2022-12-07T09:47:14.09807688Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~11.6.7
+    description: Chart for Timed application
+    digest: e668039c10127c335046e294358d2588be38d46735a1a6343ce2414a86d95eaa
+    home: https://github.com/adfinis/timed-frontend
+    keywords:
+    - timed
+    - tracking
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: timed
+    sources:
+    - https://github.com/adfinis/timed-backend
+    - https://github.com/adfinis/timed-frontend
+    - https://github.com/adfinis/helm-charts/tree/main/charts/timed
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/timed-0.13.2/timed-0.13.2.tgz
+    version: 0.13.2
   - apiVersion: v2
     created: "2022-11-09T13:47:05.291031569Z"
     dependencies:
@@ -16560,4 +16593,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-29T08:39:51.107861616Z"
+generated: "2022-12-07T09:47:14.100556012Z"
