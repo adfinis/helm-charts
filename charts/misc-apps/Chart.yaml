@@ -22,7 +22,7 @@ annotations:
         - name: GitHub PR
           url: https://github.com/vshn/signalilo/pull/114
     - kind: changed
-      description: "Update module github.com/sirupsen/logrus to v1.9.0"
+      description: "[signalilo] Update module github.com/sirupsen/logrus to v1.9.0"
       links:
         - name: GitHub PR
           url: https://github.com/vshn/signalilo/pull/109
