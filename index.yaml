@@ -8742,6 +8742,38 @@ entries:
   misc-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: "[chartmuseum] added sidecarContainers chartmuseum/charts"
+          links:
+            - name: GitHub PR
+              url: https://github.com/chartmuseum/charts/pull/48
+        - kind: changed
+          description: "[chartmuseum] feat: add support for common labels in helm charts chartmuseum/charts"
+          links:
+            - name: GitHub PR
+              url: https://github.com/chartmuseum/charts/pull/51
+    apiVersion: v2
+    created: "2022-12-08T16:42:35.483761437Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: c659ebedb782c80d7e635c5326f2556bf457a50e6696d7f1a96b9e23c6212196
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.26.1/misc-apps-0.26.1.tgz
+    version: 0.26.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: "[signalilo] Implement support for multiple Icinga2 Master API URLs"
           links:
@@ -16682,4 +16714,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-07T15:25:37.02533769Z"
+generated: "2022-12-08T16:42:35.48549844Z"
