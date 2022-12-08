@@ -17,7 +17,12 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "[chartmuseum] update chartmuseum helm-chart version 3.9.2"
+      description: "[chartmuseum] added sidecarContainers chartmuseum/charts"
       links:
-        - name: GitHub Tag compare
-          url: https://github.com/chartmuseum/charts/compare/chartmuseum-3.9.0...chartmuseum-3.9.2
+        - name: GitHub PR
+          url: https://github.com/chartmuseum/charts/pull/48
+    - kind: changed
+      description: "[chartmuseum] feat: add support for common labels in helm charts chartmuseum/charts"
+      links:
+        - name: GitHub PR
+          url: https://github.com/chartmuseum/charts/pull/51
