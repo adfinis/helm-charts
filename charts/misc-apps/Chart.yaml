@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.26.0
+version: 0.26.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,23 +16,8 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: added
-      description: "[signalilo] Implement support for multiple Icinga2 Master API URLs"
-      links:
-        - name: GitHub PR
-          url: https://github.com/vshn/signalilo/pull/114
     - kind: changed
-      description: "[signalilo] Update module github.com/sirupsen/logrus to v1.9.0"
+      description: "[chartmuseum] update chartmuseum helm-chart version 3.9.2"
       links:
-        - name: GitHub PR
-          url: https://github.com/vshn/signalilo/pull/109
-    - kind: changed
-      description: "[signalilo] Update module github.com/stretchr/testify to v1.8.0"
-      links:
-        - name: GitHub PR
-          url: https://github.com/vshn/signalilo/pull/112
-    - kind: changed
-      description: "[signalilo] Update golang docker tag to v1.19"
-      links:
-        - name: GitHub PR
-          url: https://github.com/vshn/signalilo/pull/112
+        - name: GitHub Tag compare
+          url: https://github.com/chartmuseum/charts/compare/chartmuseum-3.9.0...chartmuseum-3.9.2
