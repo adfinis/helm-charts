@@ -79,7 +79,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | signalilo.destination.namespace | string | `"infra-signalilo"` | Namespace |
 | signalilo.enabled | bool | `false` | Enable signalilo |
 | signalilo.repoURL | string | [repo](https://charts.appuio.ch) | Repo URL |
-| signalilo.targetRevision | string | `"0.8.*"` | [signalilo Helm chart](https://github.com/appuio/charts/tree/master/appuio/signalilo) version |
+| signalilo.targetRevision | string | `"0.9.0"` | [signalilo Helm chart](https://github.com/appuio/charts/tree/master/appuio/signalilo) version |
 | signalilo.values | object | [upstream values](https://github.com/appuio/charts/blob/master/appuio/signalilo/values.yaml) | Helm values |
 
 ## About this chart

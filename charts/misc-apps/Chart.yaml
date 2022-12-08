@@ -16,8 +16,23 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: "[stable/kube-downscaler] Do not override default config deliveryhero/helm-charts#408"
+    - kind: added
+      description: "[signalilo] Implement support for multiple Icinga2 Master API URLs"
       links:
         - name: GitHub PR
-          url: https://github.com/deliveryhero/helm-charts/pull/408
+          url: https://github.com/vshn/signalilo/pull/114
+    - kind: changed
+      description: "[signalilo] Update module github.com/sirupsen/logrus to v1.9.0"
+      links:
+        - name: GitHub PR
+          url: https://github.com/vshn/signalilo/pull/109
+    - kind: changed
+      description: "[signalilo] Update module github.com/stretchr/testify to v1.8.0"
+      links:
+        - name: GitHub PR
+          url: https://github.com/vshn/signalilo/pull/112
+    - kind: changed
+      description: "[signalilo] Update golang docker tag to v1.19"
+      links:
+        - name: GitHub PR
+          url: https://github.com/vshn/signalilo/pull/112
