@@ -93,7 +93,7 @@ chartmuseum:
   # -- Chart
   chart: chartmuseum
   # -- [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum)
-  targetRevision: "3.9.0"
+  targetRevision: "3.9.2"
   # -- Helm values
   # @default -- [upstream values](https://github.com/chartmuseum/charts/blob/main/src/chartmuseum/values.yaml)
   values: {}
