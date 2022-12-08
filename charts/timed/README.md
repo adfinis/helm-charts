@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.13.3](https://img.shields.io/badge/Version-0.13.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.14.0](https://img.shields.io/badge/Version-0.14.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -153,6 +153,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | redmine.amountInvoicedField | int | `2` | Amount invoiced field id on Redmine |
 | redmine.amountOfferedField | int | `1` | Amount offered field id on Redmine |
 | redmine.apiKey | string | `""` | Redmine API Key |
+| redmine.buildProject | string | `"build"` | Redmine build project |
 | redmine.enabled | bool | `false` | Enable Redmine integration |
 | redmine.spenthoursField | int | `0` | Spent hours field id on Redmine |
 | redmine.url | string | `"redmine.example.com"` | Redmine URL |

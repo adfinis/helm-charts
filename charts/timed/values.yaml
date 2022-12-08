@@ -363,6 +363,8 @@ redmine:
   url: redmine.example.com
   # -- Redmine API Key
   apiKey: ""
+  # -- Redmine build project
+  buildProject: "build"
   # -- Spent hours field id on Redmine
   spenthoursField: 0
   # -- Amount offered field id on Redmine
