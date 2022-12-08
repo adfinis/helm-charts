@@ -11393,6 +11393,113 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "[falco-exporter] Update to version v0.8.0"
+          links:
+            - name: Github Release
+              url: https://github.com/falcosecurity/falco-exporter/releases/tag/v0.8.0
+        - kind: changed
+          description: "[falco-exporter] fix(docker): fixed dockerfile golang version."
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/7c4fe82afe3f9c836d0099941945693946b749b6
+        - kind: changed
+          description: "[falco-exporter] fix(ci): drop i386 build + add timeout to goreleaser."
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/f3f610061c36eac66ad46d6d55c90038e70204ca
+        - kind: changed
+          description: "[falco-exporter] update(ci): switch to cimg circle ci go image instead of old unsupported circleci/golang."
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/e69c0b374c9e18abae3a2e2df9ab65b0826b54d8
+        - kind: changed
+          description: "[falco-exporter] docs: update docs example"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/f30cada5fe7e30679a9952a8e195c64d546abae5
+        - kind: changed
+          description: "[falco-exporter] docs(README.md): add notice for Falco 0.33 changes in prerequisites"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/f279c7b9a70c4b1f28caeceb0493c51e47594f1a
+        - kind: changed
+          description: "[falco-exporter] update(deploy/k8s): update default socket path"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/0c82c4be1eff38a824b4200a4489ff2cece43c19
+        - kind: changed
+          description: "[falco-exporter] docs(README.md): update command line usage"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/b934a326ccdc9bf0abeb8e001badac5f2c1e0c30
+        - kind: changed
+          description: "[falco-exporter] update(cmd): default unix socket path for Falco 0.33"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/7aa0a13fcbcf69c4e6ee3bae21c281673e4dee9e
+        - kind: changed
+          description: "[falco-exporter] Update Alpine to 3.16"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/f0e4edd070398367c97db5cdd9615f88d3500cd0
+        - kind: changed
+          description: "[falco-exporter] chore(OWNERS): remove duplicates in reviewers"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/286df4146573e275109fbd300f2664bf01300676
+        - kind: changed
+          description: "[falco-exporter] cleanup(OWNERS): remove inactive approvers"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/48478d333fbdfdd7780a11392a9738fa0b85ce57
+        - kind: changed
+          description: "[falco-exporter] update(OWNERS): add jasondellaluce"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/78bcd38daf4b939a1db98544c6af54dbe1dbd889
+        - kind: changed
+          description: "[falco-exporter] test(circleci): bump golang image to 1.17.5"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/b842642209303e2a4a7b49fb5ff5f884eb9d3a72
+        - kind: changed
+          description: "[falco-exporter] build(go.mod): bump go version to 1.17"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/dd894ca88a21b3c0bd9c9cb89f4ae91665449865
+        - kind: changed
+          description: "[falco-exporter] update(go.mod): bump dependencies versions"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/a079011502b3adc38e59004b888c7dd5b4d3c900
+        - kind: changed
+          description: "[falco-exporter] link fix for getting started"
+          links:
+            - name: Github Commit
+              url: https://github.com/falcosecurity/falco-exporter/commit/c0a091e174a9a9af651f34fd4a4996420834cbb5
+    apiVersion: v2
+    created: "2022-12-08T16:45:47.509865408Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: 1d82d9ad1261d8bce3f18f7773bfcc0449fc24002336fcbbe3109df45222f56e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.66.0/security-apps-0.66.0.tgz
+    version: 0.66.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "[secrets-store-csi-driver] Update to version 1.2.4"
           links:
             - name: Github Release
@@ -16714,4 +16821,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-08T16:42:35.48549844Z"
+generated: "2022-12-08T16:45:47.516677338Z"
