@@ -16,23 +16,28 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: added
-      description: "[oauth2-proxy] add support for topologySpreadConstraints in deployments"
-      links:
-        - name: Github PR
-          url: https://github.com/oauth2-proxy/manifests/pull/95
     - kind: changed
-      description: "[oauth2-proxy] Set https port to 4443"
+      description: "[secrets-store-csi-driver] Update to version 1.2.4"
       links:
-        - name: Github PR
-          url: https://github.com/oauth2-proxy/manifests/pull/117
-    - kind: added
-      description: "[oauth2-proxy] Optional nodePort selection for the service"
-      links:
-        - name: Github PR
-          url: https://github.com/oauth2-proxy/manifests/pull/118
+        - name: Github Release
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.2.4
     - kind: changed
-      description: "[oauth2-proxy] Make password key in Kubernetes secret configurable"
+      description: "[secrets-store-csi-driver] Update to version 1.2.3"
       links:
-        - name: Github PR
-          url: https://github.com/oauth2-proxy/manifests/pull/116
+        - name: Github Release
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.2.3
+    - kind: changed
+      description: "[secrets-store-csi-driver] Update to version 1.2.2"
+      links:
+        - name: Github Release
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.2.2
+    - kind: changed
+      description: "[secrets-store-csi-driver] Update to version 1.2.1"
+      links:
+        - name: Github Release
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.2.1
+    - kind: changed
+      description: "[secrets-store-csi-driver] Update to version 1.2.0"
+      links:
+        - name: Github Release
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.2.0
