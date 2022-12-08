@@ -2,8 +2,8 @@ apiVersion: v2
 name: customer-center
 description: Chart for Customer-Center application
 type: application
-version: 0.2.28
-appVersion: v3.2.4
+version: 0.2.29
+appVersion: v3.2.5
 keywords:
   - customer-center
 home: https://github.com/adfinis/customer-center
@@ -14,3 +14,10 @@ maintainers:
   - name: adfinis
     email: support@adfinis.com
     url: https://adfinis.com
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "update customer-center from v3.2.4 to v3.2.5"
+      links:
+        - name: GitHub Commit
+          url: https://github.com/adfinis/customer-center/commit/c919df22a52a2fecff633935dbd08a8b03057918
