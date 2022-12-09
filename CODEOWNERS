@@ -11,6 +11,5 @@
 /charts/customer-center             @adfinis/helm-charts @vmaillot
 /charts/osschallenge                @adfinis/helm-charts @trowik
 /charts/vault-auth                  @adfinis/helm-charts @eyenx
-/charts/vault-csi-provider          @adfinis/helm-charts @pree @eyenx
 /charts/vault-monitoring            @adfinis/helm-charts @pree @eyenx
 /charts/mopsos                      @adfinis/helm-charts @hairmare @eyenx
