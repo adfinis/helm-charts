@@ -1,0 +1,76 @@
+# Default values for vaultwarden.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: vaultwarden/server
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  #tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: vaultwarden.example
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+env:
+  SIGNUPS_ALLOWED: true
+  INVITATIONS_ALLOWED: true
+  # SERVER_ADMIN_EMAIL
+  # DOMAIN
+  # YUBICO_CLIENT_ID
+  # YUBICO_SECRET_KEY
+  # DATA_FOLDER
+  # DATABASE_URL
+  # ATTACHMENTS_FOLDER
+  # ICON_CACHE_FOLDER
+  # ROCKET_LIMITS
+  # ROCKET_WORKERS
+  # SMTP_HOST
+  # SMTP_FROM
+  # SMTP_PORT
+  # SMTP_SSL
+  # SMTP_EXPLICIT_TLS
+  # SMTP_USERNAME
+  # SMTP_PASSWORD
+  # SHOW_PASSWORD_HINT
+  # WEB_VAULT_ENABLED
+
+existingSecret: vaultwarden-secrets
+
+persistence:
+  enabled: false
+  accessMode: ReadWriteOnce
+  size: 800Mi
+  storageClass: default
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

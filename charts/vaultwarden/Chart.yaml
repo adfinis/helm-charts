@@ -1,0 +1,13 @@
+apiVersion: v2
+name: vaultwarden
+description: A Helm chart for Vaultwarden
+type: application
+version: 0.1.0
+sources:
+  - https://github.com/dani-garcia/Vaultwarden
+  - https://github.com/adfinis/helm-charts
+maintainers:
+  - name: adfinis
+    email: support@adfinis.com
+    url: https://adfinis.com
+appVersion: "latest"
