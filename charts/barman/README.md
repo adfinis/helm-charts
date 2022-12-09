@@ -17,27 +17,27 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 ## Values
 
-| Key | Type | Default | Description |
-|-----|------|---------|-------------|
-| barman.backupDir | string | `"/var/lib/barman"` | Barman home directory |
-| barman.backupMethod | string | `"postgres"` | Barman backup method |
-| barman.backupOptions | string | `"concurrent_backup"` | Barman backup options |
-| barman.backupSchedule | string | `"0 4 * * *"` | Barman backup schedule |
-| barman.backups[0] | object | `{"additionalConfiguration":"","backupMethod":"postgres","createDatabaseSlot":true,"databaseSlotName":"barman","lastBackupMaximumAge":"1 day","namespace":"postgresql","postgresql":{"host":"postgresql","port":5432,"replicationPassword":"barman","replicationUser":"barman","superUser":"postgres","superUserDatabase":"postgres","superUserPassword":"postgres"},"retentionPolicy":"RECOVERY WINDOW of 1 MONTH","scopeName":"pg","serviceaccount":"postgresql"}` | Barman retention policy |
-| barman.backups[0].additionalConfiguration | string | `""` | Barman additional Parameters for configuration File |
-| barman.backups[0].backupMethod | string | `"postgres"` | Barman backup method |
-| barman.backups[0].createDatabaseSlot | bool | `true` | Create Database slot |
-| barman.backups[0].databaseSlotName | string | `"barman"` | Database slot name to be created/used |
-| barman.backups[0].lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age |
-| barman.backups[0].namespace | string | `"postgresql"` | namespace where postgresql is deployed, not active when barman.createRbac is false |
-| barman.backups[0].postgresql.host | string | `"postgresql"` | Postgresql host |
-| barman.backups[0].postgresql.port | int | `5432` | Postgresql port |
-| barman.backups[0].postgresql.replicationPassword | string | `"barman"` | Postgresql replication password |
-| barman.backups[0].postgresql.replicationUser | string | `"barman"` | Postgresql replication user |
-| barman.backups[0].postgresql.superUser | string | `"postgres"` | Postgresql super user |
-| barman.backups[0].postgresql.superUserDatabase | string | `"postgres"` | Postgresql super user database |
-| barman.backups[0].postgresql.superUserPassword | string | `"postgres"` | Postgresql super user password |
-| barman.backups[0].scopeName | string | `"pg"` | Postgresql server scope-name |
+| Key | Type | Default | Description                                                                              |
+|-----|------|---------|------------------------------------------------------------------------------------------|
+| barman.backupDir | string | `"/var/lib/barman"` | Barman home directory                                                                    |
+| barman.backupMethod | string | `"postgres"` | Barman backup method                                                                     |
+| barman.backupOptions | string | `"concurrent_backup"` | Barman backup options                                                                    |
+| barman.backupSchedule | string | `"0 4 * * *"` | Barman backup schedule                                                                   |
+| barman.backups[0] | object | `{"additionalConfiguration":"","backupMethod":"postgres","createDatabaseSlot":true,"databaseSlotName":"barman","lastBackupMaximumAge":"1 day","namespace":"postgresql","postgresql":{"host":"postgresql","port":5432,"replicationPassword":"barman","replicationUser":"barman","superUser":"postgres","superUserDatabase":"postgres","superUserPassword":"postgres"},"retentionPolicy":"RECOVERY WINDOW of 1 MONTH","scopeName":"pg","serviceaccount":"postgresql"}` | Barman retention policy                                                                  |
+| barman.backups[0].additionalConfiguration | string | `""` | Barman additional Parameters for configuration File                                      |
+| barman.backups[0].backupMethod | string | `"postgres"` | Barman backup method                                                                     |
+| barman.backups[0].createDatabaseSlot | bool | `true` | Create Database slot                                                                     |
+| barman.backups[0].databaseSlotName | string | `"barman"` | Database slot name to be created/used                                                    |
+| barman.backups[0].lastBackupMaximumAge | string | `"1 day"` | Barman last backup maximum age                                                           |
+| barman.backups[0].namespace | string | `"postgresql"` | namespace where postgresql is deployed, not active when barman.createRbac is false       |
+| barman.backups[0].postgresql.host | string | `"postgresql"` | Postgresql host                                                                          |
+| barman.backups[0].postgresql.port | int | `5432` | Postgresql port                                                                          |
+| barman.backups[0].postgresql.replicationPassword | string | `"barman"` | Postgresql replication password                                                          |
+| barman.backups[0].postgresql.replicationUser | string | `"barman"` | Postgresql replication user                                                              |
+| barman.backups[0].postgresql.superUser | string | `"postgres"` | Postgresql super user                                                                    |
+| barman.backups[0].postgresql.superUserDatabase | string | `"postgres"` | Postgresql super user database                                                           |
+| barman.backups[0].postgresql.superUserPassword | string | `"postgres"` | Postgresql super user password                                                           |
+| barman.backups[0].scopeName | string | `"pg"` | Postgresql server scope-name                                                             |
 | barman.backups[0].serviceaccount | string | `"postgresql"` | service account of the postgresql deployment, not active when barman.createRbac is false |
 | barman.barmanUser | string | `"barman"` | Barman user |
 | barman.compression | string | `"gzip"` | Barman backup compression |
@@ -53,6 +53,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | deployment.annotations | object | `{}` | Specify deployment annotations |
 | deployment.extraContainers | object | `{}` | Specify sidecars for the deployment |
 | deployment.imagePullSecrets | list | `[]` | Specify imagePullSecrets for the deployment |
+| deployment.initContainers | list | `[]` | Add init containers for the deployment |
 | deployment.podAnnotations | object | `{}` | Specify pod annotations |
 | deployment.strategy.type | string | `"RollingUpdate"` | Specify the strategy used to replace old Pods by new ones |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
