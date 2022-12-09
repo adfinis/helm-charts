@@ -7,4 +7,3 @@ chart-repos:
 excluded-charts:
   - common
   - argoconfig
-  - huawei-csi-plugin

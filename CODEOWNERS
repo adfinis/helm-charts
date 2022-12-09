@@ -9,7 +9,6 @@
 /charts/common                      @adfinis/helm-charts @hairmare
 /charts/csi-secret-provider-class   @adfinis/helm-charts @hairmare @eyenx
 /charts/customer-center             @adfinis/helm-charts @vmaillot
-/charts/huawei-csi-plugin           @adfinis/helm-charts @tongpu
 /charts/osschallenge                @adfinis/helm-charts @trowik
 /charts/vault-auth                  @adfinis/helm-charts @eyenx
 /charts/vault-monitoring            @adfinis/helm-charts @pree @eyenx
