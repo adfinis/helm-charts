@@ -1744,6 +1744,36 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/backup-apps-0.1.0/backup-apps-0.1.0.tgz
     version: 0.1.0
   barman:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: "added init containers for barman deployment"
+          links:
+            - name: GitHub PR
+              url: https://github.com/adfinis/helm-charts/pull/905
+    apiVersion: v2
+    appVersion: v2.19
+    created: "2022-12-10T12:05:57.603891659Z"
+    description: Chart for Barman PostgreSQL Backup and Recovery Manager
+    digest: faef32f4cf4751534c5927b795124f84b387afcb936b9dc9b7763edef95378dd
+    home: http://www.pgbarman.org/
+    keywords:
+    - barman
+    - postgresql
+    - postgres
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: barman
+    sources:
+    - https://github.com/2ndquadrant-it/barman
+    - https://github.com/ubc/barman-docker
+    - https://github.com/adfinis/helm-charts/tree/main/charts/barman
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/barman-0.10.0/barman-0.10.0.tgz
+    version: 0.10.0
   - apiVersion: v2
     appVersion: v2.19
     created: "2022-08-04T15:51:55.425555823Z"
@@ -16821,4 +16851,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-08T16:45:47.516677338Z"
+generated: "2022-12-10T12:05:57.606525798Z"
