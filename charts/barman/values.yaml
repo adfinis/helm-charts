@@ -32,6 +32,19 @@ deployment:
   imagePullSecrets: []
   # -- Specify additional ENVs for the Deployment
   additionalENVs: {}
+  # -- Init containers for the deployment. If the value is a string then it is evaluated as a template.
+  initContainers: []
+#    - name: wait-for
+#      image: kfirfer/wait-for:0.0.1
+#      securityContext:
+#        runAsNonRoot: true
+#        runAsUser: 1000
+#        readOnlyRootFilesystem: true
+#      command:
+#        - /bin/sh
+#        - -c
+#        - |
+#          /wait-for postgresql:5432 --timeout=1800
 
 service:
   # -- Specify if a Service should be created
