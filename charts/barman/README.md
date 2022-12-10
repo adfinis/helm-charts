@@ -53,7 +53,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | deployment.annotations | object | `{}` | Specify deployment annotations |
 | deployment.extraContainers | object | `{}` | Specify sidecars for the deployment |
 | deployment.imagePullSecrets | list | `[]` | Specify imagePullSecrets for the deployment |
-| deployment.initContainers | list | `[]` | Specify initContainers for the deployment |
+| deployment.initContainers | list | `[]` | Init containers for the deployment. If the value is a string then it is evaluated as a template. |
 | deployment.podAnnotations | object | `{}` | Specify pod annotations |
 | deployment.strategy.type | string | `"RollingUpdate"` | Specify the strategy used to replace old Pods by new ones |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |

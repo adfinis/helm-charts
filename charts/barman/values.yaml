@@ -32,8 +32,7 @@ deployment:
   imagePullSecrets: []
   # -- Specify additional ENVs for the Deployment
   additionalENVs: {}
-  # Init containers to add to deployment's pod spec. At least one plugin provider image is required.
-  # If the value is a string then it is evaluated as a template.
+  # -- Init containers for the deployment. If the value is a string then it is evaluated as a template.
   initContainers: []
 #    - name: wait-for
 #      image: kfirfer/wait-for:0.0.1
