@@ -2,7 +2,7 @@ apiVersion: v2
 name: barman
 type: application
 description: Chart for Barman PostgreSQL Backup and Recovery Manager
-version: 0.9.2
+version: 0.10.0
 appVersion: "v2.19"
 keywords:
   - barman
@@ -17,3 +17,12 @@ maintainers:
   - name: adfinis
     email: support@adfinis.com
     url: https://adfinis.com
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: "added init containers for barman deployment"
+      links:
+        - name: GitHub PR
+          url: https://github.com/adfinis/helm-charts/pull/905
+
+
