@@ -81,6 +81,14 @@ spec:
           {{- end  }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+{{- if .Values.deployment.initContainers }}
+      initContainers:
+        {{- if eq (typeOf .Values.deployment.initContainers) "string" }}
+        {{- tpl .Values.deployment.initContainers . | nindent 8 }}
+        {{- else }}
+        {{- toYaml .Values.deployment.initContainers | nindent 8 }}
+        {{- end }}
+      {{- end }}
       volumes:
         - name: data
         {{- if not .Values.persistence.data.enabled }}
