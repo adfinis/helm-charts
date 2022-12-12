@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.13.2](https://img.shields.io/badge/Version-0.13.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.13.3](https://img.shields.io/badge/Version-0.13.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -56,6 +56,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.cronjobs.notifyReviewersThird.command[5] | string | `"'Please verify your reports immediately!'"` | Additional message to send if there are unverified reports |
 | backend.cronjobs.notifySupervisors | object | `{"command":["./manage.py","notify_supervisors_shorttime"],"schedule":"0 8 * * 4"}` | Notify supervisors |
 | backend.cronjobs.redmineReport | object | `{"command":["./manage.py","redmine_report"],"schedule":"0 1 * * 1"}` | Redmine report |
+| backend.cronjobs.updateProjectExpanditureFirst | object | `{"command":["./manage.py","update_project_expenditure"],"schedule":"0 8 * * 3"}` | Update project expanditure in redmine first time |
+| backend.cronjobs.updateProjectExpanditureSecond | object | `{"command":["./manage.py","update_project_expenditure"],"schedule":"0 8 * * 0"}` | Update project expanditure in redmine second time |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"ghcr.io/adfinis/timed-backend"` | Backend image name |
 | backend.image.tag | string | `"v3.0.0-rc4"` | Backend version. |
@@ -148,6 +150,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | prometheus.podMonitor.interval | string | `"30s"` | Interval at which metrics should be scraped |
 | prometheus.podMonitor.metricRelabelings | list | `[]` | MetricRelabelConfigs to apply to samples before ingestion |
 | prometheus.podMonitor.relabelings | list | `[]` | RelabelConfigs to apply to samples before scraping |
+| redmine.amountInvoicedField | int | `2` | Amount invoiced field id on Redmine |
+| redmine.amountOfferedField | int | `1` | Amount offered field id on Redmine |
 | redmine.apiKey | string | `""` | Redmine API Key |
 | redmine.enabled | bool | `false` | Enable Redmine integration |
 | redmine.spenthoursField | int | `0` | Spent hours field id on Redmine |

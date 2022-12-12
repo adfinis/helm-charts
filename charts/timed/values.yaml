@@ -180,6 +180,18 @@ backend:
       command:
         - "./manage.py"
         - "budget_check"
+    # -- Update project expanditure in redmine first time
+    updateProjectExpanditureFirst:
+      schedule: "0 8 * * 3"
+      command:
+        - "./manage.py"
+        - "update_project_expenditure"
+    # -- Update project expanditure in redmine second time
+    updateProjectExpanditureSecond:
+      schedule: "0 8 * * 0"
+      command:
+        - "./manage.py"
+        - "update_project_expenditure"
 
 frontend:
   # -- (int) Number of Backend replicas
@@ -353,6 +365,10 @@ redmine:
   apiKey: ""
   # -- Spent hours field id on Redmine
   spenthoursField: 0
+  # -- Amount offered field id on Redmine
+  amountOfferedField: 1
+  # -- Amount invoiced field id on Redmine
+  amountInvoicedField: 2
 
 prometheus:
   # -- Enable Prometheus integration
