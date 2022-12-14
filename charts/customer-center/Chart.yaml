@@ -19,5 +19,5 @@ annotations:
     - kind: changed
       description: "update customer-center from v3.2.4 to v3.2.5"
       links:
-        - name: GitHub Commit
-          url: https://github.com/adfinis/customer-center/commit/c919df22a52a2fecff633935dbd08a8b03057918
+        - name: GitHub Release
+          url: https://github.com/adfinis/customer-center/releases/tag/v3.2.5
