@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.24.0
+version: 0.25.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -26,3 +26,13 @@ annotations:
       links:
         - name: GitHub PR
           url: https://github.com/elastic/helm-charts/pull/1627
+    - kind: changed
+      description: 'add initContainers feature'
+      links:
+        - name: GitHub PR
+          url: https://github.com/fluent/helm-charts/pull/238
+    - kind: changed
+      description: 'add initial Openshift SCC support for Fluent-Bit'
+      links:
+        - name: GitHub PR
+          url: https://github.com/fluent/helm-charts/pull/232
