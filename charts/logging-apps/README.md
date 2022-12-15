@@ -35,7 +35,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | fluentBit.destination.namespace | string | `"infra-logging"` | Namespace |
 | fluentBit.enabled | bool | `false` | Enable fluentBit |
 | fluentBit.repoURL | string | [repo](https://fluent.github.io/helm-charts) | Repo URL |
-| fluentBit.targetRevision | string | `"0.21.*"` | [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version |
+| fluentBit.targetRevision | string | `"0.21.6"` | [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version |
 | fluentBit.values | object | [upstream values](https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/values.yaml) | Helm values |
 | fluentd | object | - | [fluentd](https://github.com/fluent/fluentd) ([example](./examples/fluentd.yaml)) |
 | fluentd.chart | string | `"fluentd"` | Chart |
