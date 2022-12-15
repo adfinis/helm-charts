@@ -8113,6 +8113,48 @@ entries:
           links:
             - name: GitHub PR
               url: https://github.com/elastic/helm-charts/pull/1627
+        - kind: changed
+          description: 'add initContainers feature'
+          links:
+            - name: GitHub PR
+              url: https://github.com/fluent/helm-charts/pull/238
+        - kind: changed
+          description: 'add initial Openshift SCC support for Fluent-Bit'
+          links:
+            - name: GitHub PR
+              url: https://github.com/fluent/helm-charts/pull/232
+    apiVersion: v2
+    created: "2022-12-15T09:59:04.209222206Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for logging applications
+    digest: 3fd64a6ef4c3a9be65f985722b3dcff7aeb6c82c4c6c1808ebb6687d3693268b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.25.0/logging-apps-0.25.0.tgz
+    version: 0.25.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: 'use new elasticsearch credentials'
+          links:
+            - name: GitHub PR
+              url: https://github.com/elastic/helm-charts/pull/1400
+        - kind: changed
+          description: 'using https to connect to elasticsearch'
+          links:
+            - name: GitHub PR
+              url: https://github.com/elastic/helm-charts/pull/1627
     apiVersion: v2
     created: "2022-11-23T10:27:50.615502457Z"
     dependencies:
@@ -16917,4 +16959,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-13T06:30:38.141168558Z"
+generated: "2022-12-15T09:59:04.211063012Z"
