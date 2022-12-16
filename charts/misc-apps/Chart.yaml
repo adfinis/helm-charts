@@ -26,3 +26,8 @@ annotations:
       links:
         - name: GitHub PR
           url: https://github.com/chartmuseum/charts/pull/51
+    - kind: changed
+      description: "[grafana-agent-operator] feat: add grafana agent operator"
+      links:
+        - name: Upstream chart
+          url: https://github.com/grafana/helm-charts/tree/main/charts/agent-operator
