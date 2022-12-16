@@ -45,6 +45,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | downscaler.repoURL | string | [repo](https://charts.deliveryhero.io) | Repo URL |
 | downscaler.targetRevision | string | `"0.6.0"` | [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version |
 | downscaler.values | object | [upstream values](https://github.com/deliveryhero/helm-charts/blob/master/stable/kube-downscaler/values.yaml) | Helm values |
+| grafanaAgentOperator | object | [example](./examples/grafana-agent.yaml) | [grafana-agent](https://grafana.github.io/helm-charts) |
+| grafanaAgentOperator.annotations | object | `{}` | Annotations for grafana-agent |
+| grafanaAgentOperator.chart | string | `"grafana-agent-operator"` | Chart |
+| grafanaAgentOperator.destination.namespace | string | `"infra-grafana-agent"` | Namespace |
+| grafanaAgentOperator.enabled | bool | `false` | Enable grafana-agent |
+| grafanaAgentOperator.repoURL | string | [repo](https://grafana.github.io/helm-charts) | Repo URL |
+| grafanaAgentOperator.targetRevision | string | `"0.2.8"` | [Grafana Agent Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/agent-operator) version |
+| grafanaAgentOperator.values | object | [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/agent-operator/values.yaml) | Helm values |
 | keda | object | [example](./examples/keda.yaml) | [KEDA](https://keda.sh/) |
 | keda.annotations | object | `{}` | Annotations for KEDA app |
 | keda.chart | string | `"keda"` | Chart |

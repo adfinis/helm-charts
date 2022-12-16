@@ -161,3 +161,25 @@ keda:
   # -- Helm values
   # @default -- [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml)
   values: {}
+
+# -- [grafana-agent](https://grafana.github.io/helm-charts)
+# @default -- [example](./examples/grafana-agent.yaml)
+grafanaAgentOperator:
+  # -- Enable grafana-agent
+  enabled: false
+  name: grafana-agent-operator
+  # -- Annotations for grafana-agent
+  annotations: {}
+  destination:
+    # -- Namespace
+    namespace: infra-grafana-agent
+  # -- Repo URL
+  # @default -- [repo](https://grafana.github.io/helm-charts)
+  repoURL: https://grafana.github.io/helm-charts
+  # -- Chart
+  chart: grafana-agent-operator
+  # -- [Grafana Agent Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/agent-operator) version
+  targetRevision: 0.2.8
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/agent-operator/values.yaml)
+  values: {}
