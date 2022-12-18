@@ -25,7 +25,7 @@ annotations:
         - name: GitHub PR
           url: https://github.com/adfinis/helm-charts/pull/905
     - kind: change
-      description: "change barman default docker images"
+      description: "use image from basalam/barman-docker"
       links:
-        - name: GitHub PR
-          url: https://github.com/adfinis/helm-charts/pull/913
+        - name: Image Source
+          url: https://github.com/basalam/barman-docker
