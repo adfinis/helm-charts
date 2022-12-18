@@ -1,6 +1,6 @@
 image:
   # -- Container image to deploy
-  repository: ubcctlt/barman
+  repository: ghcr.io/basalam/barman-docker
   # -- When to pull the container image
   pullPolicy: Always
   # -- Overrides the image tag whose default is the chart version.
