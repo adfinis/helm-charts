@@ -2,7 +2,7 @@ apiVersion: v2
 name: barman
 type: application
 description: Chart for Barman PostgreSQL Backup and Recovery Manager
-version: 0.10.0
+version: 0.10.1
 appVersion: "3.3.0"
 keywords:
   - barman
@@ -24,3 +24,8 @@ annotations:
       links:
         - name: GitHub PR
           url: https://github.com/adfinis/helm-charts/pull/905
+    - kind: change
+      description: "change barman default docker images"
+      links:
+        - name: GitHub PR
+          url: https://github.com/adfinis/helm-charts/pull/913
