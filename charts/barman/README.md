@@ -12,7 +12,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 ## Source Code
 
 * <https://github.com/2ndquadrant-it/barman>
-* <https://github.com/ubc/barman-docker>
+* <https://github.com/basalam/barman-docker>
 * <https://github.com/adfinis/helm-charts/tree/main/charts/barman>
 
 ## Values
@@ -57,7 +57,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | deployment.podAnnotations | object | `{}` | Specify pod annotations |
 | deployment.strategy.type | string | `"RollingUpdate"` | Specify the strategy used to replace old Pods by new ones |
 | image.pullPolicy | string | `"Always"` | When to pull the container image |
-| image.repository | string | `"ubcctlt/barman"` | Container image to deploy |
+| image.repository | string | `"ghcr.io/basalam/barman-docker"` | Container image to deploy |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart version. |
 | persistence.data.accessMode | string | `"ReadWriteOnce"` | Access mode for persistent storage |
 | persistence.data.annotations | object | `{}` | Add annotations to backup data PVC |
