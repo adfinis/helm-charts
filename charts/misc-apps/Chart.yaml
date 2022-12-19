@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.26.1
+version: 0.27.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -26,3 +26,8 @@ annotations:
       links:
         - name: GitHub PR
           url: https://github.com/chartmuseum/charts/pull/51
+    - kind: changed
+      description: "[grafana-agent-operator] feat: add grafana agent operator"
+      links:
+        - name: Upstream chart
+          url: https://github.com/grafana/helm-charts/tree/main/charts/agent-operator
