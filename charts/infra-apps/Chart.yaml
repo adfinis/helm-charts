@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.135.0
+version: 0.136.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "mimir chart 3.3.0 with mimir 2.4.0"
+      description: "velero chart 2.32.4 with velero 1.9.4"
       links:
         - name: GitHub PR
-          url: https://github.com/grafana/mimir/pull/3445
+          url: https://github.com/vmware-tanzu/helm-charts/pull/424
