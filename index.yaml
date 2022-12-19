@@ -8851,6 +8851,43 @@ entries:
           links:
             - name: GitHub PR
               url: https://github.com/chartmuseum/charts/pull/51
+        - kind: changed
+          description: "[grafana-agent-operator] feat: add grafana agent operator"
+          links:
+            - name: Upstream chart
+              url: https://github.com/grafana/helm-charts/tree/main/charts/agent-operator
+    apiVersion: v2
+    created: "2022-12-19T11:07:57.355094979Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 388ca8432d2504014d631580cb767198d24b7119fb839a213050e378d41f5b59
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.27.0/misc-apps-0.27.0.tgz
+    version: 0.27.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "[chartmuseum] added sidecarContainers chartmuseum/charts"
+          links:
+            - name: GitHub PR
+              url: https://github.com/chartmuseum/charts/pull/48
+        - kind: changed
+          description: "[chartmuseum] feat: add support for common labels in helm charts chartmuseum/charts"
+          links:
+            - name: GitHub PR
+              url: https://github.com/chartmuseum/charts/pull/51
     apiVersion: v2
     created: "2022-12-08T16:42:35.483761437Z"
     dependencies:
@@ -16986,4 +17023,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-19T08:15:00.360956791Z"
+generated: "2022-12-19T11:07:57.35654957Z"
