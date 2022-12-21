@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.27.0
+version: 0.27.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,17 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "[chartmuseum] added sidecarContainers chartmuseum/charts"
+      description: "[signalilo] Fix default Signalilo image tag"
       links:
         - name: GitHub PR
-          url: https://github.com/chartmuseum/charts/pull/48
-    - kind: changed
-      description: "[chartmuseum] feat: add support for common labels in helm charts chartmuseum/charts"
-      links:
-        - name: GitHub PR
-          url: https://github.com/chartmuseum/charts/pull/51
-    - kind: changed
-      description: "[grafana-agent-operator] feat: add grafana agent operator"
-      links:
-        - name: Upstream chart
-          url: https://github.com/grafana/helm-charts/tree/main/charts/agent-operator
+          url: https://github.com/appuio/charts/pull/450
