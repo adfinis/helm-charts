@@ -2,7 +2,7 @@
 {{ template "argoconfig.application" (list . "misc-apps.grafana-agent-operator") }}
 {{ end }}
 
-{{- define "misc-apps.grafana-agent-operator" -}}{{- $app := unset .Values.grafanaAgentOperator "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
+{{- define "misc-apps.grafanaAgentOperator" -}}{{- $app := unset .Values.grafanaAgentOperator "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
 metadata:
   name: {{ template "common.fullname" . }}-{{ $name }}
 spec:
