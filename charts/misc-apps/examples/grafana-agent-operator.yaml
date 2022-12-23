@@ -1,0 +1,4 @@
+grafanaAgentOperator:
+  enabled: true
+  project: infra-grafana-agent
+  values: {}
