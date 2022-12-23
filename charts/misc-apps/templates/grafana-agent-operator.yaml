@@ -1,5 +1,5 @@
 {{ if .Values.grafanaAgentOperator.enabled }}
-{{ template "argoconfig.application" (list . "misc-apps.grafana-agent-operator") }}
+{{ template "argoconfig.application" (list . "misc-apps.grafanaAgentOperator") }}
 {{ end }}
 
 {{- define "misc-apps.grafanaAgentOperator" -}}{{- $app := unset .Values.grafanaAgentOperator "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
