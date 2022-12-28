@@ -4077,6 +4077,114 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore(argo-cd): Update redis-ha to v4.22.4"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1732
+        - kind: changed
+          description: "chore(argo-cd): Support relabelings and metricRelabelings to Notification's ServiceMonitor"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1720
+        - kind: changed
+          description: "fix(argo-cd): remove incorrect flag for repoServer TLS secret"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1719
+        - kind: changed
+          description: "chore(argo-cd): Update ArgoCD to v2.5.5"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1715
+            - name: Argo CD Release
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.5.5
+        - kind: changed
+          description: "chore(argo-cd): add new api version for cert-manager"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1713
+        - kind: changed
+          description: "docs(argo-cd): Fix Argo CD value description typos for AppSet and Notification controllers"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1706
+        - kind: changed
+          description: "fix(argo-cd): Prevent could not parse 0 warning"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1704
+        - kind: changed
+          description: "feat(argo-cd): Add annotations to PrometheusRule"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1700
+        - kind: changed
+          description: "chore(argo-cd): Update ArgoCD to v2.5.4"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1687
+            - name: Argo CD Release
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.5.5
+        - kind: changed
+          description: "feat(argo-cd): Set aggregate roles only for using resources, with argocdextensions also"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1679
+        - kind: changed
+          description: "feat(argo-cd): Add ability to annotate Deployments and StatefulSets"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1608
+        - kind: changed
+          description: "chore(argo-cd): Remove duplicate ApplicationSet features"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1598
+        - kind: changed
+          description: "fix(argo-cd): Rename tls secret to include the -secret suffix"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1676
+        - kind: changed
+          description: "feat(argo-cd): Add Repo Server strict TLS cert support"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1673
+        - kind: changed
+          description: "feat(argo-cd): Upgrade argocd to v2.5.3"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1671
+            - name: Argo CD Release
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.5.3
+        - kind: changed
+          description: "fix(argo-cd): deprecate server.extraArgs.'--insecure'"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1669
+    apiVersion: v2
+    created: "2022-12-28T15:29:10.729226107Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 5c4fb1921fb3c4d4915a5d4bdc26f058b3f80df367b721f4fdb9b00374bac53e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.137.0/infra-apps-0.137.0.tgz
+    version: 0.137.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "velero chart 2.32.4 with velero 1.9.4"
           links:
             - name: GitHub PR
@@ -17104,4 +17212,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-27T07:34:05.44702548Z"
+generated: "2022-12-28T15:29:10.731276955Z"
