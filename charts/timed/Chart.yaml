@@ -2,7 +2,7 @@ apiVersion: v2
 name: timed
 description: Chart for Timed application
 type: application
-version: 0.14.0
+version: 0.14.1
 keywords:
   - timed
   - tracking
@@ -22,8 +22,8 @@ dependencies:
     condition: postgresql.enabled
 annotations:
   artifacthub.io/changes: |
-    - kind: added
-      description: "added env var for redmine build project"
+    - kind: changed
+      description: "updated timed-frontend image tag"
       links:
-        - name: GitHub PR
-          url: https://github.com/adfinis/timed-backend/pull/911
+        - name: GitHub Release
+          url: https://github.com/adfinis/timed-frontend/releases/tag/v3.0.0-rc1
