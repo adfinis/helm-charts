@@ -21,7 +21,7 @@ jobs:
     - name: install helm unittest
       run: |
         helm env
-        helm plugin install https://github.com/quintush/helm-unittest --version 0.2.10
+        helm plugin install https://github.com/quintush/helm-unittest
 
     - uses: actions/setup-python@v4
       with:
@@ -55,7 +55,7 @@ jobs:
       - name: install helm unittest
         run: |
           helm env
-          helm plugin install https://github.com/quintush/helm-unittest --version 0.2.10
+          helm plugin install https://github.com/quintush/helm-unittest
 
       - uses: actions/setup-python@v4
         with:
