@@ -4077,6 +4077,43 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore(argo-cd): Remove legacy API versions for Ingresses"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1742
+        - kind: changed
+          description: "chore(argo-cd): Remove legacy API versions for PDBs"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1740
+        - kind: changed
+          description: "feat(argo-cd): Add hostAliases to ApplicationSet Deployment"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1737
+    apiVersion: v2
+    created: "2023-01-03T19:41:49.515728211Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 64afab49591430baa1fb105b07b6bb85967dee8a4a94fb3a861fdcb64621bde4
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.139.0/infra-apps-0.139.0.tgz
+    version: 0.139.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "kube-event-exporter: Release 2.1.4"
           links:
             - name: GitHub PR
@@ -17313,4 +17350,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-30T10:09:14.352772117Z"
+generated: "2023-01-03T19:41:49.517866896Z"
