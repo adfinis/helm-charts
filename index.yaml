@@ -4077,6 +4077,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "New GitHub repository for Kubernetes-Event-Exporter"
+          links:
+            - name: GitHub repository
+              url: https://github.com/resmoio/kubernetes-event-exporter
+    apiVersion: v2
+    created: "2023-01-04T14:52:14.537190655Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: f09242ac194088ef082f8bcf50e218643d78b49d47377b192a2c8269bc94f5f7
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.139.1/infra-apps-0.139.1.tgz
+    version: 0.139.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore(argo-cd): Remove legacy API versions for Ingresses"
           links:
             - name: GitHub PR
@@ -17350,4 +17377,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-03T19:41:49.517866896Z"
+generated: "2023-01-04T14:52:14.538832472Z"
