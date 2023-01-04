@@ -226,7 +226,7 @@ kured:
   # @default -- [upstream values](https://github.com/kubereboot/kured/blob/main/charts/kured/values.yaml)
   values: {}
 
-# -- [kubernetes-event-exporter](https://github.com/opsgenie/kubernetes-event-exporter)
+# -- [kubernetes-event-exporter](https://github.com/resmoio/kubernetes-event-exporter)
 # @default -- [example](./examples/kubernetes-event-exporter.yaml)
 kubeEventExporter:
   # -- Enable kubernetes-event-exporter

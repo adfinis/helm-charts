@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.139.0
+version: 0.139.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,17 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore(argo-cd): Remove legacy API versions for Ingresses"
+      description: "New GitHub repository for Kubernetes-Event-Exporter"
       links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1742
-    - kind: changed
-      description: "chore(argo-cd): Remove legacy API versions for PDBs"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1740
-    - kind: changed
-      description: "feat(argo-cd): Add hostAliases to ApplicationSet Deployment"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1737
+        - name: GitHub repository
+          url: https://github.com/resmoio/kubernetes-event-exporter
