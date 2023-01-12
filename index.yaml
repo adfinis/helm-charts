@@ -11850,6 +11850,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "stackrox: Release 3.73.0 (chart version 73.0)"
+          links:
+            - name: Github Release
+              url: https://github.com/stackrox/stackrox/releases/tag/3.73.0
+        - kind: changed
+          description: "stackrox: Release 3.73.1 (chart version 73.1)"
+          links:
+            - name: Github Release
+              url: https://github.com/stackrox/stackrox/releases/tag/3.73.1
+    apiVersion: v2
+    created: "2023-01-12T14:21:13.060237912Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: d896cc16419ad87e93e723f9689c954dd9615bebfe87ce46d1cf94e1ca870e98
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.67.0/security-apps-0.67.0.tgz
+    version: 0.67.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "[falco-exporter] Update to version v0.8.0"
           links:
             - name: Github Release
@@ -17410,4 +17442,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-05T11:52:34.235700333Z"
+generated: "2023-01-12T14:21:13.061671124Z"
