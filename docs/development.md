@@ -161,3 +161,22 @@ After installing the pre-commit requirements you can initialize pre-commit.
 pre-commit install
 pre-commit install-hooks
 ```
+
+### Changelog
+
+We're adding [Artifact Hub annotations](https://artifacthub.io/docs/topics/annotations/helm/) to our charts to improve the visibility of changes for our charts. These annotations are added to `Chart.yaml` as a YAML string and need to be replaced on every update, as they are not additive but specific to this release.
+
+```yaml
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "feat(argo-rollouts): Upgrade to argo-rollouts 1.3.0"
+      links:
+        - name: GitHub PR
+          url: https://github.com/argoproj/argo-helm/pull/1466
+    - kind: changed
+      description: "fix(argo-rollouts): Upgrade argo-rollouts to 1.3.1"
+      links:
+        - name: GitHub PR
+          url: https://github.com/argoproj/argo-helm/pull/1500
+```
