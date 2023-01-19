@@ -4077,6 +4077,118 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Registry change for upstream kube-webhook-certgen"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2924
+        - kind: changed
+          description: "add alertmanagerConfigMatcherStrategy for alertmanager"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2882
+        - kind: changed
+          description: "Add support for hostAliases in prometheus"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2780
+        - kind: changed
+          description: "More secure admissionWebhooks failurePolicy"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2911
+        - kind: changed
+          description: "modify prometheusOperator.serviceMonitor.sampleLimit default value 0 (mean no limit)"
+          links:
+            - name: GitHUb PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2913
+        - kind: changed
+          description: "add servicemonitor/podmonitor scrape limits"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2615
+        - kind: changed
+          description: "Bump version to force use of new versions of subcharts"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2867
+        - kind: changed
+          description: "updates alertmanager image to v0.25.0"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2860
+        - kind: changed
+          description: "Add IsDefaultDatasource for editing isDefault value for another DS"
+          links:
+            - name: GitHub PR
+              url: Add IsDefaultDatasource for editing isDefault value for another DS
+        - kind: changed
+          description: "Remove ruleNamespaceSelector and ruleSelector from CRD, if enableFeatures contains agent"
+          links:
+            - name: GitHub PR
+              url: Remove ruleNamespaceSelector and ruleSelector from CRD, if enableFeatures contains agent
+        - kind: changed
+          description: "Fix prometheus-operator VPA targetRef"
+          links:
+            - name: GitHUb PR
+              url: "https://github.com/prometheus-community/helm-charts/pull/2839"
+        - kind: changed
+          description: "fix Chart.yaml - remove engine: gotpl"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2814
+        - kind: changed
+          description: "Update grafana chart version"
+          links:
+            - name: GitHUb PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2805
+        - kind: changed
+          description: "Upgrade to 43.0.0"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2789
+        - kind: changed
+          description: "Bump Grafana Chart to most recent commit"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2801
+        - kind: changed
+          description: "Fix netpol to allow access to the api-server"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2790
+        - kind: changed
+          description: "bump grafana chart dependency to 6.45.0 and node-exporter to 4.8.0"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2773
+        - kind: changed
+          description: "Allow setting timeoutSeconds in ValidatingWebhook"
+          links:
+            - name: GitHub PR
+              url: https://github.com/prometheus-community/helm-charts/pull/2761
+    apiVersion: v2
+    created: "2023-01-19T15:13:33.294342069Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 77f192e90758bc226eef0bce47de3b6eb1dc194e1f6acaca4490c878633e6973
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.140.0/infra-apps-0.140.0.tgz
+    version: 0.140.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "New GitHub repository for Kubernetes-Event-Exporter"
           links:
             - name: GitHub repository
@@ -17472,4 +17584,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-13T09:03:41.110480426Z"
+generated: "2023-01-19T15:13:33.297924471Z"
