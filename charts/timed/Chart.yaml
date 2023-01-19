@@ -2,7 +2,7 @@ apiVersion: v2
 name: timed
 description: Chart for Timed application
 type: application
-version: 0.14.5
+version: 0.15.0
 keywords:
   - timed
   - tracking
@@ -23,7 +23,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "updated timed-frontend image tag"
-      links:
-        - name: GitHub Release
-          url: https://github.com/adfinis/timed-frontend/releases/tag/v3.0.0-rc5
+      description: "add ingress.ingressClassName value"
