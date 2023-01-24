@@ -84,7 +84,7 @@ We track issues with this chart repository in the [issue tracker](https://github
 Adfinis fights for a software world that is more open, where the quality is
 better and where software must be accessible to everyone. This repository
 contains part of the action behind this commitment. Feel free to
-[contact](https://adfinis.com/kontakt/?pk_campaign=github&pk_kwd=helm-charts)
+[contact](https://adfinis.com/en/contact/?pk_campaign=github&pk_kwd=helm-charts)
 us if you have any questions.
 
 ## License
