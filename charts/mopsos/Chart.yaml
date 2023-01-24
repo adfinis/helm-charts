@@ -2,7 +2,7 @@ apiVersion: v2
 name: mopsos
 description: Deploy Mopsos to a Kubernetes Cluster
 type: application
-version: 0.6.4
+version: 0.6.5
 appVersion: "v0.3.7"
 kubeVersion: ">= 1.21.0"
 home: https://github.com/adfinis/mopsos
@@ -15,6 +15,10 @@ maintainers:
     url: https://adfinis.com
 dependencies:
 - name: grafana
-  version: "6.26.*"
+  version: "6.50.2"
   repository: https://grafana.github.io/helm-charts
   condition: grafana.enabled
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "Update Grafana from 6.26.* to 6.50.2"
