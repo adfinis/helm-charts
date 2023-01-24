@@ -131,7 +131,7 @@ will have to update the unittest snapshots with each version bump. Thus it
 is usually preferable to write real "non-snapshot" tests or to rely soley on
 the tests that the chart testing tool `ct` does.
 
-Additionally to `helm unittest` we also automatically check if there are any depracated or removed `apiVersions` used in the charts with [pluto](https://pluto.docs.fairwinds.com/).
+Additionally to `helm unittest` we automatically check if there are any deprecated or removed `apiVersions` used with [pluto](https://pluto.docs.fairwinds.com/).
 
 If you are using [artifacthub annotations](https://blog.artifacthub.io/blog/ah-cli/) then they get checked using the [`ah lint`](https://blog.artifacthub.io/blog/ah-cli/) command.
 
@@ -160,4 +160,29 @@ After installing the pre-commit requirements you can initialize pre-commit.
 ```bash
 pre-commit install
 pre-commit install-hooks
+```
+
+### Changelog
+
+We add [Artifact Hub annotations](https://artifacthub.io/docs/topics/annotations/helm/)
+to our charts to improve the visibility of changes. These annotations are added
+to `Chart.yaml` as a YAML string and need to be replaced on every update, as
+they are not additive but specific to this release. If you're update includes
+multiples changes your annotations should contain multiple items.
+Under links you can add links to the upstream GitHub PR or releases, whatever
+contains the most revelant for the change.
+
+```yaml
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "argo-rollouts: Update to argo-rollouts 1.3.0"
+      links:
+        - name: GitHub PR
+          url: https://github.com/argoproj/argo-helm/pull/1466
+    - kind: changed
+      description: "openshift-etcd-backup: Update image to 1.6.9"
+      links:
+        - name: GitHub Release
+          url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.6.9
 ```
