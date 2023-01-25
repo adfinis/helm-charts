@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.67.0
+version: 0.68.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,12 +17,12 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "stackrox: Release 3.73.0 (chart version 73.0)"
+      description: "secrets-store-csi-driver: Release 1.3.1 (chart version 1.3.1)"
       links:
         - name: Github Release
-          url: https://github.com/stackrox/stackrox/releases/tag/3.73.0
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.3.1
     - kind: changed
-      description: "stackrox: Release 3.73.1 (chart version 73.1)"
+      description: "secrets-store-csi-driver: Release 1.3.0 (chart version 1.3.0)"
       links:
         - name: Github Release
-          url: https://github.com/stackrox/stackrox/releases/tag/3.73.1
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.3.0
