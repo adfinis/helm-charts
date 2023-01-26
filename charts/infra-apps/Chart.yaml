@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.141.0
+version: 0.142.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,41 +17,9 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "Update Argo CD extensions to v0.2.1"
+      description: "cert-manager: update from 1.10.* to 1.11.0"
       links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1770
-    - kind: changed
-      description: "Update Argo CD to v2.5.7"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1769
         - name: GitHub Release
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.5.7
-    - kind: changed
-      description: "Update Argo CD to v2.5.6"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1757
-        - name: GitHub Release
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.5.6
-    - kind: changed
-      description: "Allow templated values for init and extra container"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1749
-    - kind: changed
-      description: "Allow templated values for init and extra containers"
-      links:
-        - name: GitHUb PR
-          url: https://github.com/argoproj/argo-helm/pull/1749
-    - kind: changed
-      description: "Consolidate cluster-wide RBAC"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1597
-    - kind: changed
-      description: "Improve documentation for extra containers"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1747
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.11.0
+        - name: Release Notes
+          url: https://cert-manager.io/docs/release-notes/release-notes-1.11/
