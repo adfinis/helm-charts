@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.142.0](https://img.shields.io/badge/Version-0.142.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.143.0](https://img.shields.io/badge/Version-0.143.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -70,7 +70,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kubeEventExporter.destination.namespace | string | `"infra-kube-event-exporter"` | Namespace |
 | kubeEventExporter.enabled | bool | `false` | Enable kubernetes-event-exporter |
 | kubeEventExporter.repoURL | string | [repo](https://charts.bitnami.com/bitnami) | Repo URL |
-| kubeEventExporter.targetRevision | string | `"2.1.4"` | [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/kubernetes-event-exporter) |
+| kubeEventExporter.targetRevision | string | `"2.1.6"` | [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/kubernetes-event-exporter) |
 | kubeEventExporter.values | object | [upstream values](https://github.com/bitnami/charts/blob/main/bitnami/kubernetes-event-exporter/values.yaml) | Helm values |
 | kubePrometheusStack | object | [example](./examples/prometheus.yaml) | [prometheus-operator](https://github.com/coreos/prometheus-operator) |
 | kubePrometheusStack.annotations | object | `{}` | Annotations for prometheus-operator app |
