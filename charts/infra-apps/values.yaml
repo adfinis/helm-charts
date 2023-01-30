@@ -243,7 +243,7 @@ kubeEventExporter:
   # -- Chart
   chart: kubernetes-event-exporter
   # -- [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/kubernetes-event-exporter)
-  targetRevision: 2.1.4
+  targetRevision: 2.1.6
   # -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/blob/main/bitnami/kubernetes-event-exporter/values.yaml)
   values: {}

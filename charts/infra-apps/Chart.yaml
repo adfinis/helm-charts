@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.142.0
+version: 0.143.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,9 +17,12 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "cert-manager: update from 1.10.* to 1.11.0"
+      description: "kube-event-exporter: update image from 1.1.0-debian-11-r0 to 1.1.0-debian-11-r11"
       links:
-        - name: GitHub Release
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.11.0
-        - name: Release Notes
-          url: https://cert-manager.io/docs/release-notes/release-notes-1.11/
+        - name: GitHub PR
+          url: https://github.com/bitnami/charts/pull/14419
+    - kind: changed
+      description: "kube-event-exporter: use custom ClusterRole with wider read permissions"
+      links:
+        - name: GitHub PR
+          url: https://github.com/bitnami/charts/pull/14140
