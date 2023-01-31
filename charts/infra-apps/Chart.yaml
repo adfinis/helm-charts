@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.146.0
+version: 0.147.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,26 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "velero!: update velero from 1.9.4 to 1.10.0 and drop default uploaderType=restic setting"
+      description: "kube-prometheus-stack: update grafana chart from 6.48.2 to 6.50.2 to fix an issue where the sidecar failed to remove old resources"
       links:
         - name: GitHub PR
-          url: https://github.com/vmware-tanzu/helm-charts/pull/414
-        - name: GitHub Release
-          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.10.0
-        - name: Upgrade instuctions
-          url: https://velero.io/docs/v1.10/upgrade-to-1.10/
-    - kind: changed
-      description: "velero: add ServiceMonitor annotations"
-      links:
-        - name: GitHub PR
-          url: https://github.com/vmware-tanzu/helm-charts/pull/429
-    - kind: fixed
-      description: "velero: remove check on CRDs availability"
-      links:
-        - name: GitHub PR
-          url: https://github.com/vmware-tanzu/helm-charts/pull/430
-    - kind: fixed
-      description: "velero: add annotation for insecureSkipTLSVerify option"
-      links:
-        - name: GitHub PR
-          url: https://github.com/vmware-tanzu/helm-charts/pull/431
+          url: https://github.com/prometheus-community/helm-charts/pull/2946
