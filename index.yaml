@@ -4,6 +4,40 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "argo-rollouts: add flags to toggle provider-specific RBAC rules in Role and ClusterRole"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1777
+        - kind: changed
+          description: "argo-rollouts: Upgrade argo-rollouts form 1.3.1 to 1.4.0"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1774
+            - name: Releasenotes
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.4.0
+    apiVersion: v2
+    created: "2023-01-31T16:42:00.939406211Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.8.0
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 396b828ad73a4e28b0504b47627eae1b2a52e0d895ac0c696591c381b42d508e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.14.0/argo-apps-0.14.0.tgz
+    version: 0.14.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(argo-rollouts): Upgrade to argo-rollouts 1.3.0"
           links:
             - name: GitHub PR
@@ -18076,4 +18110,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-31T16:39:49.641410232Z"
+generated: "2023-01-31T16:42:00.941110575Z"
