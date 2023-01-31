@@ -2,7 +2,7 @@ apiVersion: v2
 name: backup-apps
 description: Argo CD app-of-apps config for backup components
 type: application
-version: 0.4.0
+version: 0.5.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/backup-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -14,3 +14,10 @@ dependencies:
   - name: argoconfig
     version: 0.7.6
     repository: https://charts.adfinis.com
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "barman: add init containers"
+      links:
+        - name: GitHub PR
+          url: https://github.com/adfinis/helm-charts/pull/905
