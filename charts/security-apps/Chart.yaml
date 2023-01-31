@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.67.0
+version: 0.68.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,12 +17,9 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "stackrox: Release 3.73.0 (chart version 73.0)"
+      description: "neuvector: bump chart version to 2.4.0 for 5.1.0 release"
       links:
-        - name: Github Release
-          url: https://github.com/stackrox/stackrox/releases/tag/3.73.0
-    - kind: changed
-      description: "stackrox: Release 3.73.1 (chart version 73.1)"
-      links:
-        - name: Github Release
-          url: https://github.com/stackrox/stackrox/releases/tag/3.73.1
+        - name: Github PR
+          url: https://github.com/neuvector/neuvector-helm/pull/213
+        - name: Releasenotes
+          url: https://github.com/neuvector/neuvector/releases/tag/v5.1.0
