@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.67.0](https://img.shields.io/badge/Version-0.67.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.68.0](https://img.shields.io/badge/Version-0.68.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -71,14 +71,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | neuvector.destination.namespace | string | `"infra-neuvector"` | Namespace |
 | neuvector.enabled | bool | `false` | Enable neuvector |
 | neuvector.repoURL | string | [repo](https://neuvector.github.io/neuvector-helm) | Repo URL |
-| neuvector.targetRevision | string | `"2.2.*"` | [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version |
+| neuvector.targetRevision | string | `"2.4.0"` | [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version |
 | neuvector.values | object | [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/core/values.yaml) | Helm values |
 | neuvectorMonitor | object | - | [NeuVector monitor](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) ([example](./example/neuvector.yaml)) |
 | neuvectorMonitor.chart | string | `"monitor"` | Chart |
 | neuvectorMonitor.destination.namespace | string | `"infra-neuvector"` | Namespace |
 | neuvectorMonitor.enabled | bool | `false` | Enable neuvector/monitor |
 | neuvectorMonitor.repoURL | string | [repo](https://neuvector.github.io/neuvector-helm) | Repo URL |
-| neuvectorMonitor.targetRevision | string | `"2.2.*"` | [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version |
+| neuvectorMonitor.targetRevision | string | `"2.4.0"` | [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version |
 | neuvectorMonitor.values | object | [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/monitor/values.yaml) | Helm values |
 | oauth2Proxy | object | [example](./examples/oauth2-proxy.yaml) | [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) |
 | oauth2Proxy.annotations | object | `{}` | Annotations for oauth2-proxy app |
