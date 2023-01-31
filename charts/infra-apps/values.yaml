@@ -220,10 +220,10 @@ kured:
   repoURL: https://kubereboot.github.io/charts
   # -- Chart
   chart: kured
-  # -- [Kured Helm chart](https://github.com/kubereboot/kured/tree/main/charts/kured)
-  targetRevision: 4.1.0
+  # -- [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured)
+  targetRevision: 4.2.0
   # -- Helm values
-  # @default -- [upstream values](https://github.com/kubereboot/kured/blob/main/charts/kured/values.yaml)
+  # @default -- [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml)
   values: {}
 
 # -- [kubernetes-event-exporter](https://github.com/resmoio/kubernetes-event-exporter)

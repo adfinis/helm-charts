@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.144.0
+version: 0.145.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,68 +17,9 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "argo-cd: Update Argo CD from v2.5.7 to v2.5.9"
-      links:
-        - name: GitHub PR for 2.5.9
-          url: https://github.com/argoproj/argo-helm/pull/1805
-        - name: GitHub PR for 2.5.8
-          url: https://github.com/argoproj/argo-helm/pull/1793
-        - name: GitHub Release for 2.5.9
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.5.9
-        - name: GitHub Release for 2.5.8
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.5.8
-    - kind: changed
-      description: "argo-cd: Upgrade redis from 7.0.5 to 7.0.7 to avoid CVE-2022-3996"
+      description: "kured: update from 1.11.0 to 1.12.0"
       links:
         - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1803
-    - kind: changed
-      description: "argo-cd: Add log settings and extraArgs to Slack bot"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1802
-    - kind: changed
-      description: "argo-cd: Disable Redis exporter by default"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1799
-    - kind: changed
-      description: "argo-cd: Upgrade Redis exporter image from 1.26.0 to 1.45.0"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1795
-    - kind: changed
-      description: "argo-cd: Fix annotations for ssh and tls configs"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1793
-    - kind: changed
-      description: "argo-cd: Decouple Redis exporter from metrics service"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1791
-    - kind: changed
-      description: "argo-cd: Redis service have invalid targetPort"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1792
-    - kind: changed
-      description: "argo-cd: Add missing options for mounting service account tokens"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1787
-    - kind: changed
-      description: "argo-cd: Consolidate and fix container ports"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1788
-    - kind: changed
-      description: "argo-cd: Consolidate certificate config for repositories"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1786
-    - kind: changed
-      description: "argo-cd: Add labels for argocd-secret"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1779
+          url: https://github.com/kubereboot/charts/pull/23
+        - name: GitHub Release
+          url: https://github.com/kubereboot/kured/releases/tag/1.12.0
