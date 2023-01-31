@@ -201,7 +201,7 @@ neuvector:
   # -- Chart
   chart: "core"
   # -- [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version
-  targetRevision: "2.2.*"
+  targetRevision: "2.4.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/core/values.yaml)
   values: {}
@@ -221,7 +221,7 @@ neuvectorMonitor:
   # -- Chart
   chart: "monitor"
   # -- [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version
-  targetRevision: "2.2.*"
+  targetRevision: "2.4.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/monitor/values.yaml)
   values: {}
