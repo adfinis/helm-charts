@@ -1582,6 +1582,33 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/back8sup-0.1.0/back8sup-0.1.0.tgz
     version: 0.1.0
   backup-apps:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "barman: add init containers"
+          links:
+            - name: GitHub PR
+              url: https://github.com/adfinis/helm-charts/pull/905
+    apiVersion: v2
+    created: "2023-01-31T16:39:49.639282628Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for backup components
+    digest: 22c77b195845d0119b411168864d3f629e2cc255230c6b4b215323aa0c688782
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/backup-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: backup-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/backup-apps-0.5.0/backup-apps-0.5.0.tgz
+    version: 0.5.0
   - apiVersion: v2
     created: "2022-09-24T11:16:13.389166427Z"
     dependencies:
@@ -18049,4 +18076,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-31T16:36:59.205548769Z"
+generated: "2023-01-31T16:39:49.641410232Z"
