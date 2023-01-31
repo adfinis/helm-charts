@@ -4077,6 +4077,52 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "velero!: update velero from 1.9.4 to 1.10.0 and drop default uploaderType=restic setting"
+          links:
+            - name: GitHub PR
+              url: https://github.com/vmware-tanzu/helm-charts/pull/414
+            - name: GitHub Release
+              url: https://github.com/vmware-tanzu/velero/releases/tag/v1.10.0
+            - name: Upgrade instuctions
+              url: https://velero.io/docs/v1.10/upgrade-to-1.10/
+        - kind: changed
+          description: "velero: add ServiceMonitor annotations"
+          links:
+            - name: GitHub PR
+              url: https://github.com/vmware-tanzu/helm-charts/pull/429
+        - kind: fixed
+          description: "velero: remove check on CRDs availability"
+          links:
+            - name: GitHub PR
+              url: https://github.com/vmware-tanzu/helm-charts/pull/430
+        - kind: fixed
+          description: "velero: add annotation for insecureSkipTLSVerify option"
+          links:
+            - name: GitHub PR
+              url: https://github.com/vmware-tanzu/helm-charts/pull/431
+    apiVersion: v2
+    created: "2023-01-31T13:49:49.551686434Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: dcc40790795ab4ce859135cb6b88749d8d91fb1d9c16b5a00c94b72303c1034b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.146.0/infra-apps-0.146.0.tgz
+    version: 0.146.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "kured: update from 1.11.0 to 1.12.0"
           links:
             - name: GitHub PR
@@ -17947,4 +17993,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-31T11:11:08.195282388Z"
+generated: "2023-01-31T13:49:49.553353409Z"
