@@ -12332,6 +12332,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "neuvector: bump chart version to 2.4.0 for 5.1.0 release"
+          links:
+            - name: Github PR
+              url: https://github.com/neuvector/neuvector-helm/pull/213
+            - name: Releasenotes
+              url: https://github.com/neuvector/neuvector/releases/tag/v5.1.0
+    apiVersion: v2
+    created: "2023-01-31T16:36:59.20403467Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: bfff93788252ff5925c9e20d561f67e81614e5004624561017ea33f814b5b370
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.68.0/security-apps-0.68.0.tgz
+    version: 0.68.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "stackrox: Release 3.73.0 (chart version 73.0)"
           links:
             - name: Github Release
@@ -18020,4 +18049,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-31T15:10:05.609087951Z"
+generated: "2023-01-31T16:36:59.205548769Z"
