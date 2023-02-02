@@ -17166,6 +17166,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: 'jaeger-operator: Allow changing webhook and metrics ports'
+          links:
+            - name: GitHub PR
+              url: https://github.com/jaegertracing/helm-charts/pull/418
+        - kind: changed
+          description: 'jaeger-operatr: Adding serviceExtraLable for service'
+          links:
+            - name: GitHub PR
+              url: https://github.com/jaegertracing/helm-charts/pull/430
+    apiVersion: v2
+    created: "2023-02-02T13:39:42.412490041Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 1aa352bb7de12ef1b0874f3b821cdc0ba088208233a9541b399fef24bff3c1b2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.19.0/tracing-apps-0.19.0.tgz
+    version: 0.19.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: 'Update Jaeger Operator to v1.39.0'
           links:
             - name: GitHub PR
@@ -18110,4 +18142,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-31T16:42:00.941110575Z"
+generated: "2023-02-02T13:39:42.413794138Z"
