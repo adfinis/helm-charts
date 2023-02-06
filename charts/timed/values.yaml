@@ -12,7 +12,7 @@ backend:
     # -- Backend image name
     repository: ghcr.io/adfinis/timed-backend
     # -- Backend version.
-    tag: v3.0.0-rc7
+    tag: v3.0.0-rc8
     # -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
