@@ -4138,6 +4138,44 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "argo-cd: Update Argo CD from 2.5 to 2.6.0"
+          links:
+            - name: GitHub Release
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.0
+        - kind: changed
+          description: "argo-cd: Update chart from 5.19.12 to 5.20.1"
+          links:
+            - name: "feat: Upgrade Argo CD to 2.6.0"
+              url: https://github.com/argoproj/argo-helm/pull/1758
+            - name: "feat: Configurable dnsPolicy / hostNetwork"
+              url: https://github.com/argoproj/argo-helm/pull/1821
+            - name: "fix:  maxUnavailable value in redis-PDB"
+              url: https://github.com/argoproj/argo-helm/pull/1820
+            - name: "fix: ApplicationSet CRD for pathParamPrefix"
+              url: https://github.com/argoproj/argo-helm/pull/1829
+    apiVersion: v2
+    created: "2023-02-08T13:43:09.415593499Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 5d8fe94d32769590a02d1773f6b491a6dca144a4c902933ef47ec1bcb0f6bce4
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.148.0/infra-apps-0.148.0.tgz
+    version: 0.148.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "kube-prometheus-stack: update grafana chart from 6.48.2 to 6.50.2 to fix an issue where the sidecar failed to remove old resources"
           links:
             - name: GitHub PR
@@ -18349,4 +18387,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-08T09:28:27.209462883Z"
+generated: "2023-02-08T13:43:09.41827291Z"
