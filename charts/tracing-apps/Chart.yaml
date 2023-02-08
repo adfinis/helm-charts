@@ -2,7 +2,7 @@ apiVersion: v2
 name: tracing-apps
 description: Argo CD app-of-apps config for tracing applications
 type: application
-version: 0.20.0
+version: 0.20.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,81 +16,5 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: 'otel-collector: update from 0.64.1 to 0.70.0'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/614
-        - name: GitHub Release v1.0.0-RC4/v0.70.0
-          url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.70.0
-        - name: GitHub Release v1.0.0-RC3/v0.69.0
-          url: https://github.com/open-telemetry/opentelemetry-collector-releases/releases/tag/v0.69.0
-        - name: GitHub Release  v1.0.0-RC1/v0.67.0
-          url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.67.0
-        - name: Changelog
-          url: https://github.com/open-telemetry/opentelemetry-collector/blob/main/CHANGELOG.md
-    - kind: changed
-      description: 'otel-collector: Update collector to use pod ip'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/603
-    - kind: changed
-      description: 'otel-collector: add option to set the nodePort mapping'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/598
-    - kind: changed
-      description: 'otel-collector: support istio case with grpc app protocol'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/589
-    - kind: changed
-      description: 'otel-collector: enabled the servicemonitor also for statefulsets'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/607
-    - kind: changed
-      description: 'otel-collector: Update clusterrole and clusterrolebinding naming'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/586
-    - kind: changed
-      description: 'otel-collector: Add ability to template initcontainers'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/570
-    - kind: changed
-      description: 'otel-collector: Enable pulling images by digest'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/574
-    - kind: changed
-      description: 'otel-collector: fix filesystem metrics for hostmetrics preset'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/549
-    - kind: changed
-      description: 'otel-collector: Remove old ingress logic'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/565
-    - kind: changed
-      description: 'otel-collector: add service.loadbalancerIP'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/551
-    - kind: changed
-      description: 'otel-collector: Update collectors HPA to use autoscaling/v2'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/541
-    - kind: changed
-      description: 'otel-collector: add storage extension to logsCollection preset'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/509
-    - kind: changed
-      description: 'otel-collector: add additional property for clusterIP none'
-      links:
-        - name: GitHub PR
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/521
+    - kind: fixed
+      description: 'otel-collector: use right version in values'
