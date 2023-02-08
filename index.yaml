@@ -9567,6 +9567,47 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            keda: update from 2.8.x to 2.9.3
+
+            Highlights:
+            - Introduce new CouchDB, Etcd & Loki scaler
+            - Introduce deprecation & breaking change policy (docs)
+            - Introduce off-the-shelf Grafana dashboard for application autoscaling
+            - Introduce improved operational metrics in Prometheus
+            - Introduce capability to cache metric values for a scaler during the polling interval (experimental feature)
+          links:
+            - name: GitHub Release keda 2.9.0
+              url: https://github.com/kedacore/keda/releases/tag/v2.9.2
+            - name: GitHub Release keda 2.9.1
+              url: https://github.com/kedacore/keda/releases/tag/v2.9.2
+            - name: GitHub Release keda 2.9.2
+              url: https://github.com/kedacore/keda/releases/tag/v2.9.2
+            - name: GitHub Release keda 2.9.3
+              url: https://github.com/kedacore/keda/releases/tag/v2.9.3
+    apiVersion: v2
+    created: "2023-02-08T09:28:27.207625021Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 090fddc0d466214d900d776a52e1f92bc7b28caea153b31994ee9264e04a4ef0
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.29.0/misc-apps-0.29.0.tgz
+    version: 0.29.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "kube-downscaler: sync cluster role with upstream for keda support"
           links:
             - name: GitHub PR
@@ -18308,4 +18349,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-07T10:41:45.367283887Z"
+generated: "2023-02-08T09:28:27.209462883Z"
