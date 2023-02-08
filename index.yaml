@@ -17338,6 +17338,30 @@ entries:
   tracing-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: 'otel-collector: use right version in values'
+    apiVersion: v2
+    created: "2023-02-08T15:32:40.043699904Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 523b5eee85a4e1a19134e267e2527d061b43eb25fa3e22f044e2a51cd751c8e3
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.20.1/tracing-apps-0.20.1.tgz
+    version: 0.20.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: 'otel-collector: update from 0.64.1 to 0.70.0'
           links:
@@ -18415,4 +18439,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-08T14:39:34.499412585Z"
+generated: "2023-02-08T15:32:40.045231524Z"
