@@ -9606,6 +9606,34 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            signalilo: update chart to 0.10.1
+          links:
+            - name: GitHub PR
+              url: https://github.com/appuio/charts/pull/456
+    apiVersion: v2
+    created: "2023-02-09T10:32:06.274350372Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 84debd0cf9cdf753bb9b31758c8d260944484c23211d44855caa39b9a4812472
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.30.1/misc-apps-0.30.1.tgz
+    version: 0.30.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             signalilo: update chart to 0.10.0
           links:
             - name: GitHub PR
@@ -18472,4 +18500,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-09T08:56:03.92997218Z"
+generated: "2023-02-09T10:32:06.275903113Z"
