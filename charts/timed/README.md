@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.15.3](https://img.shields.io/badge/Version-0.15.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.15.4](https://img.shields.io/badge/Version-0.15.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -86,6 +86,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.service.probesPort | int | `81` | Internal Port of backend service probes |
 | backend.service.type | string | `"ClusterIP"` | Backend service type |
 | backend.settings.admins | list | `[]` | Django administrators, example: Jon Doe <jon.doe@example.com> |
+| backend.settings.buildProject | string | `" BUILD"` | Define name for build projects |
 | backend.settings.corsAllowedOrigins | list | `[]` | Define allowed domains for CORS |
 | backend.settings.customerCenterEmail | string | `"webmaster@chart-example.local"` | Email address to use for sending order confirmations from customer center |
 | backend.settings.emailFrom | string | `"webmaster@chart-example.local"` | Default email address to use for various responses |
