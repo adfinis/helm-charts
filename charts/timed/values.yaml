@@ -104,6 +104,8 @@ backend:
     admins: []
     # -- Define allowed domains for CORS
     corsAllowedOrigins: []
+    # -- Define name for build projects
+    buildProject: " BUILD"
     hurricane:
       # -- request queue length before hurricane denies requests and toggles readiness
       reqQueueLen: 250
