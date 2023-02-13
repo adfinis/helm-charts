@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.148.0
+version: 0.148.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,19 +16,19 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: "argo-cd: Update Argo CD from 2.5 to 2.6.0"
+    - kind: security
+      description: "argo-cd: Update Argo CD from 2.6.0 to 2.6.1"
       links:
         - name: GitHub Release
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.0
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.1
+        - name: Security Advisory
+          url: https://github.com/argoproj/argo-cd/security/advisories/GHSA-mv6w-j4xc-qpfw
     - kind: changed
-      description: "argo-cd: Update chart from 5.19.12 to 5.20.1"
+      description: "argo-cd: Update chart from 5.20.1 to 5.20.4"
       links:
-        - name: "feat: Upgrade Argo CD to 2.6.0"
-          url: https://github.com/argoproj/argo-helm/pull/1758
-        - name: "feat: Configurable dnsPolicy / hostNetwork"
-          url: https://github.com/argoproj/argo-helm/pull/1821
-        - name: "fix:  maxUnavailable value in redis-PDB"
-          url: https://github.com/argoproj/argo-helm/pull/1820
-        - name: "fix: ApplicationSet CRD for pathParamPrefix"
-          url: https://github.com/argoproj/argo-helm/pull/1829
+        - name: "fix: Upgrade Argo CD to 2.6.1"
+          url: https://github.com/argoproj/argo-helm/pull/1832
+        - name: "fix(applicationset): Fix invalid progressive sync parameter"
+          url: https://github.com/argoproj/argo-helm/pull/1839
+        - name: "docs: Remove incorrect aggregatedRoles deprecation note"
+          url: https://github.com/argoproj/argo-helm/pull/1830
