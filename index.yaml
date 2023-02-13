@@ -4137,6 +4137,44 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: security
+          description: "argo-cd: Update Argo CD from 2.6.0 to 2.6.1"
+          links:
+            - name: GitHub Release
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.1
+            - name: Security Advisory
+              url: https://github.com/argoproj/argo-cd/security/advisories/GHSA-mv6w-j4xc-qpfw
+        - kind: changed
+          description: "argo-cd: Update chart from 5.20.1 to 5.20.4"
+          links:
+            - name: "fix: Upgrade Argo CD to 2.6.1"
+              url: https://github.com/argoproj/argo-helm/pull/1832
+            - name: "fix(applicationset): Fix invalid progressive sync parameter"
+              url: https://github.com/argoproj/argo-helm/pull/1839
+            - name: "docs: Remove incorrect aggregatedRoles deprecation note"
+              url: https://github.com/argoproj/argo-helm/pull/1830
+    apiVersion: v2
+    created: "2023-02-13T11:57:33.656450868Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 04355dac4a36ab71aeb2e33ffad6afe316f6886edc1dbd8ec7be4878145d8c86
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.148.1/infra-apps-0.148.1.tgz
+    version: 0.148.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "argo-cd: Update Argo CD from 2.5 to 2.6.0"
           links:
@@ -18566,4 +18604,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-09T11:27:00.163167569Z"
+generated: "2023-02-13T11:57:33.658484892Z"
