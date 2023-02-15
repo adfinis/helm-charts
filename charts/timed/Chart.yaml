@@ -2,7 +2,7 @@ apiVersion: v2
 name: timed
 description: Chart for Timed application
 type: application
-version: 0.16.0
+version: 0.16.1
 keywords:
   - timed
   - tracking
@@ -23,4 +23,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat: support unmanaged secret via backend.existingSecret value"
+      description: "updated timed-frontend image tag"
+      links:
+        - name: Github Release
+          url: https://github.com/adfinis/timed-frontend/releases/tag/v3.0.0-rc9
