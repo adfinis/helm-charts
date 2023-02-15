@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.15.7](https://img.shields.io/badge/Version-0.15.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.16.0](https://img.shields.io/badge/Version-0.16.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -58,6 +58,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.cronjobs.redmineReport | object | `{"command":["./manage.py","redmine_report"],"schedule":"0 1 * * 1"}` | Redmine report |
 | backend.cronjobs.updateProjectExpanditureFirst | object | `{"command":["./manage.py","update_project_expenditure"],"schedule":"0 8 * * 3"}` | Update project expanditure in redmine first time |
 | backend.cronjobs.updateProjectExpanditureSecond | object | `{"command":["./manage.py","update_project_expenditure"],"schedule":"0 8 * * 0"}` | Update project expanditure in redmine second time |
+| backend.existingSecret | string | `nil` | Specify an existing secret that gets used instead of a Helm managed secret based on several values. |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"ghcr.io/adfinis/timed-backend"` | Backend image name |
 | backend.image.tag | string | `"v3.0.0-rc11"` | Backend version. |

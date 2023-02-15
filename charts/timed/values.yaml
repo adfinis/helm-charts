@@ -16,9 +16,6 @@ backend:
     # -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
-    # Specifiy secret for authentication.
-    # If not random token will be generated
-    # secret:
     # -- Backend service name
     name: timed-backend
     # -- Backend service type
@@ -29,6 +26,8 @@ backend:
     internalPort: 80
     # -- Internal Port of backend service probes
     probesPort: 81
+  # -- Specify an existing secret that gets used instead of a Helm managed secret based on several values.
+  existingSecret: ~
   # -- Resource limits for backend
   resources: {}
     # We usually recommend not to specify default resources and to leave this as a conscious

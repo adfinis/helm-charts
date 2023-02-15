@@ -37,7 +37,11 @@ spec:
               value: {{ .Values.backend.settings.hurricane.reqQueueLen | quote }}
           envFrom:
             - secretRef:
+                {{- if .Values.backend.existingSecret }}
+                name: {{ .Values.backend.existingSecret | quote }}
+                {{- else }}
                 name: {{ include "timed.fullname" . }}-backend
+                {{- end }}
             - configMapRef:
                 name: {{ include "timed.fullname" . }}-backend
           volumeMounts:
