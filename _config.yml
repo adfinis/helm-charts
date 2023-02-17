@@ -3,7 +3,7 @@ title                   : adfinis/helm-charts
 email                   : support@adfinis.com
 description             : >-
   :chart_with_upwards_trend: Helm charts from Adfinis
-baseurl                 : "https://charts.adfinis.com"
+baseurl                 : ""
 url                     : "https://charts.adfinis.com"
 
 header:
