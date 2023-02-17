@@ -1,2 +1,31 @@
-title: Adfinis Helm Charts
-theme: jekyll-theme-primer
+locale                  : "en-US"
+title                   : adfinis/helm-charts
+email                   : support@adfinis.com
+description             : >-
+  :chart_with_upwards_trend: Helm charts from Adfinis
+baseurl                 : "https://charts.adfinis.com"
+url                     : "https://charts.adfinis.com"
+
+header:
+  button:
+    title: "Contact"
+    href: "https://adfinis.com/kontakt/"
+
+hero:
+  image_url: "https://adfinis.com/wp-content/uploads/sites/9/2021/05/PeopleatAdfinis_Smaller-1536x1024.jpeg"
+
+footer:
+  blog:
+    name: "Blog"
+    href: "https://adfinis.com/blog/"
+  privacy:
+    name: "Privacy policy"
+    href: "https://adfinis.com/datenschutzerklaerung/"
+  linkedin:
+    href: "https://www.linkedin.com/company/adfinis-com"
+  github:
+    href: "https://github.com/adfinis/helm-charts"
+  twitter:
+    href: "https://twitter.com/adfinis"
+
+remote_theme: adfinis/jekyll-theme-adfinis-ng
