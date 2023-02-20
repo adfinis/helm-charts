@@ -4137,6 +4137,46 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: security
+          description: "argo-cd: Update from 1.6.1 to 1.6.2"
+          links:
+            - name: GitHub Release v1.6.2
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.2
+        - kind: changed
+          description: "argo-cd: Update chart from 5.20.4 to 5.22.1"
+          links:
+            - name: "fix(helm): Add quotes on Ingress Host to allow wildcards"
+              url: https://github.com/argoproj/argo-helm/pull/1841
+            - name: "feat(helm): Add dnsConfig and dnsPolicy for pods"
+              url: https://github.com/argoproj/argo-helm/pull/1773
+            - name: "fix(helm): Upgrade Argo CD to v2.6.2"
+              url: https://github.com/argoproj/argo-helm/pull/1844
+            - name: "feat(helm): Add global affinity configuration"
+              url: https://github.com/argoproj/argo-helm/pull/1794
+            - name: "chore(helm): Group component templates together"
+              url: https://github.com/argoproj/argo-helm/pull/1847
+    apiVersion: v2
+    created: "2023-02-20T10:58:50.168516986Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 54e1040cd0a3e5218e427469f7fa84e44439b1b4b859f232a6e9123ecae75f26
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.150.0/infra-apps-0.150.0.tgz
+    version: 0.150.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "nginx-ingress: Update from 1.5.2 to 1.6.4"
           links:
@@ -18837,4 +18877,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-17T13:32:30.466219655Z"
+generated: "2023-02-20T10:58:50.170369894Z"
