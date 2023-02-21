@@ -2,7 +2,7 @@ apiVersion: v2
 name: timed
 description: Chart for Timed application
 type: application
-version: 0.16.5
+version: 0.16.6
 keywords:
   - timed
   - tracking
@@ -26,4 +26,4 @@ annotations:
       description: "updated timed-frontend image tag"
       links:
         - name: Github Release
-          url: https://github.com/adfinis/timed-frontend/releases/tag/v3.0.0-rc.12
+          url: https://github.com/adfinis/timed-frontend/releases/tag/v3.0.0-rc.13
