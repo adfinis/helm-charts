@@ -28,7 +28,8 @@ sources:
   - https://github.com/hedgedoc/hedgedoc
 maintainers:
   - name: adfinis
-    email: ""
+    email: "support@adfinis.com"
+    url: "https://adfinis.com"
 annotations:
   artifacthub.io/images: |
     - name: hedgedoc
