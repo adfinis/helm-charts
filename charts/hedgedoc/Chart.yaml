@@ -27,8 +27,8 @@ appVersion: "1.9.7"
 sources:
   - https://github.com/hedgedoc/hedgedoc
 maintainers:
-  - name: Adfinis AG
-    email: info@adfinis.com
+  - name: adfinis
+    email: ""
 annotations:
   artifacthub.io/images: |
     - name: hedgedoc
