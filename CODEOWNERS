@@ -13,3 +13,5 @@
 /charts/vault-auth                  @adfinis/helm-charts @eyenx
 /charts/vault-monitoring            @adfinis/helm-charts @pree @eyenx
 /charts/mopsos                      @adfinis/helm-charts @hairmare @eyenx
+/charts/timed                       @adfinis/helm-charts @adfinis/dev-devops
+/charts/osschallenge                @adfinis/helm-charts @adfinis/dev-devops
