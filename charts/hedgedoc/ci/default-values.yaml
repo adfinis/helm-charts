@@ -1,4 +1,7 @@
-# disable DB persistence when testing
+# disable persistence when testing
+hedgedoc:
+  persistentStorage:
+    enabled: false
 postgresql:
   primary:
     persistence:
