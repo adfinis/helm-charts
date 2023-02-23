@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: quay.io/hedgedoc/hedgedoc
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
+  # Rather change the tag in Chart.yaml, if updating
   tag: ""
 
 imagePullSecrets: []
@@ -36,9 +36,7 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-service:
-  port: 3000
-
+## Ingress configuration
 ingress:
   enabled: false
   className: ""
@@ -55,7 +53,15 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+## Service configuration
+service:
+  port: 3000
+  type: ClusterIP
+
+## Main configuration for hedgedoc
 hedgedoc:
+  ## Persistent Storage
+  ## Enable this if you don't want to loose media
   persistentStorage:
     enabled: true
     accessModes:
@@ -63,13 +69,20 @@ hedgedoc:
     volumeMode: Filesystem
     size: "10G"
     storageClass: "default"
+  ## Port for the pod
   port: 3000
+  ## Environment variables for Hedgedoc
+  ## See the official docs for all variables
+  ## https://docs.hedgedoc.org/configuration/
   env:
+    ## Node.js
     NODE_ENV: "production"
-    # DEBUG: ""
+    DEBUG: "false"
+    ## Logging
     # CMD_CONFIG_FILE: ""
     # CMD_DB_URL: ""
     # CMD_LOGLEVEL: ""
+    ## Security
     CMD_FORBIDDEN_NOTE_IDS: "robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views"
     CMD_IMAGE_UPLOAD_TYPE: "filesystem"
     # CMD_SOURCE_URL: ""
@@ -100,22 +113,29 @@ hedgedoc:
     # CMD_DEFAULT_PERMISSION: ""
     # CMD_SESSION_LIFE: ""
     CMD_SESSION_SECRET: "secret"
+    ## Email
     # CMD_EMAIL: ""
     # CMD_ALLOW_EMAIL_REGISTER: ""
+    ## Dropbox Login
     # CMD_DROPBOX_CLIENTID: ""
     # CMD_DROPBOX_CLIENTSECRET: ""
+    ## Facebook Login
     # CMD_FACEBOOK_CLIENTID: ""
     # CMD_FACEBOOK_CLIENTSECRET: ""
+    ## GitHub Login
     # CMD_GITHUB_CLIENTID: ""
     # CMD_GITHUB_CLIENTSECRET: ""
+    ## GitLab Login
     # CMD_GITLAB_SCOPE: ""
     # CMD_GITLAB_BASEURL: ""
     # CMD_GITLAB_CLIENTID: ""
     # CMD_GITLAB_CLIENTSECRET: ""
     # CMD_GITLAB_VERSION: ""
+    ## Google Login
     # CMD_GOOGLE_CLIENTID: ""
     # CMD_GOOGLE_CLIENTSECRET: ""
     # CMD_GOOGLE_HOSTEDDOMAIN: ""
+    ## LDAP Login
     # CMD_LDAP_URL: ""
     # CMD_LDAP_BINDDN: ""
     # CMD_LDAP_BINDCREDENTIALS: ""
@@ -126,9 +146,11 @@ hedgedoc:
     # CMD_LDAP_USERNAMEFIELD: ""
     # CMD_LDAP_TLS_CA: ""
     # CMD_LDAP_PROVIDERNAME: ""
+    ## Mattermost Login
     # CMD_MATTERMOST_BASEURL: ""
     # CMD_MATTERMOST_CLIENTID: ""
     # CMD_MATTERMOST_CLIENTSECRET: ""
+    ## OAuth2 Login
     # CMD_OAUTH2_USER_PROFILE_URL: ""
     # CMD_OAUTH2_USER_PROFILE_USERNAME_ATTR: ""
     # CMD_OAUTH2_USER_PROFILE_DISPLAY_NAME_ATTR: ""
@@ -142,6 +164,7 @@ hedgedoc:
     # CMD_OAUTH2_SCOPE: ""
     # CMD_OAUTH2_ROLES_CLAIM: ""
     # CMD_OAUTH2_ACCESS_ROLE: ""
+    ## SAML Login
     # CMD_SAML_IDPSSOURL: ""
     # CMD_SAML_IDPCERT: ""
     # CMD_SAML_CLIENTCERT: ""
@@ -155,8 +178,10 @@ hedgedoc:
     # CMD_SAML_ATTRIBUTE_USERNAME: ""
     # CMD_SAML_ATTRIBUTE_EMAIL: ""
     # CMD_SAML_PROVIDERNAME: ""
+    ## Twitter Login
     # CMD_TWITTER_CONSUMERKEY: ""
     # CMD_TWITTER_CONSUMERSECRET: ""
+    ## S3 Storage
     # CMD_S3_ACCESS_KEY_ID: ""
     # CMD_S3_SECRET_ACCESS_KEY: ""
     # CMD_S3_REGION: ""
@@ -164,17 +189,20 @@ hedgedoc:
     # CMD_S3_ENDPOINT ENV: ""
     # CMD_S3_FOLDER: ""
     # CMD_S3_PUBLIC_FILES: ""
+    ## Azure Blob Storage
     # CMD_AZURE_CONNECTION_STRING: ""
     # CMD_AZURE_CONTAINER: ""
+    ## Imgur Storage
     # CMD_IMGUR_CLIENTID: ""
+    ## MinIO Storage
     # CMD_MINIO_ACCESS_KEY: ""
     # CMD_MINIO_SECRET_KEY: ""
     # CMD_MINIO_ENDPOINT: ""
     # CMD_MINIO_PORT: ""
     # CMD_MINIO_SECURE: ""
+    ## Lutim Storage
     # CMD_LUTIM_URL: ""
 
-existingSecret: ~
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -227,3 +255,12 @@ externalDatabase:
   host: "localhost"
   port: 5432
   database: "hedgedoc"
+
+## Secrets
+## Store your secrets in a K8s secret to not have to have
+## in a cleartext format
+## Example:
+## kubectl create secret hedgedoc-secrets generic \
+## --from-literal=CMD_DB_PASSWORD=rickastley \
+## --from-literal=CMD_SESSION_SECRET=verysecure
+existingSecret: ~
