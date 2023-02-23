@@ -48,7 +48,6 @@ spec:
                 {{- else }}
                 name: hedgedoc-secrets
                 {{- end }}
-
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
