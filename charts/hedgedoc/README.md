@@ -32,7 +32,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | hedgedoc.env[2].CMD_DB_PASSWORD | string | `"secret"` |  |
 | hedgedoc.env[3].CMD_DB_DATABASE | string | `"hedgedoc"` |  |
 | hedgedoc.env[4].CMD_DB_HOST | string | `"host"` |  |
-| hedgedoc.env[5].CMD_DB_PORT | string | `"5432"` |  |
+| hedgedoc.env[5].CMD_DB_PORT | int | `5432` |  |
 | hedgedoc.env[6].CMD_DB_DIALECT | string | `"postgres"` |  |
 | hedgedoc.env[7].CMD_FORBIDDEN_NOTE_IDS | string | `"robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views"` |  |
 | hedgedoc.env[8].CMD_IMAGE_UPLOAD_TYPE | string | `"filesystem"` |  |
@@ -55,7 +55,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
-| service.port.port | int | `3000` |  |
+| service.port | int | `3000` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
