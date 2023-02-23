@@ -14,7 +14,6 @@ data:
   CMD_DB_DIALECT: "postgres"
   {{- else }}
   CMD_DB_USERNAME: {{ .Values.externalDatabase.username | quote }}
-  CMD_DB_PASSWORD: {{ .Values.externalDatabase.password | quote }}
   CMD_DB_DATABASE: {{ .Values.externalDatabase.database | quote }}
   CMD_DB_HOST: {{ .Values.externalDatabase.host | quote }}
   CMD_DB_PORT: {{ .Values.externalDatabase.port | quote }}
