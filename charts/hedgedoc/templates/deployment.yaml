@@ -32,7 +32,7 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          envFrom:
+          env:
             {{- toYaml .Values.hedgedoc.env | nindent 12 }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
