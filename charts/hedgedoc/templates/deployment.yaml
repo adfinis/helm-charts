@@ -58,7 +58,7 @@ spec:
             httpGet:
               path: /status
               port: http
-            initialDelaySeconds: 3
+            initialDelaySeconds: 20
             failureThreshold: 2
             successThreshold: 1
             timeoutSeconds: 2
@@ -67,7 +67,7 @@ spec:
             httpGet:
               path: /status
               port: http
-            initialDelaySeconds: 3
+            initialDelaySeconds: 20
             periodSeconds: 5
             successThreshold: 1
             timeoutSeconds: 2
