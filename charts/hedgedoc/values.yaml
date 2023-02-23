@@ -65,7 +65,7 @@ hedgedoc:
     - CMD_DB_PASSWORD: "secret"
     - CMD_DB_DATABASE: "hedgedoc"
     - CMD_DB_HOST: "host"
-    - CMD_DB_PORT: "5432"
+    - CMD_DB_PORT: 5432
     - CMD_DB_DIALECT: "postgres"
     # - CMD_DB_URL: ""
     # - CMD_LOGLEVEL: ""
