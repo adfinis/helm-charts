@@ -56,16 +56,17 @@ ingress:
   #      - chart-example.local
 
 hedgedoc:
+  persistentStorage:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce
+    volumeMode: Filesystem
+    size: "10G"
+    storageClass: "default"
   env:
     NODE_ENV: "production"
     # DEBUG: ""
     # CMD_CONFIG_FILE: ""
-    CMD_DB_USERNAME: "hedgedoc"
-    CMD_DB_PASSWORD: "secret"
-    CMD_DB_DATABASE: "hedgedoc"
-    CMD_DB_HOST: "host"
-    CMD_DB_PORT: 5432
-    CMD_DB_DIALECT: "postgres"
     # CMD_DB_URL: ""
     # CMD_LOGLEVEL: ""
     CMD_FORBIDDEN_NOTE_IDS: "robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views"
@@ -199,3 +200,29 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+##
+## PostgreSQL chart configuration
+##
+## Reference: https://github.com/bitnami/charts/blob/master/bitnami/postgresql/values.yaml
+##
+## If you want to use external database, just set postgresql.enabled to false
+##
+postgresql:
+  enabled: true
+  volumePermissions:
+    enabled: true
+  postgresqlUsername: hedgedoc
+  postgresqlPassword: hedgedoc
+  postgresqlDatabase: hedgedoc
+
+
+## Configure your external database here
+## This is automatically used when postgresql.enabled is false.
+externalDatabase:
+  type: "postgresql"
+  username: "setme"
+  password: "changeme"
+  host: "localhost"
+  port: 5432
+  database: "hedgedoc"

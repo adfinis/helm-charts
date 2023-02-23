@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "hedgedoc.fullname" . }}-database
+  labels:
+    {{- include "hedgedoc.labels" . | nindent 4 }}
+data:
+  {{- if .Values.postgresql.enabled }}
+  CMD_DB_USERNAME: {{ .Values.postgresql.postgresqlUsername }}
+  CMD_DB_PASSWORD: {{ .Values.postgresql.postgresqlPassword }}
+  CMD_DB_DATABASE: {{ .Values.postgresql.postgresqlDatabase }}
+  CMD_DB_HOST: {{ template "hedgedoc.postgresql-svc" . }}
+  CMD_DB_PORT: 5432
+  CMD_DB_DIALECT: "postgres"
+  {{- else }}
+  CMD_DB_USERNAME: {{ .Values.externalDatabase.username }}
+  CMD_DB_PASSWORD: {{ .Values.externalDatabase.password }}
+  CMD_DB_DATABASE: {{ .Values.externalDatabase.database }}
+  CMD_DB_HOST: {{ .Values.externalDatabase.host }}
+  CMD_DB_PORT: {{ .Values.externalDatabase.port }}
+  CMD_DB_DIALECT: {{ .Values.externalDatabase.type }}
+  {{- end }}

@@ -11,6 +11,12 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 * <https://github.com/hedgedoc/hedgedoc>
 
+## Requirements
+
+| Repository | Name | Version |
+|------------|------|---------|
+| https://charts.bitnami.com/bitnami | postgresql | ~12.2.1 |
+
 ## Values
 
 | Key | Type | Default | Description |
@@ -21,13 +27,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
 | existingSecret | string | `nil` |  |
+| externalDatabase.database | string | `"hedgedoc"` |  |
+| externalDatabase.host | string | `"localhost"` |  |
+| externalDatabase.password | string | `"changeme"` |  |
+| externalDatabase.port | int | `5432` |  |
+| externalDatabase.type | string | `"postgresql"` |  |
+| externalDatabase.username | string | `"setme"` |  |
 | fullnameOverride | string | `""` |  |
-| hedgedoc.env.CMD_DB_DATABASE | string | `"hedgedoc"` |  |
-| hedgedoc.env.CMD_DB_DIALECT | string | `"postgres"` |  |
-| hedgedoc.env.CMD_DB_HOST | string | `"host"` |  |
-| hedgedoc.env.CMD_DB_PASSWORD | string | `"secret"` |  |
-| hedgedoc.env.CMD_DB_PORT | int | `5432` |  |
-| hedgedoc.env.CMD_DB_USERNAME | string | `"hedgedoc"` |  |
 | hedgedoc.env.CMD_DOMAIN | string | `"false"` |  |
 | hedgedoc.env.CMD_FORBIDDEN_NOTE_IDS | string | `"robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views"` |  |
 | hedgedoc.env.CMD_IMAGE_UPLOAD_TYPE | string | `"filesystem"` |  |
@@ -38,6 +44,11 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | hedgedoc.env.CMD_URL_ADDPORT | string | `"false"` |  |
 | hedgedoc.env.CMD_URL_PATH | string | `""` |  |
 | hedgedoc.env.NODE_ENV | string | `"production"` |  |
+| hedgedoc.persistentStorage.accessModes[0] | string | `"ReadWriteOnce"` |  |
+| hedgedoc.persistentStorage.enabled | bool | `true` |  |
+| hedgedoc.persistentStorage.size | string | `"10G"` |  |
+| hedgedoc.persistentStorage.storageClass | string | `"default"` |  |
+| hedgedoc.persistentStorage.volumeMode | string | `"Filesystem"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"quay.io/hedgedoc/hedgedoc"` |  |
 | image.tag | string | `""` |  |
@@ -53,6 +64,11 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
+| postgresql.enabled | bool | `true` |  |
+| postgresql.postgresqlDatabase | string | `"hedgedoc"` |  |
+| postgresql.postgresqlPassword | string | `"hedgedoc"` |  |
+| postgresql.postgresqlUsername | string | `"hedgedoc"` |  |
+| postgresql.volumePermissions.enabled | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |

@@ -44,6 +44,8 @@ spec:
                 {{- else }}
                 name: hedgedoc-secrets
                 {{- end }}
+            - configMapRef:
+                name: {{ template "hedgedoc.fullname" . }}-database
 
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
