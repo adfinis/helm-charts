@@ -20,7 +20,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| existingSecret | string | `"hedgedoc-secrets"` |  |
+| existingSecret | string | `nil` |  |
 | fullnameOverride | string | `""` |  |
 | hedgedoc.env.CMD_DB_DATABASE | string | `"hedgedoc"` |  |
 | hedgedoc.env.CMD_DB_DIALECT | string | `"postgres"` |  |

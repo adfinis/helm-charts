@@ -173,7 +173,7 @@ hedgedoc:
     # CMD_MINIO_SECURE: ""
     # CMD_LUTIM_URL: ""
 
-existingSecret: hedgedoc-secrets
+existingSecret: ~
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

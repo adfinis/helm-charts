@@ -39,7 +39,11 @@ spec:
             {{- end}}
           envFrom:
             - secretRef:
+                {{- if .Values.existingSecret }}
                 name: {{ .Values.existingSecret }}
+                {{- else }}
+                name: hedgedoc-secrets
+                {{- end }}
 
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
