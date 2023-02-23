@@ -20,23 +20,24 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| existingSecret | string | `"hedgedoc-secrets"` |  |
 | fullnameOverride | string | `""` |  |
-| hedgedoc.env[0].NODE_ENV | string | `"production"` |  |
-| hedgedoc.env[10].CMD_DOMAIN | string | `"false"` |  |
-| hedgedoc.env[11].CMD_URL_PATH | string | `""` |  |
-| hedgedoc.env[12].CMD_PORT | string | `"{{ .Values.service.main.ports.main.port }}"` |  |
-| hedgedoc.env[13].CMD_PROTOCOL_USESSL | string | `"false"` |  |
-| hedgedoc.env[14].CMD_URL_ADDPORT | string | `"false"` |  |
-| hedgedoc.env[15].CMD_SESSION_SECRET | string | `"secret"` |  |
-| hedgedoc.env[1].CMD_DB_USERNAME | string | `"hedgedoc"` |  |
-| hedgedoc.env[2].CMD_DB_PASSWORD | string | `"secret"` |  |
-| hedgedoc.env[3].CMD_DB_DATABASE | string | `"hedgedoc"` |  |
-| hedgedoc.env[4].CMD_DB_HOST | string | `"host"` |  |
-| hedgedoc.env[5].CMD_DB_PORT | int | `5432` |  |
-| hedgedoc.env[6].CMD_DB_DIALECT | string | `"postgres"` |  |
-| hedgedoc.env[7].CMD_FORBIDDEN_NOTE_IDS | string | `"robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views"` |  |
-| hedgedoc.env[8].CMD_IMAGE_UPLOAD_TYPE | string | `"filesystem"` |  |
-| hedgedoc.env[9].CMD_TOOBUSY_LAG | int | `70` |  |
+| hedgedoc.env.CMD_DB_DATABASE | string | `"hedgedoc"` |  |
+| hedgedoc.env.CMD_DB_DIALECT | string | `"postgres"` |  |
+| hedgedoc.env.CMD_DB_HOST | string | `"host"` |  |
+| hedgedoc.env.CMD_DB_PASSWORD | string | `"secret"` |  |
+| hedgedoc.env.CMD_DB_PORT | int | `5432` |  |
+| hedgedoc.env.CMD_DB_USERNAME | string | `"hedgedoc"` |  |
+| hedgedoc.env.CMD_DOMAIN | string | `"false"` |  |
+| hedgedoc.env.CMD_FORBIDDEN_NOTE_IDS | string | `"robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views"` |  |
+| hedgedoc.env.CMD_IMAGE_UPLOAD_TYPE | string | `"filesystem"` |  |
+| hedgedoc.env.CMD_PORT | string | `"{{ .Values.service.main.ports.main.port }}"` |  |
+| hedgedoc.env.CMD_PROTOCOL_USESSL | string | `"false"` |  |
+| hedgedoc.env.CMD_SESSION_SECRET | string | `"secret"` |  |
+| hedgedoc.env.CMD_TOOBUSY_LAG | int | `70` |  |
+| hedgedoc.env.CMD_URL_ADDPORT | string | `"false"` |  |
+| hedgedoc.env.CMD_URL_PATH | string | `""` |  |
+| hedgedoc.env.NODE_ENV | string | `"production"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"quay.io/hedgedoc/hedgedoc"` |  |
 | image.tag | string | `""` |  |
