@@ -1,0 +1,5 @@
+# disable DB persistence when testing
+postgresql:
+  primary:
+    persistence:
+      enabled: false
