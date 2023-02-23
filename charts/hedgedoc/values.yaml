@@ -63,7 +63,7 @@ hedgedoc:
     volumeMode: Filesystem
     size: "10G"
     storageClass: "default"
-  port: 8080
+  port: 3000
   env:
     NODE_ENV: "production"
     # DEBUG: ""
@@ -76,7 +76,7 @@ hedgedoc:
     CMD_TOOBUSY_LAG: 70
     CMD_DOMAIN: "localhost"
     CMD_URL_PATH: ""
-    CMD_HOST: "localhost"
+    CMD_HOST: "0.0.0.0"
     # CMD_PATH: ""
     CMD_PROTOCOL_USESSL: "false"
     CMD_URL_ADDPORT: "false"
