@@ -7,7 +7,6 @@ metadata:
 data:
   {{- if .Values.postgresql.enabled }}
   CMD_DB_USERNAME: {{ .Values.postgresql.auth.username | quote }}
-  CMD_DB_PASSWORD: {{ .Values.postgresql.auth.password | quote }}
   CMD_DB_DATABASE: {{ .Values.postgresql.auth.database | quote }}
   CMD_DB_HOST: "{{ .Release.Name }}-postgresql"
   CMD_DB_PORT: "5432"
