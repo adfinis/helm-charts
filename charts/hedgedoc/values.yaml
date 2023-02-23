@@ -76,7 +76,7 @@ hedgedoc:
     CMD_DOMAIN: "false"
     CMD_URL_PATH: ""
     # CMD_HOST: ""
-    CMD_PORT: "3000"
+    CMD_PORT: "80"
     # CMD_PATH: ""
     CMD_PROTOCOL_USESSL: "false"
     CMD_URL_ADDPORT: "false"

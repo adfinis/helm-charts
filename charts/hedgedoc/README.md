@@ -37,7 +37,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | hedgedoc.env.CMD_DOMAIN | string | `"false"` |  |
 | hedgedoc.env.CMD_FORBIDDEN_NOTE_IDS | string | `"robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views"` |  |
 | hedgedoc.env.CMD_IMAGE_UPLOAD_TYPE | string | `"filesystem"` |  |
-| hedgedoc.env.CMD_PORT | string | `"3000"` |  |
+| hedgedoc.env.CMD_PORT | string | `"80"` |  |
 | hedgedoc.env.CMD_PROTOCOL_USESSL | string | `"false"` |  |
 | hedgedoc.env.CMD_SESSION_SECRET | string | `"secret"` |  |
 | hedgedoc.env.CMD_TOOBUSY_LAG | int | `70` |  |

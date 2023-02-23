@@ -50,7 +50,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: {{ .Values.hedgedoc.env.CMD_PORT | quote }}
               protocol: TCP
           livenessProbe:
             httpGet:
