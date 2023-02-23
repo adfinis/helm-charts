@@ -43,6 +43,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | hedgedoc.env.CMD_TOOBUSY_LAG | int | `70` |  |
 | hedgedoc.env.CMD_URL_ADDPORT | string | `"false"` |  |
 | hedgedoc.env.CMD_URL_PATH | string | `""` |  |
+| hedgedoc.env.DEBUG | string | `"false"` |  |
 | hedgedoc.env.NODE_ENV | string | `"production"` |  |
 | hedgedoc.persistentStorage.accessModes[0] | string | `"ReadWriteOnce"` |  |
 | hedgedoc.persistentStorage.enabled | bool | `true` |  |
@@ -74,6 +75,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
 | service.port | int | `3000` |  |
+| service.type | string | `"ClusterIP"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
