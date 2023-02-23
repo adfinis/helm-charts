@@ -34,10 +34,10 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | externalDatabase.type | string | `"postgresql"` |  |
 | externalDatabase.username | string | `"setme"` |  |
 | fullnameOverride | string | `""` |  |
-| hedgedoc.env.CMD_DOMAIN | string | `"false"` |  |
+| hedgedoc.env.CMD_DOMAIN | string | `"localhost"` |  |
 | hedgedoc.env.CMD_FORBIDDEN_NOTE_IDS | string | `"robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views"` |  |
+| hedgedoc.env.CMD_HOST | string | `"localhost"` |  |
 | hedgedoc.env.CMD_IMAGE_UPLOAD_TYPE | string | `"filesystem"` |  |
-| hedgedoc.env.CMD_PORT | string | `"80"` |  |
 | hedgedoc.env.CMD_PROTOCOL_USESSL | string | `"false"` |  |
 | hedgedoc.env.CMD_SESSION_SECRET | string | `"secret"` |  |
 | hedgedoc.env.CMD_TOOBUSY_LAG | int | `70` |  |
@@ -49,6 +49,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | hedgedoc.persistentStorage.size | string | `"10G"` |  |
 | hedgedoc.persistentStorage.storageClass | string | `"default"` |  |
 | hedgedoc.persistentStorage.volumeMode | string | `"Filesystem"` |  |
+| hedgedoc.port | int | `8080` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"quay.io/hedgedoc/hedgedoc"` |  |
 | image.tag | string | `""` |  |

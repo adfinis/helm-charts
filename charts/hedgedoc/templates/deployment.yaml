@@ -37,20 +37,22 @@ spec:
             - name: {{ $key }}
               value: {{ $val | quote }}
             {{- end}}
+            - name: CMD_PORT
+              value: {{ .Values.hedgedoc.port | quote }}
           envFrom:
+            - configMapRef:
+                name: {{ template "hedgedoc.fullname" . }}-database
             - secretRef:
                 {{- if .Values.existingSecret }}
                 name: {{ .Values.existingSecret }}
                 {{- else }}
                 name: hedgedoc-secrets
                 {{- end }}
-            - configMapRef:
-                name: {{ template "hedgedoc.fullname" . }}-database
 
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: {{ .Values.hedgedoc.env.CMD_PORT | quote }}
+              containerPort: {{ .Values.hedgedoc.port }}
               protocol: TCP
           livenessProbe:
             httpGet:
