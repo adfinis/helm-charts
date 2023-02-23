@@ -64,11 +64,11 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
+| postgresql.auth.database | string | `"hedgedoc"` |  |
+| postgresql.auth.password | string | `"hedgedoc"` |  |
+| postgresql.auth.username | string | `"hedgedoc"` |  |
+| postgresql.auth.volumePermissions.enabled | bool | `true` |  |
 | postgresql.enabled | bool | `true` |  |
-| postgresql.postgresqlDatabase | string | `"hedgedoc"` |  |
-| postgresql.postgresqlPassword | string | `"hedgedoc"` |  |
-| postgresql.postgresqlUsername | string | `"hedgedoc"` |  |
-| postgresql.volumePermissions.enabled | bool | `true` |  |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |

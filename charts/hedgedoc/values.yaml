@@ -210,11 +210,12 @@ affinity: {}
 ##
 postgresql:
   enabled: true
-  volumePermissions:
-    enabled: true
-  postgresqlUsername: hedgedoc
-  postgresqlPassword: hedgedoc
-  postgresqlDatabase: hedgedoc
+  auth:
+    username: hedgedoc
+    password: hedgedoc
+    database: hedgedoc
+    volumePermissions:
+      enabled: true
 
 
 ## Configure your external database here

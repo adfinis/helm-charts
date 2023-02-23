@@ -6,17 +6,17 @@ metadata:
     {{- include "hedgedoc.labels" . | nindent 4 }}
 data:
   {{- if .Values.postgresql.enabled }}
-  CMD_DB_USERNAME: {{ .Values.postgresql.postgresqlUsername | quote }}
-  CMD_DB_PASSWORD: {{ .Values.postgresql.postgresqlPassword | quote }}
-  CMD_DB_DATABASE: {{ .Values.postgresql.postgresqlDatabase | quote }}
+  CMD_DB_USERNAME: {{ .Values.postgresql.auth.username | quote }}
+  CMD_DB_PASSWORD: {{ .Values.postgresql.auth.password | quote }}
+  CMD_DB_DATABASE: {{ .Values.postgresql.auth.database | quote }}
   CMD_DB_HOST: "{{ .Release.Name }}-postgresql"
   CMD_DB_PORT: "5432"
   CMD_DB_DIALECT: "postgres"
   {{- else }}
-  CMD_DB_USERNAME: {{ .Values.externalDatabase.username | quote  }}
-  CMD_DB_PASSWORD: {{ .Values.externalDatabase.password | quote  }}
-  CMD_DB_DATABASE: {{ .Values.externalDatabase.database | quote  }}
-  CMD_DB_HOST: {{ .Values.externalDatabase.host | quote  }}
+  CMD_DB_USERNAME: {{ .Values.externalDatabase.username | quote }}
+  CMD_DB_PASSWORD: {{ .Values.externalDatabase.password | quote }}
+  CMD_DB_DATABASE: {{ .Values.externalDatabase.database | quote }}
+  CMD_DB_HOST: {{ .Values.externalDatabase.host | quote }}
   CMD_DB_PORT: {{ .Values.externalDatabase.port | quote }}
   CMD_DB_DIALECT: {{ .Values.externalDatabase.type | quote }}
   {{- end }}
