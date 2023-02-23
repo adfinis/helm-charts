@@ -9,7 +9,7 @@ data:
   CMD_DB_USERNAME: {{ .Values.postgresql.postgresqlUsername | quote }}
   CMD_DB_PASSWORD: {{ .Values.postgresql.postgresqlPassword | quote }}
   CMD_DB_DATABASE: {{ .Values.postgresql.postgresqlDatabase | quote }}
-  CMD_DB_HOST: {{ template "hedgedoc.postgresql-svc" . | quote }}
+  CMD_DB_HOST: "{{ .Release.Name }}-postgresql"
   CMD_DB_PORT: "5432"
   CMD_DB_DIALECT: "postgres"
   {{- else }}
