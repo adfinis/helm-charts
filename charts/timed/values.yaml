@@ -187,12 +187,16 @@ backend:
       command:
         - "./manage.py"
         - "update_project_expenditure"
+        # -- Pretend to update the project expenditure
+        - "--pretend"
     # -- Update project expanditure in redmine second time
     updateProjectExpanditureSecond:
       schedule: "0 8 * * 0"
       command:
         - "./manage.py"
         - "update_project_expenditure"
+        # -- Pretend to update the project expenditure
+        - "--pretend"
 
 frontend:
   # -- (int) Number of Backend replicas

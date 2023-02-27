@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.16.8](https://img.shields.io/badge/Version-0.16.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.16.9](https://img.shields.io/badge/Version-0.16.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -56,8 +56,10 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.cronjobs.notifyReviewersThird.command[5] | string | `"'Please verify your reports immediately!'"` | Additional message to send if there are unverified reports |
 | backend.cronjobs.notifySupervisors | object | `{"command":["./manage.py","notify_supervisors_shorttime"],"schedule":"0 8 * * 4"}` | Notify supervisors |
 | backend.cronjobs.redmineReport | object | `{"command":["./manage.py","redmine_report"],"schedule":"0 1 * * 1"}` | Redmine report |
-| backend.cronjobs.updateProjectExpanditureFirst | object | `{"command":["./manage.py","update_project_expenditure"],"schedule":"0 8 * * 3"}` | Update project expanditure in redmine first time |
-| backend.cronjobs.updateProjectExpanditureSecond | object | `{"command":["./manage.py","update_project_expenditure"],"schedule":"0 8 * * 0"}` | Update project expanditure in redmine second time |
+| backend.cronjobs.updateProjectExpanditureFirst | object | `{"command":["./manage.py","update_project_expenditure","--pretend"],"schedule":"0 8 * * 3"}` | Update project expanditure in redmine first time |
+| backend.cronjobs.updateProjectExpanditureFirst.command[2] | string | `"--pretend"` | Pretend to update the project expenditure |
+| backend.cronjobs.updateProjectExpanditureSecond | object | `{"command":["./manage.py","update_project_expenditure","--pretend"],"schedule":"0 8 * * 0"}` | Update project expanditure in redmine second time |
+| backend.cronjobs.updateProjectExpanditureSecond.command[2] | string | `"--pretend"` | Pretend to update the project expenditure |
 | backend.existingSecret | string | `nil` | Specify an existing secret that gets used instead of a Helm managed secret based on several values. |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"ghcr.io/adfinis/timed-backend"` | Backend image name |
