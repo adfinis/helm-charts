@@ -11,12 +11,14 @@ maintainers:
   - name: adfinis
     email: "support@adfinis.com"
     url: "https://adfinis.com"
-annotations:
-  artifacthub.io/images: |
-    - name: hedgedoc
-      image: quay.io/hedgedoc/hedgedoc:1.9.7
 dependencies:
   - name: postgresql
     version: ~12.2.1
     condition: postgresql.enabled
     repository: https://charts.bitnami.com/bitnami
+annotations:
+  artifacthub.io/images: |
+    - name: hedgedoc
+      image: quay.io/hedgedoc/hedgedoc:1.9.7
+    - kind: changed
+      description: "Initial release"
