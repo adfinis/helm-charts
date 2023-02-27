@@ -12,6 +12,9 @@
     Link related issues here, it's ok if this is empty but we do recommend that
     you create issues before working on PRs, issues on internal trackers are
     fine and need not be linked here.
+
+    If your PR adds a new chart we expect you to create and link an issue so we
+    can discuss adding your chart before you put the work into creating it.
 -->
 
 # Checklist

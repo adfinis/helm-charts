@@ -98,6 +98,8 @@ hack/helm-docs.sh
 
 We track issues with this chart repository in the [issue tracker](https://github.com/adfinis/helm-charts/issues).
 
+We expect you to always create an issue prior to creating a new chart. This helps us discuss the merits of it before you put the effort into creating the chart.
+
 ## About this repository
 
 Adfinis fights for a software world that is more open, where the quality is
