@@ -17,4 +17,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "argo-notifications: male fail if deprecated app is still installed"
+      description: "argo-notifications: make it fail if deprecated app is still installed"
