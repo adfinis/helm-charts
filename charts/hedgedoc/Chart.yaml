@@ -1,0 +1,25 @@
+---
+apiVersion: v2
+name: hedgedoc
+description: Chart for HedgeDoc, a fork of CodiMD
+type: application
+version: 0.1.0
+appVersion: "1.9.7"
+sources:
+  - https://github.com/hedgedoc/hedgedoc
+maintainers:
+  - name: adfinis
+    email: "support@adfinis.com"
+    url: "https://adfinis.com"
+dependencies:
+  - name: postgresql
+    version: ~12.2.1
+    condition: postgresql.enabled
+    repository: https://charts.bitnami.com/bitnami
+annotations:
+  artifacthub.io/images: |
+    - name: hedgedoc
+      image: quay.io/hedgedoc/hedgedoc:1.9.7
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "Initial release"
