@@ -73,9 +73,8 @@ hedgedoc:
     storageClass: "default"
   # -- Port for the pod
   port: 3000
-  ## Environment variables for Hedgedoc
-  ## See the official docs for all variables
-  ## https://docs.hedgedoc.org/configuration/
+  # -- Environment variables for Hedgedoc
+  # @default -- See the [official docs for all variables](https://docs.hedgedoc.org/configuration/)
   env:
     # -- Node.js env
     NODE_ENV: "production"
