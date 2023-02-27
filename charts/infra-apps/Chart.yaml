@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.149.0
+version: 0.150.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,19 +16,21 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: "nginx-ingress: Update from 1.5.2 to 1.6.4"
+    - kind: security
+      description: "argo-cd: Update from 1.6.1 to 1.6.2"
       links:
-        - name: GitHub Release v1.6.4
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.6.4
+        - name: GitHub Release v1.6.2
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.2
     - kind: changed
-      description: "nginx-ingress: Update nnginx-ingress chart from 4.4.0 to 4.5.2"
+      description: "argo-cd: Update chart from 5.20.4 to 5.22.1"
       links:
-        - name: "feat(helm): Optionally use cert-manager instead admission patch"
-          url: https://github.com/kubernetes/ingress-nginx/pull/9279
-        - name: "feat(helm): Adding support for disabling liveness and readiness probes"
-          url: https://github.com/kubernetes/ingress-nginx/pull/9238
-        - name: "feat(helm): Updated Helm chart to use the fullname for the electionID if not specified"
-          url: https://github.com/kubernetes/ingress-nginx/pull/9186
-        - name: "feat(helm): add admission-webhooks ability to set securityContext"
-          url: https://github.com/kubernetes/ingress-nginx/pull/9186
+        - name: "fix(helm): Add quotes on Ingress Host to allow wildcards"
+          url: https://github.com/argoproj/argo-helm/pull/1841
+        - name: "feat(helm): Add dnsConfig and dnsPolicy for pods"
+          url: https://github.com/argoproj/argo-helm/pull/1773
+        - name: "fix(helm): Upgrade Argo CD to v2.6.2"
+          url: https://github.com/argoproj/argo-helm/pull/1844
+        - name: "feat(helm): Add global affinity configuration"
+          url: https://github.com/argoproj/argo-helm/pull/1794
+        - name: "chore(helm): Group component templates together"
+          url: https://github.com/argoproj/argo-helm/pull/1847

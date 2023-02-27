@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.16.2](https://img.shields.io/badge/Version-0.16.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.16.8](https://img.shields.io/badge/Version-0.16.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -61,7 +61,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.existingSecret | string | `nil` | Specify an existing secret that gets used instead of a Helm managed secret based on several values. |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"ghcr.io/adfinis/timed-backend"` | Backend image name |
-| backend.image.tag | string | `"v3.0.0-rc11"` | Backend version. |
+| backend.image.tag | string | `"v3.0.0-rc14"` | Backend version. |
 | backend.jobs.dbmigrate.enable | bool | `true` | Enable the dbmigrate Job. This is configurable because timed can also run this on startup if so preferred. |
 | backend.livenessProbe.enabled | bool | `true` | Enable liveness probe on backend |
 | backend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
@@ -105,7 +105,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.startupProbe.failureThreshold | int | `6` | Number of times to perform the probe |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | Frontend image pull policy |
 | frontend.image.repository | string | `"ghcr.io/adfinis/timed-frontend"` | Frontend image name |
-| frontend.image.tag | string | `"v3.0.0-rc10"` | Frontend version. |
+| frontend.image.tag | string | `"v3.0.0-rc.13"` | Frontend version. |
 | frontend.livenessProbe.enabled | bool | `true` | Enable liveness probe on frontend |
 | frontend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | frontend.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
