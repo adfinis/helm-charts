@@ -22,63 +22,32 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| autoscaling.enabled | bool | `false` |  |
-| autoscaling.maxReplicas | int | `100` |  |
-| autoscaling.minReplicas | int | `1` |  |
-| autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| existingSecret | string | `nil` |  |
-| externalDatabase.database | string | `"hedgedoc"` |  |
-| externalDatabase.host | string | `"localhost"` |  |
-| externalDatabase.password | string | `"changeme"` |  |
-| externalDatabase.port | int | `5432` |  |
-| externalDatabase.type | string | `"postgresql"` |  |
-| externalDatabase.username | string | `"setme"` |  |
+| autoscaling | object | `{"enabled":false,"maxReplicas":100,"minReplicas":1,"targetCPUUtilizationPercentage":80}` | Configure autoscaling |
+| existingSecret | string | `nil` | from-literal=CMD_SESSION_SECRET=verysecure |
+| externalDatabase | object | `{"database":"hedgedoc","host":"localhost","password":"changeme","port":5432,"type":"postgresql","username":"setme"}` | Configure your external database here This is automatically used when postgresql.enabled is false. |
+| externalDatabase.type | string | `"postgresql"` | Set the database type (postgresql|mysql) |
 | fullnameOverride | string | `""` |  |
-| hedgedoc.env.CMD_DOMAIN | string | `"localhost"` |  |
-| hedgedoc.env.CMD_FORBIDDEN_NOTE_IDS | string | `"robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views"` |  |
-| hedgedoc.env.CMD_HOST | string | `"0.0.0.0"` |  |
-| hedgedoc.env.CMD_IMAGE_UPLOAD_TYPE | string | `"filesystem"` |  |
-| hedgedoc.env.CMD_PROTOCOL_USESSL | string | `"false"` |  |
-| hedgedoc.env.CMD_SESSION_SECRET | string | `"secret"` |  |
-| hedgedoc.env.CMD_TOOBUSY_LAG | int | `70` |  |
-| hedgedoc.env.CMD_URL_ADDPORT | string | `"false"` |  |
-| hedgedoc.env.CMD_URL_PATH | string | `""` |  |
-| hedgedoc.env.DEBUG | string | `"false"` |  |
-| hedgedoc.env.NODE_ENV | string | `"production"` |  |
-| hedgedoc.persistentStorage.accessModes[0] | string | `"ReadWriteOnce"` |  |
-| hedgedoc.persistentStorage.enabled | bool | `true` |  |
-| hedgedoc.persistentStorage.size | string | `"10G"` |  |
-| hedgedoc.persistentStorage.storageClass | string | `"default"` |  |
-| hedgedoc.persistentStorage.volumeMode | string | `"Filesystem"` |  |
-| hedgedoc.port | int | `3000` |  |
-| image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"quay.io/hedgedoc/hedgedoc"` |  |
-| image.tag | string | `""` |  |
+| hedgedoc | object | `{"env":{"CMD_DOMAIN":"localhost","CMD_FORBIDDEN_NOTE_IDS":"robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views","CMD_HOST":"0.0.0.0","CMD_IMAGE_UPLOAD_TYPE":"filesystem","CMD_PROTOCOL_USESSL":"false","CMD_SESSION_SECRET":"secret","CMD_TOOBUSY_LAG":70,"CMD_URL_ADDPORT":"false","CMD_URL_PATH":"","DEBUG":"false","NODE_ENV":"production"},"persistentStorage":{"accessModes":["ReadWriteOnce"],"enabled":true,"size":"10G","storageClass":"default","volumeMode":"Filesystem"},"port":3000}` | Main configuration for hedgedoc |
+| hedgedoc.env.NODE_ENV | string | `"production"` | Node.js env |
+| hedgedoc.persistentStorage | object | `{"accessModes":["ReadWriteOnce"],"enabled":true,"size":"10G","storageClass":"default","volumeMode":"Filesystem"}` | Persistent Storage Enable this if you don't want to loose media |
+| hedgedoc.port | int | `3000` | Port for the pod |
+| image.pullPolicy | string | `"IfNotPresent"` | Override the pullPolicy |
+| image.repository | string | `"quay.io/hedgedoc/hedgedoc"` | Override the repository |
+| image.tag | string | `""` | Override the imaae tag |
 | imagePullSecrets | list | `[]` |  |
-| ingress.annotations | object | `{}` |  |
-| ingress.className | string | `""` |  |
-| ingress.enabled | bool | `false` |  |
-| ingress.hosts[0].host | string | `"chart-example.local"` |  |
-| ingress.hosts[0].paths[0].path | string | `"/"` |  |
-| ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
-| ingress.tls | list | `[]` |  |
+| ingress | object | `{"annotations":{},"className":"","enabled":false,"hosts":[{"host":"chart-example.local","paths":[{"path":"/","pathType":"ImplementationSpecific"}]}],"tls":[]}` | Ingress configuration |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
-| postgresql.auth.database | string | `"hedgedoc"` |  |
-| postgresql.auth.password | string | `"hedgedoc"` |  |
-| postgresql.auth.username | string | `"hedgedoc"` |  |
-| postgresql.auth.volumePermissions.enabled | bool | `true` |  |
-| postgresql.enabled | bool | `true` |  |
+| postgresql | object | `{"auth":{"database":"hedgedoc","password":"hedgedoc","username":"hedgedoc","volumePermissions":{"enabled":true}},"enabled":true}` | PostgreSQL chart configuration  Reference: https://github.com/bitnami/charts/blob/master/bitnami/postgresql/values.yaml  If you want to use external database, just set postgresql.enabled to false  |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
-| service.port | int | `3000` |  |
-| service.type | string | `"ClusterIP"` |  |
-| serviceAccount.annotations | object | `{}` |  |
-| serviceAccount.create | bool | `true` |  |
-| serviceAccount.name | string | `""` |  |
+| service | object | `{"port":3000,"type":"ClusterIP"}` | Service configuration |
+| serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
+| serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
+| serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
 | tolerations | list | `[]` |  |
 
 ## About this chart
