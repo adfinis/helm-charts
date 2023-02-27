@@ -2,7 +2,7 @@ apiVersion: v2
 name: timed
 description: Chart for Timed application
 type: application
-version: 0.16.8
+version: 0.16.9
 keywords:
   - timed
   - tracking
@@ -23,7 +23,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "updated timed-backend image tag"
+      description: "added pretend flag for update_project_expenditures command"
       links:
-        - name: Github Release
-          url: https://github.com/adfinis/timed-backend/releases/tag/v3.0.0-rc.14
+        - name: Github Commit
+          url: https://github.com/adfinis/timed-backend/commit/f3a3221cdb40fa95a510f3cd4e82e697a1857144
