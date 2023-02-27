@@ -1,7 +1,7 @@
 ---
 apiVersion: v2
 name: hedgedoc
-description: A Helm chart for Kubernetes
+description: Chart for HedgeDoc, a fork of CodiMD
 type: application
 version: 0.1.0
 appVersion: "1.9.7"
