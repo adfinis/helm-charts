@@ -57,11 +57,9 @@ spec:
             - name: http
               containerPort: {{ .Values.hedgedoc.port }}
               protocol: TCP
-          {{ if .Values.hedgedoc.persistentStorage.enabled }}
           volumeMounts:
             - mountPath: /hedgedoc/public/uploads
               name: uploads
-          {{ end }}
           livenessProbe:
             httpGet:
               path: /status
