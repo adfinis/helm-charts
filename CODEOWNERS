@@ -15,3 +15,4 @@
 /charts/mopsos                      @adfinis/helm-charts @hairmare @eyenx
 /charts/timed                       @adfinis/helm-charts @adfinis/dev-devops
 /charts/osschallenge                @adfinis/helm-charts @adfinis/dev-devops
+/charts/hedgedoc                @adfinis/helm-charts @altesockensuppe @gianklug

@@ -12,7 +12,7 @@ backend:
     # -- Backend image name
     repository: ghcr.io/adfinis/timed-backend
     # -- Backend version.
-    tag: v3.0.0-rc14
+    tag: v3.0.0
     # -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
@@ -187,12 +187,16 @@ backend:
       command:
         - "./manage.py"
         - "update_project_expenditure"
+        # -- Pretend to update the project expenditure
+        - "--pretend"
     # -- Update project expanditure in redmine second time
     updateProjectExpanditureSecond:
       schedule: "0 8 * * 0"
       command:
         - "./manage.py"
         - "update_project_expenditure"
+        # -- Pretend to update the project expenditure
+        - "--pretend"
 
 frontend:
   # -- (int) Number of Backend replicas
@@ -203,7 +207,7 @@ frontend:
     # -- Frontend image pull policy
     pullPolicy: IfNotPresent
     # -- Frontend version.
-    tag: v3.0.0-rc.13
+    tag: v3.0.0
   service:
     # -- Frontend service name
     name: timed-frontend
