@@ -3,7 +3,7 @@ apiVersion: v2
 name: hedgedoc
 description: Chart for HedgeDoc, a fork of CodiMD
 type: application
-version: 0.1.0
+version: 0.1.1
 appVersion: "1.9.7"
 sources:
   - https://github.com/hedgedoc/hedgedoc
@@ -22,4 +22,4 @@ annotations:
       image: quay.io/hedgedoc/hedgedoc:1.9.7
   artifacthub.io/changes: |
     - kind: changed
-      description: "Initial release"
+      description: "Fixed persistent volumes not working"
