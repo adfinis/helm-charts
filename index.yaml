@@ -4144,6 +4144,34 @@ entries:
           image: quay.io/hedgedoc/hedgedoc:1.9.7
     apiVersion: v2
     appVersion: 1.9.7
+    created: "2023-02-28T12:38:42.12614973Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~12.2.1
+    description: Chart for HedgeDoc, a fork of CodiMD
+    digest: a4457a49f2bb8b7be4b873529882f60058ef7a6990fa9643ac1d0a56f073a3aa
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: hedgedoc
+    sources:
+    - https://github.com/hedgedoc/hedgedoc
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/hedgedoc-0.1.2/hedgedoc-0.1.2.tgz
+    version: 0.1.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "Fixed persistent volumes not working"
+      artifacthub.io/images: |
+        - name: hedgedoc
+          image: quay.io/hedgedoc/hedgedoc:1.9.7
+    apiVersion: v2
+    appVersion: 1.9.7
     created: "2023-02-28T12:19:34.087709482Z"
     dependencies:
     - condition: postgresql.enabled
@@ -19197,4 +19225,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-28T12:19:34.089000405Z"
+generated: "2023-02-28T12:38:42.127341332Z"
