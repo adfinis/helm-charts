@@ -2,7 +2,7 @@ apiVersion: v2
 name: storage-apps
 description: Argo CD app-of-apps config for storage applications
 type: application
-version: 0.12.0
+version: 0.13.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,12 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "Update minio from 5.0.0 to 5.0.1"
+      description: "Update ceph-csi from 3.7.* to 3.8.0"
       links:
-        - name: Bump MinIO version to RELEASE.2022-11-11T03-44-20Z
-          url: https://github.com/minio/minio/commit/f7db12c7effaca8410d6f11a7edd76d338e11ba0
-    - kind: changed
-      description: "Update minio from 4.1.0 to 5.0.0"
-      links:
-        - name: Remove gateway completely
-          url: https://github.com/minio/minio/commit/23b329b9df262246c7ce7f76daf7efaf732b6e5f
+        - name: Ceph-CSI v3.8.0 Release
+          url: https://github.com/ceph/ceph-csi/releases/tag/v3.8.0
