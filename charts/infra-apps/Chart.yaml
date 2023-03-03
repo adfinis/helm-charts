@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.142.0
+version: 0.150.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,10 +16,21 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: "cert-manager: update from 1.10.* to 1.11.0"
+    - kind: security
+      description: "argo-cd: Update from 1.6.1 to 1.6.2"
       links:
-        - name: GitHub Release
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.11.0
-        - name: Release Notes
-          url: https://cert-manager.io/docs/release-notes/release-notes-1.11/
+        - name: GitHub Release v1.6.2
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.2
+    - kind: changed
+      description: "argo-cd: Update chart from 5.20.4 to 5.22.1"
+      links:
+        - name: "fix(helm): Add quotes on Ingress Host to allow wildcards"
+          url: https://github.com/argoproj/argo-helm/pull/1841
+        - name: "feat(helm): Add dnsConfig and dnsPolicy for pods"
+          url: https://github.com/argoproj/argo-helm/pull/1773
+        - name: "fix(helm): Upgrade Argo CD to v2.6.2"
+          url: https://github.com/argoproj/argo-helm/pull/1844
+        - name: "feat(helm): Add global affinity configuration"
+          url: https://github.com/argoproj/argo-helm/pull/1794
+        - name: "chore(helm): Group component templates together"
+          url: https://github.com/argoproj/argo-helm/pull/1847

@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.142.0](https://img.shields.io/badge/Version-0.142.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.150.0](https://img.shields.io/badge/Version-0.150.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocd.destination.namespace | string | `"infra-argocd"` | Namespace |
 | argocd.enabled | bool | `false` | Enable Argo CD |
 | argocd.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocd.targetRevision | string | `"5.17.4"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
+| argocd.targetRevision | string | `"5.22.1"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
 | argocd.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml) | Helm values |
 | argoconfig.application.annotations | object | `{}` | Optional annotations to add to all Applications metadata. |
 | certManager | object | [example](./examples/cert-manager.yaml) | [cert-manager](https://cert-manager.io/) |
@@ -62,7 +62,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingressNginx.destination.namespace | string | `"infra-ingress"` | Namespace |
 | ingressNginx.enabled | bool | `false` | Configure nginx-ingress |
 | ingressNginx.repoURL | string | [repo](https://kubernetes.github.io/ingress-nginx) | Repo URL |
-| ingressNginx.targetRevision | string | `"4.4.0"` | [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version |
+| ingressNginx.targetRevision | string | `"4.5.2"` | [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version |
 | ingressNginx.values | object | [upstream values](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml) | Helm values |
 | kubeEventExporter | object | [example](./examples/kubernetes-event-exporter.yaml) | [kubernetes-event-exporter](https://github.com/resmoio/kubernetes-event-exporter) |
 | kubeEventExporter.annotations | object | `{}` | Annotations for kubernetes-event-exporter app |
@@ -70,7 +70,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kubeEventExporter.destination.namespace | string | `"infra-kube-event-exporter"` | Namespace |
 | kubeEventExporter.enabled | bool | `false` | Enable kubernetes-event-exporter |
 | kubeEventExporter.repoURL | string | [repo](https://charts.bitnami.com/bitnami) | Repo URL |
-| kubeEventExporter.targetRevision | string | `"2.1.4"` | [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/kubernetes-event-exporter) |
+| kubeEventExporter.targetRevision | string | `"2.1.6"` | [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/kubernetes-event-exporter) |
 | kubeEventExporter.values | object | [upstream values](https://github.com/bitnami/charts/blob/main/bitnami/kubernetes-event-exporter/values.yaml) | Helm values |
 | kubePrometheusStack | object | [example](./examples/prometheus.yaml) | [prometheus-operator](https://github.com/coreos/prometheus-operator) |
 | kubePrometheusStack.annotations | object | `{}` | Annotations for prometheus-operator app |
@@ -78,7 +78,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kubePrometheusStack.destination.namespace | string | `"infra-monitoring"` | Namespace |
 | kubePrometheusStack.enabled | bool | `false` | Enable prometheus-operator |
 | kubePrometheusStack.repoURL | string | [repo](https://prometheus-community.github.io/helm-charts) | Repo URL |
-| kubePrometheusStack.targetRevision | string | `"44.2.1"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
+| kubePrometheusStack.targetRevision | string | `"44.3.0"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
 | kubePrometheusStack.values | object | [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml) | Helm values |
 | kured | object | [example](./examples/kured.yaml) | [kured](https://github.com/kubereboot/kured) |
 | kured.annotations | object | `{}` | Annotations for Kured app |
@@ -86,8 +86,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kured.destination.namespace | string | `"infra-kured"` | Namespace |
 | kured.enabled | bool | `false` | Enable Kured |
 | kured.repoURL | string | [repo](https://kubereboot.github.io/charts) | Repo URL |
-| kured.targetRevision | string | `"4.1.0"` | [Kured Helm chart](https://github.com/kubereboot/kured/tree/main/charts/kured) |
-| kured.values | object | [upstream values](https://github.com/kubereboot/kured/blob/main/charts/kured/values.yaml) | Helm values |
+| kured.targetRevision | string | `"4.2.0"` | [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured) |
+| kured.values | object | [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml) | Helm values |
 | mimir | object | [example](./examples/mimir.yaml) | [mimir](https://github.com/grafana/mimir) |
 | mimir.annotations | object | `{}` | Annotations for mimir app |
 | mimir.chart | string | `"mimir-distributed"` | Chart |
@@ -118,7 +118,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | velero.destination.namespace | string | `"infra-velero"` | Namespace |
 | velero.enabled | bool | `false` | Enable Velero |
 | velero.repoURL | string | [repo](https://vmware-tanzu.github.io/helm-charts) | Repo URL |
-| velero.targetRevision | string | `"2.32.4"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
+| velero.targetRevision | string | `"3.1.2"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
 | velero.values | object | [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml) | Helm values |
 
 ## About this chart

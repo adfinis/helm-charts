@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.28.0](https://img.shields.io/badge/Version-0.28.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.30.1](https://img.shields.io/badge/Version-0.30.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -59,7 +59,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keda.destination.namespace | string | `"infra-keda"` | Namespace |
 | keda.enabled | bool | `false` | Enable KEDA |
 | keda.repoURL | string | [repo](https://kedacore.github.io/charts) | Repo URL |
-| keda.targetRevision | string | `"2.8.*"` | [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version |
+| keda.targetRevision | string | `"2.9.3"` | [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version |
 | keda.values | object | [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml) | Helm values |
 | metallb | object | - | [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml)) |
 | metallb.chart | string | `"metallb"` | Chart |
@@ -87,7 +87,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | signalilo.destination.namespace | string | `"infra-signalilo"` | Namespace |
 | signalilo.enabled | bool | `false` | Enable signalilo |
 | signalilo.repoURL | string | [repo](https://charts.appuio.ch) | Repo URL |
-| signalilo.targetRevision | string | `"0.9.1"` | [signalilo Helm chart](https://github.com/appuio/charts/tree/master/appuio/signalilo) version |
+| signalilo.targetRevision | string | `"0.10.1"` | [signalilo Helm chart](https://github.com/appuio/charts/tree/master/appuio/signalilo) version |
 | signalilo.values | object | [upstream values](https://github.com/appuio/charts/blob/master/appuio/signalilo/values.yaml) | Helm values |
 
 ## About this chart

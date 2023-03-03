@@ -1,6 +1,6 @@
 # tracing-apps
 
-![Version: 0.18.0](https://img.shields.io/badge/Version-0.18.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.20.1](https://img.shields.io/badge/Version-0.20.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for tracing applications
 
@@ -28,14 +28,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | jaegerOperator.destination.namespace | string | `"infra-jaeger"` | Namespace |
 | jaegerOperator.enabled | bool | `false` | Enable jaeger-operator |
 | jaegerOperator.repoURL | string | [repo](https://jaegertracing.github.io/helm-charts) | Repo URL |
-| jaegerOperator.targetRevision | string | `"2.37.0"` | [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/main/charts/jaeger-operator) |
+| jaegerOperator.targetRevision | string | `"2.39.0"` | [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/main/charts/jaeger-operator) |
 | jaegerOperator.values | object | [upstream values](https://github.com/jaegertracing/helm-charts/blob/main/charts/jaeger-operator/values.yaml) | Helm values |
 | opentelemetryCollector | object | - | [opentelemetry-collector](https://opentelemetry.io/docs/collector/) ([example](./examples/opentelemetryCollector.yaml)) |
 | opentelemetryCollector.chart | string | `"opentelemetry-collector"` | Chart |
 | opentelemetryCollector.destination.namespace | string | `"infra-otel-operator"` | Namespace |
 | opentelemetryCollector.enabled | bool | `false` | Enable otel-exporter |
 | opentelemetryCollector.repoURL | string | [repo](https://open-telemetry.github.io/opentelemetry-helm-charts) | Repo URL |
-| opentelemetryCollector.targetRevision | string | `"0.39.3"` | [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector) |
+| opentelemetryCollector.targetRevision | string | `"0.47.0"` | [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector) |
 | opentelemetryCollector.values | object | [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml) | Helm values |
 
 ## About this chart

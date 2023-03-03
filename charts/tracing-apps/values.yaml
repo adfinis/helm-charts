@@ -13,7 +13,7 @@ jaegerOperator:
   # -- Chart
   chart: "jaeger-operator"
   # -- [jaeger-operator Helm chart](https://github.com/jaegertracing/helm-charts/tree/main/charts/jaeger-operator)
-  targetRevision: "2.37.0"
+  targetRevision: "2.39.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/jaegertracing/helm-charts/blob/main/charts/jaeger-operator/values.yaml)
   values: {}
@@ -33,7 +33,7 @@ opentelemetryCollector:
   # -- Chart
   chart: "opentelemetry-collector"
   # -- [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector)
-  targetRevision: "0.39.3"
+  targetRevision: "0.47.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml)
   values: {}
