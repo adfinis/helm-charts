@@ -22,4 +22,4 @@ annotations:
       image: quay.io/hedgedoc/hedgedoc:1.9.7
   artifacthub.io/changes: |
     - kind: changed
-      description: "Fixed persistent volumes not working"
+      description: "Don't set CMD_SESSION_SECRET by default anymore"
