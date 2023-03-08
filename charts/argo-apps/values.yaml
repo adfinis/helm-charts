@@ -32,8 +32,8 @@ argoRollouts:
   repoURL: "https://argoproj.github.io/argo-helm"
   # -- Chart
   chart: "argo-rollouts"
-  # -- [argo-rollouts Helm chart](https://github.com/argoproj/argo-helm/tree/master/charts/argo-rollouts) version
-  targetRevision: "2.22.2"
+  # -- [argo-rollouts Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-rollouts) version
+  targetRevision: "2.22.3"
   # -- Helm values
-  # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/master/charts/argo-rollouts/values.yaml)
+  # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-rollouts/values.yaml)
   values: {}
