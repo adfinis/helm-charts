@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.30.1
+version: 0.30.2
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,8 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: |
-        signalilo: update chart to 0.10.1
+      description: "kube-downscaler: fix env var injection"
       links:
         - name: GitHub PR
-          url: https://github.com/appuio/charts/pull/456
+          url: https://github.com/deliveryhero/helm-charts/pull/441
