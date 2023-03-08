@@ -9834,6 +9834,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "kube-downscaler: fix env var injection"
+          links:
+            - name: GitHub PR
+              url: https://github.com/deliveryhero/helm-charts/pull/441
+    apiVersion: v2
+    created: "2023-03-08T15:12:32.148703142Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 61ebe4e8a77373de93d23434bfd0c95f91b93a31205c0f482a53c38ed6deaab9
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.30.2/misc-apps-0.30.2.tgz
+    version: 0.30.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: |
             signalilo: update chart to 0.10.1
           links:
@@ -19419,4 +19446,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-03T11:36:06.878072173Z"
+generated: "2023-03-08T15:12:32.150151642Z"
