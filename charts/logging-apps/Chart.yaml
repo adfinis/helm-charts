@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.25.0
+version: 0.26.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,22 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: 'use new elasticsearch credentials'
+      description: 'loki-stack: update loki-stack chart from 2.8.* to 2.9.9'
       links:
-        - name: GitHub PR
-          url: https://github.com/elastic/helm-charts/pull/1400
-    - kind: changed
-      description: 'using https to connect to elasticsearch'
-      links:
-        - name: GitHub PR
-          url: https://github.com/elastic/helm-charts/pull/1627
-    - kind: changed
-      description: 'add initContainers feature'
-      links:
-        - name: GitHub PR
-          url: https://github.com/fluent/helm-charts/pull/238
-    - kind: changed
-      description: 'add initial Openshift SCC support for Fluent-Bit'
-      links:
-        - name: GitHub PR
-          url: https://github.com/fluent/helm-charts/pull/232
+        - name: 'feat: update Promtail sub-chart'
+          url: https://github.com/grafana/helm-charts/commit/474a66bb54b8d581ab2e94ac7fe50c674c87d740
