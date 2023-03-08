@@ -113,7 +113,7 @@ hedgedoc:
     # CMD_REQUIRE_FREEURL_AUTHENTICATION: ""
     # CMD_DEFAULT_PERMISSION: ""
     # CMD_SESSION_LIFE: ""
-    CMD_SESSION_SECRET: "secret"
+    # CMD_SESSION_SECRET: "secret"
     ## Email
     # CMD_EMAIL: ""
     # CMD_ALLOW_EMAIL_REGISTER: ""
