@@ -13,7 +13,7 @@ downscaler:
   # -- Chart
   chart: "kube-downscaler"
   # -- [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version
-  targetRevision: "0.7.0"
+  targetRevision: "0.7.1"
   # -- Helm values
   # @default -- [upstream values](https://github.com/deliveryhero/helm-charts/blob/master/stable/kube-downscaler/values.yaml)
   values: {}
