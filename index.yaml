@@ -4275,6 +4275,50 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: security
+          description: "argo-cd: Update from 1.6.2 to 1.6.3"
+          links:
+            - name: GitHub Release v1.6.3
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.3
+        - kind: changed
+          description: "argo-cd: Update chart from 5.22.1 to 5.24.1"
+          links:
+            - name: "chore(helm): Remove notification bot"
+              url: https://github.com/argoproj/argo-helm/pull/1854
+            - name: "chore(helm): Add missing hostAliases to all components"
+              url: https://github.com/argoproj/argo-helm/pull/1848
+            - name: "feat: Upgrade Argo CD to v2.6.3"
+              url: https://github.com/argoproj/argo-helm/pull/1868
+            - name: "fix(helm): Added pod exec permission to argo-server Role when exec.enabled is True"
+              url: https://github.com/argoproj/argo-helm/pull/1867
+            - name: "fix(helm): Fix indentation for argocd-server role"
+              url: https://github.com/argoproj/argo-helm/pull/1871
+            - name: "feat(helm): Add additional global parameters for scheduling"
+              url: https://github.com/argoproj/argo-helm/pull/1846
+            - name: "fix(helm): ApplicationSet deployment uses global tolerations"
+              url: https://github.com/argoproj/argo-helm/pull/1881
+    apiVersion: v2
+    created: "2023-03-09T12:49:54.174420899Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 28b26d9c6a2a69fdab60347e2fb7715a3817c04419c0a68f9bbe3a13a06261b7
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.151.0/infra-apps-0.151.0.tgz
+    version: 0.151.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: security
           description: "argo-cd: Update from 1.6.1 to 1.6.2"
           links:
             - name: GitHub Release v1.6.2
@@ -19517,4 +19561,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-09T12:38:59.196181557Z"
+generated: "2023-03-09T12:49:54.175961175Z"
