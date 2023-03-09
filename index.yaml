@@ -18345,6 +18345,53 @@ entries:
   tracing-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: |
+            otel-collector: update from 0.70.0 to 0.72.0
+
+            Removes a bunch of deprecated feature gates and adds several features
+            like exponential backoff handling, a new `connectors` pipeline component
+            for merging existing piplines and more.
+          links:
+            - name: GitHub Release 0.71.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/cmd%2Fbuilder%2Fv0.72.0
+            - name: GitHub Release 0.72.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/cmd%2Fbuilder%2Fv0.72.0
+        - kind: changed
+          description: 'otel-collector: update chart from 0.47.0 to 0.49.1'
+          links:
+            - name: 'feat: bump otel-collector from 0.71.0 to 0.72.0'
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/655
+            - name: 'feat: Support loadBalancerSourceRanges in service spec'
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/647
+            - name: 'feat: Add "ExporterDroppedSpans" PrometheusRule for spans that failed to be exported'
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/633
+            - name: 'fix: Allows for configuration of revisionHistoryLimit'
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/631
+            - name: 'feat: expose topologySpreadConstraints'
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/622
+    apiVersion: v2
+    created: "2023-03-09T11:02:04.771975743Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for tracing applications
+    digest: f278cd9dfa0c2fbc460c858748c19fabc262002231876b7f52edbd5164f693f1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.21.0/tracing-apps-0.21.0.tgz
+    version: 0.21.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: fixed
           description: 'otel-collector: use right version in values'
     apiVersion: v2
@@ -19446,4 +19493,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-08T15:12:32.150151642Z"
+generated: "2023-03-09T11:02:04.773945738Z"
