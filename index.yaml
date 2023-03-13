@@ -18453,6 +18453,45 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            jaeger-operator: Update from 1.39.0 to 1.42.0
+
+            Introduces official support for K8s 1.24.
+          links:
+            - name: Changelog for 1.40.0
+              url: https://github.com/jaegertracing/jaeger-operator/blob/main/CHANGELOG.md#1400-2022-12-23
+            - name: Changelog for 1.41.1
+              url: https://github.com/jaegertracing/jaeger-operator/blob/main/CHANGELOG.md#1411-2023-01-23
+        - kind: changed
+          description: 'jaeger-operator: update chart from 2.39.0 to 2.41.0'
+          links:
+            - name: 'feat: update jaeger-operator from 1.39.0 to 1.42.0'
+              url: https://github.com/jaegertracing/helm-charts/pull/458
+            - name: 'feat: allow setting the Certificate Issuer kind'
+              url: https://github.com/jaegertracing/helm-charts/pull/446
+    apiVersion: v2
+    created: "2023-03-13T13:13:22.165407615Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for tracing applications
+    digest: d6418007e5f3143e78e7539c5178988916ed5a7102e41d47614777eccab69b70
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.22.0/tracing-apps-0.22.0.tgz
+    version: 0.22.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             otel-collector: update from 0.70.0 to 0.72.0
 
             Removes a bunch of deprecated feature gates and adds several features
@@ -19599,4 +19638,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-09T17:42:50.517411185Z"
+generated: "2023-03-13T13:13:22.168098099Z"
