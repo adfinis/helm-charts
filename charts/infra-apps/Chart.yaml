@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.150.0
+version: 0.151.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,20 +17,18 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: security
-      description: "argo-cd: Update from 1.6.1 to 1.6.2"
+      description: "argo-cd: Update from 1.6.3 to 1.6.4"
       links:
-        - name: GitHub Release v1.6.2
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.2
-    - kind: changed
-      description: "argo-cd: Update chart from 5.20.4 to 5.22.1"
+        - name: GitHub Release v1.6.4
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.4
+    - kind: fixed
+      description: "argo-cd: Update chart from 5.24.1 to 5.25.0"
       links:
-        - name: "fix(helm): Add quotes on Ingress Host to allow wildcards"
-          url: https://github.com/argoproj/argo-helm/pull/1841
-        - name: "feat(helm): Add dnsConfig and dnsPolicy for pods"
-          url: https://github.com/argoproj/argo-helm/pull/1773
-        - name: "fix(helm): Upgrade Argo CD to v2.6.2"
-          url: https://github.com/argoproj/argo-helm/pull/1844
-        - name: "feat(helm): Add global affinity configuration"
-          url: https://github.com/argoproj/argo-helm/pull/1794
-        - name: "chore(helm): Group component templates together"
-          url: https://github.com/argoproj/argo-helm/pull/1847
+        - name: "feat: add parameter env to redis exporter"
+          url: https://github.com/argoproj/argo-helm/pull/1876
+        - name: "fix: skip empty configmap params"
+          url: https://github.com/argoproj/argo-helm/pull/1892
+        - name: "fix: clarify syntax in values.yaml"
+          url: https://github.com/argoproj/argo-helm/pull/1864
+        - name: "fix: Upgrade Argo CD v2.6.4"
+          url: https://github.com/argoproj/argo-helm/pull/1891

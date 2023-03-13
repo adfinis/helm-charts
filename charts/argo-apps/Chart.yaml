@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.14.0
+version: 0.15.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,14 +17,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "argo-rollouts: add flags to toggle provider-specific RBAC rules in Role and ClusterRole"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1777
-    - kind: changed
-      description: "argo-rollouts: Upgrade argo-rollouts form 1.3.1 to 1.4.0"
-      links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1774
-        - name: Releasenotes
-          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.4.0
+      description: "argo-notifications: make it fail if deprecated app is still installed"
