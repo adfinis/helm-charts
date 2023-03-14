@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.151.1
+version: 0.152.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,19 +16,8 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: security
-      description: "argo-cd: Update from 1.6.3 to 1.6.4"
+    - kind: changed
+      description: "argo-cd: Update chart from 5.25.0 to 2.26.0"
       links:
-        - name: GitHub Release v1.6.4
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.4
-    - kind: fixed
-      description: "argo-cd: Update chart from 5.24.1 to 5.25.0"
-      links:
-        - name: "feat: add parameter env to redis exporter"
-          url: https://github.com/argoproj/argo-helm/pull/1876
-        - name: "fix: skip empty configmap params"
-          url: https://github.com/argoproj/argo-helm/pull/1892
-        - name: "fix: clarify syntax in values.yaml"
-          url: https://github.com/argoproj/argo-helm/pull/1864
-        - name: "fix: Upgrade Argo CD v2.6.4"
-          url: https://github.com/argoproj/argo-helm/pull/1891
+        - name: "feat: add config management plugins cm"
+          url: https://github.com/argoproj/argo-helm/pull/1865
