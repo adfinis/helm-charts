@@ -12920,6 +12920,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "stackrox: Update 3.73.0 to 3.74.0"
+          links:
+            - name: Github Release
+              url: https://github.com/stackrox/stackrox/releases/tag/3.74.0
+    apiVersion: v2
+    created: "2023-03-14T15:06:22.741971977Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: e0131b55123f588b81f8734fa6ca7c39e00363db58543ee2df5c336e82a48837
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.70.0/security-apps-0.70.0.tgz
+    version: 0.70.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "secrets-store-csi-driver: Release 1.3.1 (chart version 1.3.1)"
           links:
             - name: Github Release
@@ -19665,4 +19692,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-13T18:39:52.376448487Z"
+generated: "2023-03-14T15:06:22.743992921Z"
