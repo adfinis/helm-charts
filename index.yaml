@@ -4,6 +4,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "argo-rollouts: Upgrade argo-rollouts 1.4.0 to 1.4.1"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1877
+            - name: Releasenotes
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.4.1
+    apiVersion: v2
+    created: "2023-03-14T21:19:04.669227902Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.8.0
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 0e1ac2f7867b47f48ce71bc61e57652fce97cad07179b99a244d3ec70a8dd7db
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.16.0/argo-apps-0.16.0.tgz
+    version: 0.16.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "argo-notifications: make it fail if deprecated app is still installed"
     apiVersion: v2
     created: "2023-03-09T12:38:59.194581939Z"
@@ -19692,4 +19721,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-14T15:06:22.743992921Z"
+generated: "2023-03-14T21:19:04.676733701Z"
