@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.152.0
+version: 0.152.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,8 +16,15 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: "argo-cd: Update chart from 5.25.0 to 2.26.0"
+    - kind: security
+      description: "argo-cd: update from 2.6.4 to 2.6.5"
       links:
-        - name: "feat: add config management plugins cm"
-          url: https://github.com/argoproj/argo-helm/pull/1865
+        - name: GitHub Release
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.5
+    - kind: changed
+      description: "argo-cd: Update chart from 5.26.0 to 2.26.2"
+      links:
+        - name: "fix: Upgrade Argo CD from v2.6.4 to v2.6.5"
+          url: https://github.com/argoproj/argo-helm/pull/1900
+        - name: "fix: Use nodeSelector global property as default on ApplicationSet"
+          url: https://github.com/argoproj/argo-helm/pull/1907
