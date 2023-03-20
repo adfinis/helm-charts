@@ -4303,6 +4303,42 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: "argo-cd: update from 2.6.5 to 2.6.6"
+          links:
+            - name: GitHub Release
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.6
+        - kind: changed
+          description: "argo-cd: Update chart from 2.26.2 to 2.27.1"
+          links:
+            - name: "fix: Upgrade Argo CD from v2.6.5 to v2.6.6"
+              url: https://github.com/argoproj/argo-helm/pull/1915
+            - name: "feat: Add ability to add project scoped cluster(s)"
+              url: https://github.com/argoproj/argo-helm/pull/1913
+            - name: "fix: Use default metrics port for APIServer"
+              url: https://github.com/argoproj/argo-helm/pull/1911
+    apiVersion: v2
+    created: "2023-03-20T11:03:02.294153328Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: a512ae66a5313989b72405ba30c5d6ffadaf2f68a8112612c4eb02a8c9644701
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.152.2/infra-apps-0.152.2.tgz
+    version: 0.152.2
+  - annotations:
+      artifacthub.io/changes: |
         - kind: security
           description: "argo-cd: update from 2.6.4 to 2.6.5"
           links:
@@ -19848,4 +19884,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-20T08:44:11.513001346Z"
+generated: "2023-03-20T11:03:02.296066389Z"
