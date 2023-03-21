@@ -9355,6 +9355,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: 'loki-stack: update loki-stack chart from 2.8.* to 2.9.9'
+          links:
+            - name: 'feat: update Promtail sub-chart'
+              url: https://github.com/grafana/helm-charts/commit/474a66bb54b8d581ab2e94ac7fe50c674c87d740
+    apiVersion: v2
+    created: "2023-03-21T15:54:26.08691398Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for logging applications
+    digest: 0bab54e13dd222e9b384dc18933e039517e4fbcaed4802139c4d589b07f37e0c
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.26.0/logging-apps-0.26.0.tgz
+    version: 0.26.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: 'use new elasticsearch credentials'
           links:
             - name: GitHub PR
@@ -19884,4 +19911,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-20T11:03:02.296066389Z"
+generated: "2023-03-21T15:54:26.089025705Z"
