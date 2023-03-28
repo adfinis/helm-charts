@@ -4303,6 +4303,33 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: "argo-cd: use Github's new RSA SSH public key"
+          links:
+            - name: "Pull Request"
+              url: https://github.com/argoproj/argo-helm/pull/1927
+    apiVersion: v2
+    created: "2023-03-28T11:24:52.01616061Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: b218fda26197903aac0d2117f1f2a2768e63ea70bffbe4b455917489ea93ca9c
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.152.4/infra-apps-0.152.4.tgz
+    version: 0.152.4
+  - annotations:
+      artifacthub.io/changes: |
         - kind: security
           description: "argo-cd: update from 2.6.6 to 2.6.7"
           links:
@@ -20003,4 +20030,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-27T07:19:30.643715049Z"
+generated: "2023-03-28T11:24:52.018185036Z"
