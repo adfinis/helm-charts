@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.152.3
+version: 0.152.4
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,13 +16,8 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: security
-      description: "argo-cd: update from 2.6.6 to 2.6.7"
-      links:
-        - name: GitHub Release
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.6.7
     - kind: changed
-      description: "argo-cd: Update chart from 5.27.1 to 5.27.2"
+      description: "argo-cd: use Github's new RSA SSH public key"
       links:
-        - name: "fix: Upgrade Argo CD from v2.6.6 to v2.6.7"
-          url: https://github.com/argoproj/argo-helm/pull/1926
+        - name: "Pull Request"
+          url: https://github.com/argoproj/argo-helm/pull/1927
