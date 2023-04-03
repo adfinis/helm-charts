@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.16.0
+version: 0.17.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,9 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "argo-rollouts: Upgrade argo-rollouts 1.4.0 to 1.4.1"
+      description: "argo-rollouts: support setting pod annotations separately on controller and dashboard"
       links:
         - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1877
-        - name: Releasenotes
-          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.4.1
+          url: https://github.com/argoproj/argo-helm/pull/1928
