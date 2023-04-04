@@ -1,0 +1,25 @@
+operator:
+  replicaCount: 1
+keycloak:
+  enabled: true
+  name: keycloak
+  features:
+    enabled:
+      - account2
+      - admin2
+      - web-authn
+    disabled:
+      - js-adapter
+      - kerberos
+  realmimport:
+    enabled: true
+    realms:
+      - id: test
+        realm: test
+        keycloakCRName: keycloak
+        users:
+          - id: '0'
+            firstName: Hans
+            lastName: Wurst
+            username: "john.sausage"
+            email: john.sausage@example.com

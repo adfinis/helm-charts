@@ -1,0 +1,274 @@
+{{- if .Values.keycloak.realmimport.enabled }}
+{{- $fullname := include "keycloak-operator.fullname" . }}
+{{- $labels := include "keycloak-operator.labels" . }}
+{{- range .Values.keycloak.realmimport.realms }}
+---
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: KeycloakRealmImport
+metadata:
+  name: {{ $fullname }}-{{ .realm }}
+  labels:
+    {{- $labels | nindent 4 }}
+spec:
+  keycloakCRName: {{ default $fullname .keycloakCRName }}
+  realm:
+    {{- with .webAuthnPolicyAvoidSameAuthenticatorRegister }}
+    webAuthnPolicyAvoidSameAuthenticatorRegister: {{ . }}
+    {{- end }}
+    {{- with .federatedUsers }}
+    federatedUsers: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .adminEventsEnabled }}
+    adminEventsEnabled: {{ . }}
+    {{- end }}
+    {{- with .registrationEmailAsUsername }}
+    registrationEmailAsUsername: {{ . }}
+    {{- end }}
+    {{- with .keycloakVersion }}
+    keycloakVersion: {{ . | quote }}
+    {{- end }}
+    {{- with .oauth2DeviceCodeLifespan }}
+    oauth2DeviceCodeLifespan: {{ . }}
+    {{- end }}
+    {{- with .sslRequired }}
+    sslRequired: {{ . }}
+    {{- end }}
+    {{- with .realm }}
+    realm: {{ . | quote }}
+    {{- end }}
+    {{- with .defaultGroups }}
+    defaultGroups: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .enabled }}
+    enabled: {{ . }}
+    {{- end }}
+    {{- with .webAuthnPolicySignatureAlgorithms }}
+    webAuthnPolicySignatureAlgorithms: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .ssoSessionMaxLifespanRememberMe }}
+    ssoSessionMaxLifespanRememberMe: {{ . }}
+    {{- end }}
+    {{- with .webAuthnPolicyRpID }}
+    webAuthnPolicyRpId: {{ . | quote }}
+    {{- end }}
+    {{- with .webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister }}
+    webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister: {{ . }}
+    {{- end }}
+    {{- with .users }}
+    users: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .clientTempaltes }}
+    clientTemplates: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .webAuthnPolicyPasswordlessUserVerificationRequirement }}
+    webAuthnPolicyPasswordlessUserVerificationRequirement: {{ . | quote }}
+    {{- end }}
+    {{- with .registrationFlow }}
+    registrationFlow: {{ . | quote }}
+    {{- end }}
+    {{- with .publicKey }}
+    publicKey: {{ . | quote }}
+    {{- end }}
+    {{- with .webAuthnPolicyPasswordlessCreateTimeout }}
+    webAuthnPolicyPasswordlessCreateTimeout: {{ . }}
+    {{- end }}
+    {{- with .authenticationFlows }}
+    authenticationFlows: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .applicationScopeMappings }}
+    applicationScopeMappings: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .offlineSessionMaxLifespan }}
+    offlineSessionMaxLifespan: {{ . }}
+    {{ end }}
+    {{- with .codeSecret }}
+    codeSecret: {{ . }}
+    {{- end }}
+    {{- with .offlineSessionIdleTimeout }}
+    offlineSessionIdleTimeout: {{ . }}
+    {{- end }}
+    {{- with .quickLoginCheckMilliSeconds }}
+    quickLoginCheckMilliSeconds:
+    {{- end }}
+    {{- with .privateKey }}
+    privateKey: {{ . | quote }}
+    {{- end }}
+    {{- with .webAuthnPolicyRpEntityName }}
+    webAuthnPolicyRpEntityName: {{ . | quote }}
+    {{- end }}
+    {{- with .emailTheme }}
+    emailTheme: {{ . | quote }}
+    {{- end }}
+    {{- with .accessCodeLifespanLogin }}
+    accessCodeLifespanLogin: {{ . }}
+    {{- end }}
+    {{- with .passwordPolicy }}
+    passwordPolicy: {{ . | quote }}
+    {{- end }}
+    {{- with .ssoSessionIdleTimeoutRememberMe }}
+    ssoSessionIdleTimeoutRememberMe: {{ . }}
+    {{- end }}
+    {{- with .resetPasswordAllowed }}
+    resetPasswordAllowed: {{ . }}
+    {{- end }}
+    {{- with .failureFactor }}
+    failureFactor: {{ . }}
+    {{- end }}
+    {{- with .otpPolicyAlgorithm }}
+    otpPolicyAlgorithm: {{ . | quote }}
+    {{- end }}
+    {{- with .requiredActions }}
+    requiredActions: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .actionTokenGeneratedByUserLifespan }}
+    actionTokenGeneratedByUserLifespan: {{ . }}
+    {{- end }}
+    {{- with .clientAuthenticationFlow }}
+    clientAuthenticationFlow: {{ . | quote }}
+    {{- end }}
+    {{- with .webAuthnPolicyAuthenticatorAttachment }}
+    webAuthnPolicyAuthenticatorAttachment: {{ . | quote }}
+    {{- end }}
+    {{- with .actionTokenGeneratedByAdminLifespan }}
+    actionTokenGeneratedByAdminLifespan: {{ . }}
+    {{- end }}
+    {{- with .id }}
+    id: {{ . | quote }}
+    {{- end }}
+    {{- with .clientPolicies }}
+    clientPolicies: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .webAuthnPolicyUserVerificationRequirement }}
+    webAuthnPolicyUserVerificationRequirement: {{ . | quote }}
+    {{- end }}
+    {{- with .loginTheme }}
+    loginTheme: {{ . | quote }}
+    {{- end }}
+    {{- with .requiredCredentials }}
+    requiredCredentials: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .webAuthnPolicyPasswordlessAttestationConveyancePreference }}
+    webAuthnPolicyPasswordlessAttestationConveyancePreference: {{ . | quote }}
+    {{- end }}
+    {{- with .directGrantFlow }}
+    directGrantFlow: {{ . | quote }}
+    {{- end }}
+    {{- with .identityProviderMappers }}
+    identityProviderMappers: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .dockerAuthenticationFlow }}
+    dockerAuthenticationFlow: {{ . | quote }}
+    {{- end }}
+    {{- with .browserFlow }}
+    browserFlow: {{ . | quote }}
+    {{- end }}
+    {{- with .bruteForceProtected }}
+    bruteForceProtected: {{ . }}
+    {{- end }}
+    {{- with .displayNameHtml }}
+    displayNameHtml: {{ . | quote }}
+    {{- end }}
+    {{- with .ssoSessionIdleTimeout }}
+    ssoSessionIdleTimeout: {{ . }}
+    {{- end }}
+    {{- with .browserSecurityHeaders }}
+    browserSecurityHeaders: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .eventsListeners }}
+    eventsListeners: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .accessTokenLifespan }}
+    accessTokenLifespan: {{ . }}
+    {{- end }}
+    {{- with .applications }}
+    applications: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .otpPolicyCodeReusable }}
+    otpPolicyCodeReusable: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .clientProfiles }}
+    clientProfiles: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .userFederationMappers }}
+    userFederationMappers: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .enabledEventTypes }}
+    enabledEventTypes: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .otpPolicyLookAheadWindow }}
+    otpPolicyLookAheadWindow: {{ . }}
+    {{- end }}
+    {{- with .displayName }}
+    displayName: {{ . | quote }}
+    {{- end }}
+    {{- with .eventsEnabled }}
+    eventsEnabled: {{ . }}
+    {{- end }}
+    {{- with .clientSessionMaxLifespan }}
+    clientSessionMaxLifespan: {{ . }}
+    {{- end }}
+    {{- with .roles }}
+    roles: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .groups }}
+    groups: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .webAuthnPolicyCreateTimeout }}
+    webAuthnPolicyCreateTimeout: {{ . }}
+    {{- end }}
+    {{- with .webAuthnPolicyAttestationConveyancePreference }}
+    webAuthnPolicyAttestationConveyancePreference: {{ . | quote }}
+    {{- end }}
+    {{- with .clientOfflineSessionIdleTimeout }}
+    clientOfflineSessionIdleTimeout: {{ . }}
+    {{- end }}
+    {{- with .notBefore }}
+    notBefore: {{ . }}
+    {{- end }}
+    {{- with .webAuthnPolicyPasswordlessRpEntityName }}
+    webAuthnPolicyPasswordlessRpEntityName: {{ . | quote }}
+    {{- end }}
+    {{- with .verifyEmail }}
+    verifyEmail: {{ . }}
+    {{- end }}
+    {{- with .clientScopeMappings }}
+    clientScopeMappings: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .identityProviders }}
+    identityProviders: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .resetCredentialsFlow }}
+    resetCredentialsFlow: {{ . | quote }}
+    {{- end }}
+    {{- with .duplicateEmailsAllowed }}
+    duplicateEmailsAllowed: {{ . }}
+    {{- end }}
+    {{- with .maxDeltaTimeSeconds }}
+    maxDeltaTimeSeconds: {{ . }}
+    {{- end }}
+    {{- with .offlineSessionMaxLifespanEnabled }}
+    offlineSessionMaxLifespanEnabled: {{ . }}
+    {{- end }}
+    {{- with .realmCacheEnabled }}
+    realmCacheEnabled: {{ . }}
+    {{- end }}
+    {{- with .attributes }}
+    attributes: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .adminTheme }}
+    adminTheme: {{ . | quote }}
+    {{- end }}
+    {{- with .loginWithEmailAllowed }}
+    loginWithEmailAllowed: {{ . }}
+    {{- end }}
+    {{- with .otpSupportedApplications }}
+    otpSupportedApplications: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .clientOfflineSessionMaxLifespan }}
+    clientOfflineSessionMaxLifespan: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .userFederationProviders }}
+    userFederationProviders: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+{{- end }}
+{{- end }}

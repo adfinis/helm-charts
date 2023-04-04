@@ -1,0 +1,282 @@
+# Default values for keycloak-operator.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+operator:
+  # -- Number or oeprator pods to start.
+  replicaCount: 1
+
+  image:
+    # -- Operator Image source.
+    repository: quay.io/keycloak/keycloak-operator
+    # -- Pull policy for Operator.
+    pullPolicy: IfNotPresent
+    # Overrides the image tag whose default is the chart appVersion.
+    tag: ""
+
+  config:
+    keycloakImage:
+      # -- Default keycloak image to use if non was specified in the Keycloak CRD.
+      repository: quay.io/keycloak/keycloak
+      # Overrides the keycloak image tag whose default is the chart appVersion.
+      tag: ""
+
+  serviceAccount:
+    # -- Specifies whether a service account should be created.
+    create: true
+    # -- Annotations to add to the service account
+    annotations: {}
+    # -- The name of the service account to use.
+    # If not set and create is true, a name is generated using the fullname template
+    name: ""
+
+  # -- Annotations to set on the Operator Deployment.
+  podAnnotations: {}
+
+  # -- Pod security group configuration for Operator Deployment.
+  podSecurityContext: {}
+    # fsGroup: 2000
+
+  # -- Security context for Operator Deployment.
+  securityContext: {}
+    # capabilities:
+    #   drop:
+    #   - ALL
+    # readOnlyRootFilesystem: true
+    # runAsNonRoot: true
+    # runAsUser: 1000
+
+  service:
+    # -- Enable creation of Service
+    enabled: true
+    # -- Service type for Operator.
+    type: ClusterIP
+    # -- Service port for Operator.
+    port: 8080
+
+  # -- Resource requests and limits for Operator Deployment.
+  resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #   cpu: 100m
+    #   memory: 128Mi
+    # requests:
+    #   cpu: 100m
+    #   memory: 128Mi
+
+  # -- Node selector for Operator Deployment.
+  nodeSelector: {}
+
+  # -- Tolerations for Operator Deployment.
+  tolerations: []
+
+  # -- Affinity for Operator Deployment.
+  affinity: {}
+
+keycloak:
+  # -- Enable deploying a bundled keycloak with the operator
+  enabled: false
+
+  # -- Number of Keycloak instances in HA mode.
+  instances: 1
+
+  transaction:
+    # -- Determine whether Keycloak should use a non-XA datasource.
+    xaEnabled: false
+
+  http:
+    # -- The used HTTP port
+    httpPort: ~
+    # -- A secret containing the TLS configuration for HTTPS.
+    tlsSecret: ~
+    # -- The used HTTPS port
+    httpsPort: ~
+    # -- Enable a HTTP listener
+    httpEnabled: true
+
+  hostname:
+    # -- Hostname for the Keycloak server.
+    hostname: keycloak.example.com
+    # -- Disables dynamically resolving the hostname from request headers
+    strict: false
+    # -- By default backchannel URLs are dynamically resolved from request headers to allow internal and external applications.
+    strictBackchannel: true
+    # -- The hostname for accessing the administration console.
+    admin: ~
+    # -- Set the base URL for accessing the administration console.
+    adminUrl: ~
+
+  unsupported:
+    # -- You can configure values that will be merged with the one configured by default by the operator.
+    podTemplate: ~
+      #    metadata:
+      #      labels:
+      #        foo: "bar"
+      #    spec:
+      #      containers:
+      #        - volumeMounts:
+      #            - name: test-volume
+      #              mountPath: /mnt/test
+      #          command: [ "/bin/bash", "-c", "cat /mnt/test/test.txt && /opt/keycloak/bin/kc.sh start-dev" ]
+      #      volumes:
+      #        - name: test-volume
+      #          secret:
+      #            secretName: keycloak-podtemplate-secret
+
+  ingress:
+    # -- The deployment is, by default, exposed through a basic ingress.
+    enabled: true
+
+  image:
+    # -- Overrides the operator.keycloakImage.image value whose default is quay.io/keycloak/keycloak
+    repository: ""
+    # -- Overrides the operator.keycloakImage.tag value whose default is the chart appVersion.
+    tag: ""
+
+  # -- Secret(s) that might be used when pulling an image from a private container image registry or repository.
+  imagePullSecrets: ~
+  # - name: secret-name
+
+  # -- Configuration of the Keycloak server expressed as a keys and values that can be either direct values or references to secrets.
+  additionalOptions: ~
+  # - name: string
+  #   value: string
+  #   secret:
+  #     optional: bol
+  #     key: string
+  #     name: string
+
+  db:
+    # -- The reference to a secret holding the password of the database user.
+    passwordSecret: ~
+    # optional: bool
+    # key: string
+    # name: string
+    # -- The reference to a secret holding the username of the database user.
+    usernameSecret: ~
+    # optional: bool
+    # key: string
+    # name: string
+    # -- Sets the port of the default JDBC URL of the chosen vendor. If the `url` option is set, this option is ignored.
+    port: ~
+    # -- The database schema to be used.
+    schema: ~
+    # -- Sets the hostname of the default JDBC URL of the chosen vendor. If the `url` option is set, this option is ignored.
+    host:
+    # -- The full database JDBC URL. If not provided, a default URL is set based on the selected database vendor.
+    url:
+    # -- The initial size of the connection pool.
+    poolInitialSize: ~
+    # -- The maximum size of the connection pool.
+    poolMaxSize: ~
+    # -- The database vendor.
+    vendor: ~
+    # -- Sets the database name of the default JDBC URL of the chosen vendor. If the `url` option is set, this option is ignored.
+    database: ~
+    # -- The minimal size of the connection pool.
+    poolMinSize: ~
+  features:
+    # -- Disabled Keycloak features
+    disabled: []
+    # -- Enabled Keycloak features
+    enabled: []
+
+  realmimport:
+    # -- Deploy realmimport resources
+    enabled: false
+    # -- A list of realms to configure using the realmimport CRD.
+    realms: []
+    # - keycloakCRName: string
+    #   webAuthnPolicyAvoidSameAuthenticatorRegister: boolean
+    #   federatedUsers: []
+    #   adminEventsEnabled: boolean
+    #   registrationEmailAsUsername: boolean
+    #   keycloakVersion: string
+    #   oauth2DeviceCodeLifespan: integer
+    #   sslRequired: boolean
+    #   realm: string
+    #   defaultGroups: {}
+    #   enabled: boolean
+    #   webAuthnPolicySignatureAlgorithms: []
+    #   ssoSessionMaxLifespanRememberMe: integer
+    #   webAuthnPolicyRpId: string
+    #   webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister: boolean
+    #   users: []
+    #   clientTemplates: []
+    #   webAuthnPolicyPasswordlessUserVerificationRequirement: string
+    #   registrationFlow: string
+    #   publicKey: string
+    #   webAuthnPolicyPasswordlessCreateTimeout: integer
+    #   authenticationFlows: []
+    #   applicationScopeMappings: []
+    #   offlineSessionMaxLifespan: integer
+    #   codeSecret: string
+    #   offlineSessionIdleTimeout: integer
+    #   quickLoginCheckMilliSeconds: integer
+    #   privateKey: string
+    #   webAuthnPolicyRpEntityName: string
+    #   emailTheme: string
+    #   accessCodeLifespanLogin: integer
+    #   passwordPolicy: string
+    #   ssoSessionIdleTimeoutRememberMe: integer
+    #   resetPasswordAllowed: boolean
+    #   failureFactor: integer
+    #   otpPolicyAlgorithm: string
+    #   requiredActions: []
+    #   actionTokenGeneratedByUserLifespan: integer
+    #   clientAuthenticationFlow: string
+    #   webAuthnPolicyAuthenticatorAttachment: string
+    #   actionTokenGeneratedByAdminLifespan: integer
+    #   id: string
+    #   clientPolicies: {}
+    #   webAuthnPolicyUserVerificationRequirement: string
+    #   loginTheme: string
+    #   requiredCredentials: []
+    #   webAuthnPolicyPasswordlessAttestationConveyancePreference: string
+    #   directGrantFlow: string
+    #   identityProviderMappers: []
+    #   dockerAuthenticationFlow: string
+    #   browserFlow: string
+    #   bruteForceProtected: boolean
+    #   displayNameHtml: string
+    #   ssoSessionIdleTimeout: integer
+    #   browserSecurityHeaders: {}
+    #   eventsListeners: []
+    #   accessTokenLifespan: integer
+    #   applications: []
+    #   otpPolicyCodeReusable: boolean
+    #   clientProfiles: {}
+    #   userFederationMappers: []
+    #   enabledEventTypes: []
+    #   otpPolicyLookAheadWindow: integer
+    #   displayName: string
+    #   eventsEnabled: boolean
+    #   clientSessionMaxLifespan: integer
+    #   roles: []
+    #   groups: []
+    #   webAuthnPolicyCreateTimeout: integer
+    #   webAuthnPolicyAttestationConveyancePreference: string
+    #   clientOfflineSessionIdleTimeout: integer
+    #   notBefore: integer
+    #   webAuthnPolicyPasswordlessRpEntityName: string
+    #   verifyEmail: boolean
+    #   clientScopeMappings: []
+    #   identityProviders: []
+    #   resetCredentialsFlow: string
+    #   duplicateEmailsAllowed: boolean
+    #   maxDeltaTimeSeconds: integer
+    #   offlineSessionMaxLifespanEnabled: boolean
+    #   realmCacheEnabled: boolean
+    #   attributes: {}
+    #   adminTheme: string
+    #   loginWithEmailAllowed: boolean
+    #   otpSupportedApplications: []
+    #   clientOfflineSessionMaxLifespan: integer
+    #   userFederationProviders: []
