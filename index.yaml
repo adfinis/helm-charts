@@ -10216,6 +10216,43 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            signalilo: update from 0.12.0 to 0.13.0
+
+            Add option to set display name to service name and update a bunch of internal deps.
+          links:
+            - name: GitHub Release
+              url: https://github.com/vshn/signalilo/releases/tag/v0.13.0
+        - kind: changed
+          description: "signalilo: update chart from 0.10.1 to 0.12.0"
+          links:
+            - name: "feat: update from 0.12.0 to 0.13.0"
+              url: https://github.com/appuio/charts/pull/459
+            - name: "feat: make Signalilo service account configurable"
+              url: https://github.com/appuio/charts/pull/454
+    apiVersion: v2
+    created: "2023-04-04T13:46:04.597282808Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 96f17a2814fcd28fd70c68d561cb4c24b7e03f63816255f1c6a4dd5c442fc8e6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.31.0/misc-apps-0.31.0.tgz
+    version: 0.31.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "kube-downscaler: fix env var injection"
           links:
             - name: GitHub PR
@@ -20190,4 +20227,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-04T13:18:58.907703587Z"
+generated: "2023-04-04T13:46:04.599817432Z"
