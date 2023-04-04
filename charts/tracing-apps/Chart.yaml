@@ -2,7 +2,7 @@ apiVersion: v2
 name: tracing-apps
 description: Argo CD app-of-apps config for tracing applications
 type: application
-version: 0.22.0
+version: 0.23.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,19 +17,28 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: |
-        jaeger-operator: Update from 1.39.0 to 1.42.0
-
-        Introduces official support for K8s 1.24.
+      description: "opentelemetry-collector: Update from 0.72.0 to 0.74.0"
       links:
-        - name: Changelog for 1.40.0
-          url: https://github.com/jaegertracing/jaeger-operator/blob/main/CHANGELOG.md#1400-2022-12-23
-        - name: Changelog for 1.41.1
-          url: https://github.com/jaegertracing/jaeger-operator/blob/main/CHANGELOG.md#1411-2023-01-23
+        - name: Changelog for 0.74.0
+          url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.74.0
+        - name: Changelog for 0.73.0
+          url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/cmd%2Fbuilder%2Fv0.73.0
     - kind: changed
-      description: 'jaeger-operator: update chart from 2.39.0 to 2.41.0'
+      description: "opentelemetry-collector: update chart from 0.49.1 to 0.51.3"
       links:
-        - name: 'feat: update jaeger-operator from 1.39.0 to 1.42.0'
-          url: https://github.com/jaegertracing/helm-charts/pull/458
-        - name: 'feat: allow setting the Certificate Issuer kind'
-          url: https://github.com/jaegertracing/helm-charts/pull/446
+        - name: "fix: Update time layout for cri-o log format"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/721
+        - name: "feat: adding k8sobjects receiver as preset"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/688
+        - name: "fix: filelog exclude"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/703
+        - name: "feat: collector to 0.74.0"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/695
+        - name: "fix: Ensure ClusterRole is created for kubeletMetrics preset"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/687
+        - name: "fix: collector to 0.73.0"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/684
+        - name: "chore: Define annotations in consistent way"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/674
+        - name: "fix: Chart name to lower when used in DNS label fields"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/657
