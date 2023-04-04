@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.152.4
+version: 0.153.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,17 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "argo-cd: use Github's new RSA SSH public key"
+      description: |
+        nginx-ingress: update from 1.6.4 to 1.7.0
+
+        - Upgrade alpine 3.17.2
+        - Upgrade golang 1.20
+        - Drop testing/support for Kubernetes 1.23
       links:
-        - name: "Pull Request"
-          url: https://github.com/argoproj/argo-helm/pull/1927
+        - name: GitHub Release
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.7.0
+    - kind: changed
+      description: "ngin-ingress update chart from 4.5.2 to 4.6.0"
+      links:
+        - name: "update chart for 1.7.0"
+          url: https://github.com/kubernetes/ingress-nginx/pull/9784

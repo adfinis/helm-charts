@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.152.4](https://img.shields.io/badge/Version-0.152.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.153.0](https://img.shields.io/badge/Version-0.153.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -62,7 +62,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingressNginx.destination.namespace | string | `"infra-ingress"` | Namespace |
 | ingressNginx.enabled | bool | `false` | Configure nginx-ingress |
 | ingressNginx.repoURL | string | [repo](https://kubernetes.github.io/ingress-nginx) | Repo URL |
-| ingressNginx.targetRevision | string | `"4.5.2"` | [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version |
+| ingressNginx.targetRevision | string | `"4.6.0"` | [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version |
 | ingressNginx.values | object | [upstream values](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml) | Helm values |
 | kubeEventExporter | object | [example](./examples/kubernetes-event-exporter.yaml) | [kubernetes-event-exporter](https://github.com/resmoio/kubernetes-event-exporter) |
 | kubeEventExporter.annotations | object | `{}` | Annotations for kubernetes-event-exporter app |
