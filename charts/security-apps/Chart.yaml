@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.71.0
+version: 0.72.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,28 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "dex: Update 2.35.1 to 2.36.0"
+      description: |
+        neuvector: update from 5.1.0 to 5.1.2
+
+        * Support cri-o 1.26+ and OpenShift 4.11+
+        * Enable auto scan in configMap
+        * improve controller and enforcer CPU and memory consumption
+        * fix various ui issues
+        * Make gravatar optional
+        * Hostname based egress network policy
+        * Display cluster namespace resource in UI
+        * Various performance and scalability improvements
       links:
-        - name: Github Release
-          url: https://github.com/dexidp/dex/releases/tag/v2.36.0
+        - name: GitHub Release 5.1.2
+          url: https://github.com/neuvector/neuvector/releases/tag/v5.1.2
+        - name: GitHub Release 5.1.1
+          url: https://github.com/neuvector/neuvector/releases/tag/v5.1.1
+    - kind: changed
+      description: "neuvector: update charts from 2.4.0 to 2.4.3"
+      links:
+        - name: "fix: update to 5.1.2"
+          url: https://github.com/neuvector/neuvector-helm/pull/240
+        - name: "fix: update to 5.1.1"
+          url: https://github.com/neuvector/neuvector-helm/pull/225
+        - name: "chore: bump chart to 2.4.1"
+          url: https://github.com/neuvector/neuvector-helm/commit/0f3d7243c31003034e2cf2231e6163baaaef3626
