@@ -4331,6 +4331,43 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            nginx-ingress: update from 1.6.4 to 1.7.0
+
+            - Upgrade alpine 3.17.2
+            - Upgrade golang 1.20
+            - Drop testing/support for Kubernetes 1.23
+          links:
+            - name: GitHub Release
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.7.0
+        - kind: changed
+          description: "ngin-ingress update chart from 4.5.2 to 4.6.0"
+          links:
+            - name: "update chart for 1.7.0"
+              url: https://github.com/kubernetes/ingress-nginx/pull/9784
+    apiVersion: v2
+    created: "2023-04-04T10:54:18.522391716Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: bd4046a7ec93e5811139b55d9263377aff98974128bab3e04c3ca8b7d47d6168
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.153.0/infra-apps-0.153.0.tgz
+    version: 0.153.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "argo-cd: use Github's new RSA SSH public key"
           links:
             - name: "Pull Request"
@@ -20057,4 +20094,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-03T15:22:09.107896009Z"
+generated: "2023-04-04T10:54:18.5268786Z"
