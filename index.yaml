@@ -13196,6 +13196,54 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            neuvector: update from 5.1.0 to 5.1.2
+
+            * Support cri-o 1.26+ and OpenShift 4.11+
+            * Enable auto scan in configMap
+            * improve controller and enforcer CPU and memory consumption
+            * fix various ui issues
+            * Make gravatar optional
+            * Hostname based egress network policy
+            * Display cluster namespace resource in UI
+            * Various performance and scalability improvements
+          links:
+            - name: GitHub Release 5.1.2
+              url: https://github.com/neuvector/neuvector/releases/tag/v5.1.2
+            - name: GitHub Release 5.1.1
+              url: https://github.com/neuvector/neuvector/releases/tag/v5.1.1
+        - kind: changed
+          description: "neuvector: update charts from 2.4.0 to 2.4.3"
+          links:
+            - name: "fix: update to 5.1.2"
+              url: https://github.com/neuvector/neuvector-helm/pull/240
+            - name: "fix: update to 5.1.1"
+              url: https://github.com/neuvector/neuvector-helm/pull/225
+            - name: "chore: bump chart to 2.4.1"
+              url: https://github.com/neuvector/neuvector-helm/commit/0f3d7243c31003034e2cf2231e6163baaaef3626
+    apiVersion: v2
+    created: "2023-04-04T13:18:58.905713855Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: 7014167eed186150b6dd9850eab556525274e105b174cb6539121762e68ab81a
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.72.0/security-apps-0.72.0.tgz
+    version: 0.72.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "dex: Update 2.35.1 to 2.36.0"
           links:
             - name: Github Release
@@ -20142,4 +20190,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-04T12:48:07.063417479Z"
+generated: "2023-04-04T13:18:58.907703587Z"
