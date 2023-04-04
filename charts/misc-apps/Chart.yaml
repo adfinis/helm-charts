@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.30.2
+version: 0.31.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,17 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "kube-downscaler: fix env var injection"
+      description: |
+        signalilo: update from 0.12.0 to 0.13.0
+
+        Add option to set display name to service name and update a bunch of internal deps.
       links:
-        - name: GitHub PR
-          url: https://github.com/deliveryhero/helm-charts/pull/441
+        - name: GitHub Release
+          url: https://github.com/vshn/signalilo/releases/tag/v0.13.0
+    - kind: changed
+      description: "signalilo: update chart from 0.10.1 to 0.12.0"
+      links:
+        - name: "feat: update from 0.12.0 to 0.13.0"
+          url: https://github.com/appuio/charts/pull/459
+        - name: "feat: make Signalilo service account configurable"
+          url: https://github.com/appuio/charts/pull/454
