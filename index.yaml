@@ -11853,6 +11853,36 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "bump openshift-etcd-backup image to v1.6.13"
+          links:
+            - name: openshift-etcd-backup release v1.6.13
+              url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.6.13
+    apiVersion: v2
+    appVersion: v1.6.13
+    created: "2023-04-05T08:02:19.561932035Z"
+    description: Chart for openshift-etcd-backup solution
+    digest: d0792989d6b8655fb7731379e6ccf6d00a767e90b7effed0faa70b3baaef840f
+    home: https://github.com/adfinis/openshift-etcd-backup
+    keywords:
+    - openshift-etcd-backup
+    - openshift
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: openshift-etcd-backup
+    sources:
+    - https://github.com/adfinis/openshift-etcd-backup
+    - https://github.com/adfinis/helm-charts/tree/main/charts/openshift-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/openshift-etcd-backup-1.6.13/openshift-etcd-backup-1.6.13.tgz
+    version: 1.6.13
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "bump openshift-etcd-backup image to v1.6.11"
           links:
             - name: openshift-etcd-backup release v1.6.11
@@ -20261,4 +20291,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-05T06:57:59.224126012Z"
+generated: "2023-04-05T08:02:19.56440469Z"
