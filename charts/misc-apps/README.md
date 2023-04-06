@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.31.0](https://img.shields.io/badge/Version-0.31.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.32.0](https://img.shields.io/badge/Version-0.32.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -59,7 +59,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keda.destination.namespace | string | `"infra-keda"` | Namespace |
 | keda.enabled | bool | `false` | Enable KEDA |
 | keda.repoURL | string | [repo](https://kedacore.github.io/charts) | Repo URL |
-| keda.targetRevision | string | `"2.9.3"` | [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version |
+| keda.targetRevision | string | `"2.10.1"` | [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version |
 | keda.values | object | [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml) | Helm values |
 | metallb | object | - | [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml)) |
 | metallb.chart | string | `"metallb"` | Chart |
