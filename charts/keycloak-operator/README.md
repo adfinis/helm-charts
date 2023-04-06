@@ -12,7 +12,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 ## Source Code
 
 * <https://github.com/keycloak/keycloak-k8s-resources>
-* <https://github.com/adfinis-sygroup/helm-charts/tree/main/charts/keycloak-operator>
+* <https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator>
 
 ## Values
 
