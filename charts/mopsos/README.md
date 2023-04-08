@@ -1,6 +1,6 @@
 # mopsos
 
-![Version: 0.6.4](https://img.shields.io/badge/Version-0.6.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.7](https://img.shields.io/badge/AppVersion-v0.3.7-informational?style=flat-square)
+![Version: 0.6.5](https://img.shields.io/badge/Version-0.6.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.3.7](https://img.shields.io/badge/AppVersion-v0.3.7-informational?style=flat-square)
 
 Deploy Mopsos to a Kubernetes Cluster
 
@@ -20,7 +20,7 @@ Kubernetes: `>= 1.21.0`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://grafana.github.io/helm-charts | grafana | 6.26.* |
+| https://grafana.github.io/helm-charts | grafana | 6.50.2 |
 
 ## Values
 

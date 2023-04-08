@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.14.0](https://img.shields.io/badge/Version-0.14.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.16.19](https://img.shields.io/badge/Version-0.16.19-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -56,11 +56,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.cronjobs.notifyReviewersThird.command[5] | string | `"'Please verify your reports immediately!'"` | Additional message to send if there are unverified reports |
 | backend.cronjobs.notifySupervisors | object | `{"command":["./manage.py","notify_supervisors_shorttime"],"schedule":"0 8 * * 4"}` | Notify supervisors |
 | backend.cronjobs.redmineReport | object | `{"command":["./manage.py","redmine_report"],"schedule":"0 1 * * 1"}` | Redmine report |
-| backend.cronjobs.updateProjectExpanditureFirst | object | `{"command":["./manage.py","update_project_expenditure"],"schedule":"0 8 * * 3"}` | Update project expanditure in redmine first time |
-| backend.cronjobs.updateProjectExpanditureSecond | object | `{"command":["./manage.py","update_project_expenditure"],"schedule":"0 8 * * 0"}` | Update project expanditure in redmine second time |
+| backend.cronjobs.updateProjectExpanditureFirst | object | `{"command":["./manage.py","update_project_expenditure","--pretend"],"schedule":"0 8 * * 3"}` | Update project expanditure in redmine first time |
+| backend.cronjobs.updateProjectExpanditureFirst.command[2] | string | `"--pretend"` | Pretend to update the project expenditure |
+| backend.cronjobs.updateProjectExpanditureSecond | object | `{"command":["./manage.py","update_project_expenditure","--pretend"],"schedule":"0 8 * * 0"}` | Update project expanditure in redmine second time |
+| backend.cronjobs.updateProjectExpanditureSecond.command[2] | string | `"--pretend"` | Pretend to update the project expenditure |
+| backend.existingSecret | string | `nil` | Specify an existing secret that gets used instead of a Helm managed secret based on several values. |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"ghcr.io/adfinis/timed-backend"` | Backend image name |
-| backend.image.tag | string | `"v3.0.0-rc4"` | Backend version. |
+| backend.image.tag | string | `"v3.0.4"` | Backend version. |
 | backend.jobs.dbmigrate.enable | bool | `true` | Enable the dbmigrate Job. This is configurable because timed can also run this on startup if so preferred. |
 | backend.livenessProbe.enabled | bool | `true` | Enable liveness probe on backend |
 | backend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
@@ -86,6 +89,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.service.probesPort | int | `81` | Internal Port of backend service probes |
 | backend.service.type | string | `"ClusterIP"` | Backend service type |
 | backend.settings.admins | list | `[]` | Django administrators, example: Jon Doe <jon.doe@example.com> |
+| backend.settings.buildProject | string | `" BUILD"` | Define name for build projects |
 | backend.settings.corsAllowedOrigins | list | `[]` | Define allowed domains for CORS |
 | backend.settings.customerCenterEmail | string | `"webmaster@chart-example.local"` | Email address to use for sending order confirmations from customer center |
 | backend.settings.emailFrom | string | `"webmaster@chart-example.local"` | Default email address to use for various responses |
@@ -102,8 +106,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.startupProbe.enabled | bool | `true` | Enable startup probe on backend |
 | backend.startupProbe.failureThreshold | int | `6` | Number of times to perform the probe |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | Frontend image pull policy |
-| frontend.image.repository | string | `"adfinissygroup/timed-frontend"` | Frontend image name |
-| frontend.image.tag | string | `"v2.1.3"` | Frontend version. |
+| frontend.image.repository | string | `"ghcr.io/adfinis/timed-frontend"` | Frontend image name |
+| frontend.image.tag | string | `"v3.1.2"` | Frontend version. |
 | frontend.livenessProbe.enabled | bool | `true` | Enable liveness probe on frontend |
 | frontend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
 | frontend.livenessProbe.initialDelaySeconds | int | `60` | Number of seconds after the container has started before liveness probe is initiated |
@@ -128,6 +132,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingress.annotations | object | `{}` | Ingress annotations |
 | ingress.enabled | bool | `false` | Enable ingress for timed |
 | ingress.hosts | list | `[]` | Ingress hostnames |
+| ingress.ingressClassName | string | `nil` | Set ingressClassName |
 | ingress.tls | list | `[]` | Ingress TLS options |
 | kubeVersionOverride | string | `nil` | override what version of Kubernetes to render against |
 | postgresql.auth.database | string | `"timed"` | PostgreSQL database name |

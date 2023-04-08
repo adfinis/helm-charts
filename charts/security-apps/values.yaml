@@ -13,7 +13,7 @@ dex:
   # -- Chart
   chart: "dex"
   # -- [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version
-  targetRevision: "0.12.*"
+  targetRevision: "0.14.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml)
   values: {}
@@ -181,7 +181,7 @@ secretsStoreCsiDriver:
   # -- Chart
   chart: "secrets-store-csi-driver"
   # -- [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version
-  targetRevision: "1.2.4"
+  targetRevision: "1.3.1"
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver/values.yaml)
   values: {}
@@ -201,7 +201,7 @@ neuvector:
   # -- Chart
   chart: "core"
   # -- [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version
-  targetRevision: "2.2.*"
+  targetRevision: "2.4.3"
   # -- Helm values
   # @default -- [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/core/values.yaml)
   values: {}
@@ -221,7 +221,7 @@ neuvectorMonitor:
   # -- Chart
   chart: "monitor"
   # -- [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version
-  targetRevision: "2.2.*"
+  targetRevision: "2.4.3"
   # -- Helm values
   # @default -- [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/monitor/values.yaml)
   values: {}
@@ -241,7 +241,7 @@ stackroxCentralServices:
   # -- Chart
   chart: stackrox-central-services
   # -- [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version
-  targetRevision: 72.1.0
+  targetRevision: 74.0.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-central/values.yaml)
   values: {}
@@ -261,7 +261,7 @@ stackroxSecuredClusterServices:
   # -- Chart
   chart: stackrox-secured-cluster-services
   # -- [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version
-  targetRevision: 72.1.0
+  targetRevision: 74.0.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-secured-cluster/values.yaml.htpl)
   values: {}

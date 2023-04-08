@@ -13,7 +13,7 @@ downscaler:
   # -- Chart
   chart: "kube-downscaler"
   # -- [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version
-  targetRevision: "0.6.0"
+  targetRevision: "0.7.1"
   # -- Helm values
   # @default -- [upstream values](https://github.com/deliveryhero/helm-charts/blob/master/stable/kube-downscaler/values.yaml)
   values: {}
@@ -33,7 +33,7 @@ signalilo:
   # -- Chart
   chart: "signalilo"
   # -- [signalilo Helm chart](https://github.com/appuio/charts/tree/master/appuio/signalilo) version
-  targetRevision: "0.9.1"
+  targetRevision: "0.12.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/appuio/charts/blob/master/appuio/signalilo/values.yaml)
   values: {}
@@ -157,7 +157,7 @@ keda:
   # -- Chart
   chart: keda
   # -- [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version
-  targetRevision: 2.8.*
+  targetRevision: 2.10.1
   # -- Helm values
   # @default -- [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml)
   values: {}

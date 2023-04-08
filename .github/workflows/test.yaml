@@ -16,7 +16,7 @@ jobs:
     - name: Set up Helm
       uses: azure/setup-helm@v3.5
       with:
-        version: v3.10.0
+        version: v3.10.3
 
     - name: install helm unittest
       run: |
@@ -50,7 +50,7 @@ jobs:
       - name: Set up Helm
         uses: azure/setup-helm@v3.5
         with:
-          version: v3.10.0
+          version: v3.10.3
 
       - name: install helm unittest
         run: |
@@ -62,7 +62,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install chart-testing
-        uses: helm/chart-testing-action@v2.3.1
+        uses: helm/chart-testing-action@v2.4.0
 
       - name: Install Artifact Hub CLI tool
         run: hack/sh/deps/ah.sh
@@ -72,7 +72,7 @@ jobs:
         run: |
           changed=$(ct --config=hack/chart-testing/ct.yaml list-changed)
           if [[ -n "$changed" ]]; then
-            echo "::set-output name=changed::true"
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
       - name: Run chart-testing (lint)

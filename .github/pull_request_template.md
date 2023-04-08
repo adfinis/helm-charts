@@ -12,6 +12,9 @@
     Link related issues here, it's ok if this is empty but we do recommend that
     you create issues before working on PRs, issues on internal trackers are
     fine and need not be linked here.
+
+    If your PR adds a new chart we expect you to create and link an issue so we
+    can discuss adding your chart before you put the work into creating it.
 -->
 
 # Checklist
@@ -23,7 +26,7 @@
 
 * [ ] This PR contains a description of the changes I'm making
 * [ ] I updated the version in Chart.yaml
-* [ ] I updated the changelog according to the `artifacthub.io/changes` annotation in the Chart.yaml. See following [example](https://github.com/adfinis/helm-charts/pull/858/files).
+* [ ] I updated the changelog with an `artifacthub.io/changes` annotation in `Chart.yaml`, check the [example](docs/development.md#Changelog) in the documentation.
 * [ ] I updated applicable README.md files using  `pre-commit run`
 * [ ] I documented any high-level concepts I'm introducing in `docs/`
 * [ ] CI is currently green and this is ready for review

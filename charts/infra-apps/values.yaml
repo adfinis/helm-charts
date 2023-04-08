@@ -20,7 +20,7 @@ argocd:
   # -- Chart
   chart: argo-cd
   # -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version
-  targetRevision: 5.14.1
+  targetRevision: 5.27.3
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml)
   values: {}
@@ -42,7 +42,7 @@ certManager:
   # -- Chart
   chart: cert-manager
   # -- [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version
-  targetRevision: 1.10.*
+  targetRevision: 1.11.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
@@ -111,7 +111,7 @@ ingressNginx:
   # -- Chart
   chart: ingress-nginx
   # -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version
-  targetRevision: 4.4.0
+  targetRevision: 4.6.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml)
   values: {}
@@ -133,7 +133,7 @@ kubePrometheusStack:
   # -- Chart
   chart: kube-prometheus-stack
   # -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: 42.1.0
+  targetRevision: 44.3.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
   values: {}
@@ -199,7 +199,7 @@ velero:
   # -- Chart
   chart: velero
   # -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
-  targetRevision: 2.32.4
+  targetRevision: 3.1.2
   # -- Helm values
   # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
   values: {}
@@ -220,13 +220,13 @@ kured:
   repoURL: https://kubereboot.github.io/charts
   # -- Chart
   chart: kured
-  # -- [Kured Helm chart](https://github.com/kubereboot/kured/tree/main/charts/kured)
-  targetRevision: 4.1.0
+  # -- [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured)
+  targetRevision: 4.2.0
   # -- Helm values
-  # @default -- [upstream values](https://github.com/kubereboot/kured/blob/main/charts/kured/values.yaml)
+  # @default -- [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml)
   values: {}
 
-# -- [kubernetes-event-exporter](https://github.com/opsgenie/kubernetes-event-exporter)
+# -- [kubernetes-event-exporter](https://github.com/resmoio/kubernetes-event-exporter)
 # @default -- [example](./examples/kubernetes-event-exporter.yaml)
 kubeEventExporter:
   # -- Enable kubernetes-event-exporter
@@ -242,10 +242,10 @@ kubeEventExporter:
   repoURL: https://charts.bitnami.com/bitnami
   # -- Chart
   chart: kubernetes-event-exporter
-  # -- [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kubernetes-event-exporter)
-  targetRevision: 2.1.1
+  # -- [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/kubernetes-event-exporter)
+  targetRevision: 2.1.6
   # -- Helm values
-  # @default -- [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/kubernetes-event-exporter/values.yaml)
+  # @default -- [upstream values](https://github.com/bitnami/charts/blob/main/bitnami/kubernetes-event-exporter/values.yaml)
   values: {}
 
 # -- [mimir](https://github.com/grafana/mimir)

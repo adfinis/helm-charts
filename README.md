@@ -64,6 +64,7 @@ for more in-depth information.
 | [common](charts/common) | Common chartbuilding components ... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [csi-secret-provider-class](charts/csi-secret-provider-class) | A Helm chart to create a SecretP... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [customer-center](charts/customer-center) | Chart for Customer-Center applic... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 3.2.x](https://img.shields.io/badge/app%20version-3.2.x-brightgreen) |
+| [hedgedoc](charts/hedgedoc) | Chart for HedgeDoc, a fork of Co... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 1.9.x](https://img.shields.io/badge/app%20version-1.9.x-brightgreen) |
 | [mopsos](charts/mopsos) | Deploy Mopsos to a Kubernetes Cl... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [openshift-etcd-backup](charts/openshift-etcd-backup) | Chart for openshift-etcd-backup ... | ![Version: 1.6.x](https://img.shields.io/badge/version-1.6.x-brightgreen) |  ![App version: 1.6.x](https://img.shields.io/badge/app%20version-1.6.x-brightgreen) |
 | [osschallenge](charts/osschallenge) | Chart for OSS-Challenge application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |
@@ -97,12 +98,14 @@ hack/helm-docs.sh
 
 We track issues with this chart repository in the [issue tracker](https://github.com/adfinis/helm-charts/issues).
 
+We expect you to always create an issue prior to creating a new chart. This helps us discuss the merits of it before you put the effort into creating the chart.
+
 ## About this repository
 
 Adfinis fights for a software world that is more open, where the quality is
 better and where software must be accessible to everyone. This repository
 contains part of the action behind this commitment. Feel free to
-[contact](https://adfinis.com/kontakt/?pk_campaign=github&pk_kwd=helm-charts)
+[contact](https://adfinis.com/en/contact/?pk_campaign=github&pk_kwd=helm-charts)
 us if you have any questions.
 
 ## License

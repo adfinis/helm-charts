@@ -12,13 +12,10 @@ backend:
     # -- Backend image name
     repository: ghcr.io/adfinis/timed-backend
     # -- Backend version.
-    tag: v3.0.0-rc4
+    tag: v3.0.4
     # -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
-    # Specifiy secret for authentication.
-    # If not random token will be generated
-    # secret:
     # -- Backend service name
     name: timed-backend
     # -- Backend service type
@@ -29,6 +26,8 @@ backend:
     internalPort: 80
     # -- Internal Port of backend service probes
     probesPort: 81
+  # -- Specify an existing secret that gets used instead of a Helm managed secret based on several values.
+  existingSecret: ~
   # -- Resource limits for backend
   resources: {}
     # We usually recommend not to specify default resources and to leave this as a conscious
@@ -104,6 +103,8 @@ backend:
     admins: []
     # -- Define allowed domains for CORS
     corsAllowedOrigins: []
+    # -- Define name for build projects
+    buildProject: " BUILD"
     hurricane:
       # -- request queue length before hurricane denies requests and toggles readiness
       reqQueueLen: 250
@@ -186,23 +187,27 @@ backend:
       command:
         - "./manage.py"
         - "update_project_expenditure"
+        # -- Pretend to update the project expenditure
+        - "--pretend"
     # -- Update project expanditure in redmine second time
     updateProjectExpanditureSecond:
       schedule: "0 8 * * 0"
       command:
         - "./manage.py"
         - "update_project_expenditure"
+        # -- Pretend to update the project expenditure
+        - "--pretend"
 
 frontend:
   # -- (int) Number of Backend replicas
   replicaCount: 1
   image:
     # -- Frontend image name
-    repository: adfinissygroup/timed-frontend
+    repository: ghcr.io/adfinis/timed-frontend
     # -- Frontend image pull policy
     pullPolicy: IfNotPresent
     # -- Frontend version.
-    tag: v2.1.3
+    tag: v3.1.2
   service:
     # -- Frontend service name
     name: timed-frontend
@@ -256,8 +261,9 @@ ingress:
   enabled: false
   # -- Ingress annotations
   annotations: {}
-    # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
+  # -- Set ingressClassName
+  ingressClassName: ~
   # -- Ingress hostnames
   hosts: []
   #  - timed-test.example.com
