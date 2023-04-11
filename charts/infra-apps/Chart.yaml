@@ -18,7 +18,7 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        kube-prometheus-stack: update from 0.62.0 to 0.62.0
+        kube-prometheus-stack: update from 0.62.0 to 0.63.0
 
         This version upgrades Prometheus-Operator to v0.63.0, Prometheus to v2.43.0, and Thanos to v0.30.2.
       links:
@@ -29,7 +29,7 @@ annotations:
         - name: GitHub Release Thanos v0.30.2
           url: https://github.com/thanos-io/thanos/releases/tag/v0.30.2
     - kind: changed
-      description: "kube-prometheus-stack: update chart from 44.3.0 to 45.9.0"
+      description: "kube-prometheus-stack: update chart from 44.3.0 to 45.9.1"
       links:
         - name: "Additional labels for ServiceMonitors"
           url: https://github.com/prometheus-community/helm-charts/pull/3132
@@ -65,3 +65,5 @@ annotations:
           url: https://github.com/prometheus-community/helm-charts/pull/2993
         - name: "Fix registry for Config Reloader and Thanos"
           url: https://github.com/prometheus-community/helm-charts/pull/2975
+        - name: "Fix deployment when thanos field is set to null"
+          url: https://github.com/prometheus-community/helm-charts/pull/3163
