@@ -24,5 +24,5 @@ charts=`printf '%s\n' ${charts[@]} | sort -u`
 for chart in $charts; do
     # unittest needs deps to work
     helm dep build $chart
-    helm unittest --helm3 --update-snapshot $chart
+    helm unittest --update-snapshot $chart
 done

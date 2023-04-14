@@ -110,12 +110,12 @@ tests:
       # add more assertions here!
       - matchSnapshots: {}
 ```
-Details on the available assertions may be found in the [docs](https://github.com/quintush/helm-unittest/blob/master/DOCUMENT.md).
+Details on the available assertions may be found in the [docs](https://github.com/helm-unittest/helm-unittest/blob/main/DOCUMENT.md).
 
 After creating a test you should run it to ensure that it is green.
 
 ```bash
-helm unittest --helm3 charts/infra-apps
+helm unittest charts/infra-apps
 ```
 
 When you create tests that contain `matchSnapshots` the tool will create and populate a
@@ -123,7 +123,7 @@ When you create tests that contain `matchSnapshots` the tool will create and pop
 snapshots.
 
 ```bash
-helm unittest --helm3 --update-snapshot charts/infra-apps
+helm unittest --update-snapshot charts/infra-apps
 ```
 
 Keep in mind that, if you choose to add snapshots that contain versions, you
