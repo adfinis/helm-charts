@@ -4332,6 +4332,79 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            kube-prometheus-stack: update from 0.62.0 to 0.63.0
+
+            This version upgrades Prometheus-Operator to v0.63.0, Prometheus to v2.43.0, and Thanos to v0.30.2.
+          links:
+            - name: GitHub Release Prometheus-Operator v0.64.0
+              url: https://github.com/prometheus-operator/prometheus-operator/releases/tag/v0.64.0
+            - name: GitHub Release Prometheus v2.43.0
+              url: https://github.com/prometheus/prometheus/releases/tag/v2.43.0
+            - name: GitHub Release Thanos v0.30.2
+              url: https://github.com/thanos-io/thanos/releases/tag/v0.30.2
+        - kind: changed
+          description: "kube-prometheus-stack: update chart from 44.3.0 to 45.9.1"
+          links:
+            - name: "Additional labels for ServiceMonitors"
+              url: https://github.com/prometheus-community/helm-charts/pull/3132
+            - name: "Import Node Exporter / MacOS grafana dashboard conditionally"
+              url: https://github.com/prometheus-community/helm-charts/pull/3054
+            - name: "Allow out_of_order_time_window in Prometheus spec"
+              url: https://github.com/prometheus-community/helm-charts/pull/2960
+            - name: "add EndpointSlices for operator to support K8s 1.22+"
+              url: https://github.com/prometheus-community/helm-charts/pull/2948
+            - name: "bump kube-state-metrics chart to fix global.imageRegistry usage"
+              url: https://github.com/prometheus-community/helm-charts/pull/3107
+            - name: "Enable network policy for prometheus"
+              url: https://github.com/prometheus-community/helm-charts/pull/2997
+            - name: "Update grafana chart from 6.50.* to 6.51.*"
+              url: https://github.com/prometheus-community/helm-charts/pull/3086
+            - name: "Update dependencies to versions which support local container registry"
+              url: https://github.com/prometheus-community/helm-charts/pull/3059
+            - name: "Update kube-webhook-certgen from v1.3.0 to v20221220-controller-v1.5.1-58-g787ea74b6"
+              url: https://github.com/prometheus-community/helm-charts/pull/3061
+            - name: "Update kube-state-metrics from 4.24.* to 4.30.*"
+              url: https://github.com/prometheus-community/helm-charts/pull/3046
+            - name: "Add permission to the alertmanagers/status resource"
+              url: https://github.com/prometheus-community/helm-charts/pull/3016
+            - name: "Add stringConfig for alertmanager"
+              url: https://github.com/prometheus-community/helm-charts/pull/2992
+            - name: "Fixes deployment of Thanos Ruler - Addresses Default Thanos Ruler name too long"
+              url: https://github.com/prometheus-community/helm-charts/pull/3021
+            - name: "Update from v0.62.0 to v0.63.0"
+              url: https://github.com/prometheus-community/helm-charts/pull/3012
+            - name: "Update helm Chart.lock to get latest grafana version"
+              url: https://github.com/prometheus-community/helm-charts/pull/2990
+            - name: "Support multi-cluster alerting rules for prometheus-operator"
+              url: https://github.com/prometheus-community/helm-charts/pull/2993
+            - name: "Fix registry for Config Reloader and Thanos"
+              url: https://github.com/prometheus-community/helm-charts/pull/2975
+            - name: "Fix deployment when thanos field is set to null"
+              url: https://github.com/prometheus-community/helm-charts/pull/3163
+    apiVersion: v2
+    created: "2023-04-17T11:32:23.352636358Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: a277a3ba83406dda8819a008a537b522b95396b8560f46df25978e9c9341d0c9
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.154.0/infra-apps-0.154.0.tgz
+    version: 0.154.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             nginx-ingress: update from 1.6.4 to 1.7.0
 
             - Upgrade alpine 3.17.2
@@ -20390,4 +20463,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-14T10:11:57.833184439Z"
+generated: "2023-04-17T11:32:23.354878171Z"
