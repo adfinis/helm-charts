@@ -3,7 +3,7 @@ name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
 version: 0.1.0
-appVersion: "21.0.2"
+appVersion: "21.1.0"
 home: https://www.keycloak.org
 sources:
   - https://github.com/keycloak/keycloak-k8s-resources
