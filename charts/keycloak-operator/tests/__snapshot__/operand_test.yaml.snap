@@ -12,12 +12,12 @@ should match snapshot:
     spec:
       features:
         disabled:
-        - js-adapter
-        - kerberos
+          - js-adapter
+          - kerberos
         enabled:
-        - account2
-        - admin2
-        - web-authn
+          - account2
+          - admin2
+          - web-authn
       hostname:
         hostname: keycloak.example.com
         strictBackchannel: true
@@ -41,8 +41,8 @@ should match snapshot:
         id: test
         realm: test
         users:
-        - email: john.sausage@example.com
-          firstName: Hans
-          id: "0"
-          lastName: Wurst
-          username: john.sausage
+          - email: john.sausage@example.com
+            firstName: Hans
+            id: "0"
+            lastName: Wurst
+            username: john.sausage
