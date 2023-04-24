@@ -4331,6 +4331,39 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "argo-cd: update chart from 5.27.3 to 5.28.1"
+          links:
+            - name: "fix: Change default value for global.tolerations, from object to array"
+              url: https://github.com/argoproj/argo-helm/pull/1947
+            - name: "feat: Add support for custom Deployment strategy"
+              url: https://github.com/argoproj/argo-helm/pull/1918
+            - name: "fix: Entrypoint can be configured now"
+              url: https://github.com/argoproj/argo-helm/pull/1898
+            - name: "fix: Disable hostNetwork field when is set to false"
+              url:  https://github.com/argoproj/argo-helm/pull/1934
+    apiVersion: v2
+    created: "2023-04-24T11:27:38.89592671Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 2f50d72fa63981a70ce704b34343c16afdf8a06fbd4ebb79462c862a8f5deb15
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.155.0/infra-apps-0.155.0.tgz
+    version: 0.155.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: |
             kube-prometheus-stack: update from 0.62.0 to 0.63.0
 
@@ -20529,4 +20562,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-24T08:32:03.017116643Z"
+generated: "2023-04-24T11:27:38.898592267Z"
