@@ -11,6 +11,11 @@ keycloak:
     disabled:
       - js-adapter
       - kerberos
+  http:
+    httpEnabled: true
+  hostname:
+    strict: false
+    strictBackchannel: false
   realmimport:
     enabled: true
     realms:

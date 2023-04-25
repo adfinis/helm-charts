@@ -103,7 +103,7 @@ keycloak:
 
   hostname:
     # -- Hostname for the Keycloak server.
-    hostname: keycloak.example.com
+    hostname: ~
     # -- Disables dynamically resolving the hostname from request headers
     strict: false
     # -- By default backchannel URLs are dynamically resolved from request headers to allow internal and external applications.

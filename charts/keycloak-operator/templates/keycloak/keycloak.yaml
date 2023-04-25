@@ -10,9 +10,12 @@ spec:
   {{- with .Values.keycloak.instances }}
   instances: {{ . }}
   {{- end }}
-  {{- with .Values.keycloak.transaction.xaEnabled }}
+  {{- if .Values.keycloak.transaction.xaEnabled }}
   transaction:
-    xaEnabled: {{ . }}
+    xaEnabled: true
+  {{- else }}
+  transaction:
+    xaEnabled: false
   {{- end }}
   http:
     {{- with .Values.keycloak.http.httpPort }}
@@ -28,12 +31,18 @@ spec:
     httpEnabled: {{ . }}
     {{- end }}
   hostname:
-    hostname: {{ .Values.keycloak.hostname.hostname | quote }}
-    {{- with .Values.keycloak.hostname.strict }}
-    strict: {{ . }}
+    {{- with .Values.keycloak.hostname.hostname }}
+    hostname: {{ . | quote }}
     {{- end }}
-    {{- with .Values.keycloak.hostname.strictBackchannel }}
-    strictBackchannel: {{ . }}
+    {{- if .Values.keycloak.hostname.strict }}
+    strict: true
+    {{- else }}
+    strict: false
+    {{- end }}
+    {{- if .Values.keycloak.hostname.strictBackchannel }}
+    strictBackchannel: true
+    {{- else }}
+    strictBackchannel: false
     {{- end }}
     {{- with .Values.keycloak.hostname.admin }}
     admin: {{ . }}
