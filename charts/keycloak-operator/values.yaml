@@ -103,6 +103,7 @@ keycloak:
 
   hostname:
     # -- Hostname for the Keycloak server.
+    # @default -- Disabled if not set.
     hostname: ~
     # -- Disables dynamically resolving the hostname from request headers
     strict: false

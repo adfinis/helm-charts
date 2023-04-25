@@ -37,7 +37,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.features.enabled | list | `[]` | Enabled Keycloak features |
 | keycloak.hostname.admin | string | `nil` | The hostname for accessing the administration console. |
 | keycloak.hostname.adminUrl | string | `nil` | Set the base URL for accessing the administration console. |
-| keycloak.hostname.hostname | string | `"keycloak.example.com"` | Hostname for the Keycloak server. |
+| keycloak.hostname.hostname | string | Disabled if not set. | Hostname for the Keycloak server. |
 | keycloak.hostname.strict | bool | `false` | Disables dynamically resolving the hostname from request headers |
 | keycloak.hostname.strictBackchannel | bool | `true` | By default backchannel URLs are dynamically resolved from request headers to allow internal and external applications. |
 | keycloak.http.httpEnabled | bool | `true` | Enable a HTTP listener |
