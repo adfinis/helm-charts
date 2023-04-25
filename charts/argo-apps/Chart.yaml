@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.17.0
+version: 0.18.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,8 +16,18 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: "argo-rollouts: support setting pod annotations separately on controller and dashboard"
+    - kind: added
+      description: "feat(argo-rollouts): add service monitor relabeling configs"
       links:
         - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1928
+          url: https://github.com/argoproj/argo-helm/pull/1972
+    - kind: added
+      description: "feat(argo-rollouts): Add ability to provide additional volumes"
+      links:
+        - name: GitHub PR
+          url: https://github.com/argoproj/argo-helm/pull/1965
+    - kind: changed
+      description: "fix(argo-rollouts): add namespace field for namespace scoped resources"
+      links:
+        - name: GitHub PR
+          url: https://github.com/argoproj/argo-helm/pull/1960
