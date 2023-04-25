@@ -19,13 +19,15 @@ should match snapshot:
           - admin2
           - web-authn
       hostname:
-        hostname: keycloak.example.com
-        strictBackchannel: true
+        strict: false
+        strictBackchannel: false
       http:
         httpEnabled: true
       ingress:
         enabled: true
       instances: 1
+      transaction:
+        xaEnabled: false
   2: |
     apiVersion: k8s.keycloak.org/v2alpha1
     kind: KeycloakRealmImport
