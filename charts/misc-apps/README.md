@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.34.0](https://img.shields.io/badge/Version-0.34.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.35.0](https://img.shields.io/badge/Version-0.35.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -68,6 +68,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | metallb.repoURL | string | [repo](https://metallb.github.io/metallb) | Repo URL |
 | metallb.targetRevision | string | `"0.13.*"` | [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb) |
 | metallb.values | object | [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml) | Helm values |
+| opencost | object | [example](./examples/opencost.yaml) | [OpenCost](https://www.opencost.io) |
+| opencost.annotations | object | `{}` | Annotations for OpenCost |
+| opencost.chart | string | `"opencost"` | Chart |
+| opencost.destination.namespace | string | `"infra-opencost"` | Namespace |
+| opencost.enabled | bool | `false` | Enable OpenCost |
+| opencost.repoURL | string | [repo](https://opencost.github.io/opencost-helm-chart) | Repo URL |
+| opencost.targetRevision | string | `"1.14.0"` | [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost) |
+| opencost.values | object | [upstream values](https://github.com/opencost/opencost-helm-chart/blob/main/charts/opencost/values.yaml) | Helm values |
 | prometheusMsteams | object | - | [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) ([example](./example/prometheus-msteams.yaml)) |
 | prometheusMsteams.chart | string | `"prometheus-msteams"` | Chart |
 | prometheusMsteams.destination.namespace | string | `"infra-prometheus-msteams"` | Namespace |
