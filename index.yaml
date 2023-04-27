@@ -13440,6 +13440,41 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "oauth2-proxy: update chart from 6.5.0 to 6.10.1"
+          links:
+            - name: "feat: revisionHistoryLimit to the chart"
+              url: https://github.com/oauth2-proxy/manifests/pull/137
+            - name: "fix: convert bool to string before passing to helm templating engine"
+              url: https://github.com/oauth2-proxy/manifests/pull/134
+            - name: "feat: Pass oauth2-proxy config through helm templating"
+              url: https://github.com/oauth2-proxy/manifests/pull/132
+            - name: "feat: Use google workload identity"
+              url: https://github.com/oauth2-proxy/manifests/pull/127
+            - name: "feat: extraArgs as a list"
+              url: https://github.com/oauth2-proxy/manifests/pull/124
+    apiVersion: v2
+    created: "2023-04-27T07:42:44.898124495Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: ebf039a5d08ae93e2524f15e2ee203aefa8203a11caf8c44bd44533bdfa25ed0
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.73.0/security-apps-0.73.0.tgz
+    version: 0.73.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: |
             neuvector: update from 5.1.0 to 5.1.2
 
@@ -20599,4 +20634,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-24T17:29:48.930082463Z"
+generated: "2023-04-27T07:42:44.900113479Z"
