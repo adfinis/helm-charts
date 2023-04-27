@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.72.0](https://img.shields.io/badge/Version-0.72.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.73.0](https://img.shields.io/badge/Version-0.73.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -86,7 +86,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | oauth2Proxy.destination.namespace | string | `"infra-oauth2-proxy"` | Namespace |
 | oauth2Proxy.enabled | bool | `false` | Enable oauth2-proxy |
 | oauth2Proxy.repoURL | string | [repo](https://https://oauth2-proxy.github.io/manifests) | Repo URL |
-| oauth2Proxy.targetRevision | string | `"6.5.0"` | [oauth2-proxy Helm chart](https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy) |
+| oauth2Proxy.targetRevision | string | `"6.10.1"` | [oauth2-proxy Helm chart](https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy) |
 | oauth2Proxy.values | object | [upstream values](https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/values.yaml) | Helm values |
 | secretsStoreCsiDriver | object | - | [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([example](./examples/secrets-store-csi-driver.yaml)) |
 | secretsStoreCsiDriver.chart | string | `"secrets-store-csi-driver"` | Chart |
