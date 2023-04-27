@@ -20,5 +20,5 @@ annotations:
       description: |
         reloader: addition to misc-apps
       links:
-        - name: GitHub PR
-          url: https://github.com/adfinis/helm-charts/pull/1028
+        - name: GitHub project
+          url: https://github.com/stakater/Reloader
