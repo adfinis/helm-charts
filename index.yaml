@@ -4368,6 +4368,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "cert-manager: update from 1.11.0 to 1.11.1"
+          links:
+            - name: GitHub Release
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.11.1
+    apiVersion: v2
+    created: "2023-04-27T07:46:05.077621857Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 17daed879e90e0b687e9269ccfa83b6aba1dd4a1429e7a9c85a931175c59df2a
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.155.1/infra-apps-0.155.1.tgz
+    version: 0.155.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "argo-cd: update chart from 5.27.3 to 5.28.1"
           links:
             - name: "fix: Change default value for global.tolerations, from object to array"
@@ -20634,4 +20661,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-27T07:42:44.900113479Z"
+generated: "2023-04-27T07:46:05.080271969Z"
