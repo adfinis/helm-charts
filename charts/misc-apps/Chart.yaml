@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.32.0
+version: 0.33.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,14 +17,8 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "keda: update from 2.9.3 to 2.10.0"
+      description: |
+        reloader: addition to misc-apps
       links:
-        - name: GitHub Release
-          url: https://github.com/kedacore/keda/releases/tag/v2.10.0
-    - kind: changed
-      description: "keda: update chart from 2.9.3 to 2.10.1"
-      links:
-        - name: "feat: Ship KEDA Core v2.10.1 and align Kubernetes expectations"
-          url: https://github.com/kedacore/charts/pull/407
-        - name: "feat: prepare v2.10"
-          url: https://github.com/kedacore/charts/pull/400
+        - name: GitHub PR
+          url: https://github.com/adfinis/helm-charts/pull/1028

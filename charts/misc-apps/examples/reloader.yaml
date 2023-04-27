@@ -1,0 +1,10 @@
+# reloader watching namespaces labeled with reloader=true and exporting metrics
+
+reloader:
+  enabled: true
+  project: infra-reloader
+  values:
+    reloader:
+      namespaceSelector: "reloader=true"
+    serviceMonitor:
+      enabled: true
