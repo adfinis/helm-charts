@@ -19427,6 +19427,48 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "opentelemetry-collector: update 0.74.0 to 0.75.0"
+          links:
+            - name: GitHub Release
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.75.0
+        - kind: changed
+          description: "opentelemetry-collector: update chart from 0.51.3 to 0.54.1"
+          links:
+            - name: "chore: Bump min k8s support to 1.24"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/753
+            - name: "fix: Remove default resource values"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/745
+            - name: "fix: Set topologySpreadConstraints type to array"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/747
+            - name: "feat: Add support for NetworkPolicy"
+              url:  https://github.com/open-telemetry/opentelemetry-helm-charts/pull/723
+            - name: "docs: Add a note about port-forwarding"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/724
+            - name: "feat: bump collector version to 0.75.0"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/726
+    apiVersion: v2
+    created: "2023-04-27T07:50:37.270789554Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for tracing applications
+    digest: cd6f1b672295343d397988f96a274c15821c3fcc26c864a7b1f3543a8b54bc5f
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.24.0/tracing-apps-0.24.0.tgz
+    version: 0.24.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "opentelemetry-collector: Update from 0.72.0 to 0.74.0"
           links:
             - name: Changelog for 0.74.0
@@ -20661,4 +20703,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-27T07:46:05.080271969Z"
+generated: "2023-04-27T07:50:37.272331427Z"
