@@ -30,3 +30,7 @@ keda:
 grafanaAgentOperator:
   enabled: true
   values: {}
+
+reloader:
+  enabled: true
+  values: {}

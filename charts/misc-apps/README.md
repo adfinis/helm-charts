@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.32.0](https://img.shields.io/badge/Version-0.32.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.33.0](https://img.shields.io/badge/Version-0.33.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -75,6 +75,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | prometheusMsteams.repoURL | string | [repo](https://prometheus-msteams.github.io/prometheus-msteams) | Repo URL |
 | prometheusMsteams.targetRevision | string | `"1.3.*"` | [prometheus-msteams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams) |
 | prometheusMsteams.values | object | [upstream values](https://github.com/prometheus-msteams/prometheus-msteams/blob/master/chart/prometheus-msteams/values.yaml) | Helm values |
+| reloader | object | - | [reloader](https://github.com/stakater/reloader) ([example](./examples/reloader.yaml)) |
+| reloader.chart | string | `"reloader"` | Chart |
+| reloader.destination.namespace | string | `"infra-reloader"` | Namespace |
+| reloader.enabled | bool | `false` | Enable reloader |
+| reloader.repoURL | string | [repo](https://stakater.github.io/stakater-charts) | Repo URL |
+| reloader.targetRevision | string | `"v1.0.22"` | [reloader Helm chart](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader) version |
+| reloader.values | object | [upstream values](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader/values.yaml) | Helm values |
 | sentryKubernetes | object | - | [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml) |
 | sentryKubernetes.chart | string | `"sentry-kubernetes"` | Chart |
 | sentryKubernetes.destination.namespace | string | `"infra-sentry-kubernetes"` | Namespace |
