@@ -10386,6 +10386,34 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            reloader: addition to misc-apps
+          links:
+            - name: GitHub project
+              url: https://github.com/stakater/Reloader
+    apiVersion: v2
+    created: "2023-04-28T12:11:18.401061657Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: ab34c0a9c817e519d464ce3d89db7bfa7fdd3bc74a8f5a23d2023bea071060d8
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.33.0/misc-apps-0.33.0.tgz
+    version: 0.33.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "keda: update from 2.9.3 to 2.10.0"
           links:
             - name: GitHub Release
@@ -20703,4 +20731,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-27T07:50:37.272331427Z"
+generated: "2023-04-28T12:11:18.403019979Z"
