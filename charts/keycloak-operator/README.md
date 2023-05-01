@@ -33,6 +33,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.db.usernameSecret | string | `nil` | The reference to a secret holding the username of the database user. |
 | keycloak.db.vendor | string | `nil` | The database vendor. |
 | keycloak.enabled | bool | `false` | Enable deploying a bundled keycloak with the operator |
+| keycloak.features | object | see [Keycloak docs](https://www.keycloak.org/server/features) | Configure Keycloak features |
 | keycloak.features.disabled | list | `[]` | Disabled Keycloak features |
 | keycloak.features.enabled | list | `[]` | Enabled Keycloak features |
 | keycloak.hostname.admin | string | `nil` | The hostname for accessing the administration console. |

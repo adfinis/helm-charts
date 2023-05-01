@@ -186,6 +186,8 @@ keycloak:
     database: ~
     # -- The minimal size of the connection pool.
     poolMinSize: ~
+  # -- Configure Keycloak features
+  # @default -- see [Keycloak docs](https://www.keycloak.org/server/features)
   features:
     # -- Disabled Keycloak features
     disabled: []
