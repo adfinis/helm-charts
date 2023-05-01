@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.156.0
+version: 0.157.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,11 +17,37 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "argo-cd: update chart from 5.28.1 to 5.29.1"
+      description: "kube-prometheus-stack: update chart from 45.9.1 to 45.23.0"
       links:
-        - name: "fix: evaluate namespace field via helm root scope"
-          url: https://github.com/argoproj/argo-helm/pull/1963
-        - name: "fix: add namespace field for namespace scoped resources"
-          url: https://github.com/argoproj/argo-helm/pull/1937
-        - name: "chore: Add log format and log level to dex"
-          url: https://github.com/argoproj/argo-helm/pull/1951
+        - name: "fix: namespace templating for Thanos sidecar ingress"
+          url: https://github.com/prometheus-community/helm-charts/pull/3301
+        - name: "feat: Add cilium networkpolicy support"
+          url: https://github.com/prometheus-community/helm-charts/pull/3282
+        - name: "chore: Sync Prometheus rules"
+          url: https://github.com/prometheus-community/helm-charts/pull/3223
+        - name: "feat: allow httpMethod selection on prometheus datasource"
+          url: https://github.com/prometheus-community/helm-charts/pull/3053
+        - name: "feat: Add flag to disable all exporters"
+          url: https://github.com/prometheus-community/helm-charts/pull/3256
+        - name: "feat: add a variable to manage grafana default datasource timeout"
+          url: https://github.com/prometheus-community/helm-charts/pull/3150
+        - name: "feat: adding tpl upstream for secretFieldSelector"
+          url: https://github.com/prometheus-community/helm-charts/pull/3151
+        - name: "feat: add alertmanager-instance-selector and thanos-ruler-instance-selector"
+          url: https://github.com/prometheus-community/helm-charts/pull/3113
+        - name: "feat: support setting Prometheus version"
+          url: https://github.com/prometheus-community/helm-charts/pull/3112
+        - name: "feat: add automountServiceAccountToken option to kube-prometheus-stack alertmanager service account"
+          url: https://github.com/prometheus-community/helm-charts/pull/3180
+        - name: "feat: update grafana dep"
+          url: https://github.com/prometheus-community/helm-charts/pull/3264
+        - name: "feat: allow dashboards in all namespaces"
+          url: https://github.com/prometheus-community/helm-charts/pull/2927
+        - name: "fix: webhook ignored namespaceOverride"
+          url: https://github.com/prometheus-community/helm-charts/pull/3259
+        - name: "feat: bump chart dependencies (kube-state-metrics 5.5.x and grafana 6.53)"
+          url: https://github.com/prometheus-community/helm-charts/pull/3255
+        - name: "docs: fix incorrect values.yaml descriptions"
+          url: https://github.com/prometheus-community/helm-charts/pull/3040
+        - name: "feat: bump chart dependencies (kube-state-metrics 5.4.x, prometheus-node-exporter 4.16.x, and grafana 6.52.x)"
+          url: https://github.com/prometheus-community/helm-charts/pull/3234
