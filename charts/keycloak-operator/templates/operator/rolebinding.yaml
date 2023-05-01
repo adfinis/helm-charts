@@ -1,0 +1,55 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: keycloak-operator-role-binding
+  labels:
+    {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
+roleRef:
+  kind: Role
+  apiGroup: rbac.authorization.k8s.io
+  name: keycloak-operator-role
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "keycloak-operator.operator.serviceAccountName" . }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: keycloak-operator-view
+  labels:
+    {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
+roleRef:
+  kind: ClusterRole
+  apiGroup: rbac.authorization.k8s.io
+  name: view
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "keycloak-operator.operator.serviceAccountName" . }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: keycloakcontroller-role-binding
+  labels:
+    {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
+roleRef:
+  kind: ClusterRole
+  apiGroup: rbac.authorization.k8s.io
+  name: keycloakcontroller-cluster-role
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "keycloak-operator.operator.serviceAccountName" . }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: keycloakrealmimportcontroller-role-binding
+  labels:
+    {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
+roleRef:
+  kind: ClusterRole
+  apiGroup: rbac.authorization.k8s.io
+  name: keycloakrealmimportcontroller-cluster-role
+subjects:
+  - kind: ServiceAccount
+    name: {{ include "keycloak-operator.operator.serviceAccountName" . }}

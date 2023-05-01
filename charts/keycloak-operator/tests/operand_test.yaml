@@ -1,0 +1,10 @@
+suite: default Keycloak operand tests
+templates:
+  - keycloak/keycloak.yaml
+  - keycloak/keycloakrealmimport.yaml
+tests:
+  - it: should match snapshot
+    values:
+      - ../ci/operand-values.yaml
+    asserts:
+      - matchSnapshot: {}

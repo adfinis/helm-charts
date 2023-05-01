@@ -1,0 +1,50 @@
+should match snapshot:
+  1: |
+    apiVersion: k8s.keycloak.org/v2alpha1
+    kind: Keycloak
+    metadata:
+      labels:
+        app.kubernetes.io/component: keycloak
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: 21.1.0
+        helm.sh/chart: keycloak-operator-0.1.0
+      name: keycloak
+    spec:
+      features:
+        disabled:
+          - js-adapter
+          - kerberos
+        enabled:
+          - account2
+          - admin2
+          - web-authn
+      hostname:
+        strict: false
+        strictBackchannel: false
+      http:
+        httpEnabled: true
+      ingress:
+        enabled: true
+      instances: 1
+      transaction:
+        xaEnabled: false
+  2: |
+    apiVersion: k8s.keycloak.org/v2alpha1
+    kind: KeycloakRealmImport
+    metadata:
+      labels:
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: 21.1.0
+        helm.sh/chart: keycloak-operator-0.1.0
+      name: RELEASE-NAME-keycloak-operator-test
+    spec:
+      keycloakCRName: keycloak
+      realm:
+        id: test
+        realm: test
+        users:
+          - email: john.sausage@example.com
+            firstName: Hans
+            id: "0"
+            lastName: Wurst
+            username: john.sausage

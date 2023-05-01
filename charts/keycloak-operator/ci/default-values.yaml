@@ -1,0 +1,4 @@
+operator:
+  replicaCount: 1
+keycloak:
+  enabled: false
