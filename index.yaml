@@ -9644,6 +9644,29 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/kasperleyn-0.3.1/kasperleyn-0.3.1.tgz
     version: 0.3.1
+  keycloak-operator:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: initial version of keycloak-operator chart
+    apiVersion: v2
+    appVersion: 21.1.0
+    created: "2023-05-01T11:18:46.119025656Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 55cabf4d81d4053d84450e3cf7ac7f9b983362631251d67f0b7dd498cf522361
+    home: https://www.keycloak.org
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-0.1.0/keycloak-operator-0.1.0.tgz
+    version: 0.1.0
   logging-apps:
   - annotations:
       artifacthub.io/changes: |
@@ -20731,4 +20754,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-28T12:11:18.403019979Z"
+generated: "2023-05-01T11:18:46.120387471Z"
