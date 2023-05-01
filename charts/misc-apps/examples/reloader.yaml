@@ -1,0 +1,13 @@
+# reloader watching namespaces labeled with reloader=true and exporting metrics
+
+reloader:
+  enabled: true
+  project: infra-reloader
+  values:
+    reloader:
+      # namespaceSelector
+      # list of comma separated label selectors, if mulitple are provided they are ANDed
+      # Example: reloader=enabled,test=true
+      namespaceSelector: "reloader=true"
+    serviceMonitor:
+      enabled: true

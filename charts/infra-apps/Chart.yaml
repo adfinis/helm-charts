@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.155.0
+version: 0.155.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,13 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "argo-cd: update chart from 5.27.3 to 5.28.1"
+      description: "cert-manager: update from 1.11.0 to 1.11.1"
       links:
-        - name: "fix: Change default value for global.tolerations, from object to array"
-          url: https://github.com/argoproj/argo-helm/pull/1947
-        - name: "feat: Add support for custom Deployment strategy"
-          url: https://github.com/argoproj/argo-helm/pull/1918
-        - name: "fix: Entrypoint can be configured now"
-          url: https://github.com/argoproj/argo-helm/pull/1898
-        - name: "fix: Disable hostNetwork field when is set to false"
-          url:  https://github.com/argoproj/argo-helm/pull/1934
+        - name: GitHub Release
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.11.1

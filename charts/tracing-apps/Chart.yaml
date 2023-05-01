@@ -2,7 +2,7 @@ apiVersion: v2
 name: tracing-apps
 description: Argo CD app-of-apps config for tracing applications
 type: application
-version: 0.23.0
+version: 0.24.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,28 +17,22 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "opentelemetry-collector: Update from 0.72.0 to 0.74.0"
+      description: "opentelemetry-collector: update 0.74.0 to 0.75.0"
       links:
-        - name: Changelog for 0.74.0
-          url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.74.0
-        - name: Changelog for 0.73.0
-          url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/cmd%2Fbuilder%2Fv0.73.0
+        - name: GitHub Release
+          url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.75.0
     - kind: changed
-      description: "opentelemetry-collector: update chart from 0.49.1 to 0.51.3"
+      description: "opentelemetry-collector: update chart from 0.51.3 to 0.54.1"
       links:
-        - name: "fix: Update time layout for cri-o log format"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/721
-        - name: "feat: adding k8sobjects receiver as preset"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/688
-        - name: "fix: filelog exclude"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/703
-        - name: "feat: collector to 0.74.0"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/695
-        - name: "fix: Ensure ClusterRole is created for kubeletMetrics preset"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/687
-        - name: "fix: collector to 0.73.0"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/684
-        - name: "chore: Define annotations in consistent way"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/674
-        - name: "fix: Chart name to lower when used in DNS label fields"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/657
+        - name: "chore: Bump min k8s support to 1.24"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/753
+        - name: "fix: Remove default resource values"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/745
+        - name: "fix: Set topologySpreadConstraints type to array"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/747
+        - name: "feat: Add support for NetworkPolicy"
+          url:  https://github.com/open-telemetry/opentelemetry-helm-charts/pull/723
+        - name: "docs: Add a note about port-forwarding"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/724
+        - name: "feat: bump collector version to 0.75.0"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/726
