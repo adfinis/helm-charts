@@ -4368,6 +4368,37 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "argo-cd: update chart from 5.28.1 to 5.29.1"
+          links:
+            - name: "fix: evaluate namespace field via helm root scope"
+              url: https://github.com/argoproj/argo-helm/pull/1963
+            - name: "fix: add namespace field for namespace scoped resources"
+              url: https://github.com/argoproj/argo-helm/pull/1937
+            - name: "chore: Add log format and log level to dex"
+              url: https://github.com/argoproj/argo-helm/pull/1951
+    apiVersion: v2
+    created: "2023-05-01T12:13:56.41927622Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 2be240a07309d5921b8ee573746c6f4a7532c2248a50d346fda9302a48ce1517
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.156.0/infra-apps-0.156.0.tgz
+    version: 0.156.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "cert-manager: update from 1.11.0 to 1.11.1"
           links:
             - name: GitHub Release
@@ -20754,4 +20785,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-01T11:18:46.120387471Z"
+generated: "2023-05-01T12:13:56.421215721Z"
