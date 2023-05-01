@@ -63,6 +63,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | operator.nodeSelector | object | `{}` | Node selector for Operator Deployment. |
 | operator.podAnnotations | object | `{}` | Annotations to set on the Operator Deployment. |
 | operator.podSecurityContext | object | `{}` | Pod security group configuration for Operator Deployment. |
+| operator.podTopologySpreadConstraints | object | `{}` | Pod Topology Spread Constraints for Operator Deployment |
 | operator.replicaCount | int | `1` | Number or oeprator pods to start. |
 | operator.resources | object | `{}` | Resource requests and limits for Operator Deployment. |
 | operator.securityContext | object | `{}` | Security context for Operator Deployment. |

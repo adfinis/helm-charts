@@ -68,6 +68,10 @@ spec:
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      {{- with .Values.operator.podTopologySpreadConstraints }}
+      podTopologySpreadConstraints:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       {{- with .Values.operator.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}

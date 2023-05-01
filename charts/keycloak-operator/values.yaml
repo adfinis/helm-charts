@@ -74,6 +74,9 @@ operator:
   # -- Node selector for Operator Deployment.
   nodeSelector: {}
 
+  # -- Pod Topology Spread Constraints for Operator Deployment
+  podTopologySpreadConstraints: {}
+
   # -- Tolerations for Operator Deployment.
   tolerations: []
 
