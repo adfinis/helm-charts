@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.155.1
+version: 0.156.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,11 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "cert-manager: update from 1.11.0 to 1.11.1"
+      description: "argo-cd: update chart from 5.28.1 to 5.29.1"
       links:
-        - name: GitHub Release
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.11.1
+        - name: "fix: evaluate namespace field via helm root scope"
+          url: https://github.com/argoproj/argo-helm/pull/1963
+        - name: "fix: add namespace field for namespace scoped resources"
+          url: https://github.com/argoproj/argo-helm/pull/1937
+        - name: "chore: Add log format and log level to dex"
+          url: https://github.com/argoproj/argo-helm/pull/1951
