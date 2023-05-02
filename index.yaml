@@ -4368,6 +4368,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "argo-cd: update from 2.6.7 to 2.7.0"
+          links:
+            - name: GitHub Release
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.0
+        - kind: changed
+          description: "argo-cd: update chart from 5.29.1 to 5.30.0"
+          links:
+            - name: "feat: Upgrade Argo CD to v2.7.0"
+              url: https://github.com/argoproj/argo-helm/pull/1989
+    apiVersion: v2
+    created: "2023-05-02T08:36:14.760994887Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 955b948d12bba3f1d8f9acd5df9d7848fcff65a0d3ed6de117f2c994f2bca324
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.158.0/infra-apps-0.158.0.tgz
+    version: 0.158.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "kube-prometheus-stack: update chart from 45.9.1 to 45.23.0"
           links:
             - name: "fix: namespace templating for Thanos sidecar ingress"
@@ -20898,4 +20930,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-02T07:14:30.85816848Z"
+generated: "2023-05-02T08:36:14.762936317Z"
