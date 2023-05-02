@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.73.0](https://img.shields.io/badge/Version-0.73.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.74.0](https://img.shields.io/badge/Version-0.74.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -114,7 +114,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vault.destination.namespace | string | `"infra-vault"` | Namespace |
 | vault.enabled | bool | `false` | Enable vault |
 | vault.repoURL | string | [repo](https://helm.releases.hashicorp.com) | Repo URL |
-| vault.targetRevision | string | `"0.22.*"` | [vault Helm chart](https://github.com/hashicorp/vault-helm) version |
+| vault.targetRevision | string | `"0.24.1"` | [vault Helm chart](https://github.com/hashicorp/vault-helm) version |
 | vault.values | object | [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml) | Helm values |
 | vaultMonitoring | object | - | [vault-monitoring](https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring) ([example](./examples/vault-monitoring.yaml)) |
 | vaultMonitoring.chart | string | `"vault-monitoring"` | Chart |
