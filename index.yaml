@@ -13606,6 +13606,62 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            vault: update upstream components
+
+            * csi: Add RBAC required by v1.3.0 to create secret for HMAC key used to generate secret versions [GH-872](https://github.com/hashicorp/vault-helm/pull/872)
+            * Earliest Kubernetes version tested is now 1.22
+            * `vault` updated to 1.13.1 [GH-863](https://github.com/hashicorp/vault-helm/pull/863)
+            * `vault-k8s` updated to 1.2.1 [GH-868](https://github.com/hashicorp/vault-helm/pull/868)
+            * `vault-csi-provider` updated to 1.3.0 [GH-749](https://github.com/hashicorp/vault-helm/pull/749)
+            * server: New `extraPorts` option for adding ports to the Vault server statefulset [GH-841](https://github.com/hashicorp/vault-helm/pull/841)
+            * server: Add configurable Port Number in readinessProbe and livenessProbe for the server-statefulset [GH-831](https://github.com/hashicorp/vault-helm/pull/831)
+            * injector: Make livenessProbe and readinessProbe configurable and add configurable startupProbe [GH-852](https://github.com/hashicorp/vault-helm/pull/852)
+            * csi: Add an Agent sidecar to Vault CSI Provider pods to provide lease caching and renewals [GH-749](https://github.com/hashicorp/vault-helm/pull/749)
+            * server: Add `extraLabels` for Vault server serviceAccount [GH-806](https://github.com/hashicorp/vault-helm/pull/806)
+            * server: Add `server.service.active.enabled` and `server.service.standby.enabled` options to selectively disable additional services [GH-811](https://github.com/hashicorp/vault-helm/pull/811)
+            * server: Add `server.serviceAccount.serviceDiscovery.enabled` option to selectively disable a Vault service discovery role and role binding [GH-811](https://github.com/hashicorp/vault-helm/pull/811)
+            * server: Add `server.service.instanceSelector.enabled` option to allow selecting pods outside the helm chart deployment [GH-813](https://github.com/hashicorp/vault-helm/pull/813)
+            * server: Quote `.server.ha.clusterAddr` value [GH-810](https://github.com/hashicorp/vault-helm/pull/810)
+          links:
+            - name: Changelog for 0.24.1
+              url: https://github.com/hashicorp/vault-helm/blob/main/CHANGELOG.md#0241-april-17-2023
+            - name: Changelog for 0.24.0
+              url: https://github.com/hashicorp/vault-helm/blob/main/CHANGELOG.md#0240-april-6-2023
+            - name: Changelog for 0.23.0
+              url: https://github.com/hashicorp/vault-helm/blob/main/CHANGELOG.md#0230-november-28th-2022
+        - kind: changed
+          description: "vault: update charts from 0.22.* to 0.24.1"
+          links:
+            - name: "fix: chart version for 0.24.1 release"
+              url: https://github.com/hashicorp/vault-helm/pull/880
+            - name: "chore: Prepare for 0.24.0 release"
+              url: https://github.com/hashicorp/vault-helm/pull/868
+            - name: "chore: Prepare for 0.23.0 release"
+              url: https://github.com/hashicorp/vault-helm/pull/814
+    apiVersion: v2
+    created: "2023-05-02T07:14:30.856787552Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: 0b0449debc86a6628de083465389b766e42b9cb5fbd3c93b1503a3c19bf89c84
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.74.0/security-apps-0.74.0.tgz
+    version: 0.74.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "oauth2-proxy: update chart from 6.5.0 to 6.10.1"
           links:
             - name: "feat: revisionHistoryLimit to the chart"
@@ -20842,4 +20898,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-01T13:37:29.990569732Z"
+generated: "2023-05-02T07:14:30.85816848Z"
