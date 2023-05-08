@@ -3,6 +3,33 @@ entries:
   argo-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: "fix: Added missing permissions for argo rollouts dashboard cluster role"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1988
+    apiVersion: v2
+    created: "2023-05-08T15:00:14.140712351Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.8.0
+    description: Argo CD app-of-apps config for various argo project components
+    digest: beebe324e03ca9be97bf482577e674bdeee3713cb842255f7b3ff7f627dc1628
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.18.1/argo-apps-0.18.1.tgz
+    version: 0.18.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: "feat(argo-rollouts): add service monitor relabeling configs"
           links:
@@ -20995,4 +21022,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-08T14:57:50.37169569Z"
+generated: "2023-05-08T15:00:14.142554374Z"
