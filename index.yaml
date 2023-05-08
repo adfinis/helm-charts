@@ -10567,6 +10567,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "argocd-apps: update from 0.0.9 to 1.0.0"
+          links:
+            - name: GitHub PR
+              url: https://github.com/argoproj/argo-helm/pull/1979
+    apiVersion: v2
+    created: "2023-05-08T14:57:50.367298241Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: f46ef701572f41eb9908353caf7f45243452bcb68be8797985f009005d05b1c1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.34.0/misc-apps-0.34.0.tgz
+    version: 0.34.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: |
             reloader: addition to misc-apps
           links:
@@ -20968,4 +20995,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-08T09:41:22.216045126Z"
+generated: "2023-05-08T14:57:50.37169569Z"
