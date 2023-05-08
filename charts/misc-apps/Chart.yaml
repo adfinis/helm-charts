@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.33.0
+version: 0.34.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,8 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: |
-        reloader: addition to misc-apps
+      description: "argocd-apps: update from 0.0.9 to 1.0.0"
       links:
-        - name: GitHub project
-          url: https://github.com/stakater/Reloader
+        - name: GitHub PR
+          url: https://github.com/argoproj/argo-helm/pull/1979
