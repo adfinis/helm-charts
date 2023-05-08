@@ -4368,6 +4368,44 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "argo-cd: update from 2.7.0 to 2.7.1"
+          links:
+            - name: GitHub Release
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.1
+        - kind: security
+          description: "argo-cd: update chart from 5.30.0 to 5.32.0"
+          links:
+            - name: "feat: allow extraObjects to contain string template"
+              url: https://github.com/argoproj/argo-helm/pull/1993
+            - name: "chore: Update Argo CD to v2.7.1"
+              url: https://github.com/argoproj/argo-helm/pull/1993
+            - name: "feat: Use tini as the ENTRYPOINT"
+              url: https://github.com/argoproj/argo-helm/pull/1993
+            - name: "chore(security): Upgrade Dex and Redis"
+              url: https://github.com/argoproj/argo-helm/pull/1993
+    apiVersion: v2
+    created: "2023-05-08T09:41:22.212483482Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: a4ef2eec2fee79f7b40dce9026e2aa2470c1b483b037c9b89a2fca0200e6a838
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.159.0/infra-apps-0.159.0.tgz
+    version: 0.159.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "argo-cd: update from 2.6.7 to 2.7.0"
           links:
             - name: GitHub Release
@@ -20930,4 +20968,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-02T08:36:14.762936317Z"
+generated: "2023-05-08T09:41:22.216045126Z"
