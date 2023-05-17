@@ -1,0 +1,19 @@
+# Simple opencost deployment that is integrated with Prometheus.
+
+opencost:
+  enabled: true
+  project: infra-opencost
+  values:
+    opencost:
+      metrics:
+        serviceMonitor:
+          # prometheus scrapes opencost data via this monitor so we can visualise it
+          enabled: true
+          additionalLabels:
+            k8s.adfinis.com/prometheus: kube-prometheus
+      prometheus:
+        # OpenCost consumes metrics from this Prometheus so it can figure out what is
+        # using resources.
+        internal:
+          serviceName: monitoring-prometheus
+          namespaceName: infra-monitoring

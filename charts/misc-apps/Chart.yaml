@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.34.0
+version: 0.35.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,8 +16,8 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: "argocd-apps: update from 0.0.9 to 1.0.0"
+    - kind: added
+      description: "opencost: add new chart"
       links:
-        - name: GitHub PR
-          url: https://github.com/argoproj/argo-helm/pull/1979
+        - name: OpenCost Website
+          url: https://www.opencost.io/
