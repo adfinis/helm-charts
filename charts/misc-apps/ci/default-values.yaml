@@ -34,3 +34,7 @@ grafanaAgentOperator:
 reloader:
   enabled: true
   values: {}
+
+opencost:
+  enabled: true
+  values: {}

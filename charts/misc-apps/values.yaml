@@ -135,7 +135,7 @@ argocdApps:
   # -- Chart
   chart: argocd-apps
   # -- [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version
-  targetRevision: 0.0.*
+  targetRevision: 1.0.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argocd-apps/values.yaml)
   values: {}
@@ -202,4 +202,26 @@ reloader:
   targetRevision: "v1.0.22"
   # -- Helm values
   # @default -- [upstream values](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader/values.yaml)
+  values: {}
+
+# -- [OpenCost](https://www.opencost.io)
+# @default -- [example](./examples/opencost.yaml)
+opencost:
+  # -- Enable OpenCost
+  enabled: false
+  name: opencost
+  # -- Annotations for OpenCost
+  annotations: {}
+  destination:
+    # -- Namespace
+    namespace: infra-opencost
+  # -- Repo URL
+  # @default -- [repo](https://opencost.github.io/opencost-helm-chart)
+  repoURL: https://opencost.github.io/opencost-helm-chart
+  # -- Chart
+  chart: opencost
+  # -- [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost)
+  targetRevision: 1.14.0
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/opencost/opencost-helm-chart/blob/main/charts/opencost/values.yaml)
   values: {}
