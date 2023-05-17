@@ -258,6 +258,17 @@ externalDatabase:
   port: 5432
   database: "hedgedoc"
 
+# -- Extra Secrets configuration
+# Add additional secrets here; they will be mounted 
+# under `/var/secrets/<secret name>`
+# You need this for SAML certificates, etc.
+extraSecretMounts: {}
+#  - name: saml-cert
+#    secretName: saml-cert
+#    mountPath: /var/secrets/saml-cert
+#    subPath: data
+#    readOnly: true
+
 # --  Secrets
 # Store your secrets in a K8s secret to not have to have
 # in a cleartext format

@@ -28,6 +28,11 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
+        {{- range .Values.extraSecretMounts }}
+        - name: {{ .name }}
+          secret:
+            secretName: {{ .secretName }}
+        {{- end }}
         - name: uploads
           {{- if .Values.hedgedoc.persistentStorage.enabled }}
           persistentVolumeClaim:
@@ -64,6 +69,12 @@ spec:
           volumeMounts:
             - mountPath: /hedgedoc/public/uploads
               name: uploads
+            {{- range .Values.extraSecretMounts }}
+            - name: {{ .name }}
+              mountPath: {{ .mountPath }}
+              subPath: {{ .subPath }}
+              readOnly: {{ .readOnly }}
+            {{- end }}
           livenessProbe:
             httpGet:
               path: /status
