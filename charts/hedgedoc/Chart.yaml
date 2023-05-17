@@ -23,4 +23,4 @@ annotations:
       image: quay.io/hedgedoc/hedgedoc:1.9.7
   artifacthub.io/changes: |
     - kind: changed
-      description: "Don't set CMD_SESSION_SECRET by default anymore"
+      description: "Added an extraSecretMounts config and chart logo"
