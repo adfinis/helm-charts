@@ -259,7 +259,7 @@ externalDatabase:
   database: "hedgedoc"
 
 # -- Extra Secrets configuration
-# Add additional secrets here; they will be mounted 
+# Add additional secrets here; they will be mounted
 # under `/var/secrets/<secret name>`
 # You need this for SAML certificates, etc.
 extraSecretMounts: {}

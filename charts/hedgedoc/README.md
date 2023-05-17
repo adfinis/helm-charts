@@ -26,6 +26,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | existingSecret | string | `nil` | from-literal=CMD_SESSION_SECRET=verysecure |
 | externalDatabase | object | `{"database":"hedgedoc","host":"localhost","password":"changeme","port":5432,"type":"postgresql","username":"setme"}` | Configure your external database here This is automatically used when postgresql.enabled is false. |
 | externalDatabase.type | string | `"postgresql"` | Set the database type (postgresql|mysql) |
+| extraSecretMounts | object | `{}` | Extra Secrets configuration Add additional secrets here; they will be mounted under `/var/secrets/<secret name>` You need this for SAML certificates, etc. |
 | fullnameOverride | string | `""` |  |
 | hedgedoc | object | `{"env":{"CMD_DOMAIN":"localhost","CMD_FORBIDDEN_NOTE_IDS":"robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views","CMD_HOST":"0.0.0.0","CMD_IMAGE_UPLOAD_TYPE":"filesystem","CMD_PROTOCOL_USESSL":"false","CMD_TOOBUSY_LAG":70,"CMD_URL_ADDPORT":"false","CMD_URL_PATH":"","DEBUG":"false","NODE_ENV":"production"},"persistentStorage":{"accessModes":["ReadWriteOnce"],"enabled":true,"size":"10G","storageClass":"default","volumeMode":"Filesystem"},"port":3000}` | Main configuration for hedgedoc |
 | hedgedoc.env | object | See the [official docs for all variables](https://docs.hedgedoc.org/configuration/) | Environment variables for Hedgedoc |
