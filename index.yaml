@@ -10620,6 +10620,33 @@ entries:
   misc-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: added
+          description: "opencost: add new chart"
+          links:
+            - name: OpenCost Website
+              url: https://www.opencost.io/
+    apiVersion: v2
+    created: "2023-05-17T08:37:38.889716003Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 25c7808df7a902b0106ba7d85f9480c2b718fd9f1c3b3d204764b5c08bc003fc
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.35.0/misc-apps-0.35.0.tgz
+    version: 0.35.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "argocd-apps: update from 0.0.9 to 1.0.0"
           links:
@@ -21082,4 +21109,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-17T08:08:41.286752307Z"
+generated: "2023-05-17T08:37:38.891557703Z"
