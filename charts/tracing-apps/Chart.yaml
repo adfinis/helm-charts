@@ -2,7 +2,7 @@ apiVersion: v2
 name: tracing-apps
 description: Argo CD app-of-apps config for tracing applications
 type: application
-version: 0.24.0
+version: 0.25.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,22 +17,18 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "opentelemetry-collector: update 0.74.0 to 0.75.0"
+      description: |
+        jaeger-operator: update from 1.42.0 to 1.43.0
+
+        * update operator-sdk to 1.27.0
+        * Support JaegerCommonSpec in JaegerCassandraCreateSchemaSpec
       links:
-        - name: GitHub Release
-          url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.75.0
+        - name: Changelog
+          url: https://github.com/jaegertracing/jaeger-operator/blob/main/CHANGELOG.md#v1430-2023-02-07
     - kind: changed
-      description: "opentelemetry-collector: update chart from 0.51.3 to 0.54.1"
+      description: "jaeger-operator: update chart from 2.41.0 to 2.43.0"
       links:
-        - name: "chore: Bump min k8s support to 1.24"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/753
-        - name: "fix: Remove default resource values"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/745
-        - name: "fix: Set topologySpreadConstraints type to array"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/747
-        - name: "feat: Add support for NetworkPolicy"
-          url:  https://github.com/open-telemetry/opentelemetry-helm-charts/pull/723
-        - name: "docs: Add a note about port-forwarding"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/724
-        - name: "feat: bump collector version to 0.75.0"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/726
+        - name: "feat: allow configuring container security context for jaeger operator"
+          url: https://github.com/jaegertracing/helm-charts/pull/465
+        - name: "feat: bump chart version to 1.43.0"
+          url: https://github.com/jaegertracing/helm-charts/pull/464
