@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.26.0
+version: 0.26.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,8 +16,8 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: 'loki-stack: update loki-stack chart from 2.8.* to 2.9.9'
+    - kind: security
+      description: 'loki-stack: update chart from 2.9.9 to 2.9.10'
       links:
-        - name: 'feat: update Promtail sub-chart'
-          url: https://github.com/grafana/helm-charts/commit/474a66bb54b8d581ab2e94ac7fe50c674c87d740
+        - name: 'fix: update bats image for CVE-2019-14697'
+          url: https://github.com/grafana/helm-charts/commit/0be885a7425028c61725b0eb3c42f527eb099d25
