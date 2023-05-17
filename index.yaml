@@ -19860,6 +19860,44 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            jaeger-operator: update from 1.42.0 to 1.43.0
+
+            * update operator-sdk to 1.27.0
+            * Support JaegerCommonSpec in JaegerCassandraCreateSchemaSpec
+          links:
+            - name: Changelog
+              url: https://github.com/jaegertracing/jaeger-operator/blob/main/CHANGELOG.md#v1430-2023-02-07
+        - kind: changed
+          description: "jaeger-operator: update chart from 2.41.0 to 2.43.0"
+          links:
+            - name: "feat: allow configuring container security context for jaeger operator"
+              url: https://github.com/jaegertracing/helm-charts/pull/465
+            - name: "feat: bump chart version to 1.43.0"
+              url: https://github.com/jaegertracing/helm-charts/pull/464
+    apiVersion: v2
+    created: "2023-05-17T11:02:59.910912062Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 0c6bdc0b93260015ad5ed3ff031d424d7b3891b9d273a00de3458125881261bf
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.25.0/tracing-apps-0.25.0.tgz
+    version: 0.25.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "opentelemetry-collector: update 0.74.0 to 0.75.0"
           links:
             - name: GitHub Release
@@ -21136,4 +21174,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-17T09:46:26.308136167Z"
+generated: "2023-05-17T11:02:59.913911908Z"
