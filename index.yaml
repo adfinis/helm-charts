@@ -4309,6 +4309,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Added an extraSecretMounts config and chart logo"
+      artifacthub.io/images: |
+        - name: hedgedoc
+          image: quay.io/hedgedoc/hedgedoc:1.9.7
+    apiVersion: v2
+    appVersion: 1.9.7
+    created: "2023-05-17T17:00:39.867332768Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~12.2.1
+    description: Chart for HedgeDoc, a fork of CodiMD
+    digest: f03dc4cfb2ab5c8712d64956ef97cfbe02ad1dcbc5766c078d38fe152c6633f9
+    icon: https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: hedgedoc
+    sources:
+    - https://github.com/hedgedoc/hedgedoc
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/hedgedoc-0.2.0/hedgedoc-0.2.0.tgz
+    version: 0.2.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Don't set CMD_SESSION_SECRET by default anymore"
       artifacthub.io/images: |
         - name: hedgedoc
@@ -21174,4 +21203,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-17T11:02:59.913911908Z"
+generated: "2023-05-17T17:00:39.869188897Z"
