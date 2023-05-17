@@ -55,9 +55,12 @@ spec:
     # You can configure pod settings that will be merged with the one configured by default by the operator.
     podTemplate: {{ . | toYaml }}
   {{- end }}
-  {{- with .Values.keycloak.ingress.enabled }}
+  {{- if .Values.keycloak.ingress.enabled }}
   ingress:
-    enabled: {{ . }}
+    enabled: true
+  {{- else }}
+  ingress:
+    enabled: false
   {{- end }}
   {{- if or .Values.keycloak.image.repository .Values.keycloak.image.tag }}
   image: "{{ .Values.keycloak.image.repository | default .Values.operator.config.keycloakImage.repository }}:{{ .Values.keycloak.image.tag | default .Values.operator.config.keycloakImage.tag | default .Chart.AppVersion }}"
