@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.159.0
+version: 0.160.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,18 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "argo-cd: update from 2.7.0 to 2.7.1"
+      description: "velero: update from 3.1.2 to 4.0.2"
       links:
         - name: GitHub Release
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.1
-    - kind: security
-      description: "argo-cd: update chart from 5.30.0 to 5.32.0"
-      links:
-        - name: "feat: allow extraObjects to contain string template"
-          url: https://github.com/argoproj/argo-helm/pull/1993
-        - name: "chore: Update Argo CD to v2.7.1"
-          url: https://github.com/argoproj/argo-helm/pull/1993
-        - name: "feat: Use tini as the ENTRYPOINT"
-          url: https://github.com/argoproj/argo-helm/pull/1993
-        - name: "chore(security): Upgrade Dex and Redis"
-          url: https://github.com/argoproj/argo-helm/pull/1993
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-4.0.2
