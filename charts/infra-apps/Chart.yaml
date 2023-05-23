@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.160.0
+version: 0.161.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,14 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "velero: update from 3.1.2 to 4.0.2"
+      description: "cert-manager: update from 1.11.1 to 1.12.0"
       links:
         - name: GitHub Release
-          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-4.0.2
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.12.0
+    - kind: changed
+      description: "cert-manager: update chart from 1.11.1 to 1.12.0"
+      links:
+        - name: "feat: Add imagePullSecrets for AMCE http01 solver pod"
+          url: https://github.com/cert-manager/cert-manager/pull/5801
+        - name: "feat: Vault issuer can now use a serviceAccountRef instead of relying on static service account tokens"
+          url: https://github.com/cert-manager/cert-manager/pull/5502
