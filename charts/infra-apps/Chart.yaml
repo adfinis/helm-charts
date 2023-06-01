@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.161.0
+version: 0.162.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,14 +17,40 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "cert-manager: update from 1.11.1 to 1.12.0"
+      description: "argo-cd: Update from 3.7.1 to 3.7.3"
       links:
-        - name: GitHub Release
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.12.0
+        - name: GitHub Release 3.7.2
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.2
+        - name: GitHub Release 3.7.3
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.3
     - kind: changed
-      description: "cert-manager: update chart from 1.11.1 to 1.12.0"
+      description: "argo-cd: update chart from 5.32.0 to 5.34.6"
       links:
-        - name: "feat: Add imagePullSecrets for AMCE http01 solver pod"
-          url: https://github.com/cert-manager/cert-manager/pull/5801
-        - name: "feat: Vault issuer can now use a serviceAccountRef instead of relying on static service account tokens"
-          url: https://github.com/cert-manager/cert-manager/pull/5502
+        - name: "feat: Enable to customize Service type of applicationset-controller"
+          url: https://github.com/argoproj/argo-helm/pull/2014
+        - name: "feat: Introduce chart signing"
+          url: https://github.com/argoproj/argo-helm/pull/2042
+        - name: "feat: Add ability to add prometheus.io/scrape annotations"
+          url: https://github.com/argoproj/argo-helm/pull/2037
+        - name: "feat: Add ability to add additional labels to all CRDs"
+          url: https://github.com/argoproj/argo-helm/pull/2051
+        - name: "fix: Upgrade Argo CD to v2.7.2"
+          url: https://github.com/argoproj/argo-helm/pull/2054
+        - name: "feat: Enable to add certificate to ApplicationSet Controller"
+          url: https://github.com/argoproj/argo-helm/pull/2052
+        - name: "feat: Update redis-ha to v4.23.0"
+          url: https://github.com/argoproj/argo-helm/pull/2058
+        - name: "feat: add lifecycle hooks to repo server"
+          url: https://github.com/argoproj/argo-helm/pull/1922
+        - name: "feat: Add new BitbucketCloud ssh keys"
+          url: https://github.com/argoproj/argo-helm/pull/2062
+        - name: "fix: don't request applicationsets if its disabled"
+          url: https://github.com/argoproj/argo-helm/pull/2069
+        - name: "fix: Align with upstream dex initContainers"
+          url: https://github.com/argoproj/argo-helm/pull/2070
+        - name: "fix: Allow to disable containerSecurityContext"
+          url: https://github.com/argoproj/argo-helm/pull/2072
+        - name: "fix: Upgrade Argo CD to v2.7.3"
+          url: https://github.com/argoproj/argo-helm/pull/2075
+        - name: "feat Adding 'appProtocol: HTTPS' to HTTPS service port of argocd-server "
+          url: https://github.com/argoproj/argo-helm/pull/1955
