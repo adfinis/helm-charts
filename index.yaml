@@ -4451,6 +4451,48 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "argo-cd: Update from 3.7.3 to 3.7.5"
+          links:
+            - name: GitHub Release 3.7.4
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.4
+            - name: GitHub Release 3.7.5
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.5
+        - kind: changed
+          description: "argo-cd: update chart from 5.34.6 to 5.36.2"
+          links:
+            - name: "fix: upgrade argo-cd to v2.7.5"
+              url: https://github.com/argoproj/argo-helm/pull/2108
+            - name: "fix: Allow specify redis config file"
+              url: https://github.com/argoproj/argo-helm/pull/2100
+            - name: "feat: Add 'global.env' for all deployed containers"
+              url: https://github.com/argoproj/argo-helm/pull/2096
+            - name: "fix: Upgrade Argo CD to v2.7.4"
+              url: https://github.com/argoproj/argo-helm/pull/2095
+            - name: "feat: Upgrade supported Kubernetes version to v1.23.0"
+              url: https://github.com/argoproj/argo-helm/pull/2087
+    apiVersion: v2
+    created: "2023-06-19T11:44:54.079170815Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 14be4b2b784e415aad3201b799e6a7c38058af62d7bd182cd377ebcbe4c679fd
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.163.0/infra-apps-0.163.0.tgz
+    version: 0.163.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "argo-cd: Update from 3.7.1 to 3.7.3"
           links:
             - name: GitHub Release 3.7.2
@@ -21472,4 +21514,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-15T08:34:12.657063984Z"
+generated: "2023-06-19T11:44:54.080770002Z"
