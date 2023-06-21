@@ -38,6 +38,14 @@ neuvectorMonitor:
   enabled: true
   values: {}
 
-oaut2-proxy:
+oauth2-proxy:
   enabled: true
   values: {}
+
+kyverno:
+  enabled: true
+  values: {}
+
+kyvernoPolicies:
+  enabled: true
+  values: ()
