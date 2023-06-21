@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.74.0](https://img.shields.io/badge/Version-0.74.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.75.0](https://img.shields.io/badge/Version-0.75.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -66,6 +66,22 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | gatekeeper.repoURL | string | [repo](https://open-policy-agent.github.io/gatekeeper/charts) | Repo URL |
 | gatekeeper.targetRevision | string | `"3.10.0"` | [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version |
 | gatekeeper.values | object | [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml) | Helm values |
+| kyverno | object | [example](./examples/kyverno.yaml) | [Kyverno](https://kyverno.io) |
+| kyverno.annotations | object | `{}` | Annotations for kyverno |
+| kyverno.chart | string | `"kyverno"` | Chart |
+| kyverno.destination.namespace | string | `"infra-kyverno"` | Namespace |
+| kyverno.enabled | bool | `false` | Enable kyverno |
+| kyverno.repoURL | string | [repo](https://kyverno.github.io/kyverno/) | Repo URL |
+| kyverno.targetRevision | string | `"3.0.1"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno) |
+| kyverno.values | object | [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml) | Helm values |
+| kyvernoPolicies | object | [example](./examples/kyverno.yaml) | [Kyverno Policies](https://kyverno.io) |
+| kyvernoPolicies.annotations | object | `{}` | Annotations for kyverno |
+| kyvernoPolicies.chart | string | `"kyverno-policies"` | Chart |
+| kyvernoPolicies.destination.namespace | string | `"infra-kyverno"` | Namespace |
+| kyvernoPolicies.enabled | bool | `false` | Enable kyverno-policies |
+| kyvernoPolicies.repoURL | string | [repo](https://kyverno.github.io/kyverno/) | Repo URL |
+| kyvernoPolicies.targetRevision | string | `"3.0.0"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies) |
+| kyvernoPolicies.values | object | [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno-policies/values.yaml) | Helm values |
 | neuvector | object | - | [NeuVector](https://github.com/neuvector/neuvector) ([example](./example/neuvector.yaml)) |
 | neuvector.chart | string | `"core"` | Chart |
 | neuvector.destination.namespace | string | `"infra-neuvector"` | Namespace |
