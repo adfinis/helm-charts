@@ -14054,6 +14054,33 @@ entries:
   security-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: added
+          description: Add Kyverno, the Kubernetes native policy management engine/framework
+          links:
+            - name: Kyverno
+              url: https://kyverno.io
+    apiVersion: v2
+    created: "2023-06-21T09:58:21.592875128Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: 797d42d6153d9731c1e324956473a1d9a69858d5325c103048cfe39220090754
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.75.0/security-apps-0.75.0.tgz
+    version: 0.75.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: |
             vault: update upstream components
@@ -21514,4 +21541,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-19T11:44:54.080770002Z"
+generated: "2023-06-21T09:58:21.594438956Z"
