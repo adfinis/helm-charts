@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.163.0
+version: 0.163.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,22 +17,9 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "argo-cd: Update from 3.7.3 to 3.7.5"
+      description: "cert-manager: Update from 1.12.0 to 1.12.2"
       links:
-        - name: GitHub Release 3.7.4
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.4
-        - name: GitHub Release 3.7.5
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.5
-    - kind: changed
-      description: "argo-cd: update chart from 5.34.6 to 5.36.2"
-      links:
-        - name: "fix: upgrade argo-cd to v2.7.5"
-          url: https://github.com/argoproj/argo-helm/pull/2108
-        - name: "fix: Allow specify redis config file"
-          url: https://github.com/argoproj/argo-helm/pull/2100
-        - name: "feat: Add 'global.env' for all deployed containers"
-          url: https://github.com/argoproj/argo-helm/pull/2096
-        - name: "fix: Upgrade Argo CD to v2.7.4"
-          url: https://github.com/argoproj/argo-helm/pull/2095
-        - name: "feat: Upgrade supported Kubernetes version to v1.23.0"
-          url: https://github.com/argoproj/argo-helm/pull/2087
+        - name: GitHub Release 1.11.1
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.12.1
+        - name: GitHub Release 1.11.2
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.12.2
