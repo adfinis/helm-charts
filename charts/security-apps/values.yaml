@@ -13,7 +13,7 @@ dex:
   # -- Chart
   chart: "dex"
   # -- [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version
-  targetRevision: "0.14.0"
+  targetRevision: "0.14.2"
   # -- Helm values
   # @default -- [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml)
   values: {}
