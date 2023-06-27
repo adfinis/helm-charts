@@ -14083,6 +14083,33 @@ entries:
   security-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: Update dex chart from 0.14.0 to 0.14.2
+          links:
+            - name: dex 0.14.2
+              url: https://github.com/dexidp/helm-charts/releases/tag/dex-0.14.2
+    apiVersion: v2
+    created: "2023-06-27T11:57:59.770271423Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: 91ea83d09210a4c01bbc64262b0338a11c1cc07485678c1674565a0a179fc2a6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.75.1/security-apps-0.75.1.tgz
+    version: 0.75.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: Add Kyverno, the Kubernetes native policy management engine/framework
           links:
@@ -21570,4 +21597,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-26T15:40:56.159848607Z"
+generated: "2023-06-27T11:57:59.771717813Z"
