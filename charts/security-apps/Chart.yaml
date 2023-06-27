@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.75.0
+version: 0.75.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,8 +16,8 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: added
-      description: Add Kyverno, the Kubernetes native policy management engine/framework
+    - kind: changed
+      description: Update dex chart from 0.14.0 to 0.14.2
       links:
-        - name: Kyverno
-          url: https://kyverno.io
+        - name: dex 0.14.2
+          url: https://github.com/dexidp/helm-charts/releases/tag/dex-0.14.2
