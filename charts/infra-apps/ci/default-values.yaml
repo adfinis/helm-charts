@@ -32,12 +32,6 @@ kubeEventExporter:
   enabled: true
 velero:
   enabled: true
-global:
-  extraEnvFrom:
-    - secretRef:
-        name: mimir-minio-secret
-  podAnnotations:
-    minio-secret-version: '42'
 mimir:
   enabled: true
   values:
