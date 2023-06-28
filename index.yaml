@@ -4451,6 +4451,45 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "mimir-distributed: Update from 3.3.0 to 4.5.0"
+          links:
+            - name: Mimir 2.9.0
+              url: https://github.com/grafana/mimir/releases/tag/mimir-2.9.0
+            - name: Mimir 2.8.0
+              url: https://github.com/grafana/mimir/releases/tag/mimir-2.8.0
+            - name: Mimir 2.7.3
+              url: https://github.com/grafana/mimir/releases/tag/mimir-2.7.3
+            - name: Mimir 2.7.2
+              url: https://github.com/grafana/mimir/releases/tag/mimir-2.7.2
+            - name: Mimir 2.7.1
+              url: https://github.com/grafana/mimir/releases/tag/mimir-2.7.1
+            - name: Mimir 2.6.0
+              url: https://github.com/grafana/mimir/releases/tag/mimir-2.6.0
+            - name: Mimir 2.5.0
+              url: https://github.com/grafana/mimir/releases/tag/mimir-2.5.0
+    apiVersion: v2
+    created: "2023-06-28T09:53:02.934452491Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 3d0bac88e2a66943cffd6cefeb9de6e387b2c99043197c38c90d28ab50e5c6b3
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.164.0/infra-apps-0.164.0.tgz
+    version: 0.164.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "cert-manager: Update from 1.12.0 to 1.12.2"
           links:
             - name: GitHub Release 1.11.1
@@ -21597,4 +21636,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-27T11:57:59.771717813Z"
+generated: "2023-06-28T09:53:02.939228738Z"
