@@ -4309,6 +4309,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Update to HedgeDoc 1.9.8, see [GitHub](https://github.com/hedgedoc/hedgedoc/releases/tag/1.9.8) for the release notes."
+      artifacthub.io/images: |
+        - name: hedgedoc
+          image: quay.io/hedgedoc/hedgedoc:1.9.8
+    apiVersion: v2
+    appVersion: 1.9.8
+    created: "2023-06-30T15:16:44.283509079Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~12.2.1
+    description: Chart for HedgeDoc, a fork of CodiMD
+    digest: 3d12ef6df402d42f59f421c975a7c961d0488436a6d256efea4e2ae2aae6efca
+    icon: https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: hedgedoc
+    sources:
+    - https://github.com/hedgedoc/hedgedoc
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/hedgedoc-0.3.0/hedgedoc-0.3.0.tgz
+    version: 0.3.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Added an extraSecretMounts config and chart logo"
       artifacthub.io/images: |
         - name: hedgedoc
@@ -21675,4 +21704,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-28T14:18:51.469010912Z"
+generated: "2023-06-30T15:16:44.285068704Z"
