@@ -269,3 +269,26 @@ mimir:
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml)
   values: {}
+
+# -- [prometheus-pushgateway](https://github.com/prometheus/pushgateway)
+# @default -- [example](./examples/prometheus-pushgateway.yaml)
+prometheus-pushgateway:
+  # -- Enable prometheus-pushgateway
+  enabled: false
+  name: prometheus-pushgateway
+  # -- Annotations for prometheus-pushgateway app
+  annotations: {}
+  destination:
+    # -- Namespace
+    namespace: infra-monitoring
+  # -- Repo URL
+  # @default -- [repo](https://prometheus-community.github.io/helm-charts)
+  repoURL: https://prometheus-community.github.io/helm-charts
+  # -- Chart
+  chart: prometheus-pushgateway
+  # -- [prometheus-pushgateway Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus-pushgateway)
+  targetRevision: 2.3.0
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml)
+  values: {}
+
