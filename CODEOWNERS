@@ -8,11 +8,11 @@
 /charts/cert-manager-issuers        @adfinis/helm-charts @hairmare
 /charts/common                      @adfinis/helm-charts @hairmare
 /charts/csi-secret-provider-class   @adfinis/helm-charts @hairmare @eyenx
-/charts/customer-center             @adfinis/helm-charts @vmaillot
+/charts/customer-center             @adfinis/helm-charts @adfinis/dev-devops
 /charts/osschallenge                @adfinis/helm-charts @trowik
 /charts/vault-auth                  @adfinis/helm-charts @eyenx
 /charts/vault-monitoring            @adfinis/helm-charts @pree @eyenx
 /charts/mopsos                      @adfinis/helm-charts @hairmare @eyenx
 /charts/timed                       @adfinis/helm-charts @adfinis/dev-devops
 /charts/osschallenge                @adfinis/helm-charts @adfinis/dev-devops
-/charts/hedgedoc                @adfinis/helm-charts @altesockensuppe @gianklug
+/charts/hedgedoc                    @adfinis/helm-charts @altesockensuppe @gianklug
