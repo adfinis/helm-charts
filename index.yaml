@@ -4506,6 +4506,71 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: security
+          description: "feat: update dexIDP from 2.36.0 -> 2.37.0"
+          links:
+            - name: "GitHub PR"
+              url: https://github.com/argoproj/argo-helm/pull/2155
+        - kind: changed
+          description: "feat(argo-cd): Update Argo CD from 2.7.4 to 2.7.7"
+          links:
+            - name: Argo CD 2.7.7
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.7
+            - name: Argo CD 2.7.6
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.6
+            - name: Argo CD 2.7.5
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.5
+        - kind: changed
+          description: "feat(argo-cd): Update chart 5.36.2 to 5.38.0"
+          links:
+            - name: "chore: update Argo CD to 2.7.7"
+              url: https://github.com/argoproj/argo-helm/pull/2147
+            - name: "feat: Update appset deployment template"
+              url: https://github.com/argoproj/argo-helm/pull/2145
+            - name: "fix: Remove necessary `create` entry in `argocd-cmd-params-cm` ConfigMap"
+              url: https://github.com/argoproj/argo-helm/pull/2146
+            - name: "fix: Update argo-cd.strategy template"
+              url: https://github.com/argoproj/argo-helm/pull/2144
+            - name: "fix: Add usages to ArgoCD server certificate"
+              url: https://github.com/argoproj/argo-helm/pull/2143
+            - name: "fix: gRPC service target port"
+              url: https://github.com/argoproj/argo-helm/pull/2138
+            - name: "feat: Add `ARGOCD_NOTIFICATIONS_CONTROLLER_LOGLEVEL` and `ARGOCD_NOTIFICATIONS_CONTROLLER_LOGFORMAT` env vars to argo-notifications Deployment"
+              url: https://github.com/argoproj/argo-helm/pull/2127
+            - name: "feat: Conditionally create the argocd-cmd-params-cm ConfigMap"
+              url: https://github.com/argoproj/argo-helm/pull/2129
+            - name: "chore: Upgrade Argo CD to v2.7.6"
+              url: https://github.com/argoproj/argo-helm/pull/2123
+            - name: "feat: Add app.kubernetes.io/version label"
+              url: https://github.com/argoproj/argo-helm/pull/2122
+            - name: "fix: helm lint error when extraObjects is defined"
+              url: https://github.com/argoproj/argo-helm/pull/2116
+            - name: "chore: upgrade argo-cd to v2.7.5"
+              url: https://github.com/argoproj/argo-helm/pull/2108
+            - name: "fix: Allow specify redis config file"
+              url: https://github.com/argoproj/argo-helm/pull/2100
+    apiVersion: v2
+    created: "2023-07-10T11:15:22.902487531Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 4fd54261835d581802c28ebb20f40a5f4481ab7d9cc263480b9a96ad14abd4a8
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.166.0/infra-apps-0.166.0.tgz
+    version: 0.166.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "mimir-distributed: Update from 3.3.0 to 4.5.0"
           links:
@@ -21731,4 +21796,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-05T13:54:30.453757986Z"
+generated: "2023-07-10T11:15:22.905638355Z"
