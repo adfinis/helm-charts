@@ -3,6 +3,46 @@ entries:
   argo-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: "feat(argo-rollouts): update from 1.4.1 to 1.5.0"
+          links:
+            - name: GitHub Release 1.5.0
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.5.0
+        - kind: changed
+          description: "feat(argo-rollouts): update chart from 2.26.1 to 2.31.0"
+          links:
+            - name: "feat: Support Traffic Router Plugins"
+              url: https://github.com/argoproj/argo-helm/pull/2090
+            - name: "fix: Fix cluster role missing access in dashboards"
+              url: https://github.com/argoproj/argo-helm/pull/1969
+            - name: "feat: add deployment annotations for controller"
+              url: https://github.com/argoproj/argo-helm/pull/2048
+            - name: "feat: Istion compat in healthz and metrics ports"
+              url: https://github.com/argoproj/argo-helm/pull/1976
+            - name: "feat: allow extraObjects to contain string template"
+              url: https://github.com/argoproj/argo-helm/pull/1996
+    apiVersion: v2
+    created: "2023-07-12T14:02:51.159451042Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.8.0
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 940a1fd31a63e3c3c6faf78d059fb391ee5c954a553a8293d314091ceadb507e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.19.0/argo-apps-0.19.0.tgz
+    version: 0.19.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: fixed
           description: "fix: Added missing permissions for argo rollouts dashboard cluster role"
           links:
@@ -21796,4 +21836,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-10T11:15:22.905638355Z"
+generated: "2023-07-12T14:02:51.16137837Z"
