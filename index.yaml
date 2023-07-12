@@ -14323,6 +14323,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: Update StackRox from 3.74 to 4.x
+          links:
+            - name: Release Notes for 4.0
+              url: https://github.com/stackrox/stackrox/blob/master/CHANGELOG.md#400
+    apiVersion: v2
+    created: "2023-07-12T17:05:24.991923695Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: 48bd665aeb3d82bc51d5812b02e99349b1d4bfd8fc91fd334010e5411827a3ee
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.76.0/security-apps-0.76.0.tgz
+    version: 0.76.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: Update dex chart from 0.14.0 to 0.14.2
           links:
             - name: dex 0.14.2
@@ -21836,4 +21863,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-12T14:02:51.16137837Z"
+generated: "2023-07-12T17:05:24.993850748Z"
