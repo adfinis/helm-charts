@@ -75,7 +75,7 @@ to the `examples/` folder.
 
 #### Automated testing
 
-The CI setup in the repository supports running tests through the Helm [unittest](https://github.com/quintush/helm-unittest/)
+The CI setup in the repository supports running tests through the Helm [unittest](https://github.com/helm-unittest/helm-unittest/)
 plugin.
 
 With the plugin each chart can (optionally) define some tests in `tests/*_test.yaml` files. In these
