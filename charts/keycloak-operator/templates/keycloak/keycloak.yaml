@@ -58,6 +58,13 @@ spec:
   {{- if .Values.keycloak.ingress.enabled }}
   ingress:
     enabled: true
+    {{- with .Values.keycloak.ingress.annotations }}
+    annotations:
+      {{ . | nindent 6 }}
+    {{- end }}
+    {{- with .Values.keycloak.ingress.className }}
+    className: {{ . | quote }}
+    {{- end }}
   {{- else }}
   ingress:
     enabled: false
