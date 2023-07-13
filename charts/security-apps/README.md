@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dex.destination.namespace | string | `"infra-dex"` | Namespace |
 | dex.enabled | bool | `false` | Enable dex |
 | dex.repoURL | string | [repo](https://charts.dexidp.io) | Repo URL |
-| dex.targetRevision | string | `"0.14.0"` | [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version |
+| dex.targetRevision | string | `"0.14.2"` | [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version |
 | dex.values | object | [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml) | Helm values |
 | dexK8sAuthenticator | object | - | [dex-k8s-authenticator](https://github.com/mintel/dex-k8s-authenticator) ([example](./examples/dex-k8s-authenticator.yaml)) |
 | dexK8sAuthenticator.chart | string | `"dexK8sAuthenticator"` | Chart |
@@ -66,6 +66,22 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | gatekeeper.repoURL | string | [repo](https://open-policy-agent.github.io/gatekeeper/charts) | Repo URL |
 | gatekeeper.targetRevision | string | `"3.10.0"` | [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version |
 | gatekeeper.values | object | [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml) | Helm values |
+| kyverno | object | [example](./examples/kyverno.yaml) | [Kyverno](https://kyverno.io) |
+| kyverno.annotations | object | `{}` | Annotations for kyverno |
+| kyverno.chart | string | `"kyverno"` | Chart |
+| kyverno.destination.namespace | string | `"infra-kyverno"` | Namespace |
+| kyverno.enabled | bool | `false` | Enable kyverno |
+| kyverno.repoURL | string | [repo](https://kyverno.github.io/kyverno/) | Repo URL |
+| kyverno.targetRevision | string | `"3.0.1"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno) |
+| kyverno.values | object | [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml) | Helm values |
+| kyvernoPolicies | object | [example](./examples/kyverno.yaml) | [Kyverno Policies](https://kyverno.io) |
+| kyvernoPolicies.annotations | object | `{}` | Annotations for kyverno |
+| kyvernoPolicies.chart | string | `"kyverno-policies"` | Chart |
+| kyvernoPolicies.destination.namespace | string | `"infra-kyverno"` | Namespace |
+| kyvernoPolicies.enabled | bool | `false` | Enable kyverno-policies |
+| kyvernoPolicies.repoURL | string | [repo](https://kyverno.github.io/kyverno/) | Repo URL |
+| kyvernoPolicies.targetRevision | string | `"3.0.0"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies) |
+| kyvernoPolicies.values | object | [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno-policies/values.yaml) | Helm values |
 | neuvector | object | - | [NeuVector](https://github.com/neuvector/neuvector) ([example](./example/neuvector.yaml)) |
 | neuvector.chart | string | `"core"` | Chart |
 | neuvector.destination.namespace | string | `"infra-neuvector"` | Namespace |
@@ -100,14 +116,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | stackroxCentralServices.destination.namespace | string | `"infra-stackrox"` | Namespace |
 | stackroxCentralServices.enabled | bool | `false` | Enable StackRox central-services |
 | stackroxCentralServices.repoURL | string | [repo](https://charts.stackrox.io) | Repo URL |
-| stackroxCentralServices.targetRevision | string | `"74.0.0"` | [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
+| stackroxCentralServices.targetRevision | string | `"400.1.0"` | [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
 | stackroxCentralServices.values | object | [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-central/values.yaml) | Helm values |
 | stackroxSecuredClusterServices | object | - | [StackRox secured-cluster-services](https://www.stackrox.io/) ([example/stackrox.yaml)) |
 | stackroxSecuredClusterServices.chart | string | `"stackrox-secured-cluster-services"` | Chart |
 | stackroxSecuredClusterServices.destination.namespace | string | `"infra-stackrox"` | Namespace |
 | stackroxSecuredClusterServices.enabled | bool | `false` | Enable StackRox secured-cluster-services |
 | stackroxSecuredClusterServices.repoURL | string | [repo](https://charts.stackrox.io) | Repo URL |
-| stackroxSecuredClusterServices.targetRevision | string | `"74.0.0"` | [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
+| stackroxSecuredClusterServices.targetRevision | string | `"400.1.0"` | [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
 | stackroxSecuredClusterServices.values | object | [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-secured-cluster/values.yaml.htpl) | Helm values |
 | vault | object | - | [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml)) |
 | vault.chart | string | `"vault"` | Chart |

@@ -1,0 +1,19 @@
+# Simple Kyverno deployment
+#
+# This prepares everything for enabling Kyverno policies
+# but only enables sane defaults and in audit mode and
+# not enforce mode.
+
+kyverno:
+  enabled: true
+  values:
+    replicas: 3
+    grafana:
+      # create a ConfigMap containing a Grafana dashboard
+      enabled: true
+
+kyvernoPolicies:
+  enabled: true
+  values:
+    # uncomment the following line to enable enforcing policy
+    #validationFailureAction: Enforce

@@ -13,7 +13,7 @@ dex:
   # -- Chart
   chart: "dex"
   # -- [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version
-  targetRevision: "0.14.0"
+  targetRevision: "0.14.2"
   # -- Helm values
   # @default -- [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml)
   values: {}
@@ -241,7 +241,7 @@ stackroxCentralServices:
   # -- Chart
   chart: stackrox-central-services
   # -- [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version
-  targetRevision: 74.0.0
+  targetRevision: 400.1.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-central/values.yaml)
   values: {}
@@ -261,7 +261,7 @@ stackroxSecuredClusterServices:
   # -- Chart
   chart: stackrox-secured-cluster-services
   # -- [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version
-  targetRevision: 74.0.0
+  targetRevision: 400.1.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-secured-cluster/values.yaml.htpl)
   values: {}
@@ -286,4 +286,48 @@ oauth2Proxy:
   targetRevision: 6.10.1
   # -- Helm values
   # @default -- [upstream values](https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/values.yaml)
+  values: {}
+
+# -- [Kyverno](https://kyverno.io)
+# @default -- [example](./examples/kyverno.yaml)
+kyverno:
+  # -- Enable kyverno
+  enabled: false
+  name: kyverno
+  # -- Annotations for kyverno
+  annotations: {}
+  destination:
+  # -- Namespace
+    namespace: infra-kyverno
+  # -- Repo URL
+  # @default -- [repo](https://kyverno.github.io/kyverno/)
+  repoURL: https://kyverno.github.io/kyverno/
+  # -- Chart
+  chart: kyverno
+  # -- [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno)
+  targetRevision: 3.0.1
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml)
+  values: {}
+
+# -- [Kyverno Policies](https://kyverno.io)
+# @default -- [example](./examples/kyverno.yaml)
+kyvernoPolicies:
+  # -- Enable kyverno-policies
+  enabled: false
+  name: kyverno-policies
+  # -- Annotations for kyverno
+  annotations: {}
+  destination:
+  # -- Namespace
+    namespace: infra-kyverno
+  # -- Repo URL
+  # @default -- [repo](https://kyverno.github.io/kyverno/)
+  repoURL: https://kyverno.github.io/kyverno/
+  # -- Chart
+  chart: kyverno-policies
+  # -- [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies)
+  targetRevision: 3.0.0
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno-policies/values.yaml)
   values: {}

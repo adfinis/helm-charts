@@ -20,7 +20,7 @@ argocd:
   # -- Chart
   chart: argo-cd
   # -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version
-  targetRevision: 5.32.0
+  targetRevision: 5.38.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml)
   values: {}
@@ -41,10 +41,10 @@ certManager:
   repoURL: https://charts.jetstack.io
   # -- Chart
   chart: cert-manager
-  # -- [cert-manager Helm chart](https://github.com/jetstack/cert-manager/tree/master/deploy/charts/cert-manager) version
-  targetRevision: 1.12.0
+  # -- [cert-manager Helm chart](https://github.com/cert-manager/cert-manager/tree/master/deploy/charts/cert-manager) version
+  targetRevision: 1.12.2
   # -- Helm values
-  # @default -- [upstream values](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
+  # @default -- [upstream values](https://github.com/cert-manager/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
 
 
@@ -265,7 +265,7 @@ mimir:
   # -- Chart
   chart: mimir-distributed
   # -- [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed)
-  targetRevision: 3.3.0
+  targetRevision: 4.5.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml)
   values: {}
