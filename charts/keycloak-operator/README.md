@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 21.1.0](https://img.shields.io/badge/AppVersion-21.1.0-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 22.0.0](https://img.shields.io/badge/AppVersion-22.0.0-informational?style=flat-square)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -48,6 +48,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.image.repository | string | `""` | Overrides the operator.keycloakImage.image value whose default is quay.io/keycloak/keycloak |
 | keycloak.image.tag | string | `""` | Overrides the operator.keycloakImage.tag value whose default is the chart appVersion. |
 | keycloak.imagePullSecrets | string | `nil` | Secret(s) that might be used when pulling an image from a private container image registry or repository. |
+| keycloak.ingress.annotations | list | `[]` | Annotations for the Ingress |
+| keycloak.ingress.className | string | `""` | Ingress class name |
 | keycloak.ingress.enabled | bool | `true` | The deployment is, by default, exposed through a basic ingress. |
 | keycloak.instances | int | `1` | Number of Keycloak instances in HA mode. |
 | keycloak.realmimport.enabled | bool | `false` | Deploy realmimport resources |

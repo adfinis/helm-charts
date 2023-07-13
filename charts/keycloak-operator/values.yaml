@@ -137,6 +137,10 @@ keycloak:
   ingress:
     # -- The deployment is, by default, exposed through a basic ingress.
     enabled: true
+    # -- Annotations for the Ingress
+    annotations: []
+    # -- Ingress class name
+    className: ""
 
   image:
     # -- Overrides the operator.keycloakImage.image value whose default is quay.io/keycloak/keycloak
