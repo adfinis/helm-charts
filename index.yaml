@@ -10350,6 +10350,28 @@ entries:
   keycloak-operator:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: Update Keycloak from 21.1.0 to 22.0.0
+    apiVersion: v2
+    appVersion: 22.0.0
+    created: "2023-07-13T09:14:41.259824151Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 2c2aba75f5e6479fc1053bd89a595b22fd4b517414ea5f677228ebc2c9a8047b
+    home: https://www.keycloak.org
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-0.2.0/keycloak-operator-0.2.0.tgz
+    version: 0.2.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: fixed
           description: allow disabling ingress from values
     apiVersion: v2
@@ -21936,4 +21958,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-13T09:04:24.783307346Z"
+generated: "2023-07-13T09:14:41.26116085Z"
