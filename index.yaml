@@ -4546,6 +4546,37 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: "feat(nginx-ingress): Update nginx-ingress from 4.6.0 to 4.7.1"
+          links:
+            - name: nginx-ingress 4.7.1
+              url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog&version=4.7.1
+            - name: nginx-ingress 4.7.0
+              url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog&version=4.7.0
+            - name: nginx-ingress 4.6.1
+              url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog&version=4.6.1
+    apiVersion: v2
+    created: "2023-07-13T07:59:52.45220305Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 5acab2d7a5b3b10ab639e397c5f5a2ef3d66e8cdcea374ee5e62528306994384
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.167.0/infra-apps-0.167.0.tgz
+    version: 0.167.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: security
           description: "feat: update dexIDP from 2.36.0 -> 2.37.0"
           links:
@@ -21863,4 +21894,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-12T17:05:24.993850748Z"
+generated: "2023-07-13T07:59:52.453840802Z"
