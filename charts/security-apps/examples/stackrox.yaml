@@ -11,6 +11,23 @@ stackroxCentralServices:
     env:
       openshift: false
       istio: false
+    central:
+      persistence:
+        none: true
+      db:
+        external: true
+        source:
+          connectionString: psql://user@psql.postgres.database.azure.com/schema
+        # passing null as password and generate=false tricks the chart into
+        # not managing the db secret enabling us to add our own using kubectl
+        # or other tooling.
+        password:
+          value: ~
+          generate: false
+    scanner:
+      dbPassword:
+        value: ~
+        generate: false
 
 stackroxSecuredClusterServices:
   enabled: true

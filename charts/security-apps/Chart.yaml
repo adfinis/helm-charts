@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.75.1
+version: 0.76.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: Update dex chart from 0.14.0 to 0.14.2
+      description: Update StackRox from 3.74 to 4.x
       links:
-        - name: dex 0.14.2
-          url: https://github.com/dexidp/helm-charts/releases/tag/dex-0.14.2
+        - name: Release Notes for 4.0
+          url: https://github.com/stackrox/stackrox/blob/master/CHANGELOG.md#400
