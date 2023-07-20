@@ -163,7 +163,7 @@ Once we are ready to fully remove it we replace the components template with a `
 
 ```yaml
 {{ if .Values.component.enabled }}
-{{ fail "component is DEPRECATED, use "improved solution" instead" }}
+{{ fail "component is DEPRECATED, use improved solution instead" }}
 {{ end }}
 ```
 
