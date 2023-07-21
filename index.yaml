@@ -4556,6 +4556,37 @@ entries:
             - name: nginx-ingress 4.6.1
               url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog&version=4.6.1
     apiVersion: v2
+    created: "2023-07-21T15:54:52.500838879Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 8a42a5d6a5453b01cf46778e5890e33378d732cd13ec54aa1c552a4d68114ac7
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.168.0/infra-apps-0.168.0.tgz
+    version: 0.168.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "feat(nginx-ingress): Update nginx-ingress from 4.6.0 to 4.7.1"
+          links:
+            - name: nginx-ingress 4.7.1
+              url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog&version=4.7.1
+            - name: nginx-ingress 4.7.0
+              url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog&version=4.7.0
+            - name: nginx-ingress 4.6.1
+              url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog&version=4.6.1
+    apiVersion: v2
     created: "2023-07-13T07:59:52.45220305Z"
     dependencies:
     - name: argoconfig
@@ -21958,4 +21989,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-13T09:14:41.26116085Z"
+generated: "2023-07-21T15:54:52.504048036Z"
