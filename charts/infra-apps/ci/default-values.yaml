@@ -21,11 +21,6 @@ rbacManager:
   enabled: true
   values:
     TODO: add values in values.yaml
-thanos:
-  enabled: true
-  values:
-    persistence:
-      enabled: false
 kured:
   enabled: true
 kubeEventExporter:
