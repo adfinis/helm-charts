@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.168.0
+version: 0.169.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,11 +17,21 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(nginx-ingress): Update nginx-ingress from 4.6.0 to 4.7.1"
+      description: "fix(argo-cd): Update from 2.7.6 to 2.7.9"
       links:
-        - name: nginx-ingress 4.7.1
-          url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog&version=4.7.1
-        - name: nginx-ingress 4.7.0
-          url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog&version=4.7.0
-        - name: nginx-ingress 4.6.1
-          url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog&version=4.6.1
+        - name: Argo CD 2.7.9
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.9
+        - name: Argo CD 2.7.8
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.8
+        - name: Argo CD 2.7.7
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.7
+    - kind: added
+      description: "feat(argo-cd): allow configurable hpa metrics"
+      links:
+        - name: PR
+          url: https://github.com/argoproj/argo-helm/pull/2166
+    - kind: changed
+      description: "fix(argo-cd): Ensure app.kubernetes.io/version label is valid"
+      links:
+        - name: PR
+          url: https://github.com/argoproj/argo-helm/pull/2148
