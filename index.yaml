@@ -4547,6 +4547,54 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "fix(argo-cd): Update from 2.7.6 to 2.7.9"
+          links:
+            - name: Argo CD 2.7.10
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.10
+            - name: Argo CD 2.7.9
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.9
+            - name: Argo CD 2.7.8
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.8
+            - name: Argo CD 2.7.7
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.7
+        - kind: added
+          description: "feat(argo-cd): allow configurable hpa metrics"
+          links:
+            - name: PR
+              url: https://github.com/argoproj/argo-helm/pull/2166
+        - kind: added
+          description: "feat(argo-cd): add labels to notifications secret"
+          links:
+            - name: PR
+              url: https://github.com/argoproj/argo-helm/pull/2192
+        - kind: changed
+          description: "fix(argo-cd): Ensure app.kubernetes.io/version label is valid"
+          links:
+            - name: PR
+              url: https://github.com/argoproj/argo-helm/pull/2148
+    apiVersion: v2
+    created: "2023-08-02T14:58:36.194841017Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 6dd6d1f2697e66513011e11ee0076571e0560d7514e3f2959b942a2326352641
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.169.0/infra-apps-0.169.0.tgz
+    version: 0.169.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(nginx-ingress): Update nginx-ingress from 4.6.0 to 4.7.1"
           links:
             - name: nginx-ingress 4.7.1
@@ -22022,4 +22070,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-02T09:32:33.301326234Z"
+generated: "2023-08-02T14:58:36.197527561Z"
