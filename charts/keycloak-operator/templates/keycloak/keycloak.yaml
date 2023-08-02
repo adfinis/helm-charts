@@ -81,19 +81,25 @@ spec:
   {{- if or .Values.keycloak.db.url (and .Values.keycloak.db.host .Values.keycloak.db.port .Values.keycloak.db.database ) }}
   db:
     {{- with .Values.keycloak.db.passwordSecret }}
-    passwordSecret: {{ . | toYaml }}
+    passwordSecret: {{ . | toYaml | nindent 6 }}
     {{- end }}
     {{- with .Values.keycloak.db.usernameSecret }}
-    usernameSecret: {{ . | toYaml }}
+    usernameSecret: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .Values.keycloak.db.vendor }}
+    vendor: {{ . | quote }}
+    {{- end }}
+    {{- with .Values.keycloak.db.host }}
+    host: {{ . | quote }}
     {{- end }}
     {{- with .Values.keycloak.db.port }}
     port: {{ . }}
     {{- end }}
+    {{- with .Values.keycloak.db.database }}
+    database: {{ . | quote }}
+    {{- end }}
     {{- with .Values.keycloak.db.schema }}
     schema: {{ . | quote }}
-    {{- end }}
-    {{- with .Values.keycloak.db.host }}
-    host: {{ . | quote }}
     {{- end }}
     {{- with .Values.keycloak.db.url }}
     url: {{ . | quote }}
@@ -103,12 +109,6 @@ spec:
     {{- end }}
     {{- with .Values.keycloak.db.poolMaxSize }}
     poolMaxSize: {{ . }}
-    {{- end }}
-    {{- with .Values.keycloak.db.vendor }}
-    vendor: {{ . | quote }}
-    {{- end }}
-    {{- with .Values.keycloak.db.database }}
-    database: {{ . | quote }}
     {{- end }}
     {{- with .Values.keycloak.db.poolMinSize }}
     poolMinSize: {{ . | quote }}

@@ -2,7 +2,7 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 0.2.0
+version: 0.2.1
 appVersion: "22.0.0"
 home: https://www.keycloak.org
 sources:
@@ -14,5 +14,5 @@ maintainers:
     url: https://adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: Update Keycloak from 21.1.0 to 22.0.0
+    - kind: fixed
+      description: db templating indentation
