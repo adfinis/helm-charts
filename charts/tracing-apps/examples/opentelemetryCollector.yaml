@@ -9,3 +9,7 @@ opentelemetryCollector:
       enabled: true
       extraLabels:
         k8s.adfinis.com/prometheus: kube-prometheus
+    resources:
+      limits:
+        cpu: 256m
+        memory: 512Mi
