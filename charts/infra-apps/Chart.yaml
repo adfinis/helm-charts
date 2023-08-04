@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.169.0
+version: 0.170.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,29 +16,8 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: "fix(argo-cd): Update from 2.7.6 to 2.7.9"
+    - kind: fixed
+      description: "fix(cert-manager): Update from 1.12.2 to 1.12.3"
       links:
-        - name: Argo CD 2.7.10
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.10
-        - name: Argo CD 2.7.9
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.9
-        - name: Argo CD 2.7.8
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.8
-        - name: Argo CD 2.7.7
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.7.7
-    - kind: added
-      description: "feat(argo-cd): allow configurable hpa metrics"
-      links:
-        - name: PR
-          url: https://github.com/argoproj/argo-helm/pull/2166
-    - kind: added
-      description: "feat(argo-cd): add labels to notifications secret"
-      links:
-        - name: PR
-          url: https://github.com/argoproj/argo-helm/pull/2192
-    - kind: changed
-      description: "fix(argo-cd): Ensure app.kubernetes.io/version label is valid"
-      links:
-        - name: PR
-          url: https://github.com/argoproj/argo-helm/pull/2148
+        - name: Release
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.12.3
