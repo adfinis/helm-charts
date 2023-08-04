@@ -10429,6 +10429,28 @@ entries:
   keycloak-operator:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: db templating indentation
+    apiVersion: v2
+    appVersion: 22.0.0
+    created: "2023-08-04T09:47:44.274276252Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: cb6d7cd0e43ff54707481768c2ab442340474f18d4acef1e71e5a5733fbdfb15
+    home: https://www.keycloak.org
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-0.2.1/keycloak-operator-0.2.1.tgz
+    version: 0.2.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: Update Keycloak from 21.1.0 to 22.0.0
     apiVersion: v2
@@ -22070,4 +22092,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-02T14:58:36.197527561Z"
+generated: "2023-08-04T09:47:44.276323776Z"
