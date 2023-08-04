@@ -4580,6 +4580,33 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: "fix(cert-manager): Update from 1.12.2 to 1.12.3"
+          links:
+            - name: Release
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.12.3
+    apiVersion: v2
+    created: "2023-08-04T14:24:15.081823702Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: d874b34f6d8c363f3a9c0e4ceb3b8caee31e77ec9ec72d0759c7836866556560
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.170.0/infra-apps-0.170.0.tgz
+    version: 0.170.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "fix(argo-cd): Update from 2.7.6 to 2.7.9"
           links:
@@ -22126,4 +22153,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-04T14:17:37.900694091Z"
+generated: "2023-08-04T14:24:15.084748804Z"
