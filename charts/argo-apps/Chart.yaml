@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.19.0
+version: 0.20.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,20 +17,14 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(argo-rollouts): update from 1.4.1 to 1.5.0"
+      description: "feat(argo-rollouts): update from 1.5.0 to 1.5.1"
       links:
-        - name: GitHub Release 1.5.0
-          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.5.0
+        - name: GitHub Release 1.5.1
+          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.5.1
     - kind: changed
-      description: "feat(argo-rollouts): update chart from 2.26.1 to 2.31.0"
+      description: "feat(argo-rollouts): update chart from 2.31.0 to 2.31.3"
       links:
-        - name: "feat: Support Traffic Router Plugins"
-          url: https://github.com/argoproj/argo-helm/pull/2090
-        - name: "fix: Fix cluster role missing access in dashboards"
-          url: https://github.com/argoproj/argo-helm/pull/1969
-        - name: "feat: add deployment annotations for controller"
-          url: https://github.com/argoproj/argo-helm/pull/2048
-        - name: "feat: Istion compat in healthz and metrics ports"
-          url: https://github.com/argoproj/argo-helm/pull/1976
-        - name: "feat: allow extraObjects to contain string template"
-          url: https://github.com/argoproj/argo-helm/pull/1996
+        - name: "fix: helm lint error when extraObjects is defined"
+          url: https://github.com/argoproj/argo-helm/pull/2196
+        - name: "fix: Use annotation container metrics"
+          url: https://github.com/argoproj/argo-helm/pull/2184
