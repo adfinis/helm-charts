@@ -4,6 +4,40 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(argo-rollouts): update from 1.5.0 to 1.5.1"
+          links:
+            - name: GitHub Release 1.5.1
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.5.1
+        - kind: changed
+          description: "feat(argo-rollouts): update chart from 2.31.0 to 2.31.3"
+          links:
+            - name: "fix: helm lint error when extraObjects is defined"
+              url: https://github.com/argoproj/argo-helm/pull/2196
+            - name: "fix: Use annotation container metrics"
+              url: https://github.com/argoproj/argo-helm/pull/2184
+    apiVersion: v2
+    created: "2023-08-04T14:17:37.898411832Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.8.0
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 0d5229add1ed28e4648f56c8de2ffa834db9f0eef2125afb2f87e250880f5aec
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.20.0/argo-apps-0.20.0.tgz
+    version: 0.20.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(argo-rollouts): update from 1.4.1 to 1.5.0"
           links:
             - name: GitHub Release 1.5.0
@@ -22092,4 +22126,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-04T09:47:44.276323776Z"
+generated: "2023-08-04T14:17:37.900694091Z"
