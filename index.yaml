@@ -11345,6 +11345,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: added
+          description: "fix(signalilo): update from 0.13.0 to 0.14.0"
+          links:
+            - name: Release Notes
+              url: https://github.com/vshn/signalilo/releases/tag/v0.14.0
+    apiVersion: v2
+    created: "2023-08-07T16:05:23.405536044Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 53cbd7584120b98dc417b6f49bca3b9779b5488230b4cd775f0ffb5e0d25323f
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.36.0/misc-apps-0.36.0.tgz
+    version: 0.36.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
           description: "opencost: add new chart"
           links:
             - name: OpenCost Website
@@ -22182,4 +22209,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-07T15:58:38.543949786Z"
+generated: "2023-08-07T16:05:23.407655956Z"
