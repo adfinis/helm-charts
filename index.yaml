@@ -14538,6 +14538,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(neuvector): Update from 5.1.2 to 5.2.0 (charts from 2.4.3 to 2.6.1)"
+          links:
+            - name: 5.2.0 Release
+              url: https://github.com/neuvector/neuvector/releases/tag/v5.2.0
+            - name: 5.1.3 Release
+              url: https://github.com/neuvector/neuvector/releases/tag/v5.1.3
+    apiVersion: v2
+    created: "2023-08-07T15:58:38.541691196Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for security applications
+    digest: c956d22df1d5e987bba280e2f814c4299c37835f577ada3a506416cf4b765938
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.78.0/security-apps-0.78.0.tgz
+    version: 0.78.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: |
             secrets-store-csi-driver: update upstream components
               * fix: update nodeserver publish logs
@@ -22153,4 +22182,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-04T14:24:15.084748804Z"
+generated: "2023-08-07T15:58:38.543949786Z"
