@@ -2,7 +2,7 @@ apiVersion: v2
 name: storage-apps
 description: Argo CD app-of-apps config for storage applications
 type: application
-version: 0.13.0
+version: 0.14.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "Update ceph-csi from 3.7.* to 3.8.0"
-      links:
-        - name: Ceph-CSI v3.8.0 Release
-          url: https://github.com/ceph/ceph-csi/releases/tag/v3.8.0
+      description: 'feat(minio): Update from RELEASE.2022-11-11T03-44-20Z to RELEASE.2023-04-13T03-08-07Z'
