@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.35.0
+version: 0.36.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: added
-      description: "opencost: add new chart"
+      description: "fix(signalilo): update from 0.13.0 to 0.14.0"
       links:
-        - name: OpenCost Website
-          url: https://www.opencost.io/
+        - name: Release Notes
+          url: https://github.com/vshn/signalilo/releases/tag/v0.14.0

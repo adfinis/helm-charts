@@ -33,7 +33,7 @@ signalilo:
   # -- Chart
   chart: "signalilo"
   # -- [signalilo Helm chart](https://github.com/appuio/charts/tree/master/appuio/signalilo) version
-  targetRevision: "0.12.0"
+  targetRevision: "0.12.1"
   # -- Helm values
   # @default -- [upstream values](https://github.com/appuio/charts/blob/master/appuio/signalilo/values.yaml)
   values: {}
