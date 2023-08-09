@@ -4579,6 +4579,34 @@ entries:
     version: 0.1.0
   infra-apps:
   - annotations:
+      artifacthub.io/changes: "- kind: changed\n  description: \"feat(argo-cd): Update
+        from 2.7.8 to 2.8.0 \U0001F973\"\n  links:\n    - name: Release\n      url:
+        https://github.com/argoproj/argo-cd/releases/tag/v2.8.0\n- kind: changed\n
+        \ description: \"feat(argo-cd): Update chart from 5.41.1 to 5.43.0\"\n  links:\n
+        \   - name: \"fix: Template configuration keys as a string instead of map\"\n
+        \     url: https://github.com/argoproj/argo-helm/pull/2205\n    - name: \"feat:
+        add labels to notifications secret\"\n      url: https://github.com/argoproj/argo-helm/issues/2191\n"
+    apiVersion: v2
+    created: "2023-08-09T06:45:13.289963044Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 14ce2d0a05ec963f0f568d7e9f7126066a7bad5c407cd9210d124ca119793814
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.171.0/infra-apps-0.171.0.tgz
+    version: 0.171.0
+  - annotations:
       artifacthub.io/changes: |
         - kind: fixed
           description: "fix(cert-manager): Update from 1.12.2 to 1.12.3"
@@ -22242,4 +22270,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-08T09:44:01.937653649Z"
+generated: "2023-08-09T06:45:13.291957851Z"
