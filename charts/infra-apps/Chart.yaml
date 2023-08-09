@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.171.0
+version: 0.171.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,12 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(argo-cd): Update from 2.7.8 to 2.8.0 🥳"
+      description: |
+        feat(argo-cd): Update from 2.7.8 to 2.8.0 🥳 but for real
+
+        The last change already documented the update to 2.8.0 but
+        only bumped us to 2.7.11 so this fixes that and does the
+        actual bump.
       links:
         - name: Release
           url: https://github.com/argoproj/argo-cd/releases/tag/v2.8.0
