@@ -24,3 +24,6 @@ annotations:
   artifacthub.io/changes: |
     - kind: security
       description: "Update to HedgeDoc 1.9.9, see [GitHub](https://github.com/hedgedoc/hedgedoc/releases/tag/1.9.9) for the release notes."
+      links:
+        - name: CVE-2023-38487 / GHSA-7494-7hcf-vxpg
+          url: https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-7494-7hcf-vxpg
