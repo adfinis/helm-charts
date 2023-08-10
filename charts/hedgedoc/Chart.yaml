@@ -22,5 +22,5 @@ annotations:
     - name: hedgedoc
       image: quay.io/hedgedoc/hedgedoc:1.9.8
   artifacthub.io/changes: |
-    - kind: changed
+    - kind: security
       description: "Update to HedgeDoc 1.9.9, see [GitHub](https://github.com/hedgedoc/hedgedoc/releases/tag/1.9.9) for the release notes."
