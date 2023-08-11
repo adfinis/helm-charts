@@ -27,6 +27,3 @@ annotations:
       links:
         - name: CVE-2023-38487 / GHSA-7494-7hcf-vxpg
           url: https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-7494-7hcf-vxpg
-      links:
-        - name: CVE-2023-38487 / GHSA-7494-7hcf-vxpg
-          url: https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-7494-7hcf-vxpg
