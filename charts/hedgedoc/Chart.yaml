@@ -3,8 +3,8 @@ apiVersion: v2
 name: hedgedoc
 description: Chart for HedgeDoc, a fork of CodiMD
 type: application
-version: 0.3.0
-appVersion: "1.9.8"
+version: 0.3.1
+appVersion: "1.9.9"
 icon: https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png
 sources:
   - https://github.com/hedgedoc/hedgedoc
@@ -22,5 +22,8 @@ annotations:
     - name: hedgedoc
       image: quay.io/hedgedoc/hedgedoc:1.9.8
   artifacthub.io/changes: |
-    - kind: changed
-      description: "Update to HedgeDoc 1.9.8, see [GitHub](https://github.com/hedgedoc/hedgedoc/releases/tag/1.9.8) for the release notes."
+    - kind: security
+      description: "Update to HedgeDoc 1.9.9, see [GitHub](https://github.com/hedgedoc/hedgedoc/releases/tag/1.9.9) for the release notes."
+      links:
+        - name: CVE-2023-38487 / GHSA-7494-7hcf-vxpg
+          url: https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-7494-7hcf-vxpg

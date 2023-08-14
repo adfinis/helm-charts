@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.170.0
+version: 0.171.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,8 +16,20 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: fixed
-      description: "fix(cert-manager): Update from 1.12.2 to 1.12.3"
+    - kind: changed
+      description: |
+        feat(argo-cd): Update from 2.7.8 to 2.8.0 🥳 but for real
+
+        The last change already documented the update to 2.8.0 but
+        only bumped us to 2.7.11 so this fixes that and does the
+        actual bump.
       links:
         - name: Release
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.12.3
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.8.0
+    - kind: changed
+      description: "feat(argo-cd): Update chart from 5.41.1 to 5.43.0"
+      links:
+        - name: "fix: Template configuration keys as a string instead of map"
+          url: https://github.com/argoproj/argo-helm/pull/2205
+        - name: "feat: add labels to notifications secret"
+          url: https://github.com/argoproj/argo-helm/issues/2191
