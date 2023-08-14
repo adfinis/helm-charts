@@ -4409,6 +4409,38 @@ entries:
   hedgedoc:
   - annotations:
       artifacthub.io/changes: |
+        - kind: security
+          description: "Update to HedgeDoc 1.9.9, see [GitHub](https://github.com/hedgedoc/hedgedoc/releases/tag/1.9.9) for the release notes."
+          links:
+            - name: CVE-2023-38487 / GHSA-7494-7hcf-vxpg
+              url: https://github.com/hedgedoc/hedgedoc/security/advisories/GHSA-7494-7hcf-vxpg
+      artifacthub.io/images: |
+        - name: hedgedoc
+          image: quay.io/hedgedoc/hedgedoc:1.9.8
+    apiVersion: v2
+    appVersion: 1.9.9
+    created: "2023-08-14T08:18:39.223626128Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~12.2.1
+    description: Chart for HedgeDoc, a fork of CodiMD
+    digest: 2b802ac19ac890b98ca8d6a37b1232b911a72cef17ac5084e5ad4076126f4a84
+    icon: https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: hedgedoc
+    sources:
+    - https://github.com/hedgedoc/hedgedoc
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/hedgedoc-0.3.1/hedgedoc-0.3.1.tgz
+    version: 0.3.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "Update to HedgeDoc 1.9.8, see [GitHub](https://github.com/hedgedoc/hedgedoc/releases/tag/1.9.8) for the release notes."
       artifacthub.io/images: |
@@ -22363,4 +22395,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-10T12:35:02.955349899Z"
+generated: "2023-08-14T08:18:39.225591651Z"
