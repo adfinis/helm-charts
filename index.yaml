@@ -21081,6 +21081,74 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "otel-collector: update from 0.75.0 to 0.82.0"
+          links:
+            - name: Upgrade docs!
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/UPGRADING.md
+            - name: Changelog v1.47.0
+              url: https://github.com/jaegertracing/jaeger-operator/blob/main/CHANGELOG.md#v1470-2025-07-12
+            - name: Changelog v1.46.0
+              url: https://github.com/jaegertracing/jaeger-operator/blob/main/CHANGELOG.md#v1460-2025-06-16
+            - name: Changelog v1.45.0
+              url: https://github.com/jaegertracing/jaeger-operator/blob/main/CHANGELOG.md#v1450-2023-05-16
+            - name: Changelog v1.44.0
+              url: https://github.com/jaegertracing/jaeger-operator/blob/main/CHANGELOG.md#v1440-2023-04-13
+        - kind: changed
+          description: "jaeger-operator: update chart from 0.54.1 to 0.65.0"
+          links:
+            - name: "feat: bump collector to 0.82.0"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/847
+            - name: "feat: Allow disabling service even for deployment and statefulsets"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/843
+            - name: "fix: Respect pipeline order when enabling kubernetesAttributes"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/844
+            - name: "feat: Add externalTrafficPolicy value for service type LoadBalancer"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/838
+            - name: "fix: checksum config in statefulset template"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/827
+            - name: "feat: extra env from"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/820
+            - name: "fix: recombine cri multi-line logs"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/818
+            - name: "feat: add dns config param"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/802
+            - name: "fix: cluster role for k8sattributes"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/801
+            - name: "feat: Add Service on Daemonset"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/755
+            - name: "feat: Add more fields to k8sattributes metadata"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/789
+            - name: "feat: support for HPA behavior"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/782
+            - name: "feat: Add tpl function to Ingress host references and pod annotations/labels"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/744
+            - name: "fix: update MY_POD_IP with ${env:MY_POD_IP}"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/767
+            - name: "fix: adding missing k8satrribute env var filter"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/768
+    apiVersion: v2
+    created: "2023-08-18T13:04:33.447321368Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 402f06c6c0a107f43e7bd5cbc253090ad8cc4a1fd3e09d483e97f39d7bcd6a68
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.26.0/tracing-apps-0.26.0.tgz
+    version: 0.26.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: |
             jaeger-operator: update from 1.42.0 to 1.43.0
 
@@ -22395,4 +22463,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-14T08:18:39.225591651Z"
+generated: "2023-08-18T13:04:33.449410769Z"
