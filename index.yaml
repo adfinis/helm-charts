@@ -17248,6 +17248,30 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: 'feat(minio): Update from RELEASE.2022-11-11T03-44-20Z to RELEASE.2023-04-13T03-08-07Z'
+    apiVersion: v2
+    created: "2023-08-18T13:08:53.15510398Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for storage applications
+    digest: 5193f52e83aca1a1e4705ee117aa9063997fdf8e8f4e98848f47d16a007806f9
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.14.0/storage-apps-0.14.0.tgz
+    version: 0.14.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Update ceph-csi from 3.7.* to 3.8.0"
           links:
             - name: Ceph-CSI v3.8.0 Release
@@ -22463,4 +22487,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-18T13:04:33.449410769Z"
+generated: "2023-08-18T13:08:53.158445541Z"
