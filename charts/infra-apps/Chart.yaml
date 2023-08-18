@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.171.1
+version: 0.172.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,18 +18,97 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat(argo-cd): Update from 2.7.8 to 2.8.0 🥳 but for real
-
-        The last change already documented the update to 2.8.0 but
-        only bumped us to 2.7.11 so this fixes that and does the
-        actual bump.
-      links:
-        - name: Release
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.8.0
+        feat(kube-prometheus-stack): Update from 45.23.0 to 48.3.1
     - kind: changed
-      description: "feat(argo-cd): Update chart from 5.41.1 to 5.43.0"
+      description: "feat(kube_prometheus-stack): Update from 45.23.0 to 48.3.1"
       links:
-        - name: "fix: Template configuration keys as a string instead of map"
-          url: https://github.com/argoproj/argo-helm/pull/2205
-        - name: "feat: add labels to notifications secret"
-          url: https://github.com/argoproj/argo-helm/issues/2191
+        - name: "[kube-prometheus-stack] Upgrade Grafana to 6.56.*"
+          url: https://github.com/prometheus-community/helm-charts/pull/3302
+        - name: "[kube-prometheus-stack] Added namespace selector for webhook configuration"
+          url: https://github.com/prometheus-community/helm-charts/pull/2969
+        - name: "[kube-prometheus-stack] add prometheus config reloader liveness and readiness prob…"
+          url: https://github.com/prometheus-community/helm-charts/pull/3337
+        - name: "[kube-prometheus-stack] Remove deprecated sha in prometheusSpec"
+          url: https://github.com/prometheus-community/helm-charts/pull/3191
+        - name: "[kube-prometheus-stack] Avoid diff with server-side apply when enforcedNamespaceLabel is set"
+          url: https://github.com/prometheus-community/helm-charts/pull/3247
+        - name: "[kube-prometheus-stack] Fix body must be of type string bug for cilium network policy"
+          url: https://github.com/prometheus-community/helm-charts/pull/3360
+        - name: "[kube-prometheus-stack] Add sessionAffinity support to alertmanager"
+          url: https://github.com/prometheus-community/helm-charts/pull/3376
+        - name: "[kube-prometheus-stack] Resolve Issue 3340"
+          url: https://github.com/prometheus-community/helm-charts/pull/3351
+        - name: "[kube-prometheus-stack] Introduce failurePolicy 'IgnoreOnInstallOnly'"
+          url: https://github.com/prometheus-community/helm-charts/pull/3066
+        - name: "[kube-prometheus-stack] Fix issue with depreceted HorizontalPodAutoscaler/v1beta"
+          url: https://github.com/prometheus-community/helm-charts/pull/3413
+        - name: "[kube-prometheus-stack] - resolve issue 3396, no null labels allowed for PrometheusRules"
+          url: https://github.com/prometheus-community/helm-charts/pull/3400
+        - name: "[kube-prometheus-stack] feat: allow override of service name for alertmanager default ingress"
+          url: https://github.com/prometheus-community/helm-charts/pull/3361
+        - name: "[prometheus-operator] Set secretFieldSelector to exclude not necessary secret types"
+          url: https://github.com/prometheus-community/helm-charts/pull/3415
+        - name: "[kube-prometheus-stack] Minify Grafana Dashboards and Update CRDs to 0.65.1"
+          url: https://github.com/prometheus-community/helm-charts/pull/3416
+        - name: "[kube-prometheus-stack] Add scheme and tlsConfig to alertmanagerSpec"
+          url: https://github.com/prometheus-community/helm-charts/pull/3037
+        - name: "[kube-prometheus-stack] Add support for extra manifests"
+          url: https://github.com/prometheus-community/helm-charts/pull/2798
+        - name: "[kube-prometheus-stack] set parameters for podsecurity restricted"
+          url: https://github.com/prometheus-community/helm-charts/pull/3201
+        - name: "[kube-prometheus-stack] Add the possibility to define fine-grained labels and annotation based on the prometheus group"
+          url: https://github.com/prometheus-community/helm-charts/pull/3288
+        - name: "[kube-prometheus-stack] Fix typo in kubeProxy additional rule labels"
+          url: https://github.com/prometheus-community/helm-charts/pull/3432
+        - name: "[kube-prometheus-stack] Make failurePolicy a string"
+          url: https://github.com/prometheus-community/helm-charts/pull/3442
+        - name: "[kube-prometheus-stack] - add scrapeConfig CR and tpl support for all CR's selectors"
+          url: https://github.com/prometheus-community/helm-charts/pull/3446
+        - name: "[kube-prometheus-stack] add AlertmanagerSpec clusterGossipInterval, clusterPushpullInterval and clusterPeerTimeout"
+          url: https://github.com/prometheus-community/helm-charts/pull/3445
+        - name: "[kube-prometheus-stack] bump chart dependencies"
+          url: https://github.com/prometheus-community/helm-charts/pull/3473
+        - name: "[kube-prometheus-stack] Add Alertmanager as default data source"
+          url: https://github.com/prometheus-community/helm-charts/pull/3474
+        - name: "[kube-prometheus-stack] prometheus-operator 0.66.0"
+          url: https://github.com/prometheus-community/helm-charts/pull/3508
+        - name: "[kube-prometheus-stack] use imagePullSecrets in deployment for prometheus-operator"
+          url: https://github.com/prometheus-community/helm-charts/pull/3526
+        - name: "[kube-prometheus-stack] Bump Prometheus and chart dependencies"
+          url: https://github.com/prometheus-community/helm-charts/pull/3522
+        - name: "[kube-prometheus-stack] Optional Windows-specific dashboards and rules"
+          url: https://github.com/prometheus-community/helm-charts/pull/3083
+        - name: "[kube-prometheus-stack] Minify windows dashboards"
+          url: https://github.com/prometheus-community/helm-charts/pull/3546
+        - name: "[kube-prometheus-stack] Implement ServiceMonitor endpoints for reloader components"
+          url: https://github.com/prometheus-community/helm-charts/pull/3543
+        - name: "[kube-prometheus-stack] add agent mode selector to values.yaml"
+          url: https://github.com/prometheus-community/helm-charts/pull/3520
+        - name: "[kube-prometheus-stack] Upgrade Grafana chart to 6.58.*"
+          url: https://github.com/prometheus-community/helm-charts/pull/3571
+        - name: "[kube-prometheus-stack] adding prometheus tracing config"
+          url: https://github.com/prometheus-community/helm-charts/pull/3558
+        - name: "[kube-prometheus-stack] Allow minReplicas to be set for VPA"
+          url: https://github.com/prometheus-community/helm-charts/pull/3577
+        - name: "[kube-prometheus-stack] Move CRDs into sub-charts"
+          url: https://github.com/prometheus-community/helm-charts/pull/3547
+        - name: "[kube-prometheus-stack] Fix network policy for agent mode"
+          url: https://github.com/prometheus-community/helm-charts/pull/3587
+        - name: "[kube-prometheus-stack] Add recommender option to VPA"
+          url: https://github.com/prometheus-community/helm-charts/pull/3591
+        - name: "[prometheus-operator] Add prometheusagent to rbac"
+          url: https://github.com/prometheus-community/helm-charts/pull/3439
+        - name: "[kube-prometheus-stack] bumping chart version to allow updated dependent chart versions to be updated"
+          url: https://github.com/prometheus-community/helm-charts/pull/3618
+        - name: "[kube-prometheus-stack] Bump chart dependencies"
+          url: https://github.com/prometheus-community/helm-charts/pull/3633
+        - name: "[kube-prometheus-stack] Unify usage of prometheus pods selectors"
+          url: https://github.com/prometheus-community/helm-charts/pull/3628
+        - name: "[kube-prometheus-stack] remove extraneous brace from minikube script"
+          url: https://github.com/prometheus-community/helm-charts/pull/3645
+        - name: "[kube-prometheus-stack] bump requests lib"
+          url: https://github.com/prometheus-community/helm-charts/pull/3651
+        - name: "[kube-prometheus-stack] Allow changing the default revisionHistoryLimit"
+          url: https://github.com/prometheus-community/helm-charts/pull/3664
+        - name: "[kube-prometheus-stack] Fix indentation multiple imagePullSecrets"
+          url: https://github.com/prometheus-community/helm-charts/pull/3666
