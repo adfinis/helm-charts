@@ -137,7 +137,7 @@ kubePrometheusStack:
   # -- Argo CD sync policy for the app
   syncPolicy:
     syncOptions:
-      # enable server-side-apply for KPS since it get's rid of having to manually sync/replace resources
+      # -- enable server-side-apply for KPS since it get's rid of having to manually sync/replace resources
       - ServerSideApply=true
   # -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
