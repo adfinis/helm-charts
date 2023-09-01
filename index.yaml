@@ -4613,6 +4613,116 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            feat(kube-prometheus-stack): Update from 48.3.1 to 49.2.0 and add `ServerSideApply` sync policy for Argo CD. You have to be aware that it could be broken for Argo CD < v2.5.0.
+        - kind: changed
+          description: "feat(kube_prometheus-stack): Update from 48.3.1 to 49.2.0"
+          links:
+            - name: "[kube-prometheus-stack] Add support for relabelings and metricRelabelings"
+              url: https://github.com/prometheus-community/helm-charts/pull/3683
+            - name: "[kube-prometheus-stack] Updates thanos image to v0.32.1"
+              url: https://github.com/prometheus-community/helm-charts/pull/3735
+            - name: "[prometheus] Bump chart dependencies, bump minimum kubeVersion"
+              url: https://github.com/prometheus-community/helm-charts/pull/3726
+            - name: "[prometheus-smartctl-exporter]: update to smartctl exporter v0.11.0"
+              url: https://github.com/prometheus-community/helm-charts/pull/3734
+            - name: "[prometheus-node-exporter] bump version"
+              url: https://github.com/prometheus-community/helm-charts/pull/3731
+            - name: "[kube-state-metrics] add namespaceSelector to servicemonitor"
+              url: https://github.com/prometheus-community/helm-charts/pull/3670
+            - name: "[kube-prometheus-stack] Upgrade crds to 0.67.1"
+              url: https://github.com/prometheus-community/helm-charts/pull/3668
+            - name: "[prometheus-mongodb-exporter] add dnsConfig"
+              url: https://github.com/prometheus-community/helm-charts/pull/3722
+            - name: "[kube-prometheus-stack] Updates thanos image to v0.32.0"
+              url: https://github.com/prometheus-community/helm-charts/pull/3728
+            - name: "[kube-prometheus-stack] update helm release grafana to 6.59.* (#3727)"
+              url: https://github.com/prometheus-community/helm-charts/pull/3727
+            - name: "[alertmanager] Updates Alertmanager image to v0.26.0"
+              url: https://github.com/prometheus-community/helm-charts/pull/3720
+            - name: "feat: allow changing the default revisionHistoryLimit"
+              url: https://github.com/prometheus-community/helm-charts/pull/3675
+            - name: "[prometheus-conntrack-stats-exporter] fix podLabels"
+              url: https://github.com/prometheus-community/helm-charts/pull/3717
+            - name: "[kube-prometheus-stack] Updates Alertmanager image to v0.26.0"
+              url: https://github.com/prometheus-community/helm-charts/pull/3721
+            - name: "change hook from ciliumnetworkpolicy patchWebHook to post"
+              url: https://github.com/prometheus-community/helm-charts/pull/3719
+            - name: "kube-prometheus-stack : change ciliumnetworkpolicy hooks from post to pre in prometheus-operator"
+              url: https://github.com/prometheus-community/helm-charts/pull/3718
+            - name: "Corrected operator service account comment"
+              url: https://github.com/prometheus-community/helm-charts/pull/3716
+            - name: "[jiralert] Added commonLabels to jiralert"
+              url: https://github.com/prometheus-community/helm-charts/pull/3707
+            - name: "update version"
+              url: https://github.com/prometheus-community/helm-charts/pull/3713
+            - name: "[prometheus-snmp-exporter] Allow configuration of ipFamilyPolicy"
+              url: https://github.com/prometheus-community/helm-charts/pull/3685
+            - name: "add pullsecrets"
+              url: https://github.com/prometheus-community/helm-charts/pull/3705
+            - name: "[kube-prometheus-stack] fix typo in scrapeConfigNamespaceSelector"
+              url: https://github.com/prometheus-community/helm-charts/pull/3706
+            - name: "[prometheus-adapter] fix dnsConfig location"
+              url: https://github.com/prometheus-community/helm-charts/pull/3661
+            - name: "[kube-prometheus-stack] Add support for network policy match labels to be specified"
+              url: https://github.com/prometheus-community/helm-charts/pull/3671
+            - name: "[prometheus-windows-exporter] Set correct name for windows_exporter"
+              url: https://github.com/prometheus-community/helm-charts/pull/3703
+            - name: "Remove unused tpl from Prometheus chart"
+              url: https://github.com/prometheus-community/helm-charts/pull/3702
+            - name: "[prometheus-adapter] Allow configuration of ipFamilyPolicy"
+              url: https://github.com/prometheus-community/helm-charts/pull/3698
+            - name: "[prometheus-mongodb-exporter] Allow to add additional labels to all resources"
+              url: https://github.com/prometheus-community/helm-charts/pull/3697
+            - name: "[prom-label-proxy] Add templating support for ingress, service, and args"
+              url: https://github.com/prometheus-community/helm-charts/pull/3693
+            - name: "update / template labels / use appVersion as tag"
+              url: https://github.com/prometheus-community/helm-charts/pull/3692
+            - name: "[prometheus-modbus-exporter] full"
+              url: https://github.com/prometheus-community/helm-charts/pull/3531
+            - name: "[prometheus-blackbox-exporter] allow configuration of ipFamilyPolicy"
+              url: https://github.com/prometheus-community/helm-charts/pull/3684
+            - name: "[alertmanager] Add securityContext to configmap reload"
+              url: https://github.com/prometheus-community/helm-charts/pull/3659
+            - name: "[prometheus-smartctl-exporter]: update to smartctl exporter v0.10.0"
+              url: https://github.com/prometheus-community/helm-charts/pull/3691
+            - name: "feat: allow changing the default revisionHistoryLimit"
+              url: https://github.com/prometheus-community/helm-charts/pull/3676
+            - name: "feat: allow changing the default revisionHistoryLimit"
+              url: https://github.com/prometheus-community/helm-charts/pull/3677
+            - name: "feat: allow changing the default revisionHistoryLimit"
+              url: https://github.com/prometheus-community/helm-charts/pull/3678
+            - name: "[Alertmanager] add enabled property into config block"
+              url: https://github.com/prometheus-community/helm-charts/pull/3579
+            - name: "[alertmanager] feat: allow changing the default revisionHistoryLimit"
+              url: https://github.com/prometheus-community/helm-charts/pull/3674
+            - name: "[alertmanager] Add additional configuration options"
+              url: https://github.com/prometheus-community/helm-charts/pull/3620
+            - name: "[alertmanager-snmp-notifier] Add inline schema"
+              url: https://github.com/prometheus-community/helm-charts/pull/3496
+    apiVersion: v2
+    created: "2023-09-01T09:18:50.94976695Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: c2e993aaf2ec079c62385541468d93fc6ab6a83094c47fb3a3d4348e9378fc56
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.174.0/infra-apps-0.174.0.tgz
+    version: 0.174.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(argo-cd): Update from 2.8.0 to 2.8.2"
           links:
             - name: Release 2.8.2
@@ -22649,4 +22759,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-09-01T08:53:45.871447054Z"
+generated: "2023-09-01T09:18:50.95150558Z"
