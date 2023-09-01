@@ -18,7 +18,7 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat(kube-prometheus-stack): Update from 48.3.1 to 49.2.0
+        feat(kube-prometheus-stack): Update from 48.3.1 to 49.2.0 and add `ServerSideApply` sync policy for Argo CD. You have to be aware that it could be broken for Argo CD < v2.5.0.
     - kind: changed
       description: "feat(kube_prometheus-stack): Update from 48.3.1 to 49.2.0"
       links:
