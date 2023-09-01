@@ -4613,6 +4613,50 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(argo-cd): Update from 2.8.0 to 2.8.2"
+          links:
+            - name: Release 2.8.2
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.8.2
+            - name: Release 2.8.1
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.8.1
+        - kind: changed
+          description: "feat(argo-cd): Update chart from 5.43.0 to 5.45.0"
+          links:
+            - name: "chore: Remove support for autoscaling/v1"
+              url: https://github.com/argoproj/argo-helm/pull/2237
+            - name: "chore: Remove support for legacy cert-manager APIs"
+              url: https://github.com/argoproj/argo-helm/pull/2238
+            - name: "fix: Upgrade redis-exporter to 1.53.0"
+              url: https://github.com/argoproj/argo-helm/pull/2236
+            - name: "fix: add missing permissions to run actions"
+              url: https://github.com/argoproj/argo-helm/pull/2212
+            - name: "fix: Change applicationSet replicaCount to replicas"
+              url: https://github.com/argoproj/argo-helm/pull/2214
+            - name: "fix: global log level configuration"
+              url: https://github.com/argoproj/argo-helm/pull/2213
+    apiVersion: v2
+    created: "2023-09-01T08:53:45.869696045Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: c28f1520e0e17fa468c117d3e5a2d0b4c50d01e7c37dce23dc9cfc9545d771bf
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.173.0/infra-apps-0.173.0.tgz
+    version: 0.173.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: |
             feat(kube-prometheus-stack): Update from 45.23.0 to 48.3.1
         - kind: changed
@@ -22605,4 +22649,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-18T13:29:12.839482599Z"
+generated: "2023-09-01T08:53:45.871447054Z"
