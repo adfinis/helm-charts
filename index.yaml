@@ -4612,6 +4612,37 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: security
+          description: |
+            fix(cert-manager): Update from 1.12.3 to 1.12.4
+
+            * fix an issue with comparing two IP addressees that affects ipv6
+            * update go to fix a security issue in crypto/tls
+          links:
+            - name: Release Notes
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.12.4
+    apiVersion: v2
+    created: "2023-09-06T08:21:43.50504961Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 953ef2f5ca03e7811220f0a8d5bdaeba3a061262fbed2004e806260569f11149
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.175.0/infra-apps-0.175.0.tgz
+    version: 0.175.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: |
             feat(kube-prometheus-stack): Update from 48.3.1 to 49.2.0 and add `ServerSideApply` sync policy for Argo CD. You have to be aware that it could be broken for Argo CD < v2.5.0.
@@ -22759,4 +22790,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-09-01T09:18:50.95150558Z"
+generated: "2023-09-06T08:21:43.508160981Z"
