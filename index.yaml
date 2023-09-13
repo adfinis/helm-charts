@@ -4613,6 +4613,48 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: security
+          description: "fix(argo-cd): Update from 2.8.2 to 2.8.3"
+          links:
+            - name: Release Notes
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.8.3
+        - kind: changed
+          description: "feat(argo-cd): adds toggle for helm-working-dir"
+          links:
+            - name: PR
+              url: https://github.com/argoproj/argo-helm/pull/2249
+        - kind: changed
+          description: "fix: Restart Repo Server and Application Controller when config changes"
+          links:
+            - name: PR
+              url: https://github.com/argoproj/argo-helm/pull/2235
+        - kind: changed
+          description: "fix: Make the PathType configurable when using single ingress"
+          links:
+            - name: PR
+              url: https://github.com/argoproj/argo-helm/pull/2251
+    apiVersion: v2
+    created: "2023-09-13T13:02:58.510189782Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 359045b5aa2c68a6f2c36d799e449411f22342eade4b0c852bb8b002c564afe6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.176.0/infra-apps-0.176.0.tgz
+    version: 0.176.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: security
           description: |
             fix(cert-manager): Update from 1.12.3 to 1.12.4
 
@@ -22790,4 +22832,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-09-06T08:21:43.508160981Z"
+generated: "2023-09-13T13:02:58.512169826Z"
