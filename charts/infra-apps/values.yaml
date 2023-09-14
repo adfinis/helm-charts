@@ -42,7 +42,7 @@ certManager:
   # -- Chart
   chart: cert-manager
   # -- [cert-manager Helm chart](https://github.com/cert-manager/cert-manager/tree/master/deploy/charts/cert-manager) version
-  targetRevision: 1.12.4
+  targetRevision: 1.13.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/cert-manager/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
