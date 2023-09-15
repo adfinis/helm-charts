@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.177.0
+version: 0.178.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,14 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: |
-        feat(cert-manager): Update from 1.12.4 to 1.13.0
-
-        cert-manager 1.13 brings support for DNS over HTTPS, support for
-        loading options from a versioned config file for the cert-manager
-        controller, and more. This release also includes the promotion of
-        the StableCertificateRequestName and SecretsFilteredCaching feature
-        gates to Beta.
+      description: "feat(argo-cd): Update from 2.8.3 to 2.8.4"
       links:
         - name: Release Notes
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.13.0
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.8.4
