@@ -73,7 +73,7 @@ minio:
   # -- Chart
   chart: "minio"
   # -- [minio Helm chart](https://github.com/minio/minio/tree/master/helm-releases) version
-  targetRevision: "5.0.8"
+  targetRevision: "5.0.13"
   # -- Helm values
   # @default -- [upstream values](https://github.com/minio/minio/blob/master/helm/minio/values.yaml)
   values: {}
