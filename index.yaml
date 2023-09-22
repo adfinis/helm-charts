@@ -11874,6 +11874,62 @@ entries:
   misc-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: "feat: Update opencost from 1.103.1 to 1.105.2"
+          links:
+            - name: Release Notes 1.104.0
+              url: https://github.com/opencost/opencost/releases/tag/v1.104.0
+            - name: Release Notes 1.104.4
+              url: https://github.com/opencost/opencost/releases/tag/v1.104.4
+            - name: Release Notes 1.105.0
+              url: https://github.com/opencost/opencost/releases/tag/v1.105.0
+            - name: Release Notes 1.105.2
+              url: https://github.com/opencost/opencost/releases/tag/v1.105.2
+        - kind: changed
+          description: "chore(opencost): update chart from 1.14.0 to 1.19.3"
+          links:
+            - name: "fix: prometheus endpoint example in values"
+              url: https://github.com/opencost/opencost-helm-chart/pull/66
+            - name: "fix: Secret is created by adding aws settings"
+              url: https://github.com/opencost/opencost-helm-chart/pull/72
+            - name: "chore: Update PVC claim name"
+              url: https://github.com/opencost/opencost-helm-chart/pull/65
+            - name: "feat: add option to using existing secret for Prometheus"
+              url: https://github.com/opencost/opencost-helm-chart/pull/76
+            - name: "feat: Make imagePullPolicy properties configurable"
+              url: https://github.com/opencost/opencost-helm-chart/pull/89
+            - name: "fix: Fix number values in secret.yaml"
+              url: https://github.com/opencost/opencost-helm-chart/pull/93
+            - name: "feat: Added name field in service account"
+              url: https://github.com/opencost/opencost-helm-chart/pull/92
+            - name: "feat: Support thanos integration"
+              url: https://github.com/opencost/opencost-helm-chart/pull/98
+            - name: "feat: Template Prometheus values"
+              url: https://github.com/opencost/opencost-helm-chart/pull/100
+            - name: "fix: increased readiness and liveness probe delay to 120"
+              url: https://github.com/opencost/opencost-helm-chart/pull/112
+    apiVersion: v2
+    created: "2023-09-22T09:04:58.471535002Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 5aeed5ee912c7531de9bcf092f2586d22e9ac0e599531adea1ebf1cdb7e81ba1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.37.0/misc-apps-0.37.0.tgz
+    version: 0.37.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: "fix(signalilo): update from 0.13.0 to 0.14.0"
           links:
@@ -22951,4 +23007,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-09-22T08:51:31.55096577Z"
+generated: "2023-09-22T09:04:58.474211967Z"
