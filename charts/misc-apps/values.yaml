@@ -221,7 +221,7 @@ opencost:
   # -- Chart
   chart: opencost
   # -- [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost)
-  targetRevision: 1.14.0
+  targetRevision: 1.19.3
   # -- Helm values
   # @default -- [upstream values](https://github.com/opencost/opencost-helm-chart/blob/main/charts/opencost/values.yaml)
   values: {}
