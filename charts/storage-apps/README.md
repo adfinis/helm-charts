@@ -1,6 +1,6 @@
 # storage-apps
 
-![Version: 0.14.0](https://img.shields.io/badge/Version-0.14.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.15.0](https://img.shields.io/badge/Version-0.15.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for storage applications
 
@@ -49,7 +49,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | minio.destination.namespace | string | `"infra-storage"` | Namespace |
 | minio.enabled | bool | `false` | Enable minio |
 | minio.repoURL | string | [repo](https://github.com/minio/minio/tree/master/helm/minio) | Repo URL |
-| minio.targetRevision | string | `"5.0.8"` | [minio Helm chart](https://github.com/minio/minio/tree/master/helm-releases) version |
+| minio.targetRevision | string | `"5.0.13"` | [minio Helm chart](https://github.com/minio/minio/tree/master/helm-releases) version |
 | minio.values | object | [upstream values](https://github.com/minio/minio/blob/master/helm/minio/values.yaml) | Helm values |
 
 ## About this chart
