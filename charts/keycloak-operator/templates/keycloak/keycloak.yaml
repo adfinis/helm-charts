@@ -73,7 +73,7 @@ spec:
   image: "{{ .Values.keycloak.image.repository | default .Values.operator.config.keycloakImage.repository }}:{{ .Values.keycloak.image.tag | default .Values.operator.config.keycloakImage.tag | default .Chart.AppVersion }}"
   {{- end }}
   {{- with .Values.keycloak.imagePullSecrets }}
-  imagePullSecrets: {{ . | toYaml }}
+  imagePullSecrets: {{ . | toYaml | nindent 4 }}
   {{- end }}
   {{- with .Values.keycloak.additionalOptions }}
   additionalOptions: {{ . | toYaml }}
