@@ -2,7 +2,7 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 0.2.2
+version: 0.2.3
 appVersion: "22.0.0"
 home: https://www.keycloak.org
 sources:
@@ -15,4 +15,4 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: fixed
-      description: impagePullSecret indentation
+      description: podTemplate and additionalOptions indent fix
