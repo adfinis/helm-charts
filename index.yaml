@@ -11048,6 +11048,28 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: fixed
+          description: podTemplate and additionalOptions indent fix
+    apiVersion: v2
+    appVersion: 22.0.0
+    created: "2023-10-03T11:52:02.554160217Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 8424474dfd6a74052de29cc6633cc3dac9ad213938ff36a5d5486378bc1397e6
+    home: https://www.keycloak.org
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-0.2.3/keycloak-operator-0.2.3.tgz
+    version: 0.2.3
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
           description: impagePullSecret indentation
     apiVersion: v2
     appVersion: 22.0.0
@@ -23056,4 +23078,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-09-29T15:32:19.829877632Z"
+generated: "2023-10-03T11:52:02.556379721Z"
