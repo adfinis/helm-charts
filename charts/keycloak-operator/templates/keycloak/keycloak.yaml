@@ -53,7 +53,7 @@ spec:
   {{- with .Values.keycloak.unsupported.podTemplate }}
   unsupported:
     # You can configure pod settings that will be merged with the one configured by default by the operator.
-    podTemplate: {{ . | toYaml }}
+    podTemplate: {{ . | toYaml | nindent 6 }}
   {{- end }}
   {{- if .Values.keycloak.ingress.enabled }}
   ingress:
@@ -76,7 +76,7 @@ spec:
   imagePullSecrets: {{ . | toYaml | nindent 4 }}
   {{- end }}
   {{- with .Values.keycloak.additionalOptions }}
-  additionalOptions: {{ . | toYaml }}
+  additionalOptions: {{ . | toYaml | nindent 4 }}
   {{- end }}
   {{- if or .Values.keycloak.db.url (and .Values.keycloak.db.host .Values.keycloak.db.port .Values.keycloak.db.database ) }}
   db:
