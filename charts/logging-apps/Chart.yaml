@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.26.1
+version: 0.27.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -16,8 +16,8 @@ dependencies:
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: security
-      description: 'loki-stack: update chart from 2.9.9 to 2.9.10'
+    - kind: changed
+      description: 'chore(fluentBit): update chart from 0.21.6 to 0.39.0'
       links:
-        - name: 'fix: update bats image for CVE-2019-14697'
-          url: https://github.com/grafana/helm-charts/commit/0be885a7425028c61725b0eb3c42f527eb099d25
+        - name: GitHub release
+          url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.39.0
