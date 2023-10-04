@@ -11946,6 +11946,39 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(argocd-apps): Update chart from 1.0.0 to 1.4.1"
+          links:
+            - name: "feat: Generate application, applicationset, project with template"
+              url: https://github.com/argoproj/argo-helm/pull/2025
+            - name: "feat: add rollout strategy for ApplicationSet"
+              url: https://github.com/argoproj/argo-helm/pull/2063
+            - name: "feat: add permitOnlyProjectScopedClusters flag for projects"
+              url: https://github.com/argoproj/argo-helm/pull/2149
+            - name: "feat: syncOptions for applications"
+              url: https://github.com/argoproj/argo-helm/pull/2176
+    apiVersion: v2
+    created: "2023-10-04T12:37:36.820445023Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 95c63df7c681377d80caba24955c7ad4a2248b10920183993b0b4a0d1152f4c6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.38.0/misc-apps-0.38.0.tgz
+    version: 0.38.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Update opencost from 1.103.1 to 1.105.2"
           links:
             - name: Release Notes 1.104.0
@@ -23078,4 +23111,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-03T11:52:02.556379721Z"
+generated: "2023-10-04T12:37:36.822710558Z"
