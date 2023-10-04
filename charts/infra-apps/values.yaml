@@ -133,7 +133,7 @@ kubePrometheusStack:
   # -- Chart
   chart: kube-prometheus-stack
   # -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: 49.2.0
+  targetRevision: 51.2.0
   # -- Argo CD sync policy for the app
   syncPolicy:
     syncOptions:
