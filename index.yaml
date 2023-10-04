@@ -11946,6 +11946,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore(misc-apps): Update downscaler from 0.7.1 to 0.7.3"
+          links:
+            - url: https://github.com/deliveryhero/helm-charts/pull/484
+              name: Add inactive_in option and update default appVersion
+            - url: https://github.com/deliveryhero/helm-charts/pull/523
+              name: Cronjob apiVersion compliant post k8s v1.25
+    apiVersion: v2
+    created: "2023-10-04T15:16:32.06698454Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 6f02724ebee31ee405cca479ff1197cdc70627d391c0a3efa8aad8c6a06bebfa
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.39.0/misc-apps-0.39.0.tgz
+    version: 0.39.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(argocd-apps): Update chart from 1.0.0 to 1.4.1"
           links:
             - name: "feat: Generate application, applicationset, project with template"
@@ -23111,4 +23140,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-04T12:37:36.822710558Z"
+generated: "2023-10-04T15:16:32.069504687Z"
