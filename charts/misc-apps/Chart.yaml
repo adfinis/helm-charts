@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.38.0
+version: 0.39.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,13 +17,9 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(argocd-apps): Update chart from 1.0.0 to 1.4.1"
+      description: "chore(misc-apps): Update downscaler from 0.7.1 to 0.7.3"
       links:
-        - name: "feat: Generate application, applicationset, project with template"
-          url: https://github.com/argoproj/argo-helm/pull/2025
-        - name: "feat: add rollout strategy for ApplicationSet"
-          url: https://github.com/argoproj/argo-helm/pull/2063
-        - name: "feat: add permitOnlyProjectScopedClusters flag for projects"
-          url: https://github.com/argoproj/argo-helm/pull/2149
-        - name: "feat: syncOptions for applications"
-          url: https://github.com/argoproj/argo-helm/pull/2176
+        - url: https://github.com/deliveryhero/helm-charts/pull/484
+          name: Add inactive_in option and update default appVersion
+        - url: https://github.com/deliveryhero/helm-charts/pull/523
+          name: Cronjob apiVersion compliant post k8s v1.25
