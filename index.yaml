@@ -1047,6 +1047,55 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "promitor: scraper v2.11.0 (chart version v2.12.0)"
+          links:
+            - name: Improve AzureMonitorScraper Error Handling for Time Series Missing Requested Dimension Value
+              url: https://github.com/tomkerkhove/promitor/pull/2345
+            - name: Marine distroless support
+              url: https://github.com/tomkerkhove/promitor/pull/2329
+            - name: Provide capability to use multiple metric dimensions
+              url: https://github.com/tomkerkhove/promitor/pull/2351
+            - name: Provide all metric labels in OpenTelemetry & StatsD
+              url: https://github.com/tomkerkhove/promitor/pull/2183
+            - name: PowerBi Dedicated Scraping
+              url: https://github.com/tomkerkhove/promitor/pull/2368
+            - name: Patch for CVE-2023-29331
+              url: https://github.com/advisories/GHSA-w4m3-43gp-x8hx
+            - name: Patch for CVE-2023-28260 (High | Base image)
+              url: https://github.com/advisories/GHSA-555c-2p6r-68mm
+            - name: Patch for CVE-2023-33170 (High - CVE Report)
+              url: https://github.com/advisories/GHSA-25c8-p796-jg6r
+            - name: Patch for CVE-2023-36799 (Medium - CVE Report)
+              url: https://github.com/advisories/GHSA-h3hv-63q5-jgpr
+            - name: Patch for CVE-2023-36054 (Medium - CVE Report)
+              url: https://github.com/advisories/GHSA-39q6-4vrm-fv3g
+            - name: Patch for CVE-2023-3817 (Medium - CVE Report)
+              url: https://github.com/advisories/GHSA-c945-cqj5-wfv6
+            - name: Patch for CVE-2023-2650 (Medium - CVE Report)
+              url: https://github.com/advisories/GHSA-gqxg-9vfr-p9cg
+    apiVersion: v2
+    created: "2023-10-05T13:06:54.38063205Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for Azure applications
+    digest: a56af6d2d08b57fe7927ef79824cc0afcea036ec6c2de5e43dd706f14bb8afba
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.11.0/azure-apps-0.11.0.tgz
+    version: 0.11.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "promitor: resource discovery v0.11.0"
           links:
             - name: Marinre distroless support
@@ -23216,4 +23265,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-05T07:43:38.021407397Z"
+generated: "2023-10-05T13:06:54.382600065Z"
