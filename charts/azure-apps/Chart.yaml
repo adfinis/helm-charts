@@ -2,7 +2,7 @@ apiVersion: v2
 name: azure-apps
 description: Argo CD app-of-apps config for Azure applications
 type: application
-version: 0.10.0
+version: 0.11.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,10 +17,16 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "promitor: resource discovery v0.11.0"
+      description: "promitor: scraper v2.11.0 (chart version v2.12.0)"
       links:
-        - name: Marinre distroless support
+        - name: Improve AzureMonitorScraper Error Handling for Time Series Missing Requested Dimension Value
+          url: https://github.com/tomkerkhove/promitor/pull/2345 
+        - name: Marine distroless support
           url: https://github.com/tomkerkhove/promitor/pull/2329
+        - name: Provide capability to use multiple metric dimensions
+          url: https://github.com/tomkerkhove/promitor/pull/2351
+        - name: Provide all metric labels in OpenTelemetry & StatsD 
+          url: https://github.com/tomkerkhove/promitor/pull/2183
         - name: PowerBi Dedicated Scraping
           url: https://github.com/tomkerkhove/promitor/pull/2368
         - name: Patch for CVE-2023-29331
