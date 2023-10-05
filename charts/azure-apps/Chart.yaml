@@ -2,7 +2,7 @@ apiVersion: v2
 name: azure-apps
 description: Argo CD app-of-apps config for Azure applications
 type: application
-version: 0.9.0
+version: 0.10.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,23 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "promitor: scraper v2.10 & resource discovery v0.9.0"
+      description: "promitor: resource discovery v0.11.0"
       links:
-        - name: GitHub PR
-          url: https://github.com/promitor/charts/pull/144
+        - name: Marinre distroless support
+          url: https://github.com/tomkerkhove/promitor/pull/2329
+        - name: PowerBi Dedicated Scraping
+          url: https://github.com/tomkerkhove/promitor/pull/2368
+        - name: Patch for CVE-2023-29331
+          url: https://github.com/advisories/GHSA-w4m3-43gp-x8hx
+        - name: Patch for CVE-2023-28260 (High | Base image)
+          url: https://github.com/advisories/GHSA-555c-2p6r-68mm
+        - name: Patch for CVE-2023-33170 (High - CVE Report)
+          url: https://github.com/advisories/GHSA-25c8-p796-jg6r
+        - name: Patch for CVE-2023-36799 (Medium - CVE Report)
+          url: https://github.com/advisories/GHSA-h3hv-63q5-jgpr
+        - name: Patch for CVE-2023-36054 (Medium - CVE Report)
+          url: https://github.com/advisories/GHSA-39q6-4vrm-fv3g
+        - name: Patch for CVE-2023-3817 (Medium - CVE Report)
+          url: https://github.com/advisories/GHSA-c945-cqj5-wfv6
+        - name: Patch for CVE-2023-2650 (Medium - CVE Report)
+          url: https://github.com/advisories/GHSA-gqxg-9vfr-p9cg
