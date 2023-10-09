@@ -4739,6 +4739,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(infra-apps): Update kubePrometheusStack from 49.2.0 to 51.2.0"
+          links:
+            - name: Upgrades Prometheus-Operator to v0.68.0, Prometheus to 2.47.0 and Thanos to v0.32.2
+              url: https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack#from-50x-to-51x
+    apiVersion: v2
+    created: "2023-10-09T07:52:52.549560882Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 34963c3321b99c1e6ddbf148eff1be56731be4a027e10f4d51c8043d4c3f8d51
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.181.0/infra-apps-0.181.0.tgz
+    version: 0.181.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "fix(argo-cd): Update chart from 5.46.3 to 5.46.7"
           links:
             - name: "fix: Align redis-ha's affinity type to upstream due to warnings"
@@ -23265,4 +23292,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-05T13:06:54.382600065Z"
+generated: "2023-10-09T07:52:52.552012045Z"
