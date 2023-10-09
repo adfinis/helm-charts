@@ -1047,6 +1047,51 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "azureKvCsiProvider: bump azureKvCsiProvider from v1.3 to v1.4.1"
+          links:
+            - name: Fixes CVE-2022-41717
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/1039
+            - name: Fixes CVE-2022-32149
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/999
+            - name: Fixes CVE-2022-27664
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/976
+            - name: Fixes CVE-2022-1996
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/957
+            - name: fix/updates template condition for Arc
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/973
+            - name: fix/increase fluentd resource limits for arc
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/946
+            - name: fix/bug 948 arc missing system identity
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/949
+            - name: fix/runs msi-adapter as privileged on openshift
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/920
+            - name: Update to v1.4.0
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.4.0
+            - name: Update to v1.4.1
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.4.1
+    apiVersion: v2
+    created: "2023-10-09T12:10:04.206859741Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for Azure applications
+    digest: 8b433c43059aef0b18962aafb7d4bb5d528ef4747d209a025b12f351706b6ddc
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.12.0/azure-apps-0.12.0.tgz
+    version: 0.12.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "promitor: scraper v2.11.0 (chart version v2.12.0)"
           links:
             - name: Improve AzureMonitorScraper Error Handling for Time Series Missing Requested Dimension Value
@@ -23292,4 +23337,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-09T07:52:52.552012045Z"
+generated: "2023-10-09T12:10:04.21019909Z"
