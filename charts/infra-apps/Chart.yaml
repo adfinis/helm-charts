@@ -19,23 +19,23 @@ annotations:
     - kind: changed
       description: "feat(infra-apps): Update kured from 4.2.0 to 5.2.0"
       links:
-        - name: fix: annotate nodes for reboot before aborting due to blocked
+        - name: "fix: annotate nodes for reboot before aborting due to blocked"
           url: https://github.com/kubereboot/kured/pull/749
-        - name: update docs location
+        - name: "update docs location"
           url: https://github.com/kubereboot/kured/pull/758
-        - name: feat: metrics port command
+        - name: "feat: metrics port command"
           url: https://github.com/kubereboot/kured/pull/780
-        - name: Support pod-selector for drain command
+        - name: "Support pod-selector for drain command"
           url: https://github.com/kubereboot/kured/pull/788
-        - name: Use readOnlyRootFilesystem
+        - name: "Use readOnlyRootFilesystem"
           url: https://github.com/kubereboot/kured/pull/805
-        - name: Log on unusual sentinel-command exit code
+        - name: "Log on unusual sentinel-command exit code"
           url: https://github.com/kubereboot/kured/pull/806
-        - name: Don’t hold node lock if reboot is blocked
+        - name: "Don’t hold node lock if reboot is blocked"
           url: https://github.com/kubereboot/kured/pull/819
-        - name: Add argument to invert the behavior of alert-filter-regexp
+        - name: "Add argument to invert the behavior of alert-filter-regexp"
           url: https://github.com/kubereboot/kured/pull/786
-        - name: Add multiple concurrent node reboot
+        - name: "Add multiple concurrent node reboot"
           url: https://github.com/kubereboot/kured/pull/660
-        - name: Adds new flag --metrics-host
+        - name: "Adds new flag --metrics-host"
           url: https://github.com/kubereboot/kured/pull/811
