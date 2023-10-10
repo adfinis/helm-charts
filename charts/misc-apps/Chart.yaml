@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.39.0
+version: 0.40.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,9 +17,83 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore(misc-apps): Update downscaler from 0.7.1 to 0.7.3"
+      description: "feat(misc-apps): Update keda from 2.10.1 to 2.12.0"
       links:
-        - url: https://github.com/deliveryhero/helm-charts/pull/484
-          name: Add inactive_in option and update default appVersion
-        - url: https://github.com/deliveryhero/helm-charts/pull/523
-          name: Cronjob apiVersion compliant post k8s v1.25
+        - url: https://github.com/kedacore/keda/issue/4396
+          name: "Admission Webhooks: Allow to remove the finalizer even if the ScaledObject isn't valid"
+        - url: https://github.com/kedacore/keda/issues/3303
+          name: "General: Introduce annotation autoscaling.keda.sh/paused: true for ScaledJobs to pause autoscaling"
+        - url: https://github.com/kedacore/keda/issues/4234
+          name: "General: Introduce new Solr Scaler"
+        - url: https://github.com/kedacore/keda/issues/4457
+          name: "General: Support ScaledObject taking over existing HPAs with the same name while they are not managed by other ScaledObject"
+        - url: https://github.com/kedacore/keda/issues/4269
+          name: "CPU/Memory scaler: Add support for scale to zero if there are multiple triggers"
+        - url: https://github.com/kedacore/keda/issues/3930
+          name: "General: Metrics Adapter: remove deprecated Prometheus Metrics and non-gRPC code"
+        - url: https://github.com/kedacore/keda/issues/4702
+          name: "General: Add a Prometheus metric for measuring the processing loop lag"
+        - url: https://github.com/kedacore/keda/issues/4647
+          name: "General: Add a Prometheus metric with KEDA build info"
+        - url: https://github.com/kedacore/charts/issues/468
+          name: "General: Allow to change the port of the Admission Webhook"
+        - url: https://github.com/kedacore/keda/issues/3930
+          name: "General: Metrics Adapter: remove deprecated Prometheus Metrics and non-gRPC code"
+        - url: https://github.com/kedacore/keda/issues/4680
+          name: "AWS DynamoDB: Add support for indexName"
+        - url: https://github.com/kedacore/keda/issues/4489
+          name: "Azure Data Explorer Scaler: Use azidentity SDK"
+        - url: https://github.com/kedacore/keda/issues/3565
+          name: "External Scaler: Add tls options in TriggerAuth metadata"
+        - url: https://github.com/kedacore/keda/issues/4243
+          name: "GCP PubSub Scaler: Make it more flexible for metrics"
+        - url: https://github.com/kedacore/keda/issues/4651
+          name: "GitHub Runner Scaler: Added support for GitHub App authentication"
+        - url: https://github.com/kedacore/keda/issues/4704
+          name: "PostgreSQL Scaler: Replace lib/pq with pgx"
+        - url: https://github.com/kedacore/keda/issues/4448
+          name: "RabbitMQ Scaler: Add support for unsafeSsl in trigger metadata"
+        - url: https://github.com/kedacore/keda/issues/4716
+          name: "RabbitMQ Scaler: Add support for workloadIdentityResource and utilize AzureAD Workload Identity for HTTP authorization"
+        - url: https://github.com/kedacore/keda/issues/4665
+          name: "Solace Scaler: Add new messageReceiveRateTarget metric to Solace Scaler"
+        - url: https://github.com/kedacore/keda/pull/4513
+          name: "General: Grafana Dashboard: Fix HPA metrics panel to use range instead of instant"
+        - url: https://github.com/kedacore/keda/pull/4539
+          name: "General: Grafana Dashboard: Fix HPA metrics panel by replacing $namepsace to $exported_namespace due to label conflict"
+        - url: https://github.com/kedacore/keda/issues/4514
+          name: "Azure Data Explorer: Deprecate metadata.clientSecret"
+        - url: https://github.com/kedacore/keda/issues/4681
+          name: "Pulsar Scaler: Fix msgBacklogThreshold field being named wrongly as msgBacklog"
+        - url: https://github.com/kedacore/keda/issues/3613
+          name: "General: Introduce new Google Cloud Tasks scaler"
+        - url: https://github.com/kedacore/keda/issues/4377
+          name: "AWS SQS Scaler: Support for scaling to include delayed messages"
+        - url: https://github.com/kedacore/governance/issues/63
+          name: "Governance: KEDA transitioned to CNCF Graduated project"
+        - url: https://github.com/kedacore/keda/issues/4460
+          name: "General: Introduce Prometheus metrics of API server to KEDA Metric Server"
+        - url: https://github.com/kedacore/keda/issues/2726
+          name: "General: Introduce standalone CRD generation to release workflow"
+        - url: https://github.com/kedacore/keda/issues/4861
+          name: "General: Configurable Kubernetes cluster domain for Cert Manager"
+        - url: https://github.com/kedacore/keda/issues/3764
+          name: "General: Provide new Kubernetes events about internal state and scaling"
+        - url: https://github.com/kedacore/keda/issues/3304
+          name: "General: Introduce annotation autoscaling.keda.sh/paused: true for ScaledObject to pause autoscaling"
+        - url: https://github.com/kedacore/keda/issues/4905
+          name: "General: Updated AWS SDK and updated all the AWS scalers"
+        - url: https://github.com/kedacore/keda/issues/4528
+          name: "Azure Pod Identity: Introduce validation to prevent usage of empty identity ID for Azure identity providers"
+        - url: https://github.com/kedacore/keda/issues/4977
+          name: "Kafka Scaler: Add unsafeSsl flag for kafka scaler"
+        - url: https://github.com/kedacore/keda/issues/4960
+          name: "Prometheus Scaler: Remove trailing whitespaces in customAuthHeader and customAuthValue"
+        - url: https://github.com/kedacore/keda/issues/4700
+          name: "Pulsar Scaler: Support for OAuth extensions"
+        - url: https://github.com/kedacore/keda/issues/4917
+          name: "Redis Scalers: Support for TLS authentication for Redis & Redis stream scalers"
+        - url: https://github.com/kedacore/keda/issues/2634
+          name: "RabbitMQ Scaler: Allow subpaths along with vhost in connection string"
+        - url: https://github.com/kedacore/keda/issues/4899
+          name: "General: Remove deprecated metricName from trigger metadata section"
