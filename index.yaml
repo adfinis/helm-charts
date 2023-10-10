@@ -4784,6 +4784,51 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(infra-apps): Update kured from 4.2.0 to 5.2.0"
+          links:
+            - name: "fix: annotate nodes for reboot before aborting due to blocked"
+              url: https://github.com/kubereboot/kured/pull/749
+            - name: "update docs location"
+              url: https://github.com/kubereboot/kured/pull/758
+            - name: "feat: metrics port command"
+              url: https://github.com/kubereboot/kured/pull/780
+            - name: "Support pod-selector for drain command"
+              url: https://github.com/kubereboot/kured/pull/788
+            - name: "Use readOnlyRootFilesystem"
+              url: https://github.com/kubereboot/kured/pull/805
+            - name: "Log on unusual sentinel-command exit code"
+              url: https://github.com/kubereboot/kured/pull/806
+            - name: "Don’t hold node lock if reboot is blocked"
+              url: https://github.com/kubereboot/kured/pull/819
+            - name: "Add argument to invert the behavior of alert-filter-regexp"
+              url: https://github.com/kubereboot/kured/pull/786
+            - name: "Add multiple concurrent node reboot"
+              url: https://github.com/kubereboot/kured/pull/660
+            - name: "Adds new flag --metrics-host"
+              url: https://github.com/kubereboot/kured/pull/811
+    apiVersion: v2
+    created: "2023-10-10T08:33:47.716693248Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 8dad32f720f841bafa16812602f80aa9bd6c34a7959843a895f28cded1ddd97f
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.182.0/infra-apps-0.182.0.tgz
+    version: 0.182.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(infra-apps): Update kubePrometheusStack from 49.2.0 to 51.2.0"
           links:
             - name: Upgrades Prometheus-Operator to v0.68.0, Prometheus to 2.47.0 and Thanos to v0.32.2
@@ -23440,4 +23485,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-10T07:42:16.789074071Z"
+generated: "2023-10-10T08:33:47.718454982Z"
