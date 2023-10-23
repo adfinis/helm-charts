@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.181.0
+version: 0.182.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,25 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(infra-apps): Update kubePrometheusStack from 49.2.0 to 51.2.0"
+      description: "feat(infra-apps): Update kured from 4.2.0 to 5.2.0"
       links:
-        - name: Upgrades Prometheus-Operator to v0.68.0, Prometheus to 2.47.0 and Thanos to v0.32.2
-          url: https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack#from-50x-to-51x
+        - name: "fix: annotate nodes for reboot before aborting due to blocked"
+          url: https://github.com/kubereboot/kured/pull/749
+        - name: "update docs location"
+          url: https://github.com/kubereboot/kured/pull/758
+        - name: "feat: metrics port command"
+          url: https://github.com/kubereboot/kured/pull/780
+        - name: "Support pod-selector for drain command"
+          url: https://github.com/kubereboot/kured/pull/788
+        - name: "Use readOnlyRootFilesystem"
+          url: https://github.com/kubereboot/kured/pull/805
+        - name: "Log on unusual sentinel-command exit code"
+          url: https://github.com/kubereboot/kured/pull/806
+        - name: "Don’t hold node lock if reboot is blocked"
+          url: https://github.com/kubereboot/kured/pull/819
+        - name: "Add argument to invert the behavior of alert-filter-regexp"
+          url: https://github.com/kubereboot/kured/pull/786
+        - name: "Add multiple concurrent node reboot"
+          url: https://github.com/kubereboot/kured/pull/660
+        - name: "Adds new flag --metrics-host"
+          url: https://github.com/kubereboot/kured/pull/811
