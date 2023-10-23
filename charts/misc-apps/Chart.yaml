@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.40.0
+version: 0.41.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,83 +17,71 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(misc-apps): Update keda from 2.10.1 to 2.12.0"
+      description: "feat(misc-apps): Update chartmuseum from 3.9.2 to 3.10.1"
       links:
-        - url: https://github.com/kedacore/keda/issue/4396
-          name: "Admission Webhooks: Allow to remove the finalizer even if the ScaledObject isn't valid"
-        - url: https://github.com/kedacore/keda/issues/3303
-          name: "General: Introduce annotation autoscaling.keda.sh/paused: true for ScaledJobs to pause autoscaling"
-        - url: https://github.com/kedacore/keda/issues/4234
-          name: "General: Introduce new Solr Scaler"
-        - url: https://github.com/kedacore/keda/issues/4457
-          name: "General: Support ScaledObject taking over existing HPAs with the same name while they are not managed by other ScaledObject"
-        - url: https://github.com/kedacore/keda/issues/4269
-          name: "CPU/Memory scaler: Add support for scale to zero if there are multiple triggers"
-        - url: https://github.com/kedacore/keda/issues/3930
-          name: "General: Metrics Adapter: remove deprecated Prometheus Metrics and non-gRPC code"
-        - url: https://github.com/kedacore/keda/issues/4702
-          name: "General: Add a Prometheus metric for measuring the processing loop lag"
-        - url: https://github.com/kedacore/keda/issues/4647
-          name: "General: Add a Prometheus metric with KEDA build info"
-        - url: https://github.com/kedacore/charts/issues/468
-          name: "General: Allow to change the port of the Admission Webhook"
-        - url: https://github.com/kedacore/keda/issues/3930
-          name: "General: Metrics Adapter: remove deprecated Prometheus Metrics and non-gRPC code"
-        - url: https://github.com/kedacore/keda/issues/4680
-          name: "AWS DynamoDB: Add support for indexName"
-        - url: https://github.com/kedacore/keda/issues/4489
-          name: "Azure Data Explorer Scaler: Use azidentity SDK"
-        - url: https://github.com/kedacore/keda/issues/3565
-          name: "External Scaler: Add tls options in TriggerAuth metadata"
-        - url: https://github.com/kedacore/keda/issues/4243
-          name: "GCP PubSub Scaler: Make it more flexible for metrics"
-        - url: https://github.com/kedacore/keda/issues/4651
-          name: "GitHub Runner Scaler: Added support for GitHub App authentication"
-        - url: https://github.com/kedacore/keda/issues/4704
-          name: "PostgreSQL Scaler: Replace lib/pq with pgx"
-        - url: https://github.com/kedacore/keda/issues/4448
-          name: "RabbitMQ Scaler: Add support for unsafeSsl in trigger metadata"
-        - url: https://github.com/kedacore/keda/issues/4716
-          name: "RabbitMQ Scaler: Add support for workloadIdentityResource and utilize AzureAD Workload Identity for HTTP authorization"
-        - url: https://github.com/kedacore/keda/issues/4665
-          name: "Solace Scaler: Add new messageReceiveRateTarget metric to Solace Scaler"
-        - url: https://github.com/kedacore/keda/pull/4513
-          name: "General: Grafana Dashboard: Fix HPA metrics panel to use range instead of instant"
-        - url: https://github.com/kedacore/keda/pull/4539
-          name: "General: Grafana Dashboard: Fix HPA metrics panel by replacing $namepsace to $exported_namespace due to label conflict"
-        - url: https://github.com/kedacore/keda/issues/4514
-          name: "Azure Data Explorer: Deprecate metadata.clientSecret"
-        - url: https://github.com/kedacore/keda/issues/4681
-          name: "Pulsar Scaler: Fix msgBacklogThreshold field being named wrongly as msgBacklog"
-        - url: https://github.com/kedacore/keda/issues/3613
-          name: "General: Introduce new Google Cloud Tasks scaler"
-        - url: https://github.com/kedacore/keda/issues/4377
-          name: "AWS SQS Scaler: Support for scaling to include delayed messages"
-        - url: https://github.com/kedacore/governance/issues/63
-          name: "Governance: KEDA transitioned to CNCF Graduated project"
-        - url: https://github.com/kedacore/keda/issues/4460
-          name: "General: Introduce Prometheus metrics of API server to KEDA Metric Server"
-        - url: https://github.com/kedacore/keda/issues/2726
-          name: "General: Introduce standalone CRD generation to release workflow"
-        - url: https://github.com/kedacore/keda/issues/4861
-          name: "General: Configurable Kubernetes cluster domain for Cert Manager"
-        - url: https://github.com/kedacore/keda/issues/3764
-          name: "General: Provide new Kubernetes events about internal state and scaling"
-        - url: https://github.com/kedacore/keda/issues/3304
-          name: "General: Introduce annotation autoscaling.keda.sh/paused: true for ScaledObject to pause autoscaling"
-        - url: https://github.com/kedacore/keda/issues/4905
-          name: "General: Updated AWS SDK and updated all the AWS scalers"
-        - url: https://github.com/kedacore/keda/issues/4528
-          name: "Azure Pod Identity: Introduce validation to prevent usage of empty identity ID for Azure identity providers"
-        - url: https://github.com/kedacore/keda/issues/4977
-          name: "Kafka Scaler: Add unsafeSsl flag for kafka scaler"
-        - url: https://github.com/kedacore/keda/issues/4960
-          name: "Prometheus Scaler: Remove trailing whitespaces in customAuthHeader and customAuthValue"
-        - url: https://github.com/kedacore/keda/issues/4700
-          name: "Pulsar Scaler: Support for OAuth extensions"
-        - url: https://github.com/kedacore/keda/issues/4917
-          name: "Redis Scalers: Support for TLS authentication for Redis & Redis stream scalers"
-        - url: https://github.com/kedacore/keda/issues/2634
-          name: "RabbitMQ Scaler: Allow subpaths along with vhost in connection string"
-        - url: https://github.com/kedacore/keda/issues/4899
-          name: "General: Remove deprecated metricName from trigger metadata section"
+        - url: https://github.com/helm/chartmuseum/pull/695
+          name: "build(deps): bump github.com/urfave/cli from 1.22.13 to 1.22.14"
+        - url: https://github.com/helm/chartmuseum/pull/693
+          name: "Update various dependencies, prep for 0.16.0 release"
+        - url: https://github.com/helm/chartmuseum/pull/692
+          name: "chore: replace github.com/ghodss/yaml with sigs.k8s.io/yaml"
+        - url: https://github.com/helm/chartmuseum/pull/684
+          name: "build(deps): bump github.com/docker/distribution"
+        - url: https://github.com/helm/chartmuseum/pull/690
+          name: "build(deps): bump github.com/gin-gonic/gin from 1.9.0 to 1.9.1"
+        - url: https://github.com/helm/chartmuseum/pull/685
+          name: "replace io/ioutil package with os package"
+        - url: https://github.com/helm/chartmuseum/pull/681
+          name: "build(deps): bump flask from 2.2.2 to 2.3.2 in /loadtesting"
+        - url: https://github.com/helm/chartmuseum/pull/679
+          name: "build(deps): bump helm.sh/helm/v3 from 3.11.2 to 3.11.3"
+        - url: https://github.com/helm/chartmuseum/pull/661
+          name: "build(deps): bump github.com/spf13/viper from 1.14.0 to 1.15.0"
+        - url: https://github.com/helm/chartmuseum/pull/662
+          name: "build(deps): bump github.com/urfave/cli from 1.22.10 to 1.22.12"
+        - url: https://github.com/helm/chartmuseum/pull/668
+          name: "build(deps): bump github.com/gin-gonic/gin from 1.8.1 to 1.9.0"
+        - url: https://github.com/helm/chartmuseum/pull/671
+          name: "build(deps): bump helm.sh/helm/v3 from 3.10.3 to 3.11.2"
+        - url: https://github.com/helm/chartmuseum/pull/669
+          name: "build(deps): bump golang.org/x/net"
+        - url: https://github.com/helm/chartmuseum/pull/667
+          name: "fix: update URLs in k8s mirror script"
+        - url: https://github.com/helm/chartmuseum/pull/664
+          name: "ci: pin buildx version"
+        - url: https://github.com/helm/chartmuseum/pull/656
+          name: "feat: Remove NetEase object storage provider"
+        - url: https://github.com/helm/chartmuseum/pull/649
+          name: "build(deps): bump helm.sh/helm/v3 from 3.10.2 to 3.10.3"
+        - url: https://github.com/helm/chartmuseum/pull/648
+          name: "build(deps): bump certifi from 2021.10.8 to 2022.12.7 in /loadtesting"
+        - url: https://github.com/helm/chartmuseum/pull/645
+          name: "build(deps): bump go.uber.org/zap from 1.23.0 to 1.24.0"
+        - url: https://github.com/helm/chartmuseum/pull/637
+          name: "build(deps): bump github.com/gofrs/uuid"
+        - url: https://github.com/helm/chartmuseum/pull/641
+          name: "build(deps): bump helm.sh/helm/v3 from 3.10.1 to 3.10.2"
+        - url: https://github.com/helm/chartmuseum/commit/4803da29ed6a254a22cae05c4d0ff9221902a54f
+          name: "action: fix cosign invalid key"
+        - url: https://github.com/helm/chartmuseum/commit/6363e95735afeadf72e1922d0260b30f9e6d664e
+          name: "makefile: replace go get to go install"
+        - url: https://github.com/helm/chartmuseum/pull/639
+          name: "build(deps): bump github.com/spf13/viper from 1.13.0 to 1.14.0"
+        - url: https://github.com/helm/chartmuseum/pull/640
+          name: "build(deps): bump github.com/prometheus/client_golang"
+        - url: https://github.com/helm/chartmuseum/pull/634
+          name: "mod: bump go to 1.19 and bump helm dependency"
+        - url: https://github.com/helm/chartmuseum/pull/630
+          name: "Added HEAD route for index.yaml"
+        - url: https://github.com/helm/chartmuseum/pull/623
+          name: "Feat/add-golang-lint"
+        - url: https://github.com/helm/chartmuseum/pull/614
+          name: "build(deps): bump github.com/urfave/cli from 1.22.9 to 1.22.10"
+        - url: https://github.com/helm/chartmuseum/pull/619
+          name: "build(deps): bump github.com/gofrs/uuid"
+        - url: https://github.com/helm/chartmuseum/pull/621
+          name: "build(deps): bump github.com/chartmuseum/storage from 0.12.4 to 0.12.5"
+        - url: https://github.com/helm/chartmuseum/pull/616
+          name: "build(deps): bump github.com/spf13/viper from 1.12.0 to 1.13.0"
+        - url: https://github.com/helm/chartmuseum/pull/613
+          name: "build(deps): bump go.uber.org/zap from 1.22.0 to 1.23.0"
