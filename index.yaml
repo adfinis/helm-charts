@@ -4783,6 +4783,34 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: security
+          description: "feat(infra-apps): Update ingress-nginx from 4.7.1 to 4.8.3"
+          links:
+            - name: "fix: updates to ingress-nginx 1.9.4 to fix CVE-2023-5043 and CVE-2023-5044"
+              url: https://github.com/kubernetes/ingress-nginx/pull/10568
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2023-10-26T07:59:22.256035913Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 29372562c6c40f53afaea27d10d6b5ef261d8eb19a474f2211be7ff9c3a0df6c
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.183.0/infra-apps-0.183.0.tgz
+    version: 0.183.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "feat(infra-apps): Update kured from 4.2.0 to 5.2.0"
           links:
@@ -23606,4 +23634,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-23T11:21:48.111368379Z"
+generated: "2023-10-26T07:59:22.258855437Z"
