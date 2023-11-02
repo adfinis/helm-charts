@@ -111,7 +111,7 @@ ingressNginx:
   # -- Chart
   chart: ingress-nginx
   # -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version
-  targetRevision: 4.7.1
+  targetRevision: 4.8.3
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml)
   values: {}
@@ -133,7 +133,7 @@ kubePrometheusStack:
   # -- Chart
   chart: kube-prometheus-stack
   # -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: 49.2.0
+  targetRevision: 51.2.0
   # -- Argo CD sync policy for the app
   syncPolicy:
     syncOptions:
@@ -226,7 +226,7 @@ kured:
   # -- Chart
   chart: kured
   # -- [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured)
-  targetRevision: 4.2.0
+  targetRevision: 5.2.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml)
   values: {}

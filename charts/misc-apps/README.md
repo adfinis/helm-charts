@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.39.0](https://img.shields.io/badge/Version-0.39.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.41.0](https://img.shields.io/badge/Version-0.41.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -36,7 +36,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | chartmuseum.destination.namespace | string | `"infra-chartmuseum"` | Namespace |
 | chartmuseum.enabled | bool | `false` | Enable chartmuseum |
 | chartmuseum.repoURL | string | [repo](https://chartmuseum.github.io/charts) | Repo URL |
-| chartmuseum.targetRevision | string | `"3.9.2"` | [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum) |
+| chartmuseum.targetRevision | string | `"3.10.1"` | [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum) |
 | chartmuseum.values | object | [upstream values](https://github.com/chartmuseum/charts/blob/main/src/chartmuseum/values.yaml) | Helm values |
 | downscaler | object | - | [kube-downscaler](https://codeberg.org/hjacobs/kube-downscaler) ([example](./examples/kube-downscaler.yaml)) |
 | downscaler.chart | string | `"kube-downscaler"` | Chart |
@@ -59,7 +59,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keda.destination.namespace | string | `"infra-keda"` | Namespace |
 | keda.enabled | bool | `false` | Enable KEDA |
 | keda.repoURL | string | [repo](https://kedacore.github.io/charts) | Repo URL |
-| keda.targetRevision | string | `"2.10.1"` | [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version |
+| keda.targetRevision | string | `"2.12.0"` | [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version |
 | keda.values | object | [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml) | Helm values |
 | metallb | object | - | [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml)) |
 | metallb.chart | string | `"metallb"` | Chart |

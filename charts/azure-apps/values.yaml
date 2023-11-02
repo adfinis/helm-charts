@@ -13,7 +13,7 @@ azureKvCsiProvider:
   # -- Chart
   chart: "csi-secrets-store-provider-azure"
   # -- [csi-secrets-store-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version
-  targetRevision: "1.3.*"
+  targetRevision: "1.4.1"
   # -- Helm values
   # @default -- [upstream values](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/charts/csi-secrets-store-provider-azure/values.yaml)
   values: {}
@@ -33,7 +33,7 @@ promitorScraper:
   # -- Chart
   chart: "promitor-agent-scraper"
   # -- [promitor-agent-scraper Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-scraper) version
-  targetRevision: "2.10.0"
+  targetRevision: "2.12.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/promitor/charts/blob/main/promitor-agent-scraper/values.yaml)
   values: {}
@@ -53,7 +53,7 @@ promitorResourceDiscovery:
   # -- Chart
   chart: "promitor-agent-resource-discovery"
   # -- [promitor-agent-resource-discovery Helm chart](https://github.com/promitor/charts/tree/main/promitor-agent-resource-discovery) version
-  targetRevision: "0.9.0"
+  targetRevision: "0.11.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/promitor/charts/blob/main/promitor-agent-resource-discovery/values.yaml)
   values: {}

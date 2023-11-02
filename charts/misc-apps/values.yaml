@@ -93,7 +93,7 @@ chartmuseum:
   # -- Chart
   chart: chartmuseum
   # -- [chartmuseum Helm chart](https://github.com/chartmuseum/charts/tree/main/src/chartmuseum)
-  targetRevision: "3.9.2"
+  targetRevision: "3.10.1"
   # -- Helm values
   # @default -- [upstream values](https://github.com/chartmuseum/charts/blob/main/src/chartmuseum/values.yaml)
   values: {}
@@ -157,7 +157,7 @@ keda:
   # -- Chart
   chart: keda
   # -- [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version
-  targetRevision: 2.10.1
+  targetRevision: 2.12.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml)
   values: {}

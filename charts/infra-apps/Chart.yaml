@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.180.0
+version: 0.183.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,15 +15,10 @@ dependencies:
     version: 0.9.0
     repository: https://charts.adfinis.com
 annotations:
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
-    - kind: changed
-      description: "fix(argo-cd): Update chart from 5.46.3 to 5.46.7"
+    - kind: security
+      description: "feat(infra-apps): Update ingress-nginx from 4.7.1 to 4.8.3"
       links:
-        - name: "fix: Align redis-ha's affinity type to upstream due to warnings"
-          url: https://github.com/argoproj/argo-helm/pull/2270
-        - name: "fix: make ServiceMonitor annotations in ArgoCD server conditional"
-          url: https://github.com/argoproj/argo-helm/pull/2273
-        - name: "fix: Add checksum for CMP ConfigMap in repo-server Pod annotations"
-          url: https://github.com/argoproj/argo-helm/pull/2275
-        - name: "fix: Update Redis to 7.0.13 to fix CVE-2022-48174"
-          url: https://github.com/argoproj/argo-helm/pull/2279
+        - name: "fix: updates to ingress-nginx 1.9.4 to fix CVE-2023-5043 and CVE-2023-5044"
+          url: https://github.com/kubernetes/ingress-nginx/pull/10568

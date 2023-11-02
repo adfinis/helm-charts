@@ -2,7 +2,7 @@ apiVersion: v2
 name: azure-apps
 description: Argo CD app-of-apps config for Azure applications
 type: application
-version: 0.9.0
+version: 0.12.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,25 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "promitor: scraper v2.10 & resource discovery v0.9.0"
+      description: "azureKvCsiProvider: bump azureKvCsiProvider from v1.3 to v1.4.1"
       links:
-        - name: GitHub PR
-          url: https://github.com/promitor/charts/pull/144
+        - name: Fixes CVE-2022-41717
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/1039
+        - name: Fixes CVE-2022-32149
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/999
+        - name: Fixes CVE-2022-27664
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/976
+        - name: Fixes CVE-2022-1996
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/957
+        - name: fix/updates template condition for Arc
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/973
+        - name: fix/increase fluentd resource limits for arc
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/946
+        - name: fix/bug 948 arc missing system identity
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/949
+        - name: fix/runs msi-adapter as privileged on openshift
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/pull/920
+        - name: Update to v1.4.0
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.4.0
+        - name: Update to v1.4.1
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.4.1

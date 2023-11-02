@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.180.0](https://img.shields.io/badge/Version-0.180.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.183.0](https://img.shields.io/badge/Version-0.183.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -62,7 +62,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | ingressNginx.destination.namespace | string | `"infra-ingress"` | Namespace |
 | ingressNginx.enabled | bool | `false` | Configure nginx-ingress |
 | ingressNginx.repoURL | string | [repo](https://kubernetes.github.io/ingress-nginx) | Repo URL |
-| ingressNginx.targetRevision | string | `"4.7.1"` | [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version |
+| ingressNginx.targetRevision | string | `"4.8.3"` | [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version |
 | ingressNginx.values | object | [upstream values](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml) | Helm values |
 | kubeEventExporter | object | [example](./examples/kubernetes-event-exporter.yaml) | [kubernetes-event-exporter](https://github.com/resmoio/kubernetes-event-exporter) |
 | kubeEventExporter.annotations | object | `{}` | Annotations for kubernetes-event-exporter app |
@@ -80,7 +80,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kubePrometheusStack.repoURL | string | [repo](https://prometheus-community.github.io/helm-charts) | Repo URL |
 | kubePrometheusStack.syncPolicy | object | `{"syncOptions":["ServerSideApply=true"]}` | Argo CD sync policy for the app |
 | kubePrometheusStack.syncPolicy.syncOptions[0] | string | `"ServerSideApply=true"` | enable server-side-apply for KPS since it get's rid of having to manually sync/replace resources |
-| kubePrometheusStack.targetRevision | string | `"49.2.0"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
+| kubePrometheusStack.targetRevision | string | `"51.2.0"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
 | kubePrometheusStack.values | object | [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml) | Helm values |
 | kured | object | [example](./examples/kured.yaml) | [kured](https://github.com/kubereboot/kured) |
 | kured.annotations | object | `{}` | Annotations for Kured app |
@@ -88,7 +88,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kured.destination.namespace | string | `"infra-kured"` | Namespace |
 | kured.enabled | bool | `false` | Enable Kured |
 | kured.repoURL | string | [repo](https://kubereboot.github.io/charts) | Repo URL |
-| kured.targetRevision | string | `"4.2.0"` | [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured) |
+| kured.targetRevision | string | `"5.2.0"` | [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured) |
 | kured.values | object | [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml) | Helm values |
 | mimir | object | [example](./examples/mimir.yaml) | [mimir](https://github.com/grafana/mimir) |
 | mimir.annotations | object | `{}` | Annotations for mimir app |
