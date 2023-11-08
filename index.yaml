@@ -4783,6 +4783,49 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: "feat(argo-cd): Update from 2.8.4 to 2.8.5"
+          links:
+            - name: GitHub Release 2.8.5
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.8.5
+        - kind: security
+          description: "feat(argo-cd): Update helm chart from 5.46.7 to 5.49.0"
+          links:
+            - name: "feat: add notification cluster role"
+              url: https://github.com/argoproj/argo-helm/pull/2315
+            - name: "fix: Update Bitbucket SSH key"
+              url: https://github.com/argoproj/argo-helm/pull/2317
+            - name: "fix: Upgrade Argo CD to v2.8.5"
+              url: https://github.com/argoproj/argo-helm/pull/2313
+            - name: "feat: add terminationGracePeriodSeconds"
+              url: https://github.com/argoproj/argo-helm/pull/2310
+            - name: "fix: Sync redis / redis-ha readOnlyRootFilesystem from upstream"
+              url: https://github.com/argoproj/argo-helm/pull/2294
+            - name: "fix: Redis to 7.0.13 to fix CVE-2022-48174"
+              url: https://github.com/argoproj/argo-helm/pull/2279
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2023-11-08T16:40:53.791627907Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 6d0f0d46e55c653de1bee339fb353038b5dfd9c03d449b84775d390113818b0f
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.184.0/infra-apps-0.184.0.tgz
+    version: 0.184.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: security
           description: "feat(infra-apps): Update ingress-nginx from 4.7.1 to 4.8.3"
           links:
@@ -23799,4 +23842,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-11-07T08:32:18.727546921Z"
+generated: "2023-11-08T16:40:53.793071143Z"
