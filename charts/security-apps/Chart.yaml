@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.79.0
+version: 0.80.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,14 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(security-apps): Update Vault chart from 0.24.1 to 0.26.1"
+      description: "stackrox: Update 4.1.0 to 4.2.2"
       links:
-        - name: v0.26.1 Release
-          url: https://github.com/hashicorp/vault-helm/releases/tag/v0.26.1
-        - name: v0.26.0 Release
-          url: https://github.com/hashicorp/vault-helm/releases/tag/v0.26.0
-    - kind: changed
-      description: "Vault update from 1.14.0 to 1.15.1"
-      links:
-        - name: 1.15.1 Release
-          url: https://github.com/hashicorp/vault/releases/tag/v1.15.1
+        - name: Github Release
+          url: https://github.com/stackrox/stackrox/releases/tag/4.2.2
