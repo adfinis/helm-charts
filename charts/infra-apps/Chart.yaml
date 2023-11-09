@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.184.0
+version: 0.185.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,22 +18,14 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(argo-cd): Update from 2.8.4 to 2.8.5"
+      description: "feat(argo-cd): Update from 2.8.5 to 2.9.0"
       links:
-        - name: GitHub Release 2.8.5
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.8.5
-    - kind: security
-      description: "feat(argo-cd): Update helm chart from 5.46.7 to 5.49.0"
+        - name: GitHub Release 2.9.0
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.9.0
+    - kind: changed
+      description: "feat(argo-cd): Update helm chart from 5.49.0 to 5.51.0"
       links:
-        - name: "feat: add notification cluster role"
-          url: https://github.com/argoproj/argo-helm/pull/2315
-        - name: "fix: Update Bitbucket SSH key"
-          url: https://github.com/argoproj/argo-helm/pull/2317
-        - name: "fix: Upgrade Argo CD to v2.8.5"
-          url: https://github.com/argoproj/argo-helm/pull/2313
-        - name: "feat: add terminationGracePeriodSeconds"
-          url: https://github.com/argoproj/argo-helm/pull/2310
-        - name: "fix: Sync redis / redis-ha readOnlyRootFilesystem from upstream"
-          url: https://github.com/argoproj/argo-helm/pull/2294
-        - name: "fix: Redis to 7.0.13 to fix CVE-2022-48174"
-          url: https://github.com/argoproj/argo-helm/pull/2279
+        - name: "feat: Argo CD 2.9.0"
+          url: https://github.com/argoproj/argo-helm/pull/2318
+        - name: "fix: Create notifications ClusterRole and ClusterRoleBinding"
+          url: https://github.com/argoproj/argo-helm/pull/2326
