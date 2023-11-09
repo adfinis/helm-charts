@@ -4784,6 +4784,41 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(argo-cd): Update from 2.8.5 to 2.9.0"
+          links:
+            - name: GitHub Release 2.9.0
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.9.0
+        - kind: changed
+          description: "feat(argo-cd): Update helm chart from 5.49.0 to 5.51.0"
+          links:
+            - name: "feat: Argo CD 2.9.0"
+              url: https://github.com/argoproj/argo-helm/pull/2318
+            - name: "fix: Create notifications ClusterRole and ClusterRoleBinding"
+              url: https://github.com/argoproj/argo-helm/pull/2326
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2023-11-09T21:39:31.596550755Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 7b5610c958b6c59f87e0fc3b21e5bcab8408e5132a6cdeff6f285dde32b10df1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.185.0/infra-apps-0.185.0.tgz
+    version: 0.185.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(argo-cd): Update from 2.8.4 to 2.8.5"
           links:
             - name: GitHub Release 2.8.5
@@ -23869,4 +23904,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-11-09T14:19:35.666016257Z"
+generated: "2023-11-09T21:39:31.597885249Z"
