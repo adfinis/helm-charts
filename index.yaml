@@ -12425,6 +12425,30 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore(metallb): pin version instead of using a wildcard"
+    apiVersion: v2
+    created: "2023-11-10T17:36:28.723166537Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 6c5aa85fb3d0b7397481080bc04c9af2ca4a74fe7ebaf890368cafd8c1d70d92
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.41.1/misc-apps-0.41.1.tgz
+    version: 0.41.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(misc-apps): Update chartmuseum from 3.9.2 to 3.10.1"
           links:
             - url: https://github.com/helm/chartmuseum/pull/695
@@ -23904,4 +23928,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-11-09T21:39:31.597885249Z"
+generated: "2023-11-10T17:36:28.724420967Z"
