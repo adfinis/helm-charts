@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.41.0](https://img.shields.io/badge/Version-0.41.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.41.1](https://img.shields.io/badge/Version-0.41.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -66,7 +66,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | metallb.destination.namespace | string | `"infra-metallb"` | Namespace |
 | metallb.enabled | bool | `false` | Enable metallb |
 | metallb.repoURL | string | [repo](https://metallb.github.io/metallb) | Repo URL |
-| metallb.targetRevision | string | `"0.13.*"` | [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb) |
+| metallb.targetRevision | string | `"0.13.11"` | [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb) |
 | metallb.values | object | [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml) | Helm values |
 | opencost | object | [example](./examples/opencost.yaml) | [OpenCost](https://www.opencost.io) |
 | opencost.annotations | object | `{}` | Annotations for OpenCost |

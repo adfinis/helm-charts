@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.41.0
+version: 0.41.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,71 +17,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(misc-apps): Update chartmuseum from 3.9.2 to 3.10.1"
-      links:
-        - url: https://github.com/helm/chartmuseum/pull/695
-          name: "build(deps): bump github.com/urfave/cli from 1.22.13 to 1.22.14"
-        - url: https://github.com/helm/chartmuseum/pull/693
-          name: "Update various dependencies, prep for 0.16.0 release"
-        - url: https://github.com/helm/chartmuseum/pull/692
-          name: "chore: replace github.com/ghodss/yaml with sigs.k8s.io/yaml"
-        - url: https://github.com/helm/chartmuseum/pull/684
-          name: "build(deps): bump github.com/docker/distribution"
-        - url: https://github.com/helm/chartmuseum/pull/690
-          name: "build(deps): bump github.com/gin-gonic/gin from 1.9.0 to 1.9.1"
-        - url: https://github.com/helm/chartmuseum/pull/685
-          name: "replace io/ioutil package with os package"
-        - url: https://github.com/helm/chartmuseum/pull/681
-          name: "build(deps): bump flask from 2.2.2 to 2.3.2 in /loadtesting"
-        - url: https://github.com/helm/chartmuseum/pull/679
-          name: "build(deps): bump helm.sh/helm/v3 from 3.11.2 to 3.11.3"
-        - url: https://github.com/helm/chartmuseum/pull/661
-          name: "build(deps): bump github.com/spf13/viper from 1.14.0 to 1.15.0"
-        - url: https://github.com/helm/chartmuseum/pull/662
-          name: "build(deps): bump github.com/urfave/cli from 1.22.10 to 1.22.12"
-        - url: https://github.com/helm/chartmuseum/pull/668
-          name: "build(deps): bump github.com/gin-gonic/gin from 1.8.1 to 1.9.0"
-        - url: https://github.com/helm/chartmuseum/pull/671
-          name: "build(deps): bump helm.sh/helm/v3 from 3.10.3 to 3.11.2"
-        - url: https://github.com/helm/chartmuseum/pull/669
-          name: "build(deps): bump golang.org/x/net"
-        - url: https://github.com/helm/chartmuseum/pull/667
-          name: "fix: update URLs in k8s mirror script"
-        - url: https://github.com/helm/chartmuseum/pull/664
-          name: "ci: pin buildx version"
-        - url: https://github.com/helm/chartmuseum/pull/656
-          name: "feat: Remove NetEase object storage provider"
-        - url: https://github.com/helm/chartmuseum/pull/649
-          name: "build(deps): bump helm.sh/helm/v3 from 3.10.2 to 3.10.3"
-        - url: https://github.com/helm/chartmuseum/pull/648
-          name: "build(deps): bump certifi from 2021.10.8 to 2022.12.7 in /loadtesting"
-        - url: https://github.com/helm/chartmuseum/pull/645
-          name: "build(deps): bump go.uber.org/zap from 1.23.0 to 1.24.0"
-        - url: https://github.com/helm/chartmuseum/pull/637
-          name: "build(deps): bump github.com/gofrs/uuid"
-        - url: https://github.com/helm/chartmuseum/pull/641
-          name: "build(deps): bump helm.sh/helm/v3 from 3.10.1 to 3.10.2"
-        - url: https://github.com/helm/chartmuseum/commit/4803da29ed6a254a22cae05c4d0ff9221902a54f
-          name: "action: fix cosign invalid key"
-        - url: https://github.com/helm/chartmuseum/commit/6363e95735afeadf72e1922d0260b30f9e6d664e
-          name: "makefile: replace go get to go install"
-        - url: https://github.com/helm/chartmuseum/pull/639
-          name: "build(deps): bump github.com/spf13/viper from 1.13.0 to 1.14.0"
-        - url: https://github.com/helm/chartmuseum/pull/640
-          name: "build(deps): bump github.com/prometheus/client_golang"
-        - url: https://github.com/helm/chartmuseum/pull/634
-          name: "mod: bump go to 1.19 and bump helm dependency"
-        - url: https://github.com/helm/chartmuseum/pull/630
-          name: "Added HEAD route for index.yaml"
-        - url: https://github.com/helm/chartmuseum/pull/623
-          name: "Feat/add-golang-lint"
-        - url: https://github.com/helm/chartmuseum/pull/614
-          name: "build(deps): bump github.com/urfave/cli from 1.22.9 to 1.22.10"
-        - url: https://github.com/helm/chartmuseum/pull/619
-          name: "build(deps): bump github.com/gofrs/uuid"
-        - url: https://github.com/helm/chartmuseum/pull/621
-          name: "build(deps): bump github.com/chartmuseum/storage from 0.12.4 to 0.12.5"
-        - url: https://github.com/helm/chartmuseum/pull/616
-          name: "build(deps): bump github.com/spf13/viper from 1.12.0 to 1.13.0"
-        - url: https://github.com/helm/chartmuseum/pull/613
-          name: "build(deps): bump go.uber.org/zap from 1.22.0 to 1.23.0"
+      description: "chore(metallb): pin version instead of using a wildcard"
