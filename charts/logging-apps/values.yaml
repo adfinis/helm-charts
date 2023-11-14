@@ -77,3 +77,5 @@ fluentBit:
   # -- Helm values
   # @default -- [upstream values](https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/values.yaml)
   values: {}
+
+extraObjects: []
