@@ -1,4 +1,12 @@
 lokiStack:
+  enabled: false
+  values: {}
+
+loki:
+  enabled: true
+  values: {}
+
+promtail:
   enabled: true
   values: {}
 

@@ -1,9 +1,21 @@
-# -- [loki-stack](https://github.com/grafana/loki) ([example](./examples/loki-stack.yaml))
-# @default -- -
+# -- [loki-stack](https://github.com/grafana/loki) is DEPREACTED use `loki` and `promtail` individually
+# @default -- DEPRECATED
 lokiStack:
-  # -- Enable loki
   enabled: false
   name: loki-stack
+  destination:
+    namespace: "infra-logging"
+  repoURL: "https://grafana.github.io/helm-charts"
+  chart: "loki-stack"
+  targetRevision: "2.9.10"
+  values: {}
+
+# -- [Grafana Loki](https://grafana.com/oss/loki/) ([example](./examples/loki.yaml))
+# @default -- -
+loki:
+  # -- Enable loki
+  enabled: false
+  name: loki
   destination:
     # -- Namespace
     namespace: "infra-logging"
@@ -11,17 +23,37 @@ lokiStack:
   # @default -- [repo](https://grafana.github.io/helm-charts)
   repoURL: "https://grafana.github.io/helm-charts"
   # -- Chart
-  chart: "loki-stack"
-  # -- [loki-stack Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/loki-stack) version
-  targetRevision: "2.9.10"
+  chart: "loki"
+  # -- [loki Helm chart](https://github.com/grafana/loki/tree/main/production/helm/loki)
+  targetRevision: "5.36.3"
   # -- Helm values
-  # @default -- [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/loki-stack/values.yaml)
+  # @default -- [upstream values](https://github.com/grafana/loki/blob/main/production/helm/loki/values.yaml)
+  values: {}
+
+# -- [Grafana Loki promtail](https://grafana.com/docs/loki/latest/send-data/promtail/) ([example](./examples/promtail.yaml))
+# @default -- -
+promtail:
+  # -- Enable promtail
+  enabled: false
+  name: promtail
+  destination:
+    # -- Namespace
+    namespace: "infra-logging"
+  # -- Repo URL
+  # @default -- [repo](https://grafana.github.io/helm-charts)
+  repoURL: "https://grafana.github.io/helm-charts"
+  # -- Chart
+  chart: "promtail"
+  # -- [promtail Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/promtail)
+  targetRevision: "6.15.3"
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/promtail/values.yaml)
   values: {}
 
 # -- [filebeat](https://github.com/elastic/beats/tree/master/filebeat) ([example](./examples/filebeat.yaml))
 # @default -- -
 filebeat:
-  # -- Enable loki
+  # -- Enable filebeat
   enabled: false
   name: filebeat
   destination:
