@@ -1,0 +1,105 @@
+# Deploy Loki using Azure blob as backing store
+
+loki:
+  enabled: true
+  project: infra-logging
+  values:
+    test:
+      # TODO: enable this together with selfMonitoring when you deploy loki!
+      enabled: false
+    monitoring:
+      selfMonitoring:
+        enabled: false
+        grafanaAgent:
+          installOperator: false
+      serviceMonitor:
+        enabled: true
+        labels:
+          k8s.adfinis.com/prometheus: kube-prometheus
+      lokiCanary:
+        enabled: false
+    loki:
+      # TODO: enable auth!
+      auth_enabled: false
+      commonConfig:
+        # The default is /var/loki and as we have no persistent volume
+        # mounted startup fails because the location is read-only.
+        # TODO: Review which potential problems this could cause with loss
+        # of data when a pod is restarted.
+        path_prefix: /tmp/loki
+      # We're using a custom schema config, because we want to directly start using
+      # TSDB to avoid having to migrate from boltdb-shipper once it's deprecated.
+      schemaConfig:
+        configs:
+          - from: 2023-06-23
+            store: tsdb
+            object_store: azure
+            schema: v12
+            index:
+              prefix: loki_index_
+              period: 24h
+      storage_config:
+        # TODO: configure a proper Azure Blob store
+        azure:
+          account_name: <TODO>
+          account_key: ${ARM_ACCESS_KEY}
+          container_name: <TODO>
+          endpoint_suffix: blob.core.windows.net
+        tsdb_shipper:
+          shared_store: azure
+    table_manager:
+      retention_deletes_enabled: true
+      retention_period: 30d
+    singleBinary:
+      replicas: 3
+      persistence:
+        enabled: false
+      extraArgs:
+        # Required so that ${ARM_ACCESS_KEY} above is expanded using the
+        # environment variable configured in the secret below.
+        - "-config.expand-env=true"
+      extraEnvFrom:
+        # Should contain a single key: ARM_ACCESS_KEY containing the access
+        # key for the storage account.
+        - secretRef:
+            name: loki-objectstorage-credentials
+    serviceMonitor:
+      enabled: true
+      additionalLabels:
+        k8s.adfinis.com/prometheus: kube-prometheus
+      prometheusRule:
+        additionalLabels:
+          k8s.adfinis.com/prometheus: kube-prometheus
+        rules:
+          - alert: LokiProcessTooManyRestarts
+            expr: changes(process_start_time_seconds{job=~"loki"}[15m]) > 2
+            for: 0m
+            labels:
+              severity: warning
+            annotations:
+              summary: Loki process too many restarts (instance {{ $labels.instance }})
+              description: "A loki process had too many restarts (target {{ $labels.instance }})\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+          - alert: LokiRequestErrors
+            expr: 100 * sum(rate(loki_request_duration_seconds_count{status_code=~"5.."}[1m])) by (namespace, job, route) / sum(rate(loki_request_duration_seconds_count[1m])) by (namespace, job, route) > 10
+            for: 15m
+            labels:
+              severity: critical
+            annotations:
+              summary: Loki request errors (instance {{ $labels.instance }})
+              description: "The {{ $labels.job }} and {{ $labels.route }} are experiencing errors\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+          - alert: LokiRequestPanic
+            expr: sum(increase(loki_panic_total[10m])) by (namespace, job) > 0
+            for: 5m
+            labels:
+              severity: critical
+            annotations:
+              summary: Loki request panic (instance {{ $labels.instance }})
+              description: "The {{ $labels.job }} is experiencing {{ printf \"%.2f\" $value }}% increase of panics\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+          - alert: LokiRequestLatency
+            expr: (histogram_quantile(0.99, sum(rate(loki_request_duration_seconds_bucket{route!~"(?i).*tail.*"}[5m])) by (le)))  > 1
+            for: 5m
+            labels:
+              severity: critical
+            annotations:
+              summary: Loki request latency (instance {{ $labels.instance }})
+              description: "The {{ $labels.job }} {{ $labels.route }} is experiencing {{ printf \"%.2f\" $value }}s 99th percentile latency\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
