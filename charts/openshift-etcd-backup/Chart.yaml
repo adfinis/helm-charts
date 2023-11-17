@@ -2,8 +2,8 @@ apiVersion: v2
 name: openshift-etcd-backup
 description: Chart for openshift-etcd-backup solution
 type: application
-version: 1.6.16
-appVersion: v1.6.16
+version: 1.6.17
+appVersion: v1.6.17
 keywords:
   - openshift-etcd-backup
   - openshift
@@ -20,7 +20,7 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "bump openshift-etcd-backup image to v1.6.16"
+      description: "bump openshift-etcd-backup image to v1.6.17"
       links:
-        - name: openshift-etcd-backup release v1.6.15
-          url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.6.16
+        - name: openshift-etcd-backup release v1.6.17
+          url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.6.17
