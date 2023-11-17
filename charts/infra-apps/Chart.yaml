@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.185.0
+version: 0.186.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,17 +15,14 @@ dependencies:
     version: 0.9.0
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(argo-cd): Update from 2.8.5 to 2.9.0"
+      description: "feat(argo-cd): Update from 2.9.0 to 2.9.1"
       links:
-        - name: GitHub Release 2.9.0
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.9.0
+        - name: GitHub Release 2.9.1
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.9.1
     - kind: changed
-      description: "feat(argo-cd): Update helm chart from 5.49.0 to 5.51.0"
+      description: "feat(argo-cd): Update helm chart from 5.51.0 to 5.51.2"
       links:
-        - name: "feat: Argo CD 2.9.0"
-          url: https://github.com/argoproj/argo-helm/pull/2318
-        - name: "fix: Create notifications ClusterRole and ClusterRoleBinding"
-          url: https://github.com/argoproj/argo-helm/pull/2326
+        - name: "fix: Add permission for Applications in any namespace"
+          url: https://github.com/argoproj/argo-helm/pull/2341
