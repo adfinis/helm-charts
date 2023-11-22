@@ -4784,6 +4784,67 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(velero): Update chart from 4.0.2 to 5.1.4"
+          links:
+            - name: "[velero] Add option to use --default-snapshot-move-data"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/518
+            - name: "[velero] Have separate resource usages for velero server pod and upgradeCRDs job pod"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/514
+            - name: "[velero] Add secret annotations"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/511
+            - name: "Bump velero/velero from 1.12.0 to v1.12.1 in /charts/velero"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/512
+            - name: "[velero]Bump velero version v1.12.0"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/496
+            - name: "Add credential configuration for VSL"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/494
+            - name: "Setting podAnnotations metrics only if not using servicemonitor or podmonitor"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/493
+            - name: "Remove helm hooks for the custom resources"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/490
+            - name: "Add nameOverride, fullnameOverride"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/486
+            - name: "Add toggle to disable annotations"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/487
+            - name: "feature to allow relabelings in serviceMonitor"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/484
+            - name: "feat: allow changing the default revisionHistoryLimit"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/482
+            - name: "create prometheusRule only if capabilities are present"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/481
+            - name: "Bump velero/velero from v1.11.0 to v1.11.1"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/479
+            - name: "Support setting validationFrequency in BackupStorageLocation"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/474
+            - name: "probes only when metrics are enabled"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/471
+            - name: "improvement values yaml references for fs-restore-action-config"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/472
+            - name: "support liveness and readiness probes"
+              url: https://github.com/vmware-tanzu/helm-charts/pull/467
+    apiVersion: v2
+    created: "2023-11-22T13:49:07.648374051Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 20fae01e8429f4a0a94f8d3194ebb66c229c44797bb94ffef30510d959088579
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.188.0/infra-apps-0.188.0.tgz
+    version: 0.188.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: |
             fix(cert-manager): Update from 1.13.1 to 1.13.2
 
@@ -24051,4 +24112,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-11-22T09:56:13.285989381Z"
+generated: "2023-11-22T13:49:07.649834032Z"
