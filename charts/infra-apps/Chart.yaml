@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.186.0
+version: 0.187.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,14 +15,16 @@ dependencies:
     version: 0.9.0
     repository: https://charts.adfinis.com
 annotations:
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(argo-cd): Update from 2.9.0 to 2.9.1"
+      description: |
+        fix(cert-manager): Update from 1.13.1 to 1.13.2
+
+        fixes some CVE alerts and contains fixes for:
+        1. a CertificateRequest runaway situation in case two Certificate resources point to the same Secret target resource
+        2. a small bug in the Helm chart (feature gate options)
+        3. a Venafi issuer bug
       links:
-        - name: GitHub Release 2.9.1
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.9.1
-    - kind: changed
-      description: "feat(argo-cd): Update helm chart from 5.51.0 to 5.51.2"
-      links:
-        - name: "fix: Add permission for Applications in any namespace"
-          url: https://github.com/argoproj/argo-helm/pull/2341
+        - name: GitHub Release 1.13.2
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.13.2
