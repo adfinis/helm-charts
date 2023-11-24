@@ -1,7 +1,4 @@
 apiVersion: batch/v1
-{{- else }}
-apiVersion: batch/v1beta1
-{{- end }}
 kind: CronJob
 metadata:
   name: {{ include "kubernetes-etcd-backup.fullname" . }}
