@@ -57,5 +57,3 @@ spec:
             persistentVolumeClaim:
               claimName: {{ include "kubernetes-etcd-backup.fullname" . }}
             {{- end }}
-          
-        
