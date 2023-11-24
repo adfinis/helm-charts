@@ -27,7 +27,7 @@ etcdConfiguration:
 etcdCertification:
   # -- etcd-peer-tls secret name
   etcdPeerTlsName: ""
-  # -- etcd-server-ca secret key
+  # -- etcd-server-ca secret name
   etcdServerCaName: ""
 
 persistence:
@@ -58,8 +58,6 @@ image:
 nameOverride: ""
 fullnameOverride: ""
 
-
-
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
@@ -71,8 +69,6 @@ resources:
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
-
-
 
 monitoring:
 # -- Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis/openshift-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml).

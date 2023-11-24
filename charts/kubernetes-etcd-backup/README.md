@@ -4,14 +4,14 @@
 
 Chart for kubernetes-etcd-backup solution
 
-**Homepage:** <https://github.com/Xelef2000/kubernetes-etcd-backup>
+**Homepage:** <https://github.com/adfinis/kubernetes-etcd-backup>
 
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
-* <https://github.com/Xelef2000/kubernetes-etcd-backup>
+* <https://github.com/adfinis/kubernetes-etcd-backup>
 
 ## Values
 
@@ -25,7 +25,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backup.subdir | string | `"/"` | Sub directory path |
 | backup.umask | string | `"0027"` | Set umask during the backup |
 | etcdCertification.etcdPeerTlsName | string | `""` | etcd-peer-tls secret name |
-| etcdCertification.etcdServerCaName | string | `""` | etcd-server-ca secret key |
+| etcdCertification.etcdServerCaName | string | `""` | etcd-server-ca secret name |
 | etcdConfiguration.endpoint | string | `""` | Etcd endpoint ip or hostname without protocol or port |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"Always"` | Image pull policy configuration |

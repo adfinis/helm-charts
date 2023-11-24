@@ -9,9 +9,9 @@ keywords:
   - kubernetes
   - backup
   - etcd
-home: https://github.com/Xelef2000/kubernetes-etcd-backup
+home: https://github.com/adfinis/kubernetes-etcd-backup
 sources:
-  - https://github.com/Xelef2000/kubernetes-etcd-backup
+  - https://github.com/adfinis/kubernetes-etcd-backup
 maintainers:
   - name: adfinis
     email: support@adfinis.com
