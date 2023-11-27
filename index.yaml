@@ -4580,6 +4580,35 @@ entries:
   hedgedoc:
   - annotations:
       artifacthub.io/changes: |
+        - kind: added
+          description: Allow creating a ServiceMonitor resource
+      artifacthub.io/images: |
+        - name: hedgedoc
+          image: quay.io/hedgedoc/hedgedoc:1.9.8
+    apiVersion: v2
+    appVersion: 1.9.9
+    created: "2023-11-27T17:20:27.662883901Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~12.2.1
+    description: Chart for HedgeDoc, a fork of CodiMD
+    digest: 2f4c09244f76296cc792b6960d01e2a0b59d5b4bb134e1018aea3cbab3fe5bb8
+    icon: https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: hedgedoc
+    sources:
+    - https://github.com/hedgedoc/hedgedoc
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/hedgedoc-0.4.0/hedgedoc-0.4.0.tgz
+    version: 0.4.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: security
           description: "Update to HedgeDoc 1.9.9, see [GitHub](https://github.com/hedgedoc/hedgedoc/releases/tag/1.9.9) for the release notes."
           links:
@@ -24154,4 +24183,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-11-27T07:45:52.864919292Z"
+generated: "2023-11-27T17:20:27.664033614Z"
