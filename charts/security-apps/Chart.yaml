@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.80.0
+version: 0.81.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,22 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "stackrox: Update 4.1.0 to 4.2.2"
+      description: |
+        * total_ prefix in the metrics name has been dropped as part of the latest otel bump in the driver. For Prometheus counters, by default the otel library appends total suffix.
+          * total_rotation_reconcile -> rotation_reconcile_total
+          * total_rotation_reconcile_error -> rotation_reconcile_error_total
+          * total_node_publish -> node_publish_total
+          * total_node_unpublish -> node_unpublish_total
+          * total_node_publish_error -> node_publish_error_total
+          * total_node_unpublish_error -> node_unpublish_error_total
+          * total_sync_k8s_secret -> sync_k8s_secret_total
+    - kind: changed
+      description: "csi-secrets-driver: Update 1.3.4 to 1.4.0"
       links:
         - name: Github Release
-          url: https://github.com/stackrox/stackrox/releases/tag/4.2.2
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.4.0
+    - kind: changed
+      description: "vault: Update 0.26.1 to 0.27.0"
+      links:
+        - name: Github Release
+          url: https://github.com/hashicorp/vault-helm/releases/tag/v0.27.0
