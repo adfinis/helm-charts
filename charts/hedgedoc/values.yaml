@@ -277,3 +277,21 @@ extraSecretMounts: {}
 # --from-literal=CMD_DB_PASSWORD=rickastley \
 # --from-literal=CMD_SESSION_SECRET=verysecure
 existingSecret: ~
+
+# Configure how Hedgedoc is to be monitored using Prometheus
+prometheus:
+  # -- Enable Prometheus integration
+  enabled: false
+  # -- Labels to add to all Prometheus integration resources
+  extraLabels: {}
+  # -- Annotations to add to all Prometheus integration resources
+  extraAnnotations: {}
+  serviceMonitor:
+    # -- Enable creation of a ServiceMonitor CRD
+    enabled: false
+    # -- Interval at which metrics should be scraped
+    interval: "30s"
+    # -- MetricRelabelConfigs to apply to samples before ingestion
+    metricRelabelings: []
+    # -- RelabelConfigs to apply to samples before scraping
+    relabelings: []
