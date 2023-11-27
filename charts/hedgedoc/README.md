@@ -1,6 +1,6 @@
 # hedgedoc
 
-![Version: 0.3.1](https://img.shields.io/badge/Version-0.3.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.9.9](https://img.shields.io/badge/AppVersion-1.9.9-informational?style=flat-square)
+![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.9.9](https://img.shields.io/badge/AppVersion-1.9.9-informational?style=flat-square)
 
 Chart for HedgeDoc, a fork of CodiMD
 
@@ -43,6 +43,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
 | postgresql | object | `{"auth":{"database":"hedgedoc","password":"hedgedoc","username":"hedgedoc","volumePermissions":{"enabled":true}},"enabled":true}` | PostgreSQL chart configuration  Reference: https://github.com/bitnami/charts/blob/master/bitnami/postgresql/values.yaml  If you want to use external database, just set postgresql.enabled to false  |
+| prometheus.enabled | bool | `false` | Enable Prometheus integration |
+| prometheus.extraAnnotations | object | `{}` | Annotations to add to all Prometheus integration resources |
+| prometheus.extraLabels | object | `{}` | Labels to add to all Prometheus integration resources |
+| prometheus.serviceMonitor.enabled | bool | `false` | Enable creation of a ServiceMonitor CRD |
+| prometheus.serviceMonitor.interval | string | `"30s"` | Interval at which metrics should be scraped |
+| prometheus.serviceMonitor.metricRelabelings | list | `[]` | MetricRelabelConfigs to apply to samples before ingestion |
+| prometheus.serviceMonitor.relabelings | list | `[]` | RelabelConfigs to apply to samples before scraping |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
