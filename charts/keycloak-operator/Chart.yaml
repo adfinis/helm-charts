@@ -2,8 +2,8 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 0.2.4
-appVersion: "22.0.5"
+version: 1.0.0
+appVersion: "23.0.0"
 home: https://www.keycloak.org
 sources:
   - https://github.com/keycloak/keycloak-k8s-resources
@@ -15,4 +15,4 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: Bump Keycloak to 22.0.5
+      description: Bump Keycloak to 23.0.0
