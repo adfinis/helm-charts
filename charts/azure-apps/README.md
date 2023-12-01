@@ -1,6 +1,6 @@
 # azure-apps
 
-![Version: 0.12.0](https://img.shields.io/badge/Version-0.12.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.13.0](https://img.shields.io/badge/Version-0.13.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for Azure applications
 
@@ -30,6 +30,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | azureKvCsiProvider.repoURL | string | [repo](https://azure.github.io/secrets-store-csi-driver-provider-azure/charts) | Repo URL |
 | azureKvCsiProvider.targetRevision | string | `"1.4.1"` | [csi-secrets-store-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version |
 | azureKvCsiProvider.values | object | [upstream values](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/charts/csi-secrets-store-provider-azure/values.yaml) | Helm values |
+| azureWorkloadIdentityWebhook | object | `{"chart":"azure-workload-identity-webhook","destination":{"namespace":"azure-workload-identity-system"},"enabled":false,"name":"azure-workload-identity-webhook","repoURL":"https://azure.github.io/azure-workload-identity/charts","targetRevision":"0.12.0","values":{}}` | [azure-workload-identity](https://azure.github.io/azure-workload-identity) ([example](./examples/azure-workload-identity-webhook.yaml)) # @default -- - |
+| azureWorkloadIdentityWebhook.chart | string | `"azure-workload-identity-webhook"` | Chart |
+| azureWorkloadIdentityWebhook.destination.namespace | string | `"azure-workload-identity-system"` | Namespace |
+| azureWorkloadIdentityWebhook.enabled | bool | `false` | Enable azure-workload-identity webhook |
+| azureWorkloadIdentityWebhook.repoURL | string | [repo](https://azure.github.io/azure-workload-identity/charts) | Repo URL |
+| azureWorkloadIdentityWebhook.targetRevision | string | `"0.12.0"` | [azure-workload-identity-webhook Helm chart](https://github.com/Azure/azure-workload-identity/tree/main/charts/workload-identity-webhook) version |
+| azureWorkloadIdentityWebhook.values | object | [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/azure-apps/values.yaml) | Helm values |
 | promitorResourceDiscovery | object | - | [promitor](https://promitor.io/) resource discovery ([example](./examples/promitor.yaml)) |
 | promitorResourceDiscovery.chart | string | `"promitor-agent-resource-discovery"` | Chart |
 | promitorResourceDiscovery.destination.namespace | string | `"infra-promitor"` | Namespace |
