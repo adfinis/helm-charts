@@ -7,3 +7,6 @@ promitorScraper:
 promitorResourceDiscovery:
   enabled: true
   values: {}
+azureWorkloadIdentityWebhook:
+  enabled: true
+  values: {}
