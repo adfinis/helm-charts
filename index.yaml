@@ -1046,6 +1046,35 @@ entries:
   azure-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: added
+          description: "feat: add azure-workload-identity-webhook"
+          links:
+            - name: Microsoft Entra Workload ID
+              url: https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview
+            - name: Azure Workload Identity System
+              url: https://azure.github.io/azure-workload-identity
+    apiVersion: v2
+    created: "2023-12-01T14:22:31.998922904Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for Azure applications
+    digest: ca1636ec49314b83a6a8ba68564a0b9850b919873d2adf2c92771b635a43dcf1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.13.0/azure-apps-0.13.0.tgz
+    version: 0.13.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "azureKvCsiProvider: bump azureKvCsiProvider from v1.3 to v1.4.1"
           links:
@@ -24183,4 +24212,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-11-27T17:20:27.664033614Z"
+generated: "2023-12-01T14:22:32.000616708Z"
