@@ -54,9 +54,7 @@ prometheusRules:
   # -- set of prometheus alerts to define
   # @default -- list of predefined alerts
   rules:
-    - alert: VaultAutopilotNodeHealthy
-      # Set to 1 if Autopilot considers all nodes healthy
-      # https://www.vaultproject.io/docs/internals/telemetry#integrated-storage-raft-autopilot
+    - alert: VaultAutopilotHealthy
       expr: vault_autopilot_healthy < 1
       for: 1m
       labels:
