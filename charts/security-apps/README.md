@@ -137,7 +137,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vaultMonitoring.destination.namespace | string | `"infra-vault"` | Namespace |
 | vaultMonitoring.enabled | bool | `false` | Enable vault-monitoring |
 | vaultMonitoring.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
-| vaultMonitoring.targetRevision | string | `"0.2.*"` | [vault-monitoring Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring) version |
+| vaultMonitoring.targetRevision | string | `"0.4.0"` | [vault-monitoring Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring) version |
 | vaultMonitoring.values | object | [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/vault-monitoring/values.yaml) | Helm values |
 
 ## About this chart
