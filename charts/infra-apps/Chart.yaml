@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.188.0
+version: 0.189.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,41 +17,75 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(velero): Update chart from 4.0.2 to 5.1.4"
+      description: "feat(kube-prometheus-stack): Update prometheus from 2.47.0 to 2.48.0"
       links:
-        - name: "[velero] Add option to use --default-snapshot-move-data"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/518
-        - name: "[velero] Have separate resource usages for velero server pod and upgradeCRDs job pod"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/514
-        - name: "[velero] Add secret annotations"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/511
-        - name: "Bump velero/velero from 1.12.0 to v1.12.1 in /charts/velero"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/512
-        - name: "[velero]Bump velero version v1.12.0"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/496
-        - name: "Add credential configuration for VSL"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/494
-        - name: "Setting podAnnotations metrics only if not using servicemonitor or podmonitor"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/493
-        - name: "Remove helm hooks for the custom resources"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/490
-        - name: "Add nameOverride, fullnameOverride"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/486
-        - name: "Add toggle to disable annotations"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/487
-        - name: "feature to allow relabelings in serviceMonitor"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/484
-        - name: "feat: allow changing the default revisionHistoryLimit"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/482
-        - name: "create prometheusRule only if capabilities are present"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/481
-        - name: "Bump velero/velero from v1.11.0 to v1.11.1"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/479
-        - name: "Support setting validationFrequency in BackupStorageLocation"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/474
-        - name: "probes only when metrics are enabled"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/471
-        - name: "improvement values yaml references for fs-restore-action-config"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/472
-        - name: "support liveness and readiness probes"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/467
+        - name: GitHub Release 2.48.0
+          url: https://github.com/prometheus/prometheus/releases/tag/v2.48.0
+    - kind: changed
+      description: "feat(kube-prometheus-stack): Update grafana from 10.1.2 to 10.1.5"
+      links:
+        - name: GitHub Release 10.1.3
+          url: https://github.com/grafana/grafana/releases/tag/v10.1.3
+        - name: GitHub Release 10.1.4
+          url: https://github.com/grafana/grafana/releases/tag/v10.1.4
+        - name: GitHub Release 10.1.5
+          url: https://github.com/grafana/grafana/releases/tag/v10.1.5
+    - kind: changed
+      description: "feat(kube-prometheus-stack): Update chart from 51.2.0 to 54.2.2"
+      links:
+        - name: "fix: configmaps Datasource when Prometheus Replicas and Exemplar Trace Id Destinations enabled"
+          url: https://github.com/prometheus-community/helm-charts/pull/4032
+        - name: "fix: Bump prom to 2.48.0 + node exporter dep"
+          url: https://github.com/prometheus-community/helm-charts/pull/4017
+        - name: "feat: Configure additional aggregation labels + k8s.rules split"
+          url: https://github.com/prometheus-community/helm-charts/pull/3883
+        - name: "feat: Generate windows dashboard from hack/sync"
+          url: https://github.com/prometheus-community/helm-charts/pull/4013
+        - name: "fix: Add missing RBAC permission for Prometheus Operator"
+          url: https://github.com/prometheus-community/helm-charts/pull/4005
+        - name: "fix: Bump grafana and kube-state-metrics charts"
+          url: https://github.com/prometheus-community/helm-charts/pull/4000
+        - name: "feat: Bump to 0.69.1"
+          url: https://github.com/prometheus-community/helm-charts/pull/3988
+        - name: "feat:  Populating dynamic honorLabels and honorTimestamps in kubelet ServiceMonitor"
+          url: https://github.com/prometheus-community/helm-charts/pull/3934
+        - name: "fix: Update Thanos with critical fixes for objstorage and HTTP/2 CVE"
+          url: https://github.com/prometheus-community/helm-charts/pull/3935
+        - name: "fix: thanos configs"
+          url: https://github.com/prometheus-community/helm-charts/pull/3918
+        - name: "feat: Allow to directly config prometheus.spec and alertmanager.spec"
+          url: https://github.com/prometheus-community/helm-charts/pull/3920
+        - name: "fix: Update CoreDNS Dashboard. Add job template variable"
+          url: https://github.com/prometheus-community/helm-charts/pull/3798
+        - name: "fix: etcd dashboards"
+          url: https://github.com/prometheus-community/helm-charts/pull/3917
+        - name: "fix: thanos ruler object store"
+          url: https://github.com/prometheus-community/helm-charts/pull/3913
+        - name: "fix: ConfigReloader ServiceMonitor HTTP scheme is not set correctly when HTTPS is enabled"
+          url: https://github.com/prometheus-community/helm-charts/pull/3815
+        - name: "feat: add serviceMonitor.additionalEndpoints"
+          url: https://github.com/prometheus-community/helm-charts/pull/3515
+        - name: "fix: range function in servicemonitors"
+          url: https://github.com/prometheus-community/helm-charts/pull/3888
+        - name: "fix: IO panels in Cluster Overview"
+          url: https://github.com/prometheus-community/helm-charts/pull/3902
+        - name: "feat: Allow to configure keep_firing_for for all Prometheus rules"
+          url: https://github.com/prometheus-community/helm-charts/pull/3890
+        - name: "feat: bump thanos to 0.32.4"
+          url: https://github.com/prometheus-community/helm-charts/pull/3885
+        - name: "fix: etcd mixin"
+          url: https://github.com/prometheus-community/helm-charts/pull/3880
+        - name: "feat: bump thanos to v0.32.3"
+          url: https://github.com/prometheus-community/helm-charts/pull/3845
+        - name: "fix: kube-prom-stack thanos-ruler alertmanagerConfigs"
+          url: https://github.com/prometheus-community/helm-charts/pull/3870
+        - name: "fix: bump prometheus to 2.47.1"
+          url: https://github.com/prometheus-community/helm-charts/pull/3877
+        - name: "feat: bump windows rules and dashboards"
+          url: https://github.com/prometheus-community/helm-charts/pull/3818
+        - name: "feat: Bump dependencies based on wildcard"
+          url: https://github.com/prometheus-community/helm-charts/pull/3876
+        - name: "feat: updated kube-state-metrics to 5.14.x"
+          url: https://github.com/prometheus-community/helm-charts/pull/3873
+        - name: "feat: update grafana helm-chart version 6.60"
+          url: https://github.com/prometheus-community/helm-charts/pull/3864
