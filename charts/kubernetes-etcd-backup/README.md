@@ -24,9 +24,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backup.schedule | string | `"0 0 * * *"` | Backup schedule |
 | backup.subdir | string | `"/"` | Sub directory path |
 | backup.umask | string | `"0027"` | Set umask during the backup |
-| etcdCertification.etcdPeerTlsName | string | `""` | etcd-peer-tls secret name |
-| etcdCertification.etcdServerCaName | string | `""` | etcd-server-ca secret name |
-| etcdConfiguration.endpoint | string | `""` | Etcd endpoint ip or hostname without protocol or port |
+| etcdCertification.etcdPeerTlsName | string | `"changeme"` | etcd-peer-tls secret name |
+| etcdCertification.etcdServerCaName | string | `"changeme"` | etcd-server-ca secret name |
+| etcdConfiguration.endpoint | string | `"changeme"` | Etcd endpoint ip or hostname without protocol or port |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"Always"` | Image pull policy configuration |
 | image.repository | string | `"ghcr.io/adfinis/kubernetes-etcd-backup"` | Repository image to use |
