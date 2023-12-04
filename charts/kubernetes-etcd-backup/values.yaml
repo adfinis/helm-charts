@@ -22,13 +22,13 @@ backup:
 
 etcdConfiguration:
   # -- Etcd endpoint ip or hostname without protocol or port
-  endpoint: ""
+  endpoint: "changeme"
 
 etcdCertification:
   # -- etcd-peer-tls secret name
-  etcdPeerTlsName: ""
+  etcdPeerTlsName: "changeme"
   # -- etcd-server-ca secret name
-  etcdServerCaName: ""
+  etcdServerCaName: "changeme"
 
 persistence:
   # -- Set reclaim policy (Retain or Delete)
