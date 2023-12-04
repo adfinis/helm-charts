@@ -161,7 +161,7 @@ vaultMonitoring:
   # -- Chart
   chart: "vault-monitoring"
   # -- [vault-monitoring Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring) version
-  targetRevision: "0.2.*"
+  targetRevision: "0.3.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/vault-monitoring/values.yaml)
   values: {}
