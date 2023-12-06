@@ -3901,6 +3901,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "add config for OIDC URL"
+          links:
+            - name: GitHub Commit
+              url: https://github.com/adfinis/customer-center/commit/2531d6ba95e4752c263ca6a52b36e930ee78f9e2
+        - kind: changed
+          description: "bump appVersion to v3.3.0"
+          links:
+            - name: GitHub Release
+              url: https://github.com/adfinis/customer-center/releases/tag/v3.3.0
+    apiVersion: v2
+    appVersion: v3.3.0
+    created: "2023-12-06T12:19:59.544811021Z"
+    description: Chart for Customer-Center application
+    digest: 6d07108bfd2e37f9e9d6cb3c445c494dd3032a16338f5b383fb3e38d05d2876d
+    home: https://github.com/adfinis/customer-center
+    keywords:
+    - customer-center
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: customer-center
+    sources:
+    - https://github.com/adfinis/customer-center
+    - https://github.com/adfinis/helm-charts/tree/main/charts/customer-center
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/customer-center-0.2.31/customer-center-0.2.31.tgz
+    version: 0.2.31
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update customer-center to v3.2.6"
           links:
             - name: GitHub Release
@@ -24330,4 +24362,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-04T10:00:13.604637267Z"
+generated: "2023-12-06T12:19:59.547627182Z"
