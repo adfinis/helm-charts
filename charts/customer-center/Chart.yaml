@@ -2,8 +2,8 @@ apiVersion: v2
 name: customer-center
 description: Chart for Customer-Center application
 type: application
-version: 0.2.30
-appVersion: v3.2.6
+version: 0.2.31
+appVersion: v3.3.0
 keywords:
   - customer-center
 home: https://github.com/adfinis/customer-center
@@ -17,7 +17,12 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "update customer-center to v3.2.6"
+      description: "add config for OIDC URL"
+      links:
+        - name: GitHub Commit
+          url: https://github.com/adfinis/customer-center/commit/2531d6ba95e4752c263ca6a52b36e930ee78f9e2
+    - kind: changed
+      description: "bump appVersion to v3.3.0"
       links:
         - name: GitHub Release
-          url: https://github.com/adfinis/customer-center/releases/tag/v3.2.6
+          url: https://github.com/adfinis/customer-center/releases/tag/v3.3.0
