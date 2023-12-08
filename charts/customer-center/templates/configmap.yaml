@@ -6,4 +6,5 @@ metadata:
     {{- include "customerCenter.labels" . | nindent 4 }}
     app.kubernetes.io/component: frontend
 data:
+  OIDC_CLIENT_HOST: {{ .Values.auth.oidcUrl | quote }}
   OIDC_CLIENT: {{ .Values.auth.oidcClient | quote }}

@@ -1,6 +1,6 @@
 # customer-center
 
-![Version: 0.2.30](https://img.shields.io/badge/Version-0.2.30-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.2.6](https://img.shields.io/badge/AppVersion-v3.2.6-informational?style=flat-square)
+![Version: 0.2.31](https://img.shields.io/badge/Version-0.2.31-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v3.3.0](https://img.shields.io/badge/AppVersion-v3.3.0-informational?style=flat-square)
 
 Chart for Customer-Center application
 
@@ -19,6 +19,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | auth.oidcClient | string | `"cc"` | Configure oidc client for customer-center frontend |
+| auth.oidcUrl | string | `"https://example.com/auth/realms/timed/protocol/openid-connect"` | Configure oidc host url for customer-center frontend |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` | Frontend image pull policy |
 | frontend.image.repository | string | `"ghcr.io/adfinis/customer-center/frontend"` | Frontend image name |
 | frontend.livenessProbe | object | `{"enabled":true,"failureThreshold":6,"initialDelaySeconds":60,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":5}` | Liveness probe configuration |
