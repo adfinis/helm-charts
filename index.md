@@ -31,6 +31,13 @@ Configure cert-manager Issuers and ClusterIssuers via Helm
 Chart for HedgeDoc, a fork of CodiMD
 
 [<img alt="hedgedoc" src="https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png" width="128">](https://github.com/adfinis/helm-charts/tree/main/charts/hedgedoc)
+#### [keycloak-operator](https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator) chart
+
+![Version: 1.0.x](https://img.shields.io/badge/version-1.0.x-brightgreen) ![App version: 23..x](https://img.shields.io/badge/app%20version-23..x-brightgreen)
+
+Deploy Keycloak Operator and Keycloak
+
+[<img alt="keycloak-operator" src="https://www.keycloak.org/resources/images/logo-stacked.svg" width="128">](https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator)
 #### [rbac-definitions](https://github.com/adfinis/helm-charts/tree/main/charts/rbac-definitions) chart
 
 ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1b.x](https://img.shields.io/badge/app%20version-1b.x-brightgreen)
@@ -70,8 +77,7 @@ for more in-depth information.
 | [cert-manager-monitoring](https://github.com/adfinis/helm-charts/tree/main/charts/cert-manager-monitoring) | Monitor cert-manager with cert-m... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  |
 | [common](https://github.com/adfinis/helm-charts/tree/main/charts/common) | Common chartbuilding components ... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [csi-secret-provider-class](https://github.com/adfinis/helm-charts/tree/main/charts/csi-secret-provider-class) | A Helm chart to create a SecretP... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [customer-center](https://github.com/adfinis/helm-charts/tree/main/charts/customer-center) | Chart for Customer-Center applic... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 3.2.x](https://img.shields.io/badge/app%20version-3.2.x-brightgreen) |
-| [keycloak-operator](https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator) | Deploy Keycloak Operator and Key... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 22..x](https://img.shields.io/badge/app%20version-22..x-brightgreen) |
+| [customer-center](https://github.com/adfinis/helm-charts/tree/main/charts/customer-center) | Chart for Customer-Center applic... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 3.3.x](https://img.shields.io/badge/app%20version-3.3.x-brightgreen) |
 | [mopsos](https://github.com/adfinis/helm-charts/tree/main/charts/mopsos) | Deploy Mopsos to a Kubernetes Cl... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [openshift-etcd-backup](https://github.com/adfinis/helm-charts/tree/main/charts/openshift-etcd-backup) | Chart for openshift-etcd-backup ... | ![Version: 1.6.x](https://img.shields.io/badge/version-1.6.x-brightgreen) |  ![App version: 1.6.x](https://img.shields.io/badge/app%20version-1.6.x-brightgreen) |
 | [osschallenge](https://github.com/adfinis/helm-charts/tree/main/charts/osschallenge) | Chart for OSS-Challenge application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |
