@@ -1,0 +1,55 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "kubernetes-etcd-backup.fullname" . }}
+spec:
+  startingDeadlineSeconds: 600
+  schedule: {{ .Values.backup.schedule | quote }}
+  jobTemplate:
+    spec:
+      # Retrying this job is not considered safe, because of that we fail the
+      # job immediately if the first execution fails.
+      backoffLimit: 0
+      template:
+        spec:
+          securityContext:
+              runAsUser: 1000
+              fsGroup: 1000
+          containers:
+          - command:
+            - /bin/sh
+            - /usr/local/bin/backup.sh
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            name: {{ .Chart.Name }}
+            envFrom:
+            - configMapRef:
+                name: {{ include "kubernetes-etcd-backup.fullname" . }}
+            resources:
+              {{- toYaml .Values.resources | nindent 14 }}
+            volumeMounts:
+            - name: etcd-peer-tls
+              mountPath: /etc/kubernetes/pki/etcd-peer
+            - name: etcd-server-ca
+              mountPath: /etc/kubernetes/pki/etcd-ca
+            {{- if or .Values.persistence.nfs.enabled .Values.persistence.provisioning.enabled }}
+            - name: volume-backup
+              mountPath: /backup
+            {{- end }}
+          restartPolicy: Never
+          volumes:
+          - name: etcd-peer-tls
+            secret:
+              secretName: {{ .Values.etcdCertification.etcdPeerTlsName }}
+          - name: etcd-server-ca
+            secret:
+              secretName: {{ .Values.etcdCertification.etcdServerCaName }}
+          - name: volume-backup
+            {{- if .Values.persistence.nfs.enabled }}
+            nfs:
+              server: {{ .Values.persistence.nfs.server | quote }}
+              path: {{ .Values.persistence.nfs.path | quote }}
+            {{- else if .Values.persistence.provisioning.enabled }}
+            persistentVolumeClaim:
+              claimName: {{ include "kubernetes-etcd-backup.fullname" . }}
+            {{- end }}
