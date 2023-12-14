@@ -2,7 +2,7 @@ apiVersion: v2
 name: tracing-apps
 description: Argo CD app-of-apps config for tracing applications
 type: application
-version: 0.26.1
+version: 0.27.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,9 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "update argoconfig dependency"
+      description: "jaeger-operator: update from 1.43.0 to 1.52.0"
       links:
-        - name: Github PR
-          url: https://github.com/adfinis/helm-charts/pull/1172
+        - name: Changelog
+          url: https://github.com/jaegertracing/jaeger-operator/blob/main/CHANGELOG.md
+    - kind: changed
+      description: "jaeger-operator: update chart from 2.43.0 to 2.50.1"
