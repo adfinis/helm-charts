@@ -2,7 +2,7 @@ apiVersion: v2
 name: kubernetes-etcd-backup
 description: Chart for kubernetes-etcd-backup solution
 type: application
-version: 1.0.0
+version: 1.0.4
 appVersion: v1.0.4
 keywords:
   - kubernetes-etcd-backup
