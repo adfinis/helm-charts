@@ -11884,6 +11884,28 @@ entries:
     version: 0.1.0
   kubernetes-etcd-backup:
   - apiVersion: v2
+    appVersion: v1.0.4
+    created: "2023-12-14T13:31:08.414300182Z"
+    description: Chart for kubernetes-etcd-backup solution
+    digest: be411cf632714dbd27934c086a946adbead76cfaf8f1375d3e2a028202f450c3
+    home: https://github.com/adfinis/kubernetes-etcd-backup
+    keywords:
+    - kubernetes-etcd-backup
+    - kubernetes
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: kubernetes-etcd-backup
+    sources:
+    - https://github.com/adfinis/kubernetes-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/kubernetes-etcd-backup-1.0.4/kubernetes-etcd-backup-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
     appVersion: v1.0.1
     created: "2023-12-11T09:59:05.971409113Z"
     description: Chart for kubernetes-etcd-backup solution
@@ -24415,4 +24437,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-13T07:26:25.732553701Z"
+generated: "2023-12-14T13:31:08.415595623Z"
