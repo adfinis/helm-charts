@@ -2,7 +2,7 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.0.1
+version: 1.0.2
 appVersion: "23.0.2"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
