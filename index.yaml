@@ -11708,6 +11708,29 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: Bump Keycloak to 23.0.2
+    apiVersion: v2
+    appVersion: 23.0.2
+    created: "2023-12-15T10:30:12.135359587Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: c72a1090d78ef430f8d43d3a0f6f8f224e70f39d3f70c73ae872e4056890dbf5
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.0.2/keycloak-operator-1.0.2.tgz
+    version: 1.0.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: Bump Keycloak to 23.0.1
     apiVersion: v2
     appVersion: 23.0.1
@@ -24437,4 +24460,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-14T13:31:08.415595623Z"
+generated: "2023-12-15T10:30:12.136501801Z"
