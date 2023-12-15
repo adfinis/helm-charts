@@ -4874,6 +4874,42 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(argo-cd): Update from 2.9.1 to 2.9.3"
+          links:
+            - name: GitHub Release 2.9.2
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.9.2
+            - name: GitHub Release 2.9.3
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.9.3
+        - kind: changed
+          description: "feat(argo-cd): Update chart from 5.51.2 to 5.51.6"
+          links:
+            - name: "chore: Replace non-existing examples with official example domain"
+              url: https://github.com/argoproj/argo-helm/pull/2352
+            - name: "docs: Add migration guide to README for Config Management Plugins"
+              url: https://github.com/argoproj/argo-helm/pull/2360
+    apiVersion: v2
+    created: "2023-12-15T13:51:36.373235024Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 3b69699f6e8cdaedf2f2846cb1083340feed015cf058309c5eb7fbb5e70262fb
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.190.0/infra-apps-0.190.0.tgz
+    version: 0.190.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(kube-prometheus-stack): Update prometheus from 2.47.0 to 2.48.0"
           links:
             - name: GitHub Release 2.48.0
@@ -24490,4 +24526,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-15T13:29:01.690711773Z"
+generated: "2023-12-15T13:51:36.374549409Z"
