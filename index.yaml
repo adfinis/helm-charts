@@ -11990,6 +11990,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: 'feat: update Loki Helm chart to 5.41.4'
+          links:
+            - name: GitHub release for Loki Helm chart 5.41.4
+              url: https://github.com/grafana/loki/releases/tag/helm-loki-5.41.4
+        - kind: changed
+          description: 'feat: update Loki to 2.9.3'
+          links:
+            - name: GitHub release for Loki 2.9.3
+              url: https://github.com/grafana/loki/releases/tag/v2.9.3
+    apiVersion: v2
+    created: "2023-12-19T10:00:30.107899593Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.7.6
+    description: Argo CD app-of-apps config for logging applications
+    digest: 4309397813de2b4e9465541c5998f3abd0d809c379cf8f77650cadd508296e48
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.29.0/logging-apps-0.29.0.tgz
+    version: 0.29.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: 'feat: replace loki-stack with loki and promtail'
           links:
             - name: Issue
@@ -24526,4 +24558,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-15T13:51:36.374549409Z"
+generated: "2023-12-19T10:00:30.109344881Z"
