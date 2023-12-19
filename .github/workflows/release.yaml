@@ -31,6 +31,9 @@ jobs:
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
+        with:
+          # Allow us to re-run the release action
+          skip_existing: true
         env:
           CR_TOKEN: "${{ secrets.CR_TOKEN }}"
 
