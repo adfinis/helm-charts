@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.28.0
+version: 0.29.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,12 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: 'feat: replace loki-stack with loki and promtail'
+      description: 'feat: update Loki Helm chart to 5.41.4'
       links:
-        - name: Issue
-          url: https://github.com/adfinis/helm-charts/issues/1058
+        - name: GitHub release for Loki Helm chart 5.41.4
+          url: https://github.com/grafana/loki/releases/tag/helm-loki-5.41.4
+    - kind: changed
+      description: 'feat: update Loki to 2.9.3'
+      links:
+        - name: GitHub release for Loki 2.9.3
+          url: https://github.com/grafana/loki/releases/tag/v2.9.3
