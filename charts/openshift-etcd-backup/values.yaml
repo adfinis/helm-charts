@@ -96,6 +96,8 @@ tolerations:
 
 affinity: {}
 
+annotations: {}
+
 monitoring:
 # -- Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis/openshift-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml).
 # Be sure to to have monitoring for user defined projects enabled as [described in the upstream documentation](https://docs.openshift.com/container-platform/4.6/monitoring/enabling-monitoring-for-user-defined-projects.html).

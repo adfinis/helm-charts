@@ -1,6 +1,6 @@
 # openshift-etcd-backup
 
-![Version: 1.7.1](https://img.shields.io/badge/Version-1.7.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.7.1](https://img.shields.io/badge/AppVersion-v1.7.1-informational?style=flat-square)
+![Version: 1.7.2](https://img.shields.io/badge/Version-1.7.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.7.1](https://img.shields.io/badge/AppVersion-v1.7.1-informational?style=flat-square)
 
 Chart for openshift-etcd-backup solution
 
@@ -19,6 +19,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
+| annotations | object | `{}` |  |
 | backup.dirname | string | `"+etcd-backup-%FT%T%:z"` | Directory name of single backup |
 | backup.expiretype | string | `"days"` | expiretype could be days (keep backups newer than backup.keepdays, count (keep a number of backups with backup.keepcount), never (do not expire backups, keep all of them) |
 | backup.keepcount | string | `"10"` | Count retention if expiretype set to count |

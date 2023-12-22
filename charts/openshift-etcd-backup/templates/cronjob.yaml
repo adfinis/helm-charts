@@ -15,6 +15,11 @@ spec:
       # job immediately if the first execution fails.
       backoffLimit: 0
       template:
+        {{- with .Values.annotations }}
+        metadata:
+          annotations:
+          {{- toYaml . | nindent 12 }}
+        {{- end }}
         spec:
           securityContext:
             {{- toYaml .Values.podSecurityContext | nindent 12 }}
