@@ -4874,6 +4874,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "bump velero to v1.12.2"
+          links:
+            - name: bump velero to v1.12.2
+              url: https://github.com/vmware-tanzu/velero/releases/tag/v1.12.2
+    apiVersion: v2
+    created: "2023-12-22T13:44:21.249322428Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.0
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 1484967961edf3e6fd6c5e8f5288368576ffc09b7d64956d6587c44e797d076c
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.191.0/infra-apps-0.191.0.tgz
+    version: 0.191.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(argo-cd): Update from 2.9.1 to 2.9.3"
           links:
             - name: GitHub Release 2.9.2
@@ -24585,4 +24612,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-22T10:52:29.515632015Z"
+generated: "2023-12-22T13:44:21.250786781Z"
