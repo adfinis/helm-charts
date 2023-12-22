@@ -15005,6 +15005,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "add annotations support for jobTemplate"
+    apiVersion: v2
+    appVersion: v1.7.1
+    created: "2023-12-22T10:52:29.514325279Z"
+    description: Chart for openshift-etcd-backup solution
+    digest: 24192f137327c7421d29050821660156d435c1ea9c38d629c8166c67a9e955ac
+    home: https://github.com/adfinis/openshift-etcd-backup
+    keywords:
+    - openshift-etcd-backup
+    - openshift
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: openshift-etcd-backup
+    sources:
+    - https://github.com/adfinis/openshift-etcd-backup
+    - https://github.com/adfinis/helm-charts/tree/main/charts/openshift-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/openshift-etcd-backup-1.7.2/openshift-etcd-backup-1.7.2.tgz
+    version: 1.7.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "bump openshift-etcd-backup image to v1.7.1"
           links:
             - name: openshift-etcd-backup release v1.7.1
@@ -24558,4 +24585,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-19T10:00:30.109344881Z"
+generated: "2023-12-22T10:52:29.515632015Z"
