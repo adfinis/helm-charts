@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.190.0
+version: 0.191.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,16 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(argo-cd): Update from 2.9.1 to 2.9.3"
+      description: "bump velero to v1.12.2"
       links:
-        - name: GitHub Release 2.9.2
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.9.2
-        - name: GitHub Release 2.9.3
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.9.3
-    - kind: changed
-      description: "feat(argo-cd): Update chart from 5.51.2 to 5.51.6"
-      links:
-        - name: "chore: Replace non-existing examples with official example domain"
-          url: https://github.com/argoproj/argo-helm/pull/2352
-        - name: "docs: Add migration guide to README for Config Management Plugins"
-          url: https://github.com/argoproj/argo-helm/pull/2360
+        - name: bump velero to v1.12.2
+          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.12.2
