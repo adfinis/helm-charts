@@ -10,16 +10,16 @@ spec:
   startingDeadlineSeconds: 600
   schedule: {{ .Values.backup.schedule | quote }}
   jobTemplate:
-   {{- with .Values.annotations }}
-    metadata:
-      annotations:
-      {{- toYaml . | nindent 8 }}
-   {{- end }}
     spec:
       # Retrying this job is not considered safe, because of that we fail the
       # job immediately if the first execution fails.
       backoffLimit: 0
       template:
+        {{- with .Values.annotations }}
+        metadata:
+          annotations:
+          {{- toYaml . | nindent 12 }}
+        {{- end }}
         spec:
           securityContext:
             {{- toYaml .Values.podSecurityContext | nindent 12 }}
