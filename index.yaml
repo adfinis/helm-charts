@@ -4,6 +4,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "update argoconfig dependency"
+          links:
+            - name: Github PR
+              url: https://github.com/adfinis/helm-charts/pull/1172
+    apiVersion: v2
+    created: "2024-01-12T09:26:00.02333481Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 19cdf21d8941b04927692d9b1ad6b65eccde625237735558f09c572593071746
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.21.1/argo-apps-0.21.1.tgz
+    version: 0.21.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(argo-rollouts): update from 1.5.1 to 1.6.0"
           links:
             - name: GitHub Release 1.6.0
@@ -1070,6 +1097,33 @@ entries:
   azure-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: "update argoconfig dependency"
+          links:
+            - name: Github PR
+              url: https://github.com/adfinis/helm-charts/pull/1172
+    apiVersion: v2
+    created: "2024-01-12T09:26:00.124769006Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for Azure applications
+    digest: 52bb9173cccceec9febc3246610243ed731b85ce082fe9ae2226e2bc5e70e46e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.13.1/azure-apps-0.13.1.tgz
+    version: 0.13.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: "feat: add azure-workload-identity-webhook"
           links:
@@ -2085,6 +2139,33 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/back8sup-0.1.0/back8sup-0.1.0.tgz
     version: 0.1.0
   backup-apps:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "update argoconfig dependency"
+          links:
+            - name: Github PR
+              url: https://github.com/adfinis/helm-charts/pull/1172
+    apiVersion: v2
+    created: "2024-01-12T09:26:00.223227669Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for backup components
+    digest: b2d31c70fa8b78c8794bf305603d653ad25424f4445e8630eb616ba6e52211f5
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/backup-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: backup-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/backup-apps-0.5.1/backup-apps-0.5.1.tgz
+    version: 0.5.1
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
@@ -4895,6 +4976,33 @@ entries:
     - https://github.com/adfinis/helm-charts/releases/download/hedgedoc-0.1.0/hedgedoc-0.1.0.tgz
     version: 0.1.0
   infra-apps:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "update argoconfig dependency"
+          links:
+            - name: Github PR
+              url: https://github.com/adfinis/helm-charts/pull/1172
+    apiVersion: v2
+    created: "2024-01-12T09:26:00.335176757Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 4cb6a51078debaa895c1ff2fc4e3f290a079e55d8598b001f847240b32429d03
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.191.1/infra-apps-0.191.1.tgz
+    version: 0.191.1
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
@@ -12041,6 +12149,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "update argoconfig dependency"
+          links:
+            - name: Github PR
+              url: https://github.com/adfinis/helm-charts/pull/1172
+    apiVersion: v2
+    created: "2024-01-12T09:26:00.436552073Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: a75085f9dc1ca857b52862ff171f7d51c1d1023f7aec39103acb08f86c947468
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.29.1/logging-apps-0.29.1.tgz
+    version: 0.29.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: 'feat: update Loki Helm chart to 5.41.4'
           links:
             - name: GitHub release for Loki Helm chart 5.41.4
@@ -12971,6 +13106,33 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/logging-apps-0.0.1/logging-apps-0.0.1.tgz
     version: 0.0.1
   misc-apps:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "update argoconfig dependency"
+          links:
+            - name: Github PR
+              url: https://github.com/adfinis/helm-charts/pull/1172
+    apiVersion: v2
+    created: "2024-01-12T09:26:00.556269774Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: d71727786e180ec021deff1b43872d2e1b4567ed05785fabcca4b650d71e77d4
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.41.2/misc-apps-0.41.2.tgz
+    version: 0.41.2
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
@@ -16707,6 +16869,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "update argoconfig dependency"
+          links:
+            - name: Github PR
+              url: https://github.com/adfinis/helm-charts/pull/1172
+    apiVersion: v2
+    created: "2024-01-12T09:26:00.661147148Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 142a41fbe13b6c6aec20c486c2f0bbd7b79e74bdb1aa347aef390bf9cbea1744
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.81.1/security-apps-0.81.1.tgz
+    version: 0.81.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: |
             * total_ prefix in the metrics name has been dropped as part of the latest otel bump in the driver. For Prometheus counters, by default the otel library appends total suffix.
               * total_rotation_reconcile -> rotation_reconcile_total
@@ -19370,6 +19559,33 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/sentry-apps-0.1.0/sentry-apps-0.1.0.tgz
     version: 0.1.0
   storage-apps:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "update argoconfig dependency"
+          links:
+            - name: Github PR
+              url: https://github.com/adfinis/helm-charts/pull/1172
+    apiVersion: v2
+    created: "2024-01-12T09:26:00.785214011Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for storage applications
+    digest: 2efb5e6574d8d21f6bef52ee78c50e1ddc7028cf471a9a71d939c5efc0187749
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.15.1/storage-apps-0.15.1.tgz
+    version: 0.15.1
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
@@ -23254,6 +23470,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "update argoconfig dependency"
+          links:
+            - name: Github PR
+              url: https://github.com/adfinis/helm-charts/pull/1172
+    apiVersion: v2
+    created: "2024-01-12T09:26:00.885658233Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 7e9245ebb939332cd1fb7eceffe63dda2f0c12ffaa0819f0e2edff4e914bf72a
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.26.1/tracing-apps-0.26.1.tgz
+    version: 0.26.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "otel-collector: update from 0.75.0 to 0.82.0"
           links:
             - name: Upgrade docs!
@@ -24636,4 +24879,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-01-12T08:10:54.13039043Z"
+generated: "2024-01-12T09:26:00.887669693Z"
