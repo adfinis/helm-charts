@@ -15,7 +15,6 @@ spec:
   source: {}
   destination:
     server: "https://kubernetes.default.svc"
-  syncPolicy: {}
 {{- end -}}
 {{- define "argoconfig.application" -}}
 {{- include "common.util.merge" (append . "argoconfig.application.tpl") -}}
