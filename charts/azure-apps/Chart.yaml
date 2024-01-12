@@ -2,7 +2,7 @@ apiVersion: v2
 name: azure-apps
 description: Argo CD app-of-apps config for Azure applications
 type: application
-version: 0.13.0
+version: 0.13.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -12,14 +12,12 @@ maintainers:
     url: https://adfinis.com
 dependencies:
   - name: argoconfig
-    version: 0.7.6
+    version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: added
-      description: "feat: add azure-workload-identity-webhook"
+    - kind: changed
+      description: "update argoconfig dependency"
       links:
-        - name: Microsoft Entra Workload ID
-          url: https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview
-        - name: Azure Workload Identity System
-          url: https://azure.github.io/azure-workload-identity
+        - name: Github PR
+          url: https://github.com/adfinis/helm-charts/pull/1172
