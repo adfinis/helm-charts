@@ -620,6 +620,30 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/argo-apps-0.1.0/argo-apps-0.1.0.tgz
     version: 0.1.0
   argoconfig:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "Remove empty syncPolicy to fix going out-of-sync in argoCD"
+    apiVersion: v2
+    created: "2024-01-12T08:10:54.127458849Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.8
+    description: Configure Argo CD AppProjects and Applications
+    digest: 388a11e46c2b84002b81a2bffc1763a89a8812bd5d1725c8ad6301db05048902
+    home: https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argoconfig
+    sources:
+    - https://github.com/adfinis/helm-charts/tree/main/charts/argoconfig
+    type: library
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argoconfig-0.9.1/argoconfig-0.9.1.tgz
+    version: 0.9.1
   - apiVersion: v2
     created: "2022-08-15T07:20:31.18860117Z"
     dependencies:
@@ -24612,4 +24636,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-22T13:44:21.250786781Z"
+generated: "2024-01-12T08:10:54.13039043Z"
