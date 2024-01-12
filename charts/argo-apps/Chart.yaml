@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.21.0
+version: 0.21.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -12,19 +12,12 @@ maintainers:
     url: https://adfinis.com
 dependencies:
   - name: argoconfig
-    version: 0.8.0
+    version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(argo-rollouts): update from 1.5.1 to 1.6.0"
+      description: "update argoconfig dependency"
       links:
-        - name: GitHub Release 1.6.0
-          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.0
-    - kind: changed
-      description: "feat(argo-rollouts): update chart from 2.31.3 to 2.32.0"
-      links:
-        - name: "fix: Add required ingress permission"
-          url: https://github.com/argoproj/argo-helm/pull/2207
-        - name: "feat: update servicemonitor.yaml to allow for namespace to be set"
-          url: https://github.com/argoproj/argo-helm/pull/2222
+        - name: Github PR
+          url: https://github.com/adfinis/helm-charts/pull/1172
