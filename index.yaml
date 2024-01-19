@@ -4978,6 +4978,42 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: security
+          description: "fix: update Argo CD from 2.9.3 to 2.9.4"
+          links:
+            - name: Github Release
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.9.4
+        - kind: changed
+          description: "feat: Update Helm chart from 5.51.6 to 5.53.1"
+          links:
+            - name: "feat: Use new Argo CD extension mechanism"
+              url: https://github.com/argoproj/argo-helm/pull/2406
+            - name: "feat: Add optional mapping of argocd-repo-server emptydir to custom volumes"
+              url: https://github.com/argoproj/argo-helm/pull/2410
+            - name: "chore: DRY cleanup of ServiceAccounts"
+              url: https://github.com/argoproj/argo-helm/pull/2409
+    apiVersion: v2
+    created: "2024-01-19T10:11:46.076316377Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 85a36e91311acb7b6dbdbb41fbf628ed9e78741781f34fb9e789e19b07b00791
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.192.0/infra-apps-0.192.0.tgz
+    version: 0.192.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "update argoconfig dependency"
           links:
@@ -24879,4 +24915,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-01-12T09:26:00.887669693Z"
+generated: "2024-01-19T10:11:46.077711602Z"
