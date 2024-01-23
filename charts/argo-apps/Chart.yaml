@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.21.1
+version: 0.22.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,26 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "update argoconfig dependency"
+      description: "feat(argo-rollouts): update from 1.6.0 to 1.6.4"
       links:
-        - name: Github PR
-          url: https://github.com/adfinis/helm-charts/pull/1172
+        - name: GitHub Release 1.6.1
+          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.1
+        - name: GitHub Release 1.6.2
+          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.1
+        - name: GitHub Release 1.6.3
+          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.1
+        - name: GitHub Release 1.6.4
+          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.1
+    - kind: changed
+      description: "feat(argo-rollouts): update chart from 2.32.0 to 2.34.1"
+      links:
+        - name: "feat: Add rollout plugin gloo platform rbac"
+          url: https://github.com/argoproj/argo-helm/pull/2404
+        - name: "feat: add args for dashboard logs"
+          url: https://github.com/argoproj/argo-helm/pull/2388
+        - name: "feat: allow setting log config for rollouts"
+          url: https://github.com/argoproj/argo-helm/pull/2386
+        - name: "feat: add rollout plugin contour rbac"
+          url: https://github.com/argoproj/argo-helm/pull/2371
+        - name: "fix: controller replicas count comparison"
+          url: https://github.com/argoproj/argo-helm/pull/2309
