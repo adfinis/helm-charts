@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.42.0
+version: 0.43.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,33 +17,9 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: |
-        feat: Update opencost from 1.105.2 to 1.108.0
-
-        Contains the new Cloud Costs feature.
+      description: "fix: Update downscaler chart from 0.7.3 to 0.7.4"
       links:
-        - name: "Cloud Costs blog"
-          url: https://www.opencost.io/blog/cloud-costs
-        - name: "Release 1.108.0"
-          url: https://github.com/opencost/opencost/releases/tag/v1.108.0
-        - name: "Release 1.107.1"
-          url: https://github.com/opencost/opencost/releases/tag/v1.107.1
-        - name: "Release 1.107.0"
-          url: https://github.com/opencost/opencost/releases/tag/v1.107.0
-        - name: "Release 1.106.2"
-          url: https://github.com/opencost/opencost/releases/tag/v1.106.2
-        - name: "Release 1.106.1"
-          url: https://github.com/opencost/opencost/releases/tag/v1.106.1
-        - name: "Release 1.106.0"
-          url: https://github.com/opencost/opencost/releases/tag/v1.106.0
-    - kind: changed
-      description: "feat: Update chart from 1.19.3 to 1.29.0"
-      links:
-        - name: "feat: adding namespace override"
-          url: https://github.com/opencost/opencost-helm-chart/pull/171
-        - name: "feat: Add support for opencost.cloudIntegrationSecret"
-          url: https://github.com/opencost/opencost-helm-chart/pull/145
-        - name: "feat: Allow overriding the pricing provider type"
-          url: https://github.com/opencost/opencost-helm-chart/pull/135
-        - name: "feat: Add tlsconfig to servicemonitor"
-          url: https://github.com/opencost/opencost-helm-chart/pull/130
+        - name: "fix: bump version to be k8s>=1.25 ready"
+          url: https://github.com/deliveryhero/helm-charts/pull/543
+        - name: "upstream issue"
+          url: https://codeberg.org/hjacobs/kube-downscaler/issues/39
