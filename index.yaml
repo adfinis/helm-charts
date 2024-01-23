@@ -4,6 +4,52 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(argo-rollouts): update from 1.6.0 to 1.6.4"
+          links:
+            - name: GitHub Release 1.6.1
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.1
+            - name: GitHub Release 1.6.2
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.1
+            - name: GitHub Release 1.6.3
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.1
+            - name: GitHub Release 1.6.4
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.1
+        - kind: changed
+          description: "feat(argo-rollouts): update chart from 2.32.0 to 2.34.1"
+          links:
+            - name: "feat: Add rollout plugin gloo platform rbac"
+              url: https://github.com/argoproj/argo-helm/pull/2404
+            - name: "feat: add args for dashboard logs"
+              url: https://github.com/argoproj/argo-helm/pull/2388
+            - name: "feat: allow setting log config for rollouts"
+              url: https://github.com/argoproj/argo-helm/pull/2386
+            - name: "feat: add rollout plugin contour rbac"
+              url: https://github.com/argoproj/argo-helm/pull/2371
+            - name: "fix: controller replicas count comparison"
+              url: https://github.com/argoproj/argo-helm/pull/2309
+    apiVersion: v2
+    created: "2024-01-23T14:50:12.660493611Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 7e556f0daca9af6a2226c1614969f81fcd38c059a8bb251aaac8b4a643b89aa2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.22.0/argo-apps-0.22.0.tgz
+    version: 0.22.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update argoconfig dependency"
           links:
             - name: Github PR
@@ -24915,4 +24961,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-01-19T10:11:46.077711602Z"
+generated: "2024-01-23T14:50:12.66347618Z"
