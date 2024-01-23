@@ -2,8 +2,8 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.0.2
-appVersion: "23.0.2"
+version: 1.0.3
+appVersion: "23.0.4"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
 sources:
@@ -16,4 +16,9 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: Bump Keycloak to 23.0.2
+      description: "Bump Keycloak from 23.0.2 to 23.0.3"
+      links:
+        - name: "Release 23.0.3"
+          url: https://www.keycloak.org/2023/12/keycloak-2303-released.html
+        - name: "Release 23.0.4"
+          url: https://www.keycloak.org/2024/01/keycloak-2304-released.html
