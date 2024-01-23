@@ -59,7 +59,7 @@ promitorResourceDiscovery:
   values: {}
 
 # -- [azure-workload-identity](https://azure.github.io/azure-workload-identity) ([example](./examples/azure-workload-identity-webhook.yaml))
-# # @default -- -
+# @default -- -
 azureWorkloadIdentityWebhook:
   # -- Enable azure-workload-identity webhook
   enabled: false

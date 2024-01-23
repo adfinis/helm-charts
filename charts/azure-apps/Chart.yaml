@@ -2,7 +2,7 @@ apiVersion: v2
 name: azure-apps
 description: Argo CD app-of-apps config for Azure applications
 type: application
-version: 0.13.1
+version: 0.13.2
 home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "update argoconfig dependency"
-      links:
-        - name: Github PR
-          url: https://github.com/adfinis/helm-charts/pull/1172
+      description: "fix: README for `azureWorkloadIdentityWebhook`"
