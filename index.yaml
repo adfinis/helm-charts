@@ -13191,6 +13191,59 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            feat: Update opencost from 1.105.2 to 1.108.0
+
+            Contains the new Cloud Costs feature.
+          links:
+            - name: "Cloud Costs blog"
+              url: https://www.opencost.io/blog/cloud-costs
+            - name: "Release 1.108.0"
+              url: https://github.com/opencost/opencost/releases/tag/v1.108.0
+            - name: "Release 1.107.1"
+              url: https://github.com/opencost/opencost/releases/tag/v1.107.1
+            - name: "Release 1.107.0"
+              url: https://github.com/opencost/opencost/releases/tag/v1.107.0
+            - name: "Release 1.106.2"
+              url: https://github.com/opencost/opencost/releases/tag/v1.106.2
+            - name: "Release 1.106.1"
+              url: https://github.com/opencost/opencost/releases/tag/v1.106.1
+            - name: "Release 1.106.0"
+              url: https://github.com/opencost/opencost/releases/tag/v1.106.0
+        - kind: changed
+          description: "feat: Update chart from 1.19.3 to 1.29.0"
+          links:
+            - name: "feat: adding namespace override"
+              url: https://github.com/opencost/opencost-helm-chart/pull/171
+            - name: "feat: Add support for opencost.cloudIntegrationSecret"
+              url: https://github.com/opencost/opencost-helm-chart/pull/145
+            - name: "feat: Allow overriding the pricing provider type"
+              url: https://github.com/opencost/opencost-helm-chart/pull/135
+            - name: "feat: Add tlsconfig to servicemonitor"
+              url: https://github.com/opencost/opencost-helm-chart/pull/130
+    apiVersion: v2
+    created: "2024-01-23T15:31:00.193747092Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 52c9a0e232757c6e4ed6093ef0ba75ed439faf4d96216dd6a0c461854b0ee017
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.42.0/misc-apps-0.42.0.tgz
+    version: 0.42.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update argoconfig dependency"
           links:
             - name: Github PR
@@ -24961,4 +25014,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-01-23T14:50:12.66347618Z"
+generated: "2024-01-23T15:31:00.195085256Z"
