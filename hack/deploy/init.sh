@@ -20,9 +20,9 @@ kubectl create ns $infra_ns
 kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/v$argocd_version/manifests/crds/application-crd.yaml
 kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/v$argocd_version/manifests/crds/appproject-crd.yaml
 
-kubectl apply -f https://raw.githubusercontent.com/prometheus-community/helm-charts/kube-prometheus-stack-$kube_prometheus_stack_version/charts/kube-prometheus-stack/crds/crd-servicemonitors.yaml
-kubectl apply -f https://raw.githubusercontent.com/prometheus-community/helm-charts/kube-prometheus-stack-$kube_prometheus_stack_version/charts/kube-prometheus-stack/crds/crd-podmonitors.yaml
-kubectl apply -f https://raw.githubusercontent.com/prometheus-community/helm-charts/kube-prometheus-stack-$kube_prometheus_stack_version/charts/kube-prometheus-stack/crds/crd-prometheusrules.yaml
+kubectl apply -f https://raw.githubusercontent.com/prometheus-community/helm-charts/kube-prometheus-stack-$kube_prometheus_stack_version/charts/kube-prometheus-stack/charts/crds/crds/crd-servicemonitors.yaml
+kubectl apply -f https://raw.githubusercontent.com/prometheus-community/helm-charts/kube-prometheus-stack-$kube_prometheus_stack_version/charts/kube-prometheus-stack/charts/crds/crds/crd-podmonitors.yaml
+kubectl apply -f https://raw.githubusercontent.com/prometheus-community/helm-charts/kube-prometheus-stack-$kube_prometheus_stack_version/charts/kube-prometheus-stack/charts/crds/crds/crd-prometheusrules.yaml
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/v$secrets_store_csi_driver_version/deploy/secrets-store.csi.x-k8s.io_secretproviderclasses.yaml
 
