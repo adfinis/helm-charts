@@ -17003,6 +17003,71 @@ entries:
   security-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: security
+          description: |
+            feat: Update kyverno from v1.10.0 to v1.11.4
+
+            Potentially breaking:
+            * The policy that applies to Deployment/scale subresource has
+              been changed to use condition anchor for the condition check.
+              This may break your existing policy if you used the policy
+              restrict-scale to block the scale action.
+            * Policy Reports are now created on a per-resource basis and
+              using a UID as the name rather than the previous behavior of
+              per-policy. This may be a breaking change if you relied upon
+              either of these attributes in previous versions. This change
+              has the benefit of putting less pressure on the Kubernetes
+              API server and less storage cost on etcd.
+            * In accordance with Cosign 2.0 updates, the Rekor URL is now
+              required in a policy. The url field may be empty ("") but must
+              be specified even if you've opted not to store signatures in a
+              Rekor instance. Users upgrading from Kyverno v1.10 to v1.11 who
+              have image verification policies using cosign will have to
+              explicitly disable Tlogs and SCT verification in their policy
+              using the rekor.ignoreTlogs and ctlog.IgnoreSCT fields if they
+              did not use Rekor while signing the image.
+          links:
+            - name: "Release 1.11.4"
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.11.4
+            - name: "Release 1.11.3"
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.11.3
+            - name: "Release 1.11.2"
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.11.2
+            - name: "Release 1.11.1"
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.11.1
+            - name: "Release 1.11.0"
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.11.0
+            - name: "Release 1.10.4"
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.10.4
+            - name: "Release 1.10.3"
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.10.3
+            - name: "Release 1.10.2"
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.10.2
+            - name: "Release 1.10.1"
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.10.1
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-01-24T17:22:09.547174405Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 0aef52a4314a17d170c809e743043973806ba478c3160f7b4f2a2eb5dcc7ee4b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.82.0/security-apps-0.82.0.tgz
+    version: 0.82.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "update argoconfig dependency"
           links:
@@ -25014,4 +25079,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-01-23T15:31:00.195085256Z"
+generated: "2024-01-24T17:22:09.548586599Z"
