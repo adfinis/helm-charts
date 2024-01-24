@@ -13226,6 +13226,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "fix: Update downscaler chart from 0.7.3 to 0.7.4"
+          links:
+            - name: "fix: bump version to be k8s>=1.25 ready"
+              url: https://github.com/deliveryhero/helm-charts/pull/543
+            - name: "upstream issue"
+              url: https://codeberg.org/hjacobs/kube-downscaler/issues/39
+    apiVersion: v2
+    created: "2024-01-24T17:28:41.913373129Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 97599981341886ab1bd5202903b6605c6a0c74d7b070828fc83dd313446ec075
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.43.0/misc-apps-0.43.0.tgz
+    version: 0.43.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: |
             feat: Update opencost from 1.105.2 to 1.108.0
 
@@ -25114,4 +25143,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-01-24T17:25:48.165692336Z"
+generated: "2024-01-24T17:28:41.914652119Z"
