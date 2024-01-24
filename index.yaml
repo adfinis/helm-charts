@@ -5025,6 +5025,41 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: security
+          description: "feat: Update controller from 1.9.4 to 1.9.5"
+          links:
+            - name: "Controller Releaase 1.9.5"
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.9.5
+            - name: Rapid Reset Patch
+              url: https://github.com/kubernetes/ingress-nginx/pull/10499
+        - kind: changed
+          description: "feat: Update ingress-nginx chart from 4.8.3 to 4.9.0"
+          links:
+            - name: Chart Update PR
+              url: https://github.com/kubernetes/ingress-nginx/pull/10795
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-01-24T17:25:48.164206724Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 55165c87c26a56649ed05436f96fd8475ac9075b0f3859f37369c70dd8aebed0
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.193.0/infra-apps-0.193.0.tgz
+    version: 0.193.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: security
           description: "fix: update Argo CD from 2.9.3 to 2.9.4"
           links:
             - name: Github Release
@@ -25079,4 +25114,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-01-24T17:22:09.548586599Z"
+generated: "2024-01-24T17:25:48.165692336Z"
