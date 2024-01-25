@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.193.0
+version: 0.194.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,17 +15,21 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: security
-      description: "feat: Update controller from 1.9.4 to 1.9.5"
+    - kind: fixed
+      description: "feat: Update Argo CD from 2.9.4 to 2.9.5"
       links:
-        - name: "Controller Releaase 1.9.5"
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.9.5
-        - name: Rapid Reset Patch
-          url: https://github.com/kubernetes/ingress-nginx/pull/10499
+        - name: "Argo CD 3.9.5"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.9.5
     - kind: changed
-      description: "feat: Update ingress-nginx chart from 4.8.3 to 4.9.0"
+      description: "feat: Update argocd chart from 5.53.1 to 5.53.8"
       links:
-        - name: Chart Update PR
-          url: https://github.com/kubernetes/ingress-nginx/pull/10795
+        - name: "chore: Change redis repository to public.ecr.aws"
+          url: https://github.com/argoproj/argo-helm/pull/2446
+        - name: "chore: Provide Casbin matcher explicitly"
+          url: https://github.com/argoproj/argo-helm/pull/2445
+        - name: "fix: fail to render `.Values.configs.secret.azureDevops`"
+          url: https://github.com/argoproj/argo-helm/pull/2443
+        - name: "feat: Support Azure DevOps webhook Secret"
+          url: https://github.com/argoproj/argo-helm/pull/2439
