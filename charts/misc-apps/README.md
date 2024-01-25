@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.42.0](https://img.shields.io/badge/Version-0.42.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.43.0](https://img.shields.io/badge/Version-0.43.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -43,7 +43,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | downscaler.destination.namespace | string | `"infra-downscaler"` | Namespace |
 | downscaler.enabled | bool | `false` | Enable kube-downscaler |
 | downscaler.repoURL | string | [repo](https://charts.deliveryhero.io) | Repo URL |
-| downscaler.targetRevision | string | `"0.7.3"` | [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version |
+| downscaler.targetRevision | string | `"0.7.4"` | [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version |
 | downscaler.values | object | [upstream values](https://github.com/deliveryhero/helm-charts/blob/master/stable/kube-downscaler/values.yaml) | Helm values |
 | grafanaAgentOperator | object | [example](./examples/grafana-agent.yaml) | [grafana-agent](https://grafana.github.io/helm-charts) |
 | grafanaAgentOperator.annotations | object | `{}` | Annotations for grafana-agent |
