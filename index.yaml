@@ -23734,6 +23734,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "jaeger-operator: update from 1.43.0 to 1.52.0"
+          links:
+            - name: Changelog
+              url: https://github.com/jaegertracing/jaeger-operator/blob/main/CHANGELOG.md
+        - kind: changed
+          description: "jaeger-operator: update chart from 2.43.0 to 2.50.1"
+    apiVersion: v2
+    created: "2024-01-26T10:02:03.707123386Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for tracing applications
+    digest: e32ae55608b3b9f883fd0780d5ce6218cd6946e59e55163be6b40e2ec7e3824e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.27.0/tracing-apps-0.27.0.tgz
+    version: 0.27.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update argoconfig dependency"
           links:
             - name: Github PR
@@ -25143,4 +25172,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-01-24T17:28:41.914652119Z"
+generated: "2024-01-26T10:02:03.709654501Z"
