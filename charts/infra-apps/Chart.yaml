@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.193.0
+version: 0.193.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,15 +17,13 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
-    - kind: security
-      description: "feat: Update controller from 1.9.4 to 1.9.5"
-      links:
-        - name: "Controller Releaase 1.9.5"
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.9.5
-        - name: Rapid Reset Patch
-          url: https://github.com/kubernetes/ingress-nginx/pull/10499
     - kind: changed
-      description: "feat: Update ingress-nginx chart from 4.8.3 to 4.9.0"
+      description: "feat: Update argocd from 2.9.4 to 2.9.5"
       links:
-        - name: Chart Update PR
-          url: https://github.com/kubernetes/ingress-nginx/pull/10795
+        - name: "ArgoCD release 2.9.5""
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.9.5
+    - kind: changed
+      description: "feat: Update argocd chart version from 5.53.1 to 5.53.12"
+      links:
+        - name: Chart Release
+          url: https://github.com/argoproj/argo-helm/releases/tag/argo-cd-5.53.12
