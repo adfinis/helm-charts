@@ -20,7 +20,7 @@ argocd:
   # -- Chart
   chart: argo-cd
   # -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version
-  targetRevision: 5.53.1
+  targetRevision: 5.53.12
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml)
   values: {}
@@ -47,7 +47,6 @@ certManager:
   # @default -- [upstream values](https://github.com/cert-manager/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
 
-
 # -- [cert-manager-issuers](https://cert-manager.io/docs/configuration/)
 # @default -- [example](./examples/cert-manager-issuers.yaml)
 certManagerIssuers:
@@ -70,7 +69,6 @@ certManagerIssuers:
   # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/cert-manager-issuers/values.yaml)
   values: {}
 
-
 # -- [cert-manager-monitoring](https://cert-manager.io/docs/configuration/)
 # @default -- [example](./examples/cert-manager-monitoring.yaml)
 certManagerMonitoring:
@@ -92,7 +90,6 @@ certManagerMonitoring:
   # -- Helm values
   # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/cert-manager-monitoring/values.yaml)
   values: {}
-
 
 # -- [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
 # @default -- [example](./examples/nginx-ingress.yaml)
