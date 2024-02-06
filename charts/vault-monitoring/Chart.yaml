@@ -10,3 +10,7 @@ maintainers:
   - name: adfinis
     email: support@adfinis.com
     url: https://adfinis.com
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "make bearerTokenFile optional"

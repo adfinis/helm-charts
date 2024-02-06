@@ -34,8 +34,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vault.serverName | string | `"vault.example.com"` | the vault servername |
 | vault.service.selector | object | `{}` | definition of the  vault service selector for endpoint selection. Keep empty for using ExternalName |
 | vault.service.type | string | `"ExternalName"` | which type the vault service has. For connecting to an external vault server, choose ExternalName |
-| vault.serviceMonitor.bearerToken.enabled | bool | `true` | enable bearerToken authentication |
-| vault.serviceMonitor.bearerToken.path | string | `"/etc/prometheus/config_out/.vault-token"` | path to the bearerToken |
 | vault.serviceMonitor.create | bool | `true` | wheter or not the serviceMonitor should be created |
 | vault.serviceMonitor.labels | object | `{}` | labels to set on the vault serviceMonitor |
 | vault.serviceMonitor.scrapeTimeout | string | `"30s"` | scrapeTimeout of the serviceMonitor |

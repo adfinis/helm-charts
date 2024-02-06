@@ -39,11 +39,7 @@ vault:
     labels: {}
     # -- scrapeTimeout of the serviceMonitor
     scrapeTimeout: 30s
-    bearerToken:
-      # -- enable bearerToken authentication
-      enabled: true
-      # -- path to the bearerToken
-      path: '/etc/prometheus/config_out/.vault-token'
+    # -- Specify a bearerTokenFile for authentication. Keep empty for Unauthenticated access
 
 prometheusRules:
   # -- wether or not the prometheus alerts are enabled
