@@ -24,7 +24,9 @@ spec:
       port: {{ .Values.vault.portName }}
       scheme: {{ .Values.vault.scheme }}
       scrapeTimeout: {{ .Values.vault.serviceMonitor.scrapeTimeout }}
-      bearerTokenFile: '/etc/prometheus/config_out/.vault-token'
+      {{- with .Values.vault.serviceMonitor.bearerTokenFile }}
+      bearerTokenFile: {{ . | quote }}
+      {{- end }}
       tlsConfig:
         {{- if .Values.vault.ca }}
         caFile: {{ .Values.vault.ca_path }}
