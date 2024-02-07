@@ -25129,6 +25129,26 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-csi-provider-0.2.0/vault-csi-provider-0.2.0.tgz
     version: 0.2.0
   vault-monitoring:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "make bearerTokenFile optional"
+    apiVersion: v2
+    created: "2024-02-07T13:31:28.924722403Z"
+    description: monitor your vault server from within Kubernetes' prometheus
+    digest: d9ef5bb3bb84b06ffc1192524e8640b367cd2bda41da2386c0261b9b0b6cbc4b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: vault-monitoring
+    sources:
+    - https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/vault-monitoring-0.3.0/vault-monitoring-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v2
     created: "2022-08-04T15:51:57.383032659Z"
     description: monitor your vault server from within Kubernetes' prometheus
@@ -25244,4 +25264,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-01T17:08:09.687370748Z"
+generated: "2024-02-07T13:31:28.92617982Z"
