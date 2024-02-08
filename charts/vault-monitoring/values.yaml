@@ -52,9 +52,7 @@ prometheusRules:
   # -- set of prometheus alerts to define
   # @default -- list of predefined alerts
   rules:
-    - alert: VaultAutopilotNodeHealthy
-      # Set to 1 if Autopilot considers all nodes healthy
-      # https://www.vaultproject.io/docs/internals/telemetry#integrated-storage-raft-autopilot
+    - alert: VaultAutopilotHealthy
       expr: vault_autopilot_healthy < 1
       for: 1m
       labels:
@@ -93,7 +91,7 @@ prometheusRules:
         severity: critical
       annotations:
         summary: High frequency of failed Vault requests
-        description: There has been an increased number of failed Vault requests in the last 15 minutes
+        description: There has been an increased number of failed Vault requests in the last 20 minutes
     - alert: VaultResponseFailures
       expr: increase(vault_audit_log_response_failure[5m]) > 0
       for: 15m
@@ -101,7 +99,7 @@ prometheusRules:
         severity: critical
       annotations:
         summary: High frequency of failed Vault responses
-        description: There has been an increased number of failed Vault responses in the last 15 minutes
+        description: There has been an increased number of failed Vault responses in the last 20 minutes
     - alert: VaultTokenCreate
       expr: increase(vault_token_create_count[5m]) > 100
       for: 15m
@@ -109,7 +107,7 @@ prometheusRules:
         severity: critical
       annotations:
         summary: High frequency of created Vault token
-        description: There has been an increased number of Vault token creation in the last 15 minutes
+        description: There has been an increased number of Vault token creation in the last 20 minutes
     - alert: VaultTokenStore
       expr: increase(vault_token_store_count[5m]) > 100
       for: 15m
@@ -117,4 +115,4 @@ prometheusRules:
         severity: critical
       annotations:
         summary: High frequency of stored Vault token
-        description: There has been an increased number of Vault token storing in the last 15 minutes
+        description: There has been an increased number of Vault token storing in the last 20 minutes
