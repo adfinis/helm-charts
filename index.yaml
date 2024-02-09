@@ -1144,6 +1144,30 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "fix: README for `azureWorkloadIdentityWebhook`"
+    apiVersion: v2
+    created: "2024-02-09T14:31:54.978549419Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for Azure applications
+    digest: bb720a52fd956299f2203beb0faf4316d6ff238acba740569b966bed01b394ac
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.13.2/azure-apps-0.13.2.tgz
+    version: 0.13.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update argoconfig dependency"
           links:
             - name: Github PR
@@ -25363,4 +25387,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-09T14:29:49.762862642Z"
+generated: "2024-02-09T14:31:54.980359347Z"
