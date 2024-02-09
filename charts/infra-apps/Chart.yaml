@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.194.0
+version: 0.195.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,18 +18,22 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: fixed
-      description: "feat: Update Argo CD from 2.9.4 to 2.9.5"
+      description: "feat: Update Argo CD from 2.9.4 to 2.10.0"
       links:
-        - name: "Argo CD 3.9.5"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.9.5
+        - name: "Argo CD 2.10.0"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.0
     - kind: changed
-      description: "feat: Update argocd chart from 5.53.1 to 5.53.8"
+      description: "feat: Update argocd chart from 5.53.8 to 6.0.1"
       links:
-        - name: "chore: Change redis repository to public.ecr.aws"
-          url: https://github.com/argoproj/argo-helm/pull/2446
-        - name: "chore: Provide Casbin matcher explicitly"
-          url: https://github.com/argoproj/argo-helm/pull/2445
-        - name: "fix: fail to render `.Values.configs.secret.azureDevops`"
-          url: https://github.com/argoproj/argo-helm/pull/2443
-        - name: "feat: Support Azure DevOps webhook Secret"
-          url: https://github.com/argoproj/argo-helm/pull/2439
+        - name: "feat!: remove deprecated features and redesign Ingress"
+          url: https://github.com/argoproj/argo-helm/pull/2407
+        - name: "feat: Add probes for Redis"
+          url: https://github.com/argoproj/argo-helm/pull/2400
+        - name: "fix: Update notifications config"
+          url: https://github.com/argoproj/argo-helm/pull/2474
+        - name: "fix: Security patches for Dex"
+          url: https://github.com/argoproj/argo-helm/pull/2468
+        - name: "fix: Security patches for Redis"
+          url: https://github.com/argoproj/argo-helm/pull/2466
+        - name: "fix: restart server when argocd-cm is changed"
+          url: https://github.com/argoproj/argo-helm/pull/2466
