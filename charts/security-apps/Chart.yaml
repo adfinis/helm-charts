@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.82.0
+version: 0.83.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,44 +18,7 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: security
-      description: |
-        feat: Update kyverno from v1.10.0 to v1.11.4
-
-        Potentially breaking:
-        * The policy that applies to Deployment/scale subresource has
-          been changed to use condition anchor for the condition check.
-          This may break your existing policy if you used the policy
-          restrict-scale to block the scale action.
-        * Policy Reports are now created on a per-resource basis and
-          using a UID as the name rather than the previous behavior of
-          per-policy. This may be a breaking change if you relied upon
-          either of these attributes in previous versions. This change
-          has the benefit of putting less pressure on the Kubernetes
-          API server and less storage cost on etcd.
-        * In accordance with Cosign 2.0 updates, the Rekor URL is now
-          required in a policy. The url field may be empty ("") but must
-          be specified even if you've opted not to store signatures in a
-          Rekor instance. Users upgrading from Kyverno v1.10 to v1.11 who
-          have image verification policies using cosign will have to
-          explicitly disable Tlogs and SCT verification in their policy
-          using the rekor.ignoreTlogs and ctlog.IgnoreSCT fields if they
-          did not use Rekor while signing the image.
+      description: "csi-secrets-driver: Update 1.4.0 to 1.4.1"
       links:
-        - name: "Release 1.11.4"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.11.4
-        - name: "Release 1.11.3"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.11.3
-        - name: "Release 1.11.2"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.11.2
-        - name: "Release 1.11.1"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.11.1
-        - name: "Release 1.11.0"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.11.0
-        - name: "Release 1.10.4"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.10.4
-        - name: "Release 1.10.3"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.10.3
-        - name: "Release 1.10.2"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.10.2
-        - name: "Release 1.10.1"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.10.1
+        - name: Github Release
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.4.1
