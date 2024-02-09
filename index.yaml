@@ -12400,6 +12400,39 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Update loki chart from 5.41.4 to 5.41.8"
+          links:
+            - name: "fix(gateway): fix crash on ipv4 only systems"
+              url: https://github.com/grafana/loki/pull/11722
+            - name: "feat: Add capability to disable specific alert rules Loki"
+              url: https://github.com/grafana/loki/pull/11241
+            - name: "fix: added missing namespace to query-scheduler-discovery service"
+              url: https://github.com/grafana/loki/pull/11648
+            - name: "fix: Added 'swift' type object storage to resolve"
+              url: https://github.com/grafana/loki/pull/11621
+    apiVersion: v2
+    created: "2024-02-09T14:37:10.847789166Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: d0461e89aac111873c6386f11ad544f1045106e5c967bee566356e29fba96df2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.30.0/logging-apps-0.30.0.tgz
+    version: 0.30.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update argoconfig dependency"
           links:
             - name: Github PR
@@ -25387,4 +25420,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-09T14:31:54.980359347Z"
+generated: "2024-02-09T14:37:10.84920631Z"
