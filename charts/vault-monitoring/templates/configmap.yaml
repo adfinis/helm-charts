@@ -1,4 +1,4 @@
-{{- if eq .Values.vault.serviceMonitor.authentication true }}
+{{- if .Values.vault.serviceMonitor.authentication }}
 apiVersion: "v1"
 kind: "ConfigMap"
 metadata:
