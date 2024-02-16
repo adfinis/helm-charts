@@ -1,6 +1,6 @@
 # vault-monitoring
 
-![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.3.1](https://img.shields.io/badge/Version-0.3.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 monitor your vault server from within Kubernetes' prometheus
 
@@ -34,6 +34,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | vault.serverName | string | `"vault.example.com"` | the vault servername |
 | vault.service.selector | object | `{}` | definition of the  vault service selector for endpoint selection. Keep empty for using ExternalName |
 | vault.service.type | string | `"ExternalName"` | which type the vault service has. For connecting to an external vault server, choose ExternalName |
+| vault.serviceMonitor.authentication | bool | `true` | Specify to enable authentication |
 | vault.serviceMonitor.bearerTokenFile | string | `"/etc/prometheus/config_out/.vault-token"` | Specify a bearerTokenFile for authentication. Keep empty for Unauthenticated access |
 | vault.serviceMonitor.create | bool | `true` | wheter or not the serviceMonitor should be created |
 | vault.serviceMonitor.labels | object | `{}` | labels to set on the vault serviceMonitor |
