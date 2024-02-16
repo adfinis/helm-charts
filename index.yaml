@@ -25288,6 +25288,26 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "make bearerTokenFile toggleable"
+    apiVersion: v2
+    created: "2024-02-16T12:59:46.734778756Z"
+    description: monitor your vault server from within Kubernetes' prometheus
+    digest: 18abfb87ec946498308827e9472e3cd5b2436bf796d604938838711299f614f4
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: vault-monitoring
+    sources:
+    - https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/vault-monitoring-0.3.1/vault-monitoring-0.3.1.tgz
+    version: 0.3.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "make bearerTokenFile optional"
     apiVersion: v2
     created: "2024-02-07T13:31:28.924722403Z"
@@ -25420,4 +25440,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-09T14:37:10.84920631Z"
+generated: "2024-02-16T12:59:46.735980516Z"
