@@ -2,7 +2,7 @@ apiVersion: v2
 name: vault-monitoring
 description: monitor your vault server from within Kubernetes' prometheus
 type: application
-version: 0.3.0
+version: 0.3.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring
 sources:
   - https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring
@@ -13,4 +13,4 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "make bearerTokenFile optional"
+      description: "make bearerTokenFile toggleable"
