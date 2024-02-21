@@ -17235,6 +17235,34 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: security
+          description: "stackrox-central and stackrox-secured-cluster-services: Update 400.2.2 to 400.3.4"
+          links:
+            - name: Changelog
+              url: https://github.com/stackrox/stackrox/blob/master/CHANGELOG.md#430
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-02-21T14:49:20.179149682Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: a50077b9f6ff5da954b0bc004c041d266fa78ff2ac010824a3320729b293655e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.84.0/security-apps-0.84.0.tgz
+    version: 0.84.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: security
           description: "csi-secrets-driver: Update 1.4.0 to 1.4.1"
           links:
             - name: Github Release
@@ -25473,4 +25501,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-16T15:46:08.244837615Z"
+generated: "2024-02-21T14:49:20.180541316Z"
