@@ -5049,6 +5049,46 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: fixed
+          description: |
+            feat: Update cert-manager from 1.13.2 to 1.14.3
+
+            The 1.14.0 release addressed several weaknesses found during a security
+            audit of cert-manager.
+          links:
+            - name: "cert-manager 1.14.3"
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.3
+            - name: "cert-manager 1.14.2"
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.2
+            - name: "cert-manager 1.14.1"
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.1
+            - name: "cert-manager 1.14.0"
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.0
+            - name: "cert-manager 1.13.3"
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.13.3
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-02-23T13:28:32.470888671Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 78f99b2ca534cc6e48d6a9c645776aaa16312815350c791e2444940cce485025
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.196.0/infra-apps-0.196.0.tgz
+    version: 0.196.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
           description: "feat: Update Argo CD from 2.9.4 to 2.10.0"
           links:
             - name: "Argo CD 2.10.0"
@@ -25501,4 +25541,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-21T14:49:20.180541316Z"
+generated: "2024-02-23T13:28:32.472449672Z"
