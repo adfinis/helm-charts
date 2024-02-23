@@ -160,7 +160,7 @@ rbacManager:
   # -- Chart
   chart: rbac-manager
   # -- [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version
-  targetRevision: 1.15.1
+  targetRevision: 1.19.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml)
   values: {}
