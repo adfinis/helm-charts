@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.195.0
+version: 0.196.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,25 +15,22 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: fixed
-      description: "feat: Update Argo CD from 2.9.4 to 2.10.0"
+      description: |
+        feat: Update cert-manager from 1.13.2 to 1.14.3
+
+        The 1.14.0 release addressed several weaknesses found during a security
+        audit of cert-manager.
       links:
-        - name: "Argo CD 2.10.0"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.0
-    - kind: changed
-      description: "feat: Update argocd chart from 5.53.8 to 6.0.1"
-      links:
-        - name: "feat!: remove deprecated features and redesign Ingress"
-          url: https://github.com/argoproj/argo-helm/pull/2407
-        - name: "feat: Add probes for Redis"
-          url: https://github.com/argoproj/argo-helm/pull/2400
-        - name: "fix: Update notifications config"
-          url: https://github.com/argoproj/argo-helm/pull/2474
-        - name: "fix: Security patches for Dex"
-          url: https://github.com/argoproj/argo-helm/pull/2468
-        - name: "fix: Security patches for Redis"
-          url: https://github.com/argoproj/argo-helm/pull/2466
-        - name: "fix: restart server when argocd-cm is changed"
-          url: https://github.com/argoproj/argo-helm/pull/2466
+        - name: "cert-manager 1.14.3"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.3
+        - name: "cert-manager 1.14.2"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.2
+        - name: "cert-manager 1.14.1"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.1
+        - name: "cert-manager 1.14.0"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.0
+        - name: "cert-manager 1.13.3"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.13.3
