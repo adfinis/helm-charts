@@ -33,6 +33,14 @@ spec:
             envFrom:
             - configMapRef:
                 name: {{ include "openshift-etcd-backup.fullname" . }}
+            {{- if .Values.persistence.s3.enabled }}
+            - secretRef:
+              {{- if .Values.persistence.s3.existingSecret }}
+                name: "{{ .Values.persistence.s3.existingSecret }}"
+              {{- else }}
+                name: {{ include "openshift-etcd-backup.fullname"  . }}-secret
+              {{- end }}
+            {{- end }}
             resources:
               {{- toYaml .Values.resources | nindent 14 }}
             securityContext:
