@@ -46,6 +46,8 @@ persistence:
     name: etcd-backup
     # -- S3 endpoint host
     host: https://minio.local:9000
+    # -- S3 bucket name
+    bucket: etcd-backup
     # -- S3 access key
     accessKey: mysuperaccesskey
     # -- S3 secret key
