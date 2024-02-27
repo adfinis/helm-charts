@@ -5049,6 +5049,55 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: fixed
+          description: "feat: Update rbac-manager from 1.5.0 to 1.7.0"
+          links:
+            - name: rbac-manager 1.7.0
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.7.0
+            - name: rbac-manager 1.6.5
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.6.5
+            - name: rbac-manager 1.6.4
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.6.4
+            - name: rbac-manager 1.6.3
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.6.3
+            - name: rbac-manager 1.6.2
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.6.2
+            - name: rbac-manager 1.6.1
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.6.1
+            - name: rbac-manager 1.6.0
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.6.0
+        - kind: changed
+          description: "Update rbac-manager chart from 1.15.1 to 1.19.0"
+          links:
+            - name: "feat: add option to add relabelings to serviceMonitor"
+              url: https://github.com/FairwindsOps/charts/pull/1357
+            - name: "fix: rbac-manager for openshift and okd"
+              url: https://github.com/FairwindsOps/charts/pull/1238
+            - name: "fix: crd automount service account token field"
+              url: https://github.com/FairwindsOps/charts/pull/1104
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-02-27T10:12:43.718740408Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: d841333ebfc16602d77810d0bbcedd9399abc1911fa9c35c88b8af252795d218
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.197.0/infra-apps-0.197.0.tgz
+    version: 0.197.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
           description: |
             feat: Update cert-manager from 1.13.2 to 1.14.3
 
@@ -25541,4 +25590,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-23T13:28:32.472449672Z"
+generated: "2024-02-27T10:12:43.720156648Z"
