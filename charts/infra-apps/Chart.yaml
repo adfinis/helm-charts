@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.196.0
+version: 0.197.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,19 +18,28 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: fixed
-      description: |
-        feat: Update cert-manager from 1.13.2 to 1.14.3
-
-        The 1.14.0 release addressed several weaknesses found during a security
-        audit of cert-manager.
+      description: "feat: Update rbac-manager from 1.5.0 to 1.7.0"
       links:
-        - name: "cert-manager 1.14.3"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.3
-        - name: "cert-manager 1.14.2"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.2
-        - name: "cert-manager 1.14.1"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.1
-        - name: "cert-manager 1.14.0"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.0
-        - name: "cert-manager 1.13.3"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.13.3
+        - name: rbac-manager 1.7.0
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.7.0
+        - name: rbac-manager 1.6.5
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.6.5
+        - name: rbac-manager 1.6.4
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.6.4
+        - name: rbac-manager 1.6.3
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.6.3
+        - name: rbac-manager 1.6.2
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.6.2
+        - name: rbac-manager 1.6.1
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.6.1
+        - name: rbac-manager 1.6.0
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.6.0
+    - kind: changed
+      description: "Update rbac-manager chart from 1.15.1 to 1.19.0"
+      links:
+        - name: "feat: add option to add relabelings to serviceMonitor"
+          url: https://github.com/FairwindsOps/charts/pull/1357
+        - name: "fix: rbac-manager for openshift and okd"
+          url: https://github.com/FairwindsOps/charts/pull/1238
+        - name: "fix: crd automount service account token field"
+          url: https://github.com/FairwindsOps/charts/pull/1104
