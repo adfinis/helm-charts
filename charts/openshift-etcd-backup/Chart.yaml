@@ -2,8 +2,8 @@ apiVersion: v2
 name: openshift-etcd-backup
 description: Chart for openshift-etcd-backup solution
 type: application
-version: 1.7.2
-appVersion: v1.7.1
+version: 1.8.0
+appVersion: v1.8.0
 keywords:
   - openshift-etcd-backup
   - openshift
@@ -20,4 +20,4 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "add annotations support for jobTemplate"
+      description: "add s3 storage capabilities"

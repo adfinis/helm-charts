@@ -1,6 +1,6 @@
 # openshift-etcd-backup
 
-![Version: 1.7.2](https://img.shields.io/badge/Version-1.7.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.7.1](https://img.shields.io/badge/AppVersion-v1.7.1-informational?style=flat-square)
+![Version: 1.8.0](https://img.shields.io/badge/Version-1.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.8.0](https://img.shields.io/badge/AppVersion-v1.8.0-informational?style=flat-square)
 
 Chart for openshift-etcd-backup solution
 
@@ -36,15 +36,21 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | monitoring.rules.cronjobMonitor | bool | `true` | Deploy PrometheusRule to check for cronjob fails. |
 | nameOverride | string | `""` |  |
 | nodeSelector."node-role.kubernetes.io/master" | string | `""` | The backup job should run on masters as etcd runs on them |
-| persistence.capacity | string | `"10Gi"` | Define the storage size |
 | persistence.hostPath.enabled | bool | `true` | Enable hostPath |
 | persistence.hostPath.path | string | `"/mnt/etcd-backups"` | hostPath existing path on host |
 | persistence.nfs.enabled | bool | `false` | Enable nfs backend storage |
 | persistence.nfs.path | string | `"/etcd-backups"` | NFS server path |
 | persistence.nfs.server | string | `"example.com"` | NFS server name or IP |
+| persistence.provisioning.capacity | string | `"10Gi"` | Define the storage size |
 | persistence.provisioning.enabled | bool | `false` | Enable provisioned backend storage with default or configured storageClass |
 | persistence.provisioning.storageClass | string | `""` |  |
-| persistence.reclaimPolicy | string | `"Retain"` | Set reclaim policy (Retain or Delete) |
+| persistence.s3.accessKey | string | `"mysuperaccesskey"` | S3 access key |
+| persistence.s3.bucket | string | `"etcd-backup"` | S3 bucket name |
+| persistence.s3.enabled | bool | `false` | Enable S3 backend storage |
+| persistence.s3.existingSecret | string | `""` | S3 use an existing Secret instead of creating one |
+| persistence.s3.host | string | `"https://minio.local:9000"` | S3 endpoint host |
+| persistence.s3.name | string | `"etcd-backup"` | S3 endpoint name |
+| persistence.s3.secretKey | string | `"mysupersecretkey"` | S3 secret key |
 | podSecurityContext | object | `{}` | Configure SecurityContext of the pod started by the job |
 | resources | object | `{}` |  |
 | securityContext.privileged | bool | `true` | Run pod as privileged |
