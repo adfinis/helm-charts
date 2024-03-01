@@ -15675,6 +15675,33 @@ entries:
         - kind: changed
           description: "add s3 storage capabilities"
     apiVersion: v2
+    appVersion: v1.8.4
+    created: "2024-03-01T10:43:45.348972186Z"
+    description: Chart for openshift-etcd-backup solution
+    digest: c9add95d3cacc22a8a5ce4fb61ca540147632a457ebfa5dad9e644c8b80de834
+    home: https://github.com/adfinis/openshift-etcd-backup
+    keywords:
+    - openshift-etcd-backup
+    - openshift
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: openshift-etcd-backup
+    sources:
+    - https://github.com/adfinis/openshift-etcd-backup
+    - https://github.com/adfinis/helm-charts/tree/main/charts/openshift-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/openshift-etcd-backup-1.8.4/openshift-etcd-backup-1.8.4.tgz
+    version: 1.8.4
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "add s3 storage capabilities"
+    apiVersion: v2
     appVersion: v1.8.1
     created: "2024-02-29T13:23:45.127959115Z"
     description: Chart for openshift-etcd-backup solution
@@ -25644,4 +25671,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-29T13:23:45.130102817Z"
+generated: "2024-03-01T10:43:45.351734754Z"
