@@ -2,7 +2,7 @@ apiVersion: v2
 name: timed
 description: Chart for Timed application
 type: application
-version: 0.16.31
+version: 0.16.32
 keywords:
   - timed
   - tracking
@@ -23,7 +23,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "update timed-frontend to v3.4.0"
+      description: "update timed-frontend to v3.5.0"
       links:
         - name: GitHub Release
-          url: https://github.com/adfinis/timed-frontend/releases/tag/v3.4.0
+          url: https://github.com/adfinis/timed-frontend/releases/tag/v3.5.0
