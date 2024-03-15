@@ -5049,6 +5049,95 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: fixed
+          description: "feat: Update Argo CD from 2.10.0 to 2.10.3"
+          links:
+            - name: "Argo CD 2.10.1"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.1
+            - name: "Argo CD 2.10.2"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.2
+            - name: "Argo CD 2.10.3"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.3
+        - kind: changed
+          description: "feat: Update argocd chart from 6.0.1 to 6.7.2"
+          links:
+            - name: "fix: default tls hosts for grpc ingress endpoint"
+              url: https://github.com/argoproj/argo-helm/pull/2580
+            - name: "feat: Support setting ArgoCD Notifications secret"
+              url: https://github.com/argoproj/argo-helm/pull/2577
+            - name: "feat: Support ApplicationSet in any Namespace"
+              url: https://github.com/argoproj/argo-helm/pull/2402
+            - name: "feat: Add templating of ingress extra paths and rules"
+              url: https://github.com/argoproj/argo-helm/pull/2530
+            - name: "fix: Pass argocd-server's ALB health check"
+              url: https://github.com/argoproj/argo-helm/pull/2553
+            - name: "chore: add support for http probe scheme for dex"
+              url: https://github.com/argoproj/argo-helm/pull/2550
+            - name: "feat: Add support for application controller dynamic cluster distribution"
+              url: https://github.com/argoproj/argo-helm/pull/2539
+            - name: "fix: Fix dex probes"
+              url: https://github.com/argoproj/argo-helm/pull/2546
+            - name: "feat: Allow modification of path and port for dex liveness and readiness probes"
+              url: https://github.com/argoproj/argo-helm/pull/2542
+            - name: "fix: Allow to use dedicated gRCP ingress with GKE implementation"
+              url: https://github.com/argoproj/argo-helm/pull/2541
+            - name: "feat: Format redis health check confimap mode in decimal"
+              url: https://github.com/argoproj/argo-helm/pull/2535
+            - name: "chore: Update Redis image to 7.2.4"
+              url: https://github.com/argoproj/argo-helm/pull/2533
+            - name: "fix: Fix path order in AWS Ingress declaration"
+              url: https://github.com/argoproj/argo-helm/pull/2531
+            - name: "fix: Add missing global.domain default values"
+              url: https://github.com/argoproj/argo-helm/pull/2525
+            - name: "feat: bump redis chart dep and redis exporter"
+              url: https://github.com/argoproj/argo-helm/pull/2524
+            - name: "feat: Add global domain configuration"
+              url: https://github.com/argoproj/argo-helm/pull/2499
+            - name: "fix: Fix secret name for applicationset webhook ingress"
+              url: https://github.com/argoproj/argo-helm/pull/2511
+            - name: "chore: Disable argocd-repo-server cluster role by default"
+              url: https://github.com/argoproj/argo-helm/pull/2498
+            - name: "fix: Use with instead of range on reposerver serviceaccount"
+              url: https://github.com/argoproj/argo-helm/pull/2506
+            - name: "chore: update notifications links to latest documentation"
+              url: https://github.com/argoproj/argo-helm/pull/2503
+            - name: "fix: Use correct protocols for Istio service discovery"
+              url: https://github.com/argoproj/argo-helm/pull/2500
+            - name: "feat: Add scrapeTimeout property to server and application"
+              url: https://github.com/argoproj/argo-helm/pull/2489
+            - name: "fix: Fix ports and TLS for dedicated gRPC ingress"
+              url: https://github.com/argoproj/argo-helm/pull/2497
+            - name: "fix: add hostname of extraHost to tls hosts"
+              url: https://github.com/argoproj/argo-helm/pull/2485
+            - name: "fix: Fix applicationset network policy when webhook is enabled"
+              url: https://github.com/argoproj/argo-helm/pull/2484
+            - name: "fix: Fix ingressGrpc extraTls"
+              url: https://github.com/argoproj/argo-helm/pull/2480
+            - name: "fix: Fix ingress extraHosts"
+              url: https://github.com/argoproj/argo-helm/pull/2479
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-03-15T08:57:46.306785101Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: ba91ff79457dbc25111ae143976cacaf7f002560db45ecaf52ab24265de221f8
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.198.0/infra-apps-0.198.0.tgz
+    version: 0.198.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
           description: "feat: Update rbac-manager from 1.5.0 to 1.7.0"
           links:
             - name: rbac-manager 1.7.0
@@ -25704,4 +25793,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-03-11T13:00:26.443270428Z"
+generated: "2024-03-15T08:57:46.308068364Z"
