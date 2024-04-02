@@ -46,6 +46,9 @@ persistence:
     name: etcd-backup
     # -- S3 endpoint host
     host: https://minio.local:9000
+    # -- Inject OpenShift CA
+    ca:
+      enabled: false
     # -- S3 bucket name
     bucket: etcd-backup
     # -- S3 access key

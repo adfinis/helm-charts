@@ -1,0 +1,10 @@
+{{- if and (.Values.persistence.s3.enabled) (.Values.persistence.s3.ca.enabled) }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "openshift-etcd-backup.fullname" . }}-ca-inject
+  labels:
+    {{- include "openshift-etcd-backup.labels" . | nindent 4 }}
+    config.openshift.io/inject-trusted-cabundle: "true"
+data: {}
+{{- end}}
