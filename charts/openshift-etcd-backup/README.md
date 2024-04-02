@@ -1,6 +1,6 @@
 # openshift-etcd-backup
 
-![Version: 1.8.5](https://img.shields.io/badge/Version-1.8.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.8.5](https://img.shields.io/badge/AppVersion-v1.8.5-informational?style=flat-square)
+![Version: 1.8.6](https://img.shields.io/badge/Version-1.8.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.8.5](https://img.shields.io/badge/AppVersion-v1.8.5-informational?style=flat-square)
 
 Chart for openshift-etcd-backup solution
 
@@ -46,6 +46,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | persistence.provisioning.storageClass | string | `""` |  |
 | persistence.s3.accessKey | string | `"mysuperaccesskey"` | S3 access key |
 | persistence.s3.bucket | string | `"etcd-backup"` | S3 bucket name |
+| persistence.s3.ca | object | `{"enabled":false}` | Inject OpenShift CA |
 | persistence.s3.enabled | bool | `false` | Enable S3 backend storage |
 | persistence.s3.existingSecret | string | `""` | S3 use an existing Secret instead of creating one |
 | persistence.s3.host | string | `"https://minio.local:9000"` | S3 endpoint host |

@@ -52,6 +52,10 @@ spec:
             - name: volume-backup
               mountPath: /backup
             {{- end }}
+            {{- if and (.Values.persistence.s3.enabled) (.Values.persistence.s3.ca.enabled) }}
+            - name: {{ include "openshift-etcd-backup.fullname" . }}-ca-inject
+              mountPath: /etc/pki/ca-trust/source/anchors
+            {{- end }}
           {{- with .Values.nodeSelector }}
           nodeSelector:
             {{- toYaml . | nindent 12 }}
@@ -87,4 +91,9 @@ spec:
               path: {{ .Values.persistence.hostPath.path | quote }}
               type: Directory
             {{- end }}
+          {{- end }}
+          {{- if and (.Values.persistence.s3.enabled) (.Values.persistence.s3.ca.enabled) }}
+          - name: {{ include "openshift-etcd-backup.fullname" . }}-ca-inject
+            configMap:
+              name: {{ include "openshift-etcd-backup.fullname" . }}-ca-inject
           {{- end }}
