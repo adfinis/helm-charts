@@ -15790,6 +15790,36 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "add S3 CA support"
+          links:
+            - name: Add S3 CA support
+              url: https://docs.openshift.com/container-platform/4.14/networking/configuring-a-custom-pki.html#certificate-injection-using-operators_configuring-a-custom-pki
+    apiVersion: v2
+    appVersion: v1.8.5
+    created: "2024-04-02T13:16:14.974093972Z"
+    description: Chart for openshift-etcd-backup solution
+    digest: 4665cdf7d0958026ca85f447d22ef882a160224a42d7e8711f1c859c2f948ff1
+    home: https://github.com/adfinis/openshift-etcd-backup
+    keywords:
+    - openshift-etcd-backup
+    - openshift
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: openshift-etcd-backup
+    sources:
+    - https://github.com/adfinis/openshift-etcd-backup
+    - https://github.com/adfinis/helm-charts/tree/main/charts/openshift-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/openshift-etcd-backup-1.8.6/openshift-etcd-backup-1.8.6.tgz
+    version: 1.8.6
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "bump openshift-etcd-backup image to v1.8.5"
           links:
             - name: openshift-etcd-backup release v1.8.5
@@ -25851,4 +25881,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-03-19T10:33:07.501237528Z"
+generated: "2024-04-02T13:16:14.975627209Z"
