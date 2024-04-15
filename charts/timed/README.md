@@ -1,6 +1,6 @@
 # timed
 
-![Version: 0.16.32](https://img.shields.io/badge/Version-0.16.32-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.16.33](https://img.shields.io/badge/Version-0.16.33-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Chart for Timed application
 
@@ -44,24 +44,24 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | auth.oidc.signAlgorithm | string | `"RS256"` | Algorithm the OIDC provider uses to sign ID tokens |
 | auth.oidc.url | string | `"https://example.com/auth/realms/timed/protocol/openid-connect"` | OIDC host |
 | auth.oidc.verifySSL | string | `"True"` | OIDC verify SSL |
-| backend.cronjobs.budgetCheck | object | `{"command":["./manage.py","budget_check"],"schedule":"0 3 * * *"}` | Budget Check |
-| backend.cronjobs.notifyChangedEmployments | object | `{"command":["./manage.py","notify_changed_employments"],"schedule":"0 2 * * 1"}` | Notify changed employments |
-| backend.cronjobs.notifyReviewersFirst | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","5"],"schedule":"0 8 4 * *"}` | Notify reviewers first stage |
+| backend.cronjobs.budgetCheck | object | `{"command":["manage.py","budget_check"],"schedule":"0 3 * * *"}` | Budget Check |
+| backend.cronjobs.notifyChangedEmployments | object | `{"command":["manage.py","notify_changed_employments"],"schedule":"0 2 * * 1"}` | Notify changed employments |
+| backend.cronjobs.notifyReviewersFirst | object | `{"command":["manage.py","notify_reviewers_unverified","--offset","5"],"schedule":"0 8 4 * *"}` | Notify reviewers first stage |
 | backend.cronjobs.notifyReviewersFirst.command[3] | string | `"5"` | Period will end today minus given offset |
-| backend.cronjobs.notifyReviewersSecond | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","12","--message","'Please verify your reports.'"],"schedule":"0 8 11 * *"}` | Notify reviewers second stage |
+| backend.cronjobs.notifyReviewersSecond | object | `{"command":["manage.py","notify_reviewers_unverified","--offset","12","--message","'Please verify your reports.'"],"schedule":"0 8 11 * *"}` | Notify reviewers second stage |
 | backend.cronjobs.notifyReviewersSecond.command[3] | string | `"12"` | Period will end today minus given offset |
 | backend.cronjobs.notifyReviewersSecond.command[5] | string | `"'Please verify your reports.'"` | Additional message to send if there are unverified reports |
-| backend.cronjobs.notifyReviewersThird | object | `{"command":["./manage.py","notify_reviewers_unverified","--offset","19","--message","'Please verify your reports immediately!'"],"schedule":"0 8 18 * *"}` | Notify reviewers third stage |
+| backend.cronjobs.notifyReviewersThird | object | `{"command":["manage.py","notify_reviewers_unverified","--offset","19","--message","'Please verify your reports immediately!'"],"schedule":"0 8 18 * *"}` | Notify reviewers third stage |
 | backend.cronjobs.notifyReviewersThird.command[3] | string | `"19"` | Period will end today minus given offset |
 | backend.cronjobs.notifyReviewersThird.command[5] | string | `"'Please verify your reports immediately!'"` | Additional message to send if there are unverified reports |
-| backend.cronjobs.notifySupervisors | object | `{"command":["./manage.py","notify_supervisors_shorttime"],"schedule":"0 8 * * 4"}` | Notify supervisors |
-| backend.cronjobs.redmineReport | object | `{"command":["./manage.py","redmine_report"],"schedule":"0 1 * * 1"}` | Redmine report |
-| backend.cronjobs.updateProjectExpanditureFirst | object | `{"command":["./manage.py","update_project_expenditure"],"schedule":"0 8 * * 3"}` | Update project expanditure in redmine first time |
-| backend.cronjobs.updateProjectExpanditureSecond | object | `{"command":["./manage.py","update_project_expenditure"],"schedule":"0 8 * * 0"}` | Update project expanditure in redmine second time |
+| backend.cronjobs.notifySupervisors | object | `{"command":["manage.py","notify_supervisors_shorttime"],"schedule":"0 8 * * 4"}` | Notify supervisors |
+| backend.cronjobs.redmineReport | object | `{"command":["manage.py","redmine_report"],"schedule":"0 1 * * 1"}` | Redmine report |
+| backend.cronjobs.updateProjectExpanditureFirst | object | `{"command":["manage.py","update_project_expenditure"],"schedule":"0 8 * * 3"}` | Update project expanditure in redmine first time |
+| backend.cronjobs.updateProjectExpanditureSecond | object | `{"command":["manage.py","update_project_expenditure"],"schedule":"0 8 * * 0"}` | Update project expanditure in redmine second time |
 | backend.existingSecret | string | `nil` | Specify an existing secret that gets used instead of a Helm managed secret based on several values. |
 | backend.image.pullPolicy | string | `"IfNotPresent"` | Backend image pull policy |
 | backend.image.repository | string | `"ghcr.io/adfinis/timed-backend"` | Backend image name |
-| backend.image.tag | string | `"v3.0.7"` | Backend version. |
+| backend.image.tag | string | `"v3.0.10"` | Backend version. |
 | backend.jobs.dbmigrate.enable | bool | `true` | Enable the dbmigrate Job. This is configurable because timed can also run this on startup if so preferred. |
 | backend.livenessProbe.enabled | bool | `true` | Enable liveness probe on backend |
 | backend.livenessProbe.failureThreshold | int | `6` | Number of tries to perform the probe |
@@ -82,9 +82,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backend.replicaCount | int | `1` | Number of Backend replicas |
 | backend.resources | object | `{}` | Resource limits for backend |
 | backend.service.externalPort | int | `80` | External Port of backend service |
-| backend.service.internalPort | int | `80` | Internal Port of backend service |
+| backend.service.internalPort | int | `8080` | Internal Port of backend service |
 | backend.service.name | string | `"timed-backend"` | Backend service name |
-| backend.service.probesPort | int | `81` | Internal Port of backend service probes |
+| backend.service.probesPort | int | `8081` | Internal Port of backend service probes |
 | backend.service.type | string | `"ClusterIP"` | Backend service type |
 | backend.settings.admins | list | `[]` | Django administrators, example: Jon Doe <jon.doe@example.com> |
 | backend.settings.buildProject | string | `" BUILD"` | Define name for build projects |

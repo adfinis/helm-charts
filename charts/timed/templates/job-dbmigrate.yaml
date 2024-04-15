@@ -40,5 +40,5 @@ spec:
                 name: {{ include "timed.fullname" . }}-backend
             - configMapRef:
                 name: {{ include "timed.fullname" . }}-backend
-          command: ["./manage.py", "migrate"]
+          command: ["manage.py", "migrate"]
 {{- end }}
