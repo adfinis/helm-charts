@@ -12,7 +12,7 @@ backend:
     # -- Backend image name
     repository: ghcr.io/adfinis/timed-backend
     # -- Backend version.
-    tag: v3.0.7
+    tag: v3.0.10
     # -- Backend image pull policy
     pullPolicy: IfNotPresent
   service:
@@ -23,9 +23,9 @@ backend:
     # -- External Port of backend service
     externalPort: 80
     # -- Internal Port of backend service
-    internalPort: 80
+    internalPort: 8080
     # -- Internal Port of backend service probes
-    probesPort: 81
+    probesPort: 8081
   # -- Specify an existing secret that gets used instead of a Helm managed secret based on several values.
   existingSecret: ~
   # -- Resource limits for backend
@@ -128,13 +128,13 @@ backend:
     notifySupervisors:
       schedule: "0 8 * * 4"
       command:
-        - "./manage.py"
+        - "manage.py"
         - "notify_supervisors_shorttime"
     # -- Notify reviewers first stage
     notifyReviewersFirst:
       schedule: "0 8 4 * *"
       command:
-        - "./manage.py"
+        - "manage.py"
         - "notify_reviewers_unverified"
         - "--offset"
         # -- Period will end today minus given offset
@@ -143,7 +143,7 @@ backend:
     notifyReviewersSecond:
       schedule: "0 8 11 * *"
       command:
-        - "./manage.py"
+        - "manage.py"
         - "notify_reviewers_unverified"
         - "--offset"
         # -- Period will end today minus given offset
@@ -155,7 +155,7 @@ backend:
     notifyReviewersThird:
       schedule: "0 8 18 * *"
       command:
-        - "./manage.py"
+        - "manage.py"
         - "notify_reviewers_unverified"
         - "--offset"
         # -- Period will end today minus given offset
@@ -167,31 +167,31 @@ backend:
     redmineReport:
       schedule: "0 1 * * 1"
       command:
-        - "./manage.py"
+        - "manage.py"
         - "redmine_report"
     # -- Notify changed employments
     notifyChangedEmployments:
       schedule: "0 2 * * 1"
       command:
-        - "./manage.py"
+        - "manage.py"
         - "notify_changed_employments"
     # -- Budget Check
     budgetCheck:
       schedule: "0 3 * * *"
       command:
-        - "./manage.py"
+        - "manage.py"
         - "budget_check"
     # -- Update project expanditure in redmine first time
     updateProjectExpanditureFirst:
       schedule: "0 8 * * 3"
       command:
-        - "./manage.py"
+        - "manage.py"
         - "update_project_expenditure"
     # -- Update project expanditure in redmine second time
     updateProjectExpanditureSecond:
       schedule: "0 8 * * 0"
       command:
-        - "./manage.py"
+        - "manage.py"
         - "update_project_expenditure"
 
 frontend:
