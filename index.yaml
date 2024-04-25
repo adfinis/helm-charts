@@ -20836,6 +20836,39 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "update timed-backend to v3.0.16"
+          links:
+            - name: GitHub Release
+              url: https://github.com/adfinis/timed-backend/releases/tag/v3.0.16
+    apiVersion: v2
+    created: "2024-04-25T09:46:43.765734707Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~11.6.7
+    description: Chart for Timed application
+    digest: b3c6880648de4dd79895ee67e6b570cfea22efb2aea9c55998e220de01e654de
+    home: https://github.com/adfinis/timed-frontend
+    keywords:
+    - timed
+    - tracking
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: timed
+    sources:
+    - https://github.com/adfinis/timed-backend
+    - https://github.com/adfinis/timed-frontend
+    - https://github.com/adfinis/helm-charts/tree/main/charts/timed
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/timed-0.16.37/timed-0.16.37.tgz
+    version: 0.16.37
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update timed-backend to v3.0.15"
           links:
             - name: GitHub Release
@@ -26017,4 +26050,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-04-22T09:52:41.370785611Z"
+generated: "2024-04-25T09:46:43.76762889Z"
