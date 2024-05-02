@@ -5049,6 +5049,63 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: fixed
+          description: "feat: Update Argo CD from 2.10.4 to 2.10.9"
+          links:
+            - name: "Argo CD 2.10.5"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.5
+            - name: "Argo CD 2.10.6"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.6
+            - name: "Argo CD 2.10.7"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.7
+            - name: "Argo CD 2.10.8"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.8
+            - name: "Argo CD 2.10.9"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.9
+        - kind: fixed
+          description: "feat: Update Helm chart from 6.73 to 6.7.18"
+          links:
+            - name: "fix: add timeout for jq"
+              url: https://github.com/argoproj/argo-helm/pull/2666
+            - name: "fix: Pre-set statusbadge.url only when statusbadge is enabled"
+              url: https://github.com/argoproj/argo-helm/pull/2658
+            - name: "feat: Pre-set statusbadge.url to global.domain value"
+              url: https://github.com/argoproj/argo-helm/pull/2657
+            - name: "feat: Bump argocd-extension-installer to 0.0.5"
+              url: https://github.com/argoproj/argo-helm/pull/2647
+            - name: "fix: make automountServiceAccountToken configurable"
+              url: https://github.com/argoproj/argo-helm/pull/2625
+            - name: "fix: Add required label for CLI on redis-ha-haproxy pod"
+              url: https://github.com/argoproj/argo-helm/pull/2627
+            - name: "feat: Add sizeLimit parameters on emptyDir"
+              url: https://github.com/argoproj/argo-helm/pull/2607
+            - name: "feat: enabled server cluster role permissions overriding"
+              url: https://github.com/argoproj/argo-helm/pull/2606
+            - name: "fix: support 'application in any namespace' for the argocd-server ClusterRole"
+              url: https://github.com/argoproj/argo-helm/pull/2609
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-05-02T07:09:06.578024769Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: aa225b816af56a96e956b34f6678639e2922d895ea8a4a283b69aaaa32dc230d
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.200.0/infra-apps-0.200.0.tgz
+    version: 0.200.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
           description: "feat: Update Argo CD from 2.10.3 to 2.10.4"
           links:
             - name: "Argo CD 2.10.4"
@@ -26050,4 +26107,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-04-25T09:46:43.76762889Z"
+generated: "2024-05-02T07:09:06.579465426Z"
