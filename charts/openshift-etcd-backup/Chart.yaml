@@ -2,8 +2,8 @@ apiVersion: v2
 name: openshift-etcd-backup
 description: Chart for openshift-etcd-backup solution
 type: application
-version: 1.8.6
-appVersion: v1.8.5
+version: 1.8.7
+appVersion: v1.8.6
 keywords:
   - openshift-etcd-backup
   - openshift
@@ -20,7 +20,7 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "add S3 CA support"
+      description: "bump openshift-etcd-backup image to v1.8.6"
       links:
-        - name: Add S3 CA support
-          url: https://docs.openshift.com/container-platform/4.14/networking/configuring-a-custom-pki.html#certificate-injection-using-operators_configuring-a-custom-pki
+        - name: openshift-etcd-backup release v1.8.6
+          url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.8.6
