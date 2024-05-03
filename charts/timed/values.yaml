@@ -203,7 +203,7 @@ frontend:
     # -- Frontend image pull policy
     pullPolicy: IfNotPresent
     # -- Frontend version.
-    tag: v3.5.0
+    tag: v3.6.0
   service:
     # -- Frontend service name
     name: timed-frontend
