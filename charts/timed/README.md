@@ -1,13 +1,12 @@
 # timed
 
-![Version: 0.16.38](https://img.shields.io/badge/Version-0.16.38-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+> **:exclamation: This Helm Chart is deprecated!**
 
-Chart for Timed application
+![Version: 0.16.39](https://img.shields.io/badge/Version-0.16.39-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+
+DEPRECATED use ghcr.io/adfinis/timed/helm/timed OCI Helm chart instead
 
 **Homepage:** <https://github.com/adfinis/timed-frontend>
-
-## Maintainers
-This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
