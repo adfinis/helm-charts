@@ -1,8 +1,8 @@
 apiVersion: v2
 name: timed
-description: Chart for Timed application
+description: DEPRECATED use ghcr.io/adfinis/timed/helm/timed OCI Helm chart instead
 type: application
-version: 0.16.38
+version: 0.16.39
 keywords:
   - timed
   - tracking
@@ -11,10 +11,7 @@ sources:
   - https://github.com/adfinis/timed-backend
   - https://github.com/adfinis/timed-frontend
   - https://github.com/adfinis/helm-charts/tree/main/charts/timed
-maintainers:
-  - name: adfinis
-    email: support@adfinis.com
-    url: https://adfinis.com
+deprecated: true
 dependencies:
   - name: postgresql
     version: ~11.6.7
@@ -23,7 +20,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "update timed-frontend to v3.6.0"
-      links:
-        - name: GitHub Release
-          url: https://github.com/adfinis/timed-frontend/releases/tag/v3.6.0
+      description: deprecated timed chart
