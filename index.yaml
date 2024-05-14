@@ -20923,6 +20923,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: deprecated timed chart
+    apiVersion: v2
+    created: "2024-05-14T11:35:50.395480386Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~11.6.7
+    deprecated: true
+    description: DEPRECATED use ghcr.io/adfinis/timed/helm/timed OCI Helm chart instead
+    digest: 59902b01c32953c889ed3049f0f632b75fcc1405f31ede3253a00a1ebd0e6adb
+    home: https://github.com/adfinis/timed-frontend
+    keywords:
+    - timed
+    - tracking
+    name: timed
+    sources:
+    - https://github.com/adfinis/timed-backend
+    - https://github.com/adfinis/timed-frontend
+    - https://github.com/adfinis/helm-charts/tree/main/charts/timed
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/timed-0.16.39/timed-0.16.39.tgz
+    version: 0.16.39
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update timed-frontend to v3.6.0"
           links:
             - name: GitHub Release
@@ -26170,4 +26197,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-03T09:52:08.944271218Z"
+generated: "2024-05-14T11:35:50.396706414Z"
