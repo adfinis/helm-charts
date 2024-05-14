@@ -82,7 +82,6 @@ for more in-depth information.
 | [mopsos](https://github.com/adfinis/helm-charts/tree/main/charts/mopsos) | Deploy Mopsos to a Kubernetes Cl... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [openshift-etcd-backup](https://github.com/adfinis/helm-charts/tree/main/charts/openshift-etcd-backup) | Chart for openshift-etcd-backup ... | ![Version: 1.8.x](https://img.shields.io/badge/version-1.8.x-brightgreen) |  ![App version: 1.8.x](https://img.shields.io/badge/app%20version-1.8.x-brightgreen) |
 | [osschallenge](https://github.com/adfinis/helm-charts/tree/main/charts/osschallenge) | Chart for OSS-Challenge application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |
-| [timed](https://github.com/adfinis/helm-charts/tree/main/charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  |
 | [vault-auth](https://github.com/adfinis/helm-charts/tree/main/charts/vault-auth) | A helm chart to install the vaul... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [vault-monitoring](https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring) | monitor your vault server from w... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  |
 
