@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.200.0
+version: 0.201.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,39 +15,19 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: fixed
-      description: "feat: Update Argo CD from 2.10.4 to 2.10.9"
+    - kind: changed
+      description: "feat: Update Argo CD from 2.10.9 to 2.11.0"
       links:
-        - name: "Argo CD 2.10.5"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.5
-        - name: "Argo CD 2.10.6"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.6
-        - name: "Argo CD 2.10.7"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.7
-        - name: "Argo CD 2.10.8"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.8
-        - name: "Argo CD 2.10.9"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.10.9
-    - kind: fixed
-      description: "feat: Update Helm chart from 6.73 to 6.7.18"
+        - name: "Argo CD 2.11.0"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.11.0
+    - kind: changed
+      description: "feat: Update Helm chart from 6.7.18 to 6.9.1"
       links:
-        - name: "fix: add timeout for jq"
-          url: https://github.com/argoproj/argo-helm/pull/2666
-        - name: "fix: Pre-set statusbadge.url only when statusbadge is enabled"
-          url: https://github.com/argoproj/argo-helm/pull/2658
-        - name: "feat: Pre-set statusbadge.url to global.domain value"
-          url: https://github.com/argoproj/argo-helm/pull/2657
-        - name: "feat: Bump argocd-extension-installer to 0.0.5"
-          url: https://github.com/argoproj/argo-helm/pull/2647
-        - name: "fix: make automountServiceAccountToken configurable"
-          url: https://github.com/argoproj/argo-helm/pull/2625
-        - name: "fix: Add required label for CLI on redis-ha-haproxy pod"
-          url: https://github.com/argoproj/argo-helm/pull/2627
-        - name: "feat: Add sizeLimit parameters on emptyDir"
-          url: https://github.com/argoproj/argo-helm/pull/2607
-        - name: "feat: enabled server cluster role permissions overriding"
-          url: https://github.com/argoproj/argo-helm/pull/2606
-        - name: "fix: support 'application in any namespace' for the argocd-server ClusterRole"
-          url: https://github.com/argoproj/argo-helm/pull/2609
+        - name: "fix: Application Set is no longer optional"
+          url: https://github.com/argoproj/argo-helm/pull/2688
+        - name: "fix: always install Application Set CRDs"
+          url: https://github.com/argoproj/argo-helm/pull/2682
+        - name: "fix: service config options"
+          url: https://github.com/argoproj/argo-helm/pull/2690
