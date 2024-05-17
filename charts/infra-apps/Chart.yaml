@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.201.0
+version: 0.202.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,19 +15,18 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat: Update Argo CD from 2.10.9 to 2.11.0"
+      description: |
+        feat: Update cert-manager from 1.14.3 to 1.14.5
+
+        Contains patches for CVE-2023-45288, CVE-2023-45288, and CVE-2024-24783.
+
+        Other featuers add more flexibility in x509 cert fields, like creating
+        CA certs with "Name Constraints" or AIA extensions.
       links:
-        - name: "Argo CD 2.11.0"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.11.0
-    - kind: changed
-      description: "feat: Update Helm chart from 6.7.18 to 6.9.1"
-      links:
-        - name: "fix: Application Set is no longer optional"
-          url: https://github.com/argoproj/argo-helm/pull/2688
-        - name: "fix: always install Application Set CRDs"
-          url: https://github.com/argoproj/argo-helm/pull/2682
-        - name: "fix: service config options"
-          url: https://github.com/argoproj/argo-helm/pull/2690
+        - name: "cert-manager 1.14.4"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.4
+        - name: "cert-manager 1.14.5"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.5
