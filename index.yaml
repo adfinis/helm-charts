@@ -5049,6 +5049,42 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            feat: Update cert-manager from 1.14.3 to 1.14.5
+
+            Contains patches for CVE-2023-45288, CVE-2023-45288, and CVE-2024-24783.
+
+            Other featuers add more flexibility in x509 cert fields, like creating
+            CA certs with "Name Constraints" or AIA extensions.
+          links:
+            - name: "cert-manager 1.14.4"
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.4
+            - name: "cert-manager 1.14.5"
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.5
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-05-17T13:25:13.57596005Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 466943fcd6ffbc4bad1f08e5466547f45654c5d00c88036a20a6001562c953d2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.202.0/infra-apps-0.202.0.tgz
+    version: 0.202.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Update Argo CD from 2.10.9 to 2.11.0"
           links:
             - name: "Argo CD 2.11.0"
@@ -26234,4 +26270,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-17T11:28:17.914870471Z"
+generated: "2024-05-17T13:25:13.577353016Z"
