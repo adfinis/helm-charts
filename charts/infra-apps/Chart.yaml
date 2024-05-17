@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.202.0
+version: 0.203.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,14 +19,12 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update cert-manager from 1.14.3 to 1.14.5
+        feat: Update nginx-ingress from 4.9.0 to 4.10.1
 
-        Contains patches for CVE-2023-45288, CVE-2023-45288, and CVE-2024-24783.
-
-        Other featuers add more flexibility in x509 cert fields, like creating
-        CA certs with "Name Constraints" or AIA extensions.
+        Updates the ingress controller to 1.10.1 and NGINX to 1.25 as well a a bunch of
+        dependencies and the base os.
       links:
-        - name: "cert-manager 1.14.4"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.4
-        - name: "cert-manager 1.14.5"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.14.5
+        - name: "controller 1.10.0"
+          url: https://github.com/kubernetes/ingress-nginx/blob/main/changelog/controller-1.10.0.md
+        - name: "controller 1.10.1"
+          url: https://github.com/kubernetes/ingress-nginx/blob/main/changelog/controller-1.10.1.md
