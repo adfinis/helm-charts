@@ -5048,6 +5048,43 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: "feat: Update Argo CD from 2.10.9 to 2.11.0"
+          links:
+            - name: "Argo CD 2.11.0"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.11.0
+        - kind: changed
+          description: "feat: Update Helm chart from 6.7.18 to 6.9.1"
+          links:
+            - name: "fix: Application Set is no longer optional"
+              url: https://github.com/argoproj/argo-helm/pull/2688
+            - name: "fix: always install Application Set CRDs"
+              url: https://github.com/argoproj/argo-helm/pull/2682
+            - name: "fix: service config options"
+              url: https://github.com/argoproj/argo-helm/pull/2690
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2024-05-17T11:28:17.913462913Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: e02548b77ce90362ce9e04abd1409aa64e2c504c69500204aa8836da531f4af1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.201.0/infra-apps-0.201.0.tgz
+    version: 0.201.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: fixed
           description: "feat: Update Argo CD from 2.10.4 to 2.10.9"
           links:
@@ -26197,4 +26234,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-14T11:35:50.396706414Z"
+generated: "2024-05-17T11:28:17.914870471Z"
