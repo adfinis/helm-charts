@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.43.0
+version: 0.44.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,9 +17,30 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: Update downscaler chart from 0.7.3 to 0.7.4"
+      description: |
+        feat: Update argocd-apps from 1.4.1 to 2.0.0
+
+        Replace lists with maps in argocd-apps.
+
+        Before:
+        ```yaml
+        applications:
+          - name: example-app
+            project: default
+            # ...
+        ```
+
+        After:
+        ```yaml
+        applications:
+          example-app:
+            project: default
+            # ...
+        ```
+
+        BREAKING CHANGE: Uses a map instead of a list to specify apps.
       links:
-        - name: "fix: bump version to be k8s>=1.25 ready"
-          url: https://github.com/deliveryhero/helm-charts/pull/543
-        - name: "upstream issue"
-          url: https://codeberg.org/hjacobs/kube-downscaler/issues/39
+        - name: "feat: use maps instead of lists"
+          url: "https://github.com/argoproj/argo-helm/pull/2538"
+        - name: "chore: deprecate argo-cd extensions"
+          url: "https://github.com/argoproj/argo-helm/pull/2449"
