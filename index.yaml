@@ -5061,6 +5061,40 @@ entries:
               url: https://github.com/kubernetes/ingress-nginx/blob/main/changelog/controller-1.10.1.md
       artifacthub.io/containsSecurityUpdates: "true"
     apiVersion: v2
+    created: "2024-05-21T13:55:45.426661227Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 4fa106a342c558b587b1e1fcd687b236f610e84b262c954b2bade66d0661485b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.204.0/infra-apps-0.204.0.tgz
+    version: 0.204.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
+            feat: Update nginx-ingress from 4.9.0 to 4.10.1
+
+            Updates the ingress controller to 1.10.1 and NGINX to 1.25 as well a a bunch of
+            dependencies and the base os.
+          links:
+            - name: "controller 1.10.0"
+              url: https://github.com/kubernetes/ingress-nginx/blob/main/changelog/controller-1.10.0.md
+            - name: "controller 1.10.1"
+              url: https://github.com/kubernetes/ingress-nginx/blob/main/changelog/controller-1.10.1.md
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
     created: "2024-05-17T20:53:02.221072907Z"
     dependencies:
     - name: argoconfig
@@ -26304,4 +26338,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-17T20:53:02.222576714Z"
+generated: "2024-05-21T13:55:45.428160049Z"
