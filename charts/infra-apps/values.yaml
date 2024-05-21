@@ -231,26 +231,17 @@ kured:
   # @default -- [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml)
   values: {}
 
-# -- [kubernetes-event-exporter](https://github.com/resmoio/kubernetes-event-exporter)
-# @default -- [example](./examples/kubernetes-event-exporter.yaml)
+# -- [kubernetes-event-exporter](https://github.com/resmoio/kubernetes-event-exporter) is DEPRECATED, use "otel-collector" instead
+# @default -- DEPRECATED
 kubeEventExporter:
-  # -- Enable kubernetes-event-exporter
   enabled: false
   name: kube-event-exporter
-  # -- Annotations for kubernetes-event-exporter app
   annotations: {}
   destination:
-    # -- Namespace
     namespace: infra-kube-event-exporter
-  # -- Repo URL
-  # @default -- [repo](https://charts.bitnami.com/bitnami)
   repoURL: https://charts.bitnami.com/bitnami
-  # -- Chart
   chart: kubernetes-event-exporter
-  # -- [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/kubernetes-event-exporter)
   targetRevision: 2.1.6
-  # -- Helm values
-  # @default -- [upstream values](https://github.com/bitnami/charts/blob/main/bitnami/kubernetes-event-exporter/values.yaml)
   values: {}
 
 # -- [mimir](https://github.com/grafana/mimir)
