@@ -12970,6 +12970,108 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            feat: Update loki chart from 5.41.8 to 6.5.2
+
+            - Update Loki to [3.0](https://grafana.com/docs/loki/latest/release-notes/v3-0/).
+            - Add support for CiliumNetworkPolicies
+          links:
+            - name: "fix: Ingress path mappings"
+              url: https://github.com/grafana/loki/pull/12932
+            - name: "fix: enterprise image tag, bucket name and proxy URLs"
+              url: https://github.com/grafana/loki/pull/12878
+            - name: "fix: Add missing Helm helper loki.hpa.apiVersion"
+              url: https://github.com/grafana/loki/pull/12755
+            - name: "fix: read & backend replicas settings"
+              url: https://github.com/grafana/loki/pull/12828
+            - name: "feat: Allow extraObject items as multiline strings"
+              url: https://github.com/grafana/loki/pull/12397
+            - name: "fix: Add missing OTLP endpoint to nginx config"
+              url: https://github.com/grafana/loki/pull/12709
+            - name: "feat: set Singlebinary as trigger for replicas"
+              url: https://github.com/grafana/loki/pull/12590
+            - name: "fix: Missing password for Loki-Canary when loki.auth_enabled is true"
+              url: https://github.com/grafana/loki/pull/12411
+            - name: "fix: Ingester zoneAwareReplication"
+              url: https://github.com/grafana/loki/pull/12659
+            - name: "feat: add toleration for bloom components"
+              url: https://github.com/grafana/loki/pull/12653
+            - name: "feat: Enable log volume endpoint by default in helm"
+              url: https://github.com/grafana/loki/pull/12690
+            - name: "feat: Add pattern ingester support in SSD mode"
+              url: https://github.com/grafana/loki/pull/12685
+            - name: "feat: Add headless ervice for bloom gateway"
+              url: https://github.com/grafana/loki/pull/12562
+            - name: "fix: only use default bucket names when using minio"
+              url: https://github.com/grafana/loki/pull/12548
+            - name: "feat!: update helm chart to support distributed mode and 3.0"
+              url: https://github.com/grafana/loki/pull/12067
+            - name: "feat: add support for additional PodLogs pipeline stages in `selfMonitoring`"
+              url: https://github.com/grafana/loki/pull/12389
+            - name: "fix: increase default value of backend minReplicas to 3"
+              url: https://github.com/grafana/loki/pull/12317
+            - name: "feat: Add extraContainers to read pods"
+              url: https://github.com/grafana/loki/pull/12243
+            - name: "feat: use http_listen_port for compactorAddress"
+              url: https://github.com/grafana/loki/pull/12230
+            - name: "fix: helm template error if ingress is enabled"
+              url: https://github.com/grafana/loki/pull/12241
+            - name: "fix: http_listen_port and grpc_listen_port fields in templates"
+              url: https://github.com/grafana/loki/pull/12242
+            - name: "fix: add protocol and port for default compactorAddress"
+              url: https://github.com/grafana/loki/pull/12191
+            - name: "feat: configurable http_listen_port and grpc_listen_port instead of hardcoded value"
+              url: https://github.com/grafana/loki/pull/11646
+            - name: "fix: allow to configure http_config for ruler"
+              url: https://github.com/grafana/loki/pull/12113
+            - name: "feat: add ciliumnetworkpolicy for world egress for table-manager"
+              url: https://github.com/grafana/loki/pull/12143
+            - name: "fix: backend-world-egress CiliumNetworkPolicy"
+              url: https://github.com/grafana/loki/pull/12128
+            - name: "feat: additional ciliumNetworkPolicies in loki helm chart for world egress for read, write and backend"
+              url: https://github.com/grafana/loki/pull/12066
+            - name: "fix: Added missing default values to support ServerSideApply"
+              url: https://github.com/grafana/loki/pull/11567
+            - name: "fix: Add alibabacloud to isUsingObjectStorage"
+              url: https://github.com/grafana/loki/pull/11946
+            - name: "fix: fix toPorts in ciliumNetworkPolicy template"
+              url: https://github.com/grafana/loki/pull/11963
+            - name: "feat: Allow to define resources for GrafanaAgent pods"
+              url: https://github.com/grafana/loki/pull/11851
+            - name: "feat: Adding annotations support for statefulset-read.yaml"
+              url: https://github.com/grafana/loki/pull/11690
+            - name: "feat: Bumped grafana-agent-operator version"
+              url: https://github.com/grafana/loki/pull/11576
+        - kind: changed
+          description: "Update promtail chart from 6.15.3 to 6.15.5"
+          links:
+            - name: "feat: Update promtail to 2.9.3"
+              url: https://github.com/grafana/helm-charts/pull/2843
+            - name: "fix: optimize cm checksum"
+              url: https://github.com/grafana/helm-charts/pull/2833
+    apiVersion: v2
+    created: "2024-05-22T14:05:46.59923562Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: 84dd93de475d070ecb65cc2c99904688d75792cb85de27ab50779172127c152e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.31.0/logging-apps-0.31.0.tgz
+    version: 0.31.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Update loki chart from 5.41.4 to 5.41.8"
           links:
             - name: "fix(gateway): fix crash on ipv4 only systems"
@@ -26554,4 +26656,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-22T13:29:03.421528344Z"
+generated: "2024-05-22T14:05:46.600748143Z"
