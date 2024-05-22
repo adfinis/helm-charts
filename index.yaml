@@ -5050,6 +5050,45 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update Argo CD from 2.11.0 to 2.11.1
+
+            - enabled auth for redis in the default installation
+          links:
+            - name: "Argo CD Release 2.11.1"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.11.1
+            - name: "feat: Enable Redis authentication in the default installation"
+              url: https://github.com/argoproj/argo-helm/pull/2705
+            - name: "fix: add nodeselector and tolerations to redis-secret-init-job"
+              url: https://github.com/argoproj/argo-helm/pull/2708
+            - name: "fix: Adding checksum for argocd-cm to dex pod"
+              url: https://github.com/argoproj/argo-helm/pull/2695
+            - name: "fix: Support ability to set .Values.namespaceOverride"
+              url: https://github.com/argoproj/argo-helm/pull/2679
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-05-22T11:17:28.46251173Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: bd6f84562ce3c053413fd95cffff9afd59c948ca8d7c6d6623b1ceb0d73056b9
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.206.0/infra-apps-0.206.0.tgz
+    version: 0.206.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update kube-prometheus-stack from 54.2.2 to 58.6.0
 
             - update operator from 0.69.1 to 0.73.2
@@ -26464,4 +26503,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-22T08:49:32.694099024Z"
+generated: "2024-05-22T11:17:28.464042217Z"
