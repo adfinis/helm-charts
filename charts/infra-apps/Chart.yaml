@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.205.0
+version: 0.206.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,54 +19,17 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update kube-prometheus-stack from 54.2.2 to 58.6.0
+        feat: Update Argo CD from 2.11.0 to 2.11.1
 
-        - update operator from 0.69.1 to 0.73.2
-        - update depdendencies to match
+        - enabled auth for redis in the default installation
       links:
-        - name: "fix: Update Prometheus rules and Grafana dashboards"
-          url: https://github.com/prometheus-community/helm-charts/pull/4531
-        - name: "feat: add the possibility to specify objectSelector for admissionWebhooks objects"
-          url: https://github.com/prometheus-community/helm-charts/pull/4540
-        - name: "fix: ThanosRuler limit resource names up to 63 characters"
-          url: https://github.com/prometheus-community/helm-charts/pull/4527
-        - name: "feat: Bump prometheus to 2.52.0"
-          url: https://github.com/prometheus-community/helm-charts/pull/4530
-        - name: "feat: Make TLS verification in kubelet servicemonitor configurable"
-          url: https://github.com/prometheus-community/helm-charts/pull/4528
-        - name: "feat: Bump Thanos to 0.25.0"
-          url: https://github.com/prometheus-community/helm-charts/pull/4516
-        - name: "fix: set ttlSecondsAfterFinished relevant for argocd"
-          url: https://github.com/prometheus-community/helm-charts/pull/4510
-        - name: "fix: align PDB with single check"
-          url: https://github.com/prometheus-community/helm-charts/pull/4502
-        - name: "fix: remove Job ttl API check"
-          url: https://github.com/prometheus-community/helm-charts/pull/4503
-        - name: "feat: Bump kube-state-metrics to 5.19.* and prometheus-node-exporter to 4.33.*"
-          url: https://github.com/prometheus-community/helm-charts/pull/4501
-        - name: "feat: support kubelet label selector"
-          url: https://github.com/prometheus-community/helm-charts/pull/4483
-        - name: "fix: Bump operator to 0.73.2"
-          url: https://github.com/prometheus-community/helm-charts/pull/4475
-        - name: "fix: add support for dual-stack (ipv4 & ipv6) clusters"
-          url: https://github.com/prometheus-community/helm-charts/pull/4472
-        - name: "fix: Bump Prometheus to 2.51.2"
-          url: https://github.com/prometheus-community/helm-charts/pull/4459
-        - name: "fix: Bump Prometheus to 2.51.1"
-          url: https://github.com/prometheus-community/helm-charts/pull/4450
-        - name: "feat: Add alertDropLabels + additional config for ThanosRuler"
-          url: https://github.com/prometheus-community/helm-charts/pull/4445
-        - name: "feat: Bump operator to 0.73.0"
-          url: https://github.com/prometheus-community/helm-charts/pull/4422
-        - name: "feat: Bump kube-state-metrics to 5.18.*"
-          url: https://github.com/prometheus-community/helm-charts/pull/4397
-        - name: "fix: Add node-exporter RBAC Proxy rule to Prometheus ClusterRole"
-          url: https://github.com/prometheus-community/helm-charts/pull/3946
-        - name: "feat: Bump Prometheus to 2.51.9"
-          url: https://github.com/prometheus-community/helm-charts/pull/4373
-        - name: "feat: Bump prometheus-node-exporter to 4.31.0"
-          url: https://github.com/prometheus-community/helm-charts/pull/4359
-        - name: "feat: Bump operator to 0.72.0"
-          url: https://github.com/prometheus-community/helm-charts/pull/4352
-        - name: "feat: many more changes"
-          url: https://github.com/prometheus-community/helm-charts/compare/5b2ac2b7c404bc14fe1bb42a5f96a4a45d7333f7...d66a093d7247ada7d301ad277e37964f1a777071
+        - name: "Argo CD Release 2.11.1"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.11.1
+        - name: "feat: Enable Redis authentication in the default installation"
+          url: https://github.com/argoproj/argo-helm/pull/2705
+        - name: "fix: add nodeselector and tolerations to redis-secret-init-job"
+          url: https://github.com/argoproj/argo-helm/pull/2708
+        - name: "fix: Adding checksum for argocd-cm to dex pod"
+          url: https://github.com/argoproj/argo-helm/pull/2695
+        - name: "fix: Support ability to set .Values.namespaceOverride"
+          url: https://github.com/argoproj/argo-helm/pull/2679

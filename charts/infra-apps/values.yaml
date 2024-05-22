@@ -20,7 +20,7 @@ argocd:
   # -- Chart
   chart: argo-cd
   # -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version
-  targetRevision: 6.9.1
+  targetRevision: 6.10.1
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml)
   values: {}
