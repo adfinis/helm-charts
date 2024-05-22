@@ -13873,6 +13873,56 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            feat: Update argocd-apps from 1.4.1 to 2.0.0
+
+            Replace lists with maps in argocd-apps.
+
+            Before:
+            ```yaml
+            applications:
+              - name: example-app
+                project: default
+                # ...
+            ```
+
+            After:
+            ```yaml
+            applications:
+              example-app:
+                project: default
+                # ...
+            ```
+
+            BREAKING CHANGE: Uses a map instead of a list to specify apps.
+          links:
+            - name: "feat: use maps instead of lists"
+              url: "https://github.com/argoproj/argo-helm/pull/2538"
+            - name: "chore: deprecate argo-cd extensions"
+              url: "https://github.com/argoproj/argo-helm/pull/2449"
+    apiVersion: v2
+    created: "2024-05-22T08:49:32.692387879Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: b87f0049218c0857b2e5cac540d336fefe83f4ea1adf3d4ad0985cef1e2205bb
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.44.0/misc-apps-0.44.0.tgz
+    version: 0.44.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "fix: Update downscaler chart from 0.7.3 to 0.7.4"
           links:
             - name: "fix: bump version to be k8s>=1.25 ready"
@@ -26414,4 +26464,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-22T07:47:04.355360202Z"
+generated: "2024-05-22T08:49:32.694099024Z"
