@@ -9,7 +9,7 @@ spec:
   type: {{ .Values.operator.service.type }}
   ports:
     - port: {{ .Values.operator.service.port }}
-      targetPort: http
+      targetPort: {{ .Values.operator.service.port }}
       protocol: TCP
       name: http
   selector:
