@@ -12696,6 +12696,48 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Bump Keycloak 23.0.3 to 24.0.4"
+          links:
+            - name: "Release 24.0.4"
+              url: https://www.keycloak.org/2024/05/keycloak-2404-released.html
+            - name: "Release 24.0.3"
+              url: https://www.keycloak.org/2024/04/keycloak-2403-released.html
+            - name: "Release 24.0.2"
+              url: https://www.keycloak.org/2024/03/keycloak-2402-released.html
+            - name: "Release 24.0.1"
+              url: https://www.keycloak.org/2024/03/keycloak-2401-released.html
+            - name: "Release 24.0.0"
+              url: https://www.keycloak.org/2024/03/keycloak-2400-released.html
+            - name: "Release 23.0.7"
+              url: https://www.keycloak.org/2024/02/keycloak-2307-released.html
+            - name: "Release 23.0.6"
+              url: https://www.keycloak.org/2024/02/keycloak-2306-released.html
+            - name: "Release 23.0.5"
+              url: https://www.keycloak.org/2024/01/keycloak-2305-released.html
+            - name: "Release 23.0.4"
+              url: https://www.keycloak.org/2024/01/keycloak-2304-released.html
+    apiVersion: v2
+    appVersion: 24.0.4
+    created: "2024-05-22T14:12:23.951017008Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 32b54e2c2c5496b00dd8d2f84cdde08138f31601beb70169c2ea85ae580e811c
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.1.0/keycloak-operator-1.1.0.tgz
+    version: 1.1.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Bump Keycloak from 23.0.2 to 23.0.3"
           links:
             - name: "Release 23.0.3"
@@ -26656,4 +26698,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-22T14:05:46.600748143Z"
+generated: "2024-05-22T14:12:23.953501145Z"
