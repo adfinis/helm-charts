@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.206.0
+version: 0.207.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,17 +19,29 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update Argo CD from 2.11.0 to 2.11.1
+        feat: Update Velero chart from 5.2.0 to 6.4.0
 
-        - enabled auth for redis in the default installation
+        - update Velero from 1.12.2 to 1.13.2
+        - removes the `nodeAgent.privileged` field, please use `nodeAgent.containerSecurityContext.privileged` instead
+        - updates underlying go version and some (k8s) libs that contain security patches
       links:
-        - name: "Argo CD Release 2.11.1"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.11.1
-        - name: "feat: Enable Redis authentication in the default installation"
-          url: https://github.com/argoproj/argo-helm/pull/2705
-        - name: "fix: add nodeselector and tolerations to redis-secret-init-job"
-          url: https://github.com/argoproj/argo-helm/pull/2708
-        - name: "fix: Adding checksum for argocd-cm to dex pod"
-          url: https://github.com/argoproj/argo-helm/pull/2695
-        - name: "fix: Support ability to set .Values.namespaceOverride"
-          url: https://github.com/argoproj/argo-helm/pull/2679
+        - name: "Velero Release 1.13.2"
+          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.13.2
+        - name: "Velero Release 1.13.1"
+          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.13.1
+        - name: "Velero Release 1.13.0"
+          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.13.0
+        - name: "Velero Release 1.12.3"
+          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.12.3
+        - name: "feat: allow passing custom args to velero server cli"
+          url: https://github.com/vmware-tanzu/helm-charts/pull/572
+        - name: "feat: chart release 6.0.0"
+          url: https://github.com/vmware-tanzu/helm-charts/pull/509
+        - name: "feat: App pause flag for Schedule"
+          url: https://github.com/vmware-tanzu/helm-charts/pull/574
+        - name: "feat: Change default up;pad type to kopia instead of restic"
+          url: https://github.com/vmware-tanzu/helm-charts/pull/551
+        - name: "feat: Added default operation timeout override"
+          url: https://github.com/vmware-tanzu/helm-charts/pull/546
+        - name: "feat: add kubectl.labels to upgrade-crds job"
+          url: https://github.com/vmware-tanzu/helm-charts/pull/539
