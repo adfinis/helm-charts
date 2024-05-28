@@ -2,7 +2,7 @@ apiVersion: v2
 name: azure-apps
 description: Argo CD app-of-apps config for Azure applications
 type: application
-version: 0.13.2
+version: 0.13.3
 home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,4 +17,15 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: README for `azureWorkloadIdentityWebhook`"
+      description: "azureKvCsiProvider bump azureKvCsiProvider from v1.4.1 to v1.5.4"
+      links:
+        - name: "Handles the case where the optional leaf SKI is missing"
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.5.2
+        - name: "bump golang.org/x/net from 0.17.0 to 0.24.0"
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.5.2
+        - name: "CVE 2024 24786: bump google.golang.org protobuf to v1.33.0"
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.5.2
+        - name: "bump crypto from 0.14.0 to 0.18.0"
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.5.1
+        - name: "bump from v1.4.1 to v1.5.0"
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.5.0
