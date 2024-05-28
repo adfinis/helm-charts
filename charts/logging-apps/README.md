@@ -1,6 +1,6 @@
 # logging-apps
 
-![Version: 0.31.0](https://img.shields.io/badge/Version-0.31.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.32.0](https://img.shields.io/badge/Version-0.32.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for logging applications
 
@@ -35,7 +35,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | fluentBit.destination.namespace | string | `"infra-logging"` | Namespace |
 | fluentBit.enabled | bool | `false` | Enable fluentBit |
 | fluentBit.repoURL | string | [repo](https://fluent.github.io/helm-charts) | Repo URL |
-| fluentBit.targetRevision | string | `"0.39.0"` | [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version |
+| fluentBit.targetRevision | string | `"0.46.7"` | [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version |
 | fluentBit.values | object | [upstream values](https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/values.yaml) | Helm values |
 | fluentd | object | - | [fluentd](https://github.com/fluent/fluentd) ([example](./examples/fluentd.yaml)) |
 | fluentd.chart | string | `"fluentd"` | Chart |
