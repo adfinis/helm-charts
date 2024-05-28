@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.44.0
+version: 0.45.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,30 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: |
-        feat: Update argocd-apps from 1.4.1 to 2.0.0
-
-        Replace lists with maps in argocd-apps.
-
-        Before:
-        ```yaml
-        applications:
-          - name: example-app
-            project: default
-            # ...
-        ```
-
-        After:
-        ```yaml
-        applications:
-          example-app:
-            project: default
-            # ...
-        ```
-
-        BREAKING CHANGE: Uses a map instead of a list to specify apps.
+      description: "feat: Update metallb chart from 0.13.11 to 0.14.5"
       links:
-        - name: "feat: use maps instead of lists"
-          url: "https://github.com/argoproj/argo-helm/pull/2538"
-        - name: "chore: deprecate argo-cd extensions"
-          url: "https://github.com/argoproj/argo-helm/pull/2449"
+        - name: "upstream changelog"
+          url: "https://metallb.universe.tf/release-notes/#version-0-14-5"
