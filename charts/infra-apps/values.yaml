@@ -47,7 +47,6 @@ certManager:
   # @default -- [upstream values](https://github.com/cert-manager/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
 
-
 # -- [cert-manager-issuers](https://cert-manager.io/docs/configuration/)
 # @default -- [example](./examples/cert-manager-issuers.yaml)
 certManagerIssuers:
@@ -70,7 +69,6 @@ certManagerIssuers:
   # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/cert-manager-issuers/values.yaml)
   values: {}
 
-
 # -- [cert-manager-monitoring](https://cert-manager.io/docs/configuration/)
 # @default -- [example](./examples/cert-manager-monitoring.yaml)
 certManagerMonitoring:
@@ -92,7 +90,6 @@ certManagerMonitoring:
   # -- Helm values
   # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/cert-manager-monitoring/values.yaml)
   values: {}
-
 
 # -- [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
 # @default -- [example](./examples/nginx-ingress.yaml)
@@ -260,7 +257,7 @@ mimir:
   # -- Chart
   chart: mimir-distributed
   # -- [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed)
-  targetRevision: 4.5.0
+  targetRevision: 5.3.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml)
   values: {}
