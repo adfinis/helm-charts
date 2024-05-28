@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.22.0
+version: 0.23.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,26 +17,22 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(argo-rollouts): update from 1.6.0 to 1.6.4"
+      description: "feat(argo-rollouts): update from 1.6.4 to 1.6.6"
       links:
-        - name: GitHub Release 1.6.1
-          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.1
-        - name: GitHub Release 1.6.2
-          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.1
-        - name: GitHub Release 1.6.3
-          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.1
-        - name: GitHub Release 1.6.4
-          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.1
+        - name: GitHub Release 1.6.5
+          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.5
+        - name: GitHub Release 1.6.6
+          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.6
     - kind: changed
-      description: "feat(argo-rollouts): update chart from 2.32.0 to 2.34.1"
+      description: "feat(argo-rollouts): update chart from 2.34.1 to 2.35.3"
       links:
-        - name: "feat: Add rollout plugin gloo platform rbac"
-          url: https://github.com/argoproj/argo-helm/pull/2404
-        - name: "feat: add args for dashboard logs"
-          url: https://github.com/argoproj/argo-helm/pull/2388
-        - name: "feat: allow setting log config for rollouts"
-          url: https://github.com/argoproj/argo-helm/pull/2386
-        - name: "feat: add rollout plugin contour rbac"
-          url: https://github.com/argoproj/argo-helm/pull/2371
-        - name: "fix: controller replicas count comparison"
-          url: https://github.com/argoproj/argo-helm/pull/2309
+        - name: "feat: Support revisionHistoryLimit"
+          url: https://github.com/argoproj/argo-helm/pull/2712
+        - name: "feat: Add podLabels at the controller & dashboard level"
+          url: https://github.com/argoproj/argo-helm/pull/2678
+        - name: "feat: add minimum RBAC for Gateway API"
+          url: https://github.com/argoproj/argo-helm/pull/2599
+        - name: "feat: Added Deployment labels to values.yaml"
+          url: https://github.com/argoproj/argo-helm/pull/2590
+        - name: "feat: Allow customizing additional RBAC rules for other providers"
+          url: https://github.com/argoproj/argo-helm/pull/2556
