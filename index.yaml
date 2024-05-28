@@ -4,6 +4,48 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(argo-rollouts): update from 1.6.4 to 1.6.6"
+          links:
+            - name: GitHub Release 1.6.5
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.5
+            - name: GitHub Release 1.6.6
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.6.6
+        - kind: changed
+          description: "feat(argo-rollouts): update chart from 2.34.1 to 2.35.3"
+          links:
+            - name: "feat: Support revisionHistoryLimit"
+              url: https://github.com/argoproj/argo-helm/pull/2712
+            - name: "feat: Add podLabels at the controller & dashboard level"
+              url: https://github.com/argoproj/argo-helm/pull/2678
+            - name: "feat: add minimum RBAC for Gateway API"
+              url: https://github.com/argoproj/argo-helm/pull/2599
+            - name: "feat: Added Deployment labels to values.yaml"
+              url: https://github.com/argoproj/argo-helm/pull/2590
+            - name: "feat: Allow customizing additional RBAC rules for other providers"
+              url: https://github.com/argoproj/argo-helm/pull/2556
+    apiVersion: v2
+    created: "2024-05-28T14:15:44.41072064Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: bfbba82ace8940d78d4dc7e0551bc15d4a2b16d59ea298706adb23cb06cfe555
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.23.0/argo-apps-0.23.0.tgz
+    version: 0.23.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(argo-rollouts): update from 1.6.0 to 1.6.4"
           links:
             - name: GitHub Release 1.6.1
@@ -26698,4 +26740,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-22T14:12:23.953501145Z"
+generated: "2024-05-28T14:15:44.412088535Z"
