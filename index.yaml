@@ -1186,6 +1186,41 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "azureKvCsiProvider bump azureKvCsiProvider from v1.4.1 to v1.5.4"
+          links:
+            - name: "Handles the case where the optional leaf SKI is missing"
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.5.2
+            - name: "bump golang.org/x/net from 0.17.0 to 0.24.0"
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.5.2
+            - name: "CVE 2024 24786: bump google.golang.org protobuf to v1.33.0"
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.5.2
+            - name: "bump crypto from 0.14.0 to 0.18.0"
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.5.1
+            - name: "bump from v1.4.1 to v1.5.0"
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.5.0
+    apiVersion: v2
+    created: "2024-05-28T14:38:34.342881836Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for Azure applications
+    digest: f6734e693e6466ba661440777d5e36ca2526372d8766475259f275b61401d495
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.13.3/azure-apps-0.13.3.tgz
+    version: 0.13.3
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "fix: README for `azureWorkloadIdentityWebhook`"
     apiVersion: v2
     created: "2024-02-09T14:31:54.978549419Z"
@@ -26740,4 +26775,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-28T14:15:44.412088535Z"
+generated: "2024-05-28T14:38:34.344782207Z"
