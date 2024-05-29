@@ -22,15 +22,18 @@ jobs:
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
       - name: Install Helm
-        uses: azure/setup-helm@v3.5
+        uses: azure/setup-helm@v4
         with:
-          version: v3.10.3
+          version: v3.14.0
 
       - name: Add dependency chart repos
         run: yq e '."chart-repos"[]' hack/chart-testing/ct.yaml | tr "=" " " | xargs -L1 helm repo add
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
+        with:
+          # Allow us to re-run the release action
+          skip_existing: true
         env:
           CR_TOKEN: "${{ secrets.CR_TOKEN }}"
 

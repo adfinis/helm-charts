@@ -33,7 +33,7 @@ Chart for HedgeDoc, a fork of CodiMD
 [<img alt="hedgedoc" src="https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png" width="128">](charts/hedgedoc)
 #### [keycloak-operator](charts/keycloak-operator) chart
 
-![Version: 1.0.x](https://img.shields.io/badge/version-1.0.x-brightgreen) ![App version: 23..x](https://img.shields.io/badge/app%20version-23..x-brightgreen)
+![Version: 1.1.x](https://img.shields.io/badge/version-1.1.x-brightgreen) ![App version: 24..x](https://img.shields.io/badge/app%20version-24..x-brightgreen)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -77,11 +77,11 @@ for more in-depth information.
 | [cert-manager-monitoring](charts/cert-manager-monitoring) | Monitor cert-manager with cert-m... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  |
 | [common](charts/common) | Common chartbuilding components ... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [csi-secret-provider-class](charts/csi-secret-provider-class) | A Helm chart to create a SecretP... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [customer-center](charts/customer-center) | Chart for Customer-Center applic... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 3.2.x](https://img.shields.io/badge/app%20version-3.2.x-brightgreen) |
+| [customer-center](charts/customer-center) | Chart for Customer-Center applic... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 3.3.x](https://img.shields.io/badge/app%20version-3.3.x-brightgreen) |
+| [kubernetes-etcd-backup](charts/kubernetes-etcd-backup) | Chart for kubernetes-etcd-backup... | ![Version: 1.0.x](https://img.shields.io/badge/version-1.0.x-brightgreen) |  ![App version: 1.0.x](https://img.shields.io/badge/app%20version-1.0.x-brightgreen) |
 | [mopsos](charts/mopsos) | Deploy Mopsos to a Kubernetes Cl... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [openshift-etcd-backup](charts/openshift-etcd-backup) | Chart for openshift-etcd-backup ... | ![Version: 1.6.x](https://img.shields.io/badge/version-1.6.x-brightgreen) |  ![App version: 1.6.x](https://img.shields.io/badge/app%20version-1.6.x-brightgreen) |
+| [openshift-etcd-backup](charts/openshift-etcd-backup) | Chart for openshift-etcd-backup ... | ![Version: 1.8.x](https://img.shields.io/badge/version-1.8.x-brightgreen) |  ![App version: 1.8.x](https://img.shields.io/badge/app%20version-1.8.x-brightgreen) |
 | [osschallenge](charts/osschallenge) | Chart for OSS-Challenge application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |
-| [timed](charts/timed) | Chart for Timed application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  |
 | [vault-auth](charts/vault-auth) | A helm chart to install the vaul... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [vault-monitoring](charts/vault-monitoring) | monitor your vault server from w... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  |
 

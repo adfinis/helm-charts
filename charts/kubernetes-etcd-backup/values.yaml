@@ -1,0 +1,86 @@
+# Default values for kubernetes-etcd-backup.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+backup:
+  # -- Sub directory path
+  subdir: "/"
+  # -- Directory name of single backup
+  dirname: "+etcd-backup-%FT%T%:z"
+  # -- expiretype could be days (keep backups newer than backup.keepdays,
+  # count (keep a number of backups with backup.keepcount),
+  # never (do not expire backups, keep all of them)
+  expiretype: "days"
+  # -- Retention period
+  keepdays: "30"
+  # -- Count retention if expiretype set to count
+  keepcount: "10"
+  # -- Backup schedule
+  schedule: "0 0 * * *"
+  # -- Set umask during the backup
+  umask: "0027"
+
+etcdConfiguration:
+  # -- Etcd endpoint ip or hostname without protocol or port
+  endpoint: "changeme"
+
+etcdCertification:
+  # -- etcd-peer-tls secret name
+  etcdPeerTlsName: "changeme"
+  # -- etcd-server-ca secret name
+  etcdServerCaName: "changeme"
+
+persistence:
+  # -- Set reclaim policy (Retain or Delete)
+  reclaimPolicy: Retain
+  # -- Define the storage size
+  capacity: 10Gi
+  nfs:
+    # -- Enable nfs backend storage
+    enabled: false
+    # -- NFS server name or IP
+    server: example.com
+    # -- NFS server path
+    path: "nfs/example/path"
+  provisioning:
+    # -- Enable provisioned backend storage with default or configured storageClass
+    enabled: false
+    storageClass: ""
+
+image:
+  # -- Repository image to use
+  repository: ghcr.io/adfinis/kubernetes-etcd-backup
+  # -- Image pull policy configuration
+  pullPolicy: Always
+  # -- Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+nameOverride: ""
+fullnameOverride: ""
+
+resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+monitoring:
+# -- Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis/kubernetes-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml).
+  enabled: false
+  rules:
+    # -- Deploy PrometheusRule to check for cronjob fails.
+    cronjobMonitor: true
+  # -- Provide custom recording or alerting rules to be deployed into the cluster.
+  additionalRules:
+  #  rule-name:
+  #    groups:
+  #    - name: my_group
+  #      rules:
+  #      - record: my_record
+  #        expr: 100 * my_record

@@ -13,7 +13,7 @@ azureKvCsiProvider:
   # -- Chart
   chart: "csi-secrets-store-provider-azure"
   # -- [csi-secrets-store-provider-azure Helm chart](https://github.com/Azure/secrets-store-csi-driver-provider-azure/tree/master/charts/csi-secrets-store-provider-azure) version
-  targetRevision: "1.4.1"
+  targetRevision: "1.5.4"
   # -- Helm values
   # @default -- [upstream values](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/charts/csi-secrets-store-provider-azure/values.yaml)
   values: {}
@@ -59,7 +59,7 @@ promitorResourceDiscovery:
   values: {}
 
 # -- [azure-workload-identity](https://azure.github.io/azure-workload-identity) ([example](./examples/azure-workload-identity-webhook.yaml))
-# # @default -- -
+# @default -- -
 azureWorkloadIdentityWebhook:
   # -- Enable azure-workload-identity webhook
   enabled: false

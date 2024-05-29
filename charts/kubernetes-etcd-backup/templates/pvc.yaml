@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "openshift-etcd-backup.fullname" . }}
+  name: {{ include "kubernetes-etcd-backup.fullname" . }}
   labels:
-    {{- include "openshift-etcd-backup.labels" . | nindent 4 }}
+    {{- include "kubernetes-etcd-backup.labels" . | nindent 4 }}
 spec:
   {{- if .Values.persistence.provisioning.storageClass }}
   storageClassName: {{ .Values.persistence.provisioning.storageClass }}
@@ -13,5 +13,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: {{ .Values.persistence.provisioning.capacity }}
+      storage: {{ .Values.persistence.capacity }}
 {{- end }}

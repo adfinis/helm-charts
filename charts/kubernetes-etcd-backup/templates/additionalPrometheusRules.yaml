@@ -1,0 +1,20 @@
+{{- if and .Values.monitoring.enabled .Values.monitoring.additionalRules }}
+apiVersion: v1
+kind: List
+metadata:
+  name: {{ include "kubernetes-etcd-backup.fullname" $ }}-additional-prometheus-rules
+items:
+{{- if .Values.monitoring.additionalRules }}
+{{- range $prometheusRuleName, $prometheusRule := .Values.monitoring.additionalRules }}
+  - apiVersion: monitoring.coreos.com/v1
+    kind: PrometheusRule
+    metadata:
+      name: {{ include "kubernetes-etcd-backup.fullname" $ }}-{{ $prometheusRuleName }}
+      labels:
+        app: {{ include "kubernetes-etcd-backup.fullname" $ }}
+    spec:
+      groups:
+{{ toYaml $prometheusRule.groups | indent 8 }}
+{{- end }}
+{{- end }}
+{{- end }}

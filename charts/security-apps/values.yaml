@@ -181,7 +181,7 @@ secretsStoreCsiDriver:
   # -- Chart
   chart: "secrets-store-csi-driver"
   # -- [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version
-  targetRevision: "1.4.0"
+  targetRevision: "1.4.1"
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver/values.yaml)
   values: {}
@@ -241,7 +241,7 @@ stackroxCentralServices:
   # -- Chart
   chart: stackrox-central-services
   # -- [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version
-  targetRevision: 400.2.2
+  targetRevision: 400.3.4
   # -- Helm values
   # @default -- [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-central/values.yaml)
   values: {}
@@ -261,7 +261,7 @@ stackroxSecuredClusterServices:
   # -- Chart
   chart: stackrox-secured-cluster-services
   # -- [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version
-  targetRevision: 400.2.2
+  targetRevision: 400.3.4
   # -- Helm values
   # @default -- [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-secured-cluster/values.yaml.htpl)
   values: {}
@@ -305,7 +305,7 @@ kyverno:
   # -- Chart
   chart: kyverno
   # -- [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno)
-  targetRevision: 3.0.1
+  targetRevision: 3.1.4
   # -- Helm values
   # @default -- [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml)
   values: {}
@@ -327,7 +327,7 @@ kyvernoPolicies:
   # -- Chart
   chart: kyverno-policies
   # -- [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies)
-  targetRevision: 3.0.0
+  targetRevision: 3.1.4
   # -- Helm values
   # @default -- [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno-policies/values.yaml)
   values: {}

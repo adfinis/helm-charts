@@ -15,6 +15,11 @@ spec:
       # job immediately if the first execution fails.
       backoffLimit: 0
       template:
+        {{- with .Values.annotations }}
+        metadata:
+          annotations:
+          {{- toYaml . | nindent 12 }}
+        {{- end }}
         spec:
           securityContext:
             {{- toYaml .Values.podSecurityContext | nindent 12 }}
@@ -28,6 +33,14 @@ spec:
             envFrom:
             - configMapRef:
                 name: {{ include "openshift-etcd-backup.fullname" . }}
+            {{- if .Values.persistence.s3.enabled }}
+            - secretRef:
+              {{- if .Values.persistence.s3.existingSecret }}
+                name: "{{ .Values.persistence.s3.existingSecret }}"
+              {{- else }}
+                name: {{ include "openshift-etcd-backup.fullname"  . }}-secret
+              {{- end }}
+            {{- end }}
             resources:
               {{- toYaml .Values.resources | nindent 14 }}
             securityContext:
@@ -38,6 +51,10 @@ spec:
             {{- if or .Values.persistence.nfs.enabled .Values.persistence.provisioning.enabled .Values.persistence.hostPath.enabled }}
             - name: volume-backup
               mountPath: /backup
+            {{- end }}
+            {{- if and (.Values.persistence.s3.enabled) (.Values.persistence.s3.ca.enabled) }}
+            - name: {{ include "openshift-etcd-backup.fullname" . }}-ca-inject
+              mountPath: /etc/pki/ca-trust/source/anchors
             {{- end }}
           {{- with .Values.nodeSelector }}
           nodeSelector:
@@ -74,4 +91,9 @@ spec:
               path: {{ .Values.persistence.hostPath.path | quote }}
               type: Directory
             {{- end }}
+          {{- end }}
+          {{- if and (.Values.persistence.s3.enabled) (.Values.persistence.s3.ca.enabled) }}
+          - name: {{ include "openshift-etcd-backup.fullname" . }}-ca-inject
+            configMap:
+              name: {{ include "openshift-etcd-backup.fullname" . }}-ca-inject
           {{- end }}

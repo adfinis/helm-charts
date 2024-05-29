@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.41.1](https://img.shields.io/badge/Version-0.41.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.45.0](https://img.shields.io/badge/Version-0.45.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -17,7 +17,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.adfinis.com | argoconfig | 0.9.0 |
+| https://charts.adfinis.com | argoconfig | 0.9.1 |
 
 ## Values
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocdApps.destination.namespace | string | `"infra-argocd"` | Namespace |
 | argocdApps.enabled | bool | `false` | Enable Argo CD Apps |
 | argocdApps.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocdApps.targetRevision | string | `"1.4.1"` | [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version |
+| argocdApps.targetRevision | string | `"2.0.0"` | [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version |
 | argocdApps.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argocd-apps/values.yaml) | Helm values |
 | chartmuseum | object | - | [chartmuseum](https://chartmuseum.com) ([example](./example/chartmuseum.yaml)) |
 | chartmuseum.chart | string | `"chartmuseum"` | Chart |
@@ -43,7 +43,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | downscaler.destination.namespace | string | `"infra-downscaler"` | Namespace |
 | downscaler.enabled | bool | `false` | Enable kube-downscaler |
 | downscaler.repoURL | string | [repo](https://charts.deliveryhero.io) | Repo URL |
-| downscaler.targetRevision | string | `"0.7.3"` | [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version |
+| downscaler.targetRevision | string | `"0.7.4"` | [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version |
 | downscaler.values | object | [upstream values](https://github.com/deliveryhero/helm-charts/blob/master/stable/kube-downscaler/values.yaml) | Helm values |
 | grafanaAgentOperator | object | [example](./examples/grafana-agent.yaml) | [grafana-agent](https://grafana.github.io/helm-charts) |
 | grafanaAgentOperator.annotations | object | `{}` | Annotations for grafana-agent |
@@ -66,7 +66,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | metallb.destination.namespace | string | `"infra-metallb"` | Namespace |
 | metallb.enabled | bool | `false` | Enable metallb |
 | metallb.repoURL | string | [repo](https://metallb.github.io/metallb) | Repo URL |
-| metallb.targetRevision | string | `"0.13.11"` | [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb) |
+| metallb.targetRevision | string | `"0.14.5"` | [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb) |
 | metallb.values | object | [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml) | Helm values |
 | opencost | object | [example](./examples/opencost.yaml) | [OpenCost](https://www.opencost.io) |
 | opencost.annotations | object | `{}` | Annotations for OpenCost |
@@ -74,7 +74,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | opencost.destination.namespace | string | `"infra-opencost"` | Namespace |
 | opencost.enabled | bool | `false` | Enable OpenCost |
 | opencost.repoURL | string | [repo](https://opencost.github.io/opencost-helm-chart) | Repo URL |
-| opencost.targetRevision | string | `"1.19.3"` | [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost) |
+| opencost.targetRevision | string | `"1.29.0"` | [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost) |
 | opencost.values | object | [upstream values](https://github.com/opencost/opencost-helm-chart/blob/main/charts/opencost/values.yaml) | Helm values |
 | prometheusMsteams | object | - | [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) ([example](./example/prometheus-msteams.yaml)) |
 | prometheusMsteams.chart | string | `"prometheus-msteams"` | Chart |

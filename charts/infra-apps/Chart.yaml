@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.189.0
+version: 0.208.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -12,80 +12,24 @@ maintainers:
     url: https://adfinis.com
 dependencies:
   - name: argoconfig
-    version: 0.9.0
+    version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat(kube-prometheus-stack): Update prometheus from 2.47.0 to 2.48.0"
+      description: |
+        feat: Update Mimir chart from 4.5.0 to 5.3.0
+        - update Mimir from 2.9.0 to 2.12.0
+        - Alertmanager API v1 deprecation
+        - Validate tenantID even when federation is not enabled
+        - Changing some default timeouts and limits in ingester, memberlist, store-gateway and query-frontend
+        - Removes thanos prefixed metrics from memcached
+        - Removes some deprecated flags in store-gateway
+        - shorter TTL for store-gateway temporary blocks
+        - fixes CVE-2023-39325
+        - fixes CVE-2023-45142
+        - upgrades Node.js to v20
       links:
-        - name: GitHub Release 2.48.0
-          url: https://github.com/prometheus/prometheus/releases/tag/v2.48.0
-    - kind: changed
-      description: "feat(kube-prometheus-stack): Update grafana from 10.1.2 to 10.1.5"
-      links:
-        - name: GitHub Release 10.1.3
-          url: https://github.com/grafana/grafana/releases/tag/v10.1.3
-        - name: GitHub Release 10.1.4
-          url: https://github.com/grafana/grafana/releases/tag/v10.1.4
-        - name: GitHub Release 10.1.5
-          url: https://github.com/grafana/grafana/releases/tag/v10.1.5
-    - kind: changed
-      description: "feat(kube-prometheus-stack): Update chart from 51.2.0 to 54.2.2"
-      links:
-        - name: "fix: configmaps Datasource when Prometheus Replicas and Exemplar Trace Id Destinations enabled"
-          url: https://github.com/prometheus-community/helm-charts/pull/4032
-        - name: "fix: Bump prom to 2.48.0 + node exporter dep"
-          url: https://github.com/prometheus-community/helm-charts/pull/4017
-        - name: "feat: Configure additional aggregation labels + k8s.rules split"
-          url: https://github.com/prometheus-community/helm-charts/pull/3883
-        - name: "feat: Generate windows dashboard from hack/sync"
-          url: https://github.com/prometheus-community/helm-charts/pull/4013
-        - name: "fix: Add missing RBAC permission for Prometheus Operator"
-          url: https://github.com/prometheus-community/helm-charts/pull/4005
-        - name: "fix: Bump grafana and kube-state-metrics charts"
-          url: https://github.com/prometheus-community/helm-charts/pull/4000
-        - name: "feat: Bump to 0.69.1"
-          url: https://github.com/prometheus-community/helm-charts/pull/3988
-        - name: "feat:  Populating dynamic honorLabels and honorTimestamps in kubelet ServiceMonitor"
-          url: https://github.com/prometheus-community/helm-charts/pull/3934
-        - name: "fix: Update Thanos with critical fixes for objstorage and HTTP/2 CVE"
-          url: https://github.com/prometheus-community/helm-charts/pull/3935
-        - name: "fix: thanos configs"
-          url: https://github.com/prometheus-community/helm-charts/pull/3918
-        - name: "feat: Allow to directly config prometheus.spec and alertmanager.spec"
-          url: https://github.com/prometheus-community/helm-charts/pull/3920
-        - name: "fix: Update CoreDNS Dashboard. Add job template variable"
-          url: https://github.com/prometheus-community/helm-charts/pull/3798
-        - name: "fix: etcd dashboards"
-          url: https://github.com/prometheus-community/helm-charts/pull/3917
-        - name: "fix: thanos ruler object store"
-          url: https://github.com/prometheus-community/helm-charts/pull/3913
-        - name: "fix: ConfigReloader ServiceMonitor HTTP scheme is not set correctly when HTTPS is enabled"
-          url: https://github.com/prometheus-community/helm-charts/pull/3815
-        - name: "feat: add serviceMonitor.additionalEndpoints"
-          url: https://github.com/prometheus-community/helm-charts/pull/3515
-        - name: "fix: range function in servicemonitors"
-          url: https://github.com/prometheus-community/helm-charts/pull/3888
-        - name: "fix: IO panels in Cluster Overview"
-          url: https://github.com/prometheus-community/helm-charts/pull/3902
-        - name: "feat: Allow to configure keep_firing_for for all Prometheus rules"
-          url: https://github.com/prometheus-community/helm-charts/pull/3890
-        - name: "feat: bump thanos to 0.32.4"
-          url: https://github.com/prometheus-community/helm-charts/pull/3885
-        - name: "fix: etcd mixin"
-          url: https://github.com/prometheus-community/helm-charts/pull/3880
-        - name: "feat: bump thanos to v0.32.3"
-          url: https://github.com/prometheus-community/helm-charts/pull/3845
-        - name: "fix: kube-prom-stack thanos-ruler alertmanagerConfigs"
-          url: https://github.com/prometheus-community/helm-charts/pull/3870
-        - name: "fix: bump prometheus to 2.47.1"
-          url: https://github.com/prometheus-community/helm-charts/pull/3877
-        - name: "feat: bump windows rules and dashboards"
-          url: https://github.com/prometheus-community/helm-charts/pull/3818
-        - name: "feat: Bump dependencies based on wildcard"
-          url: https://github.com/prometheus-community/helm-charts/pull/3876
-        - name: "feat: updated kube-state-metrics to 5.14.x"
-          url: https://github.com/prometheus-community/helm-charts/pull/3873
-        - name: "feat: update grafana helm-chart version 6.60"
-          url: https://github.com/prometheus-community/helm-charts/pull/3864
+        - name: "Mimir Release 2.12.0"
+          url: https://github.com/grafana/mimir/releases/tag/mimir-2.12.0

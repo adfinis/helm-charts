@@ -13,7 +13,7 @@ downscaler:
   # -- Chart
   chart: "kube-downscaler"
   # -- [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version
-  targetRevision: "0.7.3"
+  targetRevision: "0.7.4"
   # -- Helm values
   # @default -- [upstream values](https://github.com/deliveryhero/helm-charts/blob/master/stable/kube-downscaler/values.yaml)
   values: {}
@@ -73,7 +73,7 @@ metallb:
   # -- Chart
   chart: "metallb"
   # -- [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb)
-  targetRevision: "0.13.11"
+  targetRevision: "0.14.5"
   # -- Helm values
   # @default -- [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml)
   values: {}
@@ -135,7 +135,7 @@ argocdApps:
   # -- Chart
   chart: argocd-apps
   # -- [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version
-  targetRevision: 1.4.1
+  targetRevision: 2.0.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argocd-apps/values.yaml)
   values: {}
@@ -221,7 +221,7 @@ opencost:
   # -- Chart
   chart: opencost
   # -- [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost)
-  targetRevision: 1.19.3
+  targetRevision: 1.29.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/opencost/opencost-helm-chart/blob/main/charts/opencost/values.yaml)
   values: {}

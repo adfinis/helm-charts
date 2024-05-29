@@ -1,6 +1,6 @@
 # argo-apps
 
-![Version: 0.21.0](https://img.shields.io/badge/Version-0.21.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.23.0](https://img.shields.io/badge/Version-0.23.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for various argo project components
 
@@ -17,7 +17,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.adfinis.com | argoconfig | 0.8.0 |
+| https://charts.adfinis.com | argoconfig | 0.9.1 |
 
 ## Values
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argoRollouts.destination.namespace | string | `"infra-argo-rollouts"` | Namespace |
 | argoRollouts.enabled | bool | `false` | Enable Argo Rollouts |
 | argoRollouts.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argoRollouts.targetRevision | string | `"2.32.0"` | [argo-rollouts Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-rollouts) version |
+| argoRollouts.targetRevision | string | `"2.35.3"` | [argo-rollouts Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-rollouts) version |
 | argoRollouts.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-rollouts/values.yaml) | Helm values |
 | argocdNotifications | object | DEPRECATED | [Argo CD Notifications](https://argocd-notifications.readthedocs.io/en/stable/) is DEPRECATED, use Argo CD directly instead. |
 | argoconfig.application.annotations | object | `{}` | Optional annotations to add to all Applications metadata. |

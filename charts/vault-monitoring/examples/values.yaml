@@ -13,6 +13,7 @@ vault:
     type: ExternalName
     selector: {}
   serviceMonitor:
+    authentication: false
     labels:
       k8s.example.com/prometheus: kube-prometheus
 

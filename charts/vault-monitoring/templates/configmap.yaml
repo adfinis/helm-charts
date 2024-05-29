@@ -1,3 +1,4 @@
+{{- if .Values.vault.serviceMonitor.authentication }}
 apiVersion: "v1"
 kind: "ConfigMap"
 metadata:
@@ -29,3 +30,4 @@ data:
             }
         }
     }
+{{- end }}

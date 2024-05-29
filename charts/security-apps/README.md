@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.81.0](https://img.shields.io/badge/Version-0.81.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.84.0](https://img.shields.io/badge/Version-0.84.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -17,7 +17,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.adfinis.com | argoconfig | 0.9.0 |
+| https://charts.adfinis.com | argoconfig | 0.9.1 |
 
 ## Values
 
@@ -72,7 +72,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kyverno.destination.namespace | string | `"infra-kyverno"` | Namespace |
 | kyverno.enabled | bool | `false` | Enable kyverno |
 | kyverno.repoURL | string | [repo](https://kyverno.github.io/kyverno/) | Repo URL |
-| kyverno.targetRevision | string | `"3.0.1"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno) |
+| kyverno.targetRevision | string | `"3.1.4"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno) |
 | kyverno.values | object | [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml) | Helm values |
 | kyvernoPolicies | object | [example](./examples/kyverno.yaml) | [Kyverno Policies](https://kyverno.io) |
 | kyvernoPolicies.annotations | object | `{}` | Annotations for kyverno |
@@ -80,7 +80,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kyvernoPolicies.destination.namespace | string | `"infra-kyverno"` | Namespace |
 | kyvernoPolicies.enabled | bool | `false` | Enable kyverno-policies |
 | kyvernoPolicies.repoURL | string | [repo](https://kyverno.github.io/kyverno/) | Repo URL |
-| kyvernoPolicies.targetRevision | string | `"3.0.0"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies) |
+| kyvernoPolicies.targetRevision | string | `"3.1.4"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies) |
 | kyvernoPolicies.values | object | [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno-policies/values.yaml) | Helm values |
 | neuvector | object | - | [NeuVector](https://github.com/neuvector/neuvector) ([example](./example/neuvector.yaml)) |
 | neuvector.chart | string | `"core"` | Chart |
@@ -109,21 +109,21 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | secretsStoreCsiDriver.destination.namespace | string | `"infra-secrets-store-csi"` | Namespace |
 | secretsStoreCsiDriver.enabled | bool | `false` | Enable secrets-store-csi-driver |
 | secretsStoreCsiDriver.repoURL | string | [repo](https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts) | Repo URL |
-| secretsStoreCsiDriver.targetRevision | string | `"1.4.0"` | [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version |
+| secretsStoreCsiDriver.targetRevision | string | `"1.4.1"` | [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version |
 | secretsStoreCsiDriver.values | object | [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver/values.yaml) | Helm values |
 | stackroxCentralServices | object | - | [StackRox central-services](https://www.stackrox.io/) ([example/stackrox.yaml)) |
 | stackroxCentralServices.chart | string | `"stackrox-central-services"` | Chart |
 | stackroxCentralServices.destination.namespace | string | `"infra-stackrox"` | Namespace |
 | stackroxCentralServices.enabled | bool | `false` | Enable StackRox central-services |
 | stackroxCentralServices.repoURL | string | [repo](https://charts.stackrox.io) | Repo URL |
-| stackroxCentralServices.targetRevision | string | `"400.2.2"` | [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
+| stackroxCentralServices.targetRevision | string | `"400.3.4"` | [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
 | stackroxCentralServices.values | object | [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-central/values.yaml) | Helm values |
 | stackroxSecuredClusterServices | object | - | [StackRox secured-cluster-services](https://www.stackrox.io/) ([example/stackrox.yaml)) |
 | stackroxSecuredClusterServices.chart | string | `"stackrox-secured-cluster-services"` | Chart |
 | stackroxSecuredClusterServices.destination.namespace | string | `"infra-stackrox"` | Namespace |
 | stackroxSecuredClusterServices.enabled | bool | `false` | Enable StackRox secured-cluster-services |
 | stackroxSecuredClusterServices.repoURL | string | [repo](https://charts.stackrox.io) | Repo URL |
-| stackroxSecuredClusterServices.targetRevision | string | `"400.2.2"` | [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
+| stackroxSecuredClusterServices.targetRevision | string | `"400.3.4"` | [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
 | stackroxSecuredClusterServices.values | object | [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-secured-cluster/values.yaml.htpl) | Helm values |
 | vault | object | - | [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml)) |
 | vault.chart | string | `"vault"` | Chart |

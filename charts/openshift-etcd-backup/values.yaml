@@ -21,10 +21,6 @@ backup:
   umask: "0027"
 
 persistence:
-  # -- Set reclaim policy (Retain or Delete)
-  reclaimPolicy: Retain
-  # -- Define the storage size
-  capacity: 10Gi
   nfs:
     # -- Enable nfs backend storage
     enabled: false
@@ -41,6 +37,26 @@ persistence:
     # -- Enable provisioned backend storage with default or configured storageClass
     enabled: false
     storageClass: ""
+    # -- Define the storage size
+    capacity: 10Gi
+  s3:
+    # -- Enable S3 backend storage
+    enabled: false
+    # -- S3 endpoint name
+    name: etcd-backup
+    # -- S3 endpoint host
+    host: https://minio.local:9000
+    # -- Inject OpenShift CA
+    ca:
+      enabled: false
+    # -- S3 bucket name
+    bucket: etcd-backup
+    # -- S3 access key
+    accessKey: mysuperaccesskey
+    # -- S3 secret key
+    secretKey: mysupersecretkey
+    # -- S3 use an existing Secret instead of creating one
+    existingSecret: ""
 
 image:
   # -- Repository image to use
@@ -95,6 +111,8 @@ tolerations:
     key: node-role.kubernetes.io/master
 
 affinity: {}
+
+annotations: {}
 
 monitoring:
 # -- Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis/openshift-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml).

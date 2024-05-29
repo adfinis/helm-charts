@@ -20,7 +20,7 @@ argocd:
   # -- Chart
   chart: argo-cd
   # -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version
-  targetRevision: 5.51.2
+  targetRevision: 6.10.1
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml)
   values: {}
@@ -42,11 +42,10 @@ certManager:
   # -- Chart
   chart: cert-manager
   # -- [cert-manager Helm chart](https://github.com/cert-manager/cert-manager/tree/master/deploy/charts/cert-manager) version
-  targetRevision: 1.13.2
+  targetRevision: 1.14.5
   # -- Helm values
   # @default -- [upstream values](https://github.com/cert-manager/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
-
 
 # -- [cert-manager-issuers](https://cert-manager.io/docs/configuration/)
 # @default -- [example](./examples/cert-manager-issuers.yaml)
@@ -70,7 +69,6 @@ certManagerIssuers:
   # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/cert-manager-issuers/values.yaml)
   values: {}
 
-
 # -- [cert-manager-monitoring](https://cert-manager.io/docs/configuration/)
 # @default -- [example](./examples/cert-manager-monitoring.yaml)
 certManagerMonitoring:
@@ -93,7 +91,6 @@ certManagerMonitoring:
   # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/cert-manager-monitoring/values.yaml)
   values: {}
 
-
 # -- [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
 # @default -- [example](./examples/nginx-ingress.yaml)
 ingressNginx:
@@ -111,7 +108,7 @@ ingressNginx:
   # -- Chart
   chart: ingress-nginx
   # -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version
-  targetRevision: 4.8.3
+  targetRevision: 4.10.1
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml)
   values: {}
@@ -133,8 +130,7 @@ kubePrometheusStack:
   # -- Chart
   chart: kube-prometheus-stack
   # -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: 54.2.2
-  # -- Argo CD sync policy for the app
+  targetRevision: 58.6.0
   syncPolicy:
     syncOptions:
       # -- enable server-side-apply for KPS since it get's rid of having to manually sync/replace resources
@@ -160,7 +156,7 @@ rbacManager:
   # -- Chart
   chart: rbac-manager
   # -- [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version
-  targetRevision: 1.15.1
+  targetRevision: 1.19.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml)
   values: {}
@@ -204,7 +200,7 @@ velero:
   # -- Chart
   chart: velero
   # -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
-  targetRevision: 5.1.0
+  targetRevision: 6.4.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
   values: {}
@@ -231,26 +227,17 @@ kured:
   # @default -- [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml)
   values: {}
 
-# -- [kubernetes-event-exporter](https://github.com/resmoio/kubernetes-event-exporter)
-# @default -- [example](./examples/kubernetes-event-exporter.yaml)
+# -- [kubernetes-event-exporter](https://github.com/resmoio/kubernetes-event-exporter) is DEPRECATED, use "otel-collector" instead
+# @default -- DEPRECATED
 kubeEventExporter:
-  # -- Enable kubernetes-event-exporter
   enabled: false
   name: kube-event-exporter
-  # -- Annotations for kubernetes-event-exporter app
   annotations: {}
   destination:
-    # -- Namespace
     namespace: infra-kube-event-exporter
-  # -- Repo URL
-  # @default -- [repo](https://charts.bitnami.com/bitnami)
   repoURL: https://charts.bitnami.com/bitnami
-  # -- Chart
   chart: kubernetes-event-exporter
-  # -- [kubernetes-event-exporter Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/kubernetes-event-exporter)
   targetRevision: 2.1.6
-  # -- Helm values
-  # @default -- [upstream values](https://github.com/bitnami/charts/blob/main/bitnami/kubernetes-event-exporter/values.yaml)
   values: {}
 
 # -- [mimir](https://github.com/grafana/mimir)
@@ -270,7 +257,7 @@ mimir:
   # -- Chart
   chart: mimir-distributed
   # -- [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed)
-  targetRevision: 4.5.0
+  targetRevision: 5.3.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml)
   values: {}

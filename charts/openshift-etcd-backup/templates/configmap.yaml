@@ -5,6 +5,7 @@ metadata:
   labels:
     {{- include "openshift-etcd-backup.labels" . | nindent 4 }}
 data:
+  OCP_BACKUP_S3: {{ .Values.persistence.s3.enabled | quote }}
   OCP_BACKUP_SUBDIR: {{ .Values.backup.subdir | quote }}
   OCP_BACKUP_DIRNAME: {{ .Values.backup.dirname | quote }}
   OCP_BACKUP_EXPIRE_TYPE: {{ .Values.backup.expiretype | quote }}
