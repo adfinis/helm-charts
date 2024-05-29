@@ -5127,6 +5127,45 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update Mimir chart from 4.5.0 to 5.3.0
+            - update Mimir from 2.9.0 to 2.12.0
+            - Alertmanager API v1 deprecation
+            - Validate tenantID even when federation is not enabled
+            - Changing some default timeouts and limits in ingester, memberlist, store-gateway and query-frontend
+            - Removes thanos prefixed metrics from memcached
+            - Removes some deprecated flags in store-gateway
+            - shorter TTL for store-gateway temporary blocks
+            - fixes CVE-2023-39325
+            - fixes CVE-2023-45142
+            - upgrades Node.js to v20
+          links:
+            - name: "Mimir Release 2.12.0"
+              url: https://github.com/grafana/mimir/releases/tag/mimir-2.12.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-05-29T07:19:18.545880445Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: eb405c804d1ed8c17559d5b612cf843ec9d86b4867cc094d1de397da392afe26
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.208.0/infra-apps-0.208.0.tgz
+    version: 0.208.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update Velero chart from 5.2.0 to 6.4.0
 
             - update Velero from 1.12.2 to 1.13.2
@@ -26830,4 +26869,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-29T05:30:17.015526515Z"
+generated: "2024-05-29T07:19:18.547440137Z"
