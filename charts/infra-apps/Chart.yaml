@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.207.0
+version: 0.208.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,29 +19,17 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update Velero chart from 5.2.0 to 6.4.0
-
-        - update Velero from 1.12.2 to 1.13.2
-        - removes the `nodeAgent.privileged` field, please use `nodeAgent.containerSecurityContext.privileged` instead
-        - updates underlying go version and some (k8s) libs that contain security patches
+        feat: Update Mimir chart from 4.5.0 to 5.3.0
+        - update Mimir from 2.9.0 to 2.12.0
+        - Alertmanager API v1 deprecation
+        - Validate tenantID even when federation is not enabled
+        - Changing some default timeouts and limits in ingester, memberlist, store-gateway and query-frontend
+        - Removes thanos prefixed metrics from memcached
+        - Removes some deprecated flags in store-gateway
+        - shorter TTL for store-gateway temporary blocks
+        - fixes CVE-2023-39325
+        - fixes CVE-2023-45142
+        - upgrades Node.js to v20
       links:
-        - name: "Velero Release 1.13.2"
-          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.13.2
-        - name: "Velero Release 1.13.1"
-          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.13.1
-        - name: "Velero Release 1.13.0"
-          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.13.0
-        - name: "Velero Release 1.12.3"
-          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.12.3
-        - name: "feat: allow passing custom args to velero server cli"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/572
-        - name: "feat: chart release 6.0.0"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/509
-        - name: "feat: App pause flag for Schedule"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/574
-        - name: "feat: Change default up;pad type to kopia instead of restic"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/551
-        - name: "feat: Added default operation timeout override"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/546
-        - name: "feat: add kubectl.labels to upgrade-crds job"
-          url: https://github.com/vmware-tanzu/helm-charts/pull/539
+        - name: "Mimir Release 2.12.0"
+          url: https://github.com/grafana/mimir/releases/tag/mimir-2.12.0
