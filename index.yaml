@@ -13089,6 +13089,34 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Update fluentBit chart from 0.39.0 to 0.46.7"
+          links:
+            - name: "fluentBit Release 0.46.7"
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.46.7
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-05-29T05:30:17.014061677Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: 7d0a26a8a82f650eb245cfc4572ac140439c9479dbc68ff6b87f861755efba0d
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.32.0/logging-apps-0.32.0.tgz
+    version: 0.32.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: |
             feat: Update loki chart from 5.41.8 to 6.5.2
 
@@ -26802,4 +26830,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-28T17:52:50.256725115Z"
+generated: "2024-05-29T05:30:17.015526515Z"
