@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.45.0
+version: 0.46.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,9 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat: Update metallb chart from 0.13.11 to 0.14.5"
+      description: "chore: bump chartmuseum from 3.10.1 to 3.10.2"
       links:
-        - name: "upstream changelog"
-          url: "https://metallb.universe.tf/release-notes/#version-0-14-5"
+        - name: "chart version 3.10.2"
+          url: "https://github.com/chartmuseum/charts/releases/tag/chartmuseum-3.10.2"
+        - name: "application version 0.16.1"
+          url: "https://github.com/helm/chartmuseum/releases/tag/v0.16.1"
