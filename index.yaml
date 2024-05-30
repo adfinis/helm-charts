@@ -14251,6 +14251,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore: bump chartmuseum from 3.10.1 to 3.10.2"
+          links:
+            - name: "chart version 3.10.2"
+              url: "https://github.com/chartmuseum/charts/releases/tag/chartmuseum-3.10.2"
+            - name: "application version 0.16.1"
+              url: "https://github.com/helm/chartmuseum/releases/tag/v0.16.1"
+    apiVersion: v2
+    created: "2024-05-30T08:51:17.91789066Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: d010d530ff5735cfed7c141365b7e57469b079dc29942260276c2937d33d4b51
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.46.0/misc-apps-0.46.0.tgz
+    version: 0.46.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Update metallb chart from 0.13.11 to 0.14.5"
           links:
             - name: "upstream changelog"
@@ -26869,4 +26898,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-29T07:19:18.547440137Z"
+generated: "2024-05-30T08:51:17.919316184Z"
