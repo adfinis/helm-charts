@@ -53,7 +53,7 @@ csiDriverSmb:
   # -- Chart
   chart: "csi-driver-smb"
   # -- [csi-driver-smb Helm chart](https://github.com/kubernetes-csi/csi-driver-smb/tree/master/charts) version
-  targetRevision: "1.9.*"
+  targetRevision: "1.14.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes-csi/csi-driver-smb/blob/master/charts/latest/csi-driver-smb/values.yaml)
   values: {}
