@@ -15,6 +15,7 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: "update csi-driver-smb to 1.14.0"
