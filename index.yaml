@@ -21184,6 +21184,42 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "update csi-driver-smb to 1.14.0"
+          links:
+            - name: Github release
+              url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.14.0
+            - name: Github release
+              url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.13.0
+            - name: Github release
+              url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.12.0
+            - name: Github release
+              url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.11.0
+            - name: Github release
+              url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.10.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-06-03T11:34:58.514330952Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for storage applications
+    digest: 13b7a18797b11bc5bad1e58ed27d4325cf157ea7686bacba4eda583d8099e706
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.16.0/storage-apps-0.16.0.tgz
+    version: 0.16.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update argoconfig dependency"
           links:
             - name: Github PR
@@ -26898,4 +26934,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-30T08:51:17.919316184Z"
+generated: "2024-06-03T11:34:58.515672086Z"
