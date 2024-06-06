@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.84.0
+version: 0.85.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,8 +17,8 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
-    - kind: security
-      description: "stackrox-central and stackrox-secured-cluster-services: Update 400.2.2 to 400.3.4"
+    - kind: changed
+      description: "dex: update to 0.18.0"
       links:
-        - name: Changelog
-          url: https://github.com/stackrox/stackrox/blob/master/CHANGELOG.md#430
+        - name: dex v2.40.0 release
+          url: https://github.com/dexidp/dex/releases/tag/v2.40.0
