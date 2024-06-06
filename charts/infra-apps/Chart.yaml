@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.209.0
+version: 0.210.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,20 +18,7 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: Update Argo CD from 2.11.1 to 2.11.2"
+      description: "feat: Update cert-manager from 1.14.5 to 1.15.0"
       links:
-        - name: "Argo CD 2.11.2"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.11.2
-    - kind: changed
-      description: "feat: Update Argo CD chart from 6.10.1 to 7.1.1"
-      links:
-        - name: "fix: add priorityClassName to redis-secret-init job"
-          url: https://github.com/argoproj/argo-helm/pull/2709
-        - name: "fix: redis exporter NOAUTH error"
-          url: https://github.com/argoproj/argo-helm/pull/2736
-        - name: "feat!: represent cluster credentials as a map"
-          url:  https://github.com/argoproj/argo-helm/pull/2648
-        - name: "feat: make redis secret init optional"
-          url: https://github.com/argoproj/argo-helm/pull/2713
-        - name: "feat: add  support for doal-stack clusters"
-          url: https://github.com/argoproj/argo-helm/pull/2649
+        - name: "cert-manager 1.15.0"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.15.0
