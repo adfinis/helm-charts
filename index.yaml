@@ -18468,6 +18468,34 @@ entries:
   security-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: "dex: update to 0.18.0"
+          links:
+            - name: dex v2.40.0 release
+              url: https://github.com/dexidp/dex/releases/tag/v2.40.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-06-10T08:03:14.508709518Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: ca5416bb4ff6b184ca23ccf0731476f2045d37106ee15280f1603494cf9f44c6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.85.0/security-apps-0.85.0.tgz
+    version: 0.85.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: security
           description: "stackrox-central and stackrox-secured-cluster-services: Update 400.2.2 to 400.3.4"
           links:
@@ -27033,4 +27061,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-07T06:41:09.811492931Z"
+generated: "2024-06-10T08:03:14.51005889Z"
