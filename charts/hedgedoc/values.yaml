@@ -2,7 +2,25 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# Please note that HedgeDoc is not cappable to run in a HA setup with multiple
+# replicas - See https://docs.hedgedoc.org/faq/#can-i-run-multiple-instances-on-the-same-database
 replicaCount: 1
+
+# -- Configure autoscaling
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+# -- Configure the deployment strategy
+strategy:
+  type: Recreate
+  # type: RollingUpdate
+  # rollingUpdate:
+  #   maxSurge: 25%
+  #   maxUnavailable: 25%
 
 image:
   # -- Override the repository
@@ -216,14 +234,6 @@ resources: {}
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
-
-# -- Configure autoscaling
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
 
