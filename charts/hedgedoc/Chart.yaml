@@ -20,7 +20,7 @@ dependencies:
 annotations:
   artifacthub.io/images: |
     - name: hedgedoc
-      image: quay.io/hedgedoc/hedgedoc:1.9.8
+      image: quay.io/hedgedoc/hedgedoc:1.9.9
   artifacthub.io/changes: |
     - kind: added
       description: Fix deployment stalls by ensuring PV availability before starting new Pod.
