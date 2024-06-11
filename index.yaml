@@ -4894,6 +4894,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: added
+          description: Fix deployment stalls by ensuring PV availability before starting new Pod.
+      artifacthub.io/images: |
+        - name: hedgedoc
+          image: quay.io/hedgedoc/hedgedoc:1.9.9
+    apiVersion: v2
+    appVersion: 1.9.9
+    created: "2024-06-11T12:59:49.880175502Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~12.2.1
+    description: Chart for HedgeDoc, a fork of CodiMD
+    digest: ad7e8c44e5f0eb533515b7211b18e38dbb5a66afcd8a751e88141d8adf74e49b
+    icon: https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: hedgedoc
+    sources:
+    - https://github.com/hedgedoc/hedgedoc
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/hedgedoc-0.5.0/hedgedoc-0.5.0.tgz
+    version: 0.5.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
           description: Allow creating a ServiceMonitor resource
       artifacthub.io/images: |
         - name: hedgedoc
@@ -27061,4 +27090,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-10T08:03:14.51005889Z"
+generated: "2024-06-11T12:59:49.881371286Z"
