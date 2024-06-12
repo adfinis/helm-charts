@@ -5155,6 +5155,39 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore: Update kube-prometheus-stack 58.x to 60.x"
+          links:
+            - name: "kube-prometheus-stack version 60.0.2"
+              url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-60.0.2
+        - kind: changed
+          description: "chore: Grafana version 11"
+          links:
+            - name: "breaking change in version 11 of Grafana"
+              url: https://grafana.com/docs/grafana/latest/breaking-changes/breaking-changes-v11-0/
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2024-06-12T08:31:41.282524672Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: cdccd60d67ae3bcf41e98e2438f80bfb93c40ba03ea768c49f97eac3bde4d080
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.211.0/infra-apps-0.211.0.tgz
+    version: 0.211.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Update cert-manager from 1.14.5 to 1.15.0"
           links:
             - name: "cert-manager 1.15.0"
@@ -27090,4 +27123,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-11T12:59:49.881371286Z"
+generated: "2024-06-12T08:31:41.284051725Z"
