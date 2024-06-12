@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.210.0
+version: 0.211.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,7 +18,12 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat: Update cert-manager from 1.14.5 to 1.15.0"
+      description: "chore: Update kube-prometheus-stack 58.x to 60.x"
       links:
-        - name: "cert-manager 1.15.0"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.15.0
+        - name: "kube-prometheus-stack version 60.0.2"
+          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-60.0.2
+    - kind: changed
+      description: "chore: Grafana version 11"
+      links:
+        - name: "breaking change in version 11 of Grafana"
+          url: https://grafana.com/docs/grafana/latest/breaking-changes/breaking-changes-v11-0/
