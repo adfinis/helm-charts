@@ -1,4 +1,3 @@
 operator:
+  enabled: true
   replicaCount: 1
-keycloak:
-  enabled: false

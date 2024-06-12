@@ -1,7 +1,9 @@
-1. The Operator has been deployed, view the logs by running this command:
+{{- if .Values.operator.enabled }}
+- The Operator has been deployed, view the logs by running this command:
   kubectl --namespace {{ .Release.Namespace }} logs deployment/{{ include "keycloak-operator.operator.fullname" . }}
+{{- end }}
 {{- if .Values.keycloak.enabled }}
-2. A Keycloak instance has been deployed, connect to it at "{{ .Values.keycloak.hostname.hostname }}"
+- A Keycloak instance has been deployed, connect to it at "{{ .Values.keycloak.hostname.hostname }}"
 {{- if .Values.keycloak.realmimport.enabled }}
    Additionally the following realms have been imported:
    {{- range .Values.keycloak.realmimport.realms }}
