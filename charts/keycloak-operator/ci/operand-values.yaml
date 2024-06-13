@@ -1,5 +1,3 @@
-operator:
-  replicaCount: 1
 keycloak:
   enabled: true
   name: keycloak

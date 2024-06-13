@@ -2,7 +2,7 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.1.0
+version: 1.2.0
 appVersion: "24.0.4"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
@@ -16,23 +16,7 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "Bump Keycloak 23.0.3 to 24.0.4"
+      description: "New feature: disable Operator templates generation"
       links:
-        - name: "Release 24.0.4"
-          url: https://www.keycloak.org/2024/05/keycloak-2404-released.html
-        - name: "Release 24.0.3"
-          url: https://www.keycloak.org/2024/04/keycloak-2403-released.html
-        - name: "Release 24.0.2"
-          url: https://www.keycloak.org/2024/03/keycloak-2402-released.html
-        - name: "Release 24.0.1"
-          url: https://www.keycloak.org/2024/03/keycloak-2401-released.html
-        - name: "Release 24.0.0"
-          url: https://www.keycloak.org/2024/03/keycloak-2400-released.html
-        - name: "Release 23.0.7"
-          url: https://www.keycloak.org/2024/02/keycloak-2307-released.html
-        - name: "Release 23.0.6"
-          url: https://www.keycloak.org/2024/02/keycloak-2306-released.html
-        - name: "Release 23.0.5"
-          url: https://www.keycloak.org/2024/01/keycloak-2305-released.html
-        - name: "Release 23.0.4"
-          url: https://www.keycloak.org/2024/01/keycloak-2304-released.html
+        - name: "Issue 1270"
+          url: https://github.com/adfinis/helm-charts/issues/1270
