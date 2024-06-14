@@ -9,7 +9,6 @@ should match snapshot:
         app.kubernetes.io/version: 24.0.4
         helm.sh/chart: keycloak-operator-1.3.0
       name: keycloak
-      namespace: my-ns
     spec:
       features:
         disabled:
@@ -38,7 +37,6 @@ should match snapshot:
         app.kubernetes.io/version: 24.0.4
         helm.sh/chart: keycloak-operator-1.3.0
       name: RELEASE-NAME-keycloak-operator-test
-      namespace: my-ns
     spec:
       keycloakCRName: keycloak
       realm:

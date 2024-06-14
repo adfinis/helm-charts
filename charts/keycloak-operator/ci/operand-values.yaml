@@ -1,7 +1,6 @@
 keycloak:
   enabled: true
   name: keycloak
-  namespace: my-ns
   features:
     enabled:
       - account2
