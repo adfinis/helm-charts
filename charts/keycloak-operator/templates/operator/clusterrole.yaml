@@ -3,6 +3,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: keycloakcontroller-cluster-role
+  {{- with .Values.operator.namespace }}
+  namespace: {{ . }}
+  {{- end }}
   labels:
     {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
 rules:
@@ -25,6 +28,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: keycloakrealmimportcontroller-cluster-role
+  {{- with .Values.operator.namespace }}
+  namespace: {{ . }}
+  {{- end }}
   labels:
     {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
 rules:
