@@ -7,53 +7,95 @@ metadata:
     {{- include "keycloak-operator.labels" . | nindent 4 }}
     app.kubernetes.io/component: keycloak
 spec:
-  {{- with .Values.keycloak.instances }}
-  instances: {{ . }}
+  {{- with .Values.keycloak.additionalOptions }}
+  additionalOptions: {{ . | toYaml | nindent 4 }}
   {{- end }}
-  {{- if .Values.keycloak.transaction.xaEnabled }}
-  transaction:
-    xaEnabled: true
-  {{- else }}
-  transaction:
-    xaEnabled: false
+  {{- with .Values.keycloak.cache }}
+  cache: {{- . | toYaml | nindent 4 }}
   {{- end }}
-  http:
-    {{- with .Values.keycloak.http.httpPort }}
-    httpPort: {{ . }}
+  {{- if or .Values.keycloak.db.url (and .Values.keycloak.db.host .Values.keycloak.db.port .Values.keycloak.db.database ) }}
+  db:
+    {{- with .Values.keycloak.db.database }}
+    database: {{ . | quote }}
     {{- end }}
-    {{- with .Values.keycloak.http.tlsSecret }}
-    tlsSecret: {{ . | quote }}
+    {{- with .Values.keycloak.db.host }}
+    host: {{ . | quote }}
     {{- end }}
-    {{- with .Values.keycloak.http.httpsPort }}
-    httpsPort: {{ . }}
+    {{- with .Values.keycloak.db.passwordSecret }}
+    passwordSecret: {{ . | toYaml | nindent 6 }}
     {{- end }}
-    {{- with .Values.keycloak.http.httpEnabled }}
-    httpEnabled: {{ . }}
+    {{- with .Values.keycloak.db.poolInitialSize }}
+    poolInitialSize: {{ . }}
     {{- end }}
+    {{- with .Values.keycloak.db.poolMaxSize }}
+    poolMaxSize: {{ . }}
+    {{- end }}
+    {{- with .Values.keycloak.db.poolMinSize }}
+    poolMinSize: {{ . | quote }}
+    {{- end }}
+    {{- with .Values.keycloak.db.port }}
+    port: {{ . }}
+    {{- end }}
+    {{- with .Values.keycloak.db.schema }}
+    schema: {{ . | quote }}
+    {{- end }}
+    {{- with .Values.keycloak.db.url }}
+    url: {{ . | quote }}
+    {{- end }}
+    {{- with .Values.keycloak.db.usernameSecret }}
+    usernameSecret: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .Values.keycloak.db.vendor }}
+    vendor: {{ . | quote }}
+    {{- end }}
+  {{- end }}
+  {{- if or .Values.keycloak.features.disabled .Values.keycloak.features.enabled }}
+  features:
+    {{- with .Values.keycloak.features.disabled }}
+    disabled: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .Values.keycloak.features.enabled }}
+    enabled: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+  {{- end }}
   hostname:
-    {{- with .Values.keycloak.hostname.hostname }}
-    hostname: {{ . | quote }}
-    {{- end }}
-    {{- if .Values.keycloak.hostname.strict }}
-    strict: true
-    {{- else }}
-    strict: false
-    {{- end }}
-    {{- if .Values.keycloak.hostname.strictBackchannel }}
-    strictBackchannel: true
-    {{- else }}
-    strictBackchannel: false
-    {{- end }}
     {{- with .Values.keycloak.hostname.admin }}
     admin: {{ . }}
     {{- end }}
     {{- with .Values.keycloak.hostname.adminUrl }}
     adminUrl:  {{ . }}
     {{- end }}
-  {{- with .Values.keycloak.unsupported.podTemplate }}
-  unsupported:
-    # You can configure pod settings that will be merged with the one configured by default by the operator.
-    podTemplate: {{ . | toYaml | nindent 6 }}
+    {{- with .Values.keycloak.hostname.backchannelDynamic }}
+    backchannelDynamic: {{ ternary "true" "false" . }}
+    {{- end }}
+    {{- with .Values.keycloak.hostname.hostname }}
+    hostname: {{ . | quote }}
+    {{- end }}
+    {{- with .Values.keycloak.hostname.strict }}
+    strict: {{ ternary "true" "false" . }}
+    {{- end }}
+  http:
+    {{- with .Values.keycloak.http.httpEnabled }}
+    httpEnabled: {{ ternary "true" "false" . }}
+    {{- end }}
+    {{- with .Values.keycloak.http.httpPort }}
+    httpPort: {{ . }}
+    {{- end }}
+    {{- with .Values.keycloak.http.httpsPort }}
+    httpsPort: {{ . }}
+    {{- end }}
+    {{- with .Values.keycloak.http.tlsSecret }}
+    tlsSecret: {{ . | quote }}
+    {{- end }}
+  {{- with .Values.keycloak.httpManagement.port }}
+  httpManagement:
+    port: { . }
+  {{- end }}
+  {{- if or .Values.keycloak.image.repository .Values.keycloak.image.tag }}
+  image: "{{ .Values.keycloak.image.repository | default .Values.operator.config.keycloakImage.repository }}:{{ .Values.keycloak.image.tag | default .Values.operator.config.keycloakImage.tag | default .Chart.AppVersion }}"
+  {{- end }}
+  {{- with .Values.keycloak.imagePullSecrets }}
+  imagePullSecrets: {{ . | toYaml | nindent 4 }}
   {{- end }}
   {{- if .Values.keycloak.ingress.enabled }}
   ingress:
@@ -69,58 +111,27 @@ spec:
   ingress:
     enabled: false
   {{- end }}
-  {{- if or .Values.keycloak.image.repository .Values.keycloak.image.tag }}
-  image: "{{ .Values.keycloak.image.repository | default .Values.operator.config.keycloakImage.repository }}:{{ .Values.keycloak.image.tag | default .Values.operator.config.keycloakImage.tag | default .Chart.AppVersion }}"
+  {{- with .Values.keycloak.instances }}
+  instances: {{ . }}
   {{- end }}
-  {{- with .Values.keycloak.imagePullSecrets }}
-  imagePullSecrets: {{ . | toYaml | nindent 4 }}
+  {{- with .Values.keycloak.proxy.headers }}
+  proxy:
+    headers: {{ . }}
   {{- end }}
-  {{- with .Values.keycloak.additionalOptions }}
-  additionalOptions: {{ . | toYaml | nindent 4 }}
+  {{- with .Values.keycloak.resources }}
+  resources: {{ . | toYaml | nindent 4 }}
   {{- end }}
-  {{- if or .Values.keycloak.db.url (and .Values.keycloak.db.host .Values.keycloak.db.port .Values.keycloak.db.database ) }}
-  db:
-    {{- with .Values.keycloak.db.passwordSecret }}
-    passwordSecret: {{ . | toYaml | nindent 6 }}
-    {{- end }}
-    {{- with .Values.keycloak.db.usernameSecret }}
-    usernameSecret: {{ . | toYaml | nindent 6 }}
-    {{- end }}
-    {{- with .Values.keycloak.db.vendor }}
-    vendor: {{ . | quote }}
-    {{- end }}
-    {{- with .Values.keycloak.db.host }}
-    host: {{ . | quote }}
-    {{- end }}
-    {{- with .Values.keycloak.db.port }}
-    port: {{ . }}
-    {{- end }}
-    {{- with .Values.keycloak.db.database }}
-    database: {{ . | quote }}
-    {{- end }}
-    {{- with .Values.keycloak.db.schema }}
-    schema: {{ . | quote }}
-    {{- end }}
-    {{- with .Values.keycloak.db.url }}
-    url: {{ . | quote }}
-    {{- end }}
-    {{- with .Values.keycloak.db.poolInitialSize }}
-    poolInitialSize: {{ . }}
-    {{- end }}
-    {{- with .Values.keycloak.db.poolMaxSize }}
-    poolMaxSize: {{ . }}
-    {{- end }}
-    {{- with .Values.keycloak.db.poolMinSize }}
-    poolMinSize: {{ . | quote }}
-    {{- end }}
+  {{- with .Values.keycloak.startOptimized }}
+  startOPtimized: {{ ternary "true" "false" . }}
   {{- end }}
-  {{- if or .Values.keycloak.features.disabled .Values.keycloak.features.enabled }}
-  features:
-    {{- with .Values.keycloak.features.disabled }}
-    disabled: {{ . | toYaml | nindent 6 }}
-    {{- end }}
-    {{- with .Values.keycloak.features.enabled }}
-    enabled: {{ . | toYaml | nindent 6 }}
-    {{- end }}
+  {{- with .Values.keycloak.transaction.xaEnabled }}
+  transaction:
+    xaEnabled: {{ ternary "true" "false" . }}
+  {{- end }}
+  {{- with .Values.keycloak.truststrores }}
+  truststores: {{ . | toYaml | nindent 4 }}
+  {{- end }}
+  {{- with .Values.keycloak.unsupported }}
+  unsupported: {{ . | toYaml | nindent 4 }}
   {{- end }}
 {{- end }}
