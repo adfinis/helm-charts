@@ -3,6 +3,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: keycloak-operator-role-binding
+  {{- with .Values.operator.namespace }}
+  namespace: {{ . }}
+  {{- end }}
   labels:
     {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
 roleRef:
@@ -17,6 +20,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: keycloak-operator-view
+  {{- with .Values.operator.namespace }}
+  namespace: {{ . }}
+  {{- end }}
   labels:
     {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
 roleRef:
@@ -31,6 +37,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: keycloakcontroller-role-binding
+  {{- with .Values.operator.namespace }}
+  namespace: {{ . }}
+  {{- end }}
   labels:
     {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
 roleRef:
@@ -45,6 +54,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: keycloakrealmimportcontroller-role-binding
+  {{- with .Values.operator.namespace }}
+  namespace: {{ . }}
+  {{- end }}
   labels:
     {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
 roleRef:

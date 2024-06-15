@@ -1,12 +1,16 @@
 {{- if .Values.keycloak.realmimport.enabled }}
 {{- $fullname := include "keycloak-operator.fullname" . }}
 {{- $labels := include "keycloak-operator.labels" . }}
+{{- $namespace := .Values.keycloak.namespace }}
 {{- range .Values.keycloak.realmimport.realms }}
 ---
 apiVersion: k8s.keycloak.org/v2alpha1
 kind: KeycloakRealmImport
 metadata:
   name: {{ $fullname }}-{{ .realm }}
+  {{- with $namespace }}
+  namespace: {{ . }}
+  {{- end }}
   labels:
     {{- $labels | nindent 4 }}
 spec:

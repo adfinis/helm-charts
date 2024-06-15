@@ -4,6 +4,9 @@ kind: Role
 metadata:
   # TODO: figure out how to replace rolename with {{ include "keycloak-operator.operator.fullname" . }}
   name: keycloak-operator-role
+  {{- with .Values.operator.namespace }}
+  namespace: {{ . }}
+  {{- end }}
   labels:
     {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
 rules:

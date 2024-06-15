@@ -3,6 +3,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "keycloak-operator.operator.fullname" . }}
+  {{- with .Values.operator.namespace }}
+  namespace: {{ . }}
+  {{- end }}
   labels:
     {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
 spec:
