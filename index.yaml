@@ -12943,6 +12943,29 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Fix: change from operator. to kc.operator. keys"
+    apiVersion: v2
+    appVersion: 24.0.4
+    created: "2024-06-18T14:20:02.861452342Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: bc4c4454095e87ced210b555fa76a245a2a13c28a46f0d4f27f52d6693199380
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.2.1/keycloak-operator-1.2.1.tgz
+    version: 1.2.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "New feature: disable Operator templates generation"
           links:
             - name: "Issue 1270"
@@ -27179,4 +27202,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-14T18:57:40.373704996Z"
+generated: "2024-06-18T14:20:02.862847926Z"
