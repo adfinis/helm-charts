@@ -2,7 +2,7 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.2.0
+version: 1.2.1
 appVersion: "24.0.4"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
@@ -16,7 +16,4 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "New feature: disable Operator templates generation"
-      links:
-        - name: "Issue 1270"
-          url: https://github.com/adfinis/helm-charts/issues/1270
+      description: "Fix: change from operator. to kc.operator. keys"
