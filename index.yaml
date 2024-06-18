@@ -25724,6 +25724,121 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            opentelemetry-collector: Update from 0.82.0 to 0.101.0
+
+            update all the things!
+
+            contains uncountable deprecations, bugfixes, and new features.
+          links:
+            - name: Otel Collector Release 0.101.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.101.0
+            - name: Otel Collector Release 0.100.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.100.0
+            - name: Otel Collector Release 0.99.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.99.0
+            - name: Otel Collector Release 0.98.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.98.0
+            - name: Otel Collector Release 0.97.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.97.0
+            - name: Otel Collector Release 0.96.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.96.0
+            - name: Otel Collector Release 0.95.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.95.0
+            - name: Otel Collector Release 0.94.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.94.0
+            - name: Otel Collector Release 0.93.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.93.0
+            - name: Otel Collector Release 0.92.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.92.0
+            - name: Otel Collector Release 0.91.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.91.0
+            - name: Otel Collector Release 0.90.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.90.0
+            - name: Otel Collector Release 0.89.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.89.0
+            - name: Otel Collector Release 0.88.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.88.0
+            - name: Otel Collector Release 0.87.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.87.0
+            - name: Otel Collector Release 0.86.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.86.0
+            - name: Otel Collector Release 0.85.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.85.0
+            - name: Otel Collector Release 0.84.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.84.0
+            - name: Otel Collector Release 0.83.0
+              url: https://github.com/open-telemetry/opentelemetry-collector/releases/tag/v0.83.0
+        - kind: changed
+          description: "opentelemetry-collector: Update chart from 0.65.0 to 0.92.0"
+          links:
+            - name: "feat: Make it possible to mount configMap by chart name"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1105
+            - name: "feat!: Remove default collector image"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1148
+            - name: "feat: Separate command and args"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1149
+            - name: "fix: wrong extraContainers in generated yaml"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1143
+            - name: "fix: support tpl in extraContainers"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1139
+            - name: "fix: otel col's log was not excluded correctly by filelogreceiver"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1109
+            - name: "fix: Add support of ephemeral-storage in the resources"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1103
+            - name: "feat! Remove the logging exporter from default config, use debug exporter instead"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1092
+            - name: "feat: add persistentVolumeClaimRetentionPolicy in StatefulSet"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1057
+            - name: "feat: Add extension validation for health_check"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1070
+            - name: "fix: Missing hostAliases implementation"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1042
+            - name: "feat: Allow to configure a local and global image registry"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1020
+            - name: "fix: calculation for gomemlimit"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1015
+            - name: "fix: explicitly set healthcheck extension endpoint"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1012
+            - name: "feat: Enable HPA when deploy mode is statefulset"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/1011
+            - name: "feat: Enable retry_on_failure for filelog receiver created by logsCollection preset"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/999
+            - name: "feat: enable useGOMEMLIMIT by default"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/977
+            - name: "feat: support adding additionalLabels for otel col resources"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/968
+            - name: "feat: add ability to enable GOMEMLIMIT"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/900
+            - name: "feat: Switch to tail mode for logsCollection preset"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/904
+            - name: "feat: Update charts to use debug exporter"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/892
+            - name: "feat: Make it possible to specify namespace when running Helm template"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/pull/871
+    apiVersion: v2
+    created: "2024-06-18T20:35:38.577791872Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for tracing applications
+    digest: e0a877208f7d29e5bf4258cf1d6ab26728d5d32211226e8229af4270100abf79
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.28.0/tracing-apps-0.28.0.tgz
+    version: 0.28.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "jaeger-operator: update from 1.43.0 to 1.52.0"
           links:
             - name: Changelog
@@ -27202,4 +27317,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-18T14:20:02.862847926Z"
+generated: "2024-06-18T20:35:38.579308169Z"
