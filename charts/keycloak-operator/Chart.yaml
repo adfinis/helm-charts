@@ -16,9 +16,9 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: Update operator CRDs"
-    - kind: changed
       description: "feat: Update to Keycloak 25.x"
       links:
         - name: Keycloak 25.x
           url: https://www.keycloak.org/2024/06/keycloak-2500-released
+    - kind: changed
+      description: "fix: Update operator CRDs"
