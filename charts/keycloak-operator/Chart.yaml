@@ -2,8 +2,8 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.2.0
-appVersion: "24.0.4"
+version: 1.2.1
+appVersion: "25.0.0"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
 sources:
@@ -16,7 +16,4 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "New feature: disable Operator templates generation"
-      links:
-        - name: "Issue 1270"
-          url: https://github.com/adfinis/helm-charts/issues/1270
+      description: "fix: Update operator CRDs"

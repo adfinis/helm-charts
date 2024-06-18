@@ -13,7 +13,7 @@ keycloak:
     httpEnabled: true
   hostname:
     strict: false
-    strictBackchannel: false
+    backchannelDynamic: true
   realmimport:
     enabled: true
     realms:

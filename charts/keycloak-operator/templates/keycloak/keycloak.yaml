@@ -58,22 +58,24 @@ spec:
     enabled: {{ . | toYaml | nindent 6 }}
     {{- end }}
   {{- end }}
+  {{- with .Values.keycloak.hostname }}
   hostname:
-    {{- with .Values.keycloak.hostname.admin }}
+    {{- with .admin }}
     admin: {{ . }}
     {{- end }}
-    {{- with .Values.keycloak.hostname.adminUrl }}
+    {{- with .adminUrl }}
     adminUrl:  {{ . }}
     {{- end }}
-    {{- with .Values.keycloak.hostname.backchannelDynamic }}
-    backchannelDynamic: {{ ternary "true" "false" . }}
+    {{- if not (.backchannelDynamic | toString | empty) }}
+    backchannelDynamic: {{ ternary "true"  "false" .backchannelDynamic }}
     {{- end }}
-    {{- with .Values.keycloak.hostname.hostname }}
+    {{- with .hostname }}
     hostname: {{ . | quote }}
     {{- end }}
-    {{- with .Values.keycloak.hostname.strict }}
-    strict: {{ ternary "true" "false" . }}
+    {{- if not (.strict | toString | empty ) }}
+    strict: {{ ternary "true" "false" .strict }}
     {{- end }}
+  {{- end }}
   http:
     {{- with .Values.keycloak.http.httpEnabled }}
     httpEnabled: {{ ternary "true" "false" . }}
@@ -122,7 +124,7 @@ spec:
   resources: {{ . | toYaml | nindent 4 }}
   {{- end }}
   {{- with .Values.keycloak.startOptimized }}
-  startOPtimized: {{ ternary "true" "false" . }}
+  startOptimized: {{ ternary "true" "false" . }}
   {{- end }}
   {{- with .Values.keycloak.transaction.xaEnabled }}
   transaction:

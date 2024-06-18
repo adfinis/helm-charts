@@ -58,7 +58,7 @@ spec:
     authenticationFlows: {{ . | toYaml | nindent 6 }}
     {{- end }}
     {{- with .authenticatorConfig }}
-    authenticatorConfig: {{ . | toYaml | nindend 6 }}
+    authenticatorConfig: {{ . | toYaml | nindent 6 }}
     {{- end }}
     {{- with .browserFlow }}
     browserFlow: {{ . | quote }}
@@ -389,6 +389,9 @@ spec:
     {{- end }}
     {{- with .webAuthnPolicyAvoidSameAuthenticatorRegister }}
     webAuthnPolicyAvoidSameAuthenticatorRegister: {{ . }}
+    {{- end }}
+    {{- with .webAuthnPolicyAuthenticatorAttachment }}
+    webAuthnPolicyAuthenticatorAttachment: {{ . | quote }}
     {{- end }}
     {{- with .webAuthnPolicyCreateTimeout }}
     webAuthnPolicyCreateTimeout: {{ . }}
