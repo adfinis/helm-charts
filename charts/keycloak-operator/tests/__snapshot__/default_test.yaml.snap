@@ -85,7 +85,7 @@ should match snapshot:
                   valueFrom:
                     fieldRef:
                       fieldPath: metadata.namespace
-                - name: OPERATOR_KEYCLOAK_IMAGE
+                - name: KC_OPERATOR_KEYCLOAK_IMAGE
                   value: quay.io/keycloak/keycloak:24.0.4
               image: quay.io/keycloak/keycloak-operator:24.0.4
               imagePullPolicy: IfNotPresent
