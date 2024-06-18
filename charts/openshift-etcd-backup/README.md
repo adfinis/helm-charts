@@ -1,6 +1,6 @@
 # openshift-etcd-backup
 
-![Version: 1.8.8](https://img.shields.io/badge/Version-1.8.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.8.8](https://img.shields.io/badge/AppVersion-v1.8.8-informational?style=flat-square)
+![Version: 1.8.9](https://img.shields.io/badge/Version-1.8.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.8.9](https://img.shields.io/badge/AppVersion-v1.8.9-informational?style=flat-square)
 
 Chart for openshift-etcd-backup solution
 
