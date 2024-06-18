@@ -3,7 +3,7 @@ keycloak:
   name: keycloak
   features:
     enabled:
-      - account2
+      - account3
       - admin2
       - web-authn
     disabled:
@@ -12,8 +12,9 @@ keycloak:
   http:
     httpEnabled: true
   hostname:
-    strict: false
-    backchannelDynamic: true
+    hostname: keycloak.example.com
+    strict: true
+    backchannelDynamic: false
   realmimport:
     enabled: true
     realms:

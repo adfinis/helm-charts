@@ -15,12 +15,13 @@ should match snapshot:
           - js-adapter
           - kerberos
         enabled:
-          - account2
+          - account3
           - admin2
           - web-authn
       hostname:
-        backchannelDynamic: true
-        strict: false
+        backchannelDynamic: false
+        hostname: keycloak.example.com
+        strict: true
       http:
         httpEnabled: true
       ingress:
