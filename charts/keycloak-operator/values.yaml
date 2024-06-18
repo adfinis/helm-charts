@@ -108,7 +108,7 @@ keycloak:
     database: ~
 
     # -- Sets the hostname of the default JDBC URL of the chosen vendor. If the `url` option is set, this option is ignored.
-    host:
+    host: ~
 
     # -- The reference to a secret holding the password of the database user.
     passwordSecret: ~
