@@ -6,8 +6,8 @@ should match snapshot:
       labels:
         app.kubernetes.io/component: keycloak
         app.kubernetes.io/managed-by: Helm
-        app.kubernetes.io/version: 24.0.4
-        helm.sh/chart: keycloak-operator-1.2.1
+        app.kubernetes.io/version: 25.0.0
+        helm.sh/chart: keycloak-operator-1.3.0
       name: keycloak
     spec:
       features:
@@ -15,27 +15,26 @@ should match snapshot:
           - js-adapter
           - kerberos
         enabled:
-          - account2
+          - account3
           - admin2
           - web-authn
       hostname:
-        strict: false
-        strictBackchannel: false
+        backchannelDynamic: false
+        hostname: keycloak.example.com
+        strict: true
       http:
         httpEnabled: true
       ingress:
         enabled: true
       instances: 1
-      transaction:
-        xaEnabled: false
   2: |
     apiVersion: k8s.keycloak.org/v2alpha1
     kind: KeycloakRealmImport
     metadata:
       labels:
         app.kubernetes.io/managed-by: Helm
-        app.kubernetes.io/version: 24.0.4
-        helm.sh/chart: keycloak-operator-1.2.1
+        app.kubernetes.io/version: 25.0.0
+        helm.sh/chart: keycloak-operator-1.3.0
       name: RELEASE-NAME-keycloak-operator-test
     spec:
       keycloakCRName: keycloak
