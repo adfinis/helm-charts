@@ -157,7 +157,7 @@ keda:
   # -- Chart
   chart: keda
   # -- [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version
-  targetRevision: 2.12.0
+  targetRevision: 2.14.2
   # -- Helm values
   # @default -- [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml)
   values: {}
@@ -179,7 +179,7 @@ grafanaAgentOperator:
   # -- Chart
   chart: grafana-agent-operator
   # -- [Grafana Agent Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/agent-operator) version
-  targetRevision: 0.2.8
+  targetRevision: 0.4.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/agent-operator/values.yaml)
   values: {}
@@ -199,7 +199,7 @@ reloader:
   # -- Chart
   chart: "reloader"
   # -- [reloader Helm chart](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader) version
-  targetRevision: "v1.0.22"
+  targetRevision: "v1.0.108"
   # -- Helm values
   # @default -- [upstream values](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader/values.yaml)
   values: {}
@@ -221,7 +221,7 @@ opencost:
   # -- Chart
   chart: opencost
   # -- [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost)
-  targetRevision: 1.29.0
+  targetRevision: 1.39.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/opencost/opencost-helm-chart/blob/main/charts/opencost/values.yaml)
   values: {}
