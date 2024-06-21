@@ -1,6 +1,6 @@
 # logging-apps
 
-![Version: 0.32.0](https://img.shields.io/badge/Version-0.32.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.33.0](https://img.shields.io/badge/Version-0.33.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for logging applications
 
@@ -35,21 +35,21 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | fluentBit.destination.namespace | string | `"infra-logging"` | Namespace |
 | fluentBit.enabled | bool | `false` | Enable fluentBit |
 | fluentBit.repoURL | string | [repo](https://fluent.github.io/helm-charts) | Repo URL |
-| fluentBit.targetRevision | string | `"0.46.7"` | [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version |
+| fluentBit.targetRevision | string | `"0.46.11"` | [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version |
 | fluentBit.values | object | [upstream values](https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/values.yaml) | Helm values |
 | fluentd | object | - | [fluentd](https://github.com/fluent/fluentd) ([example](./examples/fluentd.yaml)) |
 | fluentd.chart | string | `"fluentd"` | Chart |
 | fluentd.destination.namespace | string | `"infra-logging"` | Namespace |
 | fluentd.enabled | bool | `false` | Enable fluentd |
 | fluentd.repoURL | string | [repo](https://charts.bitnami.com/bitnami) | Repo URL |
-| fluentd.targetRevision | string | `"5.5.*"` | [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version |
+| fluentd.targetRevision | string | `"6.5.*"` | [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version |
 | fluentd.values | object | [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/fluentd/values.yaml) | Helm values |
 | loki | object | - | [Grafana Loki](https://grafana.com/oss/loki/) ([example](./examples/loki.yaml)) |
 | loki.chart | string | `"loki"` | Chart |
 | loki.destination.namespace | string | `"infra-logging"` | Namespace |
 | loki.enabled | bool | `false` | Enable loki |
 | loki.repoURL | string | [repo](https://grafana.github.io/helm-charts) | Repo URL |
-| loki.targetRevision | string | `"6.5.2"` | [loki Helm chart](https://github.com/grafana/loki/tree/main/production/helm/loki) |
+| loki.targetRevision | string | `"6.6.3"` | [loki Helm chart](https://github.com/grafana/loki/tree/main/production/helm/loki) |
 | loki.values | object | [upstream values](https://github.com/grafana/loki/blob/main/production/helm/loki/values.yaml) | Helm values |
 | lokiStack | object | DEPRECATED | [loki-stack](https://github.com/grafana/loki) is DEPREACTED use `loki` and `promtail` individually |
 | promtail | object | - | [Grafana Loki promtail](https://grafana.com/docs/loki/latest/send-data/promtail/) ([example](./examples/promtail.yaml)) |
@@ -57,7 +57,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | promtail.destination.namespace | string | `"infra-logging"` | Namespace |
 | promtail.enabled | bool | `false` | Enable promtail |
 | promtail.repoURL | string | [repo](https://grafana.github.io/helm-charts) | Repo URL |
-| promtail.targetRevision | string | `"6.15.5"` | [promtail Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/promtail) |
+| promtail.targetRevision | string | `"6.16.0"` | [promtail Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/promtail) |
 | promtail.values | object | [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/promtail/values.yaml) | Helm values |
 
 ## About this chart
