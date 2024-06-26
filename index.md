@@ -33,7 +33,7 @@ Chart for HedgeDoc, a fork of CodiMD
 [<img alt="hedgedoc" src="https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png" width="128">](https://github.com/adfinis/helm-charts/tree/main/charts/hedgedoc)
 #### [keycloak-operator](https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator) chart
 
-![Version: 1.2.x](https://img.shields.io/badge/version-1.2.x-brightgreen) ![App version: 24..x](https://img.shields.io/badge/app%20version-24..x-brightgreen)
+![Version: 1.3.x](https://img.shields.io/badge/version-1.3.x-brightgreen) ![App version: 25..x](https://img.shields.io/badge/app%20version-25..x-brightgreen)
 
 Deploy Keycloak Operator and Keycloak
 
