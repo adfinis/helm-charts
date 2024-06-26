@@ -25752,6 +25752,41 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: update jaeger-operator chart from 2.50.1 to 2.54.0
+        - kind: changed
+          description: update otel-collector chart from 0.92.0 to 0.93.3
+          links:
+            - name: otel-collector chart Release 0.93.3
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.93.3
+            - name: otel-collector chart Release 0.93.2
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.93.2
+            - name: otel-collector chart Release 0.93.1
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.93.1
+            - name: otel-collector chart Release 0.93.0
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.93.0
+    apiVersion: v2
+    created: "2024-06-26T09:37:29.589508507Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 3b82faa75690bea2c115ecce8a7cd64dc0a804dc9d53db8b892486753300557a
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.29.0/tracing-apps-0.29.0.tgz
+    version: 0.29.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: |
             opentelemetry-collector: Update from 0.82.0 to 0.101.0
 
@@ -27345,4 +27380,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-19T13:50:16.172994844Z"
+generated: "2024-06-26T09:37:29.590976972Z"
