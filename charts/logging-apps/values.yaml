@@ -25,7 +25,7 @@ loki:
   # -- Chart
   chart: "loki"
   # -- [loki Helm chart](https://github.com/grafana/loki/tree/main/production/helm/loki)
-  targetRevision: "6.5.2"
+  targetRevision: "6.6.3"
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/loki/blob/main/production/helm/loki/values.yaml)
   values: {}
@@ -45,7 +45,7 @@ promtail:
   # -- Chart
   chart: "promtail"
   # -- [promtail Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/promtail)
-  targetRevision: "6.15.5"
+  targetRevision: "6.16.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/promtail/values.yaml)
   values: {}
@@ -85,7 +85,7 @@ fluentd:
   # -- Chart
   chart: "fluentd"
   # -- [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version
-  targetRevision: "5.5.*"
+  targetRevision: "6.5.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/fluentd/values.yaml)
   values: {}
@@ -105,7 +105,7 @@ fluentBit:
   # -- Chart
   chart: "fluent-bit"
   # -- [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version
-  targetRevision: "0.46.7"
+  targetRevision: "0.46.11"
   # -- Helm values
   # @default -- [upstream values](https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/values.yaml)
   values: {}

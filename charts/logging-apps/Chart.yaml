@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.32.0
+version: 0.33.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,7 +18,28 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "Update fluentBit chart from 0.39.0 to 0.46.7"
+      description: "Update loki chart from 6.5.2 to 6.6.3"
       links:
-        - name: "fluentBit Release 0.46.7"
-          url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.46.7
+        - name: "Loki 6.6.3"
+          url: https://github.com/grafana/loki/commit/9823f2030a294e6dc9c50d6f956a7691df5d53df
+        - name: "Loki 6.6.2"
+          url: https://github.com/grafana/loki/commit/1ab9d271c354caf0ba589691e6477fb9a19039f0
+        - name: "Loki 6.6.1"
+          url: https://github.com/grafana/loki/commit/8101e21f9973b8261de0ee3eb34fa4d7b88ddaac
+        - name: "Loki 6.6.0"
+          url: https://github.com/grafana/loki/commit/efdae3df14c47d627eb99e91466e0451db6e16f6
+    - kind: changed
+      description: "Update promtail chart from 6.15.5 to 6.16.0"
+      links:
+        - name: "promtail Release 6.16.0"
+          url: https://github.com/grafana/helm-charts/releases/tag/promtail-6.16.0
+    - kind: changed
+      description: "Update fluentd chart from 5.5.* to 6.5.*"
+      links:
+        - name: "fluentd changelog"
+          url: https://github.com/bitnami/charts/blob/main/bitnami/fluentd/CHANGELOG.md
+    - kind: changed
+      description: "Update fluentBit chart from 0.46.7 to 0.46.11"
+      links:
+        - name: "fluentBit Release 0.46.11"
+          url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.46.11
