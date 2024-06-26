@@ -4,6 +4,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat(argo-rollouts): update from 1.6.6 to 1.7.0"
+          links:
+            - name: GitHub Release 1.7.0
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.7.0
+        - kind: changed
+          description: "feat(argo-rollouts): update chart from 2.35.3 to 2.36.0"
+          links:
+            - name: "chore(argo-rollouts): Update dependency argoproj/argo-rollouts"
+              url: https://github.com/argoproj/argo-helm/commit/43c626d31ed39037696392682e65fd82f79f1c9f
+    apiVersion: v2
+    created: "2024-06-26T09:58:28.453134254Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 81eef1030c4d59b966fd3ca7031279f01342e3a1b85af59025a7016ba0a0b6eb
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.24.0/argo-apps-0.24.0.tgz
+    version: 0.24.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(argo-rollouts): update from 1.6.4 to 1.6.6"
           links:
             - name: GitHub Release 1.6.5
@@ -27730,4 +27762,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-26T09:53:17.714524568Z"
+generated: "2024-06-26T09:58:28.454453692Z"
