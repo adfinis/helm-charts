@@ -18638,6 +18638,116 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore: update vault from 0.27.0 to 0.28.0"
+          links:
+            - name: vault 0.28.0 release
+              url: https://github.com/hashicorp/vault-helm/releases/tag/v0.28.0
+        - kind: changed
+          description: "chore: update gatekeeper from 3.10.0 to 3.16.3"
+          links:
+            - name: gatekeeper 3.16.3 release
+              url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.16.3
+            - name: gatekeeper 3.16.0 release
+              url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.16.0
+            - name: gatekeeper 3.15.0 release
+              url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.15.0
+            - name: gatekeeper 3.14.0 release
+              url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.14.0
+            - name: gatekeeper 3.13.0 release
+              url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.13.0
+            - name: gatekeeper 3.12.0 release
+              url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.12.0
+            - name: gatekeeper 3.11.0 release
+              url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.11.0
+        - kind: changed
+          description: "chore: update vault-monitoring from 0.2.* to 0.3.*. Changes: make bearerTokenFile optional, make bearerTokenFile toggleable"
+        - kind: changed
+          description: "chore: update secretsStoreCsiDriver to 1.4.4"
+          links:
+            - name: secretsStoreCsiDriver release 1.4.4
+              url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.4.4
+            - name: secretsStoreCsiDriver release 1.4.3
+              url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.4.3
+            - name: secretsStoreCsiDriver release 1.4.2
+              url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.4.2
+        - kind: changed
+          description: "chore: update neuvector from 2.6.1 to 2.7.7"
+          links:
+            - name: neuvector release 2.7.7
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/2.7.7
+            - name: neuvector release 2.7.4
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/2.7.4
+            - name: neuvector release 2.7.3
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/2.7.3
+            - name: neuvector release 2.7.0
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/2.7.0
+        - kind: changed
+          description: "chore: update neuvector-monitoring from 2.6.1 to 2.7.7"
+          links:
+            - name: neuvector release 2.7.7
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/2.7.7
+            - name: neuvector release 2.7.4
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/2.7.4
+            - name: neuvector release 2.7.3
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/2.7.3
+            - name: neuvector release 2.7.0
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/2.7.0
+        - kind: changed
+          description: "chore: update stackroxCentralServices from 400.3.4 to 400.4.3"
+          links:
+            - name: stackrox 4.4
+              url: https://docs.openshift.com/acs/4.4/release_notes/44-release-notes.html
+        - kind: changed
+          description: "chore: update stackroxSecuredClusterServices from 400.3.4 to 400.4.3"
+          links:
+            - name: stackrox 4.4
+              url: https://docs.openshift.com/acs/4.4/release_notes/44-release-notes.html
+        - kind: changed
+          description: "chore: update kyverno chart from 3.1.4 to 3.2.5"
+          links:
+            - name: kyverno release 1.12.4
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.12.4
+            - name: kyverno release 1.12.3
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.12.3
+            - name: kyverno release 1.12.2
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.12.2
+            - name: kyverno release 1.11.5
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.11.5
+        - kind: changed
+          description: "chore: update kyverno-policies chart from 3.1.4 to 3.2.4"
+          links:
+            - name: kyverno release 1.12.4
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.12.4
+            - name: kyverno release 1.12.3
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.12.3
+            - name: kyverno release 1.12.2
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.12.2
+            - name: kyverno release 1.11.5
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.11.5
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-06-26T09:39:31.453787797Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 85b84195acfa60f72cec639b324f4d189cfe0717eed1928504e08a4161d686b7
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.86.0/security-apps-0.86.0.tgz
+    version: 0.86.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "dex: update to 0.18.0"
           links:
             - name: dex v2.40.0 release
@@ -27380,4 +27490,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-26T09:37:29.590976972Z"
+generated: "2024-06-26T09:39:31.455211758Z"
