@@ -112,6 +112,7 @@ annotations:
       description: "chore: bump reloader from 1.0.22 to 1.0.108. No important changes happened, only dependency upgrades and similar."
     - kind: changed
       description: "chore: bump opencost from 1.29.0 to 1.39.0"
+      links:
         - name: "chart version 1.39.0"
           url: "https://github.com/opencost/opencost-helm-chart/releases/tag/1.39.0-helm"
         - name: "chart version 1.37.0"
