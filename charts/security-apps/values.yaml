@@ -81,7 +81,7 @@ vault:
   # -- Chart
   chart: "vault"
   # -- [vault Helm chart](https://github.com/hashicorp/vault-helm) version
-  targetRevision: "0.27.0"
+  targetRevision: "0.28.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml)
   values: {}
@@ -141,7 +141,7 @@ gatekeeper:
   # -- Chart
   chart: "gatekeeper"
   # -- [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version
-  targetRevision: "3.10.0"
+  targetRevision: "3.16.3"
   # -- Helm values
   # @default -- [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml)
   values: {}
@@ -161,7 +161,7 @@ vaultMonitoring:
   # -- Chart
   chart: "vault-monitoring"
   # -- [vault-monitoring Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring) version
-  targetRevision: "0.2.*"
+  targetRevision: "0.3.*"
   # -- Helm values
   # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/vault-monitoring/values.yaml)
   values: {}
@@ -181,7 +181,7 @@ secretsStoreCsiDriver:
   # -- Chart
   chart: "secrets-store-csi-driver"
   # -- [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version
-  targetRevision: "1.4.1"
+  targetRevision: "1.4.4"
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver/values.yaml)
   values: {}
@@ -201,7 +201,7 @@ neuvector:
   # -- Chart
   chart: "core"
   # -- [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version
-  targetRevision: "2.6.1"
+  targetRevision: "2.7.7"
   # -- Helm values
   # @default -- [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/core/values.yaml)
   values: {}
@@ -221,7 +221,7 @@ neuvectorMonitor:
   # -- Chart
   chart: "monitor"
   # -- [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version
-  targetRevision: "2.6.1"
+  targetRevision: "2.7.7"
   # -- Helm values
   # @default -- [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/monitor/values.yaml)
   values: {}
@@ -241,7 +241,7 @@ stackroxCentralServices:
   # -- Chart
   chart: stackrox-central-services
   # -- [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version
-  targetRevision: 400.3.4
+  targetRevision: 400.4.3
   # -- Helm values
   # @default -- [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-central/values.yaml)
   values: {}
@@ -261,7 +261,7 @@ stackroxSecuredClusterServices:
   # -- Chart
   chart: stackrox-secured-cluster-services
   # -- [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version
-  targetRevision: 400.3.4
+  targetRevision: 400.4.3
   # -- Helm values
   # @default -- [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-secured-cluster/values.yaml.htpl)
   values: {}
@@ -305,7 +305,7 @@ kyverno:
   # -- Chart
   chart: kyverno
   # -- [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno)
-  targetRevision: 3.1.4
+  targetRevision: 3.2.5
   # -- Helm values
   # @default -- [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml)
   values: {}
@@ -327,7 +327,7 @@ kyvernoPolicies:
   # -- Chart
   chart: kyverno-policies
   # -- [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies)
-  targetRevision: 3.1.4
+  targetRevision: 3.2.4
   # -- Helm values
   # @default -- [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno-policies/values.yaml)
   values: {}
