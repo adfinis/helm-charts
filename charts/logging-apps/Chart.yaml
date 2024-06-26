@@ -39,7 +39,7 @@ annotations:
         - name: "fluentd changelog"
           url: https://github.com/bitnami/charts/blob/main/bitnami/fluentd/CHANGELOG.md
     - kind: changed
-      description: "Update fluentBit chart from 0.46.7 to 0.46.111"
+      description: "Update fluentBit chart from 0.46.7 to 0.46.11"
       links:
         - name: "fluentBit Release 0.46.11"
           url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.46.11
