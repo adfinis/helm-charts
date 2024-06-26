@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.46.0](https://img.shields.io/badge/Version-0.46.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.47.0](https://img.shields.io/badge/Version-0.47.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -51,7 +51,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | grafanaAgentOperator.destination.namespace | string | `"infra-grafana-agent"` | Namespace |
 | grafanaAgentOperator.enabled | bool | `false` | Enable grafana-agent |
 | grafanaAgentOperator.repoURL | string | [repo](https://grafana.github.io/helm-charts) | Repo URL |
-| grafanaAgentOperator.targetRevision | string | `"0.2.8"` | [Grafana Agent Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/agent-operator) version |
+| grafanaAgentOperator.targetRevision | string | `"0.4.0"` | [Grafana Agent Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/agent-operator) version |
 | grafanaAgentOperator.values | object | [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/agent-operator/values.yaml) | Helm values |
 | keda | object | [example](./examples/keda.yaml) | [KEDA](https://keda.sh/) |
 | keda.annotations | object | `{}` | Annotations for KEDA app |
@@ -59,7 +59,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keda.destination.namespace | string | `"infra-keda"` | Namespace |
 | keda.enabled | bool | `false` | Enable KEDA |
 | keda.repoURL | string | [repo](https://kedacore.github.io/charts) | Repo URL |
-| keda.targetRevision | string | `"2.12.0"` | [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version |
+| keda.targetRevision | string | `"2.14.2"` | [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version |
 | keda.values | object | [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml) | Helm values |
 | metallb | object | - | [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml)) |
 | metallb.chart | string | `"metallb"` | Chart |
@@ -74,7 +74,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | opencost.destination.namespace | string | `"infra-opencost"` | Namespace |
 | opencost.enabled | bool | `false` | Enable OpenCost |
 | opencost.repoURL | string | [repo](https://opencost.github.io/opencost-helm-chart) | Repo URL |
-| opencost.targetRevision | string | `"1.29.0"` | [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost) |
+| opencost.targetRevision | string | `"1.39.0"` | [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost) |
 | opencost.values | object | [upstream values](https://github.com/opencost/opencost-helm-chart/blob/main/charts/opencost/values.yaml) | Helm values |
 | prometheusMsteams | object | - | [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) ([example](./example/prometheus-msteams.yaml)) |
 | prometheusMsteams.chart | string | `"prometheus-msteams"` | Chart |
@@ -88,7 +88,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | reloader.destination.namespace | string | `"infra-reloader"` | Namespace |
 | reloader.enabled | bool | `false` | Enable reloader |
 | reloader.repoURL | string | [repo](https://stakater.github.io/stakater-charts) | Repo URL |
-| reloader.targetRevision | string | `"v1.0.22"` | [reloader Helm chart](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader) version |
+| reloader.targetRevision | string | `"v1.0.108"` | [reloader Helm chart](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader) version |
 | reloader.values | object | [upstream values](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader/values.yaml) | Helm values |
 | sentryKubernetes | object | - | [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml) |
 | sentryKubernetes.chart | string | `"sentry-kubernetes"` | Chart |
