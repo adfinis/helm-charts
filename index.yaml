@@ -5208,6 +5208,58 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore: Update argocd-chart to 7.2.0"
+          links:
+            - name: "argocd version 7.2.0"
+              url: https://github.com/argoproj/argo-helm/releases/tag/argo-cd-7.2.0
+        - kind: changed
+          description: "chore: Update kube-prometheus-stack to 60.3.0"
+          links:
+            - name: "kube-prometheus-stack version 60.3.0"
+              url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-60.3.0
+        - kind: changed
+          description: "chore: Update rbacManager chart to 1.20.0"
+          links:
+            - name: "rbac-manager version 1.8.0"
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.8.0
+        - kind: changed
+          description: "chore: Update velero chart from 6.4.0 to 6.7.0"
+          links:
+            - name: "velero chart version 6.5.0"
+              url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-6.5.0
+            - name: "velero chart version 6.6.0"
+              url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-6.6.0
+            - name: "velero chart version 6.7.0"
+              url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-6.7.0
+        - kind: changed
+          description: "chore: Update kured chart to 5.4.5"
+          links:
+            - name: "kured chart version 5.4.5"
+              url: https://github.com/kubereboot/charts/releases/tag/kured-5.4.5
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2024-06-26T09:53:17.712964577Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: ecc9b7dcc2970518ae2e395abe22a31b8cd064d418598e2f07371d6d61691c8f
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.212.0/infra-apps-0.212.0.tgz
+    version: 0.212.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore: Update kube-prometheus-stack 58.x to 60.x"
           links:
             - name: "kube-prometheus-stack version 60.0.2"
@@ -27678,4 +27730,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-26T09:51:22.673261992Z"
+generated: "2024-06-26T09:53:17.714524568Z"
