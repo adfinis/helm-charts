@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.211.0](https://img.shields.io/badge/Version-0.211.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.212.0](https://img.shields.io/badge/Version-0.212.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocd.destination.namespace | string | `"infra-argocd"` | Namespace |
 | argocd.enabled | bool | `false` | Enable Argo CD |
 | argocd.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocd.targetRevision | string | `"7.1.1"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
+| argocd.targetRevision | string | `"7.2.0"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
 | argocd.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml) | Helm values |
 | argoconfig.application.annotations | object | `{}` | Optional annotations to add to all Applications metadata. |
 | certManager | object | [example](./examples/cert-manager.yaml) | [cert-manager](https://cert-manager.io/) |
@@ -72,7 +72,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kubePrometheusStack.enabled | bool | `false` | Enable prometheus-operator |
 | kubePrometheusStack.repoURL | string | [repo](https://prometheus-community.github.io/helm-charts) | Repo URL |
 | kubePrometheusStack.syncPolicy.syncOptions[0] | string | `"ServerSideApply=true"` | enable server-side-apply for KPS since it get's rid of having to manually sync/replace resources |
-| kubePrometheusStack.targetRevision | string | `"60.0.2"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
+| kubePrometheusStack.targetRevision | string | `"60.3.0"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
 | kubePrometheusStack.values | object | [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml) | Helm values |
 | kured | object | [example](./examples/kured.yaml) | [kured](https://github.com/kubereboot/kured) |
 | kured.annotations | object | `{}` | Annotations for Kured app |
@@ -80,7 +80,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kured.destination.namespace | string | `"infra-kured"` | Namespace |
 | kured.enabled | bool | `false` | Enable Kured |
 | kured.repoURL | string | [repo](https://kubereboot.github.io/charts) | Repo URL |
-| kured.targetRevision | string | `"5.2.0"` | [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured) |
+| kured.targetRevision | string | `"5.4.5"` | [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured) |
 | kured.values | object | [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml) | Helm values |
 | mimir | object | [example](./examples/mimir.yaml) | [mimir](https://github.com/grafana/mimir) |
 | mimir.annotations | object | `{}` | Annotations for mimir app |
@@ -96,7 +96,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rbacManager.destination.namespace | string | `"infra-rbac"` | Namespace |
 | rbacManager.enabled | bool | `false` | Enable rbac-manager operator |
 | rbacManager.repoURL | string | [repo](https://charts.fairwinds.com/stable) | Repo URL |
-| rbacManager.targetRevision | string | `"1.19.0"` | [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version |
+| rbacManager.targetRevision | string | `"1.20.0"` | [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version |
 | rbacManager.values | object | [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml) | Helm values |
 | thanos | object | DEPRECATED | [Thanos](https://thanos.io/) is DEPRECATED, use mimir instead |
 | thanos.annotations | object | `{}` | Annotations for Thanos app |
@@ -112,7 +112,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | velero.destination.namespace | string | `"infra-velero"` | Namespace |
 | velero.enabled | bool | `false` | Enable Velero |
 | velero.repoURL | string | [repo](https://vmware-tanzu.github.io/helm-charts) | Repo URL |
-| velero.targetRevision | string | `"6.4.0"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
+| velero.targetRevision | string | `"6.7.0"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
 | velero.values | object | [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml) | Helm values |
 
 ## About this chart
