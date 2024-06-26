@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.211.0
+version: 0.212.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,12 +18,31 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore: Update kube-prometheus-stack 58.x to 60.x"
+      description: "chore: Update argocd-chart to 7.2.0"
       links:
-        - name: "kube-prometheus-stack version 60.0.2"
-          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-60.0.2
+        - name: "argocd version 7.2.0"
+          url: https://github.com/argoproj/argo-helm/releases/tag/argo-cd-7.2.0
     - kind: changed
-      description: "chore: Grafana version 11"
+      description: "chore: Update kube-prometheus-stack to 60.3.0"
       links:
-        - name: "breaking change in version 11 of Grafana"
-          url: https://grafana.com/docs/grafana/latest/breaking-changes/breaking-changes-v11-0/
+        - name: "kube-prometheus-stack version 60.3.0"
+          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-60.3.0
+    - kind: changed
+      description: "chore: Update rbacManager chart to 1.20.0"
+      links:
+        - name: "rbac-manager version 1.8.0"
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.8.0
+    - kind: changed
+      description: "chore: Update velero chart from 6.4.0 to 6.7.0"
+      links:
+        - name: "velero chart version 6.5.0"
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-6.5.0
+        - name: "velero chart version 6.6.0"
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-6.6.0
+        - name: "velero chart version 6.7.0"
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-6.7.0
+    - kind: changed
+      description: "chore: Update kured chart to 5.4.5"
+      links:
+        - name: "kured chart version 5.4.5"
+          url: https://github.com/kubereboot/charts/releases/tag/kured-5.4.5
