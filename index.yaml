@@ -13472,6 +13472,38 @@ entries:
   logging-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: "Update promtail chart from 6.16.0 to 6.16.3"
+          links:
+            - name: "promtail Release 6.16.1"
+              url: https://github.com/grafana/helm-charts/releases/tag/promtail-6.16.1
+            - name: "promtail Release 6.16.2"
+              url: https://github.com/grafana/helm-charts/releases/tag/promtail-6.16.2
+            - name: "promtail Release 6.16.2"
+              url: https://github.com/grafana/helm-charts/releases/tag/promtail-6.16.3
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2024-07-10T11:52:37.279969371Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: aacd681a9074609e92e01054c84d67d0ed8c6d616656bb64d5485c96bd21ae34
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.33.1/logging-apps-0.33.1.tgz
+    version: 0.33.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "Update loki chart from 6.5.2 to 6.6.3"
           links:
@@ -27811,4 +27843,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-26T10:01:22.745656682Z"
+generated: "2024-07-10T11:52:37.281452632Z"
