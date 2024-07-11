@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.212.0
+version: 0.213.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,34 +15,14 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore: Update argocd-chart to 7.2.0"
+      description: "chore: Update cert-manager from 1.15.0 to 1.15.1"
       links:
-        - name: "argocd version 7.2.0"
-          url: https://github.com/argoproj/argo-helm/releases/tag/argo-cd-7.2.0
-    - kind: changed
-      description: "chore: Update kube-prometheus-stack to 60.3.0"
-      links:
-        - name: "kube-prometheus-stack version 60.3.0"
-          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-60.3.0
-    - kind: changed
-      description: "chore: Update rbacManager chart to 1.20.0"
-      links:
-        - name: "rbac-manager version 1.8.0"
-          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.8.0
-    - kind: changed
-      description: "chore: Update velero chart from 6.4.0 to 6.7.0"
-      links:
-        - name: "velero chart version 6.5.0"
-          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-6.5.0
-        - name: "velero chart version 6.6.0"
-          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-6.6.0
-        - name: "velero chart version 6.7.0"
-          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-6.7.0
-    - kind: changed
-      description: "chore: Update kured chart to 5.4.5"
-      links:
-        - name: "kured chart version 5.4.5"
-          url: https://github.com/kubereboot/charts/releases/tag/kured-5.4.5
+        - name: "Release Notes"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.15.1
+        - name: "CVE-2024-35255: Elevation of Privilege in Azure Identity Libraries and Microsoft Authentication Library"
+          url: https://github.com/cert-manager/cert-manager/pull/7092
+        - name: "CVE-2024-6104: go-retryablehttp can leak basic auth credentials to log files"
+          url: https://github.com/cert-manager/cert-manager/pull/7130
