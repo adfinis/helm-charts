@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.213.0
+version: 0.214.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,11 +18,22 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore: Update cert-manager from 1.15.0 to 1.15.1"
+      description: "fix: Update Argo CD from 2.11.3 to 2.11.4"
       links:
         - name: "Release Notes"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.15.1
-        - name: "CVE-2024-35255: Elevation of Privilege in Azure Identity Libraries and Microsoft Authentication Library"
-          url: https://github.com/cert-manager/cert-manager/pull/7092
-        - name: "CVE-2024-6104: go-retryablehttp can leak basic auth credentials to log files"
-          url: https://github.com/cert-manager/cert-manager/pull/7130
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.11.4
+    - kind: changed
+      description: "chore: Update Argo CD chart from 7.2.0 to 7.3.5"
+      links:
+        - name: "fix: Default repo-server init container resources to empty"
+          url: https://github.com/argoproj/argo-helm/pull/2786
+        - name: "feat: make PrometheusRule deployment conditional on CRD existing"
+          url: https://github.com/argoproj/argo-helm/pull/2791
+        - name: "chore: add shard option for clusterCredentials"
+          url: https://github.com/argoproj/argo-helm/pull/2779
+        - name: "feat: add support for passing redis - sentinel credentials"
+          url: https://github.com/argoproj/argo-helm/pull/2492
+        - name: "fix: Make REDIS_PASSWORD environment variables optional always"
+          url: https://github.com/argoproj/argo-helm/pull/2800
+        - name: "fix: Address oversights of feature namespaceOverride"
+          url: https://github.com/argoproj/argo-helm/pull/2821
