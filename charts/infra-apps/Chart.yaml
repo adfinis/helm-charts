@@ -18,7 +18,7 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: Update ARgo CD from 2.11.3 to 2.11.4"
+      description: "fix: Update Argo CD from 2.11.3 to 2.11.4"
       links:
         - name: "Release Notes"
           url: https://github.com/argoproj/argo-cd/releases/tag/v2.11.4
