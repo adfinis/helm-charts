@@ -1,6 +1,6 @@
 # kubernetes-etcd-backup
 
-![Version: 1.0.4](https://img.shields.io/badge/Version-1.0.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.0.4](https://img.shields.io/badge/AppVersion-v1.0.4-informational?style=flat-square)
+![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.0.6](https://img.shields.io/badge/AppVersion-v1.0.6-informational?style=flat-square)
 
 Chart for kubernetes-etcd-backup solution
 
@@ -17,6 +17,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| affinity | object | `{}` |  |
 | backup.dirname | string | `"+etcd-backup-%FT%T%:z"` | Directory name of single backup |
 | backup.expiretype | string | `"days"` | expiretype could be days (keep backups newer than backup.keepdays, count (keep a number of backups with backup.keepcount), never (do not expire backups, keep all of them) |
 | backup.keepcount | string | `"10"` | Count retention if expiretype set to count |
@@ -36,6 +37,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | monitoring.rules.cronjobMonitor | bool | `true` | Deploy PrometheusRule to check for cronjob fails. |
 | nameOverride | string | `""` |  |
 | persistence.capacity | string | `"10Gi"` | Define the storage size |
+| persistence.existingClaim | string | `""` | Use an exising PVC |
 | persistence.nfs.enabled | bool | `false` | Enable nfs backend storage |
 | persistence.nfs.path | string | `"nfs/example/path"` | NFS server path |
 | persistence.nfs.server | string | `"example.com"` | NFS server name or IP |

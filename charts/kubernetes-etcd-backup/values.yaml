@@ -46,6 +46,9 @@ persistence:
     # -- Enable provisioned backend storage with default or configured storageClass
     enabled: false
     storageClass: ""
+  # -- Use an exising PVC
+  existingClaim: ""
+
 
 image:
   # -- Repository image to use
@@ -69,6 +72,19 @@ resources:
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
+
+
+affinity: {}
+  # Will be added directly to the pods affinity configuration.
+  # nodeAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     nodeSelectorTerms:
+  #     - matchExpressions:
+  #       - key: disktype
+  #         operator: In
+  #         values:
+  #         - ssd
+
 
 monitoring:
 # -- Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis/kubernetes-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml).

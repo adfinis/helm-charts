@@ -52,4 +52,11 @@ spec:
             {{- else if .Values.persistence.provisioning.enabled }}
             persistentVolumeClaim:
               claimName: {{ include "kubernetes-etcd-backup.fullname" . }}
+            {{- else if .Values.persistence.existingClaim }}
+            persistentVolumeClaim:
+              claimName: {{ .Values.persistence.existingClaim }}
             {{- end }}
+          {{ with .Values.affinity }}
+            affinity:
+              {{ . | toYaml | nindent 14 }}
+          {{ end }}
