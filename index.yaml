@@ -13500,6 +13500,34 @@ entries:
     - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-0.1.0/keycloak-operator-0.1.0.tgz
     version: 0.1.0
   kubernetes-etcd-backup:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "Allow configuration of jobs affinity"
+        - kind: changed
+          description: "Allow use of an existing pvc"
+    apiVersion: v2
+    appVersion: v1.0.6
+    created: "2024-07-24T09:03:39.677852515Z"
+    description: Chart for kubernetes-etcd-backup solution
+    digest: 2d21c3229b31197ea0a52e86de31adcb09b5fa79b37bd15f2ae869b62812cfd9
+    home: https://github.com/adfinis/kubernetes-etcd-backup
+    keywords:
+    - kubernetes-etcd-backup
+    - kubernetes
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: kubernetes-etcd-backup
+    sources:
+    - https://github.com/adfinis/kubernetes-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/kubernetes-etcd-backup-1.1.0/kubernetes-etcd-backup-1.1.0.tgz
+    version: 1.1.0
   - apiVersion: v2
     appVersion: v1.0.4
     created: "2023-12-14T13:31:08.414300182Z"
@@ -27918,4 +27946,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-07-12T08:38:07.949852742Z"
+generated: "2024-07-24T09:03:39.679525718Z"
