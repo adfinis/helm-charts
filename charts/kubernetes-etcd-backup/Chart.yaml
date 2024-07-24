@@ -1,9 +1,10 @@
+---
 apiVersion: v2
 name: kubernetes-etcd-backup
 description: Chart for kubernetes-etcd-backup solution
 type: application
-version: 1.0.4
-appVersion: v1.0.4
+version: 1.1.0
+appVersion: v1.0.6
 keywords:
   - kubernetes-etcd-backup
   - kubernetes
@@ -16,3 +17,9 @@ maintainers:
   - name: adfinis
     email: support@adfinis.com
     url: https://adfinis.com
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "Allow configuration of jobs affinity"
+    - kind: changed
+      description: "Allow use of an existing pvc"
