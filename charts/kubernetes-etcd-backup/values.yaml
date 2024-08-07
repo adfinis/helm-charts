@@ -97,6 +97,7 @@ monitoring:
   #    - name: my_group
   #      rules:
   #      - record: my_record
+  #        expr: 100 * my_record
 
 extraVolumeMounts: []
 ## Additional volumeMounts to the pod.
