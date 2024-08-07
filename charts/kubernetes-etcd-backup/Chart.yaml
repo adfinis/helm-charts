@@ -3,7 +3,7 @@ apiVersion: v2
 name: kubernetes-etcd-backup
 description: Chart for kubernetes-etcd-backup solution
 type: application
-version: 1.2.0
+version: 1.3.0
 appVersion: v1.0.6
 keywords:
   - kubernetes-etcd-backup
@@ -20,4 +20,4 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "Allow configuration of extraVolume/Mounts"
+      description: "Add insecureSkipTlsVerify flag"
