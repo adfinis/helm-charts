@@ -49,7 +49,6 @@ persistence:
   # -- Use an exising PVC
   existingClaim: ""
 
-
 image:
   # -- Repository image to use
   repository: ghcr.io/adfinis/kubernetes-etcd-backup
@@ -73,8 +72,8 @@ resources:
   #   cpu: 100m
   #   memory: 128Mi
 
-
-affinity: {}
+affinity:
+  {}
   # Will be added directly to the pods affinity configuration.
   # nodeAffinity:
   #   requiredDuringSchedulingIgnoredDuringExecution:
@@ -85,9 +84,8 @@ affinity: {}
   #         values:
   #         - ssd
 
-
 monitoring:
-# -- Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis/kubernetes-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml).
+  # -- Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis/kubernetes-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml).
   enabled: false
   rules:
     # -- Deploy PrometheusRule to check for cronjob fails.
@@ -99,4 +97,13 @@ monitoring:
   #    - name: my_group
   #      rules:
   #      - record: my_record
-  #        expr: 100 * my_record
+
+extraVolumeMounts: []
+## Additional volumeMounts to the pod.
+#  - name: additional-volume-mount
+#    mountPath: /var/additional-volume-path
+
+extraVolumes: []
+## Additional volumes to the pod.
+#  - name: additional-volume
+#    emptyDir: {}
