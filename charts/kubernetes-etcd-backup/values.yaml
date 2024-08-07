@@ -32,7 +32,6 @@ etcdConfiguration:
   # etcd.kube-system.svc.cluster.local"
   insecureSkipTlsVerify: false
 
-
 etcdCertification:
   # -- etcd-peer-tls secret name
   etcdPeerTlsName: "changeme"
