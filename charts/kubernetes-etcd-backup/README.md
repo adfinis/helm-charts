@@ -30,6 +30,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | etcdConfiguration.endpoint | string | `"changeme"` | Etcd endpoint ip or hostname without protocol or port |
 | extraVolumeMounts | list | `[]` |  |
 | extraVolumes | list | `[]` |  |
+| etcdConfiguration.insecureSkipTlsVerify | bool | `false` | skip server certificate verification |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"Always"` | Image pull policy configuration |
 | image.repository | string | `"ghcr.io/adfinis/kubernetes-etcd-backup"` | Repository image to use |

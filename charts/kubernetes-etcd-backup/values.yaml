@@ -23,6 +23,9 @@ backup:
 etcdConfiguration:
   # -- Etcd endpoint ip or hostname without protocol or port
   endpoint: "changeme"
+  # -- skip server certificate verification
+  insecureSkipTlsVerify: false
+
 
 etcdCertification:
   # -- etcd-peer-tls secret name
