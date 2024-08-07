@@ -22,8 +22,14 @@ backup:
 
 etcdConfiguration:
   # -- Etcd endpoint ip or hostname without protocol or port
+  # Example: etcd.kube-system.svc.cluster.local
   endpoint: "changeme"
-  # -- skip server certificate verification
+  # -- Skip server certificate verification
+  # Useful for scenarios where etcd nodes are external endpoints (access
+  # through etcd service in kube-system namespace) and have a different CN/SAN
+  # in the certificate . Otherwise, "failed to verify certificate: x509:
+  # certificate is valid for etcd-2, etc., not
+  # etcd.kube-system.svc.cluster.local"
   insecureSkipTlsVerify: false
 
 
