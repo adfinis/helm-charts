@@ -12,3 +12,6 @@ data:
   ETCD_BACKUP_KEEP_COUNT: {{ .Values.backup.keepcount | quote }}
   ETCD_BACKUP_UMASK: {{ .Values.backup.umask | quote }}
   ENDPOINT: {{ .Values.etcdConfiguration.endpoint | quote }}
+  {{- if .Values.etcdConfiguration.insecureSkipTlsVerify }}
+  ETCDCTL_INSECURE_SKIP_TLS_VERIFY: "true"
+  {{- end }}
