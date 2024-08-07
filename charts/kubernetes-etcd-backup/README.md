@@ -1,6 +1,6 @@
 # kubernetes-etcd-backup
 
-![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.0.6](https://img.shields.io/badge/AppVersion-v1.0.6-informational?style=flat-square)
+![Version: 1.3.0](https://img.shields.io/badge/Version-1.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.0.6](https://img.shields.io/badge/AppVersion-v1.0.6-informational?style=flat-square)
 
 Chart for kubernetes-etcd-backup solution
 
@@ -27,11 +27,10 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | backup.umask | string | `"0027"` | Set umask during the backup |
 | etcdCertification.etcdPeerTlsName | string | `"changeme"` | etcd-peer-tls secret name |
 | etcdCertification.etcdServerCaName | string | `"changeme"` | etcd-server-ca secret name |
-| extraVolumeMounts | list | `[]` |  |
-| extraVolumes | list | `[]` |  |
-| etcdConfiguration.insecureSkipTlsVerify | bool | `false` | skip server certificate verification |
 | etcdConfiguration.endpoint | string | `"changeme"` | Etcd endpoint ip or hostname without protocol or port Example: etcd.kube-system.svc.cluster.local |
 | etcdConfiguration.insecureSkipTlsVerify | bool | `false` | Skip server certificate verification Useful for scenarios where etcd nodes are external endpoints (access through etcd service in kube-system namespace) and have a different CN/SAN in the certificate . Otherwise, "failed to verify certificate: x509: certificate is valid for etcd-2, etc., not etcd.kube-system.svc.cluster.local" |
+| extraVolumeMounts | list | `[]` |  |
+| extraVolumes | list | `[]` |  |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"Always"` | Image pull policy configuration |
 | image.repository | string | `"ghcr.io/adfinis/kubernetes-etcd-backup"` | Repository image to use |
