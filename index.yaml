@@ -13503,6 +13503,32 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Allow configuration of extraVolume/Mounts"
+    apiVersion: v2
+    appVersion: v1.0.6
+    created: "2024-08-07T13:10:49.691813934Z"
+    description: Chart for kubernetes-etcd-backup solution
+    digest: d84db89550fe9d3e6f57ddc456973da40122769c2a9c0919942ab4aa172be633
+    home: https://github.com/adfinis/kubernetes-etcd-backup
+    keywords:
+    - kubernetes-etcd-backup
+    - kubernetes
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: kubernetes-etcd-backup
+    sources:
+    - https://github.com/adfinis/kubernetes-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/kubernetes-etcd-backup-1.2.0/kubernetes-etcd-backup-1.2.0.tgz
+    version: 1.2.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Allow configuration of jobs affinity"
         - kind: changed
           description: "Allow use of an existing pvc"
@@ -27976,4 +28002,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-07-31T09:34:50.356780814Z"
+generated: "2024-08-07T13:10:49.693190578Z"
