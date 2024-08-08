@@ -18,4 +18,4 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat: Remove thanos after 12 months of being disabled'
+      description: "feat: Remove thanos after 12 months of being deprecated"
