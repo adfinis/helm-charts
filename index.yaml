@@ -5240,6 +5240,36 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore: update mimir chart to 5.4.0, mimir version to 2.13.0"
+          links:
+          - url: "https://github.com/grafana/mimir/releases/tag/mimir-2.13.0"
+            name: "Grafana Mimir Release 2.13.0"
+          - url: "https://grafana.com/docs/helm-charts/mimir-distributed/latest/release-notes/v5.4/"
+            name: "Grafana Mimir Helm Chart Release Notes 5.4.0"
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-08-08T12:32:20.777103391Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 55f526af2ff4686d36c262ba85fde9ddb5603fe5f4bdc504241e5f3305f460fe
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.216.0/infra-apps-0.216.0.tgz
+    version: 0.216.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Remove thanos after 12 months of being deprecated"
       artifacthub.io/containsSecurityUpdates: "true"
     apiVersion: v2
@@ -28053,4 +28083,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-08-08T12:20:13.52815775Z"
+generated: "2024-08-08T12:32:20.778710849Z"
