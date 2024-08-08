@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.214.0](https://img.shields.io/badge/Version-0.214.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.215.0](https://img.shields.io/badge/Version-0.215.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -98,14 +98,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rbacManager.repoURL | string | [repo](https://charts.fairwinds.com/stable) | Repo URL |
 | rbacManager.targetRevision | string | `"1.20.0"` | [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version |
 | rbacManager.values | object | [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml) | Helm values |
-| thanos | object | DEPRECATED | [Thanos](https://thanos.io/) is DEPRECATED, use mimir instead |
-| thanos.annotations | object | `{}` | Annotations for Thanos app |
-| thanos.chart | string | `"thanos"` | Chart |
-| thanos.destination.namespace | string | `"infra-monitoring"` | Namespace |
-| thanos.enabled | bool | `false` | Enable Thanos |
-| thanos.repoURL | string | [repo](https://charts.bitnami.com/bitnami) | Repo URL |
-| thanos.targetRevision | string | `"11.5.*"` | [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos) |
-| thanos.values | object | [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/thanos/values.yaml) | Helm values |
 | velero | object | [example](./examples/velero.yaml) | [Velero](https://velero.io/) |
 | velero.annotations | object | `{}` | Annotations for Velero app |
 | velero.chart | string | `"velero"` | Chart |

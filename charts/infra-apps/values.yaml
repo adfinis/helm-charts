@@ -161,28 +161,6 @@ rbacManager:
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml)
   values: {}
 
-# -- [Thanos](https://thanos.io/) is DEPRECATED, use mimir instead
-# @default -- DEPRECATED
-thanos:
-  # -- Enable Thanos
-  enabled: false
-  name: thanos
-  # -- Annotations for Thanos app
-  annotations: {}
-  destination:
-    # -- Namespace
-    namespace: infra-monitoring
-  # -- Repo URL
-  # @default -- [repo](https://charts.bitnami.com/bitnami)
-  repoURL: https://charts.bitnami.com/bitnami
-  # -- Chart
-  chart: thanos
-  # -- [Thanos Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/thanos)
-  targetRevision: 11.5.*
-  # -- Helm values
-  # @default -- [upstream values](https://github.com/bitnami/charts/blob/master/bitnami/thanos/values.yaml)
-  values: {}
-
 # -- [Velero](https://velero.io/)
 # @default -- [example](./examples/velero.yaml)
 velero:
