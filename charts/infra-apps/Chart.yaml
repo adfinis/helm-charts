@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.215.0
+version: 0.216.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,4 +18,9 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat: Remove thanos after 12 months of being deprecated"
+      description: "chore: update mimir chart to 5.4.0, mimir version to 2.13.0"
+      links:
+      - url: "https://github.com/grafana/mimir/releases/tag/mimir-2.13.0"
+        name: "Grafana Mimir Release 2.13.0"
+      - url: "https://grafana.com/docs/helm-charts/mimir-distributed/latest/release-notes/v5.4/"
+        name: "Grafana Mimir Helm Chart Release Notes 5.4.0"
