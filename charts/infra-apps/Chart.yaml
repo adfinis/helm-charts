@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.216.0
+version: 0.217.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,9 +18,16 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore: update mimir chart to 5.4.0, mimir version to 2.13.0"
+      description: "feat: Update Argo CD from 2.11.4 to 2.12.0"
       links:
-      - url: "https://github.com/grafana/mimir/releases/tag/mimir-2.13.0"
-        name: "Grafana Mimir Release 2.13.0"
-      - url: "https://grafana.com/docs/helm-charts/mimir-distributed/latest/release-notes/v5.4/"
-        name: "Grafana Mimir Helm Chart Release Notes 5.4.0"
+      - name: "Argo CD 2.12.0 Release"
+        url: https://github.com/argoproj/argo-cd/releases/tag/v2.12.0
+    - kind: changed
+      description: "chore: Update argo-cd Helm chart from 7.3.5 to 7.4.2"
+      links:
+        - name: "fix: Redis race condition due to optional REDIS_PASSWORD"
+          url: https://github.com/argoproj/argo-helm/pull/2839
+        - name: "fix: Set TTL on redis-secret-init Job"
+          url: https://github.com/argoproj/argo-helm/pull/2861
+        - name: "feat: Upgrade to Argo CD 2.12.0"
+          url: https://github.com/argoproj/argo-helm/pull/2820
