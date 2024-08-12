@@ -5240,6 +5240,43 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat: Update Argo CD from 2.11.4 to 2.12.0"
+          links:
+          - name: "Argo CD 2.12.0 Release"
+            url: https://github.com/argoproj/argo-cd/releases/tag/v2.12.0
+        - kind: changed
+          description: "chore: Update argo-cd Helm chart from 7.3.5 to 7.4.2"
+          links:
+            - name: "fix: Redis race condition due to optional REDIS_PASSWORD"
+              url: https://github.com/argoproj/argo-helm/pull/2839
+            - name: "fix: Set TTL on redis-secret-init Job"
+              url: https://github.com/argoproj/argo-helm/pull/2861
+            - name: "feat: Upgrade to Argo CD 2.12.0"
+              url: https://github.com/argoproj/argo-helm/pull/2820
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-08-12T09:46:22.212075957Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 329cf8507d7e9da15d0f7dffd164336a35b9fa7e7bf2641195907ec3e1f551b5
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.217.0/infra-apps-0.217.0.tgz
+    version: 0.217.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore: update mimir chart to 5.4.0, mimir version to 2.13.0"
           links:
           - url: "https://github.com/grafana/mimir/releases/tag/mimir-2.13.0"
@@ -28083,4 +28120,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-08-08T12:32:20.778710849Z"
+generated: "2024-08-12T09:46:22.21356901Z"
