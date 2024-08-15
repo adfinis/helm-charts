@@ -120,3 +120,13 @@ prometheusRules:
       annotations:
         summary: High frequency of stored Vault token
         description: There has been an increased number of Vault token storing in the last 15 minutes
+    - alert: VaultLowFailureTolerance
+      expr: vault_autopilot_failure_tolerance == 0
+      for: 5m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Vault Raft Cluster Failure Tolerance Critical on {{ $labels.instance }}"
+        description: >
+          "Vault Raft cluster on {{ $labels.instance }} has a failure tolerance of 0. Any further node
+          failure could result in loss of quorum and make the cluster unavailable."
