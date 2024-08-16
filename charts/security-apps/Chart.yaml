@@ -18,7 +18,7 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore: update vaultMonitoring to v0.4.*"
+      description: "chore: update vaultMonitoring to v0.4.0"
       links:
-        - name: bump vaultMonitoring to v0.4
+        - name: bump vaultMonitoring to v0.4.0
           url: https://github.com/adfinis/helm-charts/pull/1297
