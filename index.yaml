@@ -19268,6 +19268,34 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore: update vaultMonitoring to v0.4.0"
+          links:
+            - name: bump vaultMonitoring to v0.4.0
+              url: https://github.com/adfinis/helm-charts/pull/1297
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-08-16T09:40:20.069396181Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 31cbe7384cb5f8b4f8125b6a9475204c8868b862aef6a10eb74c3b177db23c4d
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.87.0/security-apps-0.87.0.tgz
+    version: 0.87.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore: update vault from 0.27.0 to 0.28.0"
           links:
             - name: vault 0.28.0 release
@@ -28140,4 +28168,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-08-15T12:57:17.857671866Z"
+generated: "2024-08-16T09:40:20.070782484Z"
