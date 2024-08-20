@@ -28023,6 +28023,26 @@ entries:
   vault-monitoring:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: "fix metric for vault"
+    apiVersion: v2
+    created: "2024-08-20T15:25:16.658577863Z"
+    description: monitor your vault server from within Kubernetes' prometheus
+    digest: bf2761246b64a1ee904b0b3db459e850d97aa71c2f208a685a08813e7dc68a18
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: vault-monitoring
+    sources:
+    - https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/vault-monitoring-0.4.1/vault-monitoring-0.4.1.tgz
+    version: 0.4.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: "Add new metric for vault"
     apiVersion: v2
@@ -28196,4 +28216,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-08-19T05:45:58.350218332Z"
+generated: "2024-08-20T15:25:16.660351437Z"
