@@ -126,7 +126,7 @@ prometheusRules:
       labels:
         severity: critical
       annotations:
-        summary: "Vault Raft Cluster Failure Tolerance Critical on {{ $labels.instance }}"
+        summary: "Vault Raft Cluster Failure Tolerance Critical on [{{ $labels.instance }}]"
         description: >
-          "Vault Raft cluster on {{ $labels.instance }} has a failure tolerance of 0. Any further node
-          failure could result in loss of quorum and make the cluster unavailable."
+          Vault Raft cluster on "{{ $labels.instance }}" has a failure tolerance of 0.
+          Any further node failure could result in loss of quorum and make the cluster unavailable.
