@@ -19296,6 +19296,34 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "fix: update vaultMonitoring alertrule"
+          links:
+            - name: fix vaultMonitoring alertrule
+              url: https://github.com/adfinis/helm-charts/pull/1300
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-08-20T15:27:03.920986017Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: fc8b2b8d7c02afd93a13c93b7b6307ae9a1d2bf173d39e99438dda76f23d6317
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.87.1/security-apps-0.87.1.tgz
+    version: 0.87.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore: update vaultMonitoring to v0.4.0"
           links:
             - name: bump vaultMonitoring to v0.4.0
@@ -28216,4 +28244,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-08-20T15:25:16.660351437Z"
+generated: "2024-08-20T15:27:03.922449003Z"
