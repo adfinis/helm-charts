@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.87.0
+version: 0.87.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,7 +18,7 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore: update vaultMonitoring to v0.4.0"
+      description: "fix: update vaultMonitoring alertrule"
       links:
-        - name: bump vaultMonitoring to v0.4.0
-          url: https://github.com/adfinis/helm-charts/pull/1297
+        - name: fix vaultMonitoring alertrule
+          url: https://github.com/adfinis/helm-charts/pull/1300
