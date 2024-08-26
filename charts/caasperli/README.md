@@ -1,13 +1,12 @@
 # caasperli
 
-![Version: 0.10.4](https://img.shields.io/badge/Version-0.10.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+> **:exclamation: This Helm Chart is deprecated!**
+
+![Version: 0.10.5](https://img.shields.io/badge/Version-0.10.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 Deploy Caasperli to a Kubernetes Cluster
 
 **Homepage:** <https://github.com/adfinis/potz-holzoepfel-und-zipfelchape>
-
-## Maintainers
-This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
