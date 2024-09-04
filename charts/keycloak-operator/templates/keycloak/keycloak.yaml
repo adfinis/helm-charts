@@ -66,8 +66,8 @@ spec:
     {{- with .adminUrl }}
     adminUrl:  {{ . }}
     {{- end }}
-    {{- if not (.backchannelDynamic | toString | empty) }}
-    backchannelDynamic: {{ ternary "true"  "false" .backchannelDynamic }}
+    {{- if not (eq .backchannelDynamic nil) }}
+    backchannelDynamic: {{ .backchannelDynamic  }}
     {{- end }}
     {{- with .hostname }}
     hostname: {{ . | quote }}
