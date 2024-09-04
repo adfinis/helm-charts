@@ -13290,6 +13290,34 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "fix: Update to Keycloak 25.0.4"
+          links:
+            - name: Keycloak 25.0.4
+              url: https://www.keycloak.org/2024/08/keycloak-2504-released
+        - kind: changed
+          description: "fix: Make .backchannelDynamic flag truly optional"
+    apiVersion: v2
+    appVersion: 25.0.4
+    created: "2024-09-04T13:16:57.795333035Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: e32a0eef3389fb257430309b68d62a902982f3b7952d502ee5859ed3f5c229fe
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.3.1/keycloak-operator-1.3.1.tgz
+    version: 1.3.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Update to Keycloak 25.0.0"
           links:
             - name: Keycloak 25.0.0
@@ -28307,4 +28335,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-08-27T07:44:46.351425701Z"
+generated: "2024-09-04T13:16:57.796781474Z"
