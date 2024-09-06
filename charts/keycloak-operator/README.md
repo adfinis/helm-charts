@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 1.3.1](https://img.shields.io/badge/Version-1.3.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 25.0.4](https://img.shields.io/badge/AppVersion-25.0.4-informational?style=flat-square)
+![Version: 1.3.2](https://img.shields.io/badge/Version-1.3.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 25.0.4](https://img.shields.io/badge/AppVersion-25.0.4-informational?style=flat-square)
 
 Deploy Keycloak Operator and Keycloak
 
