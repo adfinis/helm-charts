@@ -7,6 +7,9 @@ nameOverride: ""
 fullnameOverride: ""
 
 operator:
+  # -- Enable deploying the keycloak-operator
+  enabled: true
+
   # -- Number or oeprator pods to start.
   replicaCount: 1
 

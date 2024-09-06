@@ -2,7 +2,7 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.3.2
+version: 1.3.3
 appVersion: "25.0.4"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
@@ -16,9 +16,4 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: Update to Keycloak 25.0.4"
-      links:
-        - name: Keycloak 25.0.4
-          url: https://www.keycloak.org/2024/08/keycloak-2504-released
-    - kind: changed
-      description: "fix: Make .backchannelDynamic flag truly optional"
+      description: "fix: Enable Operator Deployment by default"
