@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.33.1
+version: 0.34.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,12 +17,34 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: fixed
-      description: "Update promtail chart from 6.16.0 to 6.16.3"
+    - kind: changed
+      description: "Update loki chart from 6.6.3 to 6.12.0"
       links:
-        - name: "promtail Release 6.16.1"
-          url: https://github.com/grafana/helm-charts/releases/tag/promtail-6.16.1
-        - name: "promtail Release 6.16.2"
-          url: https://github.com/grafana/helm-charts/releases/tag/promtail-6.16.2
-        - name: "promtail Release 6.16.2"
-          url: https://github.com/grafana/helm-charts/releases/tag/promtail-6.16.3
+        - name: "Loki 6.12.0"
+          url: https://github.com/grafana/loki/commit/08e61ca4db086b573ef636a156bfc624132515be
+        - name: "Loki 6.11.0"
+          url: https://github.com/grafana/loki/commit/ef1df0e66fc8e2fe9327a66aea31279ca5c7307a
+        - name: "Loki 6.10.2"
+          url: https://github.com/grafana/loki/commit/02fae4e1e97e507b5e30666108e7e7e8bc3dbf00
+        - name: "Loki 6.10.1"
+          url: https://github.com/grafana/loki/commit/112f3378f075cefa2020dfba527f4f386c30ac4e
+        - name: "Loki 6.10.0"
+          url: https://github.com/grafana/loki/commit/9315b3d03d790506cf8e69fb7407b476de9d0ed6
+        - name: "Loki 6.9.0"
+          url: https://github.com/grafana/loki/commit/1bf97912de83200d02689511f48658ce7d9543cf
+        - name: "Loki 6.8.0"
+          url: https://github.com/grafana/loki/commit/05176e445b90597379c268e799b0fb86b8629b9e
+        - name: "Loki 6.7.4"
+          url: https://github.com/grafana/loki/commit/bdfc86bc3b1f5170f8d181f2e71435250a2461cd
+        - name: "Loki 6.7.3"
+          url: https://github.com/grafana/loki/commit/ef03476f3dac159e5f58490351223fcdb9ac3469
+        - name: "Loki 6.7.2"
+          url: https://github.com/grafana/loki/commit/8434b2f6e8e124225aafe6e55ca9c1b6ff6a2c5b
+        - name: "Loki 6.7.1"
+          url: https://github.com/grafana/loki/commit/b5b861c348bc768254fd083fb40d2820cf347be6
+        - name: "Loki 6.7.0"
+          url: https://github.com/grafana/loki/commit/fc3904ee69d0824dc681ca5a4280f7aa2ec5563b
+        - name: "Loki 6.6.5"
+          url: https://github.com/grafana/loki/commit/29f1ea91ecd935a6becae2bd425224a913285071
+        - name: "Loki 6.6.4"
+          url: https://github.com/grafana/loki/commit/05176e445b90597379c268e799b0fb86b8629b9e
