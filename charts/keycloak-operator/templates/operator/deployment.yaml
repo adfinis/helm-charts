@@ -5,6 +5,10 @@ metadata:
   name: {{ include "keycloak-operator.operator.fullname" . }}
   labels:
     {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
+  {{- with .Values.operator.deploymentAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   replicas: {{ .Values.operator.replicaCount }}
   selector:
