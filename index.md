@@ -26,7 +26,7 @@ Configure cert-manager Issuers and ClusterIssuers via Helm
 [<img alt="cert-manager-issuers" src="https://raw.githubusercontent.com/adfinis/helm-charts/main/charts/cert-manager-issuers/logo.png" width="128">](https://github.com/adfinis/helm-charts/tree/main/charts/cert-manager-issuers)
 #### [hedgedoc](https://github.com/adfinis/helm-charts/tree/main/charts/hedgedoc) chart
 
-![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.9.x](https://img.shields.io/badge/app%20version-1.9.x-brightgreen)
+![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.1.x](https://img.shields.io/badge/app%20version-1.1.x-brightgreen)
 
 Chart for HedgeDoc, a fork of CodiMD
 
