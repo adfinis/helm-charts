@@ -26,7 +26,7 @@
 
 * [ ] This PR contains a description of the changes I'm making
 * [ ] I updated the version in Chart.yaml
-* [ ] I updated the changelog with an `artifacthub.io/changes` annotation in `Chart.yaml`, check the [example](docs/development.md#Changelog) in the documentation.
+* [ ] I updated the changelog with an `artifacthub.io/changes` annotation in `Chart.yaml`, check the [example](/adfinis/helm-charts/blob/main/docs/development.md#Changelog) in the documentation.
 * [ ] I updated applicable README.md files using  `pre-commit run`
 * [ ] I documented any high-level concepts I'm introducing in `docs/`
 * [ ] CI is currently green and this is ready for review
