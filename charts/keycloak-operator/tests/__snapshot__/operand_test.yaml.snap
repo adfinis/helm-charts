@@ -6,8 +6,8 @@ should match snapshot:
       labels:
         app.kubernetes.io/component: keycloak
         app.kubernetes.io/managed-by: Helm
-        app.kubernetes.io/version: 25.0.4
-        helm.sh/chart: keycloak-operator-1.3.3
+        app.kubernetes.io/version: 25.0.5
+        helm.sh/chart: keycloak-operator-1.3.4
       name: keycloak
     spec:
       features:
@@ -33,8 +33,8 @@ should match snapshot:
     metadata:
       labels:
         app.kubernetes.io/managed-by: Helm
-        app.kubernetes.io/version: 25.0.4
-        helm.sh/chart: keycloak-operator-1.3.3
+        app.kubernetes.io/version: 25.0.5
+        helm.sh/chart: keycloak-operator-1.3.4
       name: RELEASE-NAME-keycloak-operator-test
     spec:
       keycloakCRName: keycloak
