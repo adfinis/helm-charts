@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 1.3.4](https://img.shields.io/badge/Version-1.3.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 25.0.5](https://img.shields.io/badge/AppVersion-25.0.5-informational?style=flat-square)
+![Version: 1.3.5](https://img.shields.io/badge/Version-1.3.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 25.0.5](https://img.shields.io/badge/AppVersion-25.0.5-informational?style=flat-square)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -66,12 +66,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | operator.affinity | object | `{}` | Affinity for Operator Deployment. |
 | operator.config.keycloakImage.repository | string | `"quay.io/keycloak/keycloak"` | Default keycloak image to use if non was specified in the Keycloak CRD. |
 | operator.config.keycloakImage.tag | string | `""` |  |
+| operator.deploymentAnnotations | object | `{}` | Annotations to set on the Operator Deployment. |
 | operator.enabled | bool | `true` | Enable deploying the keycloak-operator |
 | operator.image.pullPolicy | string | `"IfNotPresent"` | Pull policy for Operator. |
 | operator.image.repository | string | `"quay.io/keycloak/keycloak-operator"` | Operator Image source. |
 | operator.image.tag | string | `""` |  |
 | operator.nodeSelector | object | `{}` | Node selector for Operator Deployment. |
-| operator.podAnnotations | object | `{}` | Annotations to set on the Operator Deployment. |
+| operator.podAnnotations | object | `{}` | Annotations to set on the Operator Pod. |
 | operator.podSecurityContext | object | `{}` | Pod security group configuration for Operator Deployment. |
 | operator.podTopologySpreadConstraints | object | `{}` | Pod Topology Spread Constraints for Operator Deployment |
 | operator.replicaCount | int | `1` | Number or oeprator pods to start. |

@@ -38,6 +38,9 @@ operator:
     name: ""
 
   # -- Annotations to set on the Operator Deployment.
+  deploymentAnnotations: {}
+
+  # -- Annotations to set on the Operator Pod.
   podAnnotations: {}
 
   # -- Pod security group configuration for Operator Deployment.
