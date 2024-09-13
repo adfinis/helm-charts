@@ -4,8 +4,6 @@ chart-repos:
   - bitnami=https://charts.bitnami.com/bitnami
   - secrets-store-csi-driver=https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
   - grafana=https://grafana.github.io/helm-charts
-chart-dirs:
-  - charts
 additional-commands:
   - helm unittest --color {{ .Path }}
   - .tmp/bin/ah lint -p {{ .Path }}
