@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.218.0
+version: 0.219.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,7 +18,9 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "Update ingress-nginx to 4.11.2"
-    - kind: changed
-      description: "Fixes CVE-2024-7646: Ingress-nginx Annotation Validation Bypass"
-      url: https://github.com/kubernetes/kubernetes/issues/126744
+      description: "feat: Update rbac-manager to 1.9.0"
+      links:
+        - name: "RBAC Manager 1.9.0"
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.9.0
+        - name: "Helm Change"
+          url: https://github.com/FairwindsOps/charts/pull/1505
