@@ -5284,6 +5284,36 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat: Update rbac-manager to 1.9.0"
+          links:
+            - name: "RBAC Manager 1.9.0"
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.9.0
+            - name: "Helm Change"
+              url: https://github.com/FairwindsOps/charts/pull/1505
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-09-13T14:19:39.794601389Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 13f9e098353ef85f44ad7a5ce1a6ae002559210ce514d3c284884f859cf8a459
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.219.0/infra-apps-0.219.0.tgz
+    version: 0.219.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Update ingress-nginx to 4.11.2"
         - kind: changed
           description: "Fixes CVE-2024-7646: Ingress-nginx Annotation Validation Bypass"
@@ -28565,4 +28595,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-13T07:56:59.649981838Z"
+generated: "2024-09-13T14:19:39.797205145Z"
