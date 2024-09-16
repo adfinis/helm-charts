@@ -3,7 +3,7 @@ apiVersion: v2
 name: hedgedoc
 description: Chart for HedgeDoc, a fork of CodiMD
 type: application
-version: 0.5.1
+version: 0.5.2
 appVersion: "1.10.0"
 icon: https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png
 sources:
@@ -24,3 +24,5 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: Bumped hedgedoc image tag to 1.10.0
+    - kind: added
+      description: Option to customize liveness and readiness probe
