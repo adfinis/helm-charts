@@ -1,4 +1,4 @@
-{{- if eq .Values.vault.service.type "ExternalName" }}
+{{- if and (eq .Values.vault.service.type "ExternalName") (.Values.vault.serviceMonitor.create) }}
 apiVersion: v1
 kind: Endpoints
 metadata:
