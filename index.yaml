@@ -13380,6 +13380,29 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore: update keycloak to v25.0.6"
+    apiVersion: v2
+    appVersion: 25.0.6
+    created: "2024-09-20T20:46:03.11702471Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 9fec29cccd6df1d34bcd0bded0c7987a689683848e0e72cee55e9909f23741b8
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.3.6/keycloak-operator-1.3.6.tgz
+    version: 1.3.6
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Add operator.deploymentAnnotation value"
     apiVersion: v2
     appVersion: 25.0.5
@@ -28646,4 +28669,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-16T13:30:53.070255307Z"
+generated: "2024-09-20T20:46:03.11839855Z"
