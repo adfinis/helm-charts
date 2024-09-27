@@ -18,6 +18,10 @@ maintainers:
     email: support@adfinis.com
     url: https://adfinis.com
 annotations:
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "Add insecureSkipTlsVerify flag"
+      description: "bump appVersion to v1.2.0 and remove latest default tag"
+      links:
+        - name: "kubernetes-etcd-backup v1.2.0"
+          url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.2.0
