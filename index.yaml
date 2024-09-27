@@ -5315,6 +5315,51 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "fix: Update Argo CD from 2.12.0 to 2.12.4"
+          links:
+            - name: "Argo CD: 2.12.1"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.12.1
+            - name: "Argo CD: 2.12.2"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.12.2
+            - name: "Argo CD: 2.12.3"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.12.3
+            - name: "Argo CD: 2.12.4"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.12.4
+        - kind: changed
+          description: "feat: Update Helm chart from 7.4.2 to 7.6.5"
+          links:
+            - name: "fix: Align imagePullSecrets for redis-secret-init Job"
+              url: https://github.com/argoproj/argo-helm/pull/2928
+            - name: "feat: add multi-namespace support for ApplicationSet controller RBAC"
+              url: https://github.com/argoproj/argo-helm/pull/2935
+            - name: "feat: allow setting runtime class name"
+              url: https://github.com/argoproj/argo-helm/pull/2930
+            - name: "chore: bump redis-ha"
+              url: https://github.com/argoproj/argo-helm/pull/2900
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-09-27T13:25:20.691583242Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 7de4db0955426dc292f4666974510ee3562d13b49f41887d976a2a38590a47f0
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.220.0/infra-apps-0.220.0.tgz
+    version: 0.220.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Update rbac-manager to 1.9.0"
           links:
             - name: "RBAC Manager 1.9.0"
@@ -28699,4 +28744,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-27T12:55:45.816574422Z"
+generated: "2024-09-27T13:25:20.693212456Z"
