@@ -13921,6 +13921,36 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "bump appVersion to v1.2.1"
+          links:
+            - name: "kubernetes-etcd-backup v1.2.1"
+              url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.2.1
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    appVersion: v1.2.1
+    created: "2024-10-01T09:33:00.029647537Z"
+    description: Chart for kubernetes-etcd-backup solution
+    digest: c196cdb7e12af9896b33038df78c6bf183f99de7eafd95c3e8c0f105628819f5
+    home: https://github.com/adfinis/kubernetes-etcd-backup
+    keywords:
+    - kubernetes-etcd-backup
+    - kubernetes
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: kubernetes-etcd-backup
+    sources:
+    - https://github.com/adfinis/kubernetes-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/kubernetes-etcd-backup-1.4.1/kubernetes-etcd-backup-1.4.1.tgz
+    version: 1.4.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "bump appVersion to v1.2.0 and remove latest default tag"
           links:
             - name: "kubernetes-etcd-backup v1.2.0"
@@ -28744,4 +28774,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-27T13:25:20.693212456Z"
+generated: "2024-10-01T09:33:00.031333578Z"
