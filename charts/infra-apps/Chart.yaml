@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.220.0
+version: 0.221.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,27 +15,10 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: Update Argo CD from 2.12.0 to 2.12.4"
+      description: "fix: Update cert-manager from 1.15.1 to 1.16.0"
       links:
-        - name: "Argo CD: 2.12.1"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.12.1
-        - name: "Argo CD: 2.12.2"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.12.2
-        - name: "Argo CD: 2.12.3"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.12.3
-        - name: "Argo CD: 2.12.4"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.12.4
-    - kind: changed
-      description: "feat: Update Helm chart from 7.4.2 to 7.6.5"
-      links:
-        - name: "fix: Align imagePullSecrets for redis-secret-init Job"
-          url: https://github.com/argoproj/argo-helm/pull/2928
-        - name: "feat: add multi-namespace support for ApplicationSet controller RBAC"
-          url: https://github.com/argoproj/argo-helm/pull/2935
-        - name: "feat: allow setting runtime class name"
-          url: https://github.com/argoproj/argo-helm/pull/2930
-        - name: "chore: bump redis-ha"
-          url: https://github.com/argoproj/argo-helm/pull/2900
+        - name: "cert-manager: 1.16.0"
+          url: https://cert-manager.io/docs/releases/release-notes/release-notes-1.16/
