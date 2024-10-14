@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.221.0
+version: 0.221.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,7 +18,9 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: Update cert-manager from 1.15.1 to 1.16.0"
+      description: "fix: Update cert-manager from 1.16.0 to 1.16.1"
       links:
+        - name: "cert-manager: 1.16.1"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.16.1
         - name: "cert-manager: 1.16.0"
           url: https://cert-manager.io/docs/releases/release-notes/release-notes-1.16/
