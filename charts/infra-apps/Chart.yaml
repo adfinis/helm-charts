@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.221.1
+version: 0.222.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,9 +18,71 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: Update cert-manager from 1.16.0 to 1.16.1"
+      description: "fix: Update kube-prometheus-stack from 60.3.0 to 65.5.0"
       links:
-        - name: "cert-manager: 1.16.1"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.16.1
-        - name: "cert-manager: 1.16.0"
-          url: https://cert-manager.io/docs/releases/release-notes/release-notes-1.16/
+        - name: "kube-prometheus-stack: 65.5.0 - Bump operator to 0.77.2 + deps"
+          url: https://github.com/prometheus-community/helm-charts/pull/4934
+        - name: "kube-prometheus-stack: 65.4.0 - Add downward compat for Prom CRD"
+          url: https://github.com/prometheus-community/helm-charts/pull/4906
+        - name: "kube-prometheus-stack: 65.3.2 - Allow disabling the nodes-aix dashboard"
+          url: https://github.com/prometheus-community/helm-charts/pull/4925
+        - name: "kube-prometheus-stack: 65.3.0 - Support kubelet endpoint slices"
+          url: https://github.com/prometheus-community/helm-charts/pull/4899
+        - name: "kube-prometheus-stack: 65.2.0 - Dependency update for kube-state-metrics and prometheus-windows-exporter"
+          url: https://github.com/prometheus-community/helm-charts/pull/4910
+        - name: "kube-prometheus-stack: 65.1.1 - Add prometheus label pod to etcd alerts"
+          url: https://github.com/prometheus-community/helm-charts/pull/4891
+        - name: "kube-prometheus-stack: 65.1.0 - Add tpl to prometheus service account"
+          url: https://github.com/prometheus-community/helm-charts/pull/4900
+        - name: "kube-prometheus-stack: 65.0.0 - Bump operator to 0.77.1"
+          url: https://github.com/prometheus-community/helm-charts/pull/4889
+        - name: "kube-prometheus-stack: 63.1.0 - Add support for alertmanager cluster.label"
+          url: https://github.com/prometheus-community/helm-charts/pull/4877
+        - name: "kube-prometheus-stack: 62.7.0 - Add ability to set serviceAccount annotations for PrometheusOperator"
+          url: https://github.com/prometheus-community/helm-charts/pull/4820
+        - name: "kube-prometheus-stack: 62.6.0 - Bump windows-exporter to 0.6.0"
+          url: https://github.com/prometheus-community/helm-charts/pull/4843
+        - name: "kube-prometheus-stack: 62.5.0 - Bump operator to 0.76.1 and refresh dashboards"
+          url: https://github.com/prometheus-community/helm-charts/pull/4939
+        - name: "kube-prometheus-stack: 62.4.0 - Bump grafana dep to 8.5.*"
+          url: https://github.com/prometheus-community/helm-charts/pull/4835
+        - name: "kube-prometheus-stack: 62.3.1 - Bump Prometheus to 2.54.1"
+          url: https://github.com/prometheus-community/helm-charts/pull/4824
+        - name: "kube-prometheus-stack: 62.3.0 - Bump node exporter dependency correcting service labels"
+          url: https://github.com/prometheus-community/helm-charts/pull/4809
+        - name: "kube-prometheus-stack: 62.2.1 - Adds web spec to thanosRulerSpec"
+          url: https://github.com/prometheus-community/helm-charts/pull/4806
+        - name: "kube-prometheus-stack: 62.2.0 - Make fsType selector configurable"
+          url: https://github.com/prometheus-community/helm-charts/pull/4805
+        - name: "kube-prometheus-stack: 62.1.0 - Update prometheus-node-exporter, prometheus-windows-exporter, and thanos deps"
+          url: https://github.com/prometheus-community/helm-charts/pull/4797
+        - name: "kube-prometheus-stack: 62.0.0 - Bump operator to 0.76.0"
+          url: https://github.com/prometheus-community/helm-charts/pull/4792
+        - name: "kube-prometheus-stack: 61.9.0 - Bump grafana dep to 8.5.*"
+          url: https://github.com/prometheus-community/helm-charts/pull/4785
+        - name: "kube-prometheus-stack: 61.8.0 - Bump Prometheus to 2.54.0"
+          url: https://github.com/prometheus-community/helm-charts/pull/4781
+        - name: "kube-prometheus-stack: 61.7.2 - Add probes for operator"
+          url: https://github.com/prometheus-community/helm-charts/pull/4777
+        - name: "kube-prometheus-stack: 61.7.1 - Configure datasource autodeletion"
+          url: https://github.com/prometheus-community/helm-charts/pull/4771
+        - name: "kube-prometheus-stack: 61.7.0 - Update Thanos to 0.36.0"
+          url: https://github.com/prometheus-community/helm-charts/pull/4769
+        - name: "kube-prometheus-stack: 61.6.0 - Bump kube-state-metrics to 5.25.x"
+          url: https://github.com/prometheus-community/helm-charts/pull/4754
+        - name: "kube-prometheus-stack: 61.5.0 - Allow setting annotations for admission webhooks"
+          url: https://github.com/prometheus-community/helm-charts/pull/4748
+        - name: "kube-prometheus-stack: 61.4.0 - Bump operator to 0.75.2"
+          url: https://github.com/prometheus-community/helm-charts/pull/4744
+        - name: "kube-prometheus-stack: 61.3.3 - Fix mixins generation and fix update on mac"
+          url: https://github.com/prometheus-community/helm-charts/pull/4749
+        - name: "kube-prometheus-stack: 61.3.2 - Fix RBAC for kube-state-metrics when using kube-rbac-proxy"
+          url: https://github.com/prometheus-community/helm-charts/pull/4722
+        - name: "kube-prometheus-stack: 61.3.1 - Bump operator to 0.75.1 and Prometheus to 2.53.1"
+          url: https://github.com/prometheus-community/helm-charts/pull/4716
+        - name: "kube-prometheus-stack: 61.3.0 - Add scrapeClasses to prometheus resource"
+          url: https://github.com/prometheus-community/helm-charts/pull/4703
+        - name: "kube-prometheus-stack: 61.2.0 - Bump kube-state-metrics, proetheus-node-=exporter, and grafana deps"
+          url: https://github.com/prometheus-community/helm-charts/pull/4688
+        - name: "kube-prometheus-stack: 61.1.0 - Update mixins, switch to kube-prometheus mixin and fix label aggregation in TargetDown alert"
+          url: https://github.com/prometheus-community/helm-charts/pull/4460
