@@ -25,6 +25,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 |-----|------|---------|-------------|
 | clusterIssuers | list | `[]` | Array of cert-manager ClusterIssuer [configurations](https://cert-manager.io/docs/configuration/) (see [examples](./examples/)) |
 | issuers | list | `[]` | Array of cert-manager Issuer [configurations](https://cert-manager.io/docs/configuration/) (see [examples](./examples/)) |
+| awspcaClusterIssuers | list | `[]` | Array of cert-manager AWSPCAClusterIssuer [configurations](https://github.com/cert-manager/aws-privateca-issuer/tree/main/config/) (see [examples](./examples/)) |
+| awspcaIssuers | list | `[]` | Array of cert-manager AWSPCAIssuer [configurations](https://github.com/cert-manager/aws-privateca-issuer/tree/main/config//) (see [examples](./examples/)) |
 
 ## About this chart
 
