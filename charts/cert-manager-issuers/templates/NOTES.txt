@@ -10,3 +10,15 @@ Deployed ClusterIssuers:
 * {{ include "cert-manager-issuers.name" (dict "data" . "root" $) }}
 {{- end }}
 {{- end }}
+{{- if .Values.awspcaIssuers }}
+Deployed AWSPCAIssuers:
+{{- range .Values.awspcaIssuers }}
+* {{ include "cert-manager-issuers.name" (dict "data" . "root" $) }}
+{{- end }}
+{{- end }}
+{{- if .Values.awspcaClusterIssuers }}
+Deployed AWSPCAClusterIssuers:
+{{- range .Values.awspcaClusterIssuers }}
+* {{ include "cert-manager-issuers.name" (dict "data" . "root" $) }}
+{{- end }}
+{{- end }}
