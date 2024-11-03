@@ -4,8 +4,8 @@
 # using a http01 solver that will work well with nginx-ingress. This is what
 # most small single-tenant clusters start with.
 
-_: &email user@example.com
-_: &solvers
+_1: &email user@example.com
+_2: &solvers
 - http01:
     ingress:
       class: nginx
