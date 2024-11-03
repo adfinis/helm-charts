@@ -1,6 +1,6 @@
 # cert-manager-issuers
 
-![Version: 0.2.5](https://img.shields.io/badge/Version-0.2.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1](https://img.shields.io/badge/AppVersion-1-informational?style=flat-square)
+![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1](https://img.shields.io/badge/AppVersion-1-informational?style=flat-square)
 
 Configure cert-manager Issuers and ClusterIssuers via Helm
 
@@ -23,10 +23,10 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| clusterIssuers | list | `[]` | Array of cert-manager ClusterIssuer [configurations](https://cert-manager.io/docs/configuration/) (see [examples](./examples/)) |
-| issuers | list | `[]` | Array of cert-manager Issuer [configurations](https://cert-manager.io/docs/configuration/) (see [examples](./examples/)) |
 | awspcaClusterIssuers | list | `[]` | Array of cert-manager AWSPCAClusterIssuer [configurations](https://github.com/cert-manager/aws-privateca-issuer/tree/main/config/) (see [examples](./examples/)) |
 | awspcaIssuers | list | `[]` | Array of cert-manager AWSPCAIssuer [configurations](https://github.com/cert-manager/aws-privateca-issuer/tree/main/config//) (see [examples](./examples/)) |
+| clusterIssuers | list | `[]` | Array of cert-manager ClusterIssuer [configurations](https://cert-manager.io/docs/configuration/) (see [examples](./examples/)) |
+| issuers | list | `[]` | Array of cert-manager Issuer [configurations](https://cert-manager.io/docs/configuration/) (see [examples](./examples/)) |
 
 ## About this chart
 

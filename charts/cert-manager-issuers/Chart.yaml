@@ -2,7 +2,7 @@ apiVersion: v2
 name: cert-manager-issuers
 description: Configure cert-manager Issuers and ClusterIssuers via Helm
 type: application
-version: 0.2.6
+version: 0.3.0
 # matches apiVersion: cert-manager.io/v1
 appVersion: '1'
 keywords:
