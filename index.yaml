@@ -5315,6 +5315,47 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat: Update Argo CD from 2.12.4 to 2.13.0"
+          links:
+            - name: "Argo CD 2.13.0 Release"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.13.0
+        - kind: changed
+          description: "feat: Update Argo CD Helm chart from 7.6.5 to 7.7.0"
+          links:
+            - name: "fix: fixed shard value in clusterCredentials Secret"
+              url: https://github.com/argoproj/argo-helm/pull/2982
+            - name: "fix: add missing event permissions for run actions"
+              url: https://github.com/argoproj/argo-helm/pull/2980
+            - name: "feat: Add affinity to redisSecretInit Job"
+              url: https://github.com/argoproj/argo-helm/pull/2962
+            - name: "fix: Arrange for ApplicationSet in any Namespace"
+              url: https://github.com/argoproj/argo-helm/pull/2945
+            - name: "chore(argo-cd): Add Proxy Extensions config"
+              url: https://github.com/argoproj/argo-helm/pull/2944
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2024-11-08T08:41:21.442482051Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 4b2b75a4c2cfec2b2456708268f9b1c1b0da694e93be65200d1a82e5e0393708
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.223.0/infra-apps-0.223.0.tgz
+    version: 0.223.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "fix: Update kube-prometheus-stack from 60.3.0 to 65.5.0"
           links:
             - name: "kube-prometheus-stack: 65.5.0 - Bump operator to 0.77.2 + deps"
@@ -29006,4 +29047,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-29T14:25:50.088667893Z"
+generated: "2024-11-08T08:41:21.444524305Z"
