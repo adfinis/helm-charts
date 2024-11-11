@@ -3,3 +3,5 @@ vault:
     create: true
     labels:
       k8s.example.com/prometheus: kube-prometheus
+prometheusRules:
+  enabled: false

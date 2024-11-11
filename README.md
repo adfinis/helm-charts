@@ -26,14 +26,14 @@ Configure cert-manager Issuers and ClusterIssuers via Helm
 [<img alt="cert-manager-issuers" src="https://raw.githubusercontent.com/adfinis/helm-charts/main/charts/cert-manager-issuers/logo.png" width="128">](charts/cert-manager-issuers)
 #### [hedgedoc](charts/hedgedoc) chart
 
-![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.9.x](https://img.shields.io/badge/app%20version-1.9.x-brightgreen)
+![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 1.1.x](https://img.shields.io/badge/app%20version-1.1.x-brightgreen)
 
 Chart for HedgeDoc, a fork of CodiMD
 
 [<img alt="hedgedoc" src="https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png" width="128">](charts/hedgedoc)
 #### [keycloak-operator](charts/keycloak-operator) chart
 
-![Version: 1.3.x](https://img.shields.io/badge/version-1.3.x-brightgreen) ![App version: 25..x](https://img.shields.io/badge/app%20version-25..x-brightgreen)
+![Version: 1.4.x](https://img.shields.io/badge/version-1.4.x-brightgreen) ![App version: 26..x](https://img.shields.io/badge/app%20version-26..x-brightgreen)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -73,12 +73,11 @@ for more in-depth information.
 | [argoconfig](charts/argoconfig) | Configure Argo CD AppProjects an... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  |
 | [back8sup](charts/back8sup) | Deploy back8sup to a Kubernetes ... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [barman](charts/barman) | Chart for Barman PostgreSQL Back... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 2.1.x](https://img.shields.io/badge/app%20version-2.1.x-brightgreen) |
-| [caasperli](charts/caasperli) | Deploy Caasperli to a Kubernetes... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: latest](https://img.shields.io/badge/app%20version-latest-brightgreen) |
 | [cert-manager-monitoring](charts/cert-manager-monitoring) | Monitor cert-manager with cert-m... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  |
 | [common](charts/common) | Common chartbuilding components ... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [csi-secret-provider-class](charts/csi-secret-provider-class) | A Helm chart to create a SecretP... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [customer-center](charts/customer-center) | Chart for Customer-Center applic... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 3.3.x](https://img.shields.io/badge/app%20version-3.3.x-brightgreen) |
-| [kubernetes-etcd-backup](charts/kubernetes-etcd-backup) | Chart for kubernetes-etcd-backup... | ![Version: 1.3.x](https://img.shields.io/badge/version-1.3.x-brightgreen) |  ![App version: 1.0.x](https://img.shields.io/badge/app%20version-1.0.x-brightgreen) |
+| [kubernetes-etcd-backup](charts/kubernetes-etcd-backup) | Chart for kubernetes-etcd-backup... | ![Version: 1.4.x](https://img.shields.io/badge/version-1.4.x-brightgreen) |  ![App version: 1.2.x](https://img.shields.io/badge/app%20version-1.2.x-brightgreen) |
 | [mopsos](charts/mopsos) | Deploy Mopsos to a Kubernetes Cl... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [openshift-etcd-backup](charts/openshift-etcd-backup) | Chart for openshift-etcd-backup ... | ![Version: 1.8.x](https://img.shields.io/badge/version-1.8.x-brightgreen) |  ![App version: 1.8.x](https://img.shields.io/badge/app%20version-1.8.x-brightgreen) |
 | [osschallenge](charts/osschallenge) | Chart for OSS-Challenge application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |

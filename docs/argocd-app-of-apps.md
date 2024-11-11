@@ -50,7 +50,7 @@ helm chart counterparts but there are some special files. App names are dasheriz
 when used in YAML keys. As an example, the application "Example App" has files names using `example-app` and keys
 using `exampleApp` throughout this documentation.
 
-`ci/defauls-values.yaml` is not specific to app-of-apps charts but it enables each app during chart testing with
+`ci/default-values.yaml` is not specific to app-of-apps charts but it enables each app during chart testing with
 GitHub Actions:
 ```yaml
 exampleApp:

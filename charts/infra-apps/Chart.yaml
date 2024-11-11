@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.218.0
+version: 0.223.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,10 +15,23 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "Update ingress-nginx to 4.11.2"
+      description: "feat: Update Argo CD from 2.12.4 to 2.13.0"
+      links:
+        - name: "Argo CD 2.13.0 Release"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.13.0
     - kind: changed
-      description: "Fixes CVE-2024-7646: Ingress-nginx Annotation Validation Bypass"
-      url: https://github.com/kubernetes/kubernetes/issues/126744
+      description: "feat: Update Argo CD Helm chart from 7.6.5 to 7.7.0"
+      links:
+        - name: "fix: fixed shard value in clusterCredentials Secret"
+          url: https://github.com/argoproj/argo-helm/pull/2982
+        - name: "fix: add missing event permissions for run actions"
+          url: https://github.com/argoproj/argo-helm/pull/2980
+        - name: "feat: Add affinity to redisSecretInit Job"
+          url: https://github.com/argoproj/argo-helm/pull/2962
+        - name: "fix: Arrange for ApplicationSet in any Namespace"
+          url: https://github.com/argoproj/argo-helm/pull/2945
+        - name: "chore(argo-cd): Add Proxy Extensions config"
+          url: https://github.com/argoproj/argo-helm/pull/2944

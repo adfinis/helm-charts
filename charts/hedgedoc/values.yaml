@@ -56,6 +56,23 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+# -- Specify custom options for the containers liveness and readiness probes
+livenessProbe:
+  enabled: true
+  initialDelaySeconds: 20
+  periodSeconds: 5
+  timeoutSeconds: 2
+  successThreshold: 1
+  failureThreshold: 2
+
+readinessProbe:
+  enabled: true
+  initialDelaySeconds: 20
+  periodSeconds: 5
+  timeoutSeconds: 2
+  successThreshold: 1
+  failureThreshold: 2
+
 # -- Ingress configuration
 ingress:
   enabled: false
