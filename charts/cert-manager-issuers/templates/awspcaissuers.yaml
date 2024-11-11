@@ -1,0 +1,13 @@
+{{- range .Values.awspcaIssuers }}
+---
+# raw issuer: {{ . | toJson }}
+{{- $enabled := printf "%t" .enabled }}
+{{- if regexMatch "nil" $enabled }}{{- $enabled = "true" }}{{- end }}
+{{- if (eq $enabled "true") }}
+apiVersion: awspca.cert-manager.io/v1beta1
+kind: AWSPCAIssuer
+{{ template "cert-manager-issuers.metadata" (dict "data" . "root" $) }}
+spec:
+  {{- .spec | toYaml | nindent 2 }}
+{{- end }}
+{{- end }}

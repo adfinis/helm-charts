@@ -8,7 +8,7 @@ should create one selfsigned clusterissuer:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: cert-manager-issuers
     spec:
       selfSigned: {}
@@ -22,7 +22,7 @@ should create two letsencrypt clusterissuers:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: letsencrypt-prod
     spec:
       acme:
@@ -31,9 +31,9 @@ should create two letsencrypt clusterissuers:
           name: letsencrypt-prod-account-key
         server: https://acme-v02.api.letsencrypt.org/directory
         solvers:
-        - http01:
-            ingress:
-              class: nginx
+          - http01:
+              ingress:
+                class: nginx
   2: |
     apiVersion: cert-manager.io/v1
     kind: ClusterIssuer
@@ -43,7 +43,7 @@ should create two letsencrypt clusterissuers:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: letsencrypt-staging
     spec:
       acme:
@@ -52,9 +52,9 @@ should create two letsencrypt clusterissuers:
           name: letsencrypt-staging-account-key
         server: https://acme-staging-v02.api.letsencrypt.org/directory
         solvers:
-        - http01:
-            ingress:
-              class: nginx
+          - http01:
+              ingress:
+                class: nginx
 should match snapshot:
   1: |
     apiVersion: cert-manager.io/v1
@@ -65,7 +65,7 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: cert-manager-issuers
     spec:
       selfSigned: {}
@@ -78,7 +78,7 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: top-level-name-syntax-sugar
     spec:
       selfSigned: {}
@@ -93,7 +93,7 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: top-level-name-and-metadata
     spec:
       selfSigned: {}

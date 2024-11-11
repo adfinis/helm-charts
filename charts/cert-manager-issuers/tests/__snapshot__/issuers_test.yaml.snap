@@ -8,7 +8,7 @@ should create namespaced vault issuers:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: vault-issuer
       namespace: demo-com
     spec:
@@ -26,7 +26,7 @@ should create namespaced vault issuers:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: vault-issuer
       namespace: demo-org
     spec:
@@ -45,7 +45,7 @@ should disable issuers:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: active-issuer
     spec:
       selfSigned: {}
@@ -59,7 +59,7 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: cert-manager-issuers
     spec:
       selfSigned: {}
@@ -74,7 +74,7 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: test-with-name-and-annotations
     spec:
       selfSigned: {}
@@ -88,7 +88,7 @@ should match snapshot:
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
         foo: bar
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: test-with-labels-in-metadata
     spec:
       selfSigned: {}
@@ -101,7 +101,7 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: "1"
-        helm.sh/chart: cert-manager-issuers-0.2.5
+        helm.sh/chart: cert-manager-issuers-0.3.0
       name: top-level-name-syntax-sugar
     spec:
       selfSigned: {}

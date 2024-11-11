@@ -3,3 +3,9 @@ issuers: []
 
 # -- Array of cert-manager ClusterIssuer [configurations](https://cert-manager.io/docs/configuration/) (see [examples](./examples/))
 clusterIssuers: []
+
+# -- Array of cert-manager AWSPCAIssuer [configurations](https://github.com/cert-manager/aws-privateca-issuer/tree/main/config//) (see [examples](./examples/))
+awspcaIssuers: []
+
+# -- Array of cert-manager AWSPCAClusterIssuer [configurations](https://github.com/cert-manager/aws-privateca-issuer/tree/main/config/) (see [examples](./examples/))
+awspcaClusterIssuers: []
