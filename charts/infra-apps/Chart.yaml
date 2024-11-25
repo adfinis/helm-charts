@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.223.0
+version: 0.224.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,20 +18,16 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat: Update Argo CD from 2.12.4 to 2.13.0"
+      description: "feat: Update Argo CD from 2.13.0 to 2.13.1"
       links:
-        - name: "Argo CD 2.13.0 Release"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.13.0
+        - name: "Argo CD 2.13.1 Release"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.13.1
     - kind: changed
-      description: "feat: Update Argo CD Helm chart from 7.6.5 to 7.7.0"
+      description: "feat: Update Argo CD Helm chart from 7.7.0 to 7.7.5"
       links:
-        - name: "fix: fixed shard value in clusterCredentials Secret"
-          url: https://github.com/argoproj/argo-helm/pull/2982
-        - name: "fix: add missing event permissions for run actions"
-          url: https://github.com/argoproj/argo-helm/pull/2980
-        - name: "feat: Add affinity to redisSecretInit Job"
-          url: https://github.com/argoproj/argo-helm/pull/2962
-        - name: "fix: Arrange for ApplicationSet in any Namespace"
-          url: https://github.com/argoproj/argo-helm/pull/2945
-        - name: "chore(argo-cd): Add Proxy Extensions config"
-          url: https://github.com/argoproj/argo-helm/pull/2944
+        - name: "chore: Update redis-ha"
+          url: https://github.com/argoproj/argo-helm/pull/3026
+        - name: "chore: Update Redis Image"
+          url: https://github.com/argoproj/argo-helm/pull/3023
+        - name: "feat: honorLabels config for ServiceMonitors"
+          url: https://github.com/argoproj/argo-helm/pull/3018
