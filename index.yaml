@@ -15676,6 +15676,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat: Update argo-apps from 2.0.0 to 2.0.2"
+          links:
+            - name: "feat: allow setting applicationset finalizers"
+              url: https://github.com/argoproj/argo-helm/pull/2952
+            - name: "fix: don't render empty app description"
+              url: https://github.com/argoproj/argo-helm/pull/2911
+    apiVersion: v2
+    created: "2024-11-25T07:58:33.009664791Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 2a6f6df9974168403cfe3754608db95651cdecd271571ad1280475d57ec00ce2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.48.0/misc-apps-0.48.0.tgz
+    version: 0.48.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore: bump keda from 2.12.0 to 2.14.2"
           links:
             - name: "chart version 2.14.2"
@@ -29146,4 +29175,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-11-25T07:56:35.77031202Z"
+generated: "2024-11-25T07:58:33.012356116Z"
