@@ -13685,6 +13685,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore: update keycloak from v26.0.1 to v26.0.6"
+          links:
+            - name: "Keycloak 26.0.2"
+              url: https://www.keycloak.org/2024/10/keycloak-2602-released
+            - name: "Keycloak 26.0.4"
+              url: https://www.keycloak.org/2024/10/keycloak-2604-released
+            - name: "Keycloak 26.0.5"
+              url: https://www.keycloak.org/2024/11/keycloak-2605-released
+            - name: "Keycloak 26.0.6"
+              url: https://www.keycloak.org/2024/11/keycloak-2606-released
+    apiVersion: v2
+    appVersion: 26.0.6
+    created: "2024-11-25T08:07:51.350406834Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 831d95ad8e1f23305f20a693dbb3a2a728a91b612ec2b6c34e62aea3f0f4e638
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.4.2/keycloak-operator-1.4.2.tgz
+    version: 1.4.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore: update keycloak to v26.0.1"
           links:
             - name: "Keycloak 26.0.1"
@@ -29175,4 +29207,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-11-25T07:58:33.012356116Z"
+generated: "2024-11-25T08:07:51.351631937Z"
