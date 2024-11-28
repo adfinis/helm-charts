@@ -20171,6 +20171,50 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore: update stackrox from 4.4.3 to 4.5.5"
+          links:
+            - name: Stackrox Release 4.5.5
+              url: https://github.com/stackrox/stackrox/releases/tag/4.5.5
+            - name: Stackrox Release 4.5.4
+              url: https://github.com/stackrox/stackrox/releases/tag/4.5.4
+            - name: Stackrox Release 4.5.3
+              url: https://github.com/stackrox/stackrox/releases/tag/4.5.3
+            - name: Stackrox Release 4.5.2
+              url: https://github.com/stackrox/stackrox/releases/tag/4.5.2
+            - name: Stackrox Release 4.5.1
+              url: https://github.com/stackrox/stackrox/releases/tag/4.5.1
+            - name: Stackrox Release 4.5.0
+              url: https://github.com/stackrox/stackrox/releases/tag/4.5.0
+            - name: Stackrox Release 4.4.6
+              url: https://github.com/stackrox/stackrox/releases/tag/4.4.6
+            - name: Stackrox Release 4.4.5
+              url: https://github.com/stackrox/stackrox/releases/tag/4.4.5
+            - name: Stackrox Release 4.4.4
+              url: https://github.com/stackrox/stackrox/releases/tag/4.4.4
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-11-28T10:32:50.228630385Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: ef4445e7fae5126adc7558afece6bcde810913646716be073202b151cd9e21f5
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.88.0/security-apps-0.88.0.tgz
+    version: 0.88.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "fix: update vaultMonitoring alertrule"
           links:
             - name: fix vaultMonitoring alertrule
@@ -29207,4 +29251,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-11-25T08:07:51.351631937Z"
+generated: "2024-11-28T10:32:50.230099254Z"
