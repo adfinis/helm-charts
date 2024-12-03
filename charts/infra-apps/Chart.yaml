@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.224.0
+version: 0.224.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,16 +18,11 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat: Update Argo CD from 2.13.0 to 2.13.1"
+      description: "chore: Update cert-manager from 1.16.1 to 1.16.2"
       links:
-        - name: "Argo CD 2.13.1 Release"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.13.1
-    - kind: changed
-      description: "feat: Update Argo CD Helm chart from 7.7.0 to 7.7.5"
-      links:
-        - name: "chore: Update redis-ha"
-          url: https://github.com/argoproj/argo-helm/pull/3026
-        - name: "chore: Update Redis Image"
-          url: https://github.com/argoproj/argo-helm/pull/3023
-        - name: "feat: honorLabels config for ServiceMonitors"
-          url: https://github.com/argoproj/argo-helm/pull/3018
+        - name: "cert-manager 1.16.2 Release"
+          url: "https://github.com/cert-manager/cert-manager/releases/tag/v1.16.2"
+        - name: "Restrict max size of PEM inputs"
+          url: https://github.com/cert-manager/cert-manager/pull/7401
+        - name: "Bump go + base images"
+          url: https://github.com/cert-manager/cert-manager/pull/7431
