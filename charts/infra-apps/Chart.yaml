@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.224.1
+version: 0.225.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,11 +18,11 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore: Update cert-manager from 1.16.1 to 1.16.2"
+      description: "chore: Update mimir chart to 5.5.1, mimir version to 2.14.0"
       links:
-        - name: "cert-manager 1.16.2 Release"
-          url: "https://github.com/cert-manager/cert-manager/releases/tag/v1.16.2"
-        - name: "Restrict max size of PEM inputs"
-          url: https://github.com/cert-manager/cert-manager/pull/7401
-        - name: "Bump go + base images"
-          url: https://github.com/cert-manager/cert-manager/pull/7431
+        - name: "Grafana Mimir Release 2.14.0"
+          url: "https://github.com/grafana/mimir/releases/tag/mimir-2.14.0"
+        - name: "Grafana Mimir Helm Chart Release Notes 5.5"
+          url: "https://grafana.com/docs/helm-charts/mimir-distributed/latest/release-notes/v5.5/"
+        - name: "Grafana Mimir Helm Chart detailed Release Notes"
+          url: "https://github.com/grafana/mimir/blob/main/operations/helm/charts/mimir-distributed/CHANGELOG.md"
