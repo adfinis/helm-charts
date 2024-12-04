@@ -5347,6 +5347,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore: Update cert-manager from 1.16.1 to 1.16.2"
+          links:
+            - name: "cert-manager 1.16.2 Release"
+              url: "https://github.com/cert-manager/cert-manager/releases/tag/v1.16.2"
+            - name: "Restrict max size of PEM inputs"
+              url: https://github.com/cert-manager/cert-manager/pull/7401
+            - name: "Bump go + base images"
+              url: https://github.com/cert-manager/cert-manager/pull/7431
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2024-12-04T08:04:35.028137752Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 04666852e6b237a5301c8327ce5ed7cfb73630003437f6b0a67ffe8682e256b2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.224.1/infra-apps-0.224.1.tgz
+    version: 0.224.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Update Argo CD from 2.13.0 to 2.13.1"
           links:
             - name: "Argo CD 2.13.1 Release"
@@ -29251,4 +29283,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-11-28T10:32:50.230099254Z"
+generated: "2024-12-04T08:04:35.030415107Z"
