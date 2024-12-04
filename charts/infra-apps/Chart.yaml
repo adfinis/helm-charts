@@ -18,11 +18,25 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore: Update cert-manager from 1.16.1 to 1.16.2"
+      description: "chore: Update velero chart from 6.7.0 to 8.1.0 (app version 1.13.2 -> 1.15.0)"
       links:
-        - name: "cert-manager 1.16.2 Release"
-          url: "https://github.com/cert-manager/cert-manager/releases/tag/v1.16.2"
-        - name: "Restrict max size of PEM inputs"
-          url: https://github.com/cert-manager/cert-manager/pull/7401
-        - name: "Bump go + base images"
-          url: https://github.com/cert-manager/cert-manager/pull/7431
+        - name: "Bump Velero to 1.15.0 (Upgrade Guide)"
+          url: "https://velero.io/docs/v1.15/upgrade-to-1.15/"
+        - name: "Bump Velero to 1.15.0 (Changelog)"
+          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.15.0
+        - name: "feat: add extraArgs to Velero node agent configuration"
+          url: https://github.com/vmware-tanzu/helm-charts/commit/5e02307abf51850be91eb77f1f39ad9fb10cd603
+        - name: "fix: fix imagePullSecrets to velero server serviceaccount"
+          url: https://github.com/vmware-tanzu/helm-charts/commit/fb5a08a6f0fcb6078c89656a09fbb88e9776644a
+        - name: "feat: Adds resources and limits for repository maintenance job"
+          url: https://github.com/vmware-tanzu/helm-charts/commit/42fed361e1482c85a28c1da32ad72e6b2e03635b
+        - name: "feat: Adds --keep-latest-jobs-count for repository maintenance job"
+          url: https://github.com/vmware-tanzu/helm-charts/commit/721abcba0b378a2b2695b79d056be68c903a81f1
+        - name: "fix: maintenance Job resource requests"
+          url: https://github.com/vmware-tanzu/helm-charts/commit/88ecfa4609678199ea1265c1d89c7b17d3b645d7
+        - name: "fix: render schedule annotations only if present in values"
+          url: https://github.com/vmware-tanzu/helm-charts/commit/47b2f729b9ebe38508ecc046560da01922546df6
+        - name: "fix: add version label to deployment"
+          url: https://github.com/vmware-tanzu/helm-charts/commit/bbb36ccf357d6baf7f13accbc0b169e6efceb3d4
+        - name: "feat: allow configuring updateStrategy of node-agent DaemonSet"
+          url: https://github.com/vmware-tanzu/helm-charts/commit/e4e793b1d57579a5a71862ebd3ac9fcf822e85aa
