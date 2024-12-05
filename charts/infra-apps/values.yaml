@@ -200,7 +200,7 @@ kured:
   # -- Chart
   chart: kured
   # -- [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured)
-  targetRevision: 5.4.5
+  targetRevision: 5.5.2
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml)
   values: {}
@@ -235,7 +235,7 @@ mimir:
   # -- Chart
   chart: mimir-distributed
   # -- [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed)
-  targetRevision: 5.4.0
+  targetRevision: 5.5.1
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml)
   values: {}
