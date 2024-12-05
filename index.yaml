@@ -5347,6 +5347,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore: Update kured chart to 5.5.2 and app to 1.16.2"
+          links:
+            - name: "Update kured chart to 5.5.2"
+              url: https://github.com/kubereboot/charts/commits/main/charts/kured
+            - name: "Update kured to 1.16.2"
+              url: https://github.com/kubereboot/kured/releases
+            - name: "Bump kubernetes-versions to 0.29.x"
+              url: https://github.com/kubereboot/kured/releases/tag/1.16.0
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2024-12-05T10:42:47.233717903Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 06d009afde49a6b7aa396518adf7bb3f566e301b9c081a1e2e0288326923184d
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.226.0/infra-apps-0.226.0.tgz
+    version: 0.226.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore: Update mimir chart to 5.5.1, mimir version to 2.14.0"
           links:
             - name: "Grafana Mimir Release 2.14.0"
@@ -29374,4 +29406,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-05T08:08:41.611405289Z"
+generated: "2024-12-05T10:42:47.236229214Z"
