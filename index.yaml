@@ -4285,6 +4285,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "fixed build args not being passed to docker build"
+          links:
+            - name: GitHub Commit
+              url: https://github.com/adfinis/customer-center/commit/2862c9d646fd1e604f1d17476dfe2b77f66ee425
+        - kind: changed
+          description: "bump appVersion to 3.3.4"
+          links:
+            - name: GitHub Release
+              url: https://github.com/adfinis/customer-center/releases/tag/v3.3.4
+    apiVersion: v2
+    appVersion: 3.3.4
+    created: "2024-12-11T14:20:04.164437113Z"
+    description: Chart for Customer-Center application
+    digest: 98ffc380212a6e5f67b69164d8ae5363ebaf0b928e980a4b7218d7c4d9989a28
+    home: https://github.com/adfinis/customer-center
+    keywords:
+    - customer-center
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: customer-center
+    sources:
+    - https://github.com/adfinis/customer-center
+    - https://github.com/adfinis/helm-charts/tree/main/charts/customer-center
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/customer-center-0.2.33/customer-center-0.2.33.tgz
+    version: 0.2.33
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "fixed admin group name"
           links:
             - name: GitHub Commit
@@ -29484,4 +29516,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-11T13:38:51.202529089Z"
+generated: "2024-12-11T14:20:04.165946262Z"
