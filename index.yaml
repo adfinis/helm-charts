@@ -14546,6 +14546,33 @@ entries:
   kubernetes-etcd-backup:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: "disallow concurrent job runs"
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    appVersion: v1.2.1
+    created: "2024-12-12T13:22:25.30826071Z"
+    description: Chart for kubernetes-etcd-backup solution
+    digest: c794a1fb708ee1679e38425628937bee6c3b00f3cd05e8036f2c231d15b89079
+    home: https://github.com/adfinis/kubernetes-etcd-backup
+    keywords:
+    - kubernetes-etcd-backup
+    - kubernetes
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: kubernetes-etcd-backup
+    sources:
+    - https://github.com/adfinis/kubernetes-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/kubernetes-etcd-backup-1.4.2/kubernetes-etcd-backup-1.4.2.tgz
+    version: 1.4.2
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "bump appVersion to v1.2.1"
           links:
@@ -29592,4 +29619,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-11T17:29:51.945518945Z"
+generated: "2024-12-12T13:22:25.310177223Z"
