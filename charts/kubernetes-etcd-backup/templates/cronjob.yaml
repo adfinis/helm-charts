@@ -5,6 +5,7 @@ metadata:
 spec:
   startingDeadlineSeconds: 600
   schedule: {{ .Values.backup.schedule | quote }}
+  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
       # Retrying this job is not considered safe, because of that we fail the
