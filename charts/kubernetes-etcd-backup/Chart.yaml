@@ -3,7 +3,7 @@ apiVersion: v2
 name: kubernetes-etcd-backup
 description: Chart for kubernetes-etcd-backup solution
 type: application
-version: 1.4.1
+version: 1.4.2
 appVersion: v1.2.1
 keywords:
   - kubernetes-etcd-backup
@@ -18,10 +18,7 @@ maintainers:
     email: support@adfinis.com
     url: https://adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: changed
-      description: "bump appVersion to v1.2.1"
-      links:
-        - name: "kubernetes-etcd-backup v1.2.1"
-          url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.2.1
+    - kind: fixed
+      description: "disallow concurrent job runs"
