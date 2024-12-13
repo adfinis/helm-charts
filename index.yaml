@@ -13972,6 +13972,29 @@ entries:
   keycloak-operator:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: "fix: don't quote value for poolMinSize as the upstream type is integer"
+    apiVersion: v2
+    appVersion: 26.0.7
+    created: "2024-12-13T10:48:17.644177591Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 6eb4932dc98c947046c65e9fb1b22cef9443518c109c07cf775dca9e50763f0d
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.4.4/keycloak-operator-1.4.4.tgz
+    version: 1.4.4
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "chore: update keycloak from v26.0.6 to v26.0.7"
           links:
@@ -29651,4 +29674,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-12T14:56:53.488354187Z"
+generated: "2024-12-13T10:48:17.645955415Z"
