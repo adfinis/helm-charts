@@ -2,7 +2,7 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.4.3
+version: 1.4.4
 appVersion: "26.0.7"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
@@ -15,8 +15,5 @@ maintainers:
     url: https://adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
-      description: "chore: update keycloak from v26.0.6 to v26.0.7"
-      links:
-        - name: "Keycloak 26.0.7"
-          url: https://www.keycloak.org/2024/12/keycloak-2607-released
+    - kind: fixed
+      description: "fix: don't quote value for poolMinSize as the upstream type is integer"
