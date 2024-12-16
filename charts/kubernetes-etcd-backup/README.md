@@ -47,6 +47,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | persistence.provisioning.enabled | bool | `false` | Enable provisioned backend storage with default or configured storageClass |
 | persistence.provisioning.storageClass | string | `""` |  |
 | persistence.reclaimPolicy | string | `"Retain"` | Set reclaim policy (Retain or Delete) |
+| persistence.s3.accessKey | string | `"mysuperaccesskey"` | S3 access key |
+| persistence.s3.bucket | string | `"etcd-backup"` | S3 bucket name |
+| persistence.s3.ca | object | `{"enabled":false}` | Inject OpenShift CA |
+| persistence.s3.enabled | bool | `false` | Enable S3 backend storage |
+| persistence.s3.existingSecret | string | `""` | S3 use an existing Secret instead of creating one |
+| persistence.s3.host | string | `"https://minio.local:9000"` | S3 endpoint host |
+| persistence.s3.name | string | `"etcd-backup"` | S3 endpoint name |
+| persistence.s3.secretKey | string | `"mysupersecretkey"` | S3 secret key |
 | resources | string | `nil` |  |
 
 ## About this chart

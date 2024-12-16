@@ -56,6 +56,24 @@ persistence:
     storageClass: ""
   # -- Use an exising PVC
   existingClaim: ""
+  s3:
+    # -- Enable S3 backend storage
+    enabled: false
+    # -- S3 endpoint name
+    name: etcd-backup
+    # -- S3 endpoint host
+    host: https://minio.local:9000
+    # -- Inject OpenShift CA
+    ca:
+      enabled: false
+    # -- S3 bucket name
+    bucket: etcd-backup
+    # -- S3 access key
+    accessKey: mysuperaccesskey
+    # -- S3 secret key
+    secretKey: mysupersecretkey
+    # -- S3 use an existing Secret instead of creating one
+    existingSecret: ""
 
 image:
   # -- Repository image to use
