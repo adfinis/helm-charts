@@ -20594,6 +20594,34 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "chore: update oauth2-proxy from 6.10.1 to 7.8.2"
+          links:
+            - name: OAuth-Proxy 7.8.2 Release
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.8.2
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2024-12-19T13:38:01.510534179Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 4e23dca3a5e5039363095026a3306839490ec4c13423697a8ee69f0eff03ec71
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.89.0/security-apps-0.89.0.tgz
+    version: 0.89.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore: update stackrox from 4.4.3 to 4.5.5"
           links:
             - name: Stackrox Release 4.5.5
@@ -29674,4 +29702,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-13T10:48:17.645955415Z"
+generated: "2024-12-19T13:38:01.51289694Z"
