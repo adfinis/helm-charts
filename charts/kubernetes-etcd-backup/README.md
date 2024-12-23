@@ -1,6 +1,6 @@
 # kubernetes-etcd-backup
 
-![Version: 1.4.2](https://img.shields.io/badge/Version-1.4.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.2.1](https://img.shields.io/badge/AppVersion-v1.2.1-informational?style=flat-square)
+![Version: 1.5.0](https://img.shields.io/badge/Version-1.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.2.1](https://img.shields.io/badge/AppVersion-v1.2.1-informational?style=flat-square)
 
 Chart for kubernetes-etcd-backup solution
 
@@ -49,7 +49,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | persistence.reclaimPolicy | string | `"Retain"` | Set reclaim policy (Retain or Delete) |
 | persistence.s3.accessKey | string | `"mysuperaccesskey"` | S3 access key |
 | persistence.s3.bucket | string | `"etcd-backup"` | S3 bucket name |
-| persistence.s3.ca | object | `{"enabled":false}` | Inject OpenShift CA |
 | persistence.s3.enabled | bool | `false` | Enable S3 backend storage |
 | persistence.s3.existingSecret | string | `""` | S3 use an existing Secret instead of creating one |
 | persistence.s3.host | string | `"https://minio.local:9000"` | S3 endpoint host |
