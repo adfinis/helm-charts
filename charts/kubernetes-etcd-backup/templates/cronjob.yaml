@@ -14,8 +14,7 @@ spec:
       template:
         spec:
           securityContext:
-              runAsUser: 1000
-              fsGroup: 1000
+            {{- toYaml .Values.podSecurityContext | nindent 12 }}
           containers:
           - command:
             - /bin/sh
@@ -23,6 +22,8 @@ spec:
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
             imagePullPolicy: {{ .Values.image.pullPolicy }}
             name: {{ .Chart.Name }}
+            securityContext:
+              {{- toYaml .Values.securityContext | nindent 14 }}
             envFrom:
             - configMapRef:
                 name: {{ include "kubernetes-etcd-backup.fullname" . }}
@@ -43,6 +44,10 @@ spec:
               mountPath: /etc/kubernetes/pki/etcd-ca
             - name: volume-backup
               mountPath: /backup
+            {{- if and (.Values.persistence.s3.enabled) (.Values.persistence.s3.ca.enabled) }}
+            - name: s3-ca
+              mountPath: /etc/pki/ca-trust/source/anchors
+            {{- end }}
             {{- if .Values.extraVolumeMounts }}
               {{- toYaml .Values.extraVolumeMounts | nindent 12 }}
             {{- end }}
@@ -54,6 +59,11 @@ spec:
           - name: etcd-server-ca
             secret:
               secretName: {{ .Values.etcdCertification.etcdServerCaName }}
+          {{- if and (.Values.persistence.s3.enabled) (.Values.persistence.s3.ca.enabled) }}
+          - name: s3-ca
+            secret:
+              secretName: {{ .Values.persistence.s3.ca.secretName }}
+          {{- end }}
           - name: volume-backup
             {{- if .Values.persistence.nfs.enabled }}
             nfs:
