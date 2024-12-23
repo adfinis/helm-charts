@@ -40,10 +40,8 @@ spec:
               mountPath: /etc/kubernetes/pki/etcd-peer
             - name: etcd-server-ca
               mountPath: /etc/kubernetes/pki/etcd-ca
-            {{- if or .Values.persistence.nfs.enabled .Values.persistence.provisioning.enabled }}
             - name: volume-backup
               mountPath: /backup
-            {{- end }}
             {{- if .Values.extraVolumeMounts }}
               {{- toYaml .Values.extraVolumeMounts | nindent 12 }}
             {{- end }}
@@ -66,6 +64,8 @@ spec:
             {{- else if .Values.persistence.existingClaim }}
             persistentVolumeClaim:
               claimName: {{ .Values.persistence.existingClaim }}
+            {{- else }}
+            emptyDir: {}
             {{- end }}
           {{- if .Values.extraVolumes }}
             {{- toYaml .Values.extraVolumes | nindent 10 }}
