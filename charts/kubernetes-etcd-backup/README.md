@@ -49,12 +49,17 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | persistence.reclaimPolicy | string | `"Retain"` | Set reclaim policy (Retain or Delete) |
 | persistence.s3.accessKey | string | `"mysuperaccesskey"` | S3 access key |
 | persistence.s3.bucket | string | `"etcd-backup"` | S3 bucket name |
+| persistence.s3.ca.enabled | bool | `false` |  |
+| persistence.s3.ca.secretName | string | `"changeme"` |  |
 | persistence.s3.enabled | bool | `false` | Enable S3 backend storage |
 | persistence.s3.existingSecret | string | `""` | S3 use an existing Secret instead of creating one |
 | persistence.s3.host | string | `"https://minio.local:9000"` | S3 endpoint host |
 | persistence.s3.name | string | `"etcd-backup"` | S3 endpoint name |
 | persistence.s3.secretKey | string | `"mysupersecretkey"` | S3 secret key |
+| podSecurityContext.fsGroup | int | `1000` |  |
+| podSecurityContext.runAsUser | int | `1000` |  |
 | resources | string | `nil` |  |
+| securityContext | object | `{}` |  |
 
 ## About this chart
 
