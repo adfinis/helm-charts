@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.87.2
+version: 0.89.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,7 +18,7 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: update vaultMonitoring alertrule"
+      description: "chore: update oauth2-proxy from 6.10.1 to 7.8.2"
       links:
-        - name: fix vaultMonitoring alertrule
-          url: https://github.com/adfinis/helm-charts/pull/1302
+        - name: OAuth-Proxy 7.8.2 Release
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.8.2

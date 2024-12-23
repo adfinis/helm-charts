@@ -241,7 +241,7 @@ stackroxCentralServices:
   # -- Chart
   chart: stackrox-central-services
   # -- [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version
-  targetRevision: 400.4.3
+  targetRevision: 400.5.5
   # -- Helm values
   # @default -- [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-central/values.yaml)
   values: {}
@@ -261,7 +261,7 @@ stackroxSecuredClusterServices:
   # -- Chart
   chart: stackrox-secured-cluster-services
   # -- [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version
-  targetRevision: 400.4.3
+  targetRevision: 400.5.5
   # -- Helm values
   # @default -- [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-secured-cluster/values.yaml.htpl)
   values: {}
@@ -283,7 +283,7 @@ oauth2Proxy:
   # -- Chart
   chart: oauth2-proxy
   # -- [oauth2-proxy Helm chart](https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy)
-  targetRevision: 6.10.1
+  targetRevision: 7.8.2
   # -- Helm values
   # @default -- [upstream values](https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/values.yaml)
   values: {}

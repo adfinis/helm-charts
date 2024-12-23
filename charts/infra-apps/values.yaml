@@ -42,7 +42,7 @@ certManager:
   # -- Chart
   chart: cert-manager
   # -- [cert-manager Helm chart](https://github.com/cert-manager/cert-manager/tree/master/deploy/charts/cert-manager) version
-  targetRevision: 1.16.1
+  targetRevision: 1.16.2
   # -- Helm values
   # @default -- [upstream values](https://github.com/cert-manager/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
   values: {}
@@ -178,7 +178,7 @@ velero:
   # -- Chart
   chart: velero
   # -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
-  targetRevision: 6.7.0
+  targetRevision: 8.1.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
   values: {}
@@ -200,7 +200,7 @@ kured:
   # -- Chart
   chart: kured
   # -- [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured)
-  targetRevision: 5.4.5
+  targetRevision: 5.5.2
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml)
   values: {}
@@ -235,7 +235,7 @@ mimir:
   # -- Chart
   chart: mimir-distributed
   # -- [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed)
-  targetRevision: 5.4.0
+  targetRevision: 5.5.1
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml)
   values: {}

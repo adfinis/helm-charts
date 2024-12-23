@@ -31,7 +31,7 @@ spec:
     poolMaxSize: {{ . }}
     {{- end }}
     {{- with .Values.keycloak.db.poolMinSize }}
-    poolMinSize: {{ . | quote }}
+    poolMinSize: {{ . }}
     {{- end }}
     {{- with .Values.keycloak.db.port }}
     port: {{ . }}

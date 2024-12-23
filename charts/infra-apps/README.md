@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.224.0](https://img.shields.io/badge/Version-0.224.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.227.0](https://img.shields.io/badge/Version-0.227.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -38,7 +38,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | certManager.destination.namespace | string | `"infra-certmanager"` | Namespace |
 | certManager.enabled | bool | `false` | Enable cert-manager |
 | certManager.repoURL | string | [repo](https://charts.jetstack.io) | Repo URL |
-| certManager.targetRevision | string | `"1.16.1"` | [cert-manager Helm chart](https://github.com/cert-manager/cert-manager/tree/master/deploy/charts/cert-manager) version |
+| certManager.targetRevision | string | `"1.16.2"` | [cert-manager Helm chart](https://github.com/cert-manager/cert-manager/tree/master/deploy/charts/cert-manager) version |
 | certManager.values | object | [upstream values](https://github.com/cert-manager/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml) | Helm values |
 | certManagerIssuers | object | [example](./examples/cert-manager-issuers.yaml) | [cert-manager-issuers](https://cert-manager.io/docs/configuration/) |
 | certManagerIssuers.annotations | object | `{}` | Annotations for cert-manager-issuers app |
@@ -80,7 +80,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kured.destination.namespace | string | `"infra-kured"` | Namespace |
 | kured.enabled | bool | `false` | Enable Kured |
 | kured.repoURL | string | [repo](https://kubereboot.github.io/charts) | Repo URL |
-| kured.targetRevision | string | `"5.4.5"` | [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured) |
+| kured.targetRevision | string | `"5.5.2"` | [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured) |
 | kured.values | object | [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml) | Helm values |
 | mimir | object | [example](./examples/mimir.yaml) | [mimir](https://github.com/grafana/mimir) |
 | mimir.annotations | object | `{}` | Annotations for mimir app |
@@ -88,7 +88,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | mimir.destination.namespace | string | `"infra-mimir"` | Namespace |
 | mimir.enabled | bool | `false` | Enable mimir |
 | mimir.repoURL | string | [repo](https://grafana.github.io/helm-charts) | Repo URL |
-| mimir.targetRevision | string | `"5.4.0"` | [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed) |
+| mimir.targetRevision | string | `"5.5.1"` | [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed) |
 | mimir.values | object | [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml) | Helm values |
 | rbacManager | object | [example](./examples/rbac-manager.yaml) | [rbac-manager](https://fairwindsops.github.io/rbac-manager/) |
 | rbacManager.annotations | object | `{}` | Annotations for rbac-manager app |
@@ -104,7 +104,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | velero.destination.namespace | string | `"infra-velero"` | Namespace |
 | velero.enabled | bool | `false` | Enable Velero |
 | velero.repoURL | string | [repo](https://vmware-tanzu.github.io/helm-charts) | Repo URL |
-| velero.targetRevision | string | `"6.7.0"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
+| velero.targetRevision | string | `"8.1.0"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
 | velero.values | object | [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml) | Helm values |
 
 ## About this chart
