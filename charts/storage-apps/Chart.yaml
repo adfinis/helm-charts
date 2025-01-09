@@ -2,7 +2,7 @@ apiVersion: v2
 name: storage-apps
 description: Argo CD app-of-apps config for storage applications
 type: application
-version: 0.16.0
+version: 0.17.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,15 +18,7 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "update csi-driver-smb to 1.14.0"
+      description: "update minio to 5.14.0"
       links:
         - name: Github release
-          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.14.0
-        - name: Github release
-          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.13.0
-        - name: Github release
-          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.12.0
-        - name: Github release
-          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.11.0
-        - name: Github release
-          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.10.0
+          url: https://github.com/minio/minio/releases/tag/RELEASE.2024-12-18T13-15-44Z
