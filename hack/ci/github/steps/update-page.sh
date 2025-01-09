@@ -17,12 +17,14 @@ HELMCHARTS_GOMPLATE_OUTPUT="$gh_pages_worktree/index.md" \
 HELMCHARTS_GOMPLATE_NAME=indexpage \
 hack/update-readme.sh
 
+cp --force adfinis-charts-repo.yaml "$gh_pages_worktree/adfinis-charts-repo.yaml"
+
 mkdir --parent "$gh_pages_worktree/docs/images"
 cp --force docs/images/lunkwill_helm_shirt.png "$gh_pages_worktree/docs/images/lunkwill_helm_shirt.png"
 
 pushd "$gh_pages_worktree" > /dev/null
 
-git add index.md docs/images/lunkwill_helm_shirt.png
+git add index.md adfinis-charts-repo.yaml docs/images/lunkwill_helm_shirt.png
 # abort pages update if no changes detected
 `git diff --cached --quiet` && exit 0
 git commit --message="Update site" --signoff
