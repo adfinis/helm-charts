@@ -22,3 +22,5 @@ annotations:
       links:
         - name: Github release
           url: https://github.com/minio/minio/releases/tag/RELEASE.2024-12-18T13-15-44Z
+        - name: Github release
+          url: https://github.com/minio/minio/releases/tag/RELEASE.2024-12-13T22-19-12Z
