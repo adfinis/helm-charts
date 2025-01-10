@@ -14601,6 +14601,36 @@ entries:
   kubernetes-etcd-backup:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: "Add support for s3 storage"
+          links:
+            - name: "kubernetes-etcd-backup v1.4.0"
+              url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.0
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    appVersion: v1.4.0
+    created: "2025-01-10T08:31:16.910527759Z"
+    description: Chart for kubernetes-etcd-backup solution
+    digest: 2ccbcb3555e05f5b45349dc9951f77957fafca4178183deafca5e25a653287be
+    home: https://github.com/adfinis/kubernetes-etcd-backup
+    keywords:
+    - kubernetes-etcd-backup
+    - kubernetes
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: kubernetes-etcd-backup
+    sources:
+    - https://github.com/adfinis/kubernetes-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/kubernetes-etcd-backup-1.5.1/kubernetes-etcd-backup-1.5.1.tgz
+    version: 1.5.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: fixed
           description: "disallow concurrent job runs"
       artifacthub.io/containsSecurityUpdates: "false"
@@ -29702,4 +29732,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2024-12-19T13:38:01.51289694Z"
+generated: "2025-01-10T08:31:16.911951624Z"
