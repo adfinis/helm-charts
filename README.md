@@ -16,6 +16,12 @@ This repository contains [Helm](https://helm.sh/) charts managed by [Adfinis](ht
 helm repo add adfinis https://charts.adfinis.com
 ```
 
+To make the charts available in the OpenShift console:
+
+```bash
+oc apply -f https://charts.adfinis.com/adfinis-charts-repo.yaml
+```
+
 ### Available Helm charts
 #### [cert-manager-issuers](charts/cert-manager-issuers) chart
 
@@ -77,7 +83,7 @@ for more in-depth information.
 | [common](charts/common) | Common chartbuilding components ... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [csi-secret-provider-class](charts/csi-secret-provider-class) | A Helm chart to create a SecretP... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [customer-center](charts/customer-center) | Chart for Customer-Center applic... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 3.3.x](https://img.shields.io/badge/app%20version-3.3.x-brightgreen) |
-| [kubernetes-etcd-backup](charts/kubernetes-etcd-backup) | Chart for kubernetes-etcd-backup... | ![Version: 1.4.x](https://img.shields.io/badge/version-1.4.x-brightgreen) |  ![App version: 1.2.x](https://img.shields.io/badge/app%20version-1.2.x-brightgreen) |
+| [kubernetes-etcd-backup](charts/kubernetes-etcd-backup) | Chart for kubernetes-etcd-backup... | ![Version: 1.5.x](https://img.shields.io/badge/version-1.5.x-brightgreen) |  ![App version: 1.4.x](https://img.shields.io/badge/app%20version-1.4.x-brightgreen) |
 | [mopsos](charts/mopsos) | Deploy Mopsos to a Kubernetes Cl... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [openshift-etcd-backup](charts/openshift-etcd-backup) | Chart for openshift-etcd-backup ... | ![Version: 1.8.x](https://img.shields.io/badge/version-1.8.x-brightgreen) |  ![App version: 1.8.x](https://img.shields.io/badge/app%20version-1.8.x-brightgreen) |
 | [osschallenge](charts/osschallenge) | Chart for OSS-Challenge application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |

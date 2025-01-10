@@ -3,8 +3,8 @@ apiVersion: v2
 name: kubernetes-etcd-backup
 description: Chart for kubernetes-etcd-backup solution
 type: application
-version: 1.4.2
-appVersion: v1.2.1
+version: 1.5.1
+appVersion: v1.4.0
 keywords:
   - kubernetes-etcd-backup
   - kubernetes
@@ -20,5 +20,8 @@ maintainers:
 annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: fixed
-      description: "disallow concurrent job runs"
+    - kind: changed
+      description: "Add support for s3 storage"
+      links:
+        - name: "kubernetes-etcd-backup v1.4.0"
+          url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.0
