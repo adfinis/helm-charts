@@ -5,6 +5,7 @@ metadata:
   labels:
     {{- include "kubernetes-etcd-backup.labels" . | nindent 4 }}
 data:
+  ETCD_BACKUP_S3: {{ .Values.persistence.s3.enabled | quote }}
   ETCD_BACKUP_SUBDIR: {{ .Values.backup.subdir | quote }}
   ETCD_BACKUP_DIRNAME: {{ .Values.backup.dirname | quote }}
   ETCD_BACKUP_EXPIRE_TYPE: {{ .Values.backup.expiretype | quote }}

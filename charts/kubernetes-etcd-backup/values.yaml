@@ -56,6 +56,24 @@ persistence:
     storageClass: ""
   # -- Use an exising PVC
   existingClaim: ""
+  s3:
+    # -- Enable S3 backend storage
+    enabled: false
+    # -- S3 endpoint name
+    name: etcd-backup
+    # -- S3 endpoint host
+    host: https://minio.local:9000
+    # -- S3 bucket name
+    bucket: etcd-backup
+    # -- S3 access key
+    accessKey: mysuperaccesskey
+    # -- S3 secret key
+    secretKey: mysupersecretkey
+    # -- S3 use an existing Secret instead of creating one
+    existingSecret: ""
+    ca:
+      enabled: false
+      secretName: "changeme"
 
 image:
   # -- Repository image to use
@@ -116,3 +134,16 @@ extraVolumes: []
 ## Additional volumes to the pod.
 #  - name: additional-volume
 #    emptyDir: {}
+
+securityContext: {}
+podSecurityContext:
+  runAsUser: 1000
+  fsGroup: 1000
+  # Settings required when s3 persistence is used
+  # Required because of `update-ca-trust` command
+  # # -- Run pod as privileged
+  # privileged: true
+  # # -- Set user ID
+  # runAsUser: 0
+  # # -- Set group ID
+  # runAsGroup: 0

@@ -14,8 +14,7 @@ spec:
       template:
         spec:
           securityContext:
-              runAsUser: 1000
-              fsGroup: 1000
+            {{- toYaml .Values.podSecurityContext | nindent 12 }}
           containers:
           - command:
             - /bin/sh
@@ -23,9 +22,19 @@ spec:
             image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
             imagePullPolicy: {{ .Values.image.pullPolicy }}
             name: {{ .Chart.Name }}
+            securityContext:
+              {{- toYaml .Values.securityContext | nindent 14 }}
             envFrom:
             - configMapRef:
                 name: {{ include "kubernetes-etcd-backup.fullname" . }}
+            {{- if .Values.persistence.s3.enabled }}
+            - secretRef:
+              {{- if .Values.persistence.s3.existingSecret }}
+                name: "{{ .Values.persistence.s3.existingSecret }}"
+              {{- else }}
+                name: {{ include "kubernetes-etcd-backup.fullname" . }}-secret
+              {{- end }}
+            {{- end }}
             resources:
               {{- toYaml .Values.resources | nindent 14 }}
             volumeMounts:
@@ -33,9 +42,11 @@ spec:
               mountPath: /etc/kubernetes/pki/etcd-peer
             - name: etcd-server-ca
               mountPath: /etc/kubernetes/pki/etcd-ca
-            {{- if or .Values.persistence.nfs.enabled .Values.persistence.provisioning.enabled }}
             - name: volume-backup
               mountPath: /backup
+            {{- if and (.Values.persistence.s3.enabled) (.Values.persistence.s3.ca.enabled) }}
+            - name: s3-ca
+              mountPath: /etc/pki/ca-trust/source/anchors
             {{- end }}
             {{- if .Values.extraVolumeMounts }}
               {{- toYaml .Values.extraVolumeMounts | nindent 12 }}
@@ -48,6 +59,11 @@ spec:
           - name: etcd-server-ca
             secret:
               secretName: {{ .Values.etcdCertification.etcdServerCaName }}
+          {{- if and (.Values.persistence.s3.enabled) (.Values.persistence.s3.ca.enabled) }}
+          - name: s3-ca
+            secret:
+              secretName: {{ .Values.persistence.s3.ca.secretName }}
+          {{- end }}
           - name: volume-backup
             {{- if .Values.persistence.nfs.enabled }}
             nfs:
@@ -59,6 +75,8 @@ spec:
             {{- else if .Values.persistence.existingClaim }}
             persistentVolumeClaim:
               claimName: {{ .Values.persistence.existingClaim }}
+            {{- else }}
+            emptyDir: {}
             {{- end }}
           {{- if .Values.extraVolumes }}
             {{- toYaml .Values.extraVolumes | nindent 10 }}
