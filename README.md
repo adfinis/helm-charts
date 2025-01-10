@@ -16,6 +16,12 @@ This repository contains [Helm](https://helm.sh/) charts managed by [Adfinis](ht
 helm repo add adfinis https://charts.adfinis.com
 ```
 
+To make the charts available in the OpenShift console:
+
+```bash
+oc apply -f https://charts.adfinis.com/adfinis-charts-repo.yaml
+```
+
 ### Available Helm charts
 #### [cert-manager-issuers](charts/cert-manager-issuers) chart
 
