@@ -23732,6 +23732,52 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "update minio to 5.14.0"
+          links:
+            - name: Github release
+              url: https://github.com/minio/minio/releases/tag/RELEASE.2024-12-18T13-15-44Z
+            - name: Github release
+              url: https://github.com/minio/minio/releases/tag/RELEASE.2024-12-13T22-19-12Z
+            - name: Github release
+              url: https://github.com/minio/minio/releases/tag/RELEASE.2024-11-07T00-52-20Z
+            - name: Github release
+              url: https://github.com/minio/minio/releases/tag/RELEASE.2024-07-16T23-46-41Z
+            - name: Github release
+              url: https://github.com/minio/minio/releases/tag/RELEASE.2024-07-15T19-02-30Z
+            - name: Github release
+              url: https://github.com/minio/minio/releases/tag/RELEASE.2024-07-13T01-46-15Z
+            - name: Github release
+              url: https://github.com/minio/minio/releases/tag/RELEASE.2024-01-31T20-20-33Z
+            - name: Github release
+              url: https://github.com/minio/minio/releases/tag/RELEASE.2024-01-01T16-36-33Z
+            - name: Github release
+              url: https://github.com/minio/minio/releases/tag/RELEASE.2023-12-09T18-17-51Z
+            - name: Github release
+              url: https://github.com/minio/minio/releases/tag/RELEASE.2023-12-02T10-51-33Z
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-01-13T08:29:56.493436245Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for storage applications
+    digest: fdcf2b2a7416068c862ce420170e533150f19d541040db5230199ed88d00afd4
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.17.0/storage-apps-0.17.0.tgz
+    version: 0.17.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update csi-driver-smb to 1.14.0"
           links:
             - name: Github release
@@ -29732,4 +29778,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-10T08:31:16.911951624Z"
+generated: "2025-01-13T08:29:56.495427479Z"
