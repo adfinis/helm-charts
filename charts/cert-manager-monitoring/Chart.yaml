@@ -2,7 +2,7 @@ apiVersion: v2
 name: cert-manager-monitoring
 description: Monitor cert-manager with cert-manager-mixin.
 type: application
-version: 0.1.2
+version: 0.2.0
 keywords:
   - cert-manager
   - tls
@@ -16,3 +16,7 @@ maintainers:
   - name: adfinis
     email: support@adfinis.com
     url: https://adfinis.com
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "introduce critical severity for CertManagerCertExpirySoon alert"
