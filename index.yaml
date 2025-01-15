@@ -3925,6 +3925,32 @@ entries:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/cert-manager-issuers-0.1.0/cert-manager-issuers-0.1.0.tgz
     version: 0.1.0
   cert-manager-monitoring:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "introduce critical severity for CertManagerCertExpirySoon alert"
+    apiVersion: v2
+    created: "2025-01-15T19:25:22.864435416Z"
+    description: Monitor cert-manager with cert-manager-mixin.
+    digest: c79bee20b70dc1815057606bca914cd572f7c45b31bf5afe6e2365e73a807ab7
+    home: https://github.com/jetstack/cert-manager/issues/3342
+    keywords:
+    - cert-manager
+    - tls
+    - monitoring
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: cert-manager-monitoring
+    sources:
+    - https://github.com/adfinis/helm-charts
+    - https://gitlab.com/uneeq-oss/cert-manager-mixin
+    - https://github.com/jetstack/cert-manager/pull/3368#issuecomment-949346251
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/cert-manager-monitoring-0.2.0/cert-manager-monitoring-0.2.0.tgz
+    version: 0.2.0
   - apiVersion: v2
     created: "2022-08-04T15:51:55.714935895Z"
     description: Monitor cert-manager with cert-manager-mixin.
@@ -29778,4 +29804,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-13T08:29:56.495427479Z"
+generated: "2025-01-15T19:25:22.867062529Z"
