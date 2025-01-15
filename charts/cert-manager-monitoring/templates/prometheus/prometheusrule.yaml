@@ -44,6 +44,22 @@ spec:
       for: 1h
       labels:
         severity: warning
+    - alert: CertManagerCertExpirySoon
+      annotations:
+        dashboard_url: https://grafana.example.com/d/TvuRo2iMk/cert-manager
+        description: {{`The domain that this cert covers will be unavailable after {{ $value
+          | humanizeDuration }}. Clients using endpoints that this cert protects will start
+          to fail in {{ $value | humanizeDuration }}.`}}
+        runbook_url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/blob/master/RUNBOOK.md#certmanagercertexpirysoon
+        summary: {{`The cert '{{ $labels.name }}' is {{ $value | humanizeDuration }} from expiry,
+          it should have renewed over a week ago.`}}
+      expr: |
+        avg by (exported_namespace, namespace, name) (
+          certmanager_certificate_expiration_timestamp_seconds - time()
+        ) < (10 * 24 * 3600) # 10 days in seconds
+      for: 1h
+      labels:
+        severity: critical
     {{- end }}
     {{- if .Values.prometheus.rule.alerts.certnotready }}
     - alert: CertManagerCertNotReady
