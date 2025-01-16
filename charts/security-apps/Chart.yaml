@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.89.0
+version: 0.90.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,10 +15,6 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore: update oauth2-proxy from 6.10.1 to 7.8.2"
-      links:
-        - name: OAuth-Proxy 7.8.2 Release
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.8.2
+      description: "Fail installations of deprecated gangway component"
