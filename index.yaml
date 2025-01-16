@@ -4,6 +4,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            Remove deprecated Argo CD Notifications App.
+
+            The functionality has been merged into the main Argo CD application.
+    apiVersion: v2
+    created: "2025-01-16T19:50:25.480039343Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 33e6b820f942d1ad5c788f4d2eb334143f2bd864e86c7c07129ddfe9ea3321c8
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.26.0/argo-apps-0.26.0.tgz
+    version: 0.26.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat(argo-rollouts): update from 1.7.0 to 1.7.2"
           links:
             - name: GitHub Release 1.7.1
@@ -29804,4 +29831,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-15T19:25:22.867062529Z"
+generated: "2025-01-16T19:50:25.481929399Z"
