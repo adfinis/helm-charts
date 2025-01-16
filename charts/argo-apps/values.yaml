@@ -3,19 +3,6 @@ argoconfig:
     # -- Optional annotations to add to all Applications metadata.
     annotations: {}
 
-# -- [Argo CD Notifications](https://argocd-notifications.readthedocs.io/en/stable/) is DEPRECATED, use Argo CD directly instead.
-# @default -- DEPRECATED
-argocdNotifications:
-  enabled: false
-  name: argocd-notifications
-  annotations: {}
-  destination:
-    namespace: "infra-argocd"
-  repoURL: "https://argoproj.github.io/argo-helm"
-  chart: "argocd-notifications"
-  targetRevision: "1.8.*"
-  values: {}
-
 # -- [Argo Rollouts](https://argoproj.github.io/argo-rollouts/) ([example](./examples/argo-rollouts.yaml))
 # @default -- -
 argoRollouts:

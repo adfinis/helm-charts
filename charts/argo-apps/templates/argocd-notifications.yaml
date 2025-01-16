@@ -1,3 +1,0 @@
-{{ if .Values.argocdNotifications.enabled }}
-{{ fail "Argo CD Notifications is DEPRECATED, use Argo CD directly instead" }}
-{{ end }}
