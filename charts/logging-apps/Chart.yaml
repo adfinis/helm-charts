@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.35.0
+version: 0.36.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,38 +18,4 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "[Loki 6.13.0] Correctly wrap ClusterRoleBinding around `rbac/namespaced` conditional"
-    - kind: fixed
-      description: "[Loki 6.13.0] Do not create bloom planner, bloom builder, bloom gateway Deployment/Statefulset if their replica count is 0"
-    - kind: fixed
-      description: "[Loki 6.13.0] Configure (ephemeral) storage for bloom builder working directory"
-    - kind: added
-      description: "[Loki 6.13.0] Automatically configure bloom planner address for bloom builders and bloom gateway addresses for bloom gateway clients"
-    - kind: added
-      description: "[Loki 6.14.0] Add additional service annotations for components in distributed mode"
-    - kind: fixed
-      description: "[Loki 6.14.0] Rename loki/templates/query-frontend/poddisruptionbudget-query-frontend.yaml to fix spelling mistake"
-    - kind: fixed
-      description: "[Loki 6.14.1] Fixed Memcached persistence options"
-    - kind: added
-      description: "[Loki 6.15.0] Allow setting annotations for memberlist and query-scheduler-discovery services"
-    - kind: added
-      description: "[Loki 6.15.0] Allow to customize `client_max_body_size` when using Loki Gateway"
-    - kind: added
-      description: "[Loki 6.16.0] Allow setting nodeSelector, tolerations and affinity to enterprise components (tokengen and provisioner)"
-    - kind: changed
-      description: "[Loki 6.17.0] Changed version of Grafana Loki to 3.2.0"
-      links:
-        - name: "Loki 3.2.0 Changelog"
-          url: "https://github.com/grafana/loki/blob/main/CHANGELOG.md#320-2024-09-18"
-    - kind: fixed
-      description: "[Loki 6.17.1] Added missing `loki.storage.azure.chunkDelimiter` parameter to Helm chart"
-    - kind: changed
-      description: "[Loki 6.18.0] Added automated weekly releases, which created this release"
-    - kind: added
-      description: "[Loki 6.19.0-weekly.227] Expose Topology Spread Constraints in Helm chart templates and default values"
-    - kind: changed
-      description: "[Loki 6.20.0] Changed version of Grafana Loki to 3.3.0"
-      links:
-        - name: "Loki 3.3.0 Changelog"
-          url: "https://github.com/grafana/loki/blob/main/CHANGELOG.md#330-2024-11-19"
+      description: Fail deprecated loki-stack installations
