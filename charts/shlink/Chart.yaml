@@ -1,0 +1,23 @@
+apiVersion: v2
+name: shlink
+description: A Helm chart to deploy shlink
+icon: https://shlink.io/favicon.svg
+type: application
+version: 1.0.0
+appVersion: 4.4.0
+home: https://shlink.io
+sources:
+  - https://github.com/adfinis/helm-charts/tree/main/charts/shlink
+maintainers:
+  - name: adfinis
+    email: support@adfinis.com
+    url: https://adfinis.com
+dependencies:
+  - name: postgresql
+    version: 16.x.x
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: "Initial release"

@@ -1,0 +1,89 @@
+# Default values for shlink.
+
+replicaCount: 1
+
+image:
+  # -- Shlink image name
+  repository: ghcr.io/shlinkio/shlink
+  # -- Shlink image pull policy
+  pullPolicy: IfNotPresent
+
+env:
+  # -- Shlink domain
+  DEFAULT_DOMAIN: shlink.io
+  # -- Is shlink using https?
+  IS_HTTPS_ENABLED: true
+  # -- Default short code length
+  DEFAULT_SHORT_CODES_LENGTH: 6
+  # -- Default base url redirect if no short code is provided
+  DEFAULT_BASE_URL_REDIRECT: ""
+
+postgresql:
+  # -- Specifies whether a PostgreSQL chart should be deployed
+  enabled: false
+
+externalDatabase:
+  # -- Hostname of the external database
+  host: localhost
+  # -- Port of the external database
+  port: 5432
+  # -- Username of the external database
+  user: shlink
+  # -- Password of the external database
+  password: password
+  # -- Database name of the external database
+  database: shlink
+  # -- Secret name containing the database password
+  existingSecretName: ""
+  # -- Key in the secret containing the database password
+  existingSecretKey: postgresql-password
+
+serviceAccount:
+  # -- Specifies whether a service account should be created
+  create: false
+  # -- Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  # -- Name of the service account
+  name:
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  # -- Service type of the shlink service
+  type: ClusterIP
+  # -- Port of the shlink service
+  port: 80
+
+ingress:
+  # -- Enable ingress for shlink
+  enabled: false
+  # -- Ingress class name
+  className: nginx
+  # -- Ingress annotations
+  annotations: {}
+
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

@@ -1,0 +1,18 @@
+apiVersion: v2
+name: shlink-web
+description: A Helm chart to deploy shlink-web
+icon: https://shlink.io/favicon.svg
+type: application
+version: 1.0.0
+appVersion: 4.3.0
+home: https://shlink.io
+sources:
+  - https://github.com/adfinis/helm-charts/tree/main/charts/shlink-web
+maintainers:
+  - name: adfinis
+    email: support@adfinis.com
+    url: https://adfinis.com
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: "Initial release"

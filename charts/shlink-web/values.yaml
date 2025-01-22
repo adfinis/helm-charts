@@ -1,0 +1,77 @@
+# Default values for shlink-web.
+
+replicaCount: 1
+
+image:
+  # -- Shlink Web image name
+  repository: ghcr.io/shlinkio/shlink-web-client
+  # -- Shlink Web image pull policy
+  pullPolicy: IfNotPresent
+
+env:
+  # -- Shlink Web domain
+  DOMAIN_NAME: shlink.io
+  # -- Shlink API URL
+  SHLINK_SERVER_URL: https://shlink.io
+  # -- Shlink API Key
+  SHLINK_SERVER_API_KEY: ""
+  # -- Shlink Server Name
+  SHLINK_SERVER_NAME: Shlink
+
+externalSecret:
+  # -- Specifies whether an external secret should be used
+  enabled: false
+  # -- Name of the secret containing the API key
+  name: shlink-api-key
+  # -- Key in the secret containing the API key
+  key: shlink-api-key
+
+serviceAccount:
+  # -- Specifies whether a service account should be created
+  create: false
+  # -- Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  # -- Name of the service account
+  name:
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  # -- Shlink Web service type
+  type: ClusterIP
+  # -- Shlink Web service port
+  port: 80
+
+ingress:
+  # -- Enable ingress for shlink web
+  enabled: false
+  # -- Ingress class name
+  className: nginx
+  # -- Ingress annotations
+  annotations: {}
+
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

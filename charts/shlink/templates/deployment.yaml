@@ -1,0 +1,98 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "shlink.fullname" . }}
+  labels:
+    {{- include "shlink.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "shlink.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "shlink.selectorLabels" . | nindent 8 }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      serviceAccountName: {{ include "shlink.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: DEFAULT_DOMAIN
+              value: {{required "Default Domain required" .Values.env.DEFAULT_DOMAIN | quote }}
+            - name: IS_HTTPS_ENABLED
+              value: {{ .Values.env.IS_HTTPS_ENABLED | quote }}
+            - name: DEFAULT_SHORT_CODES_LENGTH
+              value: {{ .Values.env.DEFAULT_SHORT_CODES_LENGTH | quote }}
+            - name: DEFAULT_BASE_URL_REDIRECT
+              value: {{ .Values.env.DEFAULT_BASE_URL_REDIRECT | quote }}
+            - name:  DB_DRIVER
+              value: "postgres"
+            {{- if .Values.postgresql.enabled }}
+            - name: DB_HOST
+              value: {{ include "postgresql.primary.fullname" .Subcharts.postgresql | quote }}
+            - name: DB_PORT
+              value: {{ include "postgresql.service.port" .Subcharts.postgresql | quote }}
+            - name: DB_USER
+              value: {{ include "postgresql.username" .Subcharts.postgresql | quote }}
+            - name: DB_NAME
+              value: {{ include "postgresql.database" .Subcharts.postgresql | quote }}
+            {{- else }}
+            - name: DB_HOST
+              value: {{ .Values.externalDatabase.host | quote }}
+            - name: DB_PORT
+              value: {{ .Values.externalDatabase.port | quote }}
+            - name: DB_USER
+              value: {{ .Values.externalDatabase.username | quote }}
+            - name: DB_NAME
+              value: {{ .Values.externalDatabase.database | quote }}
+            {{- end }}
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "shlink.postgresql.secret" . | quote }}
+                  key: {{ include "shlink.postgresql.secretKey" . | quote }}
+            {{- if .Values.env.DEBUG }}
+            - name: SHELL_VERBOSITY
+              value: "3"
+            {{- end }}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /rest/v2/health
+              port: http
+            initialDelaySeconds: 20
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /rest/v2/health
+              port: http
+            initialDelaySeconds: 20
+            periodSeconds: 5
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
