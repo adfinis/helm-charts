@@ -3,7 +3,7 @@ name: shlink-web
 description: A Helm chart to deploy shlink-web
 icon: https://shlink.io/favicon.svg
 type: application
-version: 1.0.0
+version: 0.1.0
 appVersion: 4.3.0
 home: https://shlink.io
 sources:

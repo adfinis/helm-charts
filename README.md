@@ -53,14 +53,14 @@ Deploy rbac-manager RBACDefinitions via Helm
 [<img alt="rbac-definitions" src="https://rbac-manager.docs.fairwinds.com/img/rbac-manager-logo.svg" width="128">](charts/rbac-definitions)
 #### [shlink](charts/shlink) chart
 
-![Version: 1.0.x](https://img.shields.io/badge/version-1.0.x-brightgreen) ![App version: 4.4.x](https://img.shields.io/badge/app%20version-4.4.x-brightgreen)
+![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 4.4.x](https://img.shields.io/badge/app%20version-4.4.x-brightgreen)
 
 A Helm chart to deploy shlink
 
 [<img alt="shlink" src="https://shlink.io/favicon.svg" width="128">](charts/shlink)
 #### [shlink-web](charts/shlink-web) chart
 
-![Version: 1.0.x](https://img.shields.io/badge/version-1.0.x-brightgreen) ![App version: 4.3.x](https://img.shields.io/badge/app%20version-4.3.x-brightgreen)
+![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) ![App version: 4.3.x](https://img.shields.io/badge/app%20version-4.3.x-brightgreen)
 
 A Helm chart to deploy shlink-web
 
