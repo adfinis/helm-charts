@@ -30,7 +30,7 @@ jobs:
         run: yq e '."chart-repos"[]' hack/chart-testing/ct.yaml | tr "=" " " | xargs -L1 helm repo add
 
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.6.0
+        uses: helm/chart-releaser-action@v1.7.0
         with:
           # Allow us to re-run the release action
           skip_existing: true
