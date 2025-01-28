@@ -16,3 +16,5 @@
 /charts/timed                       @adfinis/helm-charts @adfinis/dev-devops
 /charts/osschallenge                @adfinis/helm-charts @adfinis/dev-devops
 /charts/hedgedoc                    @adfinis/helm-charts @altesockensuppe @gianklug
+/charts/shlink                      @adfinis/helm-charts @adfinis/wolf
+/charts/shlink-web                  @adfinis/helm-charts @adfinis/wolf
