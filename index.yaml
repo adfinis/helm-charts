@@ -20702,6 +20702,30 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Fail installations of deprecated gangway component"
+    apiVersion: v2
+    created: "2025-01-28T19:33:23.54246502Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: f55ceddf33bf5485a17854fab57af5e3cf60560115b1dcaba6d5c64eb83e23c9
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.90.0/security-apps-0.90.0.tgz
+    version: 0.90.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore: update oauth2-proxy from 6.10.1 to 7.8.2"
           links:
             - name: OAuth-Proxy 7.8.2 Release
@@ -29856,4 +29880,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-28T19:31:13.070424844Z"
+generated: "2025-01-28T19:33:23.543964504Z"
