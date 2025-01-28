@@ -14922,6 +14922,31 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: Fail deprecated loki-stack installations
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-01-28T19:35:21.503604397Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: 69db72251840dc0e1605691e10025931153c512df783b6fc697714cc144b5a24
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.36.0/logging-apps-0.36.0.tgz
+    version: 0.36.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "[Loki 6.13.0] Correctly wrap ClusterRoleBinding around `rbac/namespaced` conditional"
         - kind: fixed
           description: "[Loki 6.13.0] Do not create bloom planner, bloom builder, bloom gateway Deployment/Statefulset if their replica count is 0"
@@ -29880,4 +29905,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-28T19:33:23.543964504Z"
+generated: "2025-01-28T19:35:21.506094391Z"
