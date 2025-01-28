@@ -7,3 +7,4 @@ postgresql:
     user: "shlink"
     postgresPassword: "password"
     password: "password"
+    database: shlink
