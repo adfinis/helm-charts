@@ -23,8 +23,6 @@ rbacManager:
     TODO: add values in values.yaml
 kured:
   enabled: true
-kubeEventExporter:
-  enabled: true
 velero:
   enabled: true
 mimir:
