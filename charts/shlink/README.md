@@ -11,6 +11,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 ## Source Code
 
+* <https://github.com/shlinkio/shlink>
 * <https://github.com/adfinis/helm-charts/tree/main/charts/shlink>
 
 ## Requirements

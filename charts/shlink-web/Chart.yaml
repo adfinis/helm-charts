@@ -7,6 +7,7 @@ version: 0.1.0
 appVersion: 4.3.0
 home: https://shlink.io
 sources:
+  - https://github.com/shlinkio/shlink-web-client
   - https://github.com/adfinis/helm-charts/tree/main/charts/shlink-web
 maintainers:
   - name: adfinis
