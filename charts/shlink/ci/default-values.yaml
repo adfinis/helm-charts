@@ -1,0 +1,9 @@
+env:
+  DEFAULT_DOMAIN: shlink.io
+  IS_HTTPS_ENABLED: false
+postgresql:
+  enabled: true
+  auth:
+    user: "shlink"
+    postgresPassword: "password"
+    password: "password"
