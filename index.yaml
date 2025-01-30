@@ -14680,6 +14680,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Add support for podAnnotations"
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    appVersion: v1.4.0
+    created: "2025-01-30T15:21:52.883413154Z"
+    description: Chart for kubernetes-etcd-backup solution
+    digest: bac4ca798245a75dec11969e3c0acbfc0ed1ae71a9e831999480831f90fc756d
+    home: https://github.com/adfinis/kubernetes-etcd-backup
+    keywords:
+    - kubernetes-etcd-backup
+    - kubernetes
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: kubernetes-etcd-backup
+    sources:
+    - https://github.com/adfinis/kubernetes-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/kubernetes-etcd-backup-1.6.0/kubernetes-etcd-backup-1.6.0.tgz
+    version: 1.6.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Add support for s3 storage"
           links:
             - name: "kubernetes-etcd-backup v1.4.0"
@@ -29905,4 +29932,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-28T19:35:21.506094391Z"
+generated: "2025-01-30T15:21:52.884681877Z"
