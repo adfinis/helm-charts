@@ -20,6 +20,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | affinity | object | `{}` |  |
 | backup.dirname | string | `"+etcd-backup-%FT%T%:z"` | Directory name of single backup |
 | backup.expiretype | string | `"days"` | expiretype could be days (keep backups newer than backup.keepdays, count (keep a number of backups with backup.keepcount), never (do not expire backups, keep all of them) |
+| backup.keepcount | string | `"10"` | Count retention if expiretype set to count |
 | backup.keepdays | string | `"30"` | Retention period |
 | backup.schedule | string | `"0 0 * * *"` | Backup schedule |
 | backup.subdir | string | `"/"` | Sub directory path |
