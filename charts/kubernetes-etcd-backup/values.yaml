@@ -13,7 +13,7 @@ backup:
   expiretype: "days"
   # -- Retention period
   keepdays: "30"
-  # -- Count retention if expiretype set to count 
+  # -- Count retention if expiretype set to count
   keepcount: "10"
   # -- Backup schedule
   schedule: "0 0 * * *"
