@@ -13,8 +13,7 @@ backup:
   expiretype: "days"
   # -- Retention period
   keepdays: "30"
-  # -- Count retention if expiretype set to count
-  keepcount: "10"
+  # -- Count retention if expiretype set to count keepcount: "10"
   # -- Backup schedule
   schedule: "0 0 * * *"
   # -- Set umask during the backup
@@ -147,3 +146,6 @@ podSecurityContext:
   # runAsUser: 0
   # # -- Set group ID
   # runAsGroup: 0
+
+# -- Custom pod annotations for the running pod
+podAnnotations: {}
