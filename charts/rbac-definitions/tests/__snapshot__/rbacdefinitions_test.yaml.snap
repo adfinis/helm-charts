@@ -11,12 +11,12 @@ should create one RBACDefinition:
         helm.sh/chart: rbac-definitions-0.1.3
       name: cluster-editors
     rbacBindings:
-      - clusterRoleBindings:
-          - clusterRole: edit
-        name: editors
-        subjects:
-          - kind: User
-            name: maxime@example.com
+    - clusterRoleBindings:
+      - clusterRole: edit
+      name: editors
+      subjects:
+      - kind: User
+        name: maxime@example.com
   2: |
     apiVersion: rbacmanager.reactiveops.io/v1beta1
     kind: RBACDefinition
@@ -29,12 +29,12 @@ should create one RBACDefinition:
         helm.sh/chart: rbac-definitions-0.1.3
       name: cluster-admins
     rbacBindings:
-      - clusterRoleBindings:
-          - clusterRole: cluster-admin
-        name: admins
-        subjects:
-          - kind: User
-            name: jane@example.com
+    - clusterRoleBindings:
+      - clusterRole: cluster-admin
+      name: admins
+      subjects:
+      - kind: User
+        name: jane@example.com
 should create one RBACDefinition with a namespace selector:
   1: |
     apiVersion: rbacmanager.reactiveops.io/v1beta1
@@ -48,15 +48,15 @@ should create one RBACDefinition with a namespace selector:
         helm.sh/chart: rbac-definitions-0.1.3
       name: devs-edit
     rbacBindings:
-      - name: devs
-        roleBindings:
-          - clusterRole: edit
-            namespaceSelector:
-              matchLabels:
-                k8s.example.com/owner: devs
-        subjects:
-          - kind: Group
-            name: devs
+    - name: devs
+      roleBindings:
+      - clusterRole: edit
+        namespaceSelector:
+          matchLabels:
+            k8s.example.com/owner: devs
+      subjects:
+      - kind: Group
+        name: devs
 should match snapshot:
   1: |
     apiVersion: rbacmanager.reactiveops.io/v1beta1
@@ -70,12 +70,12 @@ should match snapshot:
         helm.sh/chart: rbac-definitions-0.1.3
       name: ci-example
     rbacBindings:
-      - clusterRoleBindings:
-          - clusterRole: edit
-        name: edit
-        subjects:
-          - kind: User
-            name: ci@example.com
+    - clusterRoleBindings:
+      - clusterRole: edit
+      name: edit
+      subjects:
+      - kind: User
+        name: ci@example.com
 should only create one RBACDefinition:
   1: |
     apiVersion: rbacmanager.reactiveops.io/v1beta1
@@ -89,9 +89,9 @@ should only create one RBACDefinition:
         helm.sh/chart: rbac-definitions-0.1.3
       name: cluster-admins
     rbacBindings:
-      - clusterRoleBindings:
-          - clusterRole: cluster-admin
-        name: admins
-        subjects:
-          - kind: User
-            name: jane@example.com
+    - clusterRoleBindings:
+      - clusterRole: cluster-admin
+      name: admins
+      subjects:
+      - kind: User
+        name: jane@example.com

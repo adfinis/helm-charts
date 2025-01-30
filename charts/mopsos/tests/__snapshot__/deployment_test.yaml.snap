@@ -23,27 +23,27 @@ should match snapshot:
             app.kubernetes.io/name: mopsos
         spec:
           containers:
-            - envFrom:
-                - secretRef:
-                    name: RELEASE-NAME-mopsos-secret
-                - configMapRef:
-                    name: RELEASE-NAME-mopsos-config
-              image: ghcr.io/adfinis/mopsos:v0.3.7
-              imagePullPolicy: IfNotPresent
-              livenessProbe:
-                httpGet:
-                  path: /health
-                  port: http
-              name: mopsos
-              ports:
-                - containerPort: 8080
-                  name: http
-                  protocol: TCP
-              readinessProbe:
-                httpGet:
-                  path: /health
-                  port: http
-              resources: {}
-              securityContext: {}
+          - envFrom:
+            - secretRef:
+                name: RELEASE-NAME-mopsos-secret
+            - configMapRef:
+                name: RELEASE-NAME-mopsos-config
+            image: ghcr.io/adfinis/mopsos:v0.3.7
+            imagePullPolicy: IfNotPresent
+            livenessProbe:
+              httpGet:
+                path: /health
+                port: http
+            name: mopsos
+            ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+            readinessProbe:
+              httpGet:
+                path: /health
+                port: http
+            resources: {}
+            securityContext: {}
           securityContext: {}
           serviceAccountName: RELEASE-NAME-mopsos

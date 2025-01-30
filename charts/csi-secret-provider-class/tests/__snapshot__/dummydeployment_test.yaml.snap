@@ -22,17 +22,17 @@ should match snapshot:
             app.kubernetes.io/name: csi-secret-provider-class
         spec:
           containers:
-            - image: registry.k8s.io/pause:3.7
-              imagePullPolicy: IfNotPresent
-              name: dummy
-              volumeMounts:
-                - mountPath: /vault
-                  name: csi-secret-store-volume
-                  readOnly: true
-          volumes:
-            - csi:
-                driver: secrets-store.csi.k8s.io
-                readOnly: true
-                volumeAttributes:
-                  secretProviderClass: release-name-csi-secret-provider-class
+          - image: registry.k8s.io/pause:3.7
+            imagePullPolicy: IfNotPresent
+            name: dummy
+            volumeMounts:
+            - mountPath: /vault
               name: csi-secret-store-volume
+              readOnly: true
+          volumes:
+          - csi:
+              driver: secrets-store.csi.k8s.io
+              readOnly: true
+              volumeAttributes:
+                secretProviderClass: release-name-csi-secret-provider-class
+            name: csi-secret-store-volume
