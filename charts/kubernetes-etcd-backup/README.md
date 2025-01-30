@@ -1,6 +1,6 @@
 # kubernetes-etcd-backup
 
-![Version: 1.5.1](https://img.shields.io/badge/Version-1.5.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.0](https://img.shields.io/badge/AppVersion-v1.4.0-informational?style=flat-square)
+![Version: 1.6.0](https://img.shields.io/badge/Version-1.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.4.0](https://img.shields.io/badge/AppVersion-v1.4.0-informational?style=flat-square)
 
 Chart for kubernetes-etcd-backup solution
 
@@ -56,6 +56,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | persistence.s3.host | string | `"https://minio.local:9000"` | S3 endpoint host |
 | persistence.s3.name | string | `"etcd-backup"` | S3 endpoint name |
 | persistence.s3.secretKey | string | `"mysupersecretkey"` | S3 secret key |
+| podAnnotations | object | `{}` | Custom pod annotations for the running pod |
 | podSecurityContext.fsGroup | int | `1000` |  |
 | podSecurityContext.runAsUser | int | `1000` |  |
 | resources | string | `nil` |  |

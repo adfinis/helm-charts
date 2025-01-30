@@ -147,3 +147,6 @@ podSecurityContext:
   # runAsUser: 0
   # # -- Set group ID
   # runAsGroup: 0
+
+# -- Custom pod annotations for the running pod
+podAnnotations: {}

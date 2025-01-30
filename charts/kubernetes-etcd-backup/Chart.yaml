@@ -3,7 +3,7 @@ apiVersion: v2
 name: kubernetes-etcd-backup
 description: Chart for kubernetes-etcd-backup solution
 type: application
-version: 1.5.1
+version: 1.6.0
 appVersion: v1.4.0
 keywords:
   - kubernetes-etcd-backup
@@ -21,7 +21,4 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "Add support for s3 storage"
-      links:
-        - name: "kubernetes-etcd-backup v1.4.0"
-          url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.0
+      description: "Add support for podAnnotations"
