@@ -1295,6 +1295,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "update promitor agent scraper to 2.14.0"
+          links:
+            - name: "Pull Request"
+              url: https://github.com/promitor/charts/pull/179
+        - kind: changed
+          description: "update promitor agent resource discovery to 0.13.0"
+          links:
+            - name: "Pull Request"
+              url: https://github.com/promitor/charts/pull/179
+    apiVersion: v2
+    created: "2025-02-25T12:31:14.628623638Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for Azure applications
+    digest: dda01472f0ba80b7215f67f3805ccb1bf4dbbdb4c399fe4043c05d8c1fbc63e6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.15.0/azure-apps-0.15.0.tgz
+    version: 0.15.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update promitor agent scraper to 2.12.1"
           links:
             - name: "Pull Request"
@@ -29962,4 +29994,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-13T08:40:51.976289286Z"
+generated: "2025-02-25T12:31:14.630171409Z"
