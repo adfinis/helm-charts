@@ -1,0 +1,17 @@
+suite: Monitoring Tests
+templates:
+  - configmap.yaml
+  - cronjob.yaml
+  - prometheusrule.yaml
+  - rolebinding.yaml
+  - role.yaml
+  - serviceaccount.yaml
+capabilities:
+  apiVersions:
+    - monitoring.coreos.com/v1
+tests:
+  - it: should match snapshot
+    values:
+      - ../ci/monitoring-values.yaml
+    asserts:
+        - matchSnapshot: {}

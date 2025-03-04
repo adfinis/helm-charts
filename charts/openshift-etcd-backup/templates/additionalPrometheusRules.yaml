@@ -1,4 +1,4 @@
-{{- if and .Values.monitoring.enabled .Values.monitoring.additionalRules }}
+{{- if and .Values.monitoring.enabled .Values.monitoring.additionalRules (not .Values.monitoring.openshift) }}
 apiVersion: v1
 kind: List
 metadata:

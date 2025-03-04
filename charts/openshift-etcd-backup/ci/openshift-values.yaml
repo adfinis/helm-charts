@@ -1,0 +1,4 @@
+---
+monitoring:
+  enabled: true
+  openshift: true

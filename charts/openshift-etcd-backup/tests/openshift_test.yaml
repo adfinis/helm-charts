@@ -1,0 +1,12 @@
+suite: OpenShift tests
+templates:
+  - alertingrule.yaml
+capabilities:
+  apiVersions:
+    - monitoring.openshift.com/v1
+tests:
+  - it: should match snapshot
+    values:
+      - ../ci/openshift-values.yaml
+    asserts:
+      - matchSnapshot: {}

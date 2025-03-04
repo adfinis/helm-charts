@@ -1,0 +1,13 @@
+suite: default tests
+templates:
+  - configmap.yaml
+  - cronjob.yaml
+  - rolebinding.yaml
+  - role.yaml
+  - serviceaccount.yaml
+tests:
+  - it: should match snapshot
+    values:
+      - ../ci/default-values.yaml
+    asserts:
+      - matchSnapshot: {}
