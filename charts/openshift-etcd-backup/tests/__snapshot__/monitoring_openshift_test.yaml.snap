@@ -1,0 +1,16 @@
+should match snapshot:
+  1: |
+    apiVersion: monitoring.openshift.io/v1
+    kind: AlertingRule
+    metadata:
+      name: RELEASE-NAME-openshift-etcd-backup-cronjob-monitor
+      namespace: openshift-monitoring
+    spec:
+      groups:
+        - name: cronjob-monitor
+          rules:
+            - alert: EtcdBackupCronJobStatusFailed
+              expr: |
+                kube_job_status_succeeded{namespace="NAMESPACE"} == 0
+              labels:
+                severity: critical

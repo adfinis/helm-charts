@@ -1,0 +1,123 @@
+should match snapshot:
+  1: |
+    apiVersion: v1
+    data:
+      OCP_BACKUP_DIRNAME: +etcd-backup-%FT%T%:z
+      OCP_BACKUP_EXPIRE_TYPE: days
+      OCP_BACKUP_KEEP_COUNT: "10"
+      OCP_BACKUP_KEEP_DAYS: "30"
+      OCP_BACKUP_S3: "false"
+      OCP_BACKUP_SUBDIR: /
+      OCP_BACKUP_UMASK: "0027"
+    kind: ConfigMap
+    metadata:
+      labels:
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: openshift-etcd-backup
+        app.kubernetes.io/version: v1.9.1
+        helm.sh/chart: openshift-etcd-backup-1.10.0
+      name: RELEASE-NAME-openshift-etcd-backup
+  2: |
+    apiVersion: batch/v1beta1
+    kind: CronJob
+    metadata:
+      name: RELEASE-NAME-openshift-etcd-backup
+    spec:
+      jobTemplate:
+        spec:
+          backoffLimit: 0
+          template:
+            spec:
+              containers:
+                - command:
+                    - /bin/sh
+                    - /usr/local/bin/backup.sh
+                  envFrom:
+                    - configMapRef:
+                        name: RELEASE-NAME-openshift-etcd-backup
+                  image: ghcr.io/adfinis/openshift-etcd-backup:v1.9.1
+                  imagePullPolicy: Always
+                  name: openshift-etcd-backup
+                  resources: {}
+                  securityContext:
+                    privileged: true
+                    runAsGroup: 0
+                    runAsUser: 0
+                  volumeMounts:
+                    - mountPath: /host
+                      name: host
+                    - mountPath: /backup
+                      name: volume-backup
+              hostNetwork: true
+              hostPID: true
+              nodeSelector:
+                node-role.kubernetes.io/master: ""
+              restartPolicy: Never
+              securityContext: {}
+              serviceAccountName: RELEASE-NAME-openshift-etcd-backup
+              tolerations:
+                - effect: NoSchedule
+                  key: node-role.kubernetes.io/master
+              volumes:
+                - hostPath:
+                    path: /
+                    type: Directory
+                  name: host
+                - hostPath:
+                    path: /mnt/etcd-backups
+                    type: Directory
+                  name: volume-backup
+      schedule: 0 0 * * *
+      startingDeadlineSeconds: 600
+  3: |
+    apiVersion: monitoring.coreos.com/v1
+    kind: PrometheusRule
+    metadata:
+      name: RELEASE-NAME-openshift-etcd-backup-cronjob-monitor
+    spec:
+      groups:
+        - name: cronjob-monitor
+          rules:
+            - alert: EtcdBackupCronJobStatusFailed
+              expr: |
+                kube_job_status_succeeded{namespace="NAMESPACE"} == 0
+              labels:
+                severity: critical
+  4: |
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: Role
+    metadata:
+      name: RELEASE-NAME-openshift-etcd-backup-use-privileged-scc
+    rules:
+      - apiGroups:
+          - security.openshift.io
+        resourceNames:
+          - privileged
+        resources:
+          - securitycontextconstraints
+        verbs:
+          - use
+  5: |
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      name: RELEASE-NAME-openshift-etcd-backup-sa-privileged
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: Role
+      name: RELEASE-NAME-openshift-etcd-backup-use-privileged-scc
+    subjects:
+      - kind: ServiceAccount
+        name: RELEASE-NAME-openshift-etcd-backup
+  6: |
+    apiVersion: v1
+    kind: ServiceAccount
+    metadata:
+      labels:
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: openshift-etcd-backup
+        app.kubernetes.io/version: v1.9.1
+        helm.sh/chart: openshift-etcd-backup-1.10.0
+      name: RELEASE-NAME-openshift-etcd-backup
