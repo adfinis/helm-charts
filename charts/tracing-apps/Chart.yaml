@@ -2,7 +2,7 @@ apiVersion: v2
 name: tracing-apps
 description: Argo CD app-of-apps config for tracing applications
 type: application
-version: 0.29.0
+version: 0.29.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,15 +17,4 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: update jaeger-operator chart from 2.50.1 to 2.54.0
-    - kind: changed
-      description: update otel-collector chart from 0.92.0 to 0.93.3
-      links:
-        - name: otel-collector chart Release 0.93.3
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.93.3
-        - name: otel-collector chart Release 0.93.2
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.93.2
-        - name: otel-collector chart Release 0.93.1
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.93.1
-        - name: otel-collector chart Release 0.93.0
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.93.0
+      description: Render applications using valuesObject instead of values string
