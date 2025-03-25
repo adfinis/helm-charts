@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.228.0
+version: 0.229.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,7 +15,18 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "Fail installations of deprecated kube-event-exporter"
+      description: "fix: Update nginx-ingress from 1.11.2 to 1.12.1"
+      links:
+        - name: "CVE-2025-1974: critical CVE vuln"
+          url: https://kubernetes.io/blog/2025/03/24/ingress-nginx-cve-2025-1974/
+        - name: "helm chart: 4.12.1"
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.12.1
+        - name: "ingress-nginx controller: 1.12.1"
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.12.1
+        - name: "helm chart: 1.12.0"
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.12.0
+        - name: "ingress-nginx controller: 1.12.0"
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.12.0
