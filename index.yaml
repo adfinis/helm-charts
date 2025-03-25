@@ -5578,6 +5578,42 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "fix: Update nginx-ingress from 1.11.2 to 1.12.1"
+          links:
+            - name: "CVE-2025-1974: critical CVE vuln"
+              url: https://kubernetes.io/blog/2025/03/24/ingress-nginx-cve-2025-1974/
+            - name: "helm chart: 4.12.1"
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.12.1
+            - name: "ingress-nginx controller: 1.12.1"
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.12.1
+            - name: "helm chart: 1.12.0"
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.12.0
+            - name: "ingress-nginx controller: 1.12.0"
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.12.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-03-25T08:40:17.852264952Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: c6239f1f8cc75a16f3c3cbf617cc4e3818603b1990cdf170900e784e49bd3463
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.229.0/infra-apps-0.229.0.tgz
+    version: 0.229.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Fail installations of deprecated kube-event-exporter"
       artifacthub.io/containsSecurityUpdates: "false"
     apiVersion: v2
@@ -30027,4 +30063,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-06T07:05:18.131836261Z"
+generated: "2025-03-25T08:40:17.855260826Z"
