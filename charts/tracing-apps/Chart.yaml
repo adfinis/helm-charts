@@ -2,7 +2,7 @@ apiVersion: v2
 name: tracing-apps
 description: Argo CD app-of-apps config for tracing applications
 type: application
-version: 0.29.0
+version: 0.30.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,15 +17,69 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: update jaeger-operator chart from 2.50.1 to 2.54.0
-    - kind: changed
-      description: update otel-collector chart from 0.92.0 to 0.93.3
+      description: update otel-collector chart from 0.93.0 to 0.119.0
       links:
-        - name: otel-collector chart Release 0.93.3
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.93.3
-        - name: otel-collector chart Release 0.93.2
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.93.2
-        - name: otel-collector chart Release 0.93.1
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.93.1
-        - name: otel-collector chart Release 0.93.0
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.93.0
+        - name: otel-collector chart Release 0.94.0, Bump collector version to v0.103.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.94.0
+        - name: otel-collector chart Release 0.95.0, Bump Collector default version to 0.103.1
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.95.0
+        - name: otel-collector chart Release 0.96.0, Use container parser of stanza for logs collection
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.96.0
+        - name: otel-collector chart Release 0.97.0, Bump default version to v0.104.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.97.0
+        - name: otel-collector chart Release 0.97.1, Support tpl in extraVolumes and extraVolumesMount
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.97.1
+        - name: otel-collector chart Release 0.97.2, relabelings and metricRelabelings configs to serviceMonitor
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.97.2
+        - name: otel-collector chart Release 0.98.0, Remove the deprecated memory ballast extension
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.98.0
+        - name: otel-collector chart Release 0.99.0, Bump default collector version to 0.105.
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.99.0
+        - name: otel-collector chart Release 0.100.0, Remove memory_limiter processor dependency
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.100.0
+        - name: otel-collector chart Release 0.101.0, Bump default collector to 0.106.1
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.101.0
+        - name: otel-collector chart Release 0.101.1, move relabelings and metricRelabelings configs under endpoints in serviceMonitor spec
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.101.1
+        - name: otel-collector chart Release 0.102.0, Bump default collector version to 0.107.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.102.0
+        - name: otel-collector chart Release 0.102.1, Enable external configmap checksum
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.102.1
+        - name: otel-collector chart Release 0.103.0, Bump default collector to 0.108.1
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.103.0
+        - name: otel-collector chart Release 0.104.0, Provide alternateConfig option for use in subcharts to workaround null issue
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.104.0
+        - name: otel-collector chart Release 0.105.0, Bump default collector version to 0.109.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.105.0
+        - name: otel-collector chart Release 0.106.0, add startupProbe in collector pods
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.106.0
+        - name: otel-collector chart Release 0.107.0, Bump to v0.110.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.107.0
+        - name: otel-collector chart Release 0.108.0, Bump default collector version to 0.111.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.108.0
+        - name: otel-collector chart Release 0.108.1, Deploy podmonitor for all modes
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.108.1
+        - name: otel-collector chart Release 0.109.0, Bump to v0.113.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.109.0
+        - name: otel-collector chart Release 0.110.0, Bump to v0.114.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.110.0
+        - name: otel-collector chart Release 0.110.7, Bump kyverno action-install-chainsaw from 0.2.11 to 0.2.12
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.110.7
+        - name: otel-collector chart Release 0.111.0, Bump appVersion to 0.115.1
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.111.0
+        - name: otel-collector chart Release 0.112.0, Bump to v0.116.1
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.112.0
+        - name: otel-collector chart Release 0.113.0, Bump to v0.117.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.113.0
+        - name: otel-collector chart Release 0.114.0, Bump to v0.118.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.114.0
+        - name: otel-collector chart Release 0.115.0, Add extraManifests to opentelemetry-collector helm chart
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.115.0
+        - name: otel-collector chart Release 0.116.0, Update opentelemetry collector v0.119.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.116.0
+        - name: otel-collector chart Release 0.117.0, Bump to v0.120.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.117.0
+        - name: otel-collector chart Release 0.118.0, Add ability to automatically configure otel sdk for collector internal telemetry
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.118.0
+        - name: otel-collector chart Release 0.119.0, Update opentelemetry collector v0.121.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.119.0
