@@ -1,8 +1,9 @@
-{{- if and .Values.monitoring.enabled .Values.monitoring.rules.cronjobMonitor (not .Values.monitoring.openshift) (.Capabilities.APIVersions.Has "monitoring.coreos.com/v1") }}
-apiVersion: monitoring.coreos.com/v1
-kind: PrometheusRule
+{{- if and .Values.monitoring.enabled .Values.monitoring.rules.cronjobMonitor .Values.monitoring.openshift (.Capabilities.APIVersions.Has "monitoring.openshift.com/v1") }}
+apiVersion: monitoring.openshift.io/v1
+kind: AlertingRule
 metadata:
   name: {{ include "openshift-etcd-backup.fullname" . }}-cronjob-monitor
+  namespace: openshift-monitoring
 spec:
   groups:
   - name: cronjob-monitor

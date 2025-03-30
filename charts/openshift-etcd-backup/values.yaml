@@ -115,13 +115,18 @@ affinity: {}
 annotations: {}
 
 monitoring:
-# -- Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis/openshift-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml).
-# Be sure to to have monitoring for user defined projects enabled as [described in the upstream documentation](https://docs.openshift.com/container-platform/4.6/monitoring/enabling-monitoring-for-user-defined-projects.html).
+  # -- Deploy PrometheusRule to be alerted in case of backup fails as decribed [here](https://github.com/adfinis/openshift-etcd-backup/blob/main/etcd-backup-cronjob-monitor.PrometheusRule.yaml).
+  # Be sure to to have monitoring for user defined projects enabled as [described in the upstream documentation](https://docs.openshift.com/container-platform/4.6/monitoring/enabling-monitoring-for-user-defined-projects.html).
   enabled: false
+
+  # -- Enable OpenShift mode (replaces the PrometheusRule with an AlertingRule in the openshift-monitoring Namespace)
+  openshift: false
+
   rules:
-    # -- Deploy PrometheusRule to check for cronjob fails.
+    # -- Deploy PrometheusRule or AlertingRule to check for cronjob fails.
     cronjobMonitor: true
   # -- Provide custom recording or alerting rules to be deployed into the cluster.
+  # Only supported if monitoring.openshift is false .
   additionalRules:
   #  rule-name:
   #    groups:
