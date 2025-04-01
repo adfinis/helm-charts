@@ -305,7 +305,7 @@ kyverno:
   # -- Chart
   chart: kyverno
   # -- [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno)
-  targetRevision: 3.2.5
+  targetRevision: 3.4.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml)
   values: {}
