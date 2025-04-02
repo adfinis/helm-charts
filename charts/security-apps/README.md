@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.92.0](https://img.shields.io/badge/Version-0.92.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.92.1](https://img.shields.io/badge/Version-0.92.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -72,7 +72,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kyverno.destination.namespace | string | `"infra-kyverno"` | Namespace |
 | kyverno.enabled | bool | `false` | Enable kyverno |
 | kyverno.repoURL | string | [repo](https://kyverno.github.io/kyverno/) | Repo URL |
-| kyverno.targetRevision | string | `"3.4.0"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno) |
+| kyverno.targetRevision | string | `"3.3.7"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno) |
 | kyverno.values | object | [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml) | Helm values |
 | kyvernoPolicies | object | [example](./examples/kyverno.yaml) | [Kyverno Policies](https://kyverno.io) |
 | kyvernoPolicies.annotations | object | `{}` | Annotations for kyverno |
