@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.229.0
+version: 0.230.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,15 +18,37 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: Update nginx-ingress from 1.11.2 to 1.12.1"
+      description: |
+        fix: Update Argo CD from 2.13.1 to 2.14.8
+
+        * fix CVE-2025-26791 in redoc dep
+        * update go-git from 5.12.0 to 5.13.2 to include several CVE fixes
+        * various performance improvments and dependency updates
       links:
-        - name: "CVE-2025-1974: critical CVE vuln"
-          url: https://kubernetes.io/blog/2025/03/24/ingress-nginx-cve-2025-1974/
-        - name: "helm chart: 4.12.1"
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.12.1
-        - name: "ingress-nginx controller: 1.12.1"
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.12.1
-        - name: "helm chart: 1.12.0"
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.12.0
-        - name: "ingress-nginx controller: 1.12.0"
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.12.0
+        - name: "Argo CD 2.14 Announcement"
+          url: https://blog.argoproj.io/argo-cd-v2-14-release-candidate-57a664791e2a
+        - name: "Argo CD 2.14.0 Release Notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.0
+        - name: "Argo CD 2.14.1 Release Notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.1
+        - name: "Argo CD 2.14.2 Release Notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.2
+        - name: "Argo CD 2.14.3 Release Notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.3
+        - name: "Argo CD 2.14.4 Release Notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.4
+        - name: "Argo CD 2.14.5 Release Notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.5
+        - name: "Argo CD 2.14.6 Release Notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.6
+        - name: "Argo CD 2.14.7 Release Notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.7
+        - name: "Argo CD 2.14.8 Release Notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.8
+    - kind: changed
+      description: |
+        fix: Update Argo CD chart from 7.7.5 to 2.14.8
+
+        * replace redis-exporter with an  image that support multi-arch
+        * update argo cd and dependencies like dex
+        * improve docs and DRY several components
