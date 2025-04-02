@@ -5257,6 +5257,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: Bumped hedgedoc image tag to 1.10.2
+      artifacthub.io/images: |
+        - name: hedgedoc
+          image: quay.io/hedgedoc/hedgedoc:1.10.2
+    apiVersion: v2
+    appVersion: 1.10.2
+    created: "2025-04-02T06:26:39.587328752Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~12.2.1
+    description: Chart for HedgeDoc, a fork of CodiMD
+    digest: 434b30bdf33d63272f7f95db1d5d1c4bc9f7f9964f2aaedc44f8f46ce0d00a90
+    icon: https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: hedgedoc
+    sources:
+    - https://github.com/hedgedoc/hedgedoc
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/hedgedoc-0.5.3/hedgedoc-0.5.3.tgz
+    version: 0.5.3
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: Bumped hedgedoc image tag to 1.10.0
         - kind: added
           description: Option to customize liveness and readiness probe
@@ -30152,4 +30181,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-27T08:53:15.537062382Z"
+generated: "2025-04-02T06:26:39.588669924Z"
