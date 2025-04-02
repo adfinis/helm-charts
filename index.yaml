@@ -20881,6 +20881,45 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            fix: update kyverno chart from 3.2.5 to 3.4.0
+
+            * bumps kyverno from 1.12.4 to 1.13.4
+            * adds support for imagePullSeecrets in chart
+          links:
+            - name: Kyverno 1.13.0 (with BREAKING CHANGES)
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.13.0
+            - name: Kyverno 1.13.1
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.13.1
+            - name: Kyverno 1.13.2
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.13.2
+            - name: Kyverno 1.13.3
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.13.3
+            - name: Kyverno 1.13.4
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.13.4
+    apiVersion: v2
+    created: "2025-04-02T09:47:56.116227514Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 6d1b9e566f08f7c7cfe7c8024fcb303b06d883ac74083d7c726caba4e7778944
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.92.0/security-apps-0.92.0.tgz
+    version: 0.92.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore: update stackrox from 4.5.5 to 4.6.2"
           links:
             - name: Stackrox Release 4.6.2
@@ -30181,4 +30220,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-02T06:26:39.588669924Z"
+generated: "2025-04-02T09:47:56.117747472Z"
