@@ -5607,6 +5607,64 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            fix: Update Argo CD from 2.13.1 to 2.14.8
+
+            * fix CVE-2025-26791 in redoc dep
+            * update go-git from 5.12.0 to 5.13.2 to include several CVE fixes
+            * various performance improvments and dependency updates
+          links:
+            - name: "Argo CD 2.14 Announcement"
+              url: https://blog.argoproj.io/argo-cd-v2-14-release-candidate-57a664791e2a
+            - name: "Argo CD 2.14.0 Release Notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.0
+            - name: "Argo CD 2.14.1 Release Notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.1
+            - name: "Argo CD 2.14.2 Release Notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.2
+            - name: "Argo CD 2.14.3 Release Notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.3
+            - name: "Argo CD 2.14.4 Release Notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.4
+            - name: "Argo CD 2.14.5 Release Notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.5
+            - name: "Argo CD 2.14.6 Release Notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.6
+            - name: "Argo CD 2.14.7 Release Notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.7
+            - name: "Argo CD 2.14.8 Release Notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.8
+        - kind: changed
+          description: |
+            fix: Update Argo CD chart from 7.7.5 to 2.14.8
+
+            * replace redis-exporter with an  image that support multi-arch
+            * update argo cd and dependencies like dex
+            * improve docs and DRY several components
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-04-04T09:45:38.045661722Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 1dec36ef743dd13c6049192cd84171754fed350d6aaf1e8047d49cddf39fd878
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.230.0/infra-apps-0.230.0.tgz
+    version: 0.230.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "fix: Update nginx-ingress from 1.11.2 to 1.12.1"
           links:
             - name: "CVE-2025-1974: critical CVE vuln"
@@ -30260,4 +30318,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-02T11:28:26.546167161Z"
+generated: "2025-04-04T09:45:38.047146947Z"
