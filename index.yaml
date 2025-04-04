@@ -18907,6 +18907,43 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            upgrade openshift-etcd-backup image to v1.9.3
+
+            * stop leaking secrets to stdout
+            * make s3 policy setup optional
+          links:
+            - name: openshift-etcd-backup release v1.9.2
+              url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.9.2
+            - name: openshift-etcd-backup release v1.9.3
+              url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.9.3
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    appVersion: v1.9.3
+    created: "2025-04-04T09:57:39.8937665Z"
+    description: Chart for openshift-etcd-backup solution
+    digest: 4f77a3f29fb63a2d60bf6e282ea258f7991b29336565c395932ead51ce0bb6c8
+    home: https://github.com/adfinis/openshift-etcd-backup
+    keywords:
+    - openshift-etcd-backup
+    - openshift
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: openshift-etcd-backup
+    sources:
+    - https://github.com/adfinis/openshift-etcd-backup
+    - https://github.com/adfinis/helm-charts/tree/main/charts/openshift-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/openshift-etcd-backup-1.9.3/openshift-etcd-backup-1.9.3.tgz
+    version: 1.9.3
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "bump openshift-etcd-backup image to v1.9.1"
           links:
             - name: openshift-etcd-backup release v1.9.1
@@ -30318,4 +30355,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-04T09:45:38.047146947Z"
+generated: "2025-04-04T09:57:39.896324123Z"
