@@ -2,8 +2,8 @@ apiVersion: v2
 name: openshift-etcd-backup
 description: Chart for openshift-etcd-backup solution
 type: application
-version: 1.9.1
-appVersion: v1.9.1
+version: 1.9.3
+appVersion: v1.9.3
 keywords:
   - openshift-etcd-backup
   - openshift
@@ -18,9 +18,16 @@ maintainers:
     email: support@adfinis.com
     url: https://adfinis.com
 annotations:
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "bump openshift-etcd-backup image to v1.9.1"
+      description: |
+        upgrade openshift-etcd-backup image to v1.9.3
+
+        * stop leaking secrets to stdout
+        * make s3 policy setup optional
       links:
-        - name: openshift-etcd-backup release v1.9.1
-          url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.9.1
+        - name: openshift-etcd-backup release v1.9.2
+          url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.9.2
+        - name: openshift-etcd-backup release v1.9.3
+          url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.9.3
