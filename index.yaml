@@ -5608,6 +5608,44 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            fix: Update cert-manager from 1.16.2 to 1.17.1
+
+
+            * A helpful compliance change to RSA signatures on certificates
+            * An easier way to specify passwords for PKCS#12 and JKS keystores
+            * A few feature flag promotions (and a deprecation)
+            * Dependency bumps and other smaller improvements
+            * Fix issuing of certificates via DNS01 challenges on Cloudflare
+          links:
+            - name: cert-manager 1.17.0"
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.17.0
+            - name: cert-manager 1.17.1"
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.17.1
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-04-07T13:05:42.315343975Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 46b89c985a591c8d453683c4512e44f04cab07caeb3a44464f198fc1b9db790c
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.231.0/infra-apps-0.231.0.tgz
+    version: 0.231.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             fix: Update Argo CD from 2.13.1 to 2.14.8
 
             * fix CVE-2025-26791 in redoc dep
@@ -30355,4 +30393,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-04T09:57:39.896324123Z"
+generated: "2025-04-07T13:05:42.317116791Z"
