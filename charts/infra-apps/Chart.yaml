@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.230.0
+version: 0.231.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,40 +15,20 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        fix: Update Argo CD from 2.13.1 to 2.14.8
+        fix: Update cert-manager from 1.16.2 to 1.17.1
 
-        * fix CVE-2025-26791 in redoc dep
-        * update go-git from 5.12.0 to 5.13.2 to include several CVE fixes
-        * various performance improvments and dependency updates
+
+        * A helpful compliance change to RSA signatures on certificates
+        * An easier way to specify passwords for PKCS#12 and JKS keystores
+        * A few feature flag promotions (and a deprecation)
+        * Dependency bumps and other smaller improvements
+        * Fix issuing of certificates via DNS01 challenges on Cloudflare
       links:
-        - name: "Argo CD 2.14 Announcement"
-          url: https://blog.argoproj.io/argo-cd-v2-14-release-candidate-57a664791e2a
-        - name: "Argo CD 2.14.0 Release Notes"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.0
-        - name: "Argo CD 2.14.1 Release Notes"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.1
-        - name: "Argo CD 2.14.2 Release Notes"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.2
-        - name: "Argo CD 2.14.3 Release Notes"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.3
-        - name: "Argo CD 2.14.4 Release Notes"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.4
-        - name: "Argo CD 2.14.5 Release Notes"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.5
-        - name: "Argo CD 2.14.6 Release Notes"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.6
-        - name: "Argo CD 2.14.7 Release Notes"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.7
-        - name: "Argo CD 2.14.8 Release Notes"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v2.14.8
-    - kind: changed
-      description: |
-        fix: Update Argo CD chart from 7.7.5 to 2.14.8
-
-        * replace redis-exporter with an  image that support multi-arch
-        * update argo cd and dependencies like dex
-        * improve docs and DRY several components
+        - name: cert-manager 1.17.0"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.17.0
+        - name: cert-manager 1.17.1"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.17.1
