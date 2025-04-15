@@ -14873,6 +14873,44 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            upgrade openshift-etcd-backup image to v1.4.2
+
+            * stop leaking secrets to stdout
+            * bump base image
+          links:
+            - name: kubernetes-etcd-backup release v1.4.1
+              url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.1
+            - name: kubernetes-etcd-backup release v1.4.2
+              url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.2
+            - name: kubernetes-etcd-backup release v1.4.3
+              url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.3
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    appVersion: v1.4.3
+    created: "2025-04-15T06:17:48.549653017Z"
+    description: Chart for kubernetes-etcd-backup solution
+    digest: 78fe1795907709c241ca401f1adb58a3f647282ff6352af613ebdee8572bdc4b
+    home: https://github.com/adfinis/kubernetes-etcd-backup
+    keywords:
+    - kubernetes-etcd-backup
+    - kubernetes
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: kubernetes-etcd-backup
+    sources:
+    - https://github.com/adfinis/kubernetes-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/kubernetes-etcd-backup-1.6.1/kubernetes-etcd-backup-1.6.1.tgz
+    version: 1.6.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Add support for podAnnotations"
       artifacthub.io/containsSecurityUpdates: "false"
     apiVersion: v2
@@ -30393,4 +30431,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-07T13:05:42.317116791Z"
+generated: "2025-04-15T06:17:48.550804997Z"
