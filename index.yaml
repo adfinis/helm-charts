@@ -5608,6 +5608,47 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Update kube-prometheus-stack from 65.5.0 to 67.11.0
+            * **WARNING** Update to Prometheus v3 - read the migration guide
+            * Bump Prometheus v3.1.0
+            * Bump Prom-operator to 0.79.0
+            * Gateway API Implemantation
+            * Bump Thanos to 0.37.2
+            * Bump Grafana to 8.8.*
+            * Improvement of some ServiceMonitors and Metrics scrapes
+            * Dependency bumps and other smaller fixes
+          links:
+            - name: kube-prometheus-stack 67.11.0
+              url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-67.11.0
+            - name: Prometheus v3.1.0
+              url: https://github.com/prometheus/prometheus/releases/tag/v3.1.0
+            - name: Migration guide Prometheus v3
+              url: https://prometheus.io/docs/prometheus/3.0/migration/
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-04-15T07:45:56.146038365Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 43a17ac101d80d469df9a6c51d61be282ba1001a3b526f95099e494de1d357a8
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.232.0/infra-apps-0.232.0.tgz
+    version: 0.232.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             fix: Update cert-manager from 1.16.2 to 1.17.1
 
 
@@ -30431,4 +30472,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-15T06:17:48.550804997Z"
+generated: "2025-04-15T07:45:56.149147688Z"
