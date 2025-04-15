@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.231.0
+version: 0.232.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,16 +19,19 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        fix: Update cert-manager from 1.16.2 to 1.17.1
-
-
-        * A helpful compliance change to RSA signatures on certificates
-        * An easier way to specify passwords for PKCS#12 and JKS keystores
-        * A few feature flag promotions (and a deprecation)
-        * Dependency bumps and other smaller improvements
-        * Fix issuing of certificates via DNS01 challenges on Cloudflare
+        chore: Update kube-prometheus-stack from 65.5.0 to 67.11.0
+        * **WARNING** Update to Prometheus v3 - read the migration guide
+        * Bump Prometheus v3.1.0
+        * Bump Prom-operator to 0.79.0
+        * Gateway API Implemantation
+        * Bump Thanos to 0.37.2
+        * Bump Grafana to 8.8.*
+        * Improvement of some ServiceMonitors and Metrics scrapes
+        * Dependency bumps and other smaller fixes
       links:
-        - name: cert-manager 1.17.0"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.17.0
-        - name: cert-manager 1.17.1"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.17.1
+        - name: kube-prometheus-stack 67.11.0
+          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-67.11.0
+        - name: Prometheus v3.1.0
+          url: https://github.com/prometheus/prometheus/releases/tag/v3.1.0
+        - name: Migration guide Prometheus v3
+          url: https://prometheus.io/docs/prometheus/3.0/migration/
