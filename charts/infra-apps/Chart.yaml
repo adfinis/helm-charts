@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.232.0
+version: 0.233.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -29,9 +29,11 @@ annotations:
         * Improvement of some ServiceMonitors and Metrics scrapes
         * Dependency bumps and other smaller fixes
       links:
-        - name: kube-prometheus-stack 67.11.0
-          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-67.11.0
-        - name: Prometheus v3.1.0
-          url: https://github.com/prometheus/prometheus/releases/tag/v3.1.0
-        - name: Migration guide Prometheus v3
-          url: https://prometheus.io/docs/prometheus/3.0/migration/
+        - name: Grafana Mimir 2.16.0
+          url: https://github.com/grafana/mimir/releases/tag/mimir-2.16.0
+        - name: Grafana Mimir 2.15.0
+          url: https://github.com/grafana/mimir/releases/tag/mimir-2.15.0
+        - name: Changelog Grafana Mimir Helm Chart 5.7.0
+          url: https://github.com/grafana/mimir/blob/main/operations/helm/charts/mimir-distributed/CHANGELOG.md#570
+        - name: Changelog Grafana Mimir Helm Chart 5.6.0
+          url: https://github.com/grafana/mimir/blob/main/operations/helm/charts/mimir-distributed/CHANGELOG.md#560
