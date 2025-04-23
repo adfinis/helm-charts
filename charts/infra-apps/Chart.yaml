@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.233.0
+version: 0.234.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,21 +19,25 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Update kube-prometheus-stack from 65.5.0 to 67.11.0
-        * **WARNING** Update to Prometheus v3 - read the migration guide
-        * Bump Prometheus v3.1.0
-        * Bump Prom-operator to 0.79.0
-        * Gateway API Implemantation
-        * Bump Thanos to 0.37.2
-        * Bump Grafana to 8.8.*
-        * Improvement of some ServiceMonitors and Metrics scrapes
-        * Dependency bumps and other smaller fixes
+        chore: Update kube-prometheus-stack from 67.11.0 to 70.7.0
+        * several metrics dropped in version 68.x
+        * https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md#from-67x-to-68x
       links:
-        - name: Grafana Mimir 2.16.0
-          url: https://github.com/grafana/mimir/releases/tag/mimir-2.16.0
-        - name: Grafana Mimir 2.15.0
-          url: https://github.com/grafana/mimir/releases/tag/mimir-2.15.0
-        - name: Changelog Grafana Mimir Helm Chart 5.7.0
-          url: https://github.com/grafana/mimir/blob/main/operations/helm/charts/mimir-distributed/CHANGELOG.md#570
-        - name: Changelog Grafana Mimir Helm Chart 5.6.0
-          url: https://github.com/grafana/mimir/blob/main/operations/helm/charts/mimir-distributed/CHANGELOG.md#560
+        - name: Kube Prometheus Stack 70.7.0
+          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-70.7.0
+        - name: bump alertmanager to 0.28.1
+          url: https://github.com/prometheus-community/helm-charts/pull/5411
+        - name: Disable kube-state-metrics service scraping by default
+          url: https://github.com/prometheus-community/helm-charts/pull/5260
+        - name: bump prom to 3.2.1
+          url: https://github.com/prometheus-community/helm-charts/pull/5380
+        - name: bump operator to 0.80.0
+          url: https://github.com/prometheus-community/helm-charts/pull/5282
+        - name: Add support for revisionHistoryLimit on the cert
+          url: https://github.com/prometheus-community/helm-charts/pull/5395
+        - name: Prometheus 3.2.1
+          url: https://github.com/prometheus/prometheus/blob/main/CHANGELOG.md#321--2025-02-25
+        - name: Alertmanager 0.28.1
+          url: https://github.com/prometheus/alertmanager/blob/main/CHANGELOG.md#0281--2025-03-07
+        - name: prometheus-operator 0.80.0
+          url: https://github.com/prometheus-operator/prometheus-operator/blob/main/CHANGELOG.md#0800--2025-02-04
