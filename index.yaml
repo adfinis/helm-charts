@@ -5608,6 +5608,53 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Update kube-prometheus-stack from 67.11.0 to 70.7.0
+            * several metrics dropped in version 68.x
+            * https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md#from-67x-to-68x
+          links:
+            - name: Kube Prometheus Stack 70.7.0
+              url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-70.7.0
+            - name: bump alertmanager to 0.28.1
+              url: https://github.com/prometheus-community/helm-charts/pull/5411
+            - name: Disable kube-state-metrics service scraping by default
+              url: https://github.com/prometheus-community/helm-charts/pull/5260
+            - name: bump prom to 3.2.1
+              url: https://github.com/prometheus-community/helm-charts/pull/5380
+            - name: bump operator to 0.80.0
+              url: https://github.com/prometheus-community/helm-charts/pull/5282
+            - name: Add support for revisionHistoryLimit on the cert
+              url: https://github.com/prometheus-community/helm-charts/pull/5395
+            - name: Prometheus 3.2.1
+              url: https://github.com/prometheus/prometheus/blob/main/CHANGELOG.md#321--2025-02-25
+            - name: Alertmanager 0.28.1
+              url: https://github.com/prometheus/alertmanager/blob/main/CHANGELOG.md#0281--2025-03-07
+            - name: prometheus-operator 0.80.0
+              url: https://github.com/prometheus-operator/prometheus-operator/blob/main/CHANGELOG.md#0800--2025-02-04
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-04-23T15:57:19.366839178Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 1cb92f0ac1eb18ccf10cadcedeb3fa2f5d7411e9070ca6493834b93cf506977a
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.234.0/infra-apps-0.234.0.tgz
+    version: 0.234.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Update kube-prometheus-stack from 65.5.0 to 67.11.0
             * **WARNING** Update to Prometheus v3 - read the migration guide
             * Bump Prometheus v3.1.0
@@ -30542,4 +30589,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-23T15:55:23.464347661Z"
+generated: "2025-04-23T15:57:19.370083139Z"
