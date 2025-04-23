@@ -16606,6 +16606,33 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat: added goldilocks"
+          links:
+            - name: "added goldilocks 4.13.0"
+              url: https://github.com/FairwindsOps/goldilocks/releases/tag/v4.13.4
+    apiVersion: v2
+    created: "2025-04-23T15:55:23.463035952Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 166c3c4435c0ab8e85674081593b1b96090635e71e04886f350c47a7cacb9eea
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.49.0/misc-apps-0.49.0.tgz
+    version: 0.49.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Update argo-apps from 2.0.0 to 2.0.2"
           links:
             - name: "feat: allow setting applicationset finalizers"
@@ -30515,4 +30542,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-17T07:00:45.745997145Z"
+generated: "2025-04-23T15:55:23.464347661Z"
