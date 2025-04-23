@@ -225,3 +225,25 @@ opencost:
   # -- Helm values
   # @default -- [upstream values](https://github.com/opencost/opencost-helm-chart/blob/main/charts/opencost/values.yaml)
   values: {}
+
+# -- [Goldilocks](https://www.fairwinds.com/goldilocks)
+# @default -- [example](./examples/goldilocks.yaml)
+goldilocks:
+  # -- Enable Goldilocks
+  enabled: false
+  name: goldilocks
+  # -- Annotations for Goldilocks
+  annotations: {}
+  destination:
+    # -- Namespace
+    namespace: infra-goldilocks
+  # -- Repo URL
+  # @default -- [repo](https://charts.fairwinds.com/stable)
+  repoURL: https://charts.fairwinds.com/stable
+  # -- Chart
+  chart: goldilocks
+  # -- [Goldilocks Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/goldilocks)
+  targetRevision: 9.0.1
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/goldilocks/values.yaml)
+  values: {}
