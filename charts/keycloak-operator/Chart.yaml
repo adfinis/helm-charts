@@ -2,8 +2,8 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.4.4
-appVersion: "26.0.7"
+version: 1.5.0
+appVersion: "26.2.1"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
 sources:
@@ -15,5 +15,27 @@ maintainers:
     url: https://adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: fixed
-      description: "fix: don't quote value for poolMinSize as the upstream type is integer"
+    - kind: added
+      description: |
+        feat: update keycloak from 26.0.7 to 26.2.1
+
+        * virtual thread pool support for Infinispan and jGroups
+        * opentelemetry is now enabled by default and tracing support is GA
+        * Network Policy (preview) in operator with default policies
+        * Dark mode enabled for the welcome theme
+        * Replace robots.txt with X-Robots-Tag header
+        * OpenShift v3 identity brokering removed
+        * Standard token exchange is now GA and no loinger in preview
+        * Fine-grained admin permissions supported
+        * Guides for metrics and Grafana dashboards (with dashboards!)
+        * Zero-configuration secure cluster communication
+        * Rolling updates for optimized and customized images (triggered automatically if the versions in both containers match)
+        * Metrics on user activities
+        * Logs support ECS JSON format (for elasticsearch)
+
+        Plus a ton of other changes and fixes.
+      links:
+        - name: Keycloak 26.2.0
+          url: https://www.keycloak.org/docs/latest/release_notes/index.html#keycloak-26-2-0
+        - name: Keycloak 26.1.0
+          url: https://www.keycloak.org/docs/latest/release_notes/index.html#keycloak-26-1-0
