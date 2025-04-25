@@ -14374,6 +14374,51 @@ entries:
   keycloak-operator:
   - annotations:
       artifacthub.io/changes: |
+        - kind: added
+          description: |
+            feat: update keycloak from 26.0.7 to 26.2.1
+
+            * virtual thread pool support for Infinispan and jGroups
+            * opentelemetry is now enabled by default and tracing support is GA
+            * Network Policy (preview) in operator with default policies
+            * Dark mode enabled for the welcome theme
+            * Replace robots.txt with X-Robots-Tag header
+            * OpenShift v3 identity brokering removed
+            * Standard token exchange is now GA and no loinger in preview
+            * Fine-grained admin permissions supported
+            * Guides for metrics and Grafana dashboards (with dashboards!)
+            * Zero-configuration secure cluster communication
+            * Rolling updates for optimized and customized images (triggered automatically if the versions in both containers match)
+            * Metrics on user activities
+            * Logs support ECS JSON format (for elasticsearch)
+
+            Plus a ton of other changes and fixes.
+          links:
+            - name: Keycloak 26.2.0
+              url: https://www.keycloak.org/docs/latest/release_notes/index.html#keycloak-26-2-0
+            - name: Keycloak 26.1.0
+              url: https://www.keycloak.org/docs/latest/release_notes/index.html#keycloak-26-1-0
+    apiVersion: v2
+    appVersion: 26.2.1
+    created: "2025-04-25T13:21:34.530026596Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 666c84cb4b02dd2d6362eb21a3b2215e7e00ce170cb9f6588bfe7ef38afd2c40
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.5.0/keycloak-operator-1.5.0.tgz
+    version: 1.5.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: fixed
           description: "fix: don't quote value for poolMinSize as the upstream type is integer"
     apiVersion: v2
@@ -30589,4 +30634,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-23T15:57:19.370083139Z"
+generated: "2025-04-25T13:21:34.531437831Z"
