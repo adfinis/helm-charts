@@ -41,7 +41,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-            - name: KC_OPERATOR_KEYCLOAK_IMAGE
+            - name: RELATED_IMAGE_KEYCLOAK
               value: "{{ .Values.operator.config.keycloakImage.repository }}:{{ .Values.operator.config.keycloakImage.tag | default .Chart.AppVersion }}"
           ports:
             - name: http
@@ -53,8 +53,8 @@ spec:
               path: /q/health/live
               port: http
               scheme: HTTP
-            initialDelaySeconds: 0
-            periodSeconds: 30
+            initialDelaySeconds: 5
+            periodSeconds: 10
             successThreshold: 1
             timeoutSeconds: 10
           readinessProbe:
@@ -63,8 +63,18 @@ spec:
               path: /q/health/ready
               port: http
               scheme: HTTP
-            initialDelaySeconds: 0
-            periodSeconds: 30
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 10
+          startupProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /q/health/started
+              port: http
+              scheme: HTTP
+            initialDelaySeconds: 5
+            periodSeconds: 10
             successThreshold: 1
             timeoutSeconds: 10
           resources:

@@ -3,8 +3,8 @@ keycloak:
   name: keycloak
   features:
     enabled:
-      - account3
-      - admin2
+      - account
+      - admin
       - web-authn
     disabled:
       - js-adapter

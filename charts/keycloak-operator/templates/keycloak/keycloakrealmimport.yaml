@@ -11,6 +11,9 @@ metadata:
     {{- $labels | nindent 4 }}
 spec:
   keycloakCRName: {{ default $fullname .keycloakCRName }}
+  {{- with .placeholders }}
+  placeholders: {{ . | toYaml | nindent 4 }}
+  {{- end }}
   realm:
     {{- with .accessCodeLifespan }}
     accessCodeLifespan: {{ . }}
@@ -42,6 +45,12 @@ spec:
     {{- with .adminEventsEnabled }}
     adminEventsEnabled: {{ . }}
     {{- end }}
+    {{- with .adminPermissionsClient }}
+    adminPermissionsClient: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .adminPermissionsEnabled }}
+    adminPermissionsEnabled: {{ . }}
+    {{- end }}
     {{- with .adminTheme }}
     adminTheme: {{ . | quote }}
     {{- end }}
@@ -68,6 +77,9 @@ spec:
     {{- end }}
     {{- with .bruteForceProtected }}
     bruteForceProtected: {{ . }}
+    {{- end }}
+    {{- with .bruteForceStrategy }}
+    bruteForceStrategy: {{ . | quote }}
     {{- end }}
     {{- with .certificate }}
     certificate {{ . | quote }}
@@ -291,9 +303,6 @@ spec:
     {{- with .realm }}
     realm: {{ . | quote }}
     {{- end }}
-    {{- with .realmCacheEnabled }}
-    realmCacheEnabled: {{ . }}
-    {{- end }}
     {{- with .refreshTokenMaxReuse }}
     refreshTokenMaxReuse: {{ . }}
     {{- end }}
@@ -360,9 +369,6 @@ spec:
     {{- with .updateProfileOnInitialSocialLogin }}
     updateProfileOnInitialSocialLogin: {{ . }}
     {{- end }}
-    {{- with .userCacheEnabled }}
-    userCacheEnabled: {{ . }}
-    {{- end }}
     {{- with .userFederationMappers }}
     userFederationMappers: {{ . | toYaml | nindent 6 }}
     {{- end }}
@@ -374,6 +380,9 @@ spec:
     {{- end }}
     {{- with .users }}
     users: {{ . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .verifiableCredentialsEnabled }}
+    verifiableCredentialsEnabled: {{ . }}
     {{- end }}
     {{- with .verifyEmail }}
     verifyEmail: {{ . }}

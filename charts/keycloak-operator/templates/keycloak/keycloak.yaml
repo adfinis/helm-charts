@@ -10,6 +10,9 @@ spec:
   {{- with .Values.keycloak.additionalOptions }}
   additionalOptions: {{ . | toYaml | nindent 4 }}
   {{- end }}
+  {{- with .Values.keycloak.bootstrapAdmin }}
+  bootstrapAdmin: {{ . | toYaml | nindent 4 }}
+  {{- end }}
   {{- with .Values.keycloak.cache }}
   cache: {{- . | toYaml | nindent 4 }}
   {{- end }}
@@ -116,6 +119,9 @@ spec:
   {{- with .Values.keycloak.instances }}
   instances: {{ . }}
   {{- end }}
+  {{- with .Values.keycloak.networkPolicy }}
+  networkPolicy: {{ . | toYaml | nindent 4 }}
+  {{- end }}
   {{- with .Values.keycloak.proxy.headers }}
   proxy:
     headers: {{ . }}
@@ -123,8 +129,14 @@ spec:
   {{- with .Values.keycloak.resources }}
   resources: {{ . | toYaml | nindent 4 }}
   {{- end }}
+  {{- with .Values.keycloak.scheduling }}
+  scheduling: {{ . | toYaml | nindent 4 }}
+  {{- end }}
   {{- with .Values.keycloak.startOptimized }}
   startOptimized: {{ ternary "true" "false" . }}
+  {{- end }}
+  {{- with .Values.keycloak.tracing }}
+  tracing: {{ . | toYaml | nindent 4 }}
   {{- end }}
   {{- with .Values.keycloak.transaction.xaEnabled }}
   transaction:
@@ -135,5 +147,8 @@ spec:
   {{- end }}
   {{- with .Values.keycloak.unsupported }}
   unsupported: {{ . | toYaml | nindent 4 }}
+  {{- end }}
+  {{- with .Values.keycloak.update }}
+  update: {{ . | toYaml | nindent 4 }}
   {{- end }}
 {{- end }}
