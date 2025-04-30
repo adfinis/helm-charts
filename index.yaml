@@ -14375,6 +14375,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: added
+          description: |
+            fix: update keycloak from 26.2.1 to 26.2.2
+
+            * [CVE-2025-3501](https://access.redhat.com/security/cve/CVE-2025-3501), CVSS 8.2: Keycloak hostname verification
+            * [CVE-2025-3910](https://access.redhat.com/security/cve/CVE-2025-3910), CVSS 5.4: Two factor authentication bypass
+            * [CVE-2025-2559](https://access.redhat.com/security/cve/CVE-2025-2559), CVSS 4.9: JWT token cache OOM
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    appVersion: 26.2.2
+    created: "2025-04-30T13:36:25.820754152Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 4d6ae8e7ab9787e908248328dfacb2346a014fbf6694a4983160cf4a9ac4e0cb
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.5.2/keycloak-operator-1.5.2.tgz
+    version: 1.5.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
           description: "fix: update operator CRDs and templates for keycloak 26.x"
     apiVersion: v2
     appVersion: 26.2.1
@@ -30657,4 +30686,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-30T13:23:17.332341171Z"
+generated: "2025-04-30T13:36:25.822093274Z"
