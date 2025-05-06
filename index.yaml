@@ -5608,6 +5608,47 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Update Argo CD from 2.14.8 to 2.14.11
+          links:
+            - name: Ugrade Argo CD to 2.14.11
+              url: https://github.com/argoproj/argo-helm/pull/3262
+            - name: Ugrade Argo CD to 2.14.10
+              url: https://github.com/argoproj/argo-helm/pull/3250
+            - name: Ugrade Argo CD to 2.14.9
+              url: https://github.com/argoproj/argo-helm/pull/3235
+            - name: Upgrade redis_exporter
+              url: https://github.com/argoproj/argo-helm/pull/3287
+            - name: Downgrade to latest available Redis under BSD-3-Clause
+              url: https://github.com/argoproj/argo-helm/pull/3271
+            - name: Update dex to 2.42.1
+              url: https://github.com/argoproj/argo-helm/pull/3251
+            - name: Same Secret name and key for all embedded redis options
+              url: https://github.com/argoproj/argo-helm/pull/3238
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-05-06T14:48:18.916767962Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: f32aadd174d432d8514784f5cf2fd1cbb85f44f211696260e7a96da3d536d446
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.235.0/infra-apps-0.235.0.tgz
+    version: 0.235.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Update kube-prometheus-stack from 67.11.0 to 70.7.0
             * several metrics dropped in version 68.x
             * https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md#from-67x-to-68x
@@ -30686,4 +30727,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-30T13:36:25.822093274Z"
+generated: "2025-05-06T14:48:18.918287809Z"
