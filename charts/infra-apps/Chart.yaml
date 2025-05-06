@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.234.0
+version: 0.235.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,25 +19,19 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Update kube-prometheus-stack from 67.11.0 to 70.7.0
-        * several metrics dropped in version 68.x
-        * https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md#from-67x-to-68x
+        chore: Update Argo CD from 2.14.8 to 2.14.11
       links:
-        - name: Kube Prometheus Stack 70.7.0
-          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-70.7.0
-        - name: bump alertmanager to 0.28.1
-          url: https://github.com/prometheus-community/helm-charts/pull/5411
-        - name: Disable kube-state-metrics service scraping by default
-          url: https://github.com/prometheus-community/helm-charts/pull/5260
-        - name: bump prom to 3.2.1
-          url: https://github.com/prometheus-community/helm-charts/pull/5380
-        - name: bump operator to 0.80.0
-          url: https://github.com/prometheus-community/helm-charts/pull/5282
-        - name: Add support for revisionHistoryLimit on the cert
-          url: https://github.com/prometheus-community/helm-charts/pull/5395
-        - name: Prometheus 3.2.1
-          url: https://github.com/prometheus/prometheus/blob/main/CHANGELOG.md#321--2025-02-25
-        - name: Alertmanager 0.28.1
-          url: https://github.com/prometheus/alertmanager/blob/main/CHANGELOG.md#0281--2025-03-07
-        - name: prometheus-operator 0.80.0
-          url: https://github.com/prometheus-operator/prometheus-operator/blob/main/CHANGELOG.md#0800--2025-02-04
+        - name: Ugrade Argo CD to 2.14.11
+          url: https://github.com/argoproj/argo-helm/pull/3262
+        - name: Ugrade Argo CD to 2.14.10
+          url: https://github.com/argoproj/argo-helm/pull/3250
+        - name: Ugrade Argo CD to 2.14.9
+          url: https://github.com/argoproj/argo-helm/pull/3235
+        - name: Upgrade redis_exporter
+          url: https://github.com/argoproj/argo-helm/pull/3287
+        - name: Downgrade to latest available Redis under BSD-3-Clause
+          url: https://github.com/argoproj/argo-helm/pull/3271
+        - name: Update dex to 2.42.1
+          url: https://github.com/argoproj/argo-helm/pull/3251
+        - name: Same Secret name and key for all embedded redis options
+          url: https://github.com/argoproj/argo-helm/pull/3238
