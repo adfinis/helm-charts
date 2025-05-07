@@ -2,8 +2,8 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.5.2
-appVersion: "26.2.2"
+version: 1.5.3
+appVersion: "26.2.3"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
 sources:
@@ -14,12 +14,11 @@ maintainers:
     email: support@adfinis.com
     url: https://adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: added
       description: |
-        fix: update keycloak from 26.2.1 to 26.2.2
-
-        * [CVE-2025-3501](https://access.redhat.com/security/cve/CVE-2025-3501), CVSS 8.2: Keycloak hostname verification
-        * [CVE-2025-3910](https://access.redhat.com/security/cve/CVE-2025-3910), CVSS 5.4: Two factor authentication bypass
-        * [CVE-2025-2559](https://access.redhat.com/security/cve/CVE-2025-2559), CVSS 4.9: JWT token cache OOM
+        fix: update keycloak from 26.2.2 to 26.2.3
+      links:
+        - name: Release notes
+          url: https://www.keycloak.org/2025/05/keycloak-2623-released
