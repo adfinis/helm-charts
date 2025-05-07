@@ -14417,6 +14417,34 @@ entries:
       artifacthub.io/changes: |
         - kind: added
           description: |
+            fix: update keycloak from 26.2.2 to 26.2.3
+          links:
+            - name: Release notes
+              url: https://www.keycloak.org/2025/05/keycloak-2623-released
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    appVersion: 26.2.3
+    created: "2025-05-07T09:03:06.192993458Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 5f81e06768db264f801dcf4afefaad4e0d5df506f852ab723871fc0ea40933f8
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.5.3/keycloak-operator-1.5.3.tgz
+    version: 1.5.3
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: |
             fix: update keycloak from 26.2.1 to 26.2.2
 
             * [CVE-2025-3501](https://access.redhat.com/security/cve/CVE-2025-3501), CVSS 8.2: Keycloak hostname verification
@@ -30727,4 +30755,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-06T14:48:18.918287809Z"
+generated: "2025-05-07T09:03:06.194345254Z"
