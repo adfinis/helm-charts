@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.92.1
+version: 0.93.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,19 +18,14 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        fix: downgrade kyverno chart from 3.4.0 to 3.3.7
+        chore: bump kyverno from 3.3.7 to 3.4.1
 
-        * reverts the update that was too eager and used an unreleased kyverno chart
-        * bumps kyverno from 1.12.4 to 1.13.4
-        * adds support for imagePullSeecrets in chart
+        * bumps kyverno from 1.13.4 to 1.14.1
+        * allows toggling aggregation for user-facing roles with the kyverno rbac
+        * Relaxed immutability requirements on match statements for generate rules (https://github.com/kyverno/kyverno/pull/12784)
+        * Relaxed variable validation checks for generate clone type (https://github.com/kyverno/kyverno/pull/12792)
+        * Allowed policy admission if GVK is not found (https://github.com/kyverno/kyverno/pull/12722)
+        * Upgraded to use v1 of ValidatingAdmissionPolicy (https://github.com/kyverno/kyverno/pull/12050)
       links:
-        - name: Kyverno 1.13.0 (with BREAKING CHANGES)
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.13.0
-        - name: Kyverno 1.13.1
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.13.1
-        - name: Kyverno 1.13.2
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.13.2
-        - name: Kyverno 1.13.3
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.13.3
-        - name: Kyverno 1.13.4
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.13.4
+        - name: Kyverno 1.14.1
+          url: https://github.com/kyverno/kyverno/releases/tag/v1.14.1
