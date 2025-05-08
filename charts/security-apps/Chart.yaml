@@ -22,6 +22,10 @@ annotations:
 
         * bumps kyverno from 1.13.4 to 1.14.1
         * allows toggling aggregation for user-facing roles with the kyverno rbac
+        * Relaxed immutability requirements on match statements for generate rules (https://github.com/kyverno/kyverno/pull/12784)
+        * Relaxed variable validation checks for generate clone type (https://github.com/kyverno/kyverno/pull/12792)
+        * Allowed policy admission if GVK is not found (https://github.com/kyverno/kyverno/pull/12722)
+        * Upgraded to use v1 of ValidatingAdmissionPolicy (https://github.com/kyverno/kyverno/pull/12050)
       links:
-        - name: Kyverno 1.14.1 (with BREAKING CHANGES)
+        - name: Kyverno 1.14.1
           url: https://github.com/kyverno/kyverno/releases/tag/v1.14.1
