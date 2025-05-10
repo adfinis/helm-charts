@@ -2,7 +2,7 @@ apiVersion: v2
 name: customer-center
 description: Chart for Customer-Center application
 type: application
-version: 0.2.34
+version: 0.2.35
 appVersion: 3.3.5
 keywords:
   - customer-center
@@ -17,12 +17,4 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: admins and employees should redirect to `/list` endpoint"
-      links:
-        - name: GitHub Commit
-          url: https://github.com/adfinis/customer-center/commit/a0947536fdda7a2d009fbd7b8834a4a05b5defa9
-    - kind: changed
-      description: "bump appVersion to 3.3.5"
-      links:
-        - name: GitHub Release
-          url: https://github.com/adfinis/customer-center/releases/tag/v3.3.4
+      description: "fix: remove duplicate managed-by label"
