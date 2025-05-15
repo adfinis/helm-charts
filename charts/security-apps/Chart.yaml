@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.93.0
+version: 0.94.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,14 +18,4 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: bump kyverno from 3.3.7 to 3.4.1
-
-        * bumps kyverno from 1.13.4 to 1.14.1
-        * allows toggling aggregation for user-facing roles with the kyverno rbac
-        * Relaxed immutability requirements on match statements for generate rules (https://github.com/kyverno/kyverno/pull/12784)
-        * Relaxed variable validation checks for generate clone type (https://github.com/kyverno/kyverno/pull/12792)
-        * Allowed policy admission if GVK is not found (https://github.com/kyverno/kyverno/pull/12722)
-        * Upgraded to use v1 of ValidatingAdmissionPolicy (https://github.com/kyverno/kyverno/pull/12050)
-      links:
-        - name: Kyverno 1.14.1
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.14.1
+        bump kyverno-policies from 3.2.4 to 3.4.1

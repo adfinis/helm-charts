@@ -327,7 +327,7 @@ kyvernoPolicies:
   # -- Chart
   chart: kyverno-policies
   # -- [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies)
-  targetRevision: 3.2.4
+  targetRevision: 3.4.1
   # -- Helm values
   # @default -- [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno-policies/values.yaml)
   values: {}
