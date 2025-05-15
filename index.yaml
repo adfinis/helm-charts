@@ -21401,6 +21401,31 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            bump kyverno-policies from 3.2.4 to 3.4.1
+    apiVersion: v2
+    created: "2025-05-15T11:40:47.33147181Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: d68eab67e4ea17de88e0e9f091f3559e2a0dbb8fecf9b44b8556066cfd2739ff
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.94.0/security-apps-0.94.0.tgz
+    version: 0.94.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: bump kyverno from 3.3.7 to 3.4.1
 
             * bumps kyverno from 1.13.4 to 1.14.1
@@ -30814,4 +30839,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-12T05:12:38.59080678Z"
+generated: "2025-05-15T11:40:47.332854627Z"
