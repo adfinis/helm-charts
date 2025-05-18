@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.235.0
+version: 0.236.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,19 +19,9 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Update Argo CD from 2.14.8 to 2.14.11
+        chore: Update kube-prometheus-stack from 70.7.0 to 72.5.0
       links:
-        - name: Ugrade Argo CD to 2.14.11
-          url: https://github.com/argoproj/argo-helm/pull/3262
-        - name: Ugrade Argo CD to 2.14.10
-          url: https://github.com/argoproj/argo-helm/pull/3250
-        - name: Ugrade Argo CD to 2.14.9
-          url: https://github.com/argoproj/argo-helm/pull/3235
-        - name: Upgrade redis_exporter
-          url: https://github.com/argoproj/argo-helm/pull/3287
-        - name: Downgrade to latest available Redis under BSD-3-Clause
-          url: https://github.com/argoproj/argo-helm/pull/3271
-        - name: Update dex to 2.42.1
-          url: https://github.com/argoproj/argo-helm/pull/3251
-        - name: Same Secret name and key for all embedded redis options
-          url: https://github.com/argoproj/argo-helm/pull/3238
+        - name: Upgrade from 70.x to 71.x
+          url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md#from-70x-to-71x
+        - name: Upgrade from 71.x to 72.x
+          url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md#from-71x-to-72x
