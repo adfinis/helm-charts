@@ -5632,6 +5632,37 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Update kube-prometheus-stack from 70.7.0 to 72.5.0
+          links:
+            - name: Upgrade from 70.x to 71.x
+              url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md#from-70x-to-71x
+            - name: Upgrade from 71.x to 72.x
+              url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md#from-71x-to-72x
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-05-18T18:14:49.1711002Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 41d7dd03e394aeeca58738e87713194d192f328eb6a8f84485bdf9384383e2a2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.236.0/infra-apps-0.236.0.tgz
+    version: 0.236.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Update Argo CD from 2.14.8 to 2.14.11
           links:
             - name: Ugrade Argo CD to 2.14.11
@@ -30839,4 +30870,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-15T11:40:47.332854627Z"
+generated: "2025-05-18T18:14:49.172656618Z"
