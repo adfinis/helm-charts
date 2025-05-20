@@ -15226,6 +15226,40 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            upgrade kubernetes-etcd-backup image to v1.4.6
+          links:
+            - name: kubernetes-etcd-backup release v1.4.4
+              url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.4
+            - name: kubernetes-etcd-backup release v1.4.5
+              url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.5
+            - name: kubernetes-etcd-backup release v1.4.6
+              url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.6
+    apiVersion: v2
+    appVersion: v1.4.6
+    created: "2025-05-20T11:13:56.158705425Z"
+    description: Chart for kubernetes-etcd-backup solution
+    digest: 9edb1a6464cde06e6fcfa91e19fc93c53c982c8216e83a2d697fca9d2431f3ce
+    home: https://github.com/adfinis/kubernetes-etcd-backup
+    keywords:
+    - kubernetes-etcd-backup
+    - kubernetes
+    - backup
+    - etcd
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: kubernetes-etcd-backup
+    sources:
+    - https://github.com/adfinis/kubernetes-etcd-backup
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/kubernetes-etcd-backup-1.6.2/kubernetes-etcd-backup-1.6.2.tgz
+    version: 1.6.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             upgrade openshift-etcd-backup image to v1.4.2
 
             * stop leaking secrets to stdout
@@ -30870,4 +30904,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-18T18:14:49.172656618Z"
+generated: "2025-05-20T11:13:56.159926252Z"
