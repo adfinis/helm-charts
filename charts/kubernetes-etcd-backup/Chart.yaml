@@ -3,8 +3,8 @@ apiVersion: v2
 name: kubernetes-etcd-backup
 description: Chart for kubernetes-etcd-backup solution
 type: application
-version: 1.6.1
-appVersion: v1.4.3
+version: 1.6.2
+appVersion: v1.4.6
 keywords:
   - kubernetes-etcd-backup
   - kubernetes
@@ -18,18 +18,14 @@ maintainers:
     email: support@adfinis.com
     url: https://adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        upgrade openshift-etcd-backup image to v1.4.2
-
-        * stop leaking secrets to stdout
-        * bump base image
+        upgrade kubernetes-etcd-backup image to v1.4.6
       links:
-        - name: kubernetes-etcd-backup release v1.4.1
-          url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.1
-        - name: kubernetes-etcd-backup release v1.4.2
-          url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.2
-        - name: kubernetes-etcd-backup release v1.4.3
-          url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.3
+        - name: kubernetes-etcd-backup release v1.4.4
+          url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.4
+        - name: kubernetes-etcd-backup release v1.4.5
+          url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.5
+        - name: kubernetes-etcd-backup release v1.4.6
+          url: https://github.com/adfinis/kubernetes-etcd-backup/releases/tag/v1.4.6
