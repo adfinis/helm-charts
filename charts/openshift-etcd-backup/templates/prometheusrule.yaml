@@ -9,7 +9,7 @@ spec:
     rules:
     - alert: EtcdBackupCronJobStatusFailed
       expr: |
-        kube_job_status_succeeded{namespace="{{ .Release.Namespace }}"} == 0
+        kube_job_status_failed{namespace="{{ .Release.Namespace }}"} > 0
       labels:
         severity: critical
 {{- end }}
