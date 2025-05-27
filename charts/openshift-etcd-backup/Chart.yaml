@@ -2,8 +2,8 @@ apiVersion: v2
 name: openshift-etcd-backup
 description: Chart for openshift-etcd-backup solution
 type: application
-version: 1.9.5
-appVersion: v1.9.5
+version: 1.9.6
+appVersion: v1.9.6
 keywords:
   - openshift-etcd-backup
   - openshift
@@ -21,9 +21,9 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        upgrade openshift-etcd-backup image to v1.9.5
+        upgrade openshift-etcd-backup image to v1.9.6
+
+        * fixed prometheus alert
       links:
-        - name: openshift-etcd-backup release v1.9.4
-          url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.9.4
-        - name: openshift-etcd-backup release v1.9.5
-          url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.9.5
+        - name: openshift-etcd-backup release v1.9.6
+          url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.9.6
