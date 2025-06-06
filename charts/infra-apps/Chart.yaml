@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.236.0
+version: 0.237.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,13 +15,22 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Update kube-prometheus-stack from 70.7.0 to 72.5.0
+        feat!: Update Argo CD to 3.0.x
       links:
-        - name: Upgrade from 70.x to 71.x
-          url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md#from-70x-to-71x
-        - name: Upgrade from 71.x to 72.x
-          url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md#from-71x-to-72x
+        - name: Migration Path
+          url: https://argo-cd.readthedocs.io/en/latest/operator-manual/upgrading/2.14-3.0/
+        - name: Announcement Blog Post
+          url: https://blog.argoproj.io/argo-cd-v3-0-release-candidate-a0b933f4e58f
+    - kind: changed
+      description: |
+        chore: Update Helm chart from 7.9.1 to 8.0.14
+
+        Also updates components like dex and redis. Any changes that might need addressing
+        are linked below.
+      links:
+        - name: use dual-stack AWS ECR registry for redis
+          url: https://github.com/argoproj/argo-helm/pull/3328
