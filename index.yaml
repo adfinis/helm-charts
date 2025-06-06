@@ -5632,6 +5632,46 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat!: Update Argo CD to 3.0.x
+          links:
+            - name: Migration Path
+              url: https://argo-cd.readthedocs.io/en/latest/operator-manual/upgrading/2.14-3.0/
+            - name: Announcement Blog Post
+              url: https://blog.argoproj.io/argo-cd-v3-0-release-candidate-a0b933f4e58f
+        - kind: changed
+          description: |
+            chore: Update Helm chart from 7.9.1 to 8.0.14
+
+            Also updates components like dex and redis. Any changes that might need addressing
+            are linked below.
+          links:
+            - name: use dual-stack AWS ECR registry for redis
+              url: https://github.com/argoproj/argo-helm/pull/3328
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-06-06T08:21:18.530739581Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 692f82c053a9f0d8ff5175796267110adf3fd1dbb9e5c1c954a0aa4f85d88b07
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.237.0/infra-apps-0.237.0.tgz
+    version: 0.237.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Update kube-prometheus-stack from 70.7.0 to 72.5.0
           links:
             - name: Upgrade from 70.x to 71.x
@@ -30970,4 +31010,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-27T08:26:42.091345459Z"
+generated: "2025-06-06T08:21:18.53401238Z"
