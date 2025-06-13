@@ -21,7 +21,7 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        upgrade openshift-etcd-backup image to v1.9.6
+        upgrade openshift-etcd-backup image to v1.9.7
         * set pod's dns policy to ClusterFirstWithHostNet
 
       links:
