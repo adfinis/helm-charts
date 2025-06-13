@@ -97,3 +97,4 @@ spec:
             configMap:
               name: {{ include "openshift-etcd-backup.fullname" . }}-ca-inject
           {{- end }}
+          dnsPolicy: ClusterFirstWithHostNet
