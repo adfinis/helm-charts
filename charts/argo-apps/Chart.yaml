@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.26.0
+version: 0.27.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,6 +18,7 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Remove deprecated Argo CD Notifications App.
-
-        The functionality has been merged into the main Argo CD application.
+        Update Argo Rollouts from 1.7.2 to 1.8.3
+      links:
+        - name: Argo Rollouts 1.8 Announcement
+          url: https://blog.argoproj.io/argo-rollouts-1-8-released-cf3183fae1af
