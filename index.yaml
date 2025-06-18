@@ -5660,6 +5660,59 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat!: Update kube-prom-stack from 72.5.0 to 75.3.0
+
+            - 72.x to 73.x:
+              This version removes support for deprecated K8s API versions for `Ingress` resources and associated fields.
+              This version also removes all `PodSecurityPolicy` resources and `global.pspEnabled` and `global.pspAnnotations` fields.
+              The chart now requires a minimum K8s version of `1.25`
+            - 73.x to 74.x:
+              This version upgrades Prometheus-Operator to v0.83.0
+              Since [68.4.0](https://github.com/prometheus-community/helm-charts/pull/5175) it is also possible to use `crds.upgradeJob.enabled` for upgrading the CRDs.
+              For traditional upgrades, please run these commands to update the CRDs before applying the upgrade.
+
+              ```console
+              kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml
+              kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml
+              kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
+              kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_probes.yaml
+              kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheusagents.yaml
+              kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml
+              kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml
+              kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_scrapeconfigs.yaml
+              kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
+              kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml
+              ```
+            - 74.x to 75.x:
+              This version renames objects created under `additionalPrometheusRules` and `additionalPrometheusRulesMap`.  They used to be prefixed with `{{ template "kube-prometheus-stack.name" $ }}`; they are now prefixed with `{{ template "kube-prometheus-stack.fullname" $ }}` so as to make the object names unique across multiple releases.
+          links:
+            - name: Upgrade Guide
+              url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-06-18T12:56:41.936649Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 96bc45aeac9fb2d960f2744c9fcfb29b3c327d33979b81cd463a8377de74c28b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.238.0/infra-apps-0.238.0.tgz
+    version: 0.238.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat!: Update Argo CD to 3.0.x
           links:
             - name: Migration Path
@@ -31071,4 +31124,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-06-16T08:20:56.532653062Z"
+generated: "2025-06-18T12:56:41.938308517Z"
