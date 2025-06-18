@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.237.0
+version: 0.238.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,18 +19,31 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat!: Update Argo CD to 3.0.x
-      links:
-        - name: Migration Path
-          url: https://argo-cd.readthedocs.io/en/latest/operator-manual/upgrading/2.14-3.0/
-        - name: Announcement Blog Post
-          url: https://blog.argoproj.io/argo-cd-v3-0-release-candidate-a0b933f4e58f
-    - kind: changed
-      description: |
-        chore: Update Helm chart from 7.9.1 to 8.0.14
+        feat!: Update kube-prom-stack from 72.5.0 to 75.3.0
 
-        Also updates components like dex and redis. Any changes that might need addressing
-        are linked below.
+        - 72.x to 73.x:
+          This version removes support for deprecated K8s API versions for `Ingress` resources and associated fields.
+          This version also removes all `PodSecurityPolicy` resources and `global.pspEnabled` and `global.pspAnnotations` fields.
+          The chart now requires a minimum K8s version of `1.25`
+        - 73.x to 74.x:
+          This version upgrades Prometheus-Operator to v0.83.0
+          Since [68.4.0](https://github.com/prometheus-community/helm-charts/pull/5175) it is also possible to use `crds.upgradeJob.enabled` for upgrading the CRDs.
+          For traditional upgrades, please run these commands to update the CRDs before applying the upgrade.
+
+          ```console
+          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml
+          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml
+          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
+          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_probes.yaml
+          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheusagents.yaml
+          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml
+          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml
+          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_scrapeconfigs.yaml
+          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
+          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml
+          ```
+        - 74.x to 75.x:
+          This version renames objects created under `additionalPrometheusRules` and `additionalPrometheusRulesMap`.  They used to be prefixed with `{{ template "kube-prometheus-stack.name" $ }}`; they are now prefixed with `{{ template "kube-prometheus-stack.fullname" $ }}` so as to make the object names unique across multiple releases.
       links:
-        - name: use dual-stack AWS ECR registry for redis
-          url: https://github.com/argoproj/argo-helm/pull/3328
+        - name: Upgrade Guide
+          url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md
