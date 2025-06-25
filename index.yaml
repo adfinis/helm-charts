@@ -17102,6 +17102,30 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "fix: pin version of prometheus-msteams component"
+    apiVersion: v2
+    created: "2025-06-25T11:58:22.785773203Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: ff7fb0b1e030d9ec87d764996115655a0eb9c3d6dd24e9f5dc7f90e342118730
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.49.1/misc-apps-0.49.1.tgz
+    version: 0.49.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: added goldilocks"
           links:
             - name: "added goldilocks 4.13.0"
@@ -31224,4 +31248,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-06-25T11:21:30.115093657Z"
+generated: "2025-06-25T11:58:22.786991749Z"
