@@ -5660,6 +5660,47 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat!: Update cert-manager from 1.17.1 to 1.18.1
+
+            The 1.18.0 release contains several new features and changes.
+            Highlights include support for ACME certificate profiles,
+            a new default for `Certificate.Spec.PrivateKey.RotationPolicy`
+            now set to `Always` (breaking change), and the default
+            `Certificate.Spec.RevisionHistoryLimit`
+            now set to 1 (potentially breaking).
+
+            1.18.1 fixes some timeout issues and uses `PathType: Exact`
+            on challenge ingresses.
+          links:
+            - name: Release Notes for 1.18.0
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.18.0
+            - name: Release Notes for 1.18.1
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.18.1
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-06-25T09:37:43.650405523Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 76d4cdc69f83055040a1f9acaf7cf0bfef0e0b151d086d3867af1de946327eba
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.239.0/infra-apps-0.239.0.tgz
+    version: 0.239.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat!: Update kube-prom-stack from 72.5.0 to 75.3.0
 
             - 72.x to 73.x:
@@ -31151,4 +31192,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-06-24T11:08:35.861173101Z"
+generated: "2025-06-25T09:37:43.653033455Z"
