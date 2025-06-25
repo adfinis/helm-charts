@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.49.0](https://img.shields.io/badge/Version-0.49.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.49.1](https://img.shields.io/badge/Version-0.49.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -89,7 +89,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | prometheusMsteams.destination.namespace | string | `"infra-prometheus-msteams"` | Namespace |
 | prometheusMsteams.enabled | bool | `false` | Enable prometheus-msteams |
 | prometheusMsteams.repoURL | string | [repo](https://prometheus-msteams.github.io/prometheus-msteams) | Repo URL |
-| prometheusMsteams.targetRevision | string | `"1.3.*"` | [prometheus-msteams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams) |
+| prometheusMsteams.targetRevision | string | `"1.3.4"` | [prometheus-msteams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams) |
 | prometheusMsteams.values | object | [upstream values](https://github.com/prometheus-msteams/prometheus-msteams/blob/master/chart/prometheus-msteams/values.yaml) | Helm values |
 | reloader | object | - | [reloader](https://github.com/stakater/reloader) ([example](./examples/reloader.yaml)) |
 | reloader.chart | string | `"reloader"` | Chart |
