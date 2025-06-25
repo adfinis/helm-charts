@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.95.0
+version: 0.95.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,7 +17,10 @@ dependencies:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "chore: update oauth2-proxy from 7.8.2 to 7.9.0"
+      description: |
+        fix: update Kyverno from 1.14.1 to 1.14.3
       links:
-        - name: OAuth-Proxy 7.9.0 Release
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.9.0
+        - name: Kyverno 1.14.2 Releasenotes
+          url: https://github.com/kyverno/kyverno/releases/tag/v1.14.2
+        - name: Kyverno 1.14.3 Releasenotes
+          url: https://github.com/kyverno/kyverno/releases/tag/v1.14.3
