@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.36.0
+version: 0.37.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,4 +18,11 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: Fail deprecated loki-stack installations
+      description: "feat: Update Loki from 3.3.0 to 3.5.0"
+      links:
+        - name: Loki 3.4.0 Releasenotes
+          url: https://github.com/grafana/loki/releases/tag/v3.4.0
+        - name: Loki 3.5.0 Releasenotes
+          url: https://github.com/grafana/loki/releases/tag/v3.5.0
+    - kind: changed
+      description: "feat: Update Loki chart from 6.22.0 to 6.30.1"
