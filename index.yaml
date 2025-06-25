@@ -21782,6 +21782,36 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            fix: update Kyverno from 1.14.1 to 1.14.3
+          links:
+            - name: Kyverno 1.14.2 Releasenotes
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.14.2
+            - name: Kyverno 1.14.3 Releasenotes
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.14.3
+    apiVersion: v2
+    created: "2025-06-25T12:03:10.056411051Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 66c00a8b49df2070f07bac5cd484ea4c4cfbac4f7c5aedfb7c59d265bd7c2314
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.95.1/security-apps-0.95.1.tgz
+    version: 0.95.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore: update oauth2-proxy from 7.8.2 to 7.9.0"
           links:
             - name: OAuth-Proxy 7.9.0 Release
@@ -31248,4 +31278,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-06-25T11:58:22.786991749Z"
+generated: "2025-06-25T12:03:10.057794789Z"
