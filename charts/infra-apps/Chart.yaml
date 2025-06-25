@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.238.0
+version: 0.239.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,35 +15,23 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat!: Update kube-prom-stack from 72.5.0 to 75.3.0
+        feat!: Update cert-manager from 1.17.1 to 1.18.1
 
-        - 72.x to 73.x:
-          This version removes support for deprecated K8s API versions for `Ingress` resources and associated fields.
-          This version also removes all `PodSecurityPolicy` resources and `global.pspEnabled` and `global.pspAnnotations` fields.
-          The chart now requires a minimum K8s version of `1.25`
-        - 73.x to 74.x:
-          This version upgrades Prometheus-Operator to v0.83.0
-          Since [68.4.0](https://github.com/prometheus-community/helm-charts/pull/5175) it is also possible to use `crds.upgradeJob.enabled` for upgrading the CRDs.
-          For traditional upgrades, please run these commands to update the CRDs before applying the upgrade.
+        The 1.18.0 release contains several new features and changes.
+        Highlights include support for ACME certificate profiles,
+        a new default for `Certificate.Spec.PrivateKey.RotationPolicy`
+        now set to `Always` (breaking change), and the default
+        `Certificate.Spec.RevisionHistoryLimit`
+        now set to 1 (potentially breaking).
 
-          ```console
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_probes.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheusagents.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_scrapeconfigs.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.83.0/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml
-          ```
-        - 74.x to 75.x:
-          This version renames objects created under `additionalPrometheusRules` and `additionalPrometheusRulesMap`.  They used to be prefixed with `{{ template "kube-prometheus-stack.name" $ }}`; they are now prefixed with `{{ template "kube-prometheus-stack.fullname" $ }}` so as to make the object names unique across multiple releases.
+        1.18.1 fixes some timeout issues and uses `PathType: Exact`
+        on challenge ingresses.
       links:
-        - name: Upgrade Guide
-          url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md
+        - name: Release Notes for 1.18.0
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.18.0
+        - name: Release Notes for 1.18.1
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.18.1
