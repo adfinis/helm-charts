@@ -19,7 +19,7 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update cert-manager from 1.17.1 to 1.18.1
+        feat!: Update cert-manager from 1.17.1 to 1.18.1
 
         The 1.18.0 release contains several new features and changes.
         Highlights include support for ACME certificate profiles,
