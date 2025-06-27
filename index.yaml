@@ -29462,6 +29462,38 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: update otel-collector chart from 0.127.0 to 0.127.2
+
+            Include upgrading otel-colelctor from 0.121.0 to 0.127.0.
+          links:
+            - name: otel-collector chart Release 0.127.1, automountServiceAccountToken param for sa
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.127.1
+            - name: otel-collector chart Release 0.127.2, Add custom metrics support in opentelemetry-collector
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.127.2
+    apiVersion: v2
+    created: "2025-06-27T13:27:35.348087446Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 6664b619912a9a876fc6d10edc2c39275ecbb27d44232a01f53763338ea78207
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.31.1/tracing-apps-0.31.1.tgz
+    version: 0.31.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: update otel-collector chart from 0.119.0 to 0.127.0
 
             Include upgrading otel-colelctor from 0.121.0 to 0.127.0.
@@ -31324,4 +31356,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-06-27T12:36:51.535406229Z"
+generated: "2025-06-27T13:27:35.34957665Z"
