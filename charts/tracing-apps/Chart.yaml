@@ -2,7 +2,7 @@ apiVersion: v2
 name: tracing-apps
 description: Argo CD app-of-apps config for tracing applications
 type: application
-version: 0.31.0
+version: 0.31.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,25 +18,11 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: update otel-collector chart from 0.119.0 to 0.127.0
+        feat: update otel-collector chart from 0.127.0 to 0.127.2
 
         Include upgrading otel-colelctor from 0.121.0 to 0.127.0.
       links:
-        - name: otel-collector chart Release 0.120.0, Update opentelemetry collector v0.122.1
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.120.0
-        - name: otel-collector chart Release 0.121.0, Move to new Telemetry setup
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.121.0
-        - name: otel-collector chart Release 0.122.0, Update to opentelemerty collector v0.123.1, stop publishing images on Docker Hub
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.122.0
-        - name: otel-collector chart Release 0.123.0, Update opentelemetry collector v0.124.1
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.123.0
-        - name: otel-collector chart Release 0.124.0, Update opentelemetry collector v0.125.0
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.124.0
-        - name: otel-collector chart Release 0.125.0, Update opentelemetry collector v0.126.0
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.125.0
-        - name: otel-collector chart Release 0.126.0, Update opentelemetry collector v0.127.1
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.126.0
-        - name: otel-collector chart Release 0.127.0, Update opentelemetry collector v0.128.0, allow rbac subjectaccessreviews
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.127.0
-        - name: otel collector changelog
-          url: https://github.com/open-telemetry/opentelemetry-collector/blob/main/CHANGELOG.md
+        - name: otel-collector chart Release 0.127.1, automountServiceAccountToken param for sa
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.127.1
+        - name: otel-collector chart Release 0.127.2, Add custom metrics support in opentelemetry-collector
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.127.2
