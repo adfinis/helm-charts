@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.239.0
+version: 0.239.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,19 +19,11 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat!: Update cert-manager from 1.17.1 to 1.18.1
+        fix: Update nginx-ingress from 1.12.1 to 1.12.3
 
-        The 1.18.0 release contains several new features and changes.
-        Highlights include support for ACME certificate profiles,
-        a new default for `Certificate.Spec.PrivateKey.RotationPolicy`
-        now set to `Always` (breaking change), and the default
-        `Certificate.Spec.RevisionHistoryLimit`
-        now set to 1 (potentially breaking).
-
-        1.18.1 fixes some timeout issues and uses `PathType: Exact`
-        on challenge ingresses.
+        Contains several updates and security fixed to used dependencies.
       links:
-        - name: Release Notes for 1.18.0
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.18.0
-        - name: Release Notes for 1.18.1
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.18.1
+        - name: Release Notes for 1.12.2
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.12.2
+        - name: Release Notes for 1.12.3
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.12.3
