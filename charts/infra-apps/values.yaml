@@ -178,7 +178,7 @@ velero:
   # -- Chart
   chart: velero
   # -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
-  targetRevision: 8.1.0
+  targetRevision: 10.0.8
   # -- Helm values
   # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
   values: {}
