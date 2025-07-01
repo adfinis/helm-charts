@@ -2,7 +2,7 @@ apiVersion: v2
 name: azure-apps
 description: Argo CD app-of-apps config for Azure applications
 type: application
-version: 0.15.0
+version: 0.16.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,14 +15,16 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "update promitor agent scraper to 2.14.0"
+      description: "update csi-secrets-store-provider-azure from 1.5.4 to 1.7.0"
       links:
-        - name: "Pull Request"
-          url: https://github.com/promitor/charts/pull/179
-    - kind: changed
-      description: "update promitor agent resource discovery to 0.13.0"
-      links:
-        - name: "Pull Request"
-          url: https://github.com/promitor/charts/pull/179
+        - name: 1.6.0 Releasenotes
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.6.0
+        - name: 1.6.1 Releasenotes
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.6.1
+        - name: 1.6.2 Releasenotes
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.6.2
+        - name: 1.7.0 Releasenotes
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.7.0
