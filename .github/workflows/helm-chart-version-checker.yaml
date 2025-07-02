@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: Run Helm Version Checker
         uses: adfinis/helm-version-checker@6ad80a1892dffb1135aa9433d6d2f2332de523db # v2.1.0
