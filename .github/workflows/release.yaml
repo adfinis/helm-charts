@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  pages: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -12,6 +15,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup environment for release
         run: hack/ci/github/setup/release.sh
