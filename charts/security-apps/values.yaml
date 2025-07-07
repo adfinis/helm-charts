@@ -81,7 +81,7 @@ vault:
   # -- Chart
   chart: "vault"
   # -- [vault Helm chart](https://github.com/hashicorp/vault-helm) version
-  targetRevision: "0.28.0"
+  targetRevision: "0.30.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml)
   values: {}
@@ -275,7 +275,7 @@ oauth2Proxy:
   # -- Annotations for oauth2-proxy app
   annotations: {}
   destination:
-  # -- Namespace
+    # -- Namespace
     namespace: infra-oauth2-proxy
   # -- Repo URL
   # @default -- [repo](https://https://oauth2-proxy.github.io/manifests)
@@ -297,7 +297,7 @@ kyverno:
   # -- Annotations for kyverno
   annotations: {}
   destination:
-  # -- Namespace
+    # -- Namespace
     namespace: infra-kyverno
   # -- Repo URL
   # @default -- [repo](https://kyverno.github.io/kyverno/)
@@ -319,7 +319,7 @@ kyvernoPolicies:
   # -- Annotations for kyverno
   annotations: {}
   destination:
-  # -- Namespace
+    # -- Namespace
     namespace: infra-kyverno
   # -- Repo URL
   # @default -- [repo](https://kyverno.github.io/kyverno/)

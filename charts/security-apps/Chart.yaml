@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.95.1
+version: 0.96.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,9 +18,13 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        fix: update Kyverno from 1.14.1 to 1.14.3
+        chore: update Vault Helm chart from 0.28.0 to 0.30.0
       links:
-        - name: Kyverno 1.14.2 Releasenotes
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.14.2
-        - name: Kyverno 1.14.3 Releasenotes
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.14.3
+        - name: Vault Helm chart 0.30.0 Releasenotes
+          url: https://github.com/hashicorp/vault-helm/releases/tag/v0.30.0
+        - name: Vault Helm chart 0.29.1 Releasenotes
+          url: https://github.com/hashicorp/vault-helm/releases/tag/v0.29.1
+        - name: Vault Helm chart 0.29.0 Releasenotes
+          url: https://github.com/hashicorp/vault-helm/releases/tag/v0.29.0
+        - name: Vault Helm chart 0.28.1 Releasenotes
+          url: https://github.com/hashicorp/vault-helm/releases/tag/v0.28.1
