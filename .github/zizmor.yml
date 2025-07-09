@@ -5,3 +5,8 @@ rules:
         actions/*: ref-pin
         helm/*: ref-pin
         azure/*: ref-pin
+  dangerous-triggers:
+    ignore:
+      # We need the pull_request_target trigger here to allow us to add labels
+      # to PRs. We restrict the permissions within the job to "pull-requests: write"
+      - .github/workflows/pr-sizing.yaml
