@@ -21892,6 +21892,40 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: update Vault Helm chart from 0.28.0 to 0.30.0
+          links:
+            - name: Vault Helm chart 0.30.0 Releasenotes
+              url: https://github.com/hashicorp/vault-helm/releases/tag/v0.30.0
+            - name: Vault Helm chart 0.29.1 Releasenotes
+              url: https://github.com/hashicorp/vault-helm/releases/tag/v0.29.1
+            - name: Vault Helm chart 0.29.0 Releasenotes
+              url: https://github.com/hashicorp/vault-helm/releases/tag/v0.29.0
+            - name: Vault Helm chart 0.28.1 Releasenotes
+              url: https://github.com/hashicorp/vault-helm/releases/tag/v0.28.1
+    apiVersion: v2
+    created: "2025-07-14T12:00:22.544440169Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: da729da8921fde2af2c214373a5c710db021510c8ad9961c9e1921d6fa43f760
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.96.0/security-apps-0.96.0.tgz
+    version: 0.96.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             fix: update Kyverno from 1.14.1 to 1.14.3
           links:
             - name: Kyverno 1.14.2 Releasenotes
@@ -31465,4 +31499,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-01T13:42:22.139535271Z"
+generated: "2025-07-14T12:00:22.545949032Z"
