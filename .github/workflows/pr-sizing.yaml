@@ -4,11 +4,26 @@ name: 'PR Size'
 on:
   pull_request_target:
     types: [opened, synchronize, reopened]
+
+permissions:
+  pull-requests: write
+
 jobs:
   size-label:
     runs-on: ubuntu-latest
     steps:
       - name: size-label
-        uses: "pascalgn/size-label-action@v0.5.5"
+        # __          __     _____  _   _ _____ _   _  _____
+        # \ \        / /\   |  __ \| \ | |_   _| \ | |/ ____|
+        #  \ \  /\  / /  \  | |__) |  \| | | | |  \| | |  __
+        #   \ \/  \/ / /\ \ |  _  /| . ` | | | | . ` | | |_ |
+        #    \  /\  / ____ \| | \ \| |\  |_| |_| |\  | |__| |
+        #     \/  \/_/    \_\_|  \_\_| \_|_____|_| \_|\_____|
+        #
+        # This step is being executed in the context of the target repository
+        # (pull_request_target) and can execute commands within it. Only update
+        # the integration after having verified that the code being executed by
+        # the action is safe.
+        uses: "pascalgn/size-label-action@f8edde36b3be04b4f65dcfead05dc8691b374348"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
