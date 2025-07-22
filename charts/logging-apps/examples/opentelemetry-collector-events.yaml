@@ -1,0 +1,23 @@
+opentelemetryCollectorEvents:
+  enabled: true
+  project: infra-logging
+  values:
+    image:
+      # use the image flavour designed for kubernetes
+      repository: "otel/opentelemetry-collector-k8s"
+    # deployment mode as we only need to scrape events from one source
+    mode: deployment
+    presets:
+      # enable event scraping
+      kubernetesEvents:
+        enabled: true
+    config:
+      exporters:
+        otlphttp:
+          # export to loki running in infra-logging
+          endpoint: http://loki.infra-logging:3100/otlp
+      service:
+        pipelines:
+          logs:
+            exporters:
+              - otlphttp
