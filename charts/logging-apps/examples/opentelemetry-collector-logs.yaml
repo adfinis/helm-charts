@@ -1,0 +1,29 @@
+opentelemetryCollectorLogs:
+  enabled: true
+  project: infra-logging
+  values:
+    image:
+      # use the image flavour designed for kubernetes
+      repository: "otel/opentelemetry-collector-k8s"
+    # DaemonSet mode as we need to scrape logs from every node
+    mode: daemonset
+    presets:
+      # enable metadata enrichment
+      kubernetesAttributes:
+        enabled: true
+        extractAllPodLabels: true
+        extractAllPodAnnotations: true
+      # collect all logs, including the collector logs (! make sure not to output logs to stderr)
+      logsCollection:
+        enabled: true
+        includeCollectorLogs: true
+    config:
+      exporters:
+        otlphttp:
+          # export logs to loki running in infra-logging
+          endpoint: http://loki.infra-logging:3100/otlp
+      service:
+        pipelines:
+          logs:
+            exporters:
+              - otlphttp

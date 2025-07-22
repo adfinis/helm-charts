@@ -109,3 +109,41 @@ fluentBit:
   # -- Helm values
   # @default -- [upstream values](https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/values.yaml)
   values: {}
+
+# -- [opentelemetry-collector](https://open-telemetry.github.io/opentelemetry-helm-charts) ([example](./examples/opentelemetry-collector-logs.yaml))
+# @default -- -
+opentelemetryCollectorLogs:
+  # -- Enable opentelemetry-collector
+  name: opentelemetry-collector-logs
+  destination:
+    # -- Namespace
+    namespace: "infra-logging"
+  # -- Repo URL
+  # @default -- [repo](https://open-telemetry.github.io/opentelemetry-helm-charts)
+  repoURL: "https://open-telemetry.github.io/opentelemetry-helm-charts"
+  # -- Chart
+  chart: "opentelemetry-collector"
+  # -- [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector) version
+  targetRevision: "0.129.0"
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml)
+  values: {}
+
+# -- [opentelemetry-collector](https://open-telemetry.github.io/opentelemetry-helm-charts) ([example](./examples/opentelemetry-collector-events.yaml))
+# @default -- -
+opentelemetryCollectorEvents:
+  # -- Enable opentelemetry-collector
+  name: opentelemetry-collector-events
+  destination:
+    # -- Namespace
+    namespace: "infra-logging"
+  # -- Repo URL
+  # @default -- [repo](https://open-telemetry.github.io/opentelemetry-helm-charts)
+  repoURL: "https://open-telemetry.github.io/opentelemetry-helm-charts"
+  # -- Chart
+  chart: "opentelemetry-collector"
+  # -- [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector) version
+  targetRevision: "0.129.0"
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml)
+  values: {}

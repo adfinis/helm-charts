@@ -1,6 +1,6 @@
 # logging-apps
 
-![Version: 0.37.0](https://img.shields.io/badge/Version-0.37.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.38.0](https://img.shields.io/badge/Version-0.38.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for logging applications
 
@@ -52,6 +52,20 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | loki.targetRevision | string | `"6.30.1"` | [loki Helm chart](https://github.com/grafana/loki/tree/main/production/helm/loki) |
 | loki.values | object | [upstream values](https://github.com/grafana/loki/blob/main/production/helm/loki/values.yaml) | Helm values |
 | lokiStack | object | DEPRECATED | [loki-stack](https://github.com/grafana/loki) is DEPREACTED use `loki` and `promtail` individually |
+| opentelemetryCollectorEvents | object | - | [opentelemetry-collector](https://open-telemetry.github.io/opentelemetry-helm-charts) ([example](./examples/opentelemetry-collector-events.yaml)) |
+| opentelemetryCollectorEvents.chart | string | `"opentelemetry-collector"` | Chart |
+| opentelemetryCollectorEvents.destination.namespace | string | `"infra-logging"` | Namespace |
+| opentelemetryCollectorEvents.name | string | `"opentelemetry-collector-events"` | Enable opentelemetry-collector |
+| opentelemetryCollectorEvents.repoURL | string | [repo](https://open-telemetry.github.io/opentelemetry-helm-charts) | Repo URL |
+| opentelemetryCollectorEvents.targetRevision | string | `"0.129.0"` | [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector) version |
+| opentelemetryCollectorEvents.values | object | [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml) | Helm values |
+| opentelemetryCollectorLogs | object | - | [opentelemetry-collector](https://open-telemetry.github.io/opentelemetry-helm-charts) ([example](./examples/opentelemetry-collector-logs.yaml)) |
+| opentelemetryCollectorLogs.chart | string | `"opentelemetry-collector"` | Chart |
+| opentelemetryCollectorLogs.destination.namespace | string | `"infra-logging"` | Namespace |
+| opentelemetryCollectorLogs.name | string | `"opentelemetry-collector-logs"` | Enable opentelemetry-collector |
+| opentelemetryCollectorLogs.repoURL | string | [repo](https://open-telemetry.github.io/opentelemetry-helm-charts) | Repo URL |
+| opentelemetryCollectorLogs.targetRevision | string | `"0.129.0"` | [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector) version |
+| opentelemetryCollectorLogs.values | object | [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml) | Helm values |
 | promtail | object | - | [Grafana Loki promtail](https://grafana.com/docs/loki/latest/send-data/promtail/) ([example](./examples/promtail.yaml)) |
 | promtail.chart | string | `"promtail"` | Chart |
 | promtail.destination.namespace | string | `"infra-logging"` | Namespace |
