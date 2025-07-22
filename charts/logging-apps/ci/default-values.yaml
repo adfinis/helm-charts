@@ -21,3 +21,11 @@ fluentd:
 fluent-bit:
   enabled: true
   values: {}
+
+opentelemetryCollectorEvents:
+  enabled: true
+  values: {}
+
+opentelemetryCollectorLogs:
+  enabled: true
+  values: {}
