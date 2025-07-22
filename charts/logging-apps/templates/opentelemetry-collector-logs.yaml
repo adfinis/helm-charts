@@ -1,8 +1,8 @@
-{{ if .Values.opentelemetry-collector-logs.enabled }}
-{{ template "argoconfig.application" (list . "logging-apps.opentelemetry-collector-logs") }}
+{{ if .Values.opentelemetryCollectorLogs.enabled }}
+{{ template "argoconfig.application" (list . "logging-apps.opentelemetryCollectorLogs") }}
 {{ end }}
 
-{{- define "logging-apps.opentelemetry-collector-logs" -}}{{- $app := unset .Values.opentelemetry-collector-logs "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
+{{- define "logging-apps.opentelemetryCollectorLogs" -}}{{- $app := unset .Values.opentelemetryCollectorLogs "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
 metadata:
   name: {{ template "common.fullname" . }}-{{ $name }}
 spec:
