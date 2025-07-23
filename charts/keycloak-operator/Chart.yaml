@@ -2,8 +2,8 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.5.3
-appVersion: "26.2.3"
+version: 1.6.0
+appVersion: "26.3.2"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
 sources:
@@ -18,7 +18,11 @@ annotations:
   artifacthub.io/changes: |
     - kind: added
       description: |
-        fix: update keycloak from 26.2.2 to 26.2.3
+        fix: update keycloak from 26.2.3 to 26.3.2
       links:
-        - name: Release notes
-          url: https://www.keycloak.org/2025/05/keycloak-2623-released
+        - name: Release notes for 26.3.0
+          url: https://www.keycloak.org/2025/07/keycloak-2630-released
+        - name: Release notes for 26.3.1
+          url: https://www.keycloak.org/2025/07/keycloak-2631-released
+        - name: Release notes for 26.3.2
+          url: https://www.keycloak.org/2025/07/keycloak-2632-released

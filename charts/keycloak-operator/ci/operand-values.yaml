@@ -7,7 +7,6 @@ keycloak:
       - admin
       - web-authn
     disabled:
-      - js-adapter
       - kerberos
   http:
     httpEnabled: true
