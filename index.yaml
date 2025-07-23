@@ -15837,6 +15837,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat: Update Loki from 3.5.0 to 3.5.2"
+          links:
+            - name: Loki 3.5.1 Releasenotes
+              url: https://github.com/grafana/loki/releases/tag/v3.5.1
+            - name: Loki 3.5.2 Releasenotes
+              url: https://github.com/grafana/loki/releases/tag/v3.5.2
+        - kind: changed
+          description: "feat: Update Loki chart from 6.30.1 to 6.32.0"
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-07-23T12:36:18.143303424Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: c31d15c56915693ad145372ed488a597f61875a5da1d795c052d322406c6fcd2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.38.0/logging-apps-0.38.0.tgz
+    version: 0.38.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Update Loki from 3.3.0 to 3.5.0"
           links:
             - name: Loki 3.4.0 Releasenotes
@@ -31499,4 +31531,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-14T12:00:22.545949032Z"
+generated: "2025-07-23T12:36:18.144910381Z"
