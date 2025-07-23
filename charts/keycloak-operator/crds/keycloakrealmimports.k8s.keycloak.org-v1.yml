@@ -1862,6 +1862,8 @@ spec:
                               type: "string"
                             type: "array"
                           type: "object"
+                        description:
+                          type: "string"
                         id:
                           type: "string"
                         name:
@@ -1895,6 +1897,8 @@ spec:
                                     type: "string"
                                   type: "array"
                                 type: "object"
+                              description:
+                                type: "string"
                               id:
                                 type: "string"
                               name:
@@ -1928,6 +1932,8 @@ spec:
                                           type: "string"
                                         type: "array"
                                       type: "object"
+                                    description:
+                                      type: "string"
                                     id:
                                       type: "string"
                                     name:
@@ -1961,6 +1967,8 @@ spec:
                                                 type: "string"
                                               type: "array"
                                             type: "object"
+                                          description:
+                                            type: "string"
                                           id:
                                             type: "string"
                                           name:
@@ -1994,6 +2002,8 @@ spec:
                                                       type: "string"
                                                     type: "array"
                                                   type: "object"
+                                                description:
+                                                  type: "string"
                                                 id:
                                                   type: "string"
                                                 name:
@@ -2027,6 +2037,8 @@ spec:
                                                             type: "string"
                                                           type: "array"
                                                         type: "object"
+                                                      description:
+                                                        type: "string"
                                                       id:
                                                         type: "string"
                                                       name:
@@ -2060,6 +2072,8 @@ spec:
                                                                   type: "string"
                                                                 type: "array"
                                                               type: "object"
+                                                            description:
+                                                              type: "string"
                                                             id:
                                                               type: "string"
                                                             name:
@@ -2093,6 +2107,8 @@ spec:
                                                                         type: "string"
                                                                       type: "array"
                                                                     type: "object"
+                                                                  description:
+                                                                    type: "string"
                                                                   id:
                                                                     type: "string"
                                                                   name:
@@ -2126,6 +2142,8 @@ spec:
                                                                               type: "string"
                                                                             type: "array"
                                                                           type: "object"
+                                                                        description:
+                                                                          type: "string"
                                                                         id:
                                                                           type: "string"
                                                                         name:
@@ -2159,6 +2177,8 @@ spec:
                                                                                     type: "string"
                                                                                   type: "array"
                                                                                 type: "object"
+                                                                              description:
+                                                                                type: "string"
                                                                               id:
                                                                                 type: "string"
                                                                               name:
@@ -2192,6 +2212,8 @@ spec:
                                                                                           type: "string"
                                                                                         type: "array"
                                                                                       type: "object"
+                                                                                    description:
+                                                                                      type: "string"
                                                                                     id:
                                                                                       type: "string"
                                                                                     name:
@@ -3522,6 +3544,8 @@ spec:
                     items:
                       type: "string"
                     type: "array"
+                  webAuthnPolicyPasswordlessPasskeysEnabled:
+                    type: "boolean"
                   webAuthnPolicyPasswordlessRequireResidentKey:
                     type: "string"
                   webAuthnPolicyPasswordlessRpEntityName:
