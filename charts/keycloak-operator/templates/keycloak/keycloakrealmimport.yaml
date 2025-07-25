@@ -426,6 +426,9 @@ spec:
     {{- with .webAuthnPolicyPasswordlessExtraOrigins }}
     webAuthnPolicyPasswordlessExtraOrigins: {{ . | toYaml | nindent 6 }}
     {{- end }}
+    {{- with .webAuthnPolicyPasswordlessPasskeysEnabled }}
+    webAuthnPolicyPasswordlessPasskeysEnabled: {{ . }}
+    {{- end }}
     {{- with .webAuthnPolicyPasswordlessRequireResidentKey }}
     webAuthnPolicyPasswordlessRequireResidentKey: {{ . | quote }}
     {{- end }}

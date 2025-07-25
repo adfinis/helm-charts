@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 1.5.3](https://img.shields.io/badge/Version-1.5.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.2.3](https://img.shields.io/badge/AppVersion-26.2.3-informational?style=flat-square)
+![Version: 1.6.0](https://img.shields.io/badge/Version-1.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.3.2](https://img.shields.io/badge/AppVersion-26.3.2-informational?style=flat-square)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -42,9 +42,11 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.hostname.backchannelDynamic | bool | Use the operator's default if not set. | Enables dynamic resolving of backchannel URLs, including hostname, scheme, port and context path. Set to true if your application accesses Keycloak via a private network. |
 | keycloak.hostname.hostname | string | Disabled if not set. | Hostname for the Keycloak server. |
 | keycloak.hostname.strict | bool | `false` | Disables dynamically resolving the hostname from request headers |
+| keycloak.http.annotations | string | `nil` | Annotations to be appended to the Service object |
 | keycloak.http.httpEnabled | bool | `true` | Enable a HTTP listener |
 | keycloak.http.httpPort | string | `nil` | The used HTTP port |
 | keycloak.http.httpsPort | string | `nil` | The used HTTPS port |
+| keycloak.http.labels | string | `nil` | Labels to be appended to the Service object |
 | keycloak.http.tlsSecret | string | `nil` | A secret containing the TLS configuration for HTTPS. |
 | keycloak.httpManagement.port | string | `nil` | Port of management interface. |
 | keycloak.image.repository | string | `""` | Overrides the operator.keycloakImage.image value whose default is quay.io/keycloak/keycloak |
@@ -54,11 +56,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.ingress.className | string | `""` | Ingress class name |
 | keycloak.ingress.enabled | bool | `true` | The deployment is, by default, exposed through a basic ingress. |
 | keycloak.instances | int | `1` | Number of Keycloak instances in HA mode. |
+| keycloak.livenessProbe | string | `nil` | Configuration for liveness probe, by default it is 10 for periodSeconds and 3 for failureThreshold |
 | keycloak.proxy.headers | string | `""` | The proxy headers that should be accepted by the server. Misconfiguration might leave the server exposed to security vulnerabilities. |
+| keycloak.readinessProbe | string | `nil` | Configuration for readiness probe, by default it is 10 for periodSeconds and 3 for failureThreshold |
 | keycloak.realmimport.enabled | bool | `false` | Deploy realmimport resources |
 | keycloak.realmimport.realms | list | `[]` | A list of realms to configure using the realmimport CRD. |
 | keycloak.resources | object | `{}` | Compute Resources required by Keycloak container |
 | keycloak.startOptimized | string | `nil` |  |
+| keycloak.startupProbe | string | `nil` | Configuration for startup probe, by default it is 1 for periodSeconds and 600 for failureThreshold |
 | keycloak.transaction.xaEnabled | bool | `false` | Determine whether Keycloak should use a non-XA datasource. |
 | keycloak.truststores.secret | object | `{}` | Configure Keycloak truststores via Secrets. |
 | keycloak.unsupported | string | `nil` | Additional values that will be merged with the operator's defaults |

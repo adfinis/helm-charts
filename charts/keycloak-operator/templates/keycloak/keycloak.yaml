@@ -80,6 +80,9 @@ spec:
     {{- end }}
   {{- end }}
   http:
+    {{- with .Values.keycloak.http.annotations }}
+    annotations: {{ . | toYaml | nindent 6 }}
+    {{- end }}
     {{- with .Values.keycloak.http.httpEnabled }}
     httpEnabled: {{ ternary "true" "false" . }}
     {{- end }}
@@ -88,6 +91,9 @@ spec:
     {{- end }}
     {{- with .Values.keycloak.http.httpsPort }}
     httpsPort: {{ . }}
+    {{- end }}
+    {{- with .Values.keycloak.http.labels }}
+    labels: {{ . | toYaml | nindent 6 }}
     {{- end }}
     {{- with .Values.keycloak.http.tlsSecret }}
     tlsSecret: {{ . | quote }}
@@ -119,12 +125,30 @@ spec:
   {{- with .Values.keycloak.instances }}
   instances: {{ . }}
   {{- end }}
+  {{- with .Values.keycloak.livenessProbe }}
+  livenessProbe:
+    {{- with .failureThreshold }}
+    failureThreshold: {{ . }}
+    {{- end }}
+    {{- with .periodSeconds }}
+    periodSeconds: {{ . }}
+    {{- end }}
+  {{- end }}
   {{- with .Values.keycloak.networkPolicy }}
   networkPolicy: {{ . | toYaml | nindent 4 }}
   {{- end }}
   {{- with .Values.keycloak.proxy.headers }}
   proxy:
     headers: {{ . }}
+  {{- end }}
+  {{- with .Values.keycloak.readinessProbe }}
+  readinessProbe:
+    {{- with .failureThreshold }}
+    failureThreshold: {{ . }}
+    {{- end }}
+    {{- with .periodSeconds }}
+    periodSeconds: {{ . }}
+    {{- end }}
   {{- end }}
   {{- with .Values.keycloak.resources }}
   resources: {{ . | toYaml | nindent 4 }}
@@ -137,6 +161,15 @@ spec:
   {{- end }}
   {{- with .Values.keycloak.tracing }}
   tracing: {{ . | toYaml | nindent 4 }}
+  {{- end }}
+  {{- with .Values.keycloak.startupProbe }}
+  startupProbe:
+    {{- with .failureThreshold }}
+    failureThreshold: {{ . }}
+    {{- end }}
+    {{- with .periodSeconds }}
+    periodSeconds: {{ . }}
+    {{- end }}
   {{- end }}
   {{- with .Values.keycloak.transaction.xaEnabled }}
   transaction:

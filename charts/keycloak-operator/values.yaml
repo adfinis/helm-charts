@@ -178,6 +178,9 @@ keycloak:
     strict: false
 
   http:
+    # -- Annotations to be appended to the Service object
+    annotations: ~
+
     # -- Enable a HTTP listener
     httpEnabled: true
 
@@ -186,6 +189,9 @@ keycloak:
 
     # -- The used HTTPS port
     httpsPort: ~
+
+    # -- Labels to be appended to the Service object
+    labels: ~
 
     # -- A secret containing the TLS configuration for HTTPS.
     tlsSecret: ~
@@ -218,9 +224,15 @@ keycloak:
   # -- Number of Keycloak instances in HA mode.
   instances: 1
 
+  # -- Configuration for liveness probe, by default it is 10 for periodSeconds and 3 for failureThreshold
+  livenessProbe: ~
+
   proxy:
     # -- The proxy headers that should be accepted by the server. Misconfiguration might leave the server exposed to security vulnerabilities.
     headers: ""
+
+  # -- Configuration for readiness probe, by default it is 10 for periodSeconds and 3 for failureThreshold
+  readinessProbe: ~
 
   # -- Compute Resources required by Keycloak container
   resources: {}
@@ -231,6 +243,9 @@ keycloak:
 
   # -- Set to force the behavior of the --optimized flag for the start command. If left unspecified the operator will assume custom images have already been augmented.
   startOptimized: ~
+
+  # -- Configuration for startup probe, by default it is 1 for periodSeconds and 600 for failureThreshold
+  startupProbe: ~
 
   transaction:
     # -- Determine whether Keycloak should use a non-XA datasource.
