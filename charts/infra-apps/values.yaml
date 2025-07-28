@@ -64,7 +64,7 @@ certManagerIssuers:
   # -- Chart
   chart: cert-manager-issuers
   # -- [cert-manager-issuers Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/cert-manager-issuers) version
-  targetRevision: 0.2.*
+  targetRevision: 0.3.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/cert-manager-issuers/values.yaml)
   values: {}
