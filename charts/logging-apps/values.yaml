@@ -2,13 +2,6 @@
 # @default -- DEPRECATED
 lokiStack:
   enabled: false
-  name: loki-stack
-  destination:
-    namespace: "infra-logging"
-  repoURL: "https://grafana.github.io/helm-charts"
-  chart: "loki-stack"
-  targetRevision: "2.9.10"
-  values: {}
 
 # -- [Grafana Loki](https://grafana.com/oss/loki/) ([example](./examples/loki.yaml))
 # @default -- -
