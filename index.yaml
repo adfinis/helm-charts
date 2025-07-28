@@ -15836,6 +15836,31 @@ entries:
   logging-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: "fix: remove values from deprecated lokiStack installation"
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-07-28T12:33:46.683362006Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: eb6aae4e24a8452e20bdd0ffc6c61ef958cd9964e4af890d81057f448c210569
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.38.1/logging-apps-0.38.1.tgz
+    version: 0.38.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "feat: Update Loki from 3.5.0 to 3.5.2"
           links:
@@ -31531,4 +31556,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-23T12:36:18.144910381Z"
+generated: "2025-07-28T12:33:46.68481092Z"
