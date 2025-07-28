@@ -21,18 +21,7 @@ annotations:
       description: "feat!: Update ArgoCD chart to 8.2.2"
     - kind: changed
       description: |
-        feat: Update Velero from 1.15.0 to 1.16.1
-
-        * Windows cluster support
-        * Parallel Item Block backup
-        * Data mover restore enhancement in scalability and observability
-        * CSI snapshot backup/restore enhancement in usability
-        * Backup Repository Maintenance enhancement in resiliency and observability
-        * Volume Policy enhancement of filtering volumes by PVC labels
-        * Resource Status restore per object
-        * Velero Restore Helper binary is merged into Velero image
+        Update ArgoCD chart to 8.2.2
       links:
-        - name: Release Notes for 1.16.0
-          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.16.0
-        - name: Release Notes for 1.16.1
-          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.16.1
+        - name: Release Notes for 8.2.2
+          url: https://github.com/argoproj/argo-helm/compare/argo-cd-8.2.1...argo-cd-8.2.2
