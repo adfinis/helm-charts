@@ -30,4 +30,6 @@ annotations:
         * Updated dependencies
       links:
         - name: Release Notes for 8.2.2
-          url: https://github.com/argoproj/argo-helm/compare/argo-cd-8.2.1...argo-cd-8.2.2
+          url: https://github.com/argoproj/argo-helm/releases/tag/argo-cd-8.2.2
+        - name: Full Chnagelog for 8.0.14 to 8.2.2
+          url: https://github.com/argoproj/argo-helm/compare/argo-cd-8.0.14...argo-cd-8.2.2
