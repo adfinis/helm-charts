@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.240.0
+version: 0.240.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,21 +18,11 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "feat!: Update Velero chart from 8.1.0 to 10.0.8"
+      description: "feat!: Update ArgoCd chart from 8.0.14 to 8.2.2"
     - kind: changed
       description: |
-        feat: Update Velero from 1.15.0 to 1.16.1
+        feat: Update ArgoCd chart from 8.0.14 to 8.2.2
 
-        * Windows cluster support
-        * Parallel Item Block backup
-        * Data mover restore enhancement in scalability and observability
-        * CSI snapshot backup/restore enhancement in usability
-        * Backup Repository Maintenance enhancement in resiliency and observability
-        * Volume Policy enhancement of filtering volumes by PVC labels
-        * Resource Status restore per object
-        * Velero Restore Helper binary is merged into Velero image
       links:
-        - name: Release Notes for 1.16.0
-          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.16.0
-        - name: Release Notes for 1.16.1
-          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.16.1
+        - name: Release Notes for 8.2.2
+          url: https://github.com/argoproj/argo-helm/compare/argo-cd-8.2.1...argo-cd-8.2.2
