@@ -19,7 +19,6 @@ annotations:
     - kind: changed
       description: |
         Update Argo Rollouts from 2.39.6 to 2.40.2
-
         * Fix to render ingress's port properly by @yu-croco
         * Replace "float64" with "int" to fix Helm 3.18 incompatibility by @tico24
         * Support ability to set .Values.namespaceOverride by @tcaenen
