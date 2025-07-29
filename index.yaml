@@ -5,6 +5,40 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update Argo Rollouts from 2.39.6 to 2.40.2
+            * Fix to render ingress's port properly by @yu-croco
+            * Replace "float64" with "int" to fix Helm 3.18 incompatibility by @tico24
+            * Support ability to set .Values.namespaceOverride by @tcaenen
+            * Bumpred dependencies
+          links:
+            - name: Argo Rollouts 2.40.2 Relese Notes
+              url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.40.2
+            - name: Argo Rollouts Full Change log
+              url: https://github.com/argoproj/argo-helm/compare/argo-rollouts-2.39.6...argo-rollouts-2.40.2
+    apiVersion: v2
+    created: "2025-07-29T11:02:29.913648329Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 5d65c5359182ecfea260e8bf6cd308ad9e2b17c79579ee39512093955aaba73b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.27.1/argo-apps-0.27.1.tgz
+    version: 0.27.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update Argo Rollouts from 1.7.2 to 1.8.3
           links:
             - name: Argo Rollouts 1.8 Announcement
@@ -31556,4 +31590,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-28T12:33:46.68481092Z"
+generated: "2025-07-29T11:02:29.916637033Z"
