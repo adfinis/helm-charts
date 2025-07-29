@@ -23,6 +23,11 @@ annotations:
       description: |
         feat: Update ArgoCd chart from 8.0.14 to 8.2.2
 
+        * Support ability to override .global.networkPolicy.create at the component level by @AswinT22
+        * document admin password via helm.values in Application CR by @miinsun in #3390
+        * Add support for custom deployment labels by @akolacz in #3349
+        * support trafficDistribution in argo repo service by @kewei5zhang in #3358
+        * Updated dependencies
       links:
         - name: Release Notes for 8.2.2
           url: https://github.com/argoproj/argo-helm/compare/argo-cd-8.2.1...argo-cd-8.2.2
