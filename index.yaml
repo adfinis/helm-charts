@@ -17302,6 +17302,47 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            feat: "feat!: Update opencost chart from 1.39.0 to 2.1.7"
+            * Add support for Pod Disruption Budget by @josephteddick in #287
+            * Add ability to configure resolution for prometheus by @Sean-Holcomb in #282
+            * Update opencost ui 1.115.0 image by @mittal-ishaan
+            * Bump OC to 1.115.0 by @mittal-ishaan in #277
+            * Promless Config by @Sean-Holcomb in #275
+            * Add support for API Ingress by @josephteddick
+            * Openshift Security Context Constraints and updated ClusterRole with access to internal prometheus. by @v0nNemizez
+            * Add opencost.ui.useIPv6 feature flag by @tintii
+            * Add clsuterName to support clusters with non-default names by @xirehat
+            * Improved openshift support
+          links:
+            - name: Release Notes for 2.1.7
+              url: https://github.com/opencost/opencost-helm-chart/releases/tag/opencost-2.1.7
+            - name: Full Change Log
+              url: https://github.com/opencost/opencost-helm-chart/compare/1.39.0-helm...opencost-2.1.7
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-07-29T12:52:58.193343401Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 12509c6468f241af75b4faff464dedf3a7570555ded3af78102af371913d77ab
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.50.0/misc-apps-0.50.0.tgz
+    version: 0.50.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "fix: pin version of prometheus-msteams component"
     apiVersion: v2
     created: "2025-06-25T11:58:22.785773203Z"
@@ -31590,4 +31631,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-29T11:02:29.916637033Z"
+generated: "2025-07-29T12:52:58.19627116Z"
