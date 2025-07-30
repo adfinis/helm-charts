@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.49.1
+version: 0.50.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,6 +15,23 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: "fix: pin version of prometheus-msteams component"
+      description: |
+        feat: "feat!: Update opencost chart from 1.39.0 to 2.1.7"
+        * Add support for Pod Disruption Budget by @josephteddick in #287
+        * Add ability to configure resolution for prometheus by @Sean-Holcomb in #282
+        * Update opencost ui 1.115.0 image by @mittal-ishaan
+        * Bump OC to 1.115.0 by @mittal-ishaan in #277
+        * Promless Config by @Sean-Holcomb in #275
+        * Add support for API Ingress by @josephteddick
+        * Openshift Security Context Constraints and updated ClusterRole with access to internal prometheus. by @v0nNemizez
+        * Add opencost.ui.useIPv6 feature flag by @tintii
+        * Add clsuterName to support clusters with non-default names by @xirehat
+        * Improved openshift support
+      links:
+        - name: Release Notes for 2.1.7
+          url: https://github.com/opencost/opencost-helm-chart/releases/tag/opencost-2.1.7
+        - name: Full Change Log
+          url: https://github.com/opencost/opencost-helm-chart/compare/1.39.0-helm...opencost-2.1.7
