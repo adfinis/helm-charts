@@ -5727,6 +5727,34 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat: Update cert-manager-issuers from 0.2.* to 0.3.0"
+          links:
+            - name: AWS PCA Change
+              url: https://github.com/adfinis/helm-charts/pull/1333
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-07-31T11:24:49.365509227Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 4854551aeb59067c4c1e154fedbdef14d5bce28369416655de22dd4509a5cbf4
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.241.0/infra-apps-0.241.0.tgz
+    version: 0.241.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat!: Update Velero chart from 8.1.0 to 10.0.8"
         - kind: changed
           description: |
@@ -31631,4 +31659,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-07-29T12:52:58.19627116Z"
+generated: "2025-07-31T11:24:49.367254089Z"
