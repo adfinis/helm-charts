@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.240.0](https://img.shields.io/badge/Version-0.240.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.241.0](https://img.shields.io/badge/Version-0.241.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -46,7 +46,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | certManagerIssuers.destination.namespace | string | `"infra-certmanager"` | Namespace |
 | certManagerIssuers.enabled | bool | `false` | Enable cert-manager-issuers app |
 | certManagerIssuers.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
-| certManagerIssuers.targetRevision | string | `"0.2.*"` | [cert-manager-issuers Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/cert-manager-issuers) version |
+| certManagerIssuers.targetRevision | string | `"0.3.0"` | [cert-manager-issuers Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/cert-manager-issuers) version |
 | certManagerIssuers.values | object | [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/cert-manager-issuers/values.yaml) | Helm values |
 | certManagerMonitoring | object | [example](./examples/cert-manager-monitoring.yaml) | [cert-manager-monitoring](https://cert-manager.io/docs/configuration/) |
 | certManagerMonitoring.annotations | object | `{}` | Annotations for cert-manager-monitoring app |

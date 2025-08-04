@@ -187,6 +187,11 @@ spec:
                 description: "In this section you can configure Keycloak features\
                   \ related to HTTP and HTTPS"
                 properties:
+                  annotations:
+                    additionalProperties:
+                      type: "string"
+                    description: "Annotations to be appended to the Service object"
+                    type: "object"
                   httpEnabled:
                     description: "Enables the HTTP listener."
                     type: "boolean"
@@ -196,6 +201,11 @@ spec:
                   httpsPort:
                     description: "The used HTTPS port."
                     type: "integer"
+                  labels:
+                    additionalProperties:
+                      type: "string"
+                    description: "Labels to be appended to the Service object"
+                    type: "object"
                   tlsSecret:
                     description: "A secret containing the TLS configuration for HTTPS.\
                       \ Reference: https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets."
@@ -240,6 +250,15 @@ spec:
               instances:
                 description: "Number of Keycloak instances. Default is 1."
                 type: "integer"
+              livenessProbe:
+                description: "Configuration for liveness probe, by default it is 10\
+                  \ for periodSeconds and 3 for failureThreshold"
+                properties:
+                  failureThreshold:
+                    type: "integer"
+                  periodSeconds:
+                    type: "integer"
+                type: "object"
               networkPolicy:
                 description: "Controls the ingress traffic flow into Keycloak pods."
                 properties:
@@ -440,6 +459,15 @@ spec:
                       \ server. Misconfiguration might leave the server exposed to\
                       \ security vulnerabilities."
                     type: "string"
+                type: "object"
+              readinessProbe:
+                description: "Configuration for readiness probe, by default it is\
+                  \ 10 for periodSeconds and 3 for failureThreshold"
+                properties:
+                  failureThreshold:
+                    type: "integer"
+                  periodSeconds:
+                    type: "integer"
                 type: "object"
               resources:
                 description: "Compute Resources required by Keycloak container"
@@ -863,6 +891,15 @@ spec:
                   \ the start command. If left unspecified the operator will assume\
                   \ custom images have already been augmented."
                 type: "boolean"
+              startupProbe:
+                description: "Configuration for startup probe, by default it is 1\
+                  \ for periodSeconds and 600 for failureThreshold"
+                properties:
+                  failureThreshold:
+                    type: "integer"
+                  periodSeconds:
+                    type: "integer"
+                type: "object"
               tracing:
                 description: "In this section you can configure OpenTelemetry Tracing\
                   \ for Keycloak."
