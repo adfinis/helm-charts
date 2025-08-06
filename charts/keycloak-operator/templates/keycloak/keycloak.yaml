@@ -113,7 +113,7 @@ spec:
     enabled: true
     {{- with .Values.keycloak.ingress.annotations }}
     annotations:
-      {{ . | nindent 6 }}
+      {{- . | toYaml | nindent 6 }}
     {{- end }}
     {{- with .Values.keycloak.ingress.className }}
     className: {{ . | quote }}

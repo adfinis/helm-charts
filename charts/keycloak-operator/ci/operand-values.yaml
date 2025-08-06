@@ -14,6 +14,9 @@ keycloak:
     hostname: keycloak.example.com
     strict: true
     backchannelDynamic: false
+  ingress:
+    annotations:
+      test: value
   realmimport:
     enabled: true
     realms:
