@@ -5727,6 +5727,34 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat: Update cert-manager from 1.18.1 to 1.18.2"
+          links:
+            - name: cert-manager 1.18.2
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.18.2
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-08-08T13:46:41.639703613Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 39df6d5f41452733927e377938dd0a186254b0befba503e70d00b33d4673ba5e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.242.0/infra-apps-0.242.0.tgz
+    version: 0.242.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Update cert-manager-issuers from 0.2.* to 0.3.0"
           links:
             - name: AWS PCA Change
@@ -31721,4 +31749,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-08T12:47:42.434238761Z"
+generated: "2025-08-08T13:46:41.641358716Z"
