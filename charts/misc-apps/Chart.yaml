@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.50.0
+version: 0.51.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,19 +19,16 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: "feat!: Update opencost chart from 1.39.0 to 2.1.7"
-        * Add support for Pod Disruption Budget by @josephteddick in #287
-        * Add ability to configure resolution for prometheus by @Sean-Holcomb in #282
-        * Update opencost ui 1.115.0 image by @mittal-ishaan
-        * Bump OC to 1.115.0 by @mittal-ishaan in #277
-        * Promless Config by @Sean-Holcomb in #275
-        * Add support for API Ingress by @josephteddick
-        * Openshift Security Context Constraints and updated ClusterRole with access to internal prometheus. by @v0nNemizez
-        * Add opencost.ui.useIPv6 feature flag by @tintii
-        * Add clsuterName to support clusters with non-default names by @xirehat
-        * Improved openshift support
+        feat: Update chartmuseum chart from 3.10.2 to 3.10.4
+
+        * Bump ChartMuseum from 0.16.1 to 0.16.3
+        * dependency bumps and security fixes
       links:
-        - name: Release Notes for 2.1.7
-          url: https://github.com/opencost/opencost-helm-chart/releases/tag/opencost-2.1.7
-        - name: Full Change Log
-          url: https://github.com/opencost/opencost-helm-chart/compare/1.39.0-helm...opencost-2.1.7
+        - name: Chart version 3.10.4
+          url: https://github.com/chartmuseum/charts/pull/73
+        - name: Chart version 3.10.3
+          url: https://github.com/chartmuseum/charts/pull/72
+        - name: Chartmuseum 0.16.2
+          url: https://github.com/helm/chartmuseum/releases/tag/v0.16.2
+        - name: Chartmuseum 0.16.3
+          url: https://github.com/helm/chartmuseum/releases/tag/v0.16.3
