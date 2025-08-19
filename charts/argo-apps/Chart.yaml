@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.27.1
+version: 0.27.2
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,13 +18,11 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update Argo Rollouts from 2.39.6 to 2.40.2
-        * Fix to render ingress's port properly by @yu-croco
-        * Replace "float64" with "int" to fix Helm 3.18 incompatibility by @tico24
-        * Support ability to set .Values.namespaceOverride by @tcaenen
+        Update Argo Rollouts from 2.40.2 to 2.40.3
+        * Support dnsConfig parameter by @nitinverma9
         * Bumpred dependencies
       links:
         - name: Argo Rollouts 2.40.2 Relese Notes
-          url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.40.2
+          url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.40.3
         - name: Argo Rollouts Full Change log
-          url: https://github.com/argoproj/argo-helm/compare/argo-rollouts-2.39.6...argo-rollouts-2.40.2
+          url: https://github.com/argoproj/argo-helm/compare/argo-rollouts-2.40.2...argo-rollouts-2.40.3
