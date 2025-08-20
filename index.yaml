@@ -22140,6 +22140,38 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Bump Kyverno from 1.4.4 to 1.5.1
+          links:
+            - name: Release 1.14.4 - Multiple fixes
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.14.4
+            - name: Release 1.15.0 - Supported mutatingpolicies, generatingpolicies and deletingpolicies
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.15.0
+            - name: 1.15.1 - Image change from Bitnami
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.15.1
+    apiVersion: v2
+    created: "2025-08-20T14:35:20.166058141Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 24601878edb802b1f4b934bdcfa41edc7cc499c0f243154a81ea27a53dce5bed
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.98.0/security-apps-0.98.0.tgz
+    version: 0.98.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: update Stackrox Helm chart from 400.6.2 to 400.8.0
           links:
             - name: Stackrox 4.8.0 Releasenotes
@@ -31777,4 +31809,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-09T19:55:49.168309159Z"
+generated: "2025-08-20T14:35:20.167386921Z"
