@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.97.0
+version: 0.98.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,9 +18,11 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: update Stackrox Helm chart from 400.6.2 to 400.8.0
+        chore: Bump Kyverno from 1.4.4 to 1.5.1
       links:
-        - name: Stackrox 4.8.0 Releasenotes
-          url: https://github.com/stackrox/stackrox/blob/master/CHANGELOG.md#480
-        - name: Stackrox 4.7.0 Releasenotes
-          url: https://github.com/stackrox/stackrox/blob/master/CHANGELOG.md#470
+        - name: Release 1.14.4 - Multiple fixes
+          url: https://github.com/kyverno/kyverno/releases/tag/v1.14.4
+        - name: Release 1.15.0 - Supported mutatingpolicies, generatingpolicies and deletingpolicies
+          url: https://github.com/kyverno/kyverno/releases/tag/v1.15.0
+        - name: 1.15.1 - Image change from Bitnami
+          url: https://github.com/kyverno/kyverno/releases/tag/v1.15.1
