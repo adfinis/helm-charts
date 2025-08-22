@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.243.0
+version: 0.247.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,6 +19,10 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update cert-manager-monitoring from 0.1.* to 0.2.0
+        chore: Update Velero chart from 10.0.8 to 10.1.0
 
-        * introduce critical severity for CertManagerCertExpirySoon alert
+        Updates Velero from 1.16.1 to 1.16.2
+
+      links:
+        - name: Release Notes for 1.16.2
+          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.16.2
