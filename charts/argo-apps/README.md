@@ -1,6 +1,6 @@
 # argo-apps
 
-![Version: 0.27.1](https://img.shields.io/badge/Version-0.27.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.27.2](https://img.shields.io/badge/Version-0.27.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for various argo project components
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argoRollouts.destination.namespace | string | `"infra-argo-rollouts"` | Namespace |
 | argoRollouts.enabled | bool | `false` | Enable Argo Rollouts |
 | argoRollouts.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argoRollouts.targetRevision | string | `"2.40.2"` | [argo-rollouts Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-rollouts) version |
+| argoRollouts.targetRevision | string | `"2.40.3"` | [argo-rollouts Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-rollouts) version |
 | argoRollouts.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-rollouts/values.yaml) | Helm values |
 | argoconfig.application.annotations | object | `{}` | Optional annotations to add to all Applications metadata. |
 
