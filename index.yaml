@@ -5728,6 +5728,38 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Update Velero chart from 10.0.8 to 10.1.0
+
+            Updates Velero from 1.16.1 to 1.16.2
+
+          links:
+            - name: Release Notes for 1.16.2
+              url: https://github.com/vmware-tanzu/velero/releases/tag/v1.16.2
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-08-22T14:15:46.201639734Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: a7dd55d65e9b699aa98e3e0b03b63033a8956ddcd331444f58dce3cbc517ea14
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.247.0/infra-apps-0.247.0.tgz
+    version: 0.247.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Update kube-prom-stack from 75.3.0 to 76.4.1
 
             - 73.x to 74.x:
@@ -31926,4 +31958,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-22T14:11:28.052013877Z"
+generated: "2025-08-22T14:15:46.204695007Z"
