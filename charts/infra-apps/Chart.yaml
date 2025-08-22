@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.243.0
+version: 0.244.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,6 +19,15 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update cert-manager-monitoring from 0.1.* to 0.2.0
+        chore: Update nginx-ingress from 1.12.3 to 1.13.1
 
-        * introduce critical severity for CertManagerCertExpirySoon alert
+        Contains several updates and security fixed to used dependencies.
+      links:
+        - name: Release Notes for 1.12.4
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.12.4
+        - name: Release Notes for 1.12.5
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.12.5
+        - name: Release Notes for 1.13.0
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.13.0
+        - name: Release Notes for 1.13.1
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.13.1
