@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.246.0
+version: 0.247.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,26 +19,10 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Update kube-prom-stack from 75.3.0 to 76.4.1
+        chore: Update Velero chart from 10.0.8 to 10.1.0
 
-        - 73.x to 74.x:
-          This version upgrades Prometheus-Operator to v0.84.1
-          Since [68.4.0](https://github.com/prometheus-community/helm-charts/pull/5175) it is also possible to use `crds.upgradeJob.enabled` for upgrading the CRDs.
-          For traditional upgrades, please run these commands to update the CRDs before applying the upgrade.
-
-          ```console
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.84.1/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.84.1/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.84.1/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.84.1/example/prometheus-operator-crd/monitoring.coreos.com_probes.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.84.1/example/prometheus-operator-crd/monitoring.coreos.com_prometheusagents.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.84.1/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.84.1/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.84.1/example/prometheus-operator-crd/monitoring.coreos.com_scrapeconfigs.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.84.1/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
-          kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.84.1/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml
-          ```
+        Updates Velero from 1.16.1 to 1.16.2
 
       links:
-        - name: Upgrade Guide
-          url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md
+        - name: Release Notes for 1.16.2
+          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.16.2
