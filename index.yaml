@@ -5,6 +5,38 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update Argo Rollouts from 2.40.2 to 2.40.3
+            * Support dnsConfig parameter by @nitinverma9
+            * Bumpred dependencies
+          links:
+            - name: Argo Rollouts 2.40.2 Relese Notes
+              url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.40.3
+            - name: Argo Rollouts Full Change log
+              url: https://github.com/argoproj/argo-helm/compare/argo-rollouts-2.40.2...argo-rollouts-2.40.3
+    apiVersion: v2
+    created: "2025-08-22T14:55:52.65659389Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 50769557b89e2431eba4ee4a3014c21f23c2b3f28df0feb86e47f27d744b7ccf
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.27.2/argo-apps-0.27.2.tgz
+    version: 0.27.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update Argo Rollouts from 2.39.6 to 2.40.2
             * Fix to render ingress's port properly by @yu-croco
             * Replace "float64" with "int" to fix Helm 3.18 incompatibility by @tico24
@@ -31958,4 +31990,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-22T14:15:46.204695007Z"
+generated: "2025-08-22T14:55:52.658373114Z"
