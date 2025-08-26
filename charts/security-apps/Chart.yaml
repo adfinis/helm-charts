@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.98.0
+version: 0.99.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,11 +18,99 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Bump Kyverno from 1.4.4 to 1.5.1
+        chore: Bump oauth-proxy chart from 7.9.0 to 8.2.0
+
+        includes updating oauth-proxy from 7.7.1 to 7.12.0
+
+        contains breaking changes to the chart regarding Bitnami (chart version 8.0.0 and above) see https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy#to-800---bitnami- for further information
       links:
-        - name: Release 1.14.4 - Multiple fixes
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.14.4
-        - name: Release 1.15.0 - Supported mutatingpolicies, generatingpolicies and deletingpolicies
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.15.0
-        - name: 1.15.1 - Image change from Bitnami
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.15.1
+        - name: oauth-proxy chart Release 7.10.0
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.10.0
+        - name: oauth-proxy chart Release 7.10.1
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.10.1
+        - name: oauth-proxy chart Release 7.10.2
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.10.2
+        - name: oauth-proxy chart Release 7.10.3
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.10.3
+        - name: oauth-proxy chart Release 7.10.4
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.10.4
+        - name: oauth-proxy chart Release 7.10.5
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.10.5
+        - name: oauth-proxy chart Release 7.11.0
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.11.0
+        - name: oauth-proxy chart Release 7.11.1
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.11.1
+        - name: oauth-proxy chart Release 7.11.2
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.11.2
+        - name: oauth-proxy chart Release 7.12.0
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.0
+        - name: oauth-proxy chart Release 7.12.1
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.1
+        - name: oauth-proxy chart Release 7.12.2
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.2
+        - name: oauth-proxy chart Release 7.12.3
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.3
+        - name: oauth-proxy chart Release 7.12.4
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.4
+        - name: oauth-proxy chart Release 7.12.5
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.5
+        - name: oauth-proxy chart Release 7.12.6
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.6
+        - name: oauth-proxy chart Release 7.12.7
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.7
+        - name: oauth-proxy chart Release 7.12.8
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.8
+        - name: oauth-proxy chart Release 7.12.9
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.9
+        - name: oauth-proxy chart Release 7.12.10
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.10
+        - name: oauth-proxy chart Release 7.12.11
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.11
+        - name: oauth-proxy chart Release 7.12.12
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.12
+        - name: oauth-proxy chart Release 7.12.13
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.13
+        - name: oauth-proxy chart Release 7.12.14
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.14
+        - name: oauth-proxy chart Release 7.12.15
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.15
+        - name: oauth-proxy chart Release 7.12.16
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.16
+        - name: oauth-proxy chart Release 7.12.17
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.17
+        - name: oauth-proxy chart Release 7.12.18
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.18
+        - name: oauth-proxy chart Release 7.12.19
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.19
+        - name: oauth-proxy chart Release 7.13.0
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.13.0
+        - name: oauth-proxy chart Release 7.13.1
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.13.1
+        - name: oauth-proxy chart Release 7.14.0
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.14.0
+        - name: oauth-proxy chart Release 7.14.1
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.14.1
+        - name: oauth-proxy chart Release 7.14.2
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.14.2
+        - name: oauth-proxy chart Release 7.15.0
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.15.0
+        - name: oauth-proxy chart Release 7.15.1
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.15.1
+        - name: oauth-proxy chart Release 7.16.0
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.16.0
+        - name: oauth-proxy chart Release 7.17.0
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.17.0
+        - name: oauth-proxy chart Release 7.17.1
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.17.1
+        - name: oauth-proxy chart Release 7.18.0
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.18.0
+        - name: oauth-proxy chart Release 8.0.0 - Breaking change
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.0.0
+        - name: oauth-proxy chart Release 8.0.1
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.0.1
+        - name: oauth-proxy chart Release 8.1.0
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.1.0
+        - name: oauth-proxy chart Release 8.1.1
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.1.1
+        - name: oauth-proxy chart Release 8.2.0
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.2.0
