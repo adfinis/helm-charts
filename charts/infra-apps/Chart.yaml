@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.247.0
+version: 0.248.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,10 +19,16 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Update Velero chart from 10.0.8 to 10.1.0
+        feat: Update argo-cd chart from 8.0.14 to 8.3.1
 
-        Updates Velero from 1.16.1 to 1.16.2
-
+        Argo CD v3.1 has been released, building upon the foundation of v3.0 with several new features.
+        This version introduces beta support for using OCI-compliant registries as a source for Kubernetes
+        manifests, alongside improvements to the manifest hydrator to better link code commits. The
+        release also stabilizes server-side apply and adds a new UI feature allowing users to scale
+        resources like Deployments directly from the interface. Additionally, the update brings support
+        for CLI plugins, numerous security and bug fixes, and updates dependencies like Go 1.24.4.
       links:
-        - name: Release Notes for 1.16.2
-          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.16.2
+        - name: Announcing Argo CD v3.1
+          url: https://blog.argoproj.io/announcing-argo-cd-v3-1-f4389bc783c8
+        - name: Argo CD Helm Chart Full Change Log
+          url: https://github.com/argoproj/argo-helm/compare/argo-cd-8.0.14...argo-cd-8.3.1
