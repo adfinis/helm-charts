@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.99.0
+version: 0.100.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,99 +18,19 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Bump oauth-proxy chart from 7.9.0 to 8.2.0
-
-        includes updating oauth-proxy from 7.7.1 to 7.12.0
-
-        contains breaking changes to the chart regarding Bitnami (chart version 8.0.0 and above) see https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy#to-800---bitnami- for further information
+        chore: Bump secretsStoreCsiDriver chart from 1.4.4 to 1.5.3
       links:
-        - name: oauth-proxy chart Release 7.10.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.10.0
-        - name: oauth-proxy chart Release 7.10.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.10.1
-        - name: oauth-proxy chart Release 7.10.2
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.10.2
-        - name: oauth-proxy chart Release 7.10.3
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.10.3
-        - name: oauth-proxy chart Release 7.10.4
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.10.4
-        - name: oauth-proxy chart Release 7.10.5
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.10.5
-        - name: oauth-proxy chart Release 7.11.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.11.0
-        - name: oauth-proxy chart Release 7.11.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.11.1
-        - name: oauth-proxy chart Release 7.11.2
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.11.2
-        - name: oauth-proxy chart Release 7.12.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.0
-        - name: oauth-proxy chart Release 7.12.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.1
-        - name: oauth-proxy chart Release 7.12.2
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.2
-        - name: oauth-proxy chart Release 7.12.3
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.3
-        - name: oauth-proxy chart Release 7.12.4
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.4
-        - name: oauth-proxy chart Release 7.12.5
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.5
-        - name: oauth-proxy chart Release 7.12.6
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.6
-        - name: oauth-proxy chart Release 7.12.7
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.7
-        - name: oauth-proxy chart Release 7.12.8
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.8
-        - name: oauth-proxy chart Release 7.12.9
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.9
-        - name: oauth-proxy chart Release 7.12.10
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.10
-        - name: oauth-proxy chart Release 7.12.11
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.11
-        - name: oauth-proxy chart Release 7.12.12
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.12
-        - name: oauth-proxy chart Release 7.12.13
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.13
-        - name: oauth-proxy chart Release 7.12.14
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.14
-        - name: oauth-proxy chart Release 7.12.15
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.15
-        - name: oauth-proxy chart Release 7.12.16
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.16
-        - name: oauth-proxy chart Release 7.12.17
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.17
-        - name: oauth-proxy chart Release 7.12.18
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.18
-        - name: oauth-proxy chart Release 7.12.19
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.12.19
-        - name: oauth-proxy chart Release 7.13.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.13.0
-        - name: oauth-proxy chart Release 7.13.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.13.1
-        - name: oauth-proxy chart Release 7.14.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.14.0
-        - name: oauth-proxy chart Release 7.14.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.14.1
-        - name: oauth-proxy chart Release 7.14.2
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.14.2
-        - name: oauth-proxy chart Release 7.15.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.15.0
-        - name: oauth-proxy chart Release 7.15.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.15.1
-        - name: oauth-proxy chart Release 7.16.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.16.0
-        - name: oauth-proxy chart Release 7.17.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.17.0
-        - name: oauth-proxy chart Release 7.17.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.17.1
-        - name: oauth-proxy chart Release 7.18.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-7.18.0
-        - name: oauth-proxy chart Release 8.0.0 - Breaking change
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.0.0
-        - name: oauth-proxy chart Release 8.0.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.0.1
-        - name: oauth-proxy chart Release 8.1.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.1.0
-        - name: oauth-proxy chart Release 8.1.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.1.1
-        - name: oauth-proxy chart Release 8.2.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.2.0
+        - name: "Added Windows LTSC2025 build support"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/pull/16759
+        - name: "Fixed SHA generation logic"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/pull/b0fdeb5
+        - name: "Security: bumped Go to 1.23.8 and 1.23.10 to address CVE-2025-22871 and CVE-2025-22874"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/pull/1789
+        - name: "Security: bumped kubectl in driver-crds to v1.29.4 to resolve CVE-2023-45288"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/pull/5747aa8
+        - name: "Security: bumped golang.org/x/net to v0.33.0 to fix CVE-2024-45338"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/pull/38e2bd2
+        - name: "Enhancement: bumped livenessprobe to v2.15.0 and node-driver-registrar to v2.13.0"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/pull/1813
+        - name: "Enhancement: multiple dependency and base image updates (debian-base, docker golang, others)"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.5.3
