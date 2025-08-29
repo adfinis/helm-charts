@@ -5760,6 +5760,44 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update argo-cd chart from 8.0.14 to 8.3.1
+
+            Argo CD v3.1 has been released, building upon the foundation of v3.0 with several new features.
+            This version introduces beta support for using OCI-compliant registries as a source for Kubernetes
+            manifests, alongside improvements to the manifest hydrator to better link code commits. The
+            release also stabilizes server-side apply and adds a new UI feature allowing users to scale
+            resources like Deployments directly from the interface. Additionally, the update brings support
+            for CLI plugins, numerous security and bug fixes, and updates dependencies like Go 1.24.4.
+          links:
+            - name: Announcing Argo CD v3.1
+              url: https://blog.argoproj.io/announcing-argo-cd-v3-1-f4389bc783c8
+            - name: Argo CD Helm Chart Full Change Log
+              url: https://github.com/argoproj/argo-helm/compare/argo-cd-8.0.14...argo-cd-8.3.1
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-08-29T16:08:29.793592683Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 724f6cd9d8dfb02ad87946ac70e36eaea1420313091982e0316395c9ecd6f6b9
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.248.0/infra-apps-0.248.0.tgz
+    version: 0.248.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Update Velero chart from 10.0.8 to 10.1.0
 
             Updates Velero from 1.16.1 to 1.16.2
@@ -32213,4 +32251,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-29T14:58:12.163349385Z"
+generated: "2025-08-29T16:08:29.795379806Z"
