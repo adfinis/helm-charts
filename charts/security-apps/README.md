@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.99.0](https://img.shields.io/badge/Version-0.99.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.100.0](https://img.shields.io/badge/Version-0.100.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -109,7 +109,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | secretsStoreCsiDriver.destination.namespace | string | `"infra-secrets-store-csi"` | Namespace |
 | secretsStoreCsiDriver.enabled | bool | `false` | Enable secrets-store-csi-driver |
 | secretsStoreCsiDriver.repoURL | string | [repo](https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts) | Repo URL |
-| secretsStoreCsiDriver.targetRevision | string | `"1.4.4"` | [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version |
+| secretsStoreCsiDriver.targetRevision | string | `"1.5.3"` | [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version |
 | secretsStoreCsiDriver.values | object | [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver/values.yaml) | Helm values |
 | stackroxCentralServices | object | - | [StackRox central-services](https://www.stackrox.io/) ([example/stackrox.yaml)) |
 | stackroxCentralServices.chart | string | `"stackrox-central-services"` | Chart |
