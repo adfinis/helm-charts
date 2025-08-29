@@ -17625,6 +17625,44 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update chartmuseum chart from 3.10.2 to 3.10.4
+
+            * Bump ChartMuseum from 0.16.1 to 0.16.3
+            * dependency bumps and security fixes
+          links:
+            - name: Chart version 3.10.4
+              url: https://github.com/chartmuseum/charts/pull/73
+            - name: Chart version 3.10.3
+              url: https://github.com/chartmuseum/charts/pull/72
+            - name: Chartmuseum 0.16.2
+              url: https://github.com/helm/chartmuseum/releases/tag/v0.16.2
+            - name: Chartmuseum 0.16.3
+              url: https://github.com/helm/chartmuseum/releases/tag/v0.16.3
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-08-29T14:58:12.16189837Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 6b7edb7a649ea76ab16e81a855f8c7b406d38ca0829823b674d46f7c3f1315ab
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.51.0/misc-apps-0.51.0.tgz
+    version: 0.51.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: "feat!: Update opencost chart from 1.39.0 to 2.1.7"
             * Add support for Pod Disruption Budget by @josephteddick in #287
             * Add ability to configure resolution for prometheus by @Sean-Holcomb in #282
@@ -32175,4 +32213,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-29T14:54:23.993541544Z"
+generated: "2025-08-29T14:58:12.163349385Z"
