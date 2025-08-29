@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.38.1
+version: 0.39.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,5 +17,25 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
+    - kind: changed
+      description: Removed tokengen job, kubectl dependency, and auto-creation of admin token secrets. Admin token secret must be created manually (#18803)
+    - kind: changed
+      description: Zone-aware ingester StatefulSets require manual deletion before upgrade. PVCs preserved (#18558)
+    - kind: added
+      description: Support separate Loki ruler storage configuration (#18510)
+    - kind: added
+      description: Expose all storage configuration properties (#18509)
+    - kind: added
+      description: Allow configuring service types (#18708)
+    - kind: added
+      description: Make access modes for PVCs/StatefulSets editable (#13474)
+    - kind: added
+      description: Allow enabling user namespaces (#18661)
+    - kind: added
+      description: Added configurable livenessProbe and startupProbe for multiple components (#18546, #18547, #18549, #18551, #18552)
     - kind: fixed
-      description: "fix: remove values from deprecated lokiStack installation"
+      description: Fixed websocket proxy headers to reduce high CPU usage. Users with custom configs must review (#18800)
+    - kind: fixed
+      description: Fixed missing S3 field in lokiStorageConfig (#18791)
+    - kind: fixed
+      description: Reverted Thanos object store config regression in ruler storage

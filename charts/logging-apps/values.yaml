@@ -18,7 +18,7 @@ loki:
   # -- Chart
   chart: "loki"
   # -- [loki Helm chart](https://github.com/grafana/loki/tree/main/production/helm/loki)
-  targetRevision: "6.32.0"
+  targetRevision: "6.38.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/loki/blob/main/production/helm/loki/values.yaml)
   values: {}
