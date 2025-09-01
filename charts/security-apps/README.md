@@ -45,7 +45,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | falco.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
 | falco.targetRevision | string | `"2.3.0"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version |
 | falco.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml) | Helm values |
-| falcoExporter | object | - | [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml)) |
+| falcoExporter | object | DEPRECATED | [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml)) is DEPRECATED, Starting from Falco version 0.38, Falco can expose Prometheus metrics directly. |
 | falcoExporter.chart | string | `"falco-exporter"` | Chart |
 | falcoExporter.destination.namespace | string | `"infra-falco"` | Namespace |
 | falcoExporter.enabled | bool | `false` | Enable falco-exporter |
