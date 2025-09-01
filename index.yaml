@@ -16230,6 +16230,88 @@ entries:
   logging-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: "chore: Update FluentBit from 0.46.11 to 0.52.0"
+          links:
+            - name: Release 0.52.0
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.52.0
+            - name: Release 0.51.0
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.51.0
+            - name: Release 0.50.0
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.50.0
+            - name: Release 0.49.1
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.49.1
+            - name: Release 0.49.0
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.49.0
+            - name: Release 0.48.10
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.48.10
+            - name: Release 0.48.9
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.48.9
+            - name: Release 0.48.8
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.48.8
+            - name: Release 0.48.7
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.48.7
+            - name: Release 0.48.6
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.48.6
+            - name: Release 0.48.5
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.48.5
+            - name: Release 0.48.4
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.48.4
+            - name: Release 0.48.3
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.48.3
+            - name: Release 0.48.2
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.48.2
+            - name: Release 0.48.1
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.48.1
+            - name: Release 0.48.0
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.48.0
+            - name: Release 0.47.11
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.47.11
+            - name: Release 0.47.10
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.47.10
+            - name: Release 0.47.9
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.47.9
+            - name: Release 0.47.8
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.47.8
+            - name: Release 0.47.7
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.47.7
+            - name: Release 0.47.6
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.47.6
+            - name: Release 0.47.5
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.47.5
+            - name: Release 0.47.4
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.47.4
+            - name: Release 0.47.3
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.47.3
+            - name: Release 0.47.2
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.47.2
+            - name: Release 0.47.1
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.47.1
+            - name: Release 0.47.0
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.47.0
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-09-01T14:04:42.977139682Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: 080f6be94c2f6ad5f067b2415da338d1f6d0635fdb53ebbd3f5927f0cba953d9
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.39.0/logging-apps-0.39.0.tgz
+    version: 0.39.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: fixed
           description: "fix: remove values from deprecated lokiStack installation"
       artifacthub.io/containsSecurityUpdates: "false"
@@ -32277,4 +32359,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-01T11:28:03.699688211Z"
+generated: "2025-09-01T14:04:42.978650833Z"
