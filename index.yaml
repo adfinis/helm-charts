@@ -22530,6 +22530,34 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Marked falco-exporter as deprecated
+          links:
+            - name: "Starting from Falco version 0.38, Falco can expose Prometheus metrics directly."
+              url: https://github.com/falcosecurity/falco-exporter
+    apiVersion: v2
+    created: "2025-09-01T14:54:58.873432998Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 13cf29303ef82d73960420cdf57c693a15ce79d6f0a71884958226f296895c18
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.101.1/security-apps-0.101.1.tgz
+    version: 0.101.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Update Neuvector and Neuvector monitor from 2.7.7 to 2.8.8
           links:
             - name: Release Notes for 2.8.8
@@ -32407,4 +32435,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-01T14:37:44.222053039Z"
+generated: "2025-09-01T14:54:58.875022452Z"
