@@ -22530,6 +22530,54 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Update Neuvector and Neuvector monitor from 2.7.7 to 2.8.8
+          links:
+            - name: Release Notes for 2.8.8
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.8
+            - name: Release Notes for 2.8.7
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.7
+            - name: Release Notes for 2.8.6
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.6
+            - name: Release Notes for 2.8.5
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.5
+            - name: Release Notes for 2.8.4
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.4
+            - name: Release Notes for 2.8.3
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.3
+            - name: Release Notes for 2.8.2
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.2
+            - name: Release 2.8.1
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/2.8.1
+            - name: Release Notes for 2.8.0
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.0
+            - name: Release Notes for 2.7.9
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.7.9
+            - name: Release Notes for 2.7.8
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.7.8
+    apiVersion: v2
+    created: "2025-09-01T14:37:44.219625098Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 352318795c1eb7f17fe341c641e6a0d57a5fe379e81bbeb59f13141a50e849f1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.101.0/security-apps-0.101.0.tgz
+    version: 0.101.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Bump secretsStoreCsiDriver chart from 1.4.4 to 1.5.3
           links:
             - name: "Added Windows LTSC2025 build support"
@@ -32359,4 +32407,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-01T14:04:42.978650833Z"
+generated: "2025-09-01T14:37:44.222053039Z"
