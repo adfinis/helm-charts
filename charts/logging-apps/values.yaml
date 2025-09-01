@@ -98,7 +98,7 @@ fluentBit:
   # -- Chart
   chart: "fluent-bit"
   # -- [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version
-  targetRevision: "0.46.11"
+  targetRevision: "0.52.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/values.yaml)
   values: {}
