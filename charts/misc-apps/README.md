@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.51.0](https://img.shields.io/badge/Version-0.51.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.52.0](https://img.shields.io/badge/Version-0.52.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -98,7 +98,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | reloader.repoURL | string | [repo](https://stakater.github.io/stakater-charts) | Repo URL |
 | reloader.targetRevision | string | `"v1.0.108"` | [reloader Helm chart](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader) version |
 | reloader.values | object | [upstream values](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader/values.yaml) | Helm values |
-| sentryKubernetes | object | - | [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml) |
+| sentryKubernetes | object | DEPRECATED | [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) is DEPRECATED, use other error reporting solutions instead # |
 | sentryKubernetes.chart | string | `"sentry-kubernetes"` | Chart |
 | sentryKubernetes.destination.namespace | string | `"infra-sentry-kubernetes"` | Namespace |
 | sentryKubernetes.enabled | bool | `false` | Enable sentry-kubernetes |

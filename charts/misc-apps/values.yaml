@@ -38,8 +38,9 @@ signalilo:
   # @default -- [upstream values](https://github.com/appuio/charts/blob/master/appuio/signalilo/values.yaml)
   values: {}
 
-# -- [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) ([example](./examples/sentry-kubernetes.yaml)
-# @default -- -
+# -- [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) is DEPRECATED, use other error reporting solutions instead
+##
+# @default -- DEPRECATED
 sentryKubernetes:
   # -- Enable sentry-kubernetes
   enabled: false
