@@ -17663,6 +17663,32 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: deprecate sentry-kubernetes in misc-apps
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-09-01T11:28:03.697023965Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: a3b1bbb9d22cf112eee3c3352cb9d09052615c694d5ce7e9a456b38ae69a6709
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.52.0/misc-apps-0.52.0.tgz
+    version: 0.52.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update chartmuseum chart from 3.10.2 to 3.10.4
 
             * Bump ChartMuseum from 0.16.1 to 0.16.3
@@ -32251,4 +32277,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-29T16:08:29.795379806Z"
+generated: "2025-09-01T11:28:03.699688211Z"
