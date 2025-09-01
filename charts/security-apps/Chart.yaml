@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.100.0
+version: 0.100.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,19 +18,7 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Bump secretsStoreCsiDriver chart from 1.4.4 to 1.5.3
+        chore: Marked falco-exporter as deprecated
       links:
-        - name: "Added Windows LTSC2025 build support"
-          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/pull/16759
-        - name: "Fixed SHA generation logic"
-          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/pull/b0fdeb5
-        - name: "Security: bumped Go to 1.23.8 and 1.23.10 to address CVE-2025-22871 and CVE-2025-22874"
-          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/pull/1789
-        - name: "Security: bumped kubectl in driver-crds to v1.29.4 to resolve CVE-2023-45288"
-          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/pull/5747aa8
-        - name: "Security: bumped golang.org/x/net to v0.33.0 to fix CVE-2024-45338"
-          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/pull/38e2bd2
-        - name: "Enhancement: bumped livenessprobe to v2.15.0 and node-driver-registrar to v2.13.0"
-          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/pull/1813
-        - name: "Enhancement: multiple dependency and base image updates (debian-base, docker golang, others)"
-          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.5.3
+        - name: "Starting from Falco version 0.38, Falco can expose Prometheus metrics directly."
+          url: https://github.com/falcosecurity/falco-exporter
