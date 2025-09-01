@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.51.0
+version: 0.52.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,16 +19,4 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update chartmuseum chart from 3.10.2 to 3.10.4
-
-        * Bump ChartMuseum from 0.16.1 to 0.16.3
-        * dependency bumps and security fixes
-      links:
-        - name: Chart version 3.10.4
-          url: https://github.com/chartmuseum/charts/pull/73
-        - name: Chart version 3.10.3
-          url: https://github.com/chartmuseum/charts/pull/72
-        - name: Chartmuseum 0.16.2
-          url: https://github.com/helm/chartmuseum/releases/tag/v0.16.2
-        - name: Chartmuseum 0.16.3
-          url: https://github.com/helm/chartmuseum/releases/tag/v0.16.3
+        chore: deprecate sentry-kubernetes in misc-apps
