@@ -106,8 +106,8 @@ falco:
   # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml)
   values: {}
 
-# -- [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml))
-# @default -- -
+# -- [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml)) is DEPRECATED, Starting from Falco version 0.38, Falco can expose Prometheus metrics directly.
+# @default -- DEPRECATED
 falcoExporter:
   # -- Enable falco-exporter
   enabled: false

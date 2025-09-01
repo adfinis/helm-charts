@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.101.0
+version: 0.101.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,27 +18,7 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Update Neuvector and Neuvector monitor from 2.7.7 to 2.8.8
+        chore: Marked falco-exporter as deprecated
       links:
-        - name: Release Notes for 2.8.8
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.8
-        - name: Release Notes for 2.8.7
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.7
-        - name: Release Notes for 2.8.6
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.6
-        - name: Release Notes for 2.8.5
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.5
-        - name: Release Notes for 2.8.4
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.4
-        - name: Release Notes for 2.8.3
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.3
-        - name: Release Notes for 2.8.2
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.2
-        - name: Release 2.8.1
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/2.8.1
-        - name: Release Notes for 2.8.0
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.0
-        - name: Release Notes for 2.7.9
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.7.9
-        - name: Release Notes for 2.7.8
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.7.8
+        - name: "Starting from Falco version 0.38, Falco can expose Prometheus metrics directly."
+          url: https://github.com/falcosecurity/falco-exporter
