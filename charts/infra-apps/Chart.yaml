@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.248.0
+version: 0.249.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,16 +19,12 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update argo-cd chart from 8.0.14 to 8.3.1
+        feat: Update mimir-distributed chart from 5.7.0 to 5.8.0
 
-        Argo CD v3.1 has been released, building upon the foundation of v3.0 with several new features.
-        This version introduces beta support for using OCI-compliant registries as a source for Kubernetes
-        manifests, alongside improvements to the manifest hydrator to better link code commits. The
-        release also stabilizes server-side apply and adds a new UI feature allowing users to scale
-        resources like Deployments directly from the interface. Additionally, the update brings support
-        for CLI plugins, numerous security and bug fixes, and updates dependencies like Go 1.24.4.
+        - Updates Mimir to 2.17.0
+        - Minor fixes in Helm Chart
       links:
-        - name: Announcing Argo CD v3.1
-          url: https://blog.argoproj.io/announcing-argo-cd-v3-1-f4389bc783c8
-        - name: Argo CD Helm Chart Full Change Log
-          url: https://github.com/argoproj/argo-helm/compare/argo-cd-8.0.14...argo-cd-8.3.1
+        - name: Helm Chart mimir-distributed 5.8.0 Changelog
+          url: https://github.com/grafana/mimir/blob/main/operations/helm/charts/mimir-distributed/CHANGELOG.md#580
+        - name: Mimir 2.17.0 Changelog
+          url: https://github.com/grafana/mimir/blob/main/CHANGELOG.md#2170
