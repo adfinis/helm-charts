@@ -5760,6 +5760,40 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update mimir-distributed chart from 5.7.0 to 5.8.0
+
+            - Updates Mimir to 2.17.0
+            - Minor fixes in Helm Chart
+          links:
+            - name: Helm Chart mimir-distributed 5.8.0 Changelog
+              url: https://github.com/grafana/mimir/blob/main/operations/helm/charts/mimir-distributed/CHANGELOG.md#580
+            - name: Mimir 2.17.0 Changelog
+              url: https://github.com/grafana/mimir/blob/main/CHANGELOG.md#2170
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-09-04T08:04:35.193055878Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 418e19a52494e0cb0f45f87f24f1cc1c3b7d61400731c4945071bcff96db97cc
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.249.0/infra-apps-0.249.0.tgz
+    version: 0.249.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update argo-cd chart from 8.0.14 to 8.3.1
 
             Argo CD v3.1 has been released, building upon the foundation of v3.0 with several new features.
@@ -32485,4 +32519,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-03T08:58:20.726992871Z"
+generated: "2025-09-04T08:04:35.194756657Z"
