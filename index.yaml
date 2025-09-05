@@ -26346,6 +26346,40 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Updated csiDriverSmb from 1.14.0 to 1.18.0"
+          links:
+            - name: v1.18.0 release
+              url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.18.0
+            - name: v1.17.0 release
+              url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.17.0
+            - name: v1.16.0 release
+              url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.16.0
+            - name: v1.15.0 release
+              url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.15.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-09-05T14:23:56.383133681Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for storage applications
+    digest: 9d0b5087d81cdc7af3a20711b9289c6231398f3675cef80622a0563190f458d9
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.18.0/storage-apps-0.18.0.tgz
+    version: 0.18.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update minio to 5.14.0"
           links:
             - name: Github release
@@ -32596,4 +32630,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-05T11:48:08.531273537Z"
+generated: "2025-09-05T14:23:56.384476918Z"
