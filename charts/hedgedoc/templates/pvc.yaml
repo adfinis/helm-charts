@@ -15,5 +15,7 @@ spec:
   resources:
     requests:
       storage: {{ default "10G" .Values.hedgedoc.persistentStorage.size | quote }}
+  {{ if .Values.hedgedoc.persistentStorage.storageClass }}
   storageClassName: {{ .Values.hedgedoc.persistentStorage.storageClass }}
+  {{ end }}
 {{- end }}
