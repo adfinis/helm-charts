@@ -30665,6 +30665,43 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Updating jaegerOperator Chart form 2.54.0 to 2.57.0
+            Includes upgrade jaeger from 1.57.0 to 1.61.0
+          links:
+            - name: Release of jaeger v1.58.0
+              url: https://github.com/jaegertracing/jaeger/releases/tag/v1.58.0
+            - name: Release of jaeger v1.58.1
+              url: https://github.com/jaegertracing/jaeger/releases/tag/v1.58.1
+            - name: Release of jaeger v1.59.0
+              url: https://github.com/jaegertracing/jaeger/releases/tag/v1.59.0
+            - name: Release of jaeger v1.60.0
+              url: https://github.com/jaegertracing/jaeger/releases/tag/v1.60.0
+            - name: Release of jaeger v1.61.0
+              url: https://github.com/jaegertracing/jaeger/releases/tag/v1.61.0
+    apiVersion: v2
+    created: "2025-09-05T11:48:08.529627502Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for tracing applications
+    digest: e730982e4c82f374fbfeba8526b4b61bfd7e7789ff1dc7e17854a40cc645edd9
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.32.1/tracing-apps-0.32.1.tgz
+    version: 0.32.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: update otel-collector chart from 0.127.0 to 0.127.2
 
             Include upgrading otel-colelctor from 0.121.0 to 0.127.0.
@@ -32559,4 +32596,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-05T08:05:19.009114018Z"
+generated: "2025-09-05T11:48:08.531273537Z"
