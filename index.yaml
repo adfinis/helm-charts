@@ -5758,6 +5758,46 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: fixed
+          description: |
+            feat: Update Argo CD from 3.1.1 to 3.1.3
+
+            - Fixes CVE-2025-55190
+            - Update Helm bundled deps
+          links:
+            - name: Argo CD 3.1.3 Release
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.1.3
+            - name: Argo CD 3.1.2 Release
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.1.2
+            - name: CVE-2025-55190
+              url: https://github.com/argoproj/argo-cd/security/advisories/GHSA-786q-9hcg-v9ff
+            - name: Update Dex to 2.44.0
+              url: https://github.com/argoproj/argo-helm/pull/3445
+            - name: Update Redis exporter to 1.76.0
+              url: https://github.com/argoproj/argo-helm/pull/3462
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-09-05T08:05:19.007007045Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: d0c86b97408e4ed7fdc24b4881a371c70fc868e189bd7796df2c5dd5cff725c6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.249.1/infra-apps-0.249.1.tgz
+    version: 0.249.1
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: |
             feat: Update mimir-distributed chart from 5.7.0 to 5.8.0
@@ -32519,4 +32559,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-04T08:04:35.194756657Z"
+generated: "2025-09-05T08:05:19.009114018Z"
