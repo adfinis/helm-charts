@@ -5409,6 +5409,35 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: Bumped hedgedoc image tag to 1.10.3
+      artifacthub.io/images: |
+        - name: hedgedoc
+          image: quay.io/hedgedoc/hedgedoc:1.10.3
+    apiVersion: v2
+    appVersion: 1.10.3
+    created: "2025-09-05T17:46:59.064478369Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ~12.2.1
+    description: Chart for HedgeDoc, a fork of CodiMD
+    digest: c802aeb8c3f52d1838aa0794ce45877d59c79d1ff88b80b37590752211bb60ca
+    icon: https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: hedgedoc
+    sources:
+    - https://github.com/hedgedoc/hedgedoc
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/hedgedoc-0.5.4/hedgedoc-0.5.4.tgz
+    version: 0.5.4
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: Bumped hedgedoc image tag to 1.10.2
       artifacthub.io/images: |
         - name: hedgedoc
@@ -32630,4 +32659,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-05T14:23:56.384476918Z"
+generated: "2025-09-05T17:46:59.065851408Z"
