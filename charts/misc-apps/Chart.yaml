@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.52.0
+version: 0.53.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,4 +19,22 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: deprecate sentry-kubernetes in misc-apps
+        chore: Updating reloader chart version from v1.0.108 to 2.2.2.
+        - Reloader can now trigger updates for kubernetes jobs and watch for changes in certificates.
+        - Added new annotations (`reloader.stakater.com/ignore`)
+        - Removed obsolete RBAC permissions
+      links:
+        - name: Reloader Chart v2.1.1 release
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.1.1
+        - name: Reloader Chart v2.1.2 release
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.1.2
+        - name: Reloader Chart v2.1.3 release
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.1.3
+        - name: Reloader Chart v2.1.4 release
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.1.4
+        - name: Reloader Chart v2.1.5 release
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.1.5
+        - name: Reloader Chart v2.2.0 release
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.0
+        - name: Reloader Chart v2.2.2 release
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.2
