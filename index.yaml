@@ -22658,6 +22658,36 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Updated kyverno-policies form 3.4.1 to 3.5.1 inline with the main kyverno Chart.
+            Changes:
+              - Removed the deprecated top-level field spec.validationFailureAction.
+              - Added the new per-rule field spec.validate[*].failureAction as its replacement. Please update your policies to use the new field.
+              - Added the spec.validate[*].allowExistingViolations field to policies, which allows existing resources to be exempt from validation rules.
+              - Fixed a bug in the merging logic for policyExclude customizations to prevent incorrect overrides.
+    apiVersion: v2
+    created: "2025-09-10T07:49:47.142774405Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 1b4626fc2ddba71f1bcf937be6c63f6122b280b5a6cb8c736c6f3f36a9f0b3d8
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.102.0/security-apps-0.102.0.tgz
+    version: 0.102.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Marked falco as deprecated since we no longer use it internally.
     apiVersion: v2
     created: "2025-09-02T12:04:05.206607781Z"
@@ -32659,4 +32689,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-05T17:46:59.065851408Z"
+generated: "2025-09-10T07:49:47.144463696Z"
