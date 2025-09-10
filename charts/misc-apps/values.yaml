@@ -9,11 +9,11 @@ downscaler:
     namespace: "infra-downscaler"
   # -- Repo URL
   # @default -- [repo](https://charts.deliveryhero.io)
-  repoURL: "https://charts.deliveryhero.io"
+  repoURL: "ghcr.io/deliveryhero/helm-charts"
   # -- Chart
   chart: "kube-downscaler"
   # -- [kube-downscaler Helm chart](https://github.com/deliveryhero/helm-charts/tree/master/stable/kube-downscaler) version
-  targetRevision: "0.7.4"
+  targetRevision: "0.7.6"
   # -- Helm values
   # @default -- [upstream values](https://github.com/deliveryhero/helm-charts/blob/master/stable/kube-downscaler/values.yaml)
   values: {}
