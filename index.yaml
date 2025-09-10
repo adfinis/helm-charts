@@ -17873,6 +17873,50 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Updating reloader chart version from v1.0.108 to 2.2.2.
+            - Reloader can now trigger updates for kubernetes jobs and watch for changes in certificates.
+            - Added new annotations (`reloader.stakater.com/ignore`)
+            - Removed obsolete RBAC permissions
+          links:
+            - name: Reloader Chart v2.1.1 release
+              url: https://github.com/stakater/Reloader/releases/tag/chart-v2.1.1
+            - name: Reloader Chart v2.1.2 release
+              url: https://github.com/stakater/Reloader/releases/tag/chart-v2.1.2
+            - name: Reloader Chart v2.1.3 release
+              url: https://github.com/stakater/Reloader/releases/tag/chart-v2.1.3
+            - name: Reloader Chart v2.1.4 release
+              url: https://github.com/stakater/Reloader/releases/tag/chart-v2.1.4
+            - name: Reloader Chart v2.1.5 release
+              url: https://github.com/stakater/Reloader/releases/tag/chart-v2.1.5
+            - name: Reloader Chart v2.2.0 release
+              url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.0
+            - name: Reloader Chart v2.2.2 release
+              url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.2
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-09-10T07:52:27.707604866Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 857e8f23a57c7567fa1b48e7342684dcf22b3cb217f4e2d767cd4852160006b1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.53.0/misc-apps-0.53.0.tgz
+    version: 0.53.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: deprecate sentry-kubernetes in misc-apps
       artifacthub.io/containsSecurityUpdates: "false"
     apiVersion: v2
@@ -32689,4 +32733,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-10T07:49:47.144463696Z"
+generated: "2025-09-10T07:52:27.709134595Z"
