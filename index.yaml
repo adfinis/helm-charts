@@ -17873,6 +17873,35 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Upgraded kube-downscaler chart form 0.7.4 to 0.7.6.
+          links:
+            - name: Only relevant commit
+              url: https://github.com/deliveryhero/helm-charts/commit/ad2432bb9f6b9603e4404ababf7b0f369fbd03e2#diff-94a002b449632b8e7e423195a83ae0e815b80cbbe36fb6929a4a303ac9488a1a
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-09-10T14:00:21.801488217Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: e0b49e4f2ddfb3f27338488ca13c236745a3729bc5f075772810f887f0f42c3b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.53.1/misc-apps-0.53.1.tgz
+    version: 0.53.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Updating reloader chart version from v1.0.108 to 2.2.2.
             - Reloader can now trigger updates for kubernetes jobs and watch for changes in certificates.
             - Added new annotations (`reloader.stakater.com/ignore`)
@@ -32733,4 +32762,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-10T07:52:27.709134595Z"
+generated: "2025-09-10T14:00:21.803191701Z"
