@@ -86,7 +86,7 @@ vault:
   # @default -- [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml)
   values: {}
 
-# -- [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml)) is DEPRECATED since we no longer use it internally.
+# -- [falco](https://github.com/falcosecurity/falco/) is DEPRECATED since we no longer use it internally and will be replaced by NeuVector or StackRox
 # @default -- DEPRECATED
 falco:
   # -- Enable falco

@@ -38,7 +38,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dexK8sAuthenticator.repoURL | string | [repo](https://github.com/mintel/dex-k8s-authenticator.git) | Repo URL |
 | dexK8sAuthenticator.targetRevision | string | `"v1.4.0"` | [dex-k8s-authenticator Helm chart](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/) version |
 | dexK8sAuthenticator.values | object | [upstream values](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/values.yaml) | Helm values |
-| falco | object | DEPRECATED | [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml)) is DEPRECATED since we no longer use it internally. |
+| falco | object | DEPRECATED | [falco](https://github.com/falcosecurity/falco/) is DEPRECATED since we no longer use it internally and will be replaced by NeuVector or StackRox |
 | falco.chart | string | `"falco"` | Chart |
 | falco.destination.namespace | string | `"infra-falco"` | Namespace |
 | falco.enabled | bool | `false` | Enable falco |
