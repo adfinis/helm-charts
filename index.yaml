@@ -5789,6 +5789,49 @@ entries:
       artifacthub.io/changes: |
         - kind: fixed
           description: |
+            feat: Update Kured from 5.5.2 to 5.10.0
+
+            - appVersion was bumped to 1.20.0
+            - allows for extra annotations for the kured ServiceAccount
+
+          links:
+            - name: Kured kured-5.10.0 Release
+              url: https://github.com/kubereboot/charts/releases/tag/kured-5.10.0
+            - name: Kured kured-5.9.0 Release
+              url: https://github.com/kubereboot/charts/releases/tag/kured-5.9.0
+            - name: Kured kured-5.8.0 Release
+              url: https://github.com/kubereboot/charts/releases/tag/kured-5.8.0
+            - name: Kured kured-5.6.2 Release
+              url: https://github.com/kubereboot/charts/releases/tag/kured-5.6.2
+            - name: Kured kured-5.6.1 Release
+              url: https://github.com/kubereboot/charts/releases/tag/kured-5.6.1
+            - name: Kured kured-5.6.0 Release
+              url: https://github.com/kubereboot/charts/releases/tag/kured-5.6.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-09-11T14:18:21.694217652Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 7bde632d0f04d0374c89b2d5b52db3322abb2efd51a4480bc96e71ca5aed530c
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.250.0/infra-apps-0.250.0.tgz
+    version: 0.250.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
+          description: |
             feat: Update Argo CD from 3.1.1 to 3.1.3
 
             - Fixes CVE-2025-55190
@@ -32762,4 +32805,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-10T14:00:21.803191701Z"
+generated: "2025-09-11T14:18:21.695943103Z"
