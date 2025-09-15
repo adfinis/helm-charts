@@ -17916,6 +17916,38 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Upgraded grafanaAgentOperator chart form 0.4.0 to 0.5.1.
+
+            Updated agent application to 0.44
+
+          links:
+            - name: Agent v0.44.3 Release
+              url: https://github.com/grafana/agent/releases/tag/v0.44.3
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-09-15T13:31:35.124780443Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 238d4a417ad280ca0236d6660c7be408f5ed2e1cf6b482f29692760e87905852
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.54.0/misc-apps-0.54.0.tgz
+    version: 0.54.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Upgraded kube-downscaler chart form 0.7.4 to 0.7.6.
           links:
             - name: Only relevant commit
@@ -32830,4 +32862,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-15T08:56:15.496086605Z"
+generated: "2025-09-15T13:31:35.127516603Z"
