@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.53.1
+version: 0.54.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,7 +19,10 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Upgraded kube-downscaler chart form 0.7.4 to 0.7.6.
+        chore: Upgraded grafanaAgentOperator chart form 0.4.0 to 0.5.1.
+
+        Updated agent application to 0.44
+
       links:
-        - name: Only relevant commit
-          url: https://github.com/deliveryhero/helm-charts/commit/ad2432bb9f6b9603e4404ababf7b0f369fbd03e2#diff-94a002b449632b8e7e423195a83ae0e815b80cbbe36fb6929a4a303ac9488a1a
+        - name: Agent v0.44.3 Release
+          url: https://github.com/grafana/agent/releases/tag/v0.44.3

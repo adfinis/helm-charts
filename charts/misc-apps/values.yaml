@@ -180,7 +180,7 @@ grafanaAgentOperator:
   # -- Chart
   chart: grafana-agent-operator
   # -- [Grafana Agent Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/agent-operator) version
-  targetRevision: 0.4.0
+  targetRevision: 0.5.1
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/agent-operator/values.yaml)
   values: {}
