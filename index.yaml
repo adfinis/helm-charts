@@ -22774,6 +22774,31 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore:  Marked gatekeeper as deprecated
+    apiVersion: v2
+    created: "2025-09-15T08:56:15.494528524Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 82842a981e9dca9118912a5fe0ed5d242ea0c4252163cde000c6f0c2a05f34b0
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.102.1/security-apps-0.102.1.tgz
+    version: 0.102.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Updated kyverno-policies form 3.4.1 to 3.5.1 inline with the main kyverno Chart.
             Changes:
               - Removed the deprecated top-level field spec.validationFailureAction.
@@ -32805,4 +32830,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-11T14:18:21.695943103Z"
+generated: "2025-09-15T08:56:15.496086605Z"
