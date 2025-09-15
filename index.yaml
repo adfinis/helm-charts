@@ -17916,6 +17916,40 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Upgraded metallb chart form 0.14.5 to 0.15.2.
+
+            - deprecated old annotation prefix metallb.universe.tf for the metallb.io prefix.
+            - switched to distroless images for improvement security
+            - improved BGP support
+
+          links:
+            - name: Release notes
+              url: https://metallb.universe.tf/release-notes/
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-09-15T14:15:06.921594837Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: f03807477dbc9ebcf7d715c14ca49cf9fc0807693d35f297300bd5ce1daa53e2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.55.0/misc-apps-0.55.0.tgz
+    version: 0.55.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Upgraded grafanaAgentOperator chart form 0.4.0 to 0.5.1.
 
             Updated agent application to 0.44
@@ -32862,4 +32896,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-15T13:31:35.127516603Z"
+generated: "2025-09-15T14:15:06.923120052Z"
