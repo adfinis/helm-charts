@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.102.0](https://img.shields.io/badge/Version-0.102.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.102.1](https://img.shields.io/badge/Version-0.102.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -38,7 +38,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dexK8sAuthenticator.repoURL | string | [repo](https://github.com/mintel/dex-k8s-authenticator.git) | Repo URL |
 | dexK8sAuthenticator.targetRevision | string | `"v1.4.0"` | [dex-k8s-authenticator Helm chart](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/) version |
 | dexK8sAuthenticator.values | object | [upstream values](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/values.yaml) | Helm values |
-| falco | object | - | [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml)) |
+| falco | object | DEPRECATED | [falco](https://github.com/falcosecurity/falco/) is DEPRECATED since we no longer use it internally and will be replaced by NeuVector or StackRox |
 | falco.chart | string | `"falco"` | Chart |
 | falco.destination.namespace | string | `"infra-falco"` | Namespace |
 | falco.enabled | bool | `false` | Enable falco |
@@ -59,7 +59,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | gangway.repoURL | string | [repo](https://gabibbo97.github.io/charts) | Repo URL |
 | gangway.targetRevision | string | `"1.1.*"` | [gangway Helm chart](https://github.com/gabibbo97/charts/tree/master/charts/gangway/) version |
 | gangway.values | object | [upstream values](https://github.com/gabibbo97/charts/tree/master/charts/gangway/values.yaml) | Helm values |
-| gatekeeper | object | - | [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml)) |
+| gatekeeper | object | DEPRECATED | [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml)) is DEPRECATED since we no longer use it internally. |
 | gatekeeper.chart | string | `"gatekeeper"` | Chart |
 | gatekeeper.destination.namespace | string | `"infra-gatekeeper"` | Namespace |
 | gatekeeper.enabled | bool | `false` | Enable gatekeeper |
