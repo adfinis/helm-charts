@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.54.0
+version: 0.55.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,10 +19,12 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Upgraded grafanaAgentOperator chart form 0.4.0 to 0.5.1.
+        chore: Upgraded metallb chart form 0.14.5 to 0.15.2.
 
-        Updated agent application to 0.44
+        - deprecated old annotation prefix metallb.universe.tf for the metallb.io prefix.
+        - switched to distroless images for improvement security
+        - improved BGP support
 
       links:
-        - name: Agent v0.44.3 Release
-          url: https://github.com/grafana/agent/releases/tag/v0.44.3
+        - name: Release notes
+          url: https://metallb.universe.tf/release-notes/
