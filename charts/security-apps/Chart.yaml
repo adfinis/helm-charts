@@ -19,6 +19,7 @@ annotations:
     - kind: changed
       description: |
         chore:  Updated dex chart version from 0.18.0 to 0.24.0
+        Note: May require a restart of the kubeapi server after upgrading.
 
         - Updated dec to 2.44.0
         - Fix Role not respecting namespaceOverride
