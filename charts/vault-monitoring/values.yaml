@@ -108,7 +108,7 @@ prometheusRules:
       expr: increase(vault_token_create_count[5m]) > 100
       for: 15m
       labels:
-        severity: critical
+        severity: warning
       annotations:
         summary: High frequency of created Vault token
         description: There has been an increased number of Vault token creation in the last 15 minutes
@@ -116,7 +116,7 @@ prometheusRules:
       expr: increase(vault_token_store_count[5m]) > 100
       for: 15m
       labels:
-        severity: critical
+        severity: warning
       annotations:
         summary: High frequency of stored Vault token
         description: There has been an increased number of Vault token storing in the last 15 minutes
