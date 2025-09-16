@@ -22840,6 +22840,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore:  Updated dex chart version from 0.18.0 to 0.24.0
+            Note: May require a restart of the kubeapi server after upgrading.
+
+            - Updated dec to 2.44.0
+            - Fix Role not respecting namespaceOverride
+            - Add release namespace to all resources
+            - loadBalancerIP` value to control the IP when using LoadBalancer service type
+
+          links:
+            - name: Full Changelog
+              url: https://github.com/dexidp/helm-charts/compare/dex-0.18.0...dex-0.24.0
+    apiVersion: v2
+    created: "2025-09-16T07:38:05.531783266Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 3a08a64ee49d2a039351143181c01fdce638d3c3f992e9257bf4cefbc090a4a4
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.103.0/security-apps-0.103.0.tgz
+    version: 0.103.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore:  Marked gatekeeper as deprecated
     apiVersion: v2
     created: "2025-09-15T08:56:15.494528524Z"
@@ -32896,4 +32931,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-15T14:15:06.923120052Z"
+generated: "2025-09-16T07:38:05.533246481Z"
