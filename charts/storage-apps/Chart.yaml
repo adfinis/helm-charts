@@ -27,5 +27,5 @@ annotations:
       - kernel and fuse mount options per cluster
 
       links:
-        - name: 3.11 Release Notes
-          url: https://hackmd.io/@rakshith-r/S1YlNVhBa?utm_source=preview-mode&utm_medium=rec#3110-release-notes
+        - name: "3.11 Release Notes"
+          url: "https://hackmd.io/@rakshith-r/S1YlNVhBa?utm_source=preview-mode&utm_medium=rec#3110-release-notes"
