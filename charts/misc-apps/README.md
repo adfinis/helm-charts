@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.55.0](https://img.shields.io/badge/Version-0.55.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.56.0](https://img.shields.io/badge/Version-0.56.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -51,7 +51,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | goldilocks.destination.namespace | string | `"infra-goldilocks"` | Namespace |
 | goldilocks.enabled | bool | `false` | Enable Goldilocks |
 | goldilocks.repoURL | string | [repo](https://charts.fairwinds.com/stable) | Repo URL |
-| goldilocks.targetRevision | string | `"9.0.1"` | [Goldilocks Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/goldilocks) |
+| goldilocks.targetRevision | string | `"10.1.0"` | [Goldilocks Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/goldilocks) |
 | goldilocks.values | object | [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/goldilocks/values.yaml) | Helm values |
 | grafanaAgentOperator | object | [example](./examples/grafana-agent.yaml) | [grafana-agent](https://grafana.github.io/helm-charts) |
 | grafanaAgentOperator.annotations | object | `{}` | Annotations for grafana-agent |
