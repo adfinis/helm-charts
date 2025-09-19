@@ -2,7 +2,7 @@ apiVersion: v2
 name: storage-apps
 description: Argo CD app-of-apps config for storage applications
 type: application
-version: 0.18.0
+version: 0.19.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,13 +18,20 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "Updated csiDriverSmb from 1.14.0 to 1.18.0"
+      description: "Updated cephCsiCephfs and cephCsiRbd charts to 3.15.0"
+      RBD
+      - deploy: support for read affinity options per cluster
+
+      CephFS
+
+      - cephfs: Add support to create RWX PVC from ROX PVC
+      - cephfs: enable read affinity
+      - deploy: support for read affinity options per cluster
+      - cephfS: kernel and fuse mount options per cluster
+
+
+
+
       links:
-        - name: v1.18.0 release
-          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.18.0
-        - name: v1.17.0 release
-          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.17.0
-        - name: v1.16.0 release
-          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.16.0
-        - name: v1.15.0 release
-          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.15.0
+        - name: 3.11 Release Notes
+          url: https://hackmd.io/@rakshith-r/S1YlNVhBa?utm_source=preview-mode&utm_medium=rec#3110-release-notes
