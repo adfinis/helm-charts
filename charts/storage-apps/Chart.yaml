@@ -15,17 +15,14 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      chore: "Updated cephCsiCephfs and cephCsiRbd charts to 3.15.0"
-
-      - support for read affinity options per cluster
-      - Add support to create RWX PVC from ROX PVC
-      - enable read affinity
-      - support for read affinity options per cluster
-      - kernel and fuse mount options per cluster
-
+      description: |
+        Updated cephCsiCephfs and cephCsiRbd charts to 3.15.0, including:
+          - Support for read affinity options per cluster
+          - Add support to create RWX PVC from ROX PVC
+          - Enable read affinity
+          - Kernel and fuse mount options per cluster
       links:
         - name: "3.11 Release Notes"
           url: "https://hackmd.io/@rakshith-r/S1YlNVhBa?utm_source=preview-mode&utm_medium=rec#3110-release-notes"
