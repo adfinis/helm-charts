@@ -19,7 +19,7 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Upgraded goldilocks chart form 10.1.0
+        chore: Upgraded goldilocks chart from 9.0.1 to 10.1.0
 
         - move the metrics-server sub-chart from bitnami to kubernetes-sigs
         - fixed insecure tls for metrics server
