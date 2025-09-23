@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.55.0
+version: 0.57.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,12 +19,26 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Upgraded metallb chart form 0.14.5 to 0.15.2.
+        chore: Upgraded Keda chart from 2.14.2 to 2.17.2
 
-        - deprecated old annotation prefix metallb.universe.tf for the metallb.io prefix.
-        - switched to distroless images for improvement security
-        - improved BGP support
+        - Bumped Keda to v2.17.0
+        - improved security with stricter RBAC
+        - improved reliability of cer Renewals
+        - added option to disable the creation of legacy Docker service links
+        - fixed service account token bug.
 
       links:
-        - name: Release notes
-          url: https://metallb.universe.tf/release-notes/
+        - name: v2.17.2 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.17.2
+        - name: v2.17.1 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.17.1
+        - name: v2.16.1 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.16.1
+        - name: v2.16.0 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.16.0
+        - name: v2.15.2 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.15.2
+        - name: v2.15.1 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.15.1
+        - name: v2.14.3 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.14.3
