@@ -17916,6 +17916,54 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Upgraded Keda chart from 2.14.2 to 2.17.2
+
+            - Bumped Keda to v2.17.0
+            - improved security with stricter RBAC
+            - improved reliability of cer Renewals
+            - added option to disable the creation of legacy Docker service links
+            - fixed service account token bug.
+
+          links:
+            - name: v2.17.2 release notes
+              url: https://github.com/kedacore/charts/releases/tag/v2.17.2
+            - name: v2.17.1 release notes
+              url: https://github.com/kedacore/charts/releases/tag/v2.17.1
+            - name: v2.16.1 release notes
+              url: https://github.com/kedacore/charts/releases/tag/v2.16.1
+            - name: v2.16.0 release notes
+              url: https://github.com/kedacore/charts/releases/tag/v2.16.0
+            - name: v2.15.2 release notes
+              url: https://github.com/kedacore/charts/releases/tag/v2.15.2
+            - name: v2.15.1 release notes
+              url: https://github.com/kedacore/charts/releases/tag/v2.15.1
+            - name: v2.14.3 release notes
+              url: https://github.com/kedacore/charts/releases/tag/v2.14.3
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-09-23T08:45:33.147509969Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: e1fd8af9141291f34515fdf358f8982206bb8d1dcbae6ddd494d4f1ca0770861
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.57.0/misc-apps-0.57.0.tgz
+    version: 0.57.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Upgraded goldilocks chart from 9.0.1 to 10.1.0
 
             - move the metrics-server sub-chart from bitnami to kubernetes-sigs
@@ -33007,4 +33055,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-23T08:00:35.396375029Z"
+generated: "2025-09-23T08:45:33.14891884Z"
