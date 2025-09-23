@@ -26731,6 +26731,65 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            Updated cephCsiCephfs and cephCsiRbd charts to 3.15.0, including:
+              - Replication server moved from main controller to CSI-Addons
+              - Added support for QoS parameters, like limits based on I/O capacity, read/write mix, and maximums.
+              - New method for SELinux labeling was introduce
+              - Can now create a ReadWriteMany (PVC) directly from a ReadOnlyMany
+              - Now supports using the ObjectMap data store within a RADOS namespace.
+          links:
+            - name: "3.15 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.15.0"
+            - name: "3.14.2 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.14.2"
+            - name: "3.14.1 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.14.1"
+            - name: "3.14 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.14.0"
+            - name: "3.13.1 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.13.1"
+            - name: "3.13 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.13.0"
+            - name: "3.12.3 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.12.3"
+            - name: "3.12.1 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.12.1"
+            - name: "3.12 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.12.0"
+            - name: "3.11 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.11.0"
+            - name: "3.10.2 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.10.2"
+            - name: "3.10.1 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.10.1"
+            - name: "3.10 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.10.0"
+            - name: "3.9 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.9.0"
+    apiVersion: v2
+    created: "2025-09-23T13:18:46.028881274Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for storage applications
+    digest: 8fb414d7a8585a78b1c8ddeeca2173caea4d1aabb42c960894f4d8d68660a6c3
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.19.0/storage-apps-0.19.0.tgz
+    version: 0.19.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Updated csiDriverSmb from 1.14.0 to 1.18.0"
           links:
             - name: v1.18.0 release
@@ -33055,4 +33114,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-23T08:45:33.14891884Z"
+generated: "2025-09-23T13:18:46.030610801Z"
