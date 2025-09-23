@@ -19,10 +19,37 @@ annotations:
     - kind: changed
       description: |
         Updated cephCsiCephfs and cephCsiRbd charts to 3.15.0, including:
-          - Support for read affinity options per cluster
-          - Add support to create RWX PVC from ROX PVC
-          - Enable read affinity
-          - Kernel and fuse mount options per cluster
+          - Replication server moved from main controller to CSI-Addons
+          - Added support for QoS parameters, like limits based on I/O capacity, read/write mix, and maximums.
+          - New method for SELinux labeling was introduce
+          - Can now create a ReadWriteMany (PVC) directly from a ReadOnlyMany
+          - Now supports using the ObjectMap data store within a RADOS namespace.
       links:
+        - name: "3.15 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.15.0"
+        - name: "3.14.2 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.14.2"
+        - name: "3.14.1 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.14.1"
+        - name: "3.14 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.14.0"
+        - name: "3.13.1 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.13.1"
+        - name: "3.13 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.13.0"
+        - name: "3.12.3 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.12.3"
+        - name: "3.12.1 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.12.1"
+        - name: "3.12 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.12.0"
         - name: "3.11 Release Notes"
-          url: "https://hackmd.io/@rakshith-r/S1YlNVhBa?utm_source=preview-mode&utm_medium=rec#3110-release-notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.11.0"
+        - name: "3.10.2 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.10.2"
+        - name: "3.10.1 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.10.1"
+        - name: "3.10 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.10.0"
+        - name: "3.9 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.9.0"
