@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.55.0
+version: 0.56.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,12 +19,14 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Upgraded metallb chart form 0.14.5 to 0.15.2.
+        chore: Upgraded goldilocks chart from 9.0.1 to 10.1.0
 
-        - deprecated old annotation prefix metallb.universe.tf for the metallb.io prefix.
-        - switched to distroless images for improvement security
-        - improved BGP support
+        - move the metrics-server sub-chart from bitnami to kubernetes-sigs
+        - fixed insecure tls for metrics server
+        - Added support for additional RBAC rules in dashboard-clusterrole.yaml.
+        - Implemented extra ClusterRoleBindings in dashboard-clusterrolebinding.yaml
+        - updated goldilocks to 4.14.1
 
       links:
-        - name: Release notes
-          url: https://metallb.universe.tf/release-notes/
+        - name: Chart Page with release notes
+          url: https://artifacthub.io/packages/helm/fairwinds-stable/goldilocks
