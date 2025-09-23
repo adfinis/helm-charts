@@ -158,7 +158,7 @@ keda:
   # -- Chart
   chart: keda
   # -- [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version
-  targetRevision: 2.14.2
+  targetRevision: 2.17.2
   # -- Helm values
   # @default -- [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml)
   values: {}
