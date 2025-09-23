@@ -31000,6 +31000,46 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Updating opentelemetry-collector Chart form to 0.134.0
+              - bump collector to version 0.135.0
+              - Adding runtimeClassName to pod spec
+              - Add missing Kubernetes recommended labels
+              - Kernel and fuse mount options per cluster
+          links:
+            - name: Release of opentelemetry-collector-0.134.0
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.134.0
+            - name:  opentelemetry-collector-0.133.1
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.133.1
+            - name: opentelemetry-collector-0.130.2
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.130.2
+            - name: Release of jaeger v1.60.0
+              url: https://github.com/jaegertracing/jaeger/releases/tag/v1.60.0
+            - name: Release of jaeger v1.61.0
+              url: https://github.com/jaegertracing/jaeger/releases/tag/v1.61.0
+    apiVersion: v2
+    created: "2025-09-23T07:39:54.595627835Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 960836c5c4c069f566d21b80e7a2ab1c7adb1c82ffc5b81b80bfafb843cc88bf
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-0.33.0/tracing-apps-0.33.0.tgz
+    version: 0.33.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Updating jaegerOperator Chart form 2.54.0 to 2.57.0
             Includes upgrade jaeger from 1.57.0 to 1.61.0
           links:
@@ -32931,4 +32971,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-16T07:38:05.533246481Z"
+generated: "2025-09-23T07:39:54.598623194Z"
