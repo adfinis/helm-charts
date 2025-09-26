@@ -31144,6 +31144,50 @@ entries:
         - kind: changed
           description: |
             chore: Updating opentelemetry-collector Chart form to 0.134.0
+              Breaking change
+              The loki exporter was removed in favor of the native otel exporter!
+
+              Other changes
+              - bump collector to version 0.135.0
+              - Adding runtimeClassName to pod spec
+              - Add missing Kubernetes recommended labels
+              - Kernel and fuse mount options per cluster
+          links:
+            - name: "Breaking Release:"
+              url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases
+            - name: "Migration Instructions:"
+              url: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/release/v0.130.x/exporter/lokiexporter/README.md#migration-instructions
+            - name: "Release of opentelemetry-collector-0.134.0"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.134.0
+            - name: "opentelemetry-collector-0.133.1"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.133.1
+            - name: "opentelemetry-collector-0.130.2"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.130.2
+    apiVersion: v2
+    created: "2025-09-26T11:10:38.267221084Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 6627d299243d54ea7d22bc8690c9f6164fd8dcd04317c4a55e00c618942d93c1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-1.0.0/tracing-apps-1.0.0.tgz
+    version: 1.0.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
+            chore: Updating opentelemetry-collector Chart form to 0.134.0
               - bump collector to version 0.135.0
               - Adding runtimeClassName to pod spec
               - Add missing Kubernetes recommended labels
@@ -33114,4 +33158,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-23T13:18:46.030610801Z"
+generated: "2025-09-26T11:10:38.268897967Z"
