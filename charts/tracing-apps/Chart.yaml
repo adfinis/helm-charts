@@ -28,13 +28,13 @@ annotations:
           - Add missing Kubernetes recommended labels
           - Kernel and fuse mount options per cluster
       links:
-        - name: Breaking Release:
+        - name: "Breaking Release:"
           url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases
-        - name: Migration Instructions:
+        - name: "Migration Instructions:"
           url: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/release/v0.130.x/exporter/lokiexporter/README.md#migration-instructions
-        - name: Release of opentelemetry-collector-0.134.0
+        - name: "Release of opentelemetry-collector-0.134.0"
           url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.134.0
-        - name:  opentelemetry-collector-0.133.1
+        - name: "opentelemetry-collector-0.133.1"
           url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.133.1
-        - name: opentelemetry-collector-0.130.2
+        - name: "opentelemetry-collector-0.130.2"
           url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.130.2
