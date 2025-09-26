@@ -19,10 +19,10 @@ annotations:
     - kind: changed
       description: |
         chore: Updating opentelemetry-collector Chart form to 0.134.0
-          Breaking change:
+          Breaking change
           The loki exporter was removed in favor of the native otel exporter!
 
-          Other changes:
+          Other changes
           - bump collector to version 0.135.0
           - Adding runtimeClassName to pod spec
           - Add missing Kubernetes recommended labels
