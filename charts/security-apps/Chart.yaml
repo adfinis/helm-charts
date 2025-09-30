@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.103.0
+version: 0.104.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,14 +18,9 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore:  Updated dex chart version from 0.18.0 to 0.24.0
-        Note: May require a restart of the kubeapi server after upgrading.
-
-        - Updated dec to 2.44.0
-        - Fix Role not respecting namespaceOverride
-        - Add release namespace to all resources
-        - loadBalancerIP` value to control the IP when using LoadBalancer service type
-
+        chore: Update VaultMonitoring from 0.4.2 to 0.6.0
       links:
-        - name: Full Changelog
-          url: https://github.com/dexidp/helm-charts/compare/dex-0.18.0...dex-0.24.0
+        - name: Release 0.6.0
+          url: https://github.com/adfinis/helm-charts/releases/tag/vault-monitoring-0.6.0
+        - name: Release 0.5.0
+          url: https://github.com/adfinis/helm-charts/releases/tag/vault-monitoring-0.5.0
