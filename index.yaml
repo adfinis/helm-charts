@@ -16402,6 +16402,53 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            Breaking change
+            Removed tokengen job, kubectl dependency, and auto-creation of admin token secrets. Admin token secret must be created manually (#18803)
+        - kind: changed
+          description: Zone-aware ingester StatefulSets require manual deletion before upgrade. PVCs preserved (#18558)
+        - kind: added
+          description: Support separate Loki ruler storage configuration (#18510)
+        - kind: added
+          description: Expose all storage configuration properties (#18509)
+        - kind: added
+          description: Allow configuring service types (#18708)
+        - kind: added
+          description: Make access modes for PVCs/StatefulSets editable (#13474)
+        - kind: added
+          description: Allow enabling user namespaces (#18661)
+        - kind: added
+          description: Added configurable livenessProbe and startupProbe for multiple components (#18546, #18547, #18549, #18551, #18552)
+        - kind: fixed
+          description: Fixed websocket proxy headers to reduce high CPU usage. Users with custom configs must review (#18800)
+        - kind: fixed
+          description: Fixed missing S3 field in lokiStorageConfig (#18791)
+        - kind: fixed
+          description: Reverted Thanos object store config regression in ruler storage
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-09-30T08:58:03.321290224Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: 83b0c858f08d7667132f06a8311fabcca72dea607194598b33997ec4a1be0f4e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.40.0/logging-apps-0.40.0.tgz
+    version: 0.40.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "chore: Update FluentBit from 0.46.11 to 0.52.0"
           links:
             - name: Release 0.52.0
@@ -33158,4 +33205,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-26T11:10:38.268897967Z"
+generated: "2025-09-30T08:58:03.323977909Z"
