@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.247.0](https://img.shields.io/badge/Version-0.247.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.250.0](https://img.shields.io/badge/Version-0.250.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocd.destination.namespace | string | `"infra-argocd"` | Namespace |
 | argocd.enabled | bool | `false` | Enable Argo CD |
 | argocd.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocd.targetRevision | string | `"8.0.14"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
+| argocd.targetRevision | string | `"8.3.4"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
 | argocd.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml) | Helm values |
 | argoconfig.application.annotations | object | `{}` | Optional annotations to add to all Applications metadata. |
 | certManager | object | [example](./examples/cert-manager.yaml) | [cert-manager](https://cert-manager.io/) |
@@ -80,7 +80,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kured.destination.namespace | string | `"infra-kured"` | Namespace |
 | kured.enabled | bool | `false` | Enable Kured |
 | kured.repoURL | string | [repo](https://kubereboot.github.io/charts) | Repo URL |
-| kured.targetRevision | string | `"5.5.2"` | [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured) |
+| kured.targetRevision | string | `"5.10.0"` | [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured) |
 | kured.values | object | [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml) | Helm values |
 | mimir | object | [example](./examples/mimir.yaml) | [mimir](https://github.com/grafana/mimir) |
 | mimir.annotations | object | `{}` | Annotations for mimir app |
@@ -88,7 +88,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | mimir.destination.namespace | string | `"infra-mimir"` | Namespace |
 | mimir.enabled | bool | `false` | Enable mimir |
 | mimir.repoURL | string | [repo](https://grafana.github.io/helm-charts) | Repo URL |
-| mimir.targetRevision | string | `"5.7.0"` | [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed) |
+| mimir.targetRevision | string | `"5.8.0"` | [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed) |
 | mimir.values | object | [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml) | Helm values |
 | rbacManager | object | [example](./examples/rbac-manager.yaml) | [rbac-manager](https://fairwindsops.github.io/rbac-manager/) |
 | rbacManager.annotations | object | `{}` | Annotations for rbac-manager app |

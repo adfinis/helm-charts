@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.100.0](https://img.shields.io/badge/Version-0.100.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.103.0](https://img.shields.io/badge/Version-0.103.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dex.destination.namespace | string | `"infra-dex"` | Namespace |
 | dex.enabled | bool | `false` | Enable dex |
 | dex.repoURL | string | [repo](https://charts.dexidp.io) | Repo URL |
-| dex.targetRevision | string | `"0.18.0"` | [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version |
+| dex.targetRevision | string | `"0.24.0"` | [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version |
 | dex.values | object | [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml) | Helm values |
 | dexK8sAuthenticator | object | - | [dex-k8s-authenticator](https://github.com/mintel/dex-k8s-authenticator) ([example](./examples/dex-k8s-authenticator.yaml)) |
 | dexK8sAuthenticator.chart | string | `"dexK8sAuthenticator"` | Chart |
@@ -38,14 +38,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dexK8sAuthenticator.repoURL | string | [repo](https://github.com/mintel/dex-k8s-authenticator.git) | Repo URL |
 | dexK8sAuthenticator.targetRevision | string | `"v1.4.0"` | [dex-k8s-authenticator Helm chart](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/) version |
 | dexK8sAuthenticator.values | object | [upstream values](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/values.yaml) | Helm values |
-| falco | object | - | [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml)) |
+| falco | object | DEPRECATED | [falco](https://github.com/falcosecurity/falco/) is DEPRECATED since we no longer use it internally and will be replaced by NeuVector or StackRox |
 | falco.chart | string | `"falco"` | Chart |
 | falco.destination.namespace | string | `"infra-falco"` | Namespace |
 | falco.enabled | bool | `false` | Enable falco |
 | falco.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
 | falco.targetRevision | string | `"2.3.0"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version |
 | falco.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml) | Helm values |
-| falcoExporter | object | - | [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml)) |
+| falcoExporter | object | DEPRECATED | [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml)) is DEPRECATED, Starting from Falco version 0.38, Falco can expose Prometheus metrics directly. |
 | falcoExporter.chart | string | `"falco-exporter"` | Chart |
 | falcoExporter.destination.namespace | string | `"infra-falco"` | Namespace |
 | falcoExporter.enabled | bool | `false` | Enable falco-exporter |
@@ -59,7 +59,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | gangway.repoURL | string | [repo](https://gabibbo97.github.io/charts) | Repo URL |
 | gangway.targetRevision | string | `"1.1.*"` | [gangway Helm chart](https://github.com/gabibbo97/charts/tree/master/charts/gangway/) version |
 | gangway.values | object | [upstream values](https://github.com/gabibbo97/charts/tree/master/charts/gangway/values.yaml) | Helm values |
-| gatekeeper | object | - | [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml)) |
+| gatekeeper | object | DEPRECATED | [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml)) is DEPRECATED since we no longer use it internally. |
 | gatekeeper.chart | string | `"gatekeeper"` | Chart |
 | gatekeeper.destination.namespace | string | `"infra-gatekeeper"` | Namespace |
 | gatekeeper.enabled | bool | `false` | Enable gatekeeper |
@@ -80,21 +80,21 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kyvernoPolicies.destination.namespace | string | `"infra-kyverno"` | Namespace |
 | kyvernoPolicies.enabled | bool | `false` | Enable kyverno-policies |
 | kyvernoPolicies.repoURL | string | [repo](https://kyverno.github.io/kyverno/) | Repo URL |
-| kyvernoPolicies.targetRevision | string | `"3.4.1"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies) |
+| kyvernoPolicies.targetRevision | string | `"3.5.1"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies) |
 | kyvernoPolicies.values | object | [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno-policies/values.yaml) | Helm values |
 | neuvector | object | - | [NeuVector](https://github.com/neuvector/neuvector) ([example](./example/neuvector.yaml)) |
 | neuvector.chart | string | `"core"` | Chart |
 | neuvector.destination.namespace | string | `"infra-neuvector"` | Namespace |
 | neuvector.enabled | bool | `false` | Enable neuvector |
 | neuvector.repoURL | string | [repo](https://neuvector.github.io/neuvector-helm) | Repo URL |
-| neuvector.targetRevision | string | `"2.7.7"` | [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version |
+| neuvector.targetRevision | string | `"2.8.8"` | [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version |
 | neuvector.values | object | [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/core/values.yaml) | Helm values |
 | neuvectorMonitor | object | - | [NeuVector monitor](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) ([example](./example/neuvector.yaml)) |
 | neuvectorMonitor.chart | string | `"monitor"` | Chart |
 | neuvectorMonitor.destination.namespace | string | `"infra-neuvector"` | Namespace |
 | neuvectorMonitor.enabled | bool | `false` | Enable neuvector/monitor |
 | neuvectorMonitor.repoURL | string | [repo](https://neuvector.github.io/neuvector-helm) | Repo URL |
-| neuvectorMonitor.targetRevision | string | `"2.7.7"` | [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version |
+| neuvectorMonitor.targetRevision | string | `"2.8.8"` | [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version |
 | neuvectorMonitor.values | object | [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/monitor/values.yaml) | Helm values |
 | oauth2Proxy | object | [example](./examples/oauth2-proxy.yaml) | [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) |
 | oauth2Proxy.annotations | object | `{}` | Annotations for oauth2-proxy app |

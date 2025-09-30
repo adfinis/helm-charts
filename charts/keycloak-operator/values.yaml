@@ -216,7 +216,7 @@ keycloak:
     enabled: true
 
     # -- Annotations for the Ingress
-    annotations: []
+    annotations: {}
 
     # -- Ingress class name
     className: ""

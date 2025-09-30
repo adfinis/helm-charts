@@ -13,7 +13,7 @@ cephCsiRbd:
   # -- Chart
   chart: "ceph-csi-rbd"
   # -- [ceph-csi-rbd Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/rbd) version
-  targetRevision: "3.8.0"
+  targetRevision: "3.15.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/rbd/ceph-csi-rbd/values.yaml)
   values: {}
@@ -33,7 +33,7 @@ cephCsiCephfs:
   # -- Chart
   chart: "ceph-csi-cephfs"
   # -- [ceph-csi-cephfs Helm chart](https://github.com/ceph/csi-charts/tree/master/docs/cephfs) version
-  targetRevision: "3.8.0"
+  targetRevision: "3.15.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/ceph/csi-charts/tree/master/docs/cephfs/ceph-csi-cephfs/values.yaml)
   values: {}
@@ -53,7 +53,7 @@ csiDriverSmb:
   # -- Chart
   chart: "csi-driver-smb"
   # -- [csi-driver-smb Helm chart](https://github.com/kubernetes-csi/csi-driver-smb/tree/master/charts) version
-  targetRevision: "1.14.0"
+  targetRevision: "1.18.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes-csi/csi-driver-smb/blob/master/charts/latest/csi-driver-smb/values.yaml)
   values: {}

@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.51.0
+version: 0.57.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,16 +19,26 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update chartmuseum chart from 3.10.2 to 3.10.4
+        chore: Upgraded Keda chart from 2.14.2 to 2.17.2
 
-        * Bump ChartMuseum from 0.16.1 to 0.16.3
-        * dependency bumps and security fixes
+        - Bumped Keda to v2.17.0
+        - improved security with stricter RBAC
+        - improved reliability of cer Renewals
+        - added option to disable the creation of legacy Docker service links
+        - fixed service account token bug.
+
       links:
-        - name: Chart version 3.10.4
-          url: https://github.com/chartmuseum/charts/pull/73
-        - name: Chart version 3.10.3
-          url: https://github.com/chartmuseum/charts/pull/72
-        - name: Chartmuseum 0.16.2
-          url: https://github.com/helm/chartmuseum/releases/tag/v0.16.2
-        - name: Chartmuseum 0.16.3
-          url: https://github.com/helm/chartmuseum/releases/tag/v0.16.3
+        - name: v2.17.2 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.17.2
+        - name: v2.17.1 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.17.1
+        - name: v2.16.1 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.16.1
+        - name: v2.16.0 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.16.0
+        - name: v2.15.2 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.15.2
+        - name: v2.15.1 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.15.1
+        - name: v2.14.3 release notes
+          url: https://github.com/kedacore/charts/releases/tag/v2.14.3

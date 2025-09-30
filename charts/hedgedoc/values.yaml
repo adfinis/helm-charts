@@ -105,7 +105,7 @@ hedgedoc:
       - ReadWriteOnce
     volumeMode: Filesystem
     size: "10G"
-    storageClass: "default"
+    storageClass: ""
   # -- Port for the pod
   port: 3000
   # -- Environment variables for Hedgedoc
@@ -214,6 +214,8 @@ hedgedoc:
     # CMD_SAML_ATTRIBUTE_USERNAME: ""
     # CMD_SAML_ATTRIBUTE_EMAIL: ""
     # CMD_SAML_PROVIDERNAME: ""
+    # CMD_SAML_WANT_ASSERTIONS_SIGNED: ""
+    # CMD_SAML_WANT_AUTHN_RESPONSE_SIGNED: ""
     ## Twitter Login
     # CMD_TWITTER_CONSUMERKEY: ""
     # CMD_TWITTER_CONSUMERSECRET: ""
@@ -222,7 +224,7 @@ hedgedoc:
     # CMD_S3_SECRET_ACCESS_KEY: ""
     # CMD_S3_REGION: ""
     # CMD_S3_BUCKET: ""
-    # CMD_S3_ENDPOINT ENV: ""
+    # CMD_S3_ENDPOINT: ""
     # CMD_S3_FOLDER: ""
     # CMD_S3_PUBLIC_FILES: ""
     ## Azure Blob Storage

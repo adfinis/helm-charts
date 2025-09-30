@@ -2,7 +2,7 @@ apiVersion: v2
 name: storage-apps
 description: Argo CD app-of-apps config for storage applications
 type: application
-version: 0.17.0
+version: 0.19.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,28 +15,41 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
-      description: "update minio to 5.14.0"
+      description: |
+        Updated cephCsiCephfs and cephCsiRbd charts to 3.15.0, including:
+          - Replication server moved from main controller to CSI-Addons
+          - Added support for QoS parameters, like limits based on I/O capacity, read/write mix, and maximums.
+          - New method for SELinux labeling was introduce
+          - Can now create a ReadWriteMany (PVC) directly from a ReadOnlyMany
+          - Now supports using the ObjectMap data store within a RADOS namespace.
       links:
-        - name: Github release
-          url: https://github.com/minio/minio/releases/tag/RELEASE.2024-12-18T13-15-44Z
-        - name: Github release
-          url: https://github.com/minio/minio/releases/tag/RELEASE.2024-12-13T22-19-12Z
-        - name: Github release
-          url: https://github.com/minio/minio/releases/tag/RELEASE.2024-11-07T00-52-20Z
-        - name: Github release
-          url: https://github.com/minio/minio/releases/tag/RELEASE.2024-07-16T23-46-41Z
-        - name: Github release
-          url: https://github.com/minio/minio/releases/tag/RELEASE.2024-07-15T19-02-30Z
-        - name: Github release
-          url: https://github.com/minio/minio/releases/tag/RELEASE.2024-07-13T01-46-15Z
-        - name: Github release
-          url: https://github.com/minio/minio/releases/tag/RELEASE.2024-01-31T20-20-33Z
-        - name: Github release
-          url: https://github.com/minio/minio/releases/tag/RELEASE.2024-01-01T16-36-33Z
-        - name: Github release
-          url: https://github.com/minio/minio/releases/tag/RELEASE.2023-12-09T18-17-51Z
-        - name: Github release
-          url: https://github.com/minio/minio/releases/tag/RELEASE.2023-12-02T10-51-33Z
+        - name: "3.15 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.15.0"
+        - name: "3.14.2 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.14.2"
+        - name: "3.14.1 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.14.1"
+        - name: "3.14 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.14.0"
+        - name: "3.13.1 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.13.1"
+        - name: "3.13 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.13.0"
+        - name: "3.12.3 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.12.3"
+        - name: "3.12.1 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.12.1"
+        - name: "3.12 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.12.0"
+        - name: "3.11 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.11.0"
+        - name: "3.10.2 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.10.2"
+        - name: "3.10.1 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.10.1"
+        - name: "3.10 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.10.0"
+        - name: "3.9 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.9.0"

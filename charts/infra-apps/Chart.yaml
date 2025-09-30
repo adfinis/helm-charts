@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.247.0
+version: 0.250.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,12 +17,23 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
-    - kind: changed
+    - kind: fixed
       description: |
-        chore: Update Velero chart from 10.0.8 to 10.1.0
+        feat: Update Kured from 5.5.2 to 5.10.0
 
-        Updates Velero from 1.16.1 to 1.16.2
+        - appVersion was bumped to 1.20.0
+        - allows for extra annotations for the kured ServiceAccount
 
       links:
-        - name: Release Notes for 1.16.2
-          url: https://github.com/vmware-tanzu/velero/releases/tag/v1.16.2
+        - name: Kured kured-5.10.0 Release
+          url: https://github.com/kubereboot/charts/releases/tag/kured-5.10.0
+        - name: Kured kured-5.9.0 Release
+          url: https://github.com/kubereboot/charts/releases/tag/kured-5.9.0
+        - name: Kured kured-5.8.0 Release
+          url: https://github.com/kubereboot/charts/releases/tag/kured-5.8.0
+        - name: Kured kured-5.6.2 Release
+          url: https://github.com/kubereboot/charts/releases/tag/kured-5.6.2
+        - name: Kured kured-5.6.1 Release
+          url: https://github.com/kubereboot/charts/releases/tag/kured-5.6.1
+        - name: Kured kured-5.6.0 Release
+          url: https://github.com/kubereboot/charts/releases/tag/kured-5.6.0
