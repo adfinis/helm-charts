@@ -49,7 +49,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | loki.destination.namespace | string | `"infra-logging"` | Namespace |
 | loki.enabled | bool | `false` | Enable loki |
 | loki.repoURL | string | [repo](https://grafana.github.io/helm-charts) | Repo URL |
-| loki.targetRevision | string | `"6.38.0"` | [loki Helm chart](https://github.com/grafana/loki/tree/main/production/helm/loki) |
+| loki.targetRevision | string | `"6.41.1"` | [loki Helm chart](https://github.com/grafana/loki/tree/main/production/helm/loki) |
 | loki.values | object | [upstream values](https://github.com/grafana/loki/blob/main/production/helm/loki/values.yaml) | Helm values |
 | lokiStack | object | DEPRECATED | [loki-stack](https://github.com/grafana/loki) is DEPREACTED use `loki` and `promtail` individually |
 | promtail | object | - | [Grafana Loki promtail](https://grafana.com/docs/loki/latest/send-data/promtail/) ([example](./examples/promtail.yaml)) |
