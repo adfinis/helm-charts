@@ -18,7 +18,9 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
-      description: Removed tokengen job, kubectl dependency, and auto-creation of admin token secrets. Admin token secret must be created manually (#18803)
+      description: |
+        Breaking change
+        Removed tokengen job, kubectl dependency, and auto-creation of admin token secrets. Admin token secret must be created manually (#18803)
     - kind: changed
       description: Zone-aware ingester StatefulSets require manual deletion before upgrade. PVCs preserved (#18558)
     - kind: added
