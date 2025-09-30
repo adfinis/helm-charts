@@ -22971,6 +22971,36 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Update VaultMonitoring from 0.4.2 to 0.6.0
+          links:
+            - name: Release 0.6.0
+              url: https://github.com/adfinis/helm-charts/releases/tag/vault-monitoring-0.6.0
+            - name: Release 0.5.0
+              url: https://github.com/adfinis/helm-charts/releases/tag/vault-monitoring-0.5.0
+    apiVersion: v2
+    created: "2025-09-30T09:29:00.094971258Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 5ca246da03ca209dcc9e90b71f09390f9b2f74ba7329a0525c2105851a5b5b99
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.104.0/security-apps-0.104.0.tgz
+    version: 0.104.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore:  Updated dex chart version from 0.18.0 to 0.24.0
             Note: May require a restart of the kubeapi server after upgrading.
 
@@ -33205,4 +33235,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-09-30T08:58:03.323977909Z"
+generated: "2025-09-30T09:29:00.097938321Z"
