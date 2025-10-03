@@ -7,7 +7,7 @@ should match snapshot:
         app.kubernetes.io/component: keycloak
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: 26.3.2
-        helm.sh/chart: keycloak-operator-1.6.1
+        helm.sh/chart: keycloak-operator-1.6.3
       name: keycloak
     spec:
       features:
@@ -28,6 +28,9 @@ should match snapshot:
           test: value
         enabled: true
       instances: 1
+      startOptimized: false
+      transaction:
+        xaEnabled: false
   2: |
     apiVersion: k8s.keycloak.org/v2alpha1
     kind: KeycloakRealmImport
@@ -35,7 +38,7 @@ should match snapshot:
       labels:
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: 26.3.2
-        helm.sh/chart: keycloak-operator-1.6.1
+        helm.sh/chart: keycloak-operator-1.6.3
       name: RELEASE-NAME-keycloak-operator-test
     spec:
       keycloakCRName: keycloak
