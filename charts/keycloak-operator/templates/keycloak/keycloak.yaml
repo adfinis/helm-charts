@@ -83,8 +83,8 @@ spec:
     {{- with .Values.keycloak.http.annotations }}
     annotations: {{ . | toYaml | nindent 6 }}
     {{- end }}
-    {{- with .Values.keycloak.http.httpEnabled }}
-    httpEnabled: {{ ternary "true" "false" . }}
+    {{- if hasKey .Values.keycloak.http "httpEnabled" }}
+    httpEnabled: {{ ternary "true" "false" .Values.keycloak.http.httpEnabled }}
     {{- end }}
     {{- with .Values.keycloak.http.httpPort }}
     httpPort: {{ . }}
@@ -156,8 +156,8 @@ spec:
   {{- with .Values.keycloak.scheduling }}
   scheduling: {{ . | toYaml | nindent 4 }}
   {{- end }}
-  {{- with .Values.keycloak.startOptimized }}
-  startOptimized: {{ ternary "true" "false" . }}
+  {{- if hasKey .Values.keycloak "startOptimized" }}
+  startOptimized: {{ ternary "true" "false" .Values.keycloak.startOptimized }}
   {{- end }}
   {{- with .Values.keycloak.tracing }}
   tracing: {{ . | toYaml | nindent 4 }}
@@ -171,9 +171,9 @@ spec:
     periodSeconds: {{ . }}
     {{- end }}
   {{- end }}
-  {{- with .Values.keycloak.transaction.xaEnabled }}
+  {{- if hasKey .Values.keycloak.transaction "xaEnabled" }}
   transaction:
-    xaEnabled: {{ ternary "true" "false" . }}
+    xaEnabled: {{ ternary "true" "false" .Values.keycloak.transaction.xaEnabled }}
   {{- end }}
   {{- with .Values.keycloak.truststrores }}
   truststores: {{ . | toYaml | nindent 4 }}

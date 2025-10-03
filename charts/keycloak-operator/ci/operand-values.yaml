@@ -1,6 +1,7 @@
 keycloak:
   enabled: true
   name: keycloak
+  startOptimized: false
   features:
     enabled:
       - account
@@ -17,6 +18,8 @@ keycloak:
   ingress:
     annotations:
       test: value
+  transaction:
+    xaEnabled: false
   realmimport:
     enabled: true
     realms:
