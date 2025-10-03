@@ -70,7 +70,7 @@ for more in-depth information.
 | [misc-apps](https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps) | Argo CD app-of-apps config for miscellaneous small tools | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
 | [security-apps](https://github.com/adfinis/helm-charts/tree/main/charts/security-apps) | Argo CD app-of-apps config for security applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
 | [storage-apps](https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps) | Argo CD app-of-apps config for storage applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
-| [tracing-apps](https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps) | Argo CD app-of-apps config for tracing applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
+| [tracing-apps](https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps) | Argo CD app-of-apps config for tracing applications | ![Version: 1.0.x](https://img.shields.io/badge/version-1.0.x-brightgreen) |
 
 #### more charts
 
