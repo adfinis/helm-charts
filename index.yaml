@@ -15266,6 +15266,30 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: fixed
+          description: "fix: allow settings boolean values to false"
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    appVersion: 26.3.2
+    created: "2025-10-03T13:47:30.12408365Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 4a583ba0335cb35055f50e9ae8d231b9ebb12835ba177ef095cdd9e071933263
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.6.3/keycloak-operator-1.6.3.tgz
+    version: 1.6.3
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
           description: |
             fix: allow configuring keycloak.ingress.annotations
       artifacthub.io/containsSecurityUpdates: "false"
@@ -33276,4 +33300,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-01T09:04:58.565819559Z"
+generated: "2025-10-03T13:47:30.127264686Z"
