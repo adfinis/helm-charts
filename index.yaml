@@ -23036,6 +23036,38 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Bump oauth-proxy chart from 8.2.0 to 8.3.0
+          links:
+            - name: oauth-proxy chart Release 8.2.1
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.2.1
+            - name: oauth-proxy chart Release 8.2.2
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.2.2
+            - name: oauth-proxy chart Release 8.3.0
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.3.0
+    apiVersion: v2
+    created: "2025-10-08T13:45:29.996580606Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: c9c10dae4aa5ca90d6e525e236f6b5b5046cbd87feed4fd5f3ab1f697edae2ce
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.105.0/security-apps-0.105.0.tgz
+    version: 0.105.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Update VaultMonitoring from 0.4.2 to 0.6.0
           links:
             - name: Release 0.6.0
@@ -33300,4 +33332,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-03T13:47:30.127264686Z"
+generated: "2025-10-08T13:45:29.998151198Z"
