@@ -64,21 +64,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-
-
-
-## Configure `MAINTAINERS.yaml` to assign issues.
-    This file, located in your repository's root, maps chart groups to GitHub usernames. Keys must match the *apps names inside your `charts/` directory (e.g., `monitoring-apps`). Use `default` as a fallback.
-
-    **Example `MAINTAINERS.yaml`:**
-
-    ```yaml
-    # Assignees for charts in 'charts/monitoring-apps/'
-    monitoring-apps:
-      - 'github-username-1'
-      - 'github-username-2'
-
-    # Fallback assignees
-    default:
-      - 'github-admin'
-    ```
