@@ -27,7 +27,7 @@ spec:
       labels:
         severity: critical
     {{- end }}
-    {{- if .Values.prometheus.rule.alerts.renewaloverdue}}
+    {{- if .Values.prometheus.rule.alerts.renewaloverdue }}
     - alert: CertManagerCertRenewalOverdue
       annotations:
         dashboard_url: https://grafana.example.com/d/TvuRo2iMk/cert-manager
