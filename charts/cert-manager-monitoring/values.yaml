@@ -11,7 +11,9 @@ prometheus:
     alerts:
       # -- Enable CertManagerAbsent alert
       absent: true
-      # -- Enable CertManagerExpirySoon alert
+      # -- Enable CertManagerCertRenewalOverdue alert
+      renewaloverdue: true
+      # -- Enable CertManagerCertExpirySoon alert
       expirysoon: true
       # -- Enable CertManagerCertNotReady alert
       certnotready: true
