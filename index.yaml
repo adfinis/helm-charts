@@ -5815,6 +5815,39 @@ entries:
       artifacthub.io/changes: |
         - kind: fixed
           description: |
+            fix: update cert-manager-monitoring to 0.3.0
+
+            this changes cert-manager-monitoring to support short-lived certificates and certificates with
+            custom reneweBefore time
+
+          links:
+            - name: cert-manager-monitoring 0.3.0 release
+              url: https://github.com/adfinis/helm-charts/releases/tag/cert-manager-monitoring-0.3.0
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-10-14T07:35:26.410629096Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 23b9c00ae863ce7158a998de20b6bfa471eafb304dcffdc18d2d568e1f0db36e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.251.0/infra-apps-0.251.0.tgz
+    version: 0.251.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
+          description: |
             feat: Update Argo CD from 3.1.3 to 3.1.8
 
             - Version was bumped to 3.1.8
@@ -33358,4 +33391,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-14T07:09:25.099902361Z"
+generated: "2025-10-14T07:35:26.413975283Z"
