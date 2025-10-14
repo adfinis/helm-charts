@@ -19,4 +19,4 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "change the CertExpirySoon warning to a warning when the renewal is overdue"
+      description: "change the CertExpirySoon critical to only appear if renewal has passed"
