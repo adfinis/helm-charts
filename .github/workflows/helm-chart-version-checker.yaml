@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Helm Version Checker
-        uses: adfinis/helm-version-checker@v2.0.1
+        uses: adfinis/helm-version-checker@v2.0.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           maintainers_file: 'MAINTAINERS.yaml'
