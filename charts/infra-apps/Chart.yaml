@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.251.0
+version: 0.251.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,11 +19,10 @@ annotations:
   artifacthub.io/changes: |
     - kind: fixed
       description: |
-        fix: update cert-manager-monitoring to 0.3.0
+        fix: update cert-manager-monitoring to 0.3.1
 
-        this changes cert-manager-monitoring to support short-lived certificates and certificates with
-        custom reneweBefore time
+        changes cert-manager-monitoring expirySoon alerts to only alert if renewalBefore has already passed
 
       links:
-        - name: cert-manager-monitoring 0.3.0 release
-          url: https://github.com/adfinis/helm-charts/releases/tag/cert-manager-monitoring-0.3.0
+        - name: cert-manager-monitoring 0.3.1 release
+          url: https://github.com/adfinis/helm-charts/releases/tag/cert-manager-monitoring-0.3.1
