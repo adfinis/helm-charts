@@ -55,8 +55,10 @@ spec:
           it should have renewed over a week ago.`}}
       expr: |
         avg by (exported_namespace, namespace, name) (
-          certmanager_certificate_expiration_timestamp_seconds - time()
-        ) < (10 * 24 * 3600) # 10 days in seconds
+          (certmanager_certificate_expiration_timestamp_seconds - time()) < (10 * 24 * 3600) # 10 days in seconds
+          and
+          (certmanager_certificate_renewal_timestamp_seconds - time()) < 0
+        )
       for: 1h
       labels:
         severity: critical
