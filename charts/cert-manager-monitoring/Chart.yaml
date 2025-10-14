@@ -2,7 +2,7 @@ apiVersion: v2
 name: cert-manager-monitoring
 description: Monitor cert-manager with cert-manager-mixin.
 type: application
-version: 0.3.0
+version: 0.3.1
 keywords:
   - cert-manager
   - tls
@@ -19,4 +19,4 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "change the CertExpirySoon warning to a warning when the renewal is overdue"
+      description: "change the CertExpirySoon critical to only appear if renewal has passed"
