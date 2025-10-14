@@ -4115,6 +4115,32 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "change the CertExpirySoon warning to a warning when the renewal is overdue"
+    apiVersion: v2
+    created: "2025-10-14T07:09:25.09836317Z"
+    description: Monitor cert-manager with cert-manager-mixin.
+    digest: f8aa1646f772dafb17cf13c524ac59288c9f8221c6eb8b65ef28224c4a09ade6
+    home: https://github.com/jetstack/cert-manager/issues/3342
+    keywords:
+    - cert-manager
+    - tls
+    - monitoring
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: cert-manager-monitoring
+    sources:
+    - https://github.com/adfinis/helm-charts
+    - https://gitlab.com/uneeq-oss/cert-manager-mixin
+    - https://github.com/jetstack/cert-manager/pull/3368#issuecomment-949346251
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/cert-manager-monitoring-0.3.0/cert-manager-monitoring-0.3.0.tgz
+    version: 0.3.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "introduce critical severity for CertManagerCertExpirySoon alert"
     apiVersion: v2
     created: "2025-01-15T19:25:22.864435416Z"
@@ -33332,4 +33358,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-08T13:45:29.998151198Z"
+generated: "2025-10-14T07:09:25.099902361Z"
