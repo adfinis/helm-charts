@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.250.1
+version: 0.251.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,23 +15,15 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: fixed
       description: |
-        feat: Update Argo CD from 3.1.3 to 3.1.8
+        fix: update cert-manager-monitoring to 0.3.0
 
-        - Version was bumped to 3.1.8
-        - fixes: CVE-2025-59538, CVE-2025-59537, CVE-2025-59531, CVE-2025-55191
+        this changes cert-manager-monitoring to support short-lived certificates and certificates with
+        custom reneweBefore time
 
       links:
-        - name: Argo CD v3.1.8 Release
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.1.8
-        - name: Argo CD v3.1.7 Release
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.1.7
-        - name: Argo CD v3.1.6 Release
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.1.6
-        - name: Argo CD v3.1.5 Release
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.1.5
-        - name: Argo CD v3.1.4 Release
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.1.4
+        - name: cert-manager-monitoring 0.3.0 release
+          url: https://github.com/adfinis/helm-charts/releases/tag/cert-manager-monitoring-0.3.0
