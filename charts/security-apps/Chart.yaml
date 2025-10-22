@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.105.0
+version: 0.105.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,14 +15,16 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Bump oauth-proxy chart from 8.2.0 to 8.3.0
+        chore: Bump neuvector chart to 2.8.9
+        fixes CVE-2025-54469
+        fixes CVE-2025-54470
+        fixes CVE-2025-54471
       links:
-        - name: oauth-proxy chart Release 8.2.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.2.1
-        - name: oauth-proxy chart Release 8.2.2
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.2.2
-        - name: oauth-proxy chart Release 8.3.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-8.3.0
+        - name: neuvector chart release 2.8.9
+          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.9
+        - name: neuvector release 5.4.7
+          url: https://github.com/neuvector/neuvector/releases/tag/v5.4.7
