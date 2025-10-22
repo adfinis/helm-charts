@@ -23153,6 +23153,40 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Bump neuvector chart to 2.8.9
+            fixes CVE-2025-54469
+            fixes CVE-2025-54470
+            fixes CVE-2025-54471
+          links:
+            - name: neuvector chart release 2.8.9
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.9
+            - name: neuvector release 5.4.7
+              url: https://github.com/neuvector/neuvector/releases/tag/v5.4.7
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-10-22T14:14:11.203490517Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: c4e729934aae12936f12757b9668fe79f97334ab14f125a02fea71be3d1c26d2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.105.1/security-apps-0.105.1.tgz
+    version: 0.105.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Bump oauth-proxy chart from 8.2.0 to 8.3.0
           links:
             - name: oauth-proxy chart Release 8.2.1
@@ -33449,4 +33483,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-14T09:13:09.81301288Z"
+generated: "2025-10-22T14:14:11.205468541Z"
