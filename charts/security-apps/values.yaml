@@ -13,7 +13,7 @@ dex:
   # -- Chart
   chart: "dex"
   # -- [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version
-  targetRevision: "0.18.0"
+  targetRevision: "0.24.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml)
   values: {}
@@ -86,8 +86,8 @@ vault:
   # @default -- [upstream values](https://github.com/hashicorp/vault-helm/tree/master/values.yaml)
   values: {}
 
-# -- [falco](https://github.com/falcosecurity/falco/) ([example](./examples/falco.yaml))
-# @default -- -
+# -- [falco](https://github.com/falcosecurity/falco/) is DEPRECATED since we no longer use it internally and will be replaced by NeuVector or StackRox
+# @default -- DEPRECATED
 falco:
   # -- Enable falco
   enabled: false
@@ -126,8 +126,8 @@ falcoExporter:
   # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco-exporter/values.yaml)
   values: {}
 
-# -- [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml))
-# @default -- -
+# -- [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml)) is DEPRECATED since we no longer use it internally.
+# @default -- DEPRECATED
 gatekeeper:
   # -- Enable gatekeeper
   enabled: false
@@ -161,7 +161,7 @@ vaultMonitoring:
   # -- Chart
   chart: "vault-monitoring"
   # -- [vault-monitoring Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring) version
-  targetRevision: "0.4.2"
+  targetRevision: "0.6.0"
   # -- Helm values
   # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/vault-monitoring/values.yaml)
   values: {}
@@ -201,7 +201,7 @@ neuvector:
   # -- Chart
   chart: "core"
   # -- [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version
-  targetRevision: "2.8.8"
+  targetRevision: "2.8.9"
   # -- Helm values
   # @default -- [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/core/values.yaml)
   values: {}
@@ -283,7 +283,7 @@ oauth2Proxy:
   # -- Chart
   chart: oauth2-proxy
   # -- [oauth2-proxy Helm chart](https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy)
-  targetRevision: 8.2.0
+  targetRevision: 8.3.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/values.yaml)
   values: {}
@@ -327,7 +327,7 @@ kyvernoPolicies:
   # -- Chart
   chart: kyverno-policies
   # -- [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies)
-  targetRevision: 3.4.1
+  targetRevision: 3.5.1
   # -- Helm values
   # @default -- [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno-policies/values.yaml)
   values: {}

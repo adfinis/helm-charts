@@ -1,6 +1,6 @@
 # cert-manager-monitoring
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.3.1](https://img.shields.io/badge/Version-0.3.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Monitor cert-manager with cert-manager-mixin.
 
@@ -29,8 +29,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | prometheus.rule.alertConfigs.absent.job | string | `"cert-manager"` | Configure job label for CertManagerAbsent alert. |
 | prometheus.rule.alerts.absent | bool | `true` | Enable CertManagerAbsent alert |
 | prometheus.rule.alerts.certnotready | bool | `true` | Enable CertManagerCertNotReady alert |
-| prometheus.rule.alerts.expirysoon | bool | `true` | Enable CertManagerExpirySoon alert |
+| prometheus.rule.alerts.expirysoon | bool | `true` | Enable CertManagerCertExpirySoon alert |
 | prometheus.rule.alerts.hittingratelimits | bool | `true` | Enable CertManagerHittingRateLimits alert |
+| prometheus.rule.alerts.renewaloverdue | bool | `true` | Enable CertManagerCertRenewalOverdue alert |
 | prometheus.rule.enabled | bool | `true` | Create PrometheusRule resource |
 | prometheus.rule.namespace | string | `""` | Optional Namespace for PrometheusRule resource |
 

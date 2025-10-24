@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.101.2
+version: 0.105.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,7 +15,16 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Marked falco as deprecated since we no longer use it internally.
+        chore: Bump neuvector chart to 2.8.9
+        fixes CVE-2025-54469
+        fixes CVE-2025-54470
+        fixes CVE-2025-54471
+      links:
+        - name: neuvector chart release 2.8.9
+          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.9
+        - name: neuvector release 5.4.7
+          url: https://github.com/neuvector/neuvector/releases/tag/v5.4.7

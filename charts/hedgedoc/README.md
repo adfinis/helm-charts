@@ -1,6 +1,6 @@
 # hedgedoc
 
-![Version: 0.5.3](https://img.shields.io/badge/Version-0.5.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.10.2](https://img.shields.io/badge/AppVersion-1.10.2-informational?style=flat-square)
+![Version: 0.5.4](https://img.shields.io/badge/Version-0.5.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.10.3](https://img.shields.io/badge/AppVersion-1.10.3-informational?style=flat-square)
 
 Chart for HedgeDoc, a fork of CodiMD
 
@@ -28,10 +28,10 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | externalDatabase.type | string | `"postgresql"` | Set the database type (postgresql|mysql) |
 | extraSecretMounts | object | `{}` | Extra Secrets configuration Add additional secrets here; they will be mounted under `/var/secrets/<secret name>` You need this for SAML certificates, etc. |
 | fullnameOverride | string | `""` |  |
-| hedgedoc | object | `{"env":{"CMD_DOMAIN":"localhost","CMD_FORBIDDEN_NOTE_IDS":"robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views","CMD_HOST":"0.0.0.0","CMD_IMAGE_UPLOAD_TYPE":"filesystem","CMD_PROTOCOL_USESSL":"false","CMD_TOOBUSY_LAG":70,"CMD_URL_ADDPORT":"false","CMD_URL_PATH":"","DEBUG":"false","NODE_ENV":"production"},"persistentStorage":{"accessModes":["ReadWriteOnce"],"enabled":true,"size":"10G","storageClass":"default","volumeMode":"Filesystem"},"port":3000}` | Main configuration for hedgedoc |
+| hedgedoc | object | `{"env":{"CMD_DOMAIN":"localhost","CMD_FORBIDDEN_NOTE_IDS":"robots.txt, favicon.ico, api, build, css, docs, fonts, js, uploads, vendor, views","CMD_HOST":"0.0.0.0","CMD_IMAGE_UPLOAD_TYPE":"filesystem","CMD_PROTOCOL_USESSL":"false","CMD_TOOBUSY_LAG":70,"CMD_URL_ADDPORT":"false","CMD_URL_PATH":"","DEBUG":"false","NODE_ENV":"production"},"persistentStorage":{"accessModes":["ReadWriteOnce"],"enabled":true,"size":"10G","storageClass":"","volumeMode":"Filesystem"},"port":3000}` | Main configuration for hedgedoc |
 | hedgedoc.env | object | See the [official docs for all variables](https://docs.hedgedoc.org/configuration/) | Environment variables for Hedgedoc |
 | hedgedoc.env.NODE_ENV | string | `"production"` | Node.js env |
-| hedgedoc.persistentStorage | object | `{"accessModes":["ReadWriteOnce"],"enabled":true,"size":"10G","storageClass":"default","volumeMode":"Filesystem"}` | Persistent Storage Enable this if you don't want to loose media |
+| hedgedoc.persistentStorage | object | `{"accessModes":["ReadWriteOnce"],"enabled":true,"size":"10G","storageClass":"","volumeMode":"Filesystem"}` | Persistent Storage Enable this if you don't want to loose media |
 | hedgedoc.port | int | `3000` | Port for the pod |
 | image.pullPolicy | string | `"IfNotPresent"` | Override the pullPolicy |
 | image.repository | string | `"quay.io/hedgedoc/hedgedoc"` | Override the repository |
