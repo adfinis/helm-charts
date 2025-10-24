@@ -13,4 +13,4 @@ maintainers:
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "Change severity of prometheusrule VaultTokenCreate and VaultTokenStore from critical to warning"
+      description: "Change VaultTokenCreate and VaultTokenStore alert behaviour"
