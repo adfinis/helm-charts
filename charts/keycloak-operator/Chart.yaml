@@ -2,8 +2,8 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.6.3
-appVersion: "26.3.2"
+version: 1.7.0
+appVersion: "26.4.2"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
 sources:
@@ -16,5 +16,5 @@ maintainers:
 annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: fixed
-      description: "fix: allow settings boolean values to false"
+    - kind: changed
+      description: "feat: Keycloak 26.4.2"
