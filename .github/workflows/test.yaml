@@ -60,7 +60,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install chart-testing
-        uses: helm/chart-testing-action@v2.7.0
+        uses: helm/chart-testing-action@v2.8.0
 
       - name: Install Artifact Hub CLI tool
         run: hack/sh/deps/ah.sh
