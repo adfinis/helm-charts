@@ -1,0 +1,29 @@
+default_maintainers:
+  - "Xelef2000"
+
+argo-apps:
+  - "Xelef2000"
+
+azure-apps:
+  - "Xelef2000"
+
+backup-apps:
+  - "Xelef2000"
+
+infra-apps:
+  - "Xelef2000"
+
+logging-apps:
+  - "Xelef2000"
+
+misc-apps:
+  - "Xelef2000"
+
+security-apps:
+  - "Xelef2000"
+
+storage-apps:
+  - "Xelef2000"
+
+tracing-apps:
+  - "Xelef2000"
