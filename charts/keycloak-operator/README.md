@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 1.6.3](https://img.shields.io/badge/Version-1.6.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.3.2](https://img.shields.io/badge/AppVersion-26.3.2-informational?style=flat-square)
+![Version: 1.7.0](https://img.shields.io/badge/Version-1.7.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.4.2](https://img.shields.io/badge/AppVersion-26.4.2-informational?style=flat-square)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -21,6 +21,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | fullnameOverride | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
 | keycloak.additionalOptions | string | `nil` | Configuration of the Keycloak server expressed as a keys and values that can be either direct values or references to secrets. |
+| keycloak.bootstrapAdmin | string | `nil` | In this section you can configure Keycloak's bootstrap admin - will be used only for initial cluster creation. |
 | keycloak.cache | object | `{}` | Configure keycloaks cache. |
 | keycloak.db.database | string | `nil` | Sets the database name of the default JDBC URL of the chosen vendor. If the `url` option is set, this option is ignored. |
 | keycloak.db.host | string | `nil` | Sets the hostname of the default JDBC URL of the chosen vendor. If the `url` option is set, this option is ignored. |
@@ -34,6 +35,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.db.usernameSecret | string | `nil` | The reference to a secret holding the username of the database user. |
 | keycloak.db.vendor | string | `nil` | The database vendor. |
 | keycloak.enabled | bool | `false` | Enable deploying a bundled keycloak with the operator |
+| keycloak.env | list | `[]` | Environment variables for the Keycloak server. Values can be either direct values or references to secrets. Use additionalOptions for first-class options rather than `KC_` values here. |
 | keycloak.features | object | see [Keycloak docs](https://www.keycloak.org/server/features) | Configure Keycloak features |
 | keycloak.features.disabled | list | `[]` | Disabled Keycloak features |
 | keycloak.features.enabled | list | `[]` | Enabled Keycloak features |
@@ -52,9 +54,12 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.image.repository | string | `""` | Overrides the operator.keycloakImage.image value whose default is quay.io/keycloak/keycloak |
 | keycloak.image.tag | string | `""` | Overrides the operator.keycloakImage.tag value whose default is the chart appVersion. |
 | keycloak.imagePullSecrets | string | `nil` | Secret(s) that might be used when pulling an image from a private container image registry or repository. |
+| keycloak.import | string | `nil` | In this section you can configure import jobs scheduling |
 | keycloak.ingress.annotations | object | `{}` | Annotations for the Ingress |
 | keycloak.ingress.className | string | `""` | Ingress class name |
 | keycloak.ingress.enabled | bool | `true` | The deployment is, by default, exposed through a basic ingress. |
+| keycloak.ingress.labels | object | `{}` | Additional labels to be appended to the Ingress object |
+| keycloak.ingress.tlsSecret | string | `nil` | A secret containing the TLS configuration for re-encrypt or TLS termination scenarios. Reference: https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets |
 | keycloak.instances | int | `1` | Number of Keycloak instances in HA mode. |
 | keycloak.livenessProbe | string | `nil` | Configuration for liveness probe, by default it is 10 for periodSeconds and 3 for failureThreshold |
 | keycloak.proxy.headers | string | `""` | The proxy headers that should be accepted by the server. Misconfiguration might leave the server exposed to security vulnerabilities. |
@@ -62,11 +67,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.realmimport.enabled | bool | `false` | Deploy realmimport resources |
 | keycloak.realmimport.realms | list | `[]` | A list of realms to configure using the realmimport CRD. |
 | keycloak.resources | object | `{}` | Compute Resources required by Keycloak container |
+| keycloak.scheduling | string | `nil` | In this section you can configure Keycloak's scheduling |
+| keycloak.serviceMonitor | string | `nil` | Configuration related to the generated ServiceMonitor |
 | keycloak.startOptimized | string | `nil` |  |
 | keycloak.startupProbe | string | `nil` | Configuration for startup probe, by default it is 1 for periodSeconds and 600 for failureThreshold |
 | keycloak.transaction.xaEnabled | bool | `false` | Determine whether Keycloak should use a non-XA datasource. |
-| keycloak.truststores.secret | object | `{}` | Configure Keycloak truststores via Secrets. |
+| keycloak.truststores | object | `{}` | Configure Keycloak truststores. |
 | keycloak.unsupported | string | `nil` | Additional values that will be merged with the operator's defaults |
+| keycloak.update | string | `nil` | Configuration related to Keycloak deployment updates. |
 | nameOverride | string | `""` |  |
 | operator.affinity | object | `{}` | Affinity for Operator Deployment. |
 | operator.config.keycloakImage.repository | string | `"quay.io/keycloak/keycloak"` | Default keycloak image to use if non was specified in the Keycloak CRD. |

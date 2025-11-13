@@ -32,3 +32,5 @@ keycloak:
             lastName: Wurst
             username: "john.sausage"
             email: john.sausage@example.com
+  serviceMonitor:
+    enabled: true

@@ -102,6 +102,9 @@ keycloak:
   #     key: string
   #     name: string
 
+  # -- In this section you can configure Keycloak's bootstrap admin - will be used only for initial cluster creation.
+  bootstrapAdmin: ~
+
   # -- Configure keycloaks cache.
   cache: {}
   #  configMapFile:
@@ -148,6 +151,9 @@ keycloak:
 
     # -- The database vendor.
     vendor: ~
+
+  # -- Environment variables for the Keycloak server. Values can be either direct values or references to secrets. Use additionalOptions for first-class options rather than `KC_` values here.
+  env: []
 
   # -- Configure Keycloak features
   # @default -- see [Keycloak docs](https://www.keycloak.org/server/features)
@@ -211,6 +217,9 @@ keycloak:
   imagePullSecrets: ~
   # - name: secret-name
 
+  # -- In this section you can configure import jobs scheduling
+  import: ~
+
   ingress:
     # -- The deployment is, by default, exposed through a basic ingress.
     enabled: true
@@ -220,6 +229,12 @@ keycloak:
 
     # -- Ingress class name
     className: ""
+
+    # -- Additional labels to be appended to the Ingress object
+    labels: {}
+
+    # -- A secret containing the TLS configuration for re-encrypt or TLS termination scenarios. Reference: https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets
+    tlsSecret: ~
 
   # -- Number of Keycloak instances in HA mode.
   instances: 1
@@ -241,6 +256,15 @@ keycloak:
   #  limits: {}
   #  requests: {}
 
+  # -- In this section you can configure Keycloak's scheduling
+  scheduling: ~
+
+  # -- Configuration related to the generated ServiceMonitor
+  serviceMonitor: ~
+  # enabled: true
+  # interval: 30s
+  # scrapeTimeout: 1m
+
   # -- Set to force the behavior of the --optimized flag for the start command. If left unspecified the operator will assume custom images have already been augmented.
   startOptimized: ~
 
@@ -251,9 +275,10 @@ keycloak:
     # -- Determine whether Keycloak should use a non-XA datasource.
     xaEnabled: false
 
-  truststores:
-    # -- Configure Keycloak truststores via Secrets.
-    secret: {}
+  # -- Configure Keycloak truststores.
+  truststores: {}
+  #  configMap: {}
+  #  secret: {}
 
   # -- Additional values that will be merged with the operator's defaults
   unsupported:
@@ -271,6 +296,9 @@ keycloak:
   #        - name: test-volume
   #          secret:
   #            secretName: keycloak-podtemplate-secret
+
+  # -- Configuration related to Keycloak deployment updates.
+  update: ~
 
   realmimport:
     # -- Deploy realmimport resources

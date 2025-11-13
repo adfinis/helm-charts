@@ -61,6 +61,9 @@ spec:
     enabled: {{ . | toYaml | nindent 6 }}
     {{- end }}
   {{- end }}
+  {{- with .Values.keycloak.env }}
+  env: {{- . | toYaml | nindent 4 }}
+  {{- end }}
   {{- with .Values.keycloak.hostname }}
   hostname:
     {{- with .admin }}
@@ -108,6 +111,9 @@ spec:
   {{- with .Values.keycloak.imagePullSecrets }}
   imagePullSecrets: {{ . | toYaml | nindent 4 }}
   {{- end }}
+  {{- with .Values.keycloak.import }}
+  import: {{ . | toYaml | nindent 4 }}
+  {{- end }}
   {{- if .Values.keycloak.ingress.enabled }}
   ingress:
     enabled: true
@@ -117,6 +123,13 @@ spec:
     {{- end }}
     {{- with .Values.keycloak.ingress.className }}
     className: {{ . | quote }}
+    {{- end }}
+    {{- with .Values.keycloak.ingress.labels }}
+    labels:
+      {{- . | toYaml | nindent 6 }}
+    {{- end }}
+    {{- with .Values.keycloak.ingress.tlsSecret }}
+    tlsSecret: {{ . | quote }}
     {{- end }}
   {{- else }}
   ingress:
@@ -155,6 +168,9 @@ spec:
   {{- end }}
   {{- with .Values.keycloak.scheduling }}
   scheduling: {{ . | toYaml | nindent 4 }}
+  {{- end }}
+  {{- with .Values.keycloak.serviceMonitor }}
+  serviceMonitor: {{ . | toYaml | nindent 4 }}
   {{- end }}
   {{- if hasKey .Values.keycloak "startOptimized" }}
   startOptimized: {{ ternary "true" "false" .Values.keycloak.startOptimized }}
