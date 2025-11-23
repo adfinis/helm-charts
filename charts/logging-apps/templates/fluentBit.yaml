@@ -5,6 +5,10 @@
 {{- define "logging-apps.fluentBit" -}}{{- $app := unset .Values.fluentBit "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
 metadata:
   name: {{ template "common.fullname" . }}-{{ $name }}
+  {{- with $app.annotations }}
+  annotations:
+    {{ toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   {{- if $app.project }}
   project: {{ $app.project | quote }}

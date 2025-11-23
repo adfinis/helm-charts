@@ -9,6 +9,8 @@ loki:
   # -- Enable loki
   enabled: false
   name: loki
+  # -- Annotations for loki app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: "infra-logging"
@@ -29,6 +31,8 @@ promtail:
   # -- Enable promtail
   enabled: false
   name: promtail
+  # -- Annotations for promtail app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: "infra-logging"
@@ -49,6 +53,8 @@ filebeat:
   # -- Enable filebeat
   enabled: false
   name: filebeat
+  # -- Annotations for filebeat app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: "infra-logging"
@@ -69,6 +75,8 @@ fluentd:
   # -- Enable fluentd
   enabled: false
   name: fluentd
+  # -- Annotations for fluentd app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: "infra-logging"
@@ -89,6 +97,8 @@ fluentBit:
   # -- Enable fluentBit
   enabled: false
   name: fluentbit
+  # -- Annotations for fluentBit app
+  annotations: {}
   destination:
     # -- Namespace
     namespace: "infra-logging"

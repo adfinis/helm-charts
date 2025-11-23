@@ -1,6 +1,6 @@
 # logging-apps
 
-![Version: 0.40.0](https://img.shields.io/badge/Version-0.40.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.41.0](https://img.shields.io/badge/Version-0.41.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for logging applications
 
@@ -24,6 +24,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | filebeat | object | - | [filebeat](https://github.com/elastic/beats/tree/master/filebeat) ([example](./examples/filebeat.yaml)) |
+| filebeat.annotations | object | `{}` | Annotations for filebeat app |
 | filebeat.chart | string | `"filebeat"` | Chart |
 | filebeat.destination.namespace | string | `"infra-logging"` | Namespace |
 | filebeat.enabled | bool | `false` | Enable filebeat |
@@ -31,6 +32,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | filebeat.targetRevision | string | `"8.5.1"` | [filebeat Helm chart](https://github.com/elastic/helm-charts/tree/master/filebeat) version |
 | filebeat.values | object | [upstream values](https://github.com/elastic/helm-charts/tree/master/filebeat/values.yaml) | Helm values |
 | fluentBit | object | - | [fluentBit](https://github.com/fluent/fluent-bit) ([example](./examples/fluentBit.yaml)) |
+| fluentBit.annotations | object | `{}` | Annotations for fluentBit app |
 | fluentBit.chart | string | `"fluent-bit"` | Chart |
 | fluentBit.destination.namespace | string | `"infra-logging"` | Namespace |
 | fluentBit.enabled | bool | `false` | Enable fluentBit |
@@ -38,6 +40,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | fluentBit.targetRevision | string | `"0.52.0"` | [fluent-bit Helm chart](https://github.com/fluent/helm-charts/tree/main/charts/fluent-bit) version |
 | fluentBit.values | object | [upstream values](https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/values.yaml) | Helm values |
 | fluentd | object | - | [fluentd](https://github.com/fluent/fluentd) ([example](./examples/fluentd.yaml)) |
+| fluentd.annotations | object | `{}` | Annotations for fluentd app |
 | fluentd.chart | string | `"fluentd"` | Chart |
 | fluentd.destination.namespace | string | `"infra-logging"` | Namespace |
 | fluentd.enabled | bool | `false` | Enable fluentd |
@@ -45,6 +48,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | fluentd.targetRevision | string | `"6.5.*"` | [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version |
 | fluentd.values | object | [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/fluentd/values.yaml) | Helm values |
 | loki | object | - | [Grafana Loki](https://grafana.com/oss/loki/) ([example](./examples/loki.yaml)) |
+| loki.annotations | object | `{}` | Annotations for loki app |
 | loki.chart | string | `"loki"` | Chart |
 | loki.destination.namespace | string | `"infra-logging"` | Namespace |
 | loki.enabled | bool | `false` | Enable loki |
@@ -53,6 +57,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | loki.values | object | [upstream values](https://github.com/grafana/loki/blob/main/production/helm/loki/values.yaml) | Helm values |
 | lokiStack | object | DEPRECATED | [loki-stack](https://github.com/grafana/loki) is DEPREACTED use `loki` and `promtail` individually |
 | promtail | object | - | [Grafana Loki promtail](https://grafana.com/docs/loki/latest/send-data/promtail/) ([example](./examples/promtail.yaml)) |
+| promtail.annotations | object | `{}` | Annotations for promtail app |
 | promtail.chart | string | `"promtail"` | Chart |
 | promtail.destination.namespace | string | `"infra-logging"` | Namespace |
 | promtail.enabled | bool | `false` | Enable promtail |
