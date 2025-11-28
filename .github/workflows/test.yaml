@@ -60,7 +60,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install chart-testing
-        uses: helm/chart-testing-action@v2.7.0
+        uses: helm/chart-testing-action@v2.8.0
 
       - name: Install Artifact Hub CLI tool
         run: hack/sh/deps/ah.sh
@@ -77,7 +77,7 @@ jobs:
         run: ct --config=hack/chart-testing/ct.yaml lint
 
       - name: Create kind cluster
-        uses: helm/kind-action@v1.12.0
+        uses: helm/kind-action@v1.13.0
         if: steps.list-changed.outputs.changed == 'true'
 
       - name: Setup cluster for chart-testing (install)
