@@ -3,7 +3,7 @@ title                   : adfinis/helm-charts
 email                   : support@adfinis.com
 description             : >-
   📈 Helm charts from Adfinis
-baseurl                 : ""
+baseurl                 : "/helm-charts/"
 url                     : "https://charts.adfinis.com"
 
 header:
@@ -26,4 +26,4 @@ footer:
   github:
     href: "https://github.com/adfinis/helm-charts"
 
-remote_theme: adfinis/jekyll-theme-adfinis-ng
+remote_theme: Maryana-B/jekyll-theme-adfinis-ng
