@@ -15383,6 +15383,30 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat: Keycloak 26.4.5"
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    appVersion: 26.4.5
+    created: "2025-12-01T08:59:09.570969311Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 3ed89ff5cce4af2c6e2fcd68f19bc737917f8e3626bfc35ca767bb52e18aba02
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.8.0/keycloak-operator-1.8.0.tgz
+    version: 1.8.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Keycloak 26.4.2"
       artifacthub.io/containsSecurityUpdates: "false"
     apiVersion: v2
@@ -33281,6 +33305,26 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "Change VaultTokenCreate and VaultTokenStore alert behaviour"
+    apiVersion: v2
+    created: "2025-11-28T14:05:51.148327324Z"
+    description: monitor your vault server from within Kubernetes' prometheus
+    digest: cb8ec791b6cf720c7586f60193d2fab8b5641f4ecfb001ced185ee992cac9d4e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: vault-monitoring
+    sources:
+    - https://github.com/adfinis/helm-charts/tree/main/charts/vault-monitoring
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/vault-monitoring-0.7.0/vault-monitoring-0.7.0.tgz
+    version: 0.7.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "Only create ConfigMap and Endpoint when serviceMonitor.create=true"
     apiVersion: v2
     created: "2024-09-16T11:25:11.627200159Z"
@@ -33533,4 +33577,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-23T18:01:58.091215161Z"
+generated: "2025-12-01T08:59:09.573909757Z"
