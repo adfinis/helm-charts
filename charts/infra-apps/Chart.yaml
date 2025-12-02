@@ -12,17 +12,20 @@ maintainers:
     url: https://adfinis.com
 dependencies:
   - name: argoconfig
-    version: 0.9.1
+    version: 0.9.2
     repository: https://charts.adfinis.com
 annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: fixed
       description: |
-        fix: update cert-manager-monitoring to 0.3.1
+        fix: update velero to 11.2.0
 
-        changes cert-manager-monitoring expirySoon alerts to only alert if renewalBefore has already passed
-
+        - updated velero to v1.17.1
+        - Fix VeleroNoNewBackup alert using timestamp age instead of rate()
+        - make Pod/ServiceMonitor interval/scrapeTimeout optional
+        - correct initContainer value json schema
+        - Move to bitnamilegacy
       links:
         - name: cert-manager-monitoring 0.3.1 release
           url: https://github.com/adfinis/helm-charts/releases/tag/cert-manager-monitoring-0.3.1
