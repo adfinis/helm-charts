@@ -33,7 +33,7 @@ back8sup:
   # -- Chart
   chart: back8sup
   # -- [Back8sup Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/back8sup)
-  targetRevision: '0.4.*'
+  targetRevision: '0.4.8'
   # -- Helm values
   # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/back8sup/values.yaml)
   values: {}
