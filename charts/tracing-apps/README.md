@@ -35,7 +35,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | opentelemetryCollector.destination.namespace | string | `"infra-otel-operator"` | Namespace |
 | opentelemetryCollector.enabled | bool | `false` | Enable otel-exporter |
 | opentelemetryCollector.repoURL | string | [repo](https://open-telemetry.github.io/opentelemetry-helm-charts) | Repo URL |
-| opentelemetryCollector.targetRevision | string | `"0.140.0"` | [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector) |
+| opentelemetryCollector.targetRevision | string | `"0.135.0"` | [opentelemetry-collector Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector) |
 | opentelemetryCollector.values | object | [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml) | Helm values |
 
 ## About this chart
