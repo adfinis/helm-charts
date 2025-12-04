@@ -17,7 +17,7 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: chore
+    - kind: fixed
       description: |
         fix: update kube-prometheus-stack from 76.4.1 to 79.9.0
         - Bump kube-prometheus-stack to v79.9.0
