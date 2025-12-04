@@ -1,8 +1,0 @@
-awspcaIssuers:
-  - name: example
-    spec:
-      arn: <some-pca-arn>
-      region: eu-west-1
-      secretRef:
-        namespace: default
-        name: example

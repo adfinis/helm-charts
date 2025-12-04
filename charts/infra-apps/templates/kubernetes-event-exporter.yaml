@@ -1,3 +1,0 @@
-{{ if .Values.kubeEventExporter.enabled }}
-{{ fail "kube-event-exporter is DEPRECATED, use otel-collector instead" }}
-{{ end }}

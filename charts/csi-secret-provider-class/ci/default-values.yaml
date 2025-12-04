@@ -1,7 +1,0 @@
-provider: fake
-parameters:
-  foo: bar
-secretObjects:
-  - secretName: test
-dummyDeployment:
-  enabled: false

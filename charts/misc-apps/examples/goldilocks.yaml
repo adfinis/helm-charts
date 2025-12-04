@@ -1,6 +1,0 @@
-goldilocks:
-  enabled: true
-  project: infra-goldilocks
-  values:
-    dashboard:
-      enabled: false

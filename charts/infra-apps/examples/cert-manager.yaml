@@ -1,5 +1,0 @@
-certManager:
-  enabled: true
-  values:
-    rbac:
-      create: true

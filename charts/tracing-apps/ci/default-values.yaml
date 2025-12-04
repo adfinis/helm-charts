@@ -1,6 +1,0 @@
-jaegerOperator:
-  enabled: true
-  values: {}
-opentelemetryCollector:
-  enabled: true
-  values: {}

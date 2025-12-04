@@ -1,9 +1,0 @@
-suite: AWSPCAClusterIssuer tests
-templates:
-  - awspcaclusterissuers.yaml
-tests:
-  - it: should create a AWSPCAIssuer
-    values:
-      - ../examples/awspcaissuer.yaml
-    asserts:
-      - matchSnapshot: {}

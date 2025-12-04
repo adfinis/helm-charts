@@ -1,4 +1,0 @@
-linux:
-  enabled: true
-windows:
-  enabled: false

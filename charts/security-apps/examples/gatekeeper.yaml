@@ -1,5 +1,0 @@
-gatekeeper:
-  enabled: true
-  project: infra-gatekeeper
-  values:
-    logLevel: INFO

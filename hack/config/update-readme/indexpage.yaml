@@ -1,4 +1,0 @@
-web:
-  enabled: true
-
-chartBaseURL: https://github.com/adfinis/helm-charts/tree/main/charts/

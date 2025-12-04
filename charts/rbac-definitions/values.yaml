@@ -1,2 +1,0 @@
-# -- Array of rbac-manager RBACDefinitions [configurations](https://rbac-manager.docs.fairwinds.com/rbacdefinitions/) (see [examples](./examples/))
-rbacDefinitions: []

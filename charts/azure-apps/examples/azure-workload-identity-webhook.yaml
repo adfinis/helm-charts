@@ -1,5 +1,0 @@
-azureWorkloadIdentityWebhook:
-  enabled: true
-  project: azure-workload-identity-system
-  values:
-    azureTenantID: <REPLACE ME>

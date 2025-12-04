@@ -1,4 +1,0 @@
-awspcaClusterIssuers:
-  - name: example
-    spec:
-      arn: <some-pca-arn>

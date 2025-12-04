@@ -1,9 +1,0 @@
-cephCsiRbd:
-  enabled: true
-  project: infra-storage
-  values:
-    csiConfig:
-      - clusterID: "myclusterid"
-        monitors:
-          - "mon01.example.com"
-          - "mon02.example.com"

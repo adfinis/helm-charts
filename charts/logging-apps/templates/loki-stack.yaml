@@ -1,3 +1,0 @@
-{{ if .Values.lokiStack.enabled }}
-{{ fail "loki-stack is DEPRECATED, use `loki` and `promtail` individually" }}
-{{ end }}

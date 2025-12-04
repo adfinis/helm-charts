@@ -1,8 +1,0 @@
-_: &sentryDSN "https://secret@sentry.example.om/id"
-
-sentryKubernetes:
-  enabled: true
-  project: infra-sentry-kubernetes
-  values:
-    sentry:
-      dsn: *sentryDSN
