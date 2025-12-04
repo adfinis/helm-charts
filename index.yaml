@@ -31587,6 +31587,54 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Updating opentelemetry-collector Chart form 0.134.0 to 0.140.0
+
+
+          links:
+            - name: "Release of opentelemetry-collector-0.134.1"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.134.1
+            - name: "opentelemetry-collector-0.135.0"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.135.0
+            - name: "opentelemetry-collector-0.136.0"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.136.0
+            - name: "opentelemetry-collector-0.136.1"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.136.1
+            - name: "opentelemetry-collector-0.137.0"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.137.0
+            - name: "opentelemetry-collector-0.138.0"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.138.0
+            - name: "opentelemetry-collector-0.138.0"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.138.0
+            - name: "opentelemetry-collector-0.138.1"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.138.1
+            - name: "opentelemetry-collector-0.139.0"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.139.0
+            - name: "opentelemetry-collector-0.140.0"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.140.0
+    apiVersion: v2
+    created: "2025-12-04T17:51:11.242986299Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for tracing applications
+    digest: 76a9b1c63a5412d0d58d650a6246ebe3f94a432574657fd7127dc5d73ae86071
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-1.1.0/tracing-apps-1.1.0.tgz
+    version: 1.1.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Updating opentelemetry-collector Chart form to 0.134.0
               Breaking change
               The loki exporter was removed in favor of the native otel exporter!
@@ -33622,4 +33670,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-04T10:11:19.130728109Z"
+generated: "2025-12-04T17:51:11.246180276Z"
