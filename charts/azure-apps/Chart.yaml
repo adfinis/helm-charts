@@ -17,10 +17,9 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
-    - kind: chore
+    - kind: security
       description: |
-      chore: update promitorResourceDiscovery to 0.14.1
-        - Patch for various CVEs
+        Update promitorResourceDiscovery to 0.14.1, which includes patches for various CVEs.
       links:
         - name: Promitor Resource Discovery v0.14.1
           url: https://github.com/tomkerkhove/promitor/releases/tag/ResourceDiscovery-v0.14.1
