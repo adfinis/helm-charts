@@ -1,0 +1,8 @@
+apiVersion: helm.openshift.io/v1beta1
+kind: HelmChartRepository
+metadata:
+  name: adfinis-helm-charts
+spec:
+  name: Adfinis Helm Charts
+  connectionConfig:
+    url: https://charts.adfinis.com/
