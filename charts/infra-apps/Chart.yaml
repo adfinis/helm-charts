@@ -18,7 +18,7 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: chore
+    - kind: fixed
       description: |
         fix: update velero to 11.2.0
 
