@@ -23272,6 +23272,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: update oauth2Proxy to 9.0.0
+            - updates dependencies
+            - separate image.repository into (image.registry / image.repository) and support .global.imageRegistry
+            - add gateway api support
+            - Add support imagePullSecrets to service account
+            - adding HPA capabilities check
+
+          links:
+            - name: oauth2-proxy-9.0.0
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-9.0.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-12-05T10:23:40.725705846Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 8075f1362f3db5f3ab60df5c23b6286d9d372d6253bd317e86063b51901bbde7
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.105.2/security-apps-0.105.2.tgz
+    version: 0.105.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Bump neuvector chart to 2.8.9
             fixes CVE-2025-54469
             fixes CVE-2025-54470
@@ -33670,4 +33705,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-04T17:51:11.246180276Z"
+generated: "2025-12-05T10:23:40.727418866Z"
