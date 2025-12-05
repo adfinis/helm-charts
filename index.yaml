@@ -5,6 +5,38 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update Argo Rollouts from 2.40.3 to 2.40.5
+            * Updated dependencies
+            * feat: allow argo rollout controller service monitor to use tlsconfig
+          links:
+            - name: argo-rollouts-2.40.5 Relese Notes
+              url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.40.5
+            - name: argo-rollouts-2.40.4 Release notes
+              url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.40.4
+    apiVersion: v2
+    created: "2025-12-05T10:47:40.8790707Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: c755d6114d36c65910f6d0c073e2c807bdaa5493a92806aeb145a9217e7131a7
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.28.0/argo-apps-0.28.0.tgz
+    version: 0.28.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update Argo Rollouts from 2.40.2 to 2.40.3
             * Support dnsConfig parameter by @nitinverma9
             * Bumpred dependencies
@@ -33705,4 +33737,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-05T10:23:40.727418866Z"
+generated: "2025-12-05T10:47:40.880665328Z"
