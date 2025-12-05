@@ -2,7 +2,7 @@ apiVersion: v2
 name: tracing-apps
 description: Argo CD app-of-apps config for tracing applications
 type: application
-version: 1.0.0
+version: 1.1.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,23 +18,27 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Updating opentelemetry-collector Chart form to 0.134.0
-          Breaking change
-          The loki exporter was removed in favor of the native otel exporter!
+        chore: Updating opentelemetry-collector Chart form 0.134.0 to 0.140.0
 
-          Other changes
-          - bump collector to version 0.135.0
-          - Adding runtimeClassName to pod spec
-          - Add missing Kubernetes recommended labels
-          - Kernel and fuse mount options per cluster
+
       links:
-        - name: "Breaking Release:"
-          url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases
-        - name: "Migration Instructions:"
-          url: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/release/v0.130.x/exporter/lokiexporter/README.md#migration-instructions
-        - name: "Release of opentelemetry-collector-0.134.0"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.134.0
-        - name: "opentelemetry-collector-0.133.1"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.133.1
-        - name: "opentelemetry-collector-0.130.2"
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.130.2
+        - name: "Release of opentelemetry-collector-0.134.1"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.134.1
+        - name: "opentelemetry-collector-0.135.0"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.135.0
+        - name: "opentelemetry-collector-0.136.0"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.136.0
+        - name: "opentelemetry-collector-0.136.1"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.136.1
+        - name: "opentelemetry-collector-0.137.0"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.137.0
+        - name: "opentelemetry-collector-0.138.0"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.138.0
+        - name: "opentelemetry-collector-0.138.0"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.138.0
+        - name: "opentelemetry-collector-0.138.1"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.138.1
+        - name: "opentelemetry-collector-0.139.0"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.139.0
+        - name: "opentelemetry-collector-0.140.0"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/releases/tag/opentelemetry-collector-0.140.0
