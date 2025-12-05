@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.42.0
+version: 0.43.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,14 +19,12 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updating promtail Chart form 6.16.5 to 6.17.1
-        * Mark promtail chart as deprecated
-        * update appVersion to 3.5.1
-        * allow to inject templates
+        Updating loki Chart form 6.41.1 to 6.46.0
+        * nameOverride is now templated, and topologySpreadConstraints are configurable for single binary
+        * Removed storageClass field from compactor persistence (move it to claims)
+        * MinIO is deprecated as an object store and will be removed in the future
+        * The experimental Loki UI was removed (moved to the loki-operational-ui plugin)
+        * Added support for auto-resizing volumes by recreating the StatefulSet
       links:
-        - name: promtail-6.16.6 Relese Notes
-          url: https://github.com/grafana/helm-charts/releases/tag/promtail-6.16.6
-        - name: promtail-6.17.0 Release notes
-          url: https://github.com/grafana/helm-charts/releases/tag/promtail-6.17.0
-        - name: promtail-6.17.1 Release notes
-          url: https://github.com/grafana/helm-charts/releases/tag/promtail-6.17.1
+        - name: Grafan loki changelog
+          url: https://github.com/grafana/loki/blob/main/production/helm/loki/CHANGELOG.md
