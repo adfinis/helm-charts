@@ -25,8 +25,8 @@ loki:
   # @default -- [upstream values](https://github.com/grafana/loki/blob/main/production/helm/loki/values.yaml)
   values: {}
 
-# -- [Grafana Loki promtail](https://grafana.com/docs/loki/latest/send-data/promtail/) ([example](./examples/promtail.yaml))
-# @default -- -
+# -- [Grafana Loki promtail](https://grafana.com/docs/loki/latest/send-data/promtail/) is DEPRECATED, use "fluentBit" instead
+# @default -- DEPRECATED
 promtail:
   # -- Enable promtail
   enabled: false
@@ -42,7 +42,7 @@ promtail:
   # -- Chart
   chart: "promtail"
   # -- [promtail Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/promtail)
-  targetRevision: "6.16.5"
+  targetRevision: "6.17.1"
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/promtail/values.yaml)
   values: {}

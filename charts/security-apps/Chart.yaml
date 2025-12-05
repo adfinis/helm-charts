@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.105.1
+version: 0.105.2
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,12 +19,13 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Bump neuvector chart to 2.8.9
-        fixes CVE-2025-54469
-        fixes CVE-2025-54470
-        fixes CVE-2025-54471
+        chore: update oauth2Proxy to 9.0.0
+        - updates dependencies
+        - separate image.repository into (image.registry / image.repository) and support .global.imageRegistry
+        - add gateway api support
+        - Add support imagePullSecrets to service account
+        - adding HPA capabilities check
+
       links:
-        - name: neuvector chart release 2.8.9
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.9
-        - name: neuvector release 5.4.7
-          url: https://github.com/neuvector/neuvector/releases/tag/v5.4.7
+        - name: oauth2-proxy-9.0.0
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-9.0.0

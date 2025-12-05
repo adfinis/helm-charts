@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.27.2
+version: 0.28.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,11 +18,11 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update Argo Rollouts from 2.40.2 to 2.40.3
-        * Support dnsConfig parameter by @nitinverma9
-        * Bumpred dependencies
+        Update Argo Rollouts from 2.40.3 to 2.40.5
+        * Updated dependencies
+        * feat: allow argo rollout controller service monitor to use tlsconfig
       links:
-        - name: Argo Rollouts 2.40.2 Relese Notes
-          url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.40.3
-        - name: Argo Rollouts Full Change log
-          url: https://github.com/argoproj/argo-helm/compare/argo-rollouts-2.40.2...argo-rollouts-2.40.3
+        - name: argo-rollouts-2.40.5 Relese Notes
+          url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.40.5
+        - name: argo-rollouts-2.40.4 Release notes
+          url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.40.4
