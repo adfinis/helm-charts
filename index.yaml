@@ -5873,6 +5873,52 @@ entries:
       artifacthub.io/changes: |
         - kind: fixed
           description: |
+            fix: update kube-prometheus-stack from 76.4.1 to 79.9.0
+            - Bump kube-prometheus-stack to v79.9.0
+            - Update Prometheus to v2.54.1
+            - Update Alertmanager to v0.27.0
+            - Update kube-state-metrics to v2.14.0
+            - Update node-exporter to v1.8.2
+            - Update grafana dashboards and recording rules to latest upstream
+            - Add support for ServiceMonitor and PodMonitor per-endpoint TLS configuration
+            - Add optionalTopologySpreadConstraints for Prometheus and Alertmanager pods
+            - Add additional scrape config validation to avoid misconfiguration
+            - Improve CRD compatibility with Kubernetes 1.30+
+            - Remove deprecated `.spec.paused` field from Prometheus and Alertmanager CRDs
+            - Remove legacy PrometheusRules that are now managed upstream
+            - Fix issue with Alertmanager cluster gossip not honoring clusterAdvertiseAddress
+            - Fix Prometheus retentionSize defaulting behavior on some storageClass setups
+            - Fix Grafana sidecar reloader failing on large ConfigMaps
+          links:
+            - name: kube-prometheus-stack release notes v79.9.0
+              url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-79.9.0
+            - name: Prometheus Operator changelog
+              url: https://github.com/prometheus-operator/prometheus-operator/blob/main/CHANGELOG.md
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-12-08T15:56:18.16050871Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: f80de19cb1f051c59d20882990fe63c84487990a90e8c70c5b56c627a7e47aea
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.253.0/infra-apps-0.253.0.tgz
+    version: 0.253.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
+          description: |
             fix: update Argo CD from 3.1.8 to 3.2.1
 
             - Bump argo-cd to v3.2.1
@@ -33773,4 +33819,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-05T10:55:15.206356847Z"
+generated: "2025-12-08T15:56:18.163310068Z"
