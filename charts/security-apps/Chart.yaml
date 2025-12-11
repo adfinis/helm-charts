@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.110.0
+version: 0.111.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,21 +17,11 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
-    - kind: added
+    - kind: changed
       description: |
-        feat: Update Kyverno and Kyverno Policies from 1.15.1 to 1.17.0
+        chore: update vault-monitoring to 0.7.0
+        - updates VaultTokenCreate and VaultTokenStore alert thresholds
+
       links:
-        - name: 1.17.0 Release notes
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.17.0
-        - name: 1.16.3 Release notes
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.16.3
-        - name: 1.16.2 Release notes
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.16.2
-        - name: 1.16.1 Release notes
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.16.1
-        - name: 1.16.0 Release notes
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.16.0
-        - name: 1.15.3 Release notes
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.15.3
-        - name: 1.15.2 Release notes
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.15.2
+        - name: vault-monitoring-0.7.0
+          url: https://github.com/adfinis/helm-charts/releases/tag/vault-monitoring-0.7.0
