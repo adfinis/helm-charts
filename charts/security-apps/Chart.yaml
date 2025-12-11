@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.105.2
+version: 0.106.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,13 +19,9 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: update oauth2Proxy to 9.0.0
-        - updates dependencies
-        - separate image.repository into (image.registry / image.repository) and support .global.imageRegistry
-        - add gateway api support
-        - Add support imagePullSecrets to service account
-        - adding HPA capabilities check
+        chore: update vault-monitoring to 0.7.0
+        - updates VaultTokenCreate and VaultTokenStore alert thresholds
 
       links:
-        - name: oauth2-proxy-9.0.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-9.0.0
+        - name: vault-monitoring-0.7.0
+          url: https://github.com/adfinis/helm-charts/releases/tag/vault-monitoring-0.7.0
