@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.253.0
+version: 0.254.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,24 +19,23 @@ annotations:
   artifacthub.io/changes: |
     - kind: fixed
       description: |
-        fix: update kube-prometheus-stack from 76.4.1 to 79.9.0
-        - Bump kube-prometheus-stack to v79.9.0
-        - Update Prometheus to v2.54.1
-        - Update Alertmanager to v0.27.0
-        - Update kube-state-metrics to v2.14.0
-        - Update node-exporter to v1.8.2
-        - Update grafana dashboards and recording rules to latest upstream
-        - Add support for ServiceMonitor and PodMonitor per-endpoint TLS configuration
-        - Add optionalTopologySpreadConstraints for Prometheus and Alertmanager pods
-        - Add additional scrape config validation to avoid misconfiguration
-        - Improve CRD compatibility with Kubernetes 1.30+
-        - Remove deprecated `.spec.paused` field from Prometheus and Alertmanager CRDs
-        - Remove legacy PrometheusRules that are now managed upstream
-        - Fix issue with Alertmanager cluster gossip not honoring clusterAdvertiseAddress
-        - Fix Prometheus retentionSize defaulting behavior on some storageClass setups
-        - Fix Grafana sidecar reloader failing on large ConfigMaps
+        fix: update velero to 11.2.0
+
+        - updated velero to v1.17.1
+        - Fix VeleroNoNewBackup alert using timestamp age instead of rate()
+        - make Pod/ServiceMonitor interval/scrapeTimeout optional
+        - correct initContainer value json schema
+        - Move to bitnamilegacy
       links:
-        - name: kube-prometheus-stack release notes v79.9.0
-          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-79.9.0
-        - name: Prometheus Operator changelog
-          url: https://github.com/prometheus-operator/prometheus-operator/blob/main/CHANGELOG.md
+        - name: Velero v1.17.1 Release
+          url: https://github.com/vmware-tanzu/velero/releases
+        - name: velero-11.2.0 Chart
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.2.0
+        - name: velero-11.1.1 Chart
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.1.1
+        - name: velero-11.1.0 Chart
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.1.0
+        - name: velero-11.0.0 Chart
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.0.0
+        - name: velero-10.1.3 Chart
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-10.1.3
