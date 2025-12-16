@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.252.0
+version: 0.253.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,23 +19,24 @@ annotations:
   artifacthub.io/changes: |
     - kind: fixed
       description: |
-        fix: update Argo CD from 3.1.8 to 3.2.1
-
-        - Bump argo-cd to v3.2.1
-        - Bump redis_exporter to v1.80.1
-        - Add documentation about breaking changes when upgrading to 9.1.0 for redis-ha dependency
-        - Add serviceAnnotations support for AWS ALB gRPC service
-        - Remove server.rbac.log.enforce.enable flag in configs.cm
-        - Add backendRefs group and kind to HTTPRoute (prevents OutOfSync issue)
-        - Add checksum to ArgoCD notifications
-        - Add context to Changelog in README for v9.0.0
-        - Remove default values from config.params (See detail of breaking change in README).
-        - Add extraArgs to redisSecretInit Job
-        - Add runtimeClassName to redisSecretInit
-        - Add AKS Web Application Routing ingress example
-        - Add Gateway API support (HTTPRoute, GRPCRoute, BackendTLSPolicy) - EXPERIMENTAL
+        fix: update kube-prometheus-stack from 76.4.1 to 79.9.0
+        - Bump kube-prometheus-stack to v79.9.0
+        - Update Prometheus to v2.54.1
+        - Update Alertmanager to v0.27.0
+        - Update kube-state-metrics to v2.14.0
+        - Update node-exporter to v1.8.2
+        - Update grafana dashboards and recording rules to latest upstream
+        - Add support for ServiceMonitor and PodMonitor per-endpoint TLS configuration
+        - Add optionalTopologySpreadConstraints for Prometheus and Alertmanager pods
+        - Add additional scrape config validation to avoid misconfiguration
+        - Improve CRD compatibility with Kubernetes 1.30+
+        - Remove deprecated `.spec.paused` field from Prometheus and Alertmanager CRDs
+        - Remove legacy PrometheusRules that are now managed upstream
+        - Fix issue with Alertmanager cluster gossip not honoring clusterAdvertiseAddress
+        - Fix Prometheus retentionSize defaulting behavior on some storageClass setups
+        - Fix Grafana sidecar reloader failing on large ConfigMaps
       links:
-        - name: Argo CD 3.2 announcement
-          url: https://blog.argoproj.io/argo-cd-v3-2-release-candidate-4c939b63d9c4
-        - name: ARgo CD 3.1 to 3.2 Upgrade Notes
-          url: https://argo-cd.readthedocs.io/en/stable/operator-manual/upgrading/3.1-3.2/
+        - name: kube-prometheus-stack release notes v79.9.0
+          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-79.9.0
+        - name: Prometheus Operator changelog
+          url: https://github.com/prometheus-operator/prometheus-operator/blob/main/CHANGELOG.md
