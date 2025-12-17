@@ -1420,6 +1420,37 @@ entries:
   azure-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: security
+          description: |
+            Update promitorResourceDiscovery to 0.14.1, which includes patches for various CVEs.
+          links:
+            - name: Promitor Resource Discovery v0.14.1
+              url: https://github.com/tomkerkhove/promitor/releases/tag/ResourceDiscovery-v0.14.1
+            - name: ResourceDiscovery v0.14.1
+              url: https://github.com/promitor/charts/releases/tag/ResourceDiscovery-v0.14.1
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-12-17T08:51:31.667221926Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for Azure applications
+    digest: af391954340f320388107bd9b9e565a282d87293d1dcb1634453b5f538a57737
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.17.0/azure-apps-0.17.0.tgz
+    version: 0.17.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: "update csi-secrets-store-provider-azure from 1.5.4 to 1.7.0"
           links:
@@ -33864,4 +33895,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-17T08:11:32.967195824Z"
+generated: "2025-12-17T08:51:31.668712644Z"
