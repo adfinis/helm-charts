@@ -5873,6 +5873,51 @@ entries:
       artifacthub.io/changes: |
         - kind: fixed
           description: |
+            fix: update velero to 11.2.0
+
+            - updated velero to v1.17.1
+            - Fix VeleroNoNewBackup alert using timestamp age instead of rate()
+            - make Pod/ServiceMonitor interval/scrapeTimeout optional
+            - correct initContainer value json schema
+            - Move to bitnamilegacy
+          links:
+            - name: Velero v1.17.1 Release
+              url: https://github.com/vmware-tanzu/velero/releases
+            - name: velero-11.2.0 Chart
+              url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.2.0
+            - name: velero-11.1.1 Chart
+              url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.1.1
+            - name: velero-11.1.0 Chart
+              url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.1.0
+            - name: velero-11.0.0 Chart
+              url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.0.0
+            - name: velero-10.1.3 Chart
+              url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-10.1.3
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-12-17T08:11:32.962832418Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 4bbd7b458b5cdd6dabb6fc27240abf0a750e291f3b14df77a83ae3a4cedaad68
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.254.0/infra-apps-0.254.0.tgz
+    version: 0.254.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
+          description: |
             fix: update kube-prometheus-stack from 76.4.1 to 79.9.0
             - Bump kube-prometheus-stack to v79.9.0
             - Update Prometheus to v2.54.1
@@ -33819,4 +33864,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-08T15:56:18.163310068Z"
+generated: "2025-12-17T08:11:32.967195824Z"
