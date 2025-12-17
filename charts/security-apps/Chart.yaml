@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.105.2
+version: 0.106.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,13 +19,14 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: update oauth2Proxy to 9.0.0
-        - updates dependencies
-        - separate image.repository into (image.registry / image.repository) and support .global.imageRegistry
-        - add gateway api support
-        - Add support imagePullSecrets to service account
-        - adding HPA capabilities check
+        chore: update stackrox to 4.9.2
+        - Runtime vulnerability management support added for virtual machines on Red Hat OpenShift Virtualization
+        - SBOM generation is now generally available with delegated scanning support.
+        - Process execution policies now support automatic locking of baselines to reduce manual effort
+        - Added support for machine-to-machine token exchange using external JSON Web Token issuers.
 
       links:
-        - name: oauth2-proxy-9.0.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-9.0.0
+        - name: stackrox 4.8 Release notes
+          url: https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.8/html/release_notes/index
+        - name: stackrox 4.9 Release notes
+          url: https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.9/html/release_notes/index
