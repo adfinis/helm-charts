@@ -26,5 +26,5 @@ annotations:
         * The experimental Loki UI was removed (moved to the loki-operational-ui plugin)
         * Added support for auto-resizing volumes by recreating the StatefulSet
       links:
-        - name: Grafan loki changelog
+        - name: Grafana loki changelog
           url: https://github.com/grafana/loki/blob/main/production/helm/loki/CHANGELOG.md
