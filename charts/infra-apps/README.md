@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.252.0](https://img.shields.io/badge/Version-0.252.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.254.0](https://img.shields.io/badge/Version-0.254.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -72,7 +72,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kubePrometheusStack.enabled | bool | `false` | Enable prometheus-operator |
 | kubePrometheusStack.repoURL | string | [repo](https://prometheus-community.github.io/helm-charts) | Repo URL |
 | kubePrometheusStack.syncPolicy.syncOptions[0] | string | `"ServerSideApply=true"` | enable server-side-apply for KPS since it get's rid of having to manually sync/replace resources |
-| kubePrometheusStack.targetRevision | string | `"76.4.1"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
+| kubePrometheusStack.targetRevision | string | `"79.9.0"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
 | kubePrometheusStack.values | object | [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml) | Helm values |
 | kured | object | [example](./examples/kured.yaml) | [kured](https://github.com/kubereboot/kured) |
 | kured.annotations | object | `{}` | Annotations for Kured app |
@@ -104,7 +104,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | velero.destination.namespace | string | `"infra-velero"` | Namespace |
 | velero.enabled | bool | `false` | Enable Velero |
 | velero.repoURL | string | [repo](https://vmware-tanzu.github.io/helm-charts) | Repo URL |
-| velero.targetRevision | string | `"10.1.0"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
+| velero.targetRevision | string | `"11.2.0"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
 | velero.values | object | [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml) | Helm values |
 
 ## About this chart

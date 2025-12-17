@@ -19,7 +19,7 @@ jobs:
     - name: install helm unittest
       run: |
         helm env
-        helm plugin install https://github.com/helm-unittest/helm-unittest
+        helm plugin install https://github.com/helm-unittest/helm-unittest --version 1.0.3
 
     - uses: actions/setup-python@v6
       with:
@@ -53,7 +53,7 @@ jobs:
       - name: install helm unittest
         run: |
           helm env
-          helm plugin install https://github.com/helm-unittest/helm-unittest
+          helm plugin install https://github.com/helm-unittest/helm-unittest --version 1.0.3
 
       - uses: actions/setup-python@v6
         with:
