@@ -23462,6 +23462,42 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: update stackrox to 4.9.2
+            - Runtime vulnerability management support added for virtual machines on Red Hat OpenShift Virtualization
+            - SBOM generation is now generally available with delegated scanning support.
+            - Process execution policies now support automatic locking of baselines to reduce manual effort
+            - Added support for machine-to-machine token exchange using external JSON Web Token issuers.
+
+          links:
+            - name: stackrox 4.8 Release notes
+              url: https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.8/html/release_notes/index
+            - name: stackrox 4.9 Release notes
+              url: https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.9/html/release_notes/index
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2025-12-18T09:17:07.994068928Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 733ddcbf74812e17cfaa7c42fcc672cbabbc83915a184c6041fbbe5ebd544323
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.106.0/security-apps-0.106.0.tgz
+    version: 0.106.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: update oauth2Proxy to 9.0.0
             - updates dependencies
             - separate image.repository into (image.registry / image.repository) and support .global.imageRegistry
@@ -33895,4 +33931,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-17T08:51:31.668712644Z"
+generated: "2025-12-18T09:17:07.995695884Z"
