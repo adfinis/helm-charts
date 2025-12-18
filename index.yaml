@@ -5902,6 +5902,51 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: |
+            fix: update ingress-nginx to 4.14.1
+
+            - Update NGINX controller to 1.14.1
+            - Added support for PROXY protocol v2 in SSL Proxy
+            - Fixes for rate-limiting zone sorting
+          links:
+            - name: ingress nginx changelog
+              url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog
+            - name: helm-chart-4.14.1
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.1
+            - name: helm-chart-4.13.5
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.5
+            - name: helm-chart-4.14.0
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.0
+            - name: helm-chart-4.13.4
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.4
+            - name: helm-chart-4.13.3
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.3
+            - name: helm-chart-4.13.2
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.2
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-12-18T12:17:15.57169818Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: b7e9da60883e275530fcef52a93626fd7aee30f368bc9500d329395b38551cbe
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.255.0/infra-apps-0.255.0.tgz
+    version: 0.255.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: fixed
           description: |
             fix: update velero to 11.2.0
@@ -33931,4 +33976,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-18T09:17:07.995695884Z"
+generated: "2025-12-18T12:17:15.573458601Z"
