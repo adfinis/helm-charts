@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.254.0
+version: 0.255.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,25 +17,25 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: fixed
+    - kind: changed
       description: |
-        fix: update velero to 11.2.0
+        fix: update ingress-nginx to 4.14.1
 
-        - updated velero to v1.17.1
-        - Fix VeleroNoNewBackup alert using timestamp age instead of rate()
-        - make Pod/ServiceMonitor interval/scrapeTimeout optional
-        - correct initContainer value json schema
-        - Move to bitnamilegacy
+        - Update NGINX controller to 1.14.1
+        - Added support for PROXY protocol v2 in SSL Proxy
+        - Fixes for rate-limiting zone sorting
       links:
-        - name: Velero v1.17.1 Release
-          url: https://github.com/vmware-tanzu/velero/releases
-        - name: velero-11.2.0 Chart
-          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.2.0
-        - name: velero-11.1.1 Chart
-          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.1.1
-        - name: velero-11.1.0 Chart
-          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.1.0
-        - name: velero-11.0.0 Chart
-          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.0.0
-        - name: velero-10.1.3 Chart
-          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-10.1.3
+        - name: ingress nginx changelog
+          url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog
+        - name: helm-chart-4.14.1
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.1
+        - name: helm-chart-4.13.5
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.5
+        - name: helm-chart-4.14.0
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.0
+        - name: helm-chart-4.13.4
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.4
+        - name: helm-chart-4.13.3
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.3
+        - name: helm-chart-4.13.2
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.2
