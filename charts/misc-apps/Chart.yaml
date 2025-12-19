@@ -13,32 +13,24 @@ maintainers:
 dependencies:
   - name: argoconfig
     version: 0.9.1
-    repository: https://charts.adfinis.com
+    repository: https://charts.adfinis.comdd
 annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Upgraded Keda chart from 2.14.2 to 2.17.2
+        chore: Upgraded Keda chart from 2.17.2 to 2.18.2
 
-        - Bumped Keda to v2.17.0
-        - improved security with stricter RBAC
-        - improved reliability of cer Renewals
+        - Bumped Keda to 2.18.2
+        - improved the raw metrics stream to send metrics during the ScaledObject's polling interval
+        - Added a flag KEDA_CHECK_UNEXPECTED_SCALERS_PARAMS to allow checking for unexpected scaler parameters
         - added option to disable the creation of legacy Docker service links
         - fixed service account token bug.
 
       links:
-        - name: v2.17.2 release notes
-          url: https://github.com/kedacore/charts/releases/tag/v2.17.2
-        - name: v2.17.1 release notes
-          url: https://github.com/kedacore/charts/releases/tag/v2.17.1
-        - name: v2.16.1 release notes
-          url: https://github.com/kedacore/charts/releases/tag/v2.16.1
-        - name: v2.16.0 release notes
-          url: https://github.com/kedacore/charts/releases/tag/v2.16.0
-        - name: v2.15.2 release notes
-          url: https://github.com/kedacore/charts/releases/tag/v2.15.2
-        - name: v2.15.1 release notes
-          url: https://github.com/kedacore/charts/releases/tag/v2.15.1
-        - name: v2.14.3 release notes
-          url: https://github.com/kedacore/charts/releases/tag/v2.14.3
+        - name: v2.18.0 release notes
+          url: https://github.com/kedacore/keda/releases/tag/v2.18.0
+        - name: v2.18.1 release notes
+          url: https://github.com/kedacore/keda/releases/tag/v2.18.1
+        - name: v2.18.0 release notes
+          url: https://github.com/kedacore/keda/releases/tag/v2.18.0
