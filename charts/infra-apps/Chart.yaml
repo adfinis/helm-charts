@@ -19,23 +19,9 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        fix: update ingress-nginx to 4.14.1
-
-        - Update NGINX controller to 1.14.1
-        - Added support for PROXY protocol v2 in SSL Proxy
-        - Fixes for rate-limiting zone sorting
+        fix: update promitorScraper to 1.14.1
+        - Fixed a bug in Azure Monitor scraping to handle duplicate metric namespaces in queries
+        - Updated dependencies
       links:
-        - name: ingress nginx changelog
-          url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog
-        - name: helm-chart-4.14.1
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.1
-        - name: helm-chart-4.13.5
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.5
-        - name: helm-chart-4.14.0
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.0
-        - name: helm-chart-4.13.4
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.4
-        - name: helm-chart-4.13.3
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.3
-        - name: helm-chart-4.13.2
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.2
+        - name: Scraper 2.14.1 Release
+          url: https://github.com/tomkerkhove/promitor/releases/tag/Scraper-v2.14.1
