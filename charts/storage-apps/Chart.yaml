@@ -2,7 +2,7 @@ apiVersion: v2
 name: storage-apps
 description: Argo CD app-of-apps config for storage applications
 type: application
-version: 0.19.0
+version: 0.20.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,38 +18,13 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated cephCsiCephfs and cephCsiRbd charts to 3.15.0, including:
-          - Replication server moved from main controller to CSI-Addons
-          - Added support for QoS parameters, like limits based on I/O capacity, read/write mix, and maximums.
-          - New method for SELinux labeling was introduce
-          - Can now create a ReadWriteMany (PVC) directly from a ReadOnlyMany
-          - Now supports using the ObjectMap data store within a RADOS namespace.
+        Updated cephCsiCephfs and cephCsiRbd charts to 3.15.1, including:
+          - Bug/fencing shallow volume
+          - Fix bug where volumereplication promote/demote would fail
+          - Support compressed ipv6 addresses
+          - skip reset quiesce during DeleteVolumeGroupSnapshot
+          - retry controllerpublish secret fetch on missing clusterId
+          - pass fsName when mounting from monitor list
       links:
-        - name: "3.15 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.15.0"
-        - name: "3.14.2 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.14.2"
-        - name: "3.14.1 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.14.1"
-        - name: "3.14 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.14.0"
-        - name: "3.13.1 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.13.1"
-        - name: "3.13 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.13.0"
-        - name: "3.12.3 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.12.3"
-        - name: "3.12.1 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.12.1"
-        - name: "3.12 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.12.0"
-        - name: "3.11 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.11.0"
-        - name: "3.10.2 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.10.2"
-        - name: "3.10.1 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.10.1"
-        - name: "3.10 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.10.0"
-        - name: "3.9 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.9.0"
+        - name: "3.15.1 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.15.1"
