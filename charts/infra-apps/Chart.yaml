@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.255.0
+version: 0.256.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,27 +15,33 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        fix: update ingress-nginx to 4.14.1
+        fix: update certManager to 1.19.2
 
-        - Update NGINX controller to 1.14.1
-        - Added support for PROXY protocol v2 in SSL Proxy
-        - Fixes for rate-limiting zone sorting
+        - Fixes for various CVEs
+        - Updated ACME client
+        - Add IPv6 rules to the default network policy
+        - Add global.nodeSelector to helm chart
+        - Add a feature gate to default to Ingress pathType Exact in ACME HTTP01 Ingress challenge solvers.
+        - Add generated applyconfigurations allowing clients to make type-safe server-side apply requests for cert-manager resources.
+        - Added API defaults to issuer references group (cert-manager.io) and kind (Issuer)
+        - Added certmanager_certificate_challenge_status Prometheus metric.
+        - Added protocol field for rfc2136 DNS01 provider
+        - The CAInjectorMerging feature has been promoted to BETA and is now enabled by default
+        - Updated certificate metrics to the collector approach
+        - ACME: Increased challenge authorization timeout to 2 minutes to fix error waiting for authorization
+        - Increase maximum sizes of PEM certificates and chain
+
+
       links:
-        - name: ingress nginx changelog
-          url: https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx?modal=changelog
-        - name: helm-chart-4.14.1
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.1
-        - name: helm-chart-4.13.5
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.5
-        - name: helm-chart-4.14.0
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.0
-        - name: helm-chart-4.13.4
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.4
-        - name: helm-chart-4.13.3
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.3
-        - name: helm-chart-4.13.2
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.13.2
+        - name: v1.19.2 Release
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.19.2
+        - name: v1.18.4 Release
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.18.4
+        - name: v1.19.1 Release
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.19.1
+        - name: v1.19.0 Release
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.19.0
