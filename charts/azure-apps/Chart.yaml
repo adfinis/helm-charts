@@ -2,7 +2,7 @@ apiVersion: v2
 name: azure-apps
 description: Argo CD app-of-apps config for Azure applications
 type: application
-version: 0.17.0
+version: 0.18.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,13 +15,13 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: security
+    - kind: changed
       description: |
-        Update promitorResourceDiscovery to 0.14.1, which includes patches for various CVEs.
+        fix: update promitorScraper to 1.14.1
+        - Fixed a bug in Azure Monitor scraping to handle duplicate metric namespaces in queries
+        - Updated dependencies
       links:
-        - name: Promitor Resource Discovery v0.14.1
-          url: https://github.com/tomkerkhove/promitor/releases/tag/ResourceDiscovery-v0.14.1
-        - name: ResourceDiscovery v0.14.1
-          url: https://github.com/promitor/charts/releases/tag/ResourceDiscovery-v0.14.1
+        - name: Scraper 2.14.1 Release
+          url: https://github.com/tomkerkhove/promitor/releases/tag/Scraper-v2.14.1
