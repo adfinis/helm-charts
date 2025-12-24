@@ -16959,6 +16959,40 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updating loki Chart form 6.41.1 to 6.46.0
+            * nameOverride is now templated, and topologySpreadConstraints are configurable for single binary
+            * Removed storageClass field from compactor persistence (move it to claims)
+            * MinIO is deprecated as an object store and will be removed in the future
+            * The experimental Loki UI was removed (moved to the loki-operational-ui plugin)
+            * Added support for auto-resizing volumes by recreating the StatefulSet
+          links:
+            - name: Grafana loki changelog
+              url: https://github.com/grafana/loki/blob/main/production/helm/loki/CHANGELOG.md
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-12-24T10:16:53.035938413Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: 26b6bb507f1eb04e3d9e2b759072df01fb18a0bb8511efcb6289051a83b44410
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.43.0/logging-apps-0.43.0.tgz
+    version: 0.43.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updating promtail Chart form 6.16.5 to 6.17.1
             * Mark promtail chart as deprecated
             * update appVersion to 3.5.1
@@ -34132,4 +34166,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-24T10:14:55.31115487Z"
+generated: "2025-12-24T10:16:53.038605018Z"
