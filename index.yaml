@@ -1420,6 +1420,37 @@ entries:
   azure-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: |
+            fix: update promitorScraper to 1.14.1
+            - Fixed a bug in Azure Monitor scraping to handle duplicate metric namespaces in queries
+            - Updated dependencies
+          links:
+            - name: Scraper 2.14.1 Release
+              url: https://github.com/tomkerkhove/promitor/releases/tag/Scraper-v2.14.1
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2025-12-24T10:06:49.770570297Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for Azure applications
+    digest: 832f0f24b26c01bd05aca9412b1d71b7db3d2b2b92dc58c417875e778ecdcaf1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.18.0/azure-apps-0.18.0.tgz
+    version: 0.18.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: security
           description: |
             Update promitorResourceDiscovery to 0.14.1, which includes patches for various CVEs.
@@ -33976,4 +34007,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-18T12:17:15.573458601Z"
+generated: "2025-12-24T10:06:49.772283304Z"
