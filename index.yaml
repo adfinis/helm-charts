@@ -27513,6 +27513,40 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated cephCsiCephfs and cephCsiRbd charts to 3.15.1, including:
+              - Bug/fencing shallow volume
+              - Fix bug where volumereplication promote/demote would fail
+              - Support compressed ipv6 addresses
+              - skip reset quiesce during DeleteVolumeGroupSnapshot
+              - retry controllerpublish secret fetch on missing clusterId
+              - pass fsName when mounting from monitor list
+          links:
+            - name: "3.15.1 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.15.1"
+    apiVersion: v2
+    created: "2025-12-24T10:09:16.687181883Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for storage applications
+    digest: 4b8347b8eebb22f32e9fd6c8f8aaeacd0e5f15301d4d0b937b715e90e7a4ed09
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.20.0/storage-apps-0.20.0.tgz
+    version: 0.20.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated cephCsiCephfs and cephCsiRbd charts to 3.15.0, including:
               - Replication server moved from main controller to CSI-Addons
               - Added support for QoS parameters, like limits based on I/O capacity, read/write mix, and maximums.
@@ -34007,4 +34041,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-24T10:06:49.772283304Z"
+generated: "2025-12-24T10:09:16.68873592Z"
