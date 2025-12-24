@@ -19,13 +19,13 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated csiDriverSmb to 1.19.1, including:
-          - Various CVE fixes
-          - upgrade csi-resizer to v1.14.0
-          - enable to use secrets with special characters
-          - support multiple storage classes creation using helm chart
+        Updated cephCsiCephfs and cephCsiRbd charts to 3.15.1, including:
+          - Bug/fencing shallow volume
+          - Fix bug where volumereplication promote/demote would fail
+          - Support compressed ipv6 addresses
+          - skip reset quiesce during DeleteVolumeGroupSnapshot
+          - retry controllerpublish secret fetch on missing clusterId
+          - pass fsName when mounting from monitor list
       links:
-        - name: "v1.19.1 Release Notes"
-          url: "https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.19.1"
-        - name: "v1.19.0 Release Notes"
-          url: "https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.19.0"
+        - name: "3.15.1 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.15.1"
