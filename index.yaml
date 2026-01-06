@@ -27666,6 +27666,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated csiDriverSmb to 1.19.1, including:
+              - Various CVE fixes
+              - upgrade csi-resizer to v1.14.0
+              - enable to use secrets with special characters
+              - support multiple storage classes creation using helm chart
+          links:
+            - name: "v1.19.1 Release Notes"
+              url: "https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.19.1"
+            - name: "v1.19.0 Release Notes"
+              url: "https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.19.0"
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-01-06T09:18:39.696333704Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for storage applications
+    digest: 8ebafa340b1578ab0b633ac68b76bea1f7e130ca3cef9a0844daefa1d2f34795
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.21.0/storage-apps-0.21.0.tgz
+    version: 0.21.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated cephCsiCephfs and cephCsiRbd charts to 3.15.1, including:
               - Bug/fencing shallow volume
               - Fix bug where volumereplication promote/demote would fail
@@ -34194,4 +34229,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-05T15:25:58.565752187Z"
+generated: "2026-01-06T09:18:39.697772564Z"
