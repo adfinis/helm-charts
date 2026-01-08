@@ -314,7 +314,7 @@ kyvernoPolicies:
 
 # -- [OpenBao](https://openbao.org)
 # @default -- [example](./examples/openbao.yaml)
-openBao:
+openbao:
   # -- Enable openbao
   enabled: false
   name: openbao

@@ -97,14 +97,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | oauth2Proxy.repoURL | string | [repo](https://https://oauth2-proxy.github.io/manifests) | Repo URL |
 | oauth2Proxy.targetRevision | string | `"9.0.0"` | [oauth2-proxy Helm chart](https://github.com/oauth2-proxy/manifests/tree/main/helm/oauth2-proxy) |
 | oauth2Proxy.values | object | [upstream values](https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/values.yaml) | Helm values |
-| openBao | object | [example](./examples/openbao.yaml) | [OpenBao](https://openbao.org) |
-| openBao.annotations | object | `{}` | Annotations for openbao |
-| openBao.chart | string | `"openbao"` | Chart |
-| openBao.destination.namespace | string | `"infra-openbao"` | Namespace |
-| openBao.enabled | bool | `false` | Enable openbao |
-| openBao.repoURL | string | [repo](https://openbao.github.io/openbao-helm) | Repo URL |
-| openBao.targetRevision | string | `"0.23.3"` | [OpenBao Helm chart](https://github.com/openbao/openbao-helm/tree/main/charts/openbao) |
-| openBao.values | object | [upstream values](https://github.com/openbao/openbao-helm/blob/main/charts/openbao/values.yaml) | Helm values |
+| openbao | object | [example](./examples/openbao.yaml) | [OpenBao](https://openbao.org) |
+| openbao.annotations | object | `{}` | Annotations for openbao |
+| openbao.chart | string | `"openbao"` | Chart |
+| openbao.destination.namespace | string | `"infra-openbao"` | Namespace |
+| openbao.enabled | bool | `false` | Enable openbao |
+| openbao.repoURL | string | [repo](https://openbao.github.io/openbao-helm) | Repo URL |
+| openbao.targetRevision | string | `"0.23.3"` | [OpenBao Helm chart](https://github.com/openbao/openbao-helm/tree/main/charts/openbao) |
+| openbao.values | object | [upstream values](https://github.com/openbao/openbao-helm/blob/main/charts/openbao/values.yaml) | Helm values |
 | secretsStoreCsiDriver | object | - | [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([example](./examples/secrets-store-csi-driver.yaml)) |
 | secretsStoreCsiDriver.chart | string | `"secrets-store-csi-driver"` | Chart |
 | secretsStoreCsiDriver.destination.namespace | string | `"infra-secrets-store-csi"` | Namespace |
