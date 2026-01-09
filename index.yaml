@@ -18643,6 +18643,34 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update from argocdApps Helm chart v2.0.2 to v2.0.3
+            - Patch-level updates and bug fixes
+            - Minor template and values refinements
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-01-09T14:07:47.272322279Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 446ea3183b47e5b9c3b87b3b281e995b13f16631610bc553704416422628cdc0
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.59.0/misc-apps-0.59.0.tgz
+    version: 0.59.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Upgraded Keda chart from 2.17.2 to 2.18.2
 
             - Bumped Keda to 2.18.2
@@ -34229,4 +34257,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-06T09:18:39.697772564Z"
+generated: "2026-01-09T14:07:47.273843429Z"
