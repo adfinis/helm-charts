@@ -5935,6 +5935,34 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update from argo-cd Helm chart v9.1.5 to v9.2.3
+            - Minor feature enhancements and bug fixes
+            - Dependency updates and non-breaking improvements
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-01-09T14:17:50.911262385Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 0067da2590939e874558392a38f70d1d5ffbb9e92d550f8a2ac7e9d1a2de8fde
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.258.0/infra-apps-0.258.0.tgz
+    version: 0.258.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update from kube-prometheus-stack v79.9.0 to v80.9.2
             - Update etcd image digest bump in v80.9.0
             - Update kube-prometheus-stack dependencies non-major updates
@@ -34257,4 +34285,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-09T14:07:47.273843429Z"
+generated: "2026-01-09T14:17:50.912945189Z"
