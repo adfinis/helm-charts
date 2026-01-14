@@ -306,6 +306,7 @@ keycloak:
     # -- A list of realms to configure using the realmimport CRD.
     realms: []
     # - keycloakCRName: string
+    #   additionalProperties: object
     #   accessCodeLifespan: integer
     #   accessCodeLifespanLogin: integer
     #   accessCodeLifespanUserAction: integer
