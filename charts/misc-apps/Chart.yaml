@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.59.0
+version: 0.60.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,6 +19,6 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update from argocdApps Helm chart v2.0.2 to v2.0.3
-        - Patch-level updates and bug fixes
-        - Minor template and values refinements
+        Update oprncost to 2.5.3
+        - Add configurable nginx proxy timeouts to helm chart
+        - updated to  Opencost v1.119.1
