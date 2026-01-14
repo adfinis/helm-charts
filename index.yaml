@@ -18759,6 +18759,34 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update oprncost to 2.5.3
+            - Add configurable nginx proxy timeouts to helm chart
+            - updated to  Opencost v1.119.1
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-01-14T13:26:25.505416569Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 129d3e0cda60be6d02cb0248336f9cde736b845d1efebd3b32c7baba7df3072e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.60.0/misc-apps-0.60.0.tgz
+    version: 0.60.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update from argocdApps Helm chart v2.0.2 to v2.0.3
             - Patch-level updates and bug fixes
             - Minor template and values refinements
@@ -34373,4 +34401,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-14T08:41:02.588136907Z"
+generated: "2026-01-14T13:26:25.50706404Z"
