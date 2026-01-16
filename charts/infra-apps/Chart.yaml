@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.259.0
+version: 0.259.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,11 +19,12 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update Argo CD from 3.2.1 to 3.2.4
+        Update Argo CD from 3.2.4 to 3.2.5
+
         - various bugfixes
-        - security updatesin dependencies
+        - security updates in dependencies
     - kind: changed
       description: |
-        Update from argo-cd Helm chart v9.2.3 to v9.3.1
-        - global volumes and volumeMounts
-        - remove all redis references when disabled
+        Update from argo-cd Helm chart v9.3.1 to v9.3.4
+
+        - remove redis references when redis.enabled=false
