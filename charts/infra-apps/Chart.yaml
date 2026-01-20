@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.259.1
+version: 0.260.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,16 +15,16 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update Argo CD from 3.2.4 to 3.2.5
+        Update velero from 11.2.0 to 11.3.2
+        - fix: also conditionally include volume mounts for nodeagent
+        - fix: Add method to disable host path in Helm Chart
 
-        - various bugfixes
-        - security updates in dependencies
-    - kind: changed
-      description: |
-        Update from argo-cd Helm chart v9.3.1 to v9.3.4
-
-        - remove redis references when redis.enabled=false
+      links:
+        - name: Velero 11.3.2 Release notes
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.3.2
+        - name: Velero 11.3.1 Release notes
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.3.1
