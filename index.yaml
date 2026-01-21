@@ -23958,6 +23958,39 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: update neuvector to 2.8.10
+            - customize controller and manager service port and target port in chart
+            - allow to update nginx.ingress.kubernetes.io/backend-protocol annotation
+            - bump helm chart versions for NeuVector 5.4.8
+
+          links:
+            - name: NeuVector Chert 2.8.10 Release notes
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.10
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-01-21T09:24:00.694335977Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 6b26aaefdda63c79a53b6adc190e86d4c3afd6641b5277d1caae4293d98fa79f
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.107.0/security-apps-0.107.0.tgz
+    version: 0.107.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: update stackrox to 4.9.2
             - Runtime vulnerability management support added for virtual machines on Red Hat OpenShift Virtualization
             - SBOM generation is now generally available with delegated scanning support.
@@ -34496,4 +34529,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-20T11:45:42.952227479Z"
+generated: "2026-01-21T09:24:00.695842549Z"
