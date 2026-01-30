@@ -25,6 +25,28 @@ loki:
   # @default -- [upstream values](https://github.com/grafana/loki/blob/main/production/helm/loki/values.yaml)
   values: {}
 
+# -- [OpenTelemetry Collector (logs agent)](https://opentelemetry.io/docs/collector/) ([example](./examples/otel-collector.yaml))
+# @default -- -
+otelLogCollector:
+  # -- Enable OpenTelemetry log collector
+  enabled: false
+  name: otel-logs
+  # -- Annotations for the otel-collector Application
+  annotations: {}
+  destination:
+    # -- Namespace
+    namespace: "infra-logging"
+  # -- Repo URL
+  # @default -- https://open-telemetry.github.io/opentelemetry-helm-charts
+  repoURL: "https://open-telemetry.github.io/opentelemetry-helm-charts"
+  # -- Chart
+  chart: "opentelemetry-collector"
+  # -- [opentelemetry Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector)
+  targetRevision: "0.86.0"
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml)
+  values: {}
+
 # -- [Grafana Loki promtail](https://grafana.com/docs/loki/latest/send-data/promtail/) is DEPRECATED, use "fluentBit" instead
 # @default -- DEPRECATED
 promtail:
