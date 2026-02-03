@@ -19,5 +19,5 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update argocd from 9.3.4 to 9.3.7
+        Update argocd from 3.2.5 to 3.3.0
         * fixes #1664
