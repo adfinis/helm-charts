@@ -5935,6 +5935,32 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update kured from 5.10.0 to 5.11.0
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-02-03T13:28:17.308555764Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: a92835eff04ba8673b751a158d45fae6f055fe02448bc543449fa63da11699a5
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.260.1/infra-apps-0.260.1.tgz
+    version: 0.260.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update velero from 11.2.0 to 11.3.2
             - fix: also conditionally include volume mounts for nodeagent
             - fix: Add method to disable host path in Helm Chart
@@ -34529,4 +34555,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-21T09:24:00.695842549Z"
+generated: "2026-02-03T13:28:17.310316412Z"
