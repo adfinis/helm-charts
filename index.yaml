@@ -5935,6 +5935,39 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update argocd from 3.2.5 to 3.3.0
+            * fixes #1664
+            * helm chart version from 9.3.4 to 9.3.7
+          links:
+            - name: argo-cd release notes v3.3.0
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.3.0
+            - name: argo-cd upgrade guide v3.2-v3.3
+              url: https://argo-cd.readthedocs.io/en/latest/operator-manual/upgrading/3.2-3.3/
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-02-04T10:11:00.951672158Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: da7f262897b7762c57bed716012e647e9a018daec09ab97f64d25de82450d1d1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.260.2/infra-apps-0.260.2.tgz
+    version: 0.260.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update kured from 5.10.0 to 5.11.0
       artifacthub.io/containsSecurityUpdates: "false"
     apiVersion: v2
@@ -34609,4 +34642,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-03T14:41:29.107743225Z"
+generated: "2026-02-04T10:11:00.953577314Z"
