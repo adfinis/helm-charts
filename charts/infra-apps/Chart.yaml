@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.260.2
+version: 0.260.3
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,15 +15,15 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update argocd from 3.2.5 to 3.3.0
-        * fixes #1664
-        * helm chart version from 9.3.4 to 9.3.7
+        Update ingress-nginx from 4.14.1 to 4.14.3
+        * fixes #1666
+        * controller version from 1.14.1 to 1.14.3
       links:
-        - name: argo-cd release notes v3.3.0
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.3.0
-        - name: argo-cd upgrade guide v3.2-v3.3
-          url: https://argo-cd.readthedocs.io/en/latest/operator-manual/upgrading/3.2-3.3/
+        - name: ingress-nginx controller release notes v1.14.3
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.14.3
+        - name: ingress-nginx helm chart release notes v4.14.3
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.3
