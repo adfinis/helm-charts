@@ -1,6 +1,6 @@
 # logging-apps
 
-![Version: 0.44.0](https://img.shields.io/badge/Version-0.44.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.45.0](https://img.shields.io/badge/Version-0.45.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for logging applications
 
@@ -56,6 +56,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | loki.targetRevision | string | `"6.49.0"` | [loki Helm chart](https://github.com/grafana/loki/tree/main/production/helm/loki) |
 | loki.values | object | [upstream values](https://github.com/grafana/loki/blob/main/production/helm/loki/values.yaml) | Helm values |
 | lokiStack | object | DEPRECATED | [loki-stack](https://github.com/grafana/loki) is DEPREACTED use `loki` and `promtail` individually |
+| otelLogCollector | object | - | [OpenTelemetry Collector (logs agent)](https://opentelemetry.io/docs/collector/) ([example](./examples/otel-collector.yaml)) |
+| otelLogCollector.annotations | object | `{}` | Annotations for the otel-collector Application |
+| otelLogCollector.chart | string | `"opentelemetry-collector"` | Chart |
+| otelLogCollector.destination.namespace | string | `"infra-logging"` | Namespace |
+| otelLogCollector.enabled | bool | `false` | Enable OpenTelemetry log collector |
+| otelLogCollector.repoURL | string | https://open-telemetry.github.io/opentelemetry-helm-charts | Repo URL |
+| otelLogCollector.targetRevision | string | `"0.86.0"` | [opentelemetry Helm chart](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-collector) |
+| otelLogCollector.values | object | [upstream values](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/values.yaml) | Helm values |
 | promtail | object | DEPRECATED | [Grafana Loki promtail](https://grafana.com/docs/loki/latest/send-data/promtail/) is DEPRECATED, use "fluentBit" instead |
 | promtail.annotations | object | `{}` | Annotations for promtail app |
 | promtail.chart | string | `"promtail"` | Chart |

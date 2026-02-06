@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.44.0
+version: 0.45.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,11 +17,11 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: changed
+    - kind: added
       description: |
-        Updating loki Chart from 6.46.0 to 6.49.0
-        * Chart dependencies and templating logic updated for newer versions of Kubernetes API
-        * Values for Loki object store bucket naming adjusted (additional required fields surfaced)
+        Add OpenTelemetry log collector.
+        This enables parallel operation with Promtail and provides a supported
+        migration path ahead of Promtail EOL.
       links:
-        - name: Grafana Loki Helm chart CHANGELOG
-          url: https://github.com/grafana/loki/blob/main/production/helm/loki/CHANGELOG.md
+        - name: OpenTelemetry Collector
+          url: https://opentelemetry.io/docs/collector/

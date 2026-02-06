@@ -1,0 +1,29 @@
+# Deploy OpenTelemetry Collector as a node-level log agent
+# Logs are collected from Kubernetes nodes and forwarded to Loki via OTLP.
+
+otelLogCollector:
+  enabled: true
+  project: infra-logging
+
+  values:
+    mode: daemonset
+
+    config:
+      receivers:
+        filelog:
+          include:
+            - /var/log/pods/*/*/*.log
+          operators:
+            - type: container
+
+      exporters:
+        otlphttp/loki:
+          endpoint: http://loki-gateway.infra-logging:80/otlp
+
+      service:
+        pipelines:
+          logs:
+            receivers:
+              - filelog
+            exporters:
+              - otlphttp/loki
