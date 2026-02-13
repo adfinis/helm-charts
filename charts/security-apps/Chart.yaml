@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.107.0
+version: 0.108.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,11 +19,10 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: update neuvector to 2.8.10
-        - customize controller and manager service port and target port in chart
-        - allow to update nginx.ingress.kubernetes.io/backend-protocol annotation
-        - bump helm chart versions for NeuVector 5.4.8
+        chore: remove gangway
 
-      links:
-        - name: NeuVector Chert 2.8.10 Release notes
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.10
+        Gangway was marked deprecated a few years ago and has been marked to
+        fail since Jan 2025.
+
+        We are removing in in accordance with the documented app-of-apps
+        retiry process.

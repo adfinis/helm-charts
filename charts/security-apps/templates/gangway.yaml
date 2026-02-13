@@ -1,3 +1,0 @@
-{{ if .Values.gangway.enabled }}
-{{ fail "gangway is DEPRECATED, use dexK8sAuthenticator instead" }}
-{{ end }}
