@@ -46,26 +46,6 @@ dexK8sAuthenticator:
   # @default -- [upstream values](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/values.yaml)
   values: {}
 
-# -- [gangway](https://github.com/heptiolabs/gangway/) is DEPRECATED, use dexK8sAuthenticator instead
-# @default -- DEPRECATED
-gangway:
-  # -- Enable gangway
-  enabled: false
-  name: gangway
-  destination:
-    # -- Namespace
-    namespace: "infra-gangway"
-  # -- Repo URL
-  # @default -- [repo](https://gabibbo97.github.io/charts)
-  repoURL: "https://gabibbo97.github.io/charts"
-  # -- Chart
-  chart: "gangway"
-  # -- [gangway Helm chart](https://github.com/gabibbo97/charts/tree/master/charts/gangway/) version
-  targetRevision: "1.1.*"
-  # -- Helm values
-  # @default -- [upstream values](https://github.com/gabibbo97/charts/tree/master/charts/gangway/values.yaml)
-  values: {}
-
 # -- [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml))
 # @default -- -
 vault:
