@@ -2,7 +2,7 @@ apiVersion: v2
 name: azure-apps
 description: Argo CD app-of-apps config for Azure applications
 type: application
-version: 0.18.0
+version: 0.19.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,9 +19,9 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        fix: update promitorScraper to 1.14.1
-        - Fixed a bug in Azure Monitor scraping to handle duplicate metric namespaces in queries
+        chore: bump azureKvCsiProvider to 1.7.2
+        - Bug fixes and stability improvements
         - Updated dependencies
       links:
-        - name: Scraper 2.14.1 Release
-          url: https://github.com/tomkerkhove/promitor/releases/tag/Scraper-v2.14.1
+        - name: azureKvCsiProvider v1.7.2 Release
+          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.7.2
