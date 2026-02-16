@@ -1422,6 +1422,37 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: bump azureKvCsiProvider to 1.7.2
+            - Bug fixes and stability improvements
+            - Updated dependencies
+          links:
+            - name: azureKvCsiProvider v1.7.2 Release
+              url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.7.2
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-02-16T09:35:15.233405Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for Azure applications
+    digest: c1911152bbeaa90dc42c62ddb551e967837eb898c02548da5f00ee190ab3e0d7
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.19.0/azure-apps-0.19.0.tgz
+    version: 0.19.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             fix: update promitorScraper to 1.14.1
             - Fixed a bug in Azure Monitor scraping to handle duplicate metric namespaces in queries
             - Updated dependencies
@@ -34731,4 +34762,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-13T13:04:40.669992496Z"
+generated: "2026-02-16T09:35:15.235037306Z"
