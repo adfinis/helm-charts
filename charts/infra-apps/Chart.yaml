@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.257.0
+version: 0.260.3
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,6 +19,11 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update from kube-prometheus-stack v79.9.0 to v80.9.2
-        - Update etcd image digest bump in v80.9.0
-        - Update kube-prometheus-stack dependencies non-major updates
+        Update ingress-nginx from 4.14.1 to 4.14.3
+        * fixes #1666
+        * controller version from 1.14.1 to 1.14.3
+      links:
+        - name: ingress-nginx controller release notes v1.14.3
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.14.3
+        - name: ingress-nginx helm chart release notes v4.14.3
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.3

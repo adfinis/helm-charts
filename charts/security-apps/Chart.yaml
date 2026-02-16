@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.106.0
+version: 0.108.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,18 +15,14 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: update stackrox to 4.9.2
-        - Runtime vulnerability management support added for virtual machines on Red Hat OpenShift Virtualization
-        - SBOM generation is now generally available with delegated scanning support.
-        - Process execution policies now support automatic locking of baselines to reduce manual effort
-        - Added support for machine-to-machine token exchange using external JSON Web Token issuers.
+        chore: remove gangway
 
-      links:
-        - name: stackrox 4.8 Release notes
-          url: https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.8/html/release_notes/index
-        - name: stackrox 4.9 Release notes
-          url: https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.9/html/release_notes/index
+        Gangway was marked deprecated a few years ago and has been marked to
+        fail since Jan 2025.
+
+        We are removing in in accordance with the documented app-of-apps
+        retiry process.

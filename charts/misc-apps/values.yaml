@@ -114,7 +114,7 @@ prometheusMsteams:
   # -- Chart
   chart: prometheus-msteams
   # -- [prometheus-msteams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams)
-  targetRevision: "1.3.4"
+  targetRevision: "1.3.6"
   # -- Helm values
   # @default -- [upstream values](https://github.com/prometheus-msteams/prometheus-msteams/blob/master/chart/prometheus-msteams/values.yaml)
   values: {}
@@ -136,7 +136,7 @@ argocdApps:
   # -- Chart
   chart: argocd-apps
   # -- [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version
-  targetRevision: 2.0.2
+  targetRevision: 2.0.4
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argocd-apps/values.yaml)
   values: {}
@@ -222,7 +222,7 @@ opencost:
   # -- Chart
   chart: opencost
   # -- [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost)
-  targetRevision: 2.1.7
+  targetRevision: 2.5.5
   # -- Helm values
   # @default -- [upstream values](https://github.com/opencost/opencost-helm-chart/blob/main/charts/opencost/values.yaml)
   values: {}

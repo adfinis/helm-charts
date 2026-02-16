@@ -20,7 +20,7 @@ argocd:
   # -- Chart
   chart: argo-cd
   # -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version
-  targetRevision: 9.1.5
+  targetRevision: 9.3.7
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml)
   values: {}
@@ -109,7 +109,7 @@ ingressNginx:
   # -- Chart
   chart: ingress-nginx
   # -- [ingress-nginx Helm chart](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) version
-  targetRevision: 4.14.1
+  targetRevision: 4.14.3
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes/ingress-nginx/blob/main/charts/ingress-nginx/values.yaml)
   values: {}
@@ -179,7 +179,7 @@ velero:
   # -- Chart
   chart: velero
   # -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
-  targetRevision: 11.2.0
+  targetRevision: 11.3.2
   # -- Helm values
   # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
   values: {}
@@ -201,7 +201,7 @@ kured:
   # -- Chart
   chart: kured
   # -- [Kured Helm chart](https://github.com/kubereboot/charts/tree/main/charts/kured)
-  targetRevision: 5.10.0
+  targetRevision: 5.11.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubereboot/charts/blob/main/charts/kured/values.yaml)
   values: {}

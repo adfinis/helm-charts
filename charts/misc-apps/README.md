@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.58.0](https://img.shields.io/badge/Version-0.58.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.61.2](https://img.shields.io/badge/Version-0.61.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocdApps.destination.namespace | string | `"infra-argocd"` | Namespace |
 | argocdApps.enabled | bool | `false` | Enable Argo CD Apps |
 | argocdApps.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocdApps.targetRevision | string | `"2.0.2"` | [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version |
+| argocdApps.targetRevision | string | `"2.0.4"` | [argocd-apps Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argocd-apps) version |
 | argocdApps.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argocd-apps/values.yaml) | Helm values |
 | chartmuseum | object | - | [chartmuseum](https://chartmuseum.com) ([example](./example/chartmuseum.yaml)) |
 | chartmuseum.chart | string | `"chartmuseum"` | Chart |
@@ -82,14 +82,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | opencost.destination.namespace | string | `"infra-opencost"` | Namespace |
 | opencost.enabled | bool | `false` | Enable OpenCost |
 | opencost.repoURL | string | [repo](https://opencost.github.io/opencost-helm-chart) | Repo URL |
-| opencost.targetRevision | string | `"2.1.7"` | [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost) |
+| opencost.targetRevision | string | `"2.5.5"` | [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost) |
 | opencost.values | object | [upstream values](https://github.com/opencost/opencost-helm-chart/blob/main/charts/opencost/values.yaml) | Helm values |
 | prometheusMsteams | object | - | [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) ([example](./example/prometheus-msteams.yaml)) |
 | prometheusMsteams.chart | string | `"prometheus-msteams"` | Chart |
 | prometheusMsteams.destination.namespace | string | `"infra-prometheus-msteams"` | Namespace |
 | prometheusMsteams.enabled | bool | `false` | Enable prometheus-msteams |
 | prometheusMsteams.repoURL | string | [repo](https://prometheus-msteams.github.io/prometheus-msteams) | Repo URL |
-| prometheusMsteams.targetRevision | string | `"1.3.4"` | [prometheus-msteams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams) |
+| prometheusMsteams.targetRevision | string | `"1.3.6"` | [prometheus-msteams Helm chart](https://github.com/prometheus-msteams/prometheus-msteams/tree/master/chart/prometheus-msteams) |
 | prometheusMsteams.values | object | [upstream values](https://github.com/prometheus-msteams/prometheus-msteams/blob/master/chart/prometheus-msteams/values.yaml) | Helm values |
 | reloader | object | - | [reloader](https://github.com/stakater/reloader) ([example](./examples/reloader.yaml)) |
 | reloader.chart | string | `"reloader"` | Chart |
