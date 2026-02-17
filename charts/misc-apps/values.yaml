@@ -200,7 +200,7 @@ reloader:
   # -- Chart
   chart: "reloader"
   # -- [reloader Helm chart](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader) version
-  targetRevision: "2.2.2"
+  targetRevision: "2.2.8"
   # -- Helm values
   # @default -- [upstream values](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader/values.yaml)
   values: {}
