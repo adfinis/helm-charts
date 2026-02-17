@@ -311,3 +311,25 @@ kyvernoPolicies:
   # -- Helm values
   # @default -- [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno-policies/values.yaml)
   values: {}
+
+# -- [OpenBao](https://openbao.org)
+# @default -- [example](./examples/openbao.yaml)
+openBao:
+  # -- Enable openbao
+  enabled: false
+  name: openbao
+  # -- Annotations for openbao
+  annotations: {}
+  destination:
+    # -- Namespace
+    namespace: infra-openbao
+  # -- Repo URL
+  # @default -- [repo](https://openbao.github.io/openbao-helm)
+  repoURL: https://openbao.github.io/openbao-helm
+  # -- Chart
+  chart: openbao
+  # -- [OpenBao Helm chart](https://github.com/openbao/openbao-helm/tree/main/charts/openbao)
+  targetRevision: 0.23.3
+  # -- Helm values
+  # @default -- [upstream values](https://github.com/openbao/openbao-helm/blob/main/charts/openbao/values.yaml)
+  values: {}
