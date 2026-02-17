@@ -24172,6 +24172,35 @@ entries:
   security-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: added
+          description: |
+            feat: added OpenBao Chart
+          links:
+            - name: OpenBao Helm Chart
+              url: https://github.com/openbao/openbao-helm
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-02-17T12:21:31.270915545Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 8cadb1eb36a63f49bc3bc0c2e493c142f605e95fae0e2072d1404db20d862e41
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.109.0/security-apps-0.109.0.tgz
+    version: 0.109.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: |
             chore: remove gangway
@@ -34777,4 +34806,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-17T10:28:17.32822941Z"
+generated: "2026-02-17T12:21:31.272582203Z"
