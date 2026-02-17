@@ -1,0 +1,40 @@
+openbao:
+  enabled: true
+  project: infra-openbao
+  values:
+    global:
+      tlsDisable: true
+    csi:
+      enabled: false
+    injector:
+      enabled: false
+    authDelegator:
+      enabled: false
+    server:
+      ha:
+        replicas: 3
+        enabled: true
+        raft:
+          enabled: true
+          config: |
+            ui = true
+            listener "tcp" {
+              address = "[::]:8200"
+              cluster_address = "[::]:8201"
+              tls_disable = "true"
+            }
+
+            storage "raft" {
+              path = "/openbao/data"
+              retry_join {
+                leader_api_addr = "http://openbao-active:8200"
+              }
+            }
+
+            seal "static" {
+              current_key_id = "demo" # do not use for production purposes
+              current_key = "l5qOFHfDsK0cIwLyDlWDIvj9/70easnoldu1n64iWb0="
+            }
+
+            service_registration "kubernetes" {}
+      updateStrategyType: RollingUpdate

@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.108.0
+version: 0.109.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,12 +17,9 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: changed
+    - kind: added
       description: |
-        chore: remove gangway
-
-        Gangway was marked deprecated a few years ago and has been marked to
-        fail since Jan 2025.
-
-        We are removing in in accordance with the documented app-of-apps
-        retiry process.
+        feat: added OpenBao Chart
+      links:
+        - name: OpenBao Helm Chart
+          url: https://github.com/openbao/openbao-helm
