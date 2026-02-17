@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.260.3
+version: 0.261.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,11 +19,15 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update ingress-nginx from 4.14.1 to 4.14.3
-        * fixes #1666
-        * controller version from 1.14.1 to 1.14.3
+        feat: Update rbac-manager from 1.9.2 to 1.9.5
+
+        * Update Helm chart from 1.21.1 to 1.21.5
+        * Update error logging in app
+        * Update dependencies for security (e.g. golang version, ...)
       links:
-        - name: ingress-nginx controller release notes v1.14.3
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.14.3
-        - name: ingress-nginx helm chart release notes v4.14.3
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.3
+        - name: rbac-manager 1.9.5
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.9.5
+        - name: rbac-manager 1.9.4
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.9.4
+        - name: rbac-manager 1.9.3
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.9.3
