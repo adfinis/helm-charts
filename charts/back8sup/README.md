@@ -1,13 +1,12 @@
 # back8sup
 
-![Version: 0.4.8](https://img.shields.io/badge/Version-0.4.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.7.10](https://img.shields.io/badge/AppVersion-v0.7.10-informational?style=flat-square)
+> **:exclamation: This Helm Chart is deprecated!**
+
+![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.7.10](https://img.shields.io/badge/AppVersion-v0.7.10-informational?style=flat-square)
 
 Deploy back8sup to a Kubernetes Cluster
 
 **Homepage:** <https://github.com/adfinis/back8sup>
-
-## Maintainers
-This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
 ## Source Code
 
