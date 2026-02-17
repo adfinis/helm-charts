@@ -18989,6 +18989,34 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update goldilocks chart from 10.1.0 to 10.2.0
+
+            * introduces Gateway API HTTPRoute support for dashboard
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-02-17T17:14:13.733432341Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 1fbb1b2a7ae417dca5a02cfbf87dd2cde81d59b7df01185a280c9e92380f4f01
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.62.0/misc-apps-0.62.0.tgz
+    version: 0.62.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update opencost from 2.5.3 to 2.5.5
             - Bump targetRevision from 2.5.3 to 2.5.5
       artifacthub.io/containsSecurityUpdates: "false"
@@ -34806,4 +34834,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-17T12:21:31.272582203Z"
+generated: "2026-02-17T17:14:13.736631247Z"
