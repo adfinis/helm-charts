@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 1.9.1](https://img.shields.io/badge/Version-1.9.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.5.3](https://img.shields.io/badge/AppVersion-26.5.3-informational?style=flat-square)
+![Version: 1.10.0](https://img.shields.io/badge/Version-1.10.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.5.3](https://img.shields.io/badge/AppVersion-26.5.3-informational?style=flat-square)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -90,6 +90,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | operator.podTopologySpreadConstraints | object | `{}` | Pod Topology Spread Constraints for Operator Deployment |
 | operator.replicaCount | int | `1` | Number or oeprator pods to start. |
 | operator.resources | object | `{}` | Resource requests and limits for Operator Deployment. |
+| operator.role.enableServiceMonitor | bool | `false` | Enable managing of serviceMonitors, required for keycloak.serviceMonitor.enabled=true. |
 | operator.securityContext | object | `{}` | Security context for Operator Deployment. |
 | operator.service.enabled | bool | `true` | Enable creation of Service |
 | operator.service.port | int | `8080` | Service port for Operator. |
