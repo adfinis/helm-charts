@@ -18,22 +18,14 @@ barman:
   # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/barman/values.yaml)
   values: {}
 
-# -- [Back8sup](https://github.com/adfinis/back8sup)
-# @default -- [example](./examples/back8sup.yaml)
+# -- [Back8sup](https://github.com/adfinis/back8sup) is DEPRECATED, use "Velero" instead
+# @default -- DEPRECATED
 back8sup:
-  # -- Enable Back8sup
   enabled: true
   name: back8sup
   destination:
-    # -- Namespace
     namespace: backup-back8sup
-  # -- Repo URL
-  # @default -- [repo](https://charts.adfinis.com)
   repoURL: "https://charts.adfinis.com"
-  # -- Chart
   chart: back8sup
-  # -- [Back8sup Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/back8sup)
-  targetRevision: '0.4.*'
-  # -- Helm values
-  # @default -- [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/back8sup/values.yaml)
+  targetRevision: '0.4.8'
   values: {}
