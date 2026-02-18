@@ -18989,6 +18989,49 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update reloader from 1.4.7 to 1.4.13
+
+            * Update chart from 2.2.2 to 2.2.8
+            * Improve OpenShift support
+            * other improvments across the board
+          links:
+            - name: reloader 1.4.13
+              url: https://github.com/stakater/Reloader/releases/tag/v1.4.13
+            - name: reloader 1.4.12
+              url: https://github.com/stakater/Reloader/releases/tag/v1.4.12
+            - name: reloader 1.4.11
+              url: https://github.com/stakater/Reloader/releases/tag/v1.4.11
+            - name: reloader 1.4.10
+              url: https://github.com/stakater/Reloader/releases/tag/v1.4.10
+            - name: reloader 1.4.9
+              url: https://github.com/stakater/Reloader/releases/tag/v1.4.9
+            - name: reloader 1.4.8
+              url: https://github.com/stakater/Reloader/releases/tag/v1.4.8
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-02-18T08:02:35.70961359Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 255f6a22589c20f671b152b942e876b9785eeb0840390a212d4e6c0a891410f9
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.63.0/misc-apps-0.63.0.tgz
+    version: 0.63.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update goldilocks chart from 10.1.0 to 10.2.0
 
             * introduces Gateway API HTTPRoute support for dashboard
@@ -34875,4 +34918,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-18T08:00:09.642581033Z"
+generated: "2026-02-18T08:02:35.711308176Z"
