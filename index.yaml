@@ -24202,6 +24202,47 @@ entries:
       artifacthub.io/changes: |
         - kind: added
           description: |
+            feat: Update Kyverno and Kyverno Policies from 1.15.1 to 1.17.0
+          links:
+            - name: 1.17.0 Release notes
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.17.0
+            - name: 1.16.3 Release notes
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.16.3
+            - name: 1.16.2 Release notes
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.16.2
+            - name: 1.16.1 Release notes
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.16.1
+            - name: 1.16.0 Release notes
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.16.0
+            - name: 1.15.3 Release notes
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.15.3
+            - name: 1.15.2 Release notes
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.15.2
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-02-18T08:00:09.641021088Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 05cac9bbced6fba9335328a90fd15e7decd324a45e9831d24e9d94e5b2c720b4
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.110.0/security-apps-0.110.0.tgz
+    version: 0.110.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: |
             feat: added OpenBao Chart
           links:
             - name: OpenBao Helm Chart
@@ -34834,4 +34875,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-17T17:14:13.736631247Z"
+generated: "2026-02-18T08:00:09.642581033Z"
