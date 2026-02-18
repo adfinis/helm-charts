@@ -70,4 +70,18 @@ rules:
       - delete
       - patch
       - update
+{{- if .Values.operator.role.enableServiceMonitor }}
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - servicemonitors
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+{{- end }}
 {{- end }}
