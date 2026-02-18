@@ -1,7 +1,4 @@
 The following apps are available:
-{{ if .Values.lokiStack.enabled }}
-* loki-stack
-{{ end }}
 {{ if .Values.filebeat.enabled }}
 * filebeat
 {{ end }}

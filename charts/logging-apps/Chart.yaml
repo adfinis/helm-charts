@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.44.0
+version: 0.45.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,9 +19,6 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updating loki Chart from 6.46.0 to 6.49.0
-        * Chart dependencies and templating logic updated for newer versions of Kubernetes API
-        * Values for Loki object store bucket naming adjusted (additional required fields surfaced)
-      links:
-        - name: Grafana Loki Helm chart CHANGELOG
-          url: https://github.com/grafana/loki/blob/main/production/helm/loki/CHANGELOG.md
+        feat: fully remove loki-stack from the chart
+
+        We made the installation fail back in Jan 2025, this follows up and removes it.
