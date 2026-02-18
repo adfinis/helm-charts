@@ -89,7 +89,7 @@ operator:
   # -- Affinity for Operator Deployment.
   affinity: {}
 
-  role:
+  roles:
     # -- Enable managing of serviceMonitors, required for keycloak.serviceMonitor.enabled=true.
     enableServiceMonitor: false
 
