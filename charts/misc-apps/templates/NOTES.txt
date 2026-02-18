@@ -5,6 +5,3 @@ The following apps are available:
 {{ if .Values.signalilo.enabled }}
 * signalilo
 {{ end }}
-{{ if .Values.sentryKubernetes.enabled }}
-* sentry-kubernetes
-{{ end }}
