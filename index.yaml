@@ -2751,6 +2751,30 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "feat: Mark back8sup as DEPRECATED"
+    apiVersion: v2
+    created: "2026-02-18T08:06:44.162928284Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for backup components
+    digest: 8fdd5fe2b651da10c402f54a6a8c2409b65afdb467701cb427919d04f1a5cdf4
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/backup-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: backup-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/backup-apps-0.6.0/backup-apps-0.6.0.tgz
+    version: 0.6.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "update argoconfig dependency"
           links:
             - name: Github PR
@@ -34918,4 +34942,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-18T08:02:35.711308176Z"
+generated: "2026-02-18T08:06:44.166178176Z"
