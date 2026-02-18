@@ -16028,6 +16028,31 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            feat: new operator.roles.enableServiceMontor flag to allow managing ServiceMonitors
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    appVersion: 26.5.3
+    created: "2026-02-18T10:35:23.363930673Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 5c3ab1fbf66bd543efe97d761eb1e7fcb7312aa8c89457a9aa4918a04e78b272
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.10.0/keycloak-operator-1.10.0.tgz
+    version: 1.10.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "fix: Keycloak 26.5.3"
       artifacthub.io/containsSecurityUpdates: "false"
     apiVersion: v2
@@ -34942,4 +34967,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-18T08:06:44.166178176Z"
+generated: "2026-02-18T10:35:23.365695259Z"
