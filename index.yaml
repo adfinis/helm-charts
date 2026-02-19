@@ -19116,6 +19116,32 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Set sentryKubernetes to fail after it was removed 6 months ago
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-02-19T09:46:32.408539343Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 3b3941017568001bcb6a81d7f9ec3101d31047ac12ec9e09fc714fd66cd879dd
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.64.0/misc-apps-0.64.0.tgz
+    version: 0.64.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update reloader from 1.4.7 to 1.4.13
 
             * Update chart from 2.2.2 to 2.2.8
@@ -35045,4 +35071,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-19T09:44:22.353791589Z"
+generated: "2026-02-19T09:46:32.411427658Z"
