@@ -453,3 +453,12 @@ keycloak:
     #   webAuthnPolicyRpId: string
     #   webAuthnPolicySignatureAlgorithms: []
     #   webAuthnPolicyUserVerificationRequirement: string
+
+# Configure if the [official Grafana dashboards](https://github.com/keycloak/keycloak-grafana-dashboard) should be deployed.
+grafana:
+  # -- Enable Grafana Dashboards
+  enabled: false
+  # -- Add a default `grafana_dashboard: 1` label
+  defaultLabel: true
+  # -- Labels to add to all Grafana integration resources
+  extraLabels: {}

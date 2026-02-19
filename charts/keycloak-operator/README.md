@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 1.10.1](https://img.shields.io/badge/Version-1.10.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.5.3](https://img.shields.io/badge/AppVersion-26.5.3-informational?style=flat-square)
+![Version: 1.11.0](https://img.shields.io/badge/Version-1.11.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.5.3](https://img.shields.io/badge/AppVersion-26.5.3-informational?style=flat-square)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -19,6 +19,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | fullnameOverride | string | `""` |  |
+| grafana.defaultLabel | bool | `true` | Add a default `grafana_dashboard: 1` label |
+| grafana.enabled | bool | `false` | Enable Grafana Dashboards |
+| grafana.extraLabels | object | `{}` | Labels to add to all Grafana integration resources |
 | imagePullSecrets | list | `[]` |  |
 | keycloak.additionalOptions | string | `nil` | Configuration of the Keycloak server expressed as a keys and values that can be either direct values or references to secrets. |
 | keycloak.bootstrapAdmin | string | `nil` | In this section you can configure Keycloak's bootstrap admin - will be used only for initial cluster creation. |
