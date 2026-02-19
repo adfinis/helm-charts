@@ -6005,6 +6005,43 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update rbac-manager from 1.9.2 to 1.9.5
+
+            * Update Helm chart from 1.21.1 to 1.21.5
+            * Update error logging in app
+            * Update dependencies for security (e.g. golang version, ...)
+          links:
+            - name: rbac-manager 1.9.5
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.9.5
+            - name: rbac-manager 1.9.4
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.9.4
+            - name: rbac-manager 1.9.3
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.9.3
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-02-19T09:48:21.358495109Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 195c8cd114668820c53049ce408e910f16340b8a000875e6f302d4c9de8d2d05
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.261.0/infra-apps-0.261.0.tgz
+    version: 0.261.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update ingress-nginx from 4.14.1 to 4.14.3
             * fixes #1666
             * controller version from 1.14.1 to 1.14.3
@@ -35071,4 +35108,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-19T09:46:32.411427658Z"
+generated: "2026-02-19T09:48:21.361332847Z"
