@@ -1,7 +1,3 @@
-lokiStack:
-  enabled: false
-  values: {}
-
 loki:
   enabled: true
   values: {}

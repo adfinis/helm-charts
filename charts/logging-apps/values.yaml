@@ -1,8 +1,3 @@
-# -- [loki-stack](https://github.com/grafana/loki) is DEPREACTED use `loki` and `promtail` individually
-# @default -- DEPRECATED
-lokiStack:
-  enabled: false
-
 # -- [Grafana Loki](https://grafana.com/oss/loki/) ([example](./examples/loki.yaml))
 # @default -- -
 loki:
