@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.63.0
+version: 0.64.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,21 +19,4 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update reloader from 1.4.7 to 1.4.13
-
-        * Update chart from 2.2.2 to 2.2.8
-        * Improve OpenShift support
-        * other improvments across the board
-      links:
-        - name: reloader 1.4.13
-          url: https://github.com/stakater/Reloader/releases/tag/v1.4.13
-        - name: reloader 1.4.12
-          url: https://github.com/stakater/Reloader/releases/tag/v1.4.12
-        - name: reloader 1.4.11
-          url: https://github.com/stakater/Reloader/releases/tag/v1.4.11
-        - name: reloader 1.4.10
-          url: https://github.com/stakater/Reloader/releases/tag/v1.4.10
-        - name: reloader 1.4.9
-          url: https://github.com/stakater/Reloader/releases/tag/v1.4.9
-        - name: reloader 1.4.8
-          url: https://github.com/stakater/Reloader/releases/tag/v1.4.8
+        feat: Set sentryKubernetes to fail after it was removed 6 months ago

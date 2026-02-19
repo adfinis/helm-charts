@@ -39,25 +39,9 @@ signalilo:
   values: {}
 
 # -- [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) is DEPRECATED, use other error reporting solutions instead
-##
 # @default -- DEPRECATED
 sentryKubernetes:
-  # -- Enable sentry-kubernetes
   enabled: false
-  name: sentry-kubernetes
-  destination:
-    # -- Namespace
-    namespace: "infra-sentry-kubernetes"
-  # -- Repo URL
-  # @default -- [repo](https://sentry-kubernetes.github.io/charts)
-  repoURL: "https://sentry-kubernetes.github.io/charts"
-  # -- Chart
-  chart: "sentry-kubernetes"
-  # -- [sentry-kubernetes Helm chart](https://github.com/sentry-kubernetes/charts/tree/develop/sentry-kubernetes)
-  targetRevision: "0.3.*"
-  # -- Helm values
-  # @default -- [upstream values](https://github.com/sentry-kubernetes/charts/blob/develop/sentry-kubernetes/values.yaml)
-  values: {}
 
 # -- [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml))
 # @default -- -
