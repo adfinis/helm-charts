@@ -17401,6 +17401,34 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: fully remove loki-stack from the chart
+
+            We made the installation fail back in Jan 2025, this follows up and removes it.
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-02-19T09:44:22.350910896Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: aff55ebe11659bd6c173bd316938a1bf916d5002b01c02c97681dd1e9996791c
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.45.0/logging-apps-0.45.0.tgz
+    version: 0.45.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updating loki Chart from 6.46.0 to 6.49.0
             * Chart dependencies and templating logic updated for newer versions of Kubernetes API
             * Values for Loki object store bucket naming adjusted (additional required fields surfaced)
@@ -35017,4 +35045,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-19T08:36:16.937217979Z"
+generated: "2026-02-19T09:44:22.353791589Z"
