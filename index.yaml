@@ -1422,6 +1422,47 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update promitor
+
+            * update promitor-agent-scraper from 2.14.1 to 2.15.0
+              * Provide capability to configure query lookback in minutes
+              * Provide support for scraping Azure DNS zone metrics
+              * Provide new health check based on data freshness
+              * Azure Monitor Scraper: batch based on aggregation in addition to existing criteria
+            * update promitor-agent-resource-discovery from 0.14.1 to 0.15.0
+              * Provide support for discovering Azure DNS zones
+          links:
+            - name: Promitor Resource Discovery v0.15.0
+              url: https://github.com/tomkerkhove/promitor/releases/tag/v0.15.0
+            - name:  Scraper-v2.15.0
+              url: https://github.com/tomkerkhove/promitor/releases/tag/Scraper-v2.15.0
+            - name: Changelog
+              url: https://changelog.promitor.io/
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-02-20T14:19:47.780573096Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for Azure applications
+    digest: ed6042378db73af79c67087f7d6482eb3f96693ae2fb5530210241eadbb3dda2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.20.0/azure-apps-0.20.0.tgz
+    version: 0.20.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: bump azureKvCsiProvider to 1.7.2
             - Bug fixes and stability improvements
             - Updated dependencies
@@ -35192,4 +35233,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-20T12:39:06.776821944Z"
+generated: "2026-02-20T14:19:47.784154535Z"
