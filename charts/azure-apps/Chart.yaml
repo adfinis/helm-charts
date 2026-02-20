@@ -2,7 +2,7 @@ apiVersion: v2
 name: azure-apps
 description: Argo CD app-of-apps config for Azure applications
 type: application
-version: 0.19.0
+version: 0.20.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,9 +19,19 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: bump azureKvCsiProvider to 1.7.2
-        - Bug fixes and stability improvements
-        - Updated dependencies
+        feat: Update promitor
+
+        * update promitor-agent-scraper from 2.14.1 to 2.15.0
+          * Provide capability to configure query lookback in minutes
+          * Provide support for scraping Azure DNS zone metrics
+          * Provide new health check based on data freshness
+          * Azure Monitor Scraper: batch based on aggregation in addition to existing criteria
+        * update promitor-agent-resource-discovery from 0.14.1 to 0.15.0
+          * Provide support for discovering Azure DNS zones
       links:
-        - name: azureKvCsiProvider v1.7.2 Release
-          url: https://github.com/Azure/secrets-store-csi-driver-provider-azure/releases/tag/v1.7.2
+        - name: Promitor Resource Discovery v0.15.0
+          url: https://github.com/tomkerkhove/promitor/releases/tag/v0.15.0
+        - name:  Scraper-v2.15.0
+          url: https://github.com/tomkerkhove/promitor/releases/tag/Scraper-v2.15.0
+        - name: Changelog
+          url: https://changelog.promitor.io/
