@@ -24458,6 +24458,37 @@ entries:
   security-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: |
+            chore: update vault-monitoring to 0.7.0
+            - updates VaultTokenCreate and VaultTokenStore alert thresholds
+
+          links:
+            - name: vault-monitoring-0.7.0
+              url: https://github.com/adfinis/helm-charts/releases/tag/vault-monitoring-0.7.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-02-20T10:41:35.17229099Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: c6ecd407e9b89199732ef9423de50fda905555538d7361de48569139d76ec7e6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.111.0/security-apps-0.111.0.tgz
+    version: 0.111.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: |
             feat: Update Kyverno and Kyverno Policies from 1.15.1 to 1.17.0
@@ -35133,4 +35164,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-20T09:48:23.4458069Z"
+generated: "2026-02-20T10:41:35.175230084Z"
