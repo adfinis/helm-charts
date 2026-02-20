@@ -16066,6 +16066,34 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            fix: Keycloak 26.5.4
+          links:
+            - name: Release notes
+              url: https://github.com/keycloak/keycloak/releases/tag/26.5.4
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    appVersion: 26.5.4
+    created: "2026-02-20T12:39:06.77485714Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: 0257be2ee7fd57feb71915c9e07d10d00e7d36961f6320e394eb9d3d48e01a21
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.11.2/keycloak-operator-1.11.2.tgz
+    version: 1.11.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             fix: Add missing Grafana resources
       artifacthub.io/containsSecurityUpdates: "false"
     apiVersion: v2
@@ -35164,4 +35192,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-20T10:41:35.175230084Z"
+generated: "2026-02-20T12:39:06.776821944Z"
