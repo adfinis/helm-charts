@@ -24529,6 +24529,32 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            fix: deprecate dex-k8s-authenticator
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-02-20T18:22:51.553436089Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: a8685478f08e14f8b8710a1f4808a50ae053e076c58dc494ca75ef2e812612d9
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.111.1/security-apps-0.111.1.tgz
+    version: 0.111.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: update vault-monitoring to 0.7.0
             - updates VaultTokenCreate and VaultTokenStore alert thresholds
 
@@ -35233,4 +35259,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-20T14:19:47.784154535Z"
+generated: "2026-02-20T18:22:51.556354481Z"
