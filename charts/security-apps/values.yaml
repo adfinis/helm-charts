@@ -18,32 +18,23 @@ dex:
   # @default -- [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml)
   values: {}
 
-# -- [dex-k8s-authenticator](https://github.com/mintel/dex-k8s-authenticator) ([example](./examples/dex-k8s-authenticator.yaml))
-# @default -- -
+# -- [dex-k8s-authenticator](https://github.com/mintel/dex-k8s-authenticator)  is DEPRECATED, use "kubectl oidc-login aka kubelogin" instead
+# @default -- DEPRECATED
 dexK8sAuthenticator:
-  # -- Enable dex-k8s-authenticator
   enabled: false
   name: dex-k8s-authenticator
   destination:
-    # -- Namespace
     namespace: "infra-dex-k8s-authenticator"
   # As of December 2021, there is no upstream helm repo where we could pull
   # for this we need to reference directly the GitHub url
   # FFI: https://github.com/mintel/dex-k8s-authenticator/issues/185
-  # -- Repo URL
-  # @default -- [repo](https://github.com/mintel/dex-k8s-authenticator.git)
   repoURL: "https://github.com/mintel/dex-k8s-authenticator.git"
-  # -- Repo Path
   repoPath: "charts/dex-k8s-authenticator"
-  # -- Chart
   chart: "dexK8sAuthenticator"
   # As of December 2021, there is no upstream helm repo where we could pull
   # for this we need to reference directly the GitHub version tag
   # FFI: https://github.com/mintel/dex-k8s-authenticator/issues/185
-  # -- [dex-k8s-authenticator Helm chart](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/) version
   targetRevision: "v1.4.0"
-  # -- Helm values
-  # @default -- [upstream values](https://github.com/mintel/dex-k8s-authenticator/tree/master/charts/dex-k8s-authenticator/values.yaml)
   values: {}
 
 # -- [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml))
