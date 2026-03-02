@@ -272,9 +272,6 @@ postgresql:
     username: hedgedoc
     password: hedgedoc
     database: hedgedoc
-    volumePermissions:
-      enabled: true
-
 
 # -- Configure your external database here
 # This is automatically used when postgresql.enabled is false.

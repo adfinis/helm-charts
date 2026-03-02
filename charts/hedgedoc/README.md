@@ -1,6 +1,6 @@
 # hedgedoc
 
-![Version: 0.5.5](https://img.shields.io/badge/Version-0.5.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.10.6](https://img.shields.io/badge/AppVersion-1.10.6-informational?style=flat-square)
+![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.10.7](https://img.shields.io/badge/AppVersion-1.10.7-informational?style=flat-square)
 
 Chart for HedgeDoc, a fork of CodiMD
 
@@ -15,7 +15,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | ~12.2.1 |
+| oci://registry-1.docker.io/cloudpirates | postgresql(postgres) | ~0.17.0 |
 
 ## Values
 
@@ -43,7 +43,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
-| postgresql | object | `{"auth":{"database":"hedgedoc","password":"hedgedoc","username":"hedgedoc","volumePermissions":{"enabled":true}},"enabled":true}` | PostgreSQL chart configuration  Reference: https://github.com/bitnami/charts/blob/master/bitnami/postgresql/values.yaml  If you want to use external database, just set postgresql.enabled to false  |
+| postgresql | object | `{"auth":{"database":"hedgedoc","password":"hedgedoc","username":"hedgedoc"},"enabled":true}` | PostgreSQL chart configuration  Reference: https://github.com/bitnami/charts/blob/master/bitnami/postgresql/values.yaml  If you want to use external database, just set postgresql.enabled to false  |
 | prometheus.enabled | bool | `false` | Enable Prometheus integration |
 | prometheus.extraAnnotations | object | `{}` | Annotations to add to all Prometheus integration resources |
 | prometheus.extraLabels | object | `{}` | Labels to add to all Prometheus integration resources |
