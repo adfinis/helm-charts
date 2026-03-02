@@ -43,7 +43,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
-| postgresql | object | `{"auth":{"database":"hedgedoc","password":"hedgedoc","username":"hedgedoc"},"enabled":true}` | PostgreSQL chart configuration  Reference: https://github.com/bitnami/charts/blob/master/bitnami/postgresql/values.yaml  If you want to use external database, just set postgresql.enabled to false  |
+| postgresql | object | `{"auth":{"database":"hedgedoc","password":"hedgedoc","username":"hedgedoc"},"enabled":true}` | PostgreSQL chart configuration  Reference: https://artifacthub.io/packages/helm/cloudpirates-postgres/postgres?modal=values  If you want to use external database, just set postgresql.enabled to false  |
 | prometheus.enabled | bool | `false` | Enable Prometheus integration |
 | prometheus.extraAnnotations | object | `{}` | Annotations to add to all Prometheus integration resources |
 | prometheus.extraLabels | object | `{}` | Labels to add to all Prometheus integration resources |

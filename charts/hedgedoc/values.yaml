@@ -262,7 +262,7 @@ affinity: {}
 
 # -- PostgreSQL chart configuration
 #
-# Reference: https://github.com/bitnami/charts/blob/master/bitnami/postgresql/values.yaml
+# Reference: https://artifacthub.io/packages/helm/cloudpirates-postgres/postgres?modal=values
 #
 # If you want to use external database, just set postgresql.enabled to false
 #
