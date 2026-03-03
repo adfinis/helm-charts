@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.261.0
+version: 0.262.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,15 +19,13 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update rbac-manager from 1.9.2 to 1.9.5
+        feat: Update cert-manager from 1.19.2 to 1.19.4
 
-        * Update Helm chart from 1.21.1 to 1.21.5
-        * Update error logging in app
-        * Update dependencies for security (e.g. golang version, ...)
+        * fix vulnerabilities in dependencies
+        * fix a reissuance loop when an issuer returns a certificate with a public key that doesn't match the CSR
+        * fix HTTP-01 challenges failed when the Host header contained an IPv6 address
       links:
-        - name: rbac-manager 1.9.5
-          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.9.5
-        - name: rbac-manager 1.9.4
-          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.9.4
-        - name: rbac-manager 1.9.3
-          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.9.3
+        - name: cert-manager 1.19.4
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.19.4
+        - name: cert-manager 1.19.3
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.19.3
