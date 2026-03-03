@@ -6046,6 +6046,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update cert-manager from 1.19.2 to 1.19.4
+
+            * fix vulnerabilities in dependencies
+            * fix a reissuance loop when an issuer returns a certificate with a public key that doesn't match the CSR
+            * fix HTTP-01 challenges failed when the Host header contained an IPv6 address
+          links:
+            - name: cert-manager 1.19.4
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.19.4
+            - name: cert-manager 1.19.3
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.19.3
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-03-03T16:46:04.583301133Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: f64ac6e6cfe3ddb9c4e467e1fd510ff2e50c5a31d2dc8f78849ddb2b02c853f6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.262.0/infra-apps-0.262.0.tgz
+    version: 0.262.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update rbac-manager from 1.9.2 to 1.9.5
 
             * Update Helm chart from 1.21.1 to 1.21.5
@@ -35259,4 +35294,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-02-20T18:22:51.556354481Z"
+generated: "2026-03-03T16:46:04.586649038Z"
