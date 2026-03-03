@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.113.0](https://img.shields.io/badge/Version-0.113.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.114.0](https://img.shields.io/badge/Version-0.114.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -32,19 +32,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dex.values | object | [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml) | Helm values |
 | dexK8sAuthenticator | object | DEPRECATED | [dex-k8s-authenticator](https://github.com/mintel/dex-k8s-authenticator)  is DEPRECATED, use "kubectl oidc-login aka kubelogin" instead |
 | falco | object | DEPRECATED | [falco](https://github.com/falcosecurity/falco/) is DEPRECATED since we no longer use it internally and will be replaced by NeuVector or StackRox |
-| falco.chart | string | `"falco"` | Chart |
-| falco.destination.namespace | string | `"infra-falco"` | Namespace |
-| falco.enabled | bool | `false` | Enable falco |
-| falco.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
-| falco.targetRevision | string | `"2.3.0"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version |
-| falco.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml) | Helm values |
 | falcoExporter | object | DEPRECATED | [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml)) is DEPRECATED, Starting from Falco version 0.38, Falco can expose Prometheus metrics directly. |
-| falcoExporter.chart | string | `"falco-exporter"` | Chart |
-| falcoExporter.destination.namespace | string | `"infra-falco"` | Namespace |
-| falcoExporter.enabled | bool | `false` | Enable falco-exporter |
-| falcoExporter.repoURL | string | [repo](https://falcosecurity.github.io/charts) | Repo URL |
-| falcoExporter.targetRevision | string | `"0.9.1"` | [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version |
-| falcoExporter.values | object | [upstream values](https://github.com/falcosecurity/charts/blob/master/falco-exporter/values.yaml) | Helm values |
 | gatekeeper | object | DEPRECATED | [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml)) is DEPRECATED since we no longer use it internally. |
 | gatekeeper.chart | string | `"gatekeeper"` | Chart |
 | gatekeeper.destination.namespace | string | `"infra-gatekeeper"` | Namespace |
