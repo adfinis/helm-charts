@@ -264,7 +264,10 @@ affinity: {}
 #
 # Reference: https://artifacthub.io/packages/helm/cloudpirates-postgres/postgres?modal=values
 #
-# If you want to use external database, just set postgresql.enabled to false
+# The included PostgreSQL data is for CI and for quick testing.
+#
+# Always use an external database by setting postgresql.enabled to false
+# for production workloads.
 #
 postgresql:
   enabled: true
