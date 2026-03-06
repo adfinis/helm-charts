@@ -60,41 +60,25 @@ vault:
 # -- [falco](https://github.com/falcosecurity/falco/) is DEPRECATED since we no longer use it internally and will be replaced by NeuVector or StackRox
 # @default -- DEPRECATED
 falco:
-  # -- Enable falco
   enabled: false
   name: falco
   destination:
-    # -- Namespace
     namespace: "infra-falco"
-  # -- Repo URL
-  # @default -- [repo](https://falcosecurity.github.io/charts)
   repoURL: "https://falcosecurity.github.io/charts"
-  # -- Chart
   chart: "falco"
-  # -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco) version
   targetRevision: "2.3.0"
-  # -- Helm values
-  # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco/values.yaml)
   values: {}
 
 # -- [falco-exporter](https://github.com/falcosecurity/falco-exporter/) ([example](./examples/falco-exporter.yaml)) is DEPRECATED, Starting from Falco version 0.38, Falco can expose Prometheus metrics directly.
 # @default -- DEPRECATED
 falcoExporter:
-  # -- Enable falco-exporter
   enabled: false
   name: falco-exporter
   destination:
-    # -- Namespace
     namespace: "infra-falco"
-  # -- Repo URL
-  # @default -- [repo](https://falcosecurity.github.io/charts)
   repoURL: "https://falcosecurity.github.io/charts"
-  # -- Chart
   chart: "falco-exporter"
-  # -- [falco Helm chart](https://github.com/falcosecurity/charts/tree/master/falco-exporter) version
   targetRevision: "0.9.1"
-  # -- Helm values
-  # @default -- [upstream values](https://github.com/falcosecurity/charts/blob/master/falco-exporter/values.yaml)
   values: {}
 
 # -- [gatekeeper](https://github.com/open-policy-agent/gatekeeper) ([example](./examples/gatekeeper.yaml)) is DEPRECATED since we no longer use it internally.

@@ -6,14 +6,6 @@ vault:
   enabled: true
   values: {}
 
-falco:
-  enabled: true
-  values: {}
-
-falcoExporter:
-  enabled: true
-  value: {}
-
 gatekeeper:
   enabled: true
   values: {}
