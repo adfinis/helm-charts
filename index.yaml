@@ -24564,6 +24564,53 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: Bump oauth2-proxy chart from 9.0.0 to 10.1.4
+            includes updating oauth2-proxy from 7.13.0 to 7.14.2
+            contains breaking changes regarding the redis-ha subchart see https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/README.md#to-1000
+          links:
+            - name: oauth2-proxy chart Release 9.0.1
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-9.0.1
+            - name: oauth2-proxy chart Release 10.0.0
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.0.0
+            - name: oauth2-proxy chart Release 10.0.1
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.0.1
+            - name: oauth2-proxy chart Release 10.0.3
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.0.3
+            - name: oauth2-proxy chart Release 10.1.0
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.1.0
+            - name: oauth2-proxy chart Release 10.1.1
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.1.1
+            - name: oauth2-proxy chart Release 10.1.2
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.1.2
+            - name: oauth2-proxy chart Release 10.1.3
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.1.3
+            - name: oauth2-proxy chart Release 10.1.4
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.1.4
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-03-06T10:05:17.567975217Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: a99836378617313897893fcdf4be2644622bf75d62ff2baba6d3d779b1e0dafc
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.112.0/security-apps-0.112.0.tgz
+    version: 0.112.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             fix: deprecate dex-k8s-authenticator
       artifacthub.io/containsSecurityUpdates: "false"
     apiVersion: v2
@@ -35294,4 +35341,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-03-03T16:46:04.586649038Z"
+generated: "2026-03-06T10:05:17.57122274Z"
