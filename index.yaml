@@ -24564,6 +24564,35 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: update kyverno from 1.17.0 to 1.17.1
+          links:
+            - name: Kyverno Release 1.17.1
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.17.1
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-03-06T12:51:01.963840377Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 805f61e72b7a2282dd2fc8245f8ecbd7f25c3749e54fd42e388899f7dac0c579
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.113.0/security-apps-0.113.0.tgz
+    version: 0.113.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: Bump oauth2-proxy chart from 9.0.0 to 10.1.4
             includes updating oauth2-proxy from 7.13.0 to 7.14.2
             contains breaking changes regarding the redis-ha subchart see https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/README.md#to-1000
@@ -35341,4 +35370,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-03-06T10:05:17.57122274Z"
+generated: "2026-03-06T12:51:01.967942446Z"
