@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.112.0
+version: 0.113.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,25 +19,7 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: Bump oauth2-proxy chart from 9.0.0 to 10.1.4
-        includes updating oauth2-proxy from 7.13.0 to 7.14.2
-        contains breaking changes regarding the redis-ha subchart see https://github.com/oauth2-proxy/manifests/blob/main/helm/oauth2-proxy/README.md#to-1000
+        chore: update kyverno from 1.17.0 to 1.17.1
       links:
-        - name: oauth2-proxy chart Release 9.0.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-9.0.1
-        - name: oauth2-proxy chart Release 10.0.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.0.0
-        - name: oauth2-proxy chart Release 10.0.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.0.1
-        - name: oauth2-proxy chart Release 10.0.3
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.0.3
-        - name: oauth2-proxy chart Release 10.1.0
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.1.0
-        - name: oauth2-proxy chart Release 10.1.1
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.1.1
-        - name: oauth2-proxy chart Release 10.1.2
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.1.2
-        - name: oauth2-proxy chart Release 10.1.3
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.1.3
-        - name: oauth2-proxy chart Release 10.1.4
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.1.4
+        - name: Kyverno Release 1.17.1
+          url: https://github.com/kyverno/kyverno/releases/tag/v1.17.1
