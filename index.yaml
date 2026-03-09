@@ -24564,6 +24564,34 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: make falco and falcoExporter fail installation
+
+            They have been marked as derecated for 6 months, it's time to fail them.
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-03-09T10:11:13.087708986Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 14c05de03e4c2467c8649a3e38ea2b875ebc3e427720dd9f1fa41cbe25d7e886
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.114.0/security-apps-0.114.0.tgz
+    version: 0.114.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: update kyverno from 1.17.0 to 1.17.1
           links:
             - name: Kyverno Release 1.17.1
@@ -35370,4 +35398,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-03-06T12:51:01.967942446Z"
+generated: "2026-03-09T10:11:13.09046954Z"
