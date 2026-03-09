@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.113.0
+version: 0.114.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,7 +19,6 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: update kyverno from 1.17.0 to 1.17.1
-      links:
-        - name: Kyverno Release 1.17.1
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.17.1
+        chore: make falco and falcoExporter fail installation
+
+        They have been marked as derecated for 6 months, it's time to fail them.

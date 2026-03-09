@@ -5,6 +5,3 @@ The following apps are available:
 {{ if .Values.vault.enabled }}
 * vault
 {{ end }}
-{{ if .Values.falco.enabled }}
-* falco
-{{ end }}
