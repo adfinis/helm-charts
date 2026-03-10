@@ -3,8 +3,8 @@ apiVersion: v2
 name: hedgedoc
 description: Chart for HedgeDoc, a fork of CodiMD
 type: application
-version: 0.5.4
-appVersion: "1.10.3"
+version: 1.0.0
+appVersion: "1.10.7"
 icon: https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png
 sources:
   - https://github.com/hedgedoc/hedgedoc
@@ -13,14 +13,17 @@ maintainers:
     email: "support@adfinis.com"
     url: "https://adfinis.com"
 dependencies:
-  - name: postgresql
-    version: ~12.2.1
+  - name: postgres
+    alias: postgresql
+    version: ~0.17.0
     condition: postgresql.enabled
-    repository: https://charts.bitnami.com/bitnami
+    repository: oci://registry-1.docker.io/cloudpirates
 annotations:
   artifacthub.io/images: |
     - name: hedgedoc
-      image: quay.io/hedgedoc/hedgedoc:1.10.3
+      image: quay.io/hedgedoc/hedgedoc:1.10.7
   artifacthub.io/changes: |
     - kind: changed
-      description: Bumped hedgedoc image tag to 1.10.3
+      description: Switched to cloudpirates postgresql chart
+    - kind: changed
+      description: Bumped hedgedoc image tag to 1.10.7
