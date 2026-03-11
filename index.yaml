@@ -6046,6 +6046,36 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update ingress-nginx from 4.14.3 to 4.14.4
+            * fix CVE-2026-3288
+          links:
+            - name: ingress-nginx 4.14.4
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.4
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-03-11T10:18:30.462079039Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 9652d7ea2a60577df8e5f13543c6fe13e43f729228b6fac18c04bd927422ee74
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.263.0/infra-apps-0.263.0.tgz
+    version: 0.263.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update cert-manager from 1.19.2 to 1.19.4
 
             * fix vulnerabilities in dependencies
@@ -35398,4 +35428,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-03-09T10:11:13.09046954Z"
+generated: "2026-03-11T10:18:30.465575406Z"
