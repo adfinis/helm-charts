@@ -162,6 +162,19 @@ pre-commit install
 pre-commit install-hooks
 ```
 
+### Release process
+
+This repository publishes chart artifacts through two mechanisms on each release:
+
+- GitHub Pages (`charts.adfinis.com`) via the Chart Releaser workflow
+- GitHub Container Registry (GHCR) OCI chart repository at `ghcr.io/adfinis/charts`
+
+The release workflow is configured in `.github/workflows/release.yaml` and:
+- runs `helm/chart-releaser-action` to update the static charts repo
+- logs in to GHCR (`helm registry login`) with `GITHUB_TOKEN`
+- pushes each package from `.cr-release-packages` to `oci://ghcr.io/adfinis/charts`
+- updates the site index using `hack/ci/github/steps/update-page.sh`
+
 ### Changelog
 
 We add [Artifact Hub annotations](https://artifacthub.io/docs/topics/annotations/helm/)
