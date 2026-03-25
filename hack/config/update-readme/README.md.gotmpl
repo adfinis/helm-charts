@@ -38,6 +38,23 @@ This repository contains [Helm](https://helm.sh/) charts managed by [Adfinis](ht
 helm repo add adfinis https://charts.adfinis.com
 ```
 
+### Install from GHCR OCI registry
+
+The charts are also published to GitHub Container Registry as OCI Helm artifacts by the release workflow.
+
+```bash
+# Login using a GitHub token with read access
+echo "$GHCR_TOKEN" | helm registry login -u <github-username> --password-stdin ghcr.io
+
+# Pull a chart package from GHCR
+helm pull oci://ghcr.io/adfinis/charts/<chart-name> --version <chart-version>
+
+# Install from OCI directly
+helm install <release-name> oci://ghcr.io/adfinis/charts/<chart-name> --version <chart-version>
+```
+
+### Install on OpenShift
+
 To make the charts available in the OpenShift console:
 
 ```bash
