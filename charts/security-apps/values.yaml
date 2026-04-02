@@ -136,7 +136,7 @@ secretsStoreCsiDriver:
   # -- Chart
   chart: "secrets-store-csi-driver"
   # -- [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version
-  targetRevision: "1.5.3"
+  targetRevision: "1.5.6"
   # -- Helm values
   # @default -- [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver/values.yaml)
   values: {}
