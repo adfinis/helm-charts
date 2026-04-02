@@ -1,0 +1,35 @@
+{{- if .Values.listenerPolicy.enabled }}
+apiVersion: gateway.kgateway.dev/v1alpha1
+kind: ListenerPolicy
+metadata:
+  name: {{ include "gateway.fullname" . }}
+  labels:
+    {{- include "gateway.labels" . | nindent 4 }}
+  annotations:
+    {{- .Values.listenerPolicy.annotations | toYaml | nindent 4 }}
+spec:
+  targetRefs:
+    - group: gateway.networking.k8s.io
+      kind: Gateway
+      name: {{ include "gateway.fullname" . }}
+  default:
+    {{- with .Values.listenerPolicy.default.httpSettings}}
+    httpSettings:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+    {{- if ne .Values.listenerPolicy.default.proxyProtocol nil }}
+    {{- if eq (len .Values.listenerPolicy.default.proxyProtocol) 0 }}
+    proxyProtocol: {}
+    {{- else }}
+    proxyProtocol:
+      {{- toYaml .Values.listenerPolicy.default.proxyProtocol | nindent 6 }}
+    {{- end }}
+    {{- end }}
+    {{- with .Values.listenerPolicy.default.perConnectionBufferLimitBytes}}
+    perConnectionBufferLimitBytes: {{ . }}
+    {{- end }}
+  {{- with .Values.listenerPolicy.perPort }}
+  perPort:
+    {{- toYaml . | nindent 4}}
+  {{- end}}
+{{- end }}

@@ -1,0 +1,22 @@
+{{- if .Values.accessLog.enabled }}
+apiVersion: gateway.kgateway.dev/v1alpha1
+kind: ListenerPolicy
+metadata:
+  name: logging-policy
+spec:
+  targetRefs:
+  - group: gateway.networking.k8s.io
+    kind: Gateway
+    name: {{ include "gateway.fullname" . }}
+  default:
+    httpSettings:
+      accessLog:
+      - openTelemetry:
+          grpcService:
+            backendRef:
+              name: {{ .Values.accessLog.otelService.name }}
+              namespace: {{ .Values.accessLog.otelService.namespace }}
+              port: {{ .Values.accessLog.otelService.port }}
+            logName: {{ .Values.accessLog.logName }}
+          body: {{ .Values.accessLog.logFormat | quote }}
+{{- end }}

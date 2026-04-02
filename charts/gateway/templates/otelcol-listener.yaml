@@ -1,0 +1,24 @@
+{{- if .Values.otelcol.enabled }}
+{{- if not .Values.otelcol.config.exporters}}
+  {{- fail "Please set an exporter for OpenTelemetry Collector"}}
+{{- end }}
+apiVersion: gateway.kgateway.dev/v1alpha1
+kind: ListenerPolicy
+metadata:
+  name: logging-policy
+spec:
+  targetRefs:
+  - group: gateway.networking.k8s.io
+    kind: Gateway
+    name: {{ include "gateway.fullname" . }}
+  default:
+    httpSettings:
+      accessLog:
+      - openTelemetry:
+          grpcService:
+            backendRef:
+              name: {{ .Release.Name }}-otelcol
+              port: 4317
+            logName: {{ .Values.customLogging.logName }}
+          body: {{ .Values.customLogging.logFormat | quote }}
+{{- end }}
