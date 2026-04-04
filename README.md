@@ -6,7 +6,7 @@
 
 ![Lunkwill wearing a Helm shirt](docs/images/lunkwill_helm_shirt.png)
 
-This repository contains [Helm](https://helm.sh/) charts managed by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
+This repository contains [Helm](https://helm.sh/) charts managed by [Adfinis](https://www.adfinis.com/?mtm_campaign=github&mtm_kwd=helm-charts&mtm_source=referal&mtm_medium=adfinis).
 
 ## Usage
 
@@ -138,7 +138,7 @@ We expect you to always create an issue prior to creating a new chart. This help
 Adfinis fights for a software world that is more open, where the quality is
 better and where software must be accessible to everyone. This repository
 contains part of the action behind this commitment. Feel free to
-[contact](https://adfinis.com/en/contact/?pk_campaign=github&pk_kwd=helm-charts)
+[contact](https://www.adfinis.com/en/contact?mtm_campaign=github&mtm_kwd=helm-charts&mtm_source=referal&mtm_medium=adfinis)
 us if you have any questions.
 
 ## License
