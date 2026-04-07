@@ -6,6 +6,7 @@ type: application
 
 version: 0.1.0
 
+# Supported version of kgateway
 appVersion: "v2.2.2"
 
 maintainers:
@@ -19,3 +20,11 @@ dependencies:
   repository: "https://open-telemetry.github.io/opentelemetry-helm-charts"
   condition: otelcol.enabled
   alias: otelcol
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: "feat: add gateway chart"
+      links:
+        - name: Github PR
+          url: https://github.com/adfinis/helm-charts/pull/1770
