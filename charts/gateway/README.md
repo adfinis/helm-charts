@@ -7,23 +7,22 @@ Chart for a kgateway gateway
 ## Maintainers
 This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
 
-## Requirements
-
-| Repository | Name | Version |
-|------------|------|---------|
-| https://open-telemetry.github.io/opentelemetry-helm-charts | otelcol(opentelemetry-collector) | 0.127.2 |
-
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| accessLog.enabled | bool | `false` |  |
+| accessLog.logFormat | string | `"\"%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %RESPONSE_CODE% \"%REQ(:AUTHORITY)%\" \"%UPSTREAM_CLUSTER%\""` | Formatting of the access log |
+| accessLog.logName | string | `"http-gateway-access-logs"` | Name for the access log |
+| accessLog.otelService | object | `{"name":null,"namespace":null,"port":null}` | Open Telemetry Collector GRPC Service which should receive the logs |
+| accessLog.otelService.name | string | `nil` | Name of the GRPC Service of Open Telemetry Collector |
+| accessLog.otelService.namespace | string | `nil` | Namspace of the GRPC Service of Open Telemetry Collector |
+| accessLog.otelService.port | int | `nil` | Port of the GRPC Service of Open Telemetry Collector |
 | autoscaling.enabled | bool | `false` | Enable autoscaling |
 | autoscaling.maxReplicas | int | `nil` | Specify the minimum number of replicas |
 | autoscaling.minReplicas | int | `nil` | Specify the maximum number of replicas |
 | autoscaling.targetCPUUtilizationPercentage | int | `nil` | Specify the percentage of CPU used before it scales up |
 | autoscaling.targetMemoryUtilizationPercentage | int | `nil` | Specify the percentage of CPU used before it scales up |
-| customLogging.logFormat | string | `"\"%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %RESPONSE_CODE% \"%REQ(:AUTHORITY)%\" \"%UPSTREAM_CLUSTER%\""` | Formatting of the access log |
-| customLogging.logName | string | `"http-gateway-access-logs"` | Name for the access log |
 | fullnameOverride | string | `""` | Override the full name |
 | gateway.addresses | list | `[]` | Specify addresses that will be requested for the gateway |
 | gateway.annotations | object | `{}` | Specify annotations to the gateway |
@@ -55,15 +54,6 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | networkPolicy.ingress | list | `[]` | Define ingress rules |
 | networkPolicy.matchExpressions | list | `[]` | Apply the network policy by using expressions |
 | networkPolicy.matchLabels | object | `{}` | Apply the network policy to resources by matching labels |
-| otelcol.command | object | `{"name":"otelcol-contrib"}` | Define the command to be executed |
-| otelcol.config.exporters | object | `{}` | Define exporters to export the logs to |
-| otelcol.config.receivers | object | `{"otlp":{"protocols":{"grpc":{"endpoint":"0.0.0.0:4317"},"http":{"endpoint":"0.0.0.0:4318"}}}}` | Define receivers to receive the logs |
-| otelcol.config.service.pipelines.logs.exporters | list | `[]` | Add the defined exporters here |
-| otelcol.config.service.pipelines.logs.processors | list | `["batch"]` | Define processors for the logs |
-| otelcol.config.service.pipelines.logs.receivers | list | `["otlp"]` | Add the defined receivers here |
-| otelcol.enabled | bool | `false` | Enable the deployment of an Open Telemetry Collector deployment to collect logs |
-| otelcol.image | object | `{"repository":"otel/opentelemetry-collector-contrib"}` | Define where to get the image |
-| otelcol.mode | string | `"deployment"` | Mode of deployment for the collector, may be deployment, statefulset or daemonset |
 | podDisruption.enabled | bool | `false` | Enable a pod disruption budget |
 | podDisruption.maxUnavailable | int | `nil` | Specify the maximum number of replicas that may be unavailable |
 | podDisruption.minAvailable | int | `nil` | Specify the minimum number of replicas that have to be available |

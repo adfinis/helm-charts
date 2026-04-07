@@ -1,7 +1,4 @@
-{{- if .Values.otelcol.enabled }}
-{{- if not .Values.otelcol.config.exporters}}
-  {{- fail "Please set an exporter for OpenTelemetry Collector"}}
-{{- end }}
+{{- if .Values.accessLog.enabled }}
 apiVersion: gateway.kgateway.dev/v1alpha1
 kind: ListenerPolicy
 metadata:
@@ -17,8 +14,9 @@ spec:
       - openTelemetry:
           grpcService:
             backendRef:
-              name: {{ .Release.Name }}-otelcol
-              port: 4317
-            logName: {{ .Values.customLogging.logName }}
-          body: {{ .Values.customLogging.logFormat | quote }}
+              name: {{ .Values.accessLog.otelService.name }}
+              namespace: {{ .Values.accessLog.otelService.namespace }}
+              port: {{ .Values.accessLog.otelService.port }}
+            logName: {{ .Values.accessLog.logName }}
+          body: {{ .Values.accessLog.logFormat | quote }}
 {{- end }}
