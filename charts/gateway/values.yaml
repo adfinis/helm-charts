@@ -163,41 +163,18 @@ podMonitor:
   # -- Define a limit on the number of scraped targets that will be accepted.
   targetLimit:
 
-customLogging:
+accessLog:
+  enabled: false
   # -- Name for the access log
   logName: "http-gateway-access-logs"
   # -- Formatting of the access log
   logFormat: >-
     "%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %RESPONSE_CODE% "%REQ(:AUTHORITY)%" "%UPSTREAM_CLUSTER%"
-
-otelcol:
-  # -- Enable the deployment of an Open Telemetry Collector deployment to collect logs
-  enabled: false
-  # -- Mode of deployment for the collector, may be deployment, statefulset or daemonset
-  mode: deployment
-  # -- Define where to get the image
-  image:
-    repository: "otel/opentelemetry-collector-contrib"
-  # -- Define the command to be executed
-  command:
-    name: "otelcol-contrib"
-  config:
-    # -- Define receivers to receive the logs
-    receivers:
-      otlp:
-        protocols:
-          grpc:
-            endpoint: 0.0.0.0:4317
-          http:
-            endpoint: 0.0.0.0:4318
-    # -- Define exporters to export the logs to
-    exporters: {}
-    service:
-      pipelines:
-        logs:
-          # -- Add the defined receivers here
-          receivers: [otlp]
-          # -- Define processors for the logs
-          processors: [batch]
-          # -- Add the defined exporters here
-          exporters: []
+  # -- Open Telemetry Collector GRPC Service which should receive the logs
+  otelService:
+    # -- Name of the GRPC Service of Open Telemetry Collector
+    name:
+    # -- Namspace of the GRPC Service of Open Telemetry Collector
+    namespace:
+    # -- (int) Port of the GRPC Service of Open Telemetry Collector
+    port:

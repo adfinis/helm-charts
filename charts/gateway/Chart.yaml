@@ -14,13 +14,6 @@ maintainers:
     email: support@adfinis.com
     url: https://adfinis.com
 
-dependencies:
-- name: opentelemetry-collector
-  version: "0.127.2"
-  repository: "https://open-telemetry.github.io/opentelemetry-helm-charts"
-  condition: otelcol.enabled
-  alias: otelcol
-
 annotations:
   artifacthub.io/changes: |
     - kind: added
