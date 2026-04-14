@@ -116,52 +116,61 @@ listenerPolicy:
   # -- Overwrite the listener configuration per port
   perPort: []
 
-podMonitor:
-  # -- Enable the pod monitor
-  enabled: false
-  # -- Add additional labels to the pod monitor
-  extraLabels:
-    release: prometheus
-  # -- Define how to scrape metrics from the selected pods
-  endpoints:
-  - port: http-monitoring
-    path: /metrics
-  # -- Define additional metadtae to be added to discored targets
-  attachMetadata: {}
-  # -- Define a job level limit on the size of the uncompressed response body that will be accepted
-  bodySizeLimit:
-  # -- Define wether to convert all scrape classic histograms to native histograms
-  convertClassicHistogramsToNHCB: false
-  # -- Define the scrap protocl to use if a scrape returns unusable content
-  fallbackScrapeProtocol:
-  # -- Defines the label to use to retrive the job name from.
-  jobLabel:
-  # -- (int) Define the per-scrape limit on the number of targets dropped by relabeling that will be kept in memory
-  keepDroppedTargets:
-  # -- (int) Define the per-scrape limit on the number of labels
-  labelLimit:
-  # -- (int) Define the per-scrape limit on the length of labels
-  labelNameLengthLimit:
-  # -- (int) Define the per-scrape limit on the length of values
-  labelValueLengthLimit:
-  # -- (int) Define the limit for buckets in a native histogram
-  nativeHistogramBucketLimit:
-  # -- Define that if the growth factor of one bucket to the next is samller than this, the buckets will be merged
-  nativeHistogramMinBucketFactor:
-  # -- Define the labels which transferred from the pod to the ingeste labels
-  podTargetLabels: []
-  # -- (int) Define a per-scrape limit on the number of scraped samples
-  sampleLimit:
-  # -- Define the scrape class
-  scrapeClass:
-  # -- Define wether to scrape classic histograms that are also exposed as a native histogram
-  scrapeClassicHistograms: false
-  # -- Define the protocol to negotiate during a scrape
-  scrapeProtocols: []
-  # -- Define the mechanism used to select the endpoints to scrape
-  selectorMechanism:
-  # -- Define a limit on the number of scraped targets that will be accepted.
-  targetLimit:
+monitoring:
+  serviceMonitor:
+    # -- Enable the service monitor
+    enabled: false
+    # -- Add additional labels to the service monitor (for example for prometheus to discover it)
+    extraLabels: {}
+    # -- Define how to scrape metrics from the service
+    endpoint:
+      # -- Interval in which the the metrics are scraped
+      interval: 2s
+      # -- Define the where the labels are to be scraped
+      path: /metrics
+    # -- Define additional metadata to be added to discored targets
+    attachMetadata: {}
+    # -- Define a job level limit on the size of the uncompressed response body that will be accepted
+    bodySizeLimit:
+    # -- Define wether to convert all scrape classic histograms to native histograms
+    convertClassicHistogramsToNHCB: false
+    # -- Define the scrap protocl to use if a scrape returns unusable content
+    fallbackScrapeProtocol:
+    # -- Defines the label to use to retrive the job name from.
+    jobLabel:
+    # -- (int) Define the per-scrape limit on the number of targets dropped by relabeling that will be kept in memory
+    keepDroppedTargets:
+    # -- (int) Define the per-scrape limit on the number of labels
+    labelLimit:
+    # -- (int) Define the per-scrape limit on the length of labels
+    labelNameLengthLimit:
+    # -- (int) Define the per-scrape limit on the length of values
+    labelValueLengthLimit:
+    # -- (int) Define the limit for buckets in a native histogram
+    nativeHistogramBucketLimit:
+    # -- Define that if the growth factor of one bucket to the next is samller than this, the buckets will be merged
+    nativeHistogramMinBucketFactor:
+    # -- Define the labels which transferred from the pod to the ingeste labels
+    podTargetLabels: []
+    # -- (int) Define a per-scrape limit on the number of scraped samples
+    sampleLimit:
+    # -- Define the scrape class
+    scrapeClass:
+    # -- Define wether to scrape classic histograms that are also exposed as a native histogram
+    scrapeClassicHistograms: false
+    # -- Define the protocol to negotiate during a scrape
+    scrapeProtocols: []
+    # -- Define the mechanism used to select the endpoints to scrape
+    selectorMechanism:
+    # -- Define the labels that will be transferred from the target service onto the ingested metrics
+    targetLabels: []
+    # -- Define a limit on the number of scraped targets that will be accepted.
+    targetLimit:
+  service:
+    # -- Define the port which the service should target to scrape the labels from the pods
+    targetPort: http-monitoring
+    # -- Define the port which the service exposes and the service monitor targets
+    port: 9091
 
 accessLog:
   enabled: false
