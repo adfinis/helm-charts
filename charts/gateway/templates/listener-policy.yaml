@@ -1,4 +1,4 @@
-{{- if .Values.listenerPolicy.enabled }}
+{{- if or .Values.listenerPolicy.enabled .Values.accessLog.enabled }}
 apiVersion: gateway.kgateway.dev/v1alpha1
 kind: ListenerPolicy
 metadata:
@@ -13,11 +13,24 @@ spec:
       kind: Gateway
       name: {{ include "gateway.fullname" . }}
   default:
-    {{- with .Values.listenerPolicy.default.httpSettings}}
+    {{- if or .Values.listenerPolicy.default.httpSettings .Values.accessLog.enabled }}
     httpSettings:
-      {{- toYaml . | nindent 6 }}
+      {{- if or .Values.listenerPolicy.default.httpSettings }}
+      {{- toYaml .Values.listenerPolicy.default.httpSettings | nindent 6 }}
+      {{- end }}
+      {{- if .Values.accessLog.enabled }}
+      accessLog:
+      - openTelemetry:
+          grpcService:
+            backendRef:
+              name: {{ .Values.accessLog.otelService.name }}
+              namespace: {{ .Values.accessLog.otelService.namespace }}
+              port: {{ .Values.accessLog.otelService.port }}
+            logName: {{ .Values.accessLog.logName }}
+          body: {{ .Values.accessLog.logFormat | quote }}
+      {{- end }}
     {{- end }}
-    {{- if ne .Values.listenerPolicy.default.proxyProtocol nil }}
+    {{- if and (ne .Values.listenerPolicy.default.proxyProtocol nil) .Values.listenerPolicy.enabled }}
     {{- if eq (len .Values.listenerPolicy.default.proxyProtocol) 0 }}
     proxyProtocol: {}
     {{- else }}
