@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.29.0
+version: 0.29.1
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,13 +15,8 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: changed
+    - kind: fixed
       description: |
-        Update Argo Rollouts from 1.8.3 to 1.8.4
-
-        * Updated dependencies
-        * fix: bluegreen analysis prematurely succeeds if new ReplicaSet becomes unsaturated
-      links:
-        - name: Release notes
-          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.8.4
+        fix: trigger rebuild after pipeline was fixed
