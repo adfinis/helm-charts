@@ -304,7 +304,7 @@ openbao:
   # -- Chart
   chart: openbao
   # -- [OpenBao Helm chart](https://github.com/openbao/openbao-helm/tree/main/charts/openbao)
-  targetRevision: 0.23.3
+  targetRevision: 0.27.2
   # -- Helm values
   # @default -- [upstream values](https://github.com/openbao/openbao-helm/blob/main/charts/openbao/values.yaml)
   values: {}
