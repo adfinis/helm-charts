@@ -23,5 +23,9 @@ annotations:
         * updated to controller-v1.15.1
         * updated dependencies
       links:
-        - name: ingress-nginx 4.14.4
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.4
+        - name: ingress nginx deprecation notice
+          url: https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/
+        - name: controller 1.15.1
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.15.1
+        - name: helm chart 1.15.1
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.15.1
