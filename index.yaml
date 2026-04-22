@@ -24681,6 +24681,39 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: update openbao chart chart from 0.23.3 to 0.27.2
+        - kind: changed
+          description: |
+            chore: bump openbao to v2.5.3
+            chore: bump openbao-csi-provider to v2.0.2
+          links:
+            - name: full changelog
+              url: https://artifacthub.io/packages/helm/openbao/openbao?modal=changelog
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-04-22T14:43:33.360952141Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 61f4d99352b935f62fb549bd4f7dd342c2eb6db377725d61ad874f3839da748b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.116.0/security-apps-0.116.0.tgz
+    version: 0.116.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: update vault chart from 0.30.0 to 0.32.0
         - kind: changed
           description: |
@@ -35546,4 +35579,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-04-22T09:36:38.39099128Z"
+generated: "2026-04-22T14:43:33.362679063Z"
