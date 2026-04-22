@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.114.1
+version: 0.115.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,4 +19,9 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: update secretsStoreCsiDriver to 1.5.6
+        feat: update vault chart from 0.30.0 to 0.32.0
+    - kind: changed
+      description: |
+        updates vault default version from 1.19.0 to 1.21.4
+        updates vault-csi-provider default version from 1.5.0 to 1.7.0
+        updates vault-k8s default version from 1.6.2 to 1.7.2
