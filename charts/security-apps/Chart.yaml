@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.116.0
+version: 0.117.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,11 +19,8 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: update openbao chart chart from 0.23.3 to 0.27.2
-    - kind: changed
-      description: |
-        chore: bump openbao to v2.5.3
-        chore: bump openbao-csi-provider to v2.0.2
+        Update oauth2-proxy from 10.2.0 to 10.1.4
+        * chore(dep): bump app version to v7.15.2
       links:
-        - name: full changelog
-          url: https://artifacthub.io/packages/helm/openbao/openbao?modal=changelog
+        - name: oauth2-proxy 10.4.3
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.4.3
