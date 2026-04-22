@@ -5,6 +5,37 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update Argo Rollouts from 1.8.3 to 1.8.4
+
+            * Updated dependencies
+            * fix: bluegreen analysis prematurely succeeds if new ReplicaSet becomes unsaturated
+          links:
+            - name: Release notes
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.8.4
+    apiVersion: v2
+    created: "2026-04-22T09:36:38.222810252Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: ae6e23e07731025c7930990b80907abbdb8ad595a54ab211f0f36210f9761683
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.29.0/argo-apps-0.29.0.tgz
+    version: 0.29.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update Argo Rollouts from 2.40.3 to 2.40.5
             * Updated dependencies
             * feat: allow argo rollout controller service monitor to use tlsconfig
@@ -24650,6 +24681,37 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: update vault chart from 0.30.0 to 0.32.0
+        - kind: changed
+          description: |
+            updates vault default version from 1.19.0 to 1.21.4
+            updates vault-csi-provider default version from 1.5.0 to 1.7.0
+            updates vault-k8s default version from 1.6.2 to 1.7.2
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-04-22T09:36:38.389251452Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: d4e5003a2e090fbe759c0f8fe7bf6134d65690b9f37d7fa2ffff31e169cbd117
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.115.0/security-apps-0.115.0.tgz
+    version: 0.115.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             chore: make falco and falcoExporter fail installation
 
             They have been marked as derecated for 6 months, it's time to fail them.
@@ -35484,4 +35546,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-03-20T09:49:51.856722793Z"
+generated: "2026-04-22T09:36:38.39099128Z"
