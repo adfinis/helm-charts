@@ -6077,6 +6077,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update ingress-nginx to 4.15.1 and marking it as deprecated
+            * updated to controller-v1.15.1
+            * updated dependencies
+          links:
+            - name: ingress nginx deprecation notice
+              url: https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/
+            - name: controller 1.15.1
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.15.1
+            - name: helm chart 1.15.1
+              url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.15.1
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-04-22T16:10:00.103560641Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: cee20840c816e3327b4987db7888cad567fefe515202e6b6781aeb463f24c77d
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.264.0/infra-apps-0.264.0.tgz
+    version: 0.264.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update ingress-nginx from 4.14.3 to 4.14.4
             * fix CVE-2026-3288
           links:
@@ -35579,4 +35614,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-04-22T14:43:33.362679063Z"
+generated: "2026-04-22T16:10:00.10733516Z"
