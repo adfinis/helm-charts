@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.67.0
+version: 0.68.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,11 +19,10 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update meltallb chart from 0.15.2 to 0.15.3
-        * Fix of vulnerability in docker images (CVE-2025-22874)
-        * Bug fixes
-        * add option to specify init container resources
-        * dded readOnlyRootFilesystem: true and allowPrivilegeEscalation: false to containers missing these security flags, enhancing container security posture without affecting functionality.
+        Update keda from 2.18.1 to 2.19.0
+        * replace kube-rbac-proxy with native secure metrics
+        * add k8s networkPolicy
+        * release http-add-on
       links:
-        - name: metallb 0.15.3 release
-          url: https://metallb.universe.tf/release-notes/#version-0-15-3
+        - name: KEDA Chart v2.19.0 release
+          url: https://github.com/kedacore/charts/releases/tag/v2.19.0
