@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.64.0
+version: 0.65.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,4 +19,8 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Set sentryKubernetes to fail after it was removed 6 months ago
+        Update goldilocks from 10.2.0 to 10.3.0
+        * Fixed user on deployment
+      links:
+        - name: goldilocks v4.14.18 release
+          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.4
