@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.65.0
+version: 0.66.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,8 +19,22 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update goldilocks from 10.2.0 to 10.3.0
-        * Fixed user on deployment
+        Update opencost from 1.119.1 to 1.120.0
+        Helm Chart changes:
+        feat: Add plugins.install.plugins list and existingSecret support (adopts #328) by @ameijer in #344
+        Create Empty /var/configs dir by @HMetcalfeW in #333
+        add admin token infra support by @ameijer in #339
+        Add cloudIntegrationJSON support by @thomasvn in #337
+        OpenCost changes:
+        feat(cloud): add OVH cloud provider by @Jorgagu in #3627
+        Add cluster name as a column to CSV export by @Kush172005 in #3703
+        Improve documentation to work towards OpenSSF Best Practices badges by @cpetersen5 in #3711
+        feat: Introduce configurable metrics emitter query window by @noahnut in #3451
+        Azure: Add Azure rate card environment variable support by @fromsaurav in #3279
+        Nat Gateway Network Costs Support by @mbolt35 in #3534
+        Add Gzip Azure support by @HMetcalfeW in #3572
+        Various dependency updates
+
       links:
         - name: goldilocks v4.14.18 release
           url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.4
