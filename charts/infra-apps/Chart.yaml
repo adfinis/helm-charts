@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.265.0
+version: 0.266.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,27 +19,42 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: update cert-manager from 1.19.4 to 1.20.2
-        Added a set of flags to permit setting NetworkPolicy across all deployed containers. Remove redundant global IP ranges from example policies.
-        Added selectable fields to custom resource definitions for .spec.issuerRef.{group, kind, name}
-        Added support for specifying imagePullSecrets in the startupapicheck-job Helm template to enable pulling images from private registries.
-        Added 'extraContainers' helm chart value, allowing the deployment of arbitrary sidecar containers within the cert-manager operator pod. This can be used to support, for e.g., AWS IAM Roles Anywhere for Route53 DNS01 verification.
-        Added parentRef override annotations on the Certificate resource.
-        Added support for azure private zones for dns01 issuer.
-        Added support for configuring PEM decoding size limits, allowing operators to handle larger certificates and keys.
-        Added support for unhealthyPodEvictionPolicy in PodDisruptionBudget
-        For Venafi provider, read venafi.cert-manager.io/custom-fields annotation on Issuer/ClusterIssuer and use it as base with override/append capabilities on Certificate level.
-        Improve error message when CA issuers are misconfigured to use a clashing secret name
-        Introduce a new Ingress annotation acme.cert-manager.io/http01-ingress-ingressclassname to override http01.ingress.ingressClassName field in HTTP-01 challenge solvers.
-        Update global.nodeSelector to helm chart to perform a merge and allow for a single nodeSelector to be set across all services.
-        Vault issuers will now include the Vault server address as one of the default audiences on generated service account tokens.
-        Added experimental XListenerSets feature gate
-        Various Bugfixes & dependencie upgrades
+        feat: update prometheus-operator from 0.87.1 to 0.90.1
+        [CHANGE] Use narrower selectors for StatefulSet informers in Alertmanager and ThanosRuler controllers. It is recommended to upgrade from v0.85.0 (at least). #8246
+        [CHANGE] Reject EC2/Lightsail SD for Prometheus >= 3.8.0 in ScrapeConfig CRD. #8175
+        [FEATURE] Add podManagementPolicy field to Prometheus, PrometheusAgent, Alertmanager and ThanosRuler CRDs. #8119
+        [FEATURE] Add updateStrategy field to Prometheus, PrometheusAgent, Alertmanager and ThanosRuler CRDs. #8202
+        [FEATURE] Add scrapeNativeHistograms field to Prometheus, PrometheusAgent, ServiceMonitor, PodMonitor, Probe and ScrapeConfig CRDs. #8102
+        [FEATURE] Add scope field to AzureAD remote write configuration. #8240
+        [FEATURE] Add workloadIdentity field to AzureAD remote write configuration. #7998
+        [FEATURE] Add support for PrometheusRule fields groupLabels and queryOffset in ThanosRuler. #8137
+        [FEATURE] Add slackAppToken and slackAppUrl fields to Alertmanager global config for Slack App support. #8238
+        [FEATURE] Add incident.io receiver support to Alertmanager config secret. #8190 #8245 #8228
+        [FEATURE] Add Mattermost receiver support to Alertmanager config secret. #8188
+        [FEATURE] Add apiType field to Jira receiver in Alertmanager config secret. #8218
+        [FEATURE] Add timeout field to PagerDuty receiver in AlertmanagerConfig CRD. #8162
+        [FEATURE] Add timeout field to Slack receiver in AlertmanagerConfig CRD. #8161
+        [FEATURE] Add --repair-policy-for-statefulsets CLI argument to the operator. It defines how the operator manages StatefulSet's pods stuck at an incorrect revision. Users running Kubernetes v1.35+ are encouraged to enable this feature (see troubleshooting guide). #8443
+        [FEATURE] Add schedulerName support to the Prometheus, PrometheusAgent, Alertmanager and ThanosRuler CRDs. #8451
+        feat: update kube-state-metric from 7.0.0 to 7.2.2
+        [FEATURE] Allow filtering resources via URL parameters by @mrueg in #2844
+        [FEATURE] Add kube_job_status_ready metric by @nmn3m in #2771
+        [FEATURE] Add kube_deployment_owner metric by @nmn3m in #2782
+        [FEATURE] Add kube_deployment_status_replicas_terminating and kube_replicaset_status_terminating_replicas metrics by @atiratree in #2708
+        [FEATURE] Promote CronJob, HPA, and Pod metrics from BETA to STABLE by @nmn3m in #2798
+        [FEATURE] Promote StatefulSet metrics to STABLE by @yasicar in #2783
+        [FEATURE] Add info metric for client-go version by @fpetkovski in #2739
+        [FEATURE] Warn on probe failing by @mickael-carl in #2808
+        feat: update prometheus-node-exporter from 4.49.2 to 4.53.1
+        [CHANGE] Adds distroless container image. #3592
+        [FEATURE] infiniband: Add hw_counters metrics #2827
+        [FEATURE] kernel_hung: Add collector for kernel hung tasks #3470
+        [FEATURE] mixin: Add "All" option to cluster variable in dashboards #3509
+        [FEATURE] netlink: Add node_network_altnames_info metric #3541
+        [FEATURE] thermal: Add support for CPU temperature metrics on Apple Silicon #3547
+        [FEATURE] bcachefs: Add new collector for bcachefs #3523
+        feat: update grafana from 10.4.3 to 12.1.1
 
       links:
-        - name: cert-manager 1.20.0
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.20.0
-        - name: cert-manager 1.20.1
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.20.1
-        - name: cert-manager 1.20.2
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.20.2
+        - name: kube-prometheus-stack 84.0.1
+          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-84.0.1
