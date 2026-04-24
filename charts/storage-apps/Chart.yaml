@@ -2,7 +2,7 @@ apiVersion: v2
 name: storage-apps
 description: Argo CD app-of-apps config for storage applications
 type: application
-version: 0.21.0
+version: 0.22.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,13 +19,11 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated csiDriverSmb to 1.19.1, including:
+        Updated csiDriverSmb to 1.20.1, including:
+          - feat: Add driver.labels option to helm chart for CSIDriver resource by @Copilot in #998
           - Various CVE fixes
-          - upgrade csi-resizer to v1.14.0
-          - enable to use secrets with special characters
-          - support multiple storage classes creation using helm chart
       links:
-        - name: "v1.19.1 Release Notes"
-          url: "https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.19.1"
-        - name: "v1.19.0 Release Notes"
-          url: "https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.19.0"
+        - name: "v1.20.0 Release Notes"
+          url: "https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.20.0"
+        - name: "v1.20.1 Release Notes"
+          url: "https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.20.1"
