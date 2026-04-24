@@ -6077,6 +6077,55 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: update cert-manager from 1.19.4 to 1.20.2
+            Added a set of flags to permit setting NetworkPolicy across all deployed containers. Remove redundant global IP ranges from example policies.
+            Added selectable fields to custom resource definitions for .spec.issuerRef.{group, kind, name}
+            Added support for specifying imagePullSecrets in the startupapicheck-job Helm template to enable pulling images from private registries.
+            Added 'extraContainers' helm chart value, allowing the deployment of arbitrary sidecar containers within the cert-manager operator pod. This can be used to support, for e.g., AWS IAM Roles Anywhere for Route53 DNS01 verification.
+            Added parentRef override annotations on the Certificate resource.
+            Added support for azure private zones for dns01 issuer.
+            Added support for configuring PEM decoding size limits, allowing operators to handle larger certificates and keys.
+            Added support for unhealthyPodEvictionPolicy in PodDisruptionBudget
+            For Venafi provider, read venafi.cert-manager.io/custom-fields annotation on Issuer/ClusterIssuer and use it as base with override/append capabilities on Certificate level.
+            Improve error message when CA issuers are misconfigured to use a clashing secret name
+            Introduce a new Ingress annotation acme.cert-manager.io/http01-ingress-ingressclassname to override http01.ingress.ingressClassName field in HTTP-01 challenge solvers.
+            Update global.nodeSelector to helm chart to perform a merge and allow for a single nodeSelector to be set across all services.
+            Vault issuers will now include the Vault server address as one of the default audiences on generated service account tokens.
+            Added experimental XListenerSets feature gate
+            Various Bugfixes & dependencie upgrades
+
+          links:
+            - name: cert-manager 1.20.0
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.20.0
+            - name: cert-manager 1.20.1
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.20.1
+            - name: cert-manager 1.20.2
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.20.2
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-04-24T09:45:17.896666637Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 6e142914176c2ab71351597470e4f0d02bd6968caf851e85e3860ab6d855f54d
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.265.0/infra-apps-0.265.0.tgz
+    version: 0.265.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update ingress-nginx to 4.15.1 and marking it as deprecated
             * updated to controller-v1.15.1
             * updated dependencies
@@ -35752,4 +35801,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-04-24T08:58:29.081375791Z"
+generated: "2026-04-24T09:45:17.899637378Z"
