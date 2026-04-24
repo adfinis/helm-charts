@@ -29268,6 +29268,39 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated csiDriverSmb to 1.20.1, including:
+              - feat: Add driver.labels option to helm chart for CSIDriver resource by @Copilot in #998
+              - Various CVE fixes
+          links:
+            - name: "v1.20.0 Release Notes"
+              url: "https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.20.0"
+            - name: "v1.20.1 Release Notes"
+              url: "https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.20.1"
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-04-24T15:15:46.323064415Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for storage applications
+    digest: 5e63ed8ba7caa9da6af57f25152f9139781c7369ac4330b2570778415000aec3
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.22.0/storage-apps-0.22.0.tgz
+    version: 0.22.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated csiDriverSmb to 1.19.1, including:
               - Various CVE fixes
               - upgrade csi-resizer to v1.14.0
@@ -35909,4 +35942,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-04-24T14:00:24.272407659Z"
+generated: "2026-04-24T15:15:46.326293525Z"
