@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.68.0
+version: 0.69.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,10 +19,12 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update keda from 2.18.1 to 2.19.0
-        * replace kube-rbac-proxy with native secure metrics
-        * add k8s networkPolicy
-        * release http-add-on
+        Update reloader chart from 2.2.8 to 2.2.11
+        * Bumped dependencies
       links:
-        - name: KEDA Chart v2.19.0 release
-          url: https://github.com/kedacore/charts/releases/tag/v2.19.0
+        - name: reloader 2.2.11 chart release
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.11
+        - name: reloader 2.2.10 chart release
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.10
+        - name: reloader 2.2.9 chart release
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.9
