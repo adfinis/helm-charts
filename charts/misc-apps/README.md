@@ -1,6 +1,10 @@
 # misc-apps
 
+<<<<<<< HEAD
 ![Version: 0.69.0](https://img.shields.io/badge/Version-0.69.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+=======
+![Version: 0.67.0](https://img.shields.io/badge/Version-0.67.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+>>>>>>> 5b45867 (fix: chart version)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
