@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.66.0
+version: 0.67.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,26 +15,15 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update opencost from 1.119.1 to 1.120.0
-        Helm Chart changes:
-        feat: Add plugins.install.plugins list and existingSecret support (adopts #328) by @ameijer in #344
-        Create Empty /var/configs dir by @HMetcalfeW in #333
-        add admin token infra support by @ameijer in #339
-        Add cloudIntegrationJSON support by @thomasvn in #337
-        OpenCost changes:
-        feat(cloud): add OVH cloud provider by @Jorgagu in #3627
-        Add cluster name as a column to CSV export by @Kush172005 in #3703
-        Improve documentation to work towards OpenSSF Best Practices badges by @cpetersen5 in #3711
-        feat: Introduce configurable metrics emitter query window by @noahnut in #3451
-        Azure: Add Azure rate card environment variable support by @fromsaurav in #3279
-        Nat Gateway Network Costs Support by @mbolt35 in #3534
-        Add Gzip Azure support by @HMetcalfeW in #3572
-        Various dependency updates
-
+        Update meltallb chart from 0.15.2 to 0.15.3
+        * Fix of vulnerability in docker images (CVE-2025-22874)
+        * Bug fixes
+        * add option to specify init container resources
+        * dded readOnlyRootFilesystem: true and allowPrivilegeEscalation: false to containers missing these security flags, enhancing container security posture without affecting functionality.
       links:
-        - name: goldilocks v4.14.18 release
-          url: https://github.com/kubernetes/ingress-nginx/releases/tag/helm-chart-4.14.4
+        - name: metallb 0.15.3 release
+          url: https://metallb.universe.tf/release-notes/#version-0-15-3
