@@ -10,14 +10,14 @@ loki:
     # -- Namespace
     namespace: "infra-logging"
   # -- Repo URL
-  # @default -- [repo](https://grafana.github.io/helm-charts)
-  repoURL: "https://grafana.github.io/helm-charts"
+  # @default -- [repo](https://grafana-community.github.io/helm-charts)
+  repoURL: "https://grafana-community.github.io/helm-charts"
   # -- Chart
   chart: "loki"
-  # -- [loki Helm chart](https://github.com/grafana/loki/tree/main/production/helm/loki)
-  targetRevision: "6.49.0"
+  # -- [loki Helm chart](https://github.com/grafana-community/helm-charts/tree/main/charts/loki)
+  targetRevision: "13.3.3"
   # -- Helm values
-  # @default -- [upstream values](https://github.com/grafana/loki/blob/main/production/helm/loki/values.yaml)
+  # @default -- [upstream values](https://github.com/grafana-community/helm-charts/blob/main/charts/loki/values.yaml)
   values: {}
 
 # -- [Grafana Loki promtail](https://grafana.com/docs/loki/latest/send-data/promtail/) is DEPRECATED, use "fluentBit" instead
