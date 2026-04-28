@@ -5,6 +5,46 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update Argo Rollouts from 1.8.4 to 1.9.0
+
+            * Updated dependencies
+            * bluegreen analysis prematurely succeeds if new ReplicaSet becomes unsaturated (#4604)
+            * controller: ensure progress when canary > desired replicas (#4619)
+            * controller: Use maxTrafficWeight instead of hardcoded 100 in checkReplicasAvailable. (#4646)
+            * controller: Always reconcile pod metadata (#4477)
+            * dashboard: avoid dialing 0.0.0.0 in newHTTPServer. Fixes #3931. (#4589)
+            * trafficrouting: ReplicaSetReferenced does not check istio DestinationRules (#4560)
+            * trafficrouting: ensure DestinationRule is updated before SetWeight on rollback (#4612)
+            * trafficrouting: cache RPC client to avoid 'Stdout already set' error. Fixes #3918 (#4613)
+            * trafficrouting: ensure early SetWeight runs after checkReplicasAvailable (#4639)
+            * trafficrouting: set weight before hash for new canary (#4564)
+          links:
+            - name: Release notes
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.9.0
+    apiVersion: v2
+    created: "2026-04-28T13:07:31.507879823Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 2f46cf9eb0f2c21dad7732aea02c8b0ba1cc10f5393ba8dca47e148054fa24f5
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.30.0/argo-apps-0.30.0.tgz
+    version: 0.30.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update Argo Rollouts from 1.8.3 to 1.8.4
 
             * Updated dependencies
@@ -35985,4 +36025,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-04-28T12:06:47.660086625Z"
+generated: "2026-04-28T13:07:31.509159833Z"
