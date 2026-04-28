@@ -6077,6 +6077,49 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: update velero chart from 11.3.2 to 12.0.0
+            [velero] Remove bitnami nicely by inverting the original idea by @albundy83 in #706
+            [velero] chore: update velero image reference by @HujinoKun in #721
+            feat: update velero from 1.17.1 to 1.18.0
+            BREAKING: According to Velero deprecation policy, PVC selected node feature is deprecated in v1.18. Velero could appropriately handle PVC's selected-node annotation, so users don't need to do anything particularly.
+            Concurrent backup
+            Cache volume for data movers
+            Incremental size for data movers
+            Wildcard support for namespaces
+            VolumePolicy for PVC phase
+
+          links:
+            - name: velero-chart 11.4.0
+              url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-11.4.0
+            - name: velero-chart 12.0.0
+              url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-12.0.0
+            - name: velero 1.18.0
+              url: https://github.com/velero-io/velero/releases/tag/v1.18.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-04-28T12:06:47.658383309Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: a7bc695f1b1e50c4000946854e0ac970769aa13c6cb39f9cc4066c8dae856a7c
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.267.0/infra-apps-0.267.0.tgz
+    version: 0.267.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: update prometheus-operator from 0.87.1 to 0.90.1
             [CHANGE] Use narrower selectors for StatefulSet informers in Alertmanager and ThanosRuler controllers. It is recommended to upgrade from v0.85.0 (at least). #8246
             [CHANGE] Reject EC2/Lightsail SD for Prometheus >= 3.8.0 in ScrapeConfig CRD. #8175
@@ -35942,4 +35985,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-04-24T15:15:46.326293525Z"
+generated: "2026-04-28T12:06:47.660086625Z"
