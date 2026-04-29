@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.45.0
+version: 0.46.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,6 +19,19 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: fully remove loki-stack from the chart
-
-        We made the installation fail back in Jan 2025, this follows up and removes it.
+        Update loki from 3.6.7 to 3.7.1
+        BREAKING CHANGES
+        parsed labels should not override structured metadata (#19991)
+        HELM
+        [loki] Add liveness probe for sidecar and loki + IPv6 support for memberlist + GRPC optimized defaults. by @jkroepke in #346
+        [loki] Set deploymentMode to Monolithic by @jkroepke in #258
+        [loki] Add Gateway API HTTPRoute support by @QuentinBisson in #320
+        [loki] Add seccompProfile: RuntimeDefault to sidecar securityContext by @QuentinBisson in #312
+        [loki] Allow dedicated service accounts for each component. + use pod helper for canary. by @jkroepke in #285
+        [loki] Add KEDA autoscaling support for all components by @DrFaust92 in #297
+        [loki] Add seccompProfile and runAsNonRoot for restricted PSS by @marcofranssen in #275
+        [loki] Add support for deploying the ui target in queryFrontend by @KyriosGN0 in #236
+        [loki] Auto-inject GOMEMLIMIT from container memory limit by @DrFaust92 in #230
+        [loki] add suffix to dashboard config maps by @jkroepke in #216
+        Various dependency updates
+        Various Bugfixes
