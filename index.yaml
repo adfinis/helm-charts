@@ -19671,6 +19671,39 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update meltallb chart from 0.15.2 to 0.15.3
+            * Fix of vulnerability in docker images (CVE-2025-22874)
+            * Bug fixes
+            * add option to specify init container resources
+            * dded readOnlyRootFilesystem: true and allowPrivilegeEscalation: false to containers missing these security flags, enhancing container security posture without affecting functionality.
+          links:
+            - name: metallb 0.15.3 release
+              url: https://metallb.universe.tf/release-notes/#version-0-15-3
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-04-29T07:27:56.600196759Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 91810ec86966af4230e47b594949ce72dadfc12fac9806de6d7ce3f5585de1db
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.67.0/misc-apps-0.67.0.tgz
+    version: 0.67.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update opencost from 1.119.1 to 1.120.0
             Helm Chart changes:
             feat: Add plugins.install.plugins list and existingSecret support (adopts #328) by @ameijer in #344
@@ -36066,4 +36099,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-04-29T06:23:52.364791827Z"
+generated: "2026-04-29T07:27:56.602736124Z"
