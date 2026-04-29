@@ -17915,6 +17915,47 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update loki from 3.6.7 to 3.7.1
+            BREAKING CHANGES
+            parsed labels should not override structured metadata (#19991)
+            HELM
+            [loki] Add liveness probe for sidecar and loki + IPv6 support for memberlist + GRPC optimized defaults. by @jkroepke in #346
+            [loki] Set deploymentMode to Monolithic by @jkroepke in #258
+            [loki] Add Gateway API HTTPRoute support by @QuentinBisson in #320
+            [loki] Add seccompProfile: RuntimeDefault to sidecar securityContext by @QuentinBisson in #312
+            [loki] Allow dedicated service accounts for each component. + use pod helper for canary. by @jkroepke in #285
+            [loki] Add KEDA autoscaling support for all components by @DrFaust92 in #297
+            [loki] Add seccompProfile and runAsNonRoot for restricted PSS by @marcofranssen in #275
+            [loki] Add support for deploying the ui target in queryFrontend by @KyriosGN0 in #236
+            [loki] Auto-inject GOMEMLIMIT from container memory limit by @DrFaust92 in #230
+            [loki] add suffix to dashboard config maps by @jkroepke in #216
+            Various dependency updates
+            Various Bugfixes
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-04-29T06:23:52.36252625Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: ac50a110301de43f3163ed1a06a70dd72d2eb53b4c8f6c8f0501659515eb6938
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.46.0/logging-apps-0.46.0.tgz
+    version: 0.46.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: fully remove loki-stack from the chart
 
             We made the installation fail back in Jan 2025, this follows up and removes it.
@@ -36025,4 +36066,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-04-28T13:07:31.509159833Z"
+generated: "2026-04-29T06:23:52.364791827Z"
