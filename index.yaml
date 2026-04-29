@@ -25157,6 +25157,36 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update stackrox-central-services and stackroxSecuredClusterServices from 400.9.2 to 400.10.1
+            * Bumped app version to 4.10.1
+          links:
+            - name: stackrocks changelog
+              url: https://github.com/stackrox/stackrox/blob/master/CHANGELOG.md
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-04-29T14:56:01.885415737Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: c622a0fbc70a30670c7ef1d4d2c3914d12fe293a62ad480c26a80f913108f717
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.118.0/security-apps-0.118.0.tgz
+    version: 0.118.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update oauth2-proxy from 10.2.0 to 10.1.4
             * chore(dep): bump app version to v7.15.2
           links:
@@ -36226,4 +36256,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-04-29T10:00:48.360677765Z"
+generated: "2026-04-29T14:56:01.887078641Z"
