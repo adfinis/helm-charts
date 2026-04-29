@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.45.0
+version: 0.47.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,6 +19,9 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: fully remove loki-stack from the chart
-
-        We made the installation fail back in Jan 2025, this follows up and removes it.
+        Update fluentBit chart from 0.52.0 to 0.57.3
+        * Bumped fluentBit bin to v5.0.3
+        * Added VPA recommender may be specified with .autoscaling.vpa
+      links:
+        - name: fluentBit changelog
+          url: https://artifacthub.io/packages/helm/fluent/fluent-bit?modal=changelog
