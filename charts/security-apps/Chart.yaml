@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.117.0
+version: 0.118.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,12 +15,12 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update oauth2-proxy from 10.2.0 to 10.1.4
-        * chore(dep): bump app version to v7.15.2
+        Update stackrox-central-services and stackroxSecuredClusterServices from 400.9.2 to 400.10.1
+        * Bumped app version to 4.10.1
       links:
-        - name: oauth2-proxy 10.4.3
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.4.3
+        - name: stackrocks changelog
+          url: https://github.com/stackrox/stackrox/blob/master/CHANGELOG.md
