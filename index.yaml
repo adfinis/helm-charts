@@ -17915,6 +17915,37 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update fluentBit chart from 0.52.0 to 0.57.3
+            * Bumped fluentBit bin to v5.0.3
+            * Added VPA recommender may be specified with .autoscaling.vpa
+          links:
+            - name: fluentBit changelog
+              url: https://artifacthub.io/packages/helm/fluent/fluent-bit?modal=changelog
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-04-29T07:31:56.023532751Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: 247f6f1931270e69d447a273bd9582f40de4511e31bee527f9a850c64a8d2d24
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.47.0/logging-apps-0.47.0.tgz
+    version: 0.47.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update loki from 3.6.7 to 3.7.1
             BREAKING CHANGES
             parsed labels should not override structured metadata (#19991)
@@ -36099,4 +36130,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-04-29T07:27:56.602736124Z"
+generated: "2026-04-29T07:31:56.025182314Z"
