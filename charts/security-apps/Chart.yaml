@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.118.0
+version: 0.119.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,8 +19,10 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update stackrox-central-services and stackroxSecuredClusterServices from 400.9.2 to 400.10.1
-        * Bumped app version to 4.10.1
+        Update neuvector and neuvector-monitor charts to 2.18.13
+        * chore(dep): bump app version to 5.5.1
       links:
-        - name: stackrocks changelog
-          url: https://github.com/stackrox/stackrox/blob/master/CHANGELOG.md
+        - name: neuvector helm chart 2.18.13 release
+          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.8.13
+        - name: neuvector 5.5.1 release
+          url: https://github.com/neuvector/neuvector/releases/tag/v5.5.1
