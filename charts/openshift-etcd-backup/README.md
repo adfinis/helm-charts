@@ -1,6 +1,6 @@
 # openshift-etcd-backup
 
-![Version: 1.9.7](https://img.shields.io/badge/Version-1.9.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.9.7](https://img.shields.io/badge/AppVersion-v1.9.7-informational?style=flat-square)
+![Version: 1.10.0](https://img.shields.io/badge/Version-1.10.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.9.8](https://img.shields.io/badge/AppVersion-v1.9.8-informational?style=flat-square)
 
 Chart for openshift-etcd-backup solution
 
@@ -22,6 +22,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | annotations | object | `{}` |  |
 | backup.dirname | string | `"+etcd-backup-%FT%T%:z"` | Directory name of single backup |
 | backup.expiretype | string | `"days"` | expiretype could be days (keep backups newer than backup.keepdays, count (keep a number of backups with backup.keepcount), never (do not expire backups, keep all of them) |
+| backup.extraEnv | object | `{}` | Additional environment variables for the backup script |
 | backup.keepcount | string | `"10"` | Count retention if expiretype set to count |
 | backup.keepdays | string | `"30"` | Retention period |
 | backup.schedule | string | `"0 0 * * *"` | Backup schedule |
