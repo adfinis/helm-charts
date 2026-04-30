@@ -19,6 +19,8 @@ backup:
   schedule: "0 0 * * *"
   # -- Set umask during the backup
   umask: "0027"
+  # -- Additional environment variables for the backup script
+  extraEnv: {}
 
 persistence:
   nfs:
