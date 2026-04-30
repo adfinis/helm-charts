@@ -12,3 +12,6 @@ data:
   OCP_BACKUP_KEEP_DAYS: {{ .Values.backup.keepdays | quote }}
   OCP_BACKUP_KEEP_COUNT: {{ .Values.backup.keepcount | quote }}
   OCP_BACKUP_UMASK: {{ .Values.backup.umask | quote }}
+  {{- with .Values.backup.extraEnv }}
+  {{- . | toYaml | nindent 2 }}
+  {{- end }}
