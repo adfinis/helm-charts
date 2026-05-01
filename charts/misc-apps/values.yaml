@@ -147,8 +147,8 @@ keda:
   # @default -- [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml)
   values: {}
 
-# -- [grafana-agent](https://grafana.github.io/helm-charts)
-# @default -- [example](./examples/grafana-agent.yaml)
+# -- [grafana-agent](https://grafana.github.io/helm-charts) is [deprecated](https://github.com/grafana/agent/releases/tag/v0.44.3), use Grafana Alloy instead. [example](./examples/grafana-agent.yaml)
+# @default -- DEPRECATED
 grafanaAgentOperator:
   # -- Enable grafana-agent
   enabled: false
@@ -164,7 +164,7 @@ grafanaAgentOperator:
   # -- Chart
   chart: grafana-agent-operator
   # -- [Grafana Agent Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/agent-operator) version
-  targetRevision: 0.5.1
+  targetRevision: 0.5.2
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/agent-operator/values.yaml)
   values: {}

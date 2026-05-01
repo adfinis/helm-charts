@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.69.0
+version: 0.70.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,16 +15,12 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update reloader chart from 2.2.8 to 2.2.11
-        * Bumped dependencies
+        Deprecate grafanaAgentOperator as it is deprecated upstream.
+        Update grafanaAgentOperator to its last release (chart 0.5.2).
       links:
-        - name: reloader 2.2.11 chart release
-          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.11
-        - name: reloader 2.2.10 chart release
-          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.10
-        - name: reloader 2.2.9 chart release
-          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.9
+        - name: Last release and depreciation notice
+          url: https://github.com/grafana/agent/releases/tag/v0.44.3
