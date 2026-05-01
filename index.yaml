@@ -17915,6 +17915,33 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Mark fluentd as deprecated due to unmaintained upstream chart and no use-cases for us.
+            Update fluentd from 1.17.1 to 1.19.0
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-05-01T09:05:31.584888714Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: f4ee1001ed366f637a2fb1542151ed9b377887b645b77bb1dd16cff7761f5c68
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.48.0/logging-apps-0.48.0.tgz
+    version: 0.48.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update fluentBit chart from 0.52.0 to 0.57.3
             * Bumped fluentBit bin to v5.0.3
             * Added VPA recommender may be specified with .autoscaling.vpa
@@ -36404,4 +36431,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-05-01T08:57:49.684376887Z"
+generated: "2026-05-01T09:05:31.586652324Z"
