@@ -64,8 +64,8 @@ filebeat:
   # @default -- [upstream values](https://github.com/elastic/helm-charts/tree/master/filebeat/values.yaml)
   values: {}
 
-# -- [fluentd](https://github.com/fluent/fluentd) ([example](./examples/fluentd.yaml))
-# @default -- -
+# -- [fluentd](https://github.com/fluent/fluentd) is deprecated, use OTEL-Collector instead. ([example](./examples/fluentd.yaml))
+# @default -- DEPRECATED
 fluentd:
   # -- Enable fluentd
   enabled: false
@@ -81,7 +81,7 @@ fluentd:
   # -- Chart
   chart: "fluentd"
   # -- [fluentd Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/fluentd) version
-  targetRevision: "6.5.*"
+  targetRevision: "7.2.6"
   # -- Helm values
   # @default -- [upstream values](https://github.com/bitnami/charts/tree/master/bitnami/fluentd/values.yaml)
   values: {}
