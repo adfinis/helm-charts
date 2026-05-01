@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.47.0
+version: 0.48.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,9 +19,5 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update fluentBit chart from 0.52.0 to 0.57.3
-        * Bumped fluentBit bin to v5.0.3
-        * Added VPA recommender may be specified with .autoscaling.vpa
-      links:
-        - name: fluentBit changelog
-          url: https://artifacthub.io/packages/helm/fluent/fluent-bit?modal=changelog
+        Mark fluentd as deprecated due to unmaintained upstream chart and no use-cases for us.
+        Update fluentd from 1.17.1 to 1.19.0
