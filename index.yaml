@@ -6117,6 +6117,82 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update Argo CD from v3.2.6 to v3.3.9 and argo-cd Helm chart to 9.5.11
+
+            v3.3.0 highlights:
+            - server-side diffs
+            - PreDelete hooks support
+            - prune resources in reverse sync-wave order
+            - namespace/CRD creation before PreSync phase
+            - OIDC background token refresh
+            - shallow clone support
+            - Redis secrets via volume mount
+            - GitHub App auth without installationId
+            - custom icons in UI
+            - KEDA ScaledJob health checks
+            Helm chart improvements:
+            - VPA support for all components (9.5.0)
+            - ServerSideApply enabled for ArgoCD CRDs by default (9.4.12)
+            - HTTPRoute support for ApplicationSet webhook (9.5.6)
+            - HTTPRoute timeout configuration (9.4.5)
+            - GRPCRoute/HTTPRoute empty matches support (9.5.8)
+            - PrometheusRule API version overridable (9.5.7)
+            - custom StatefulSet labels (9.4.6)
+            - timeout.reconciliation aligned to 120s with 60s jitter (9.4.7)
+            - dex bumped to v2.45.1
+            - redis_exporter bumped to v1.83.0
+            - argocd-extension-installer bumped to v1.0.0
+
+          links:
+            - name: Argo CD 3.3 upgrading
+              url: https://argo-cd.readthedocs.io/en/stable/operator-manual/upgrading/3.2-3.3/
+            - name: Argo CD v3.3 release candidate announcement
+              url: https://blog.argoproj.io/argo-cd-3-3-release-candidate-00e99f7b7daa
+            - name: Argo CD v3.3.9
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.3.9
+            - name: Argo CD v3.3.8
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.3.8
+            - name: Argo CD v3.3.7
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.3.7
+            - name: Argo CD v3.3.6
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.3.6
+            - name: Argo CD v3.3.5
+              url:  https://github.com/argoproj/argo-cd/releases/tag/v3.3.5
+            - name: Argo CD v3.3.4
+              url:  https://github.com/argoproj/argo-cd/releases/tag/v3.3.4
+            - name: Argo CD v3.3.3
+              url:  https://github.com/argoproj/argo-cd/releases/tag/v3.3.3
+            - name: Argo CD v3.3.2
+              url:  https://github.com/argoproj/argo-cd/releases/tag/v3.3.2
+            - name: Argo CD v3.3.1
+              url:  https://github.com/argoproj/argo-cd/releases/tag/v3.3.1
+            - name: Argo CD v3.3.0
+              url:  https://github.com/argoproj/argo-cd/releases/tag/v3.3.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-05-05T13:04:55.735840149Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 9847c39c8fdecf8fdfe1b4926ba83936bc7744465c6eee29aa397f4c8fe20af3
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.268.0/infra-apps-0.268.0.tgz
+    version: 0.268.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: update velero chart from 11.3.2 to 12.0.0
             [velero] Remove bitnami nicely by inverting the original idea by @albundy83 in #706
             [velero] chore: update velero image reference by @HujinoKun in #721
@@ -36431,4 +36507,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-05-01T09:05:31.586652324Z"
+generated: "2026-05-05T13:04:55.739736069Z"
