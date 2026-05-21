@@ -2,8 +2,8 @@ apiVersion: v2
 name: openshift-etcd-backup
 description: Chart for openshift-etcd-backup solution
 type: application
-version: 1.9.7
-appVersion: v1.9.7
+version: 1.10.0
+appVersion: v1.9.8
 keywords:
   - openshift-etcd-backup
   - openshift
@@ -19,11 +19,6 @@ maintainers:
     url: https://adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: changed
+    - kind: added
       description: |
-        upgrade openshift-etcd-backup image to v1.9.7
-        * set pod's dns policy to ClusterFirstWithHostNet
-
-      links:
-        - name: openshift-etcd-backup release v1.9.7
-          url: https://github.com/adfinis/openshift-etcd-backup/releases/tag/v1.9.7
+        Support for extraEnv in ConfigMap

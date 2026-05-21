@@ -87,7 +87,7 @@ for more in-depth information.
 | [misc-apps](charts/misc-apps) | Argo CD app-of-apps config for miscellaneous small tools | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
 | [security-apps](charts/security-apps) | Argo CD app-of-apps config for security applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
 | [storage-apps](charts/storage-apps) | Argo CD app-of-apps config for storage applications | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |
-| [tracing-apps](charts/tracing-apps) | Argo CD app-of-apps config for tracing applications | ![Version: 1.1.x](https://img.shields.io/badge/version-1.1.x-brightgreen) |
+| [tracing-apps](charts/tracing-apps) | Argo CD app-of-apps config for tracing applications | ![Version: 1.3.x](https://img.shields.io/badge/version-1.3.x-brightgreen) |
 
 #### more charts
 
@@ -101,7 +101,7 @@ for more in-depth information.
 | [gateway](charts/gateway) | Chart for a kgateway gateway | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 2.2.x](https://img.shields.io/badge/app%20version-2.2.x-brightgreen) |
 | [kubernetes-etcd-backup](charts/kubernetes-etcd-backup) | Chart for kubernetes-etcd-backup... | ![Version: 1.6.x](https://img.shields.io/badge/version-1.6.x-brightgreen) |  ![App version: 1.4.x](https://img.shields.io/badge/app%20version-1.4.x-brightgreen) |
 | [mopsos](charts/mopsos) | Deploy Mopsos to a Kubernetes Cl... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
-| [openshift-etcd-backup](charts/openshift-etcd-backup) | Chart for openshift-etcd-backup ... | ![Version: 1.9.x](https://img.shields.io/badge/version-1.9.x-brightgreen) |  ![App version: 1.9.x](https://img.shields.io/badge/app%20version-1.9.x-brightgreen) |
+| [openshift-etcd-backup](charts/openshift-etcd-backup) | Chart for openshift-etcd-backup ... | ![Version: 1.1.x](https://img.shields.io/badge/version-1.1.x-brightgreen) |  ![App version: 1.9.x](https://img.shields.io/badge/app%20version-1.9.x-brightgreen) |
 | [osschallenge](charts/osschallenge) | Chart for OSS-Challenge application | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: ed.x](https://img.shields.io/badge/app%20version-ed.x-brightgreen) |
 | [vault-auth](charts/vault-auth) | A helm chart to install the vaul... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  ![App version: 0.x](https://img.shields.io/badge/app%20version-0.x-brightgreen) |
 | [vault-monitoring](charts/vault-monitoring) | monitor your vault server from w... | ![Version: 0.x](https://img.shields.io/badge/version-0.x-brightgreen) |  |

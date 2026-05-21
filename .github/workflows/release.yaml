@@ -11,6 +11,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
+      contents: write
+      packages: write
       pages: write
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -39,11 +41,11 @@ jobs:
           # Allow us to re-run the release action
           skip_existing: true
         env:
-          CR_TOKEN: "${{ secrets.CR_TOKEN }}"
+          CR_TOKEN: "${{ github.token }}"
 
       - name: Login to GitHub Container Registry
         run: |
-          echo ${{ secrets.GITHUB_TOKEN }} | helm registry login -u ${{ github.actor }} --password-stdin ghcr.io
+          echo ${{ github.token }} | helm registry login -u ${{ github.actor }} --password-stdin ghcr.io
 
       - name: Push Charts to GHCR
         run: |
@@ -71,4 +73,4 @@ jobs:
       - name: Run gomplate to update pages index
         run: hack/ci/github/steps/update-page.sh
         env:
-          CR_TOKEN: "${{ secrets.CR_TOKEN }}"
+          CR_TOKEN: "${{ github.token }}"

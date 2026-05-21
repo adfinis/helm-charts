@@ -58,7 +58,7 @@ metallb:
   # -- Chart
   chart: "metallb"
   # -- [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb)
-  targetRevision: "0.15.2"
+  targetRevision: "0.15.3"
   # -- Helm values
   # @default -- [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml)
   values: {}
@@ -142,13 +142,13 @@ keda:
   # -- Chart
   chart: keda
   # -- [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version
-  targetRevision: 2.18.2
+  targetRevision: 2.19.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml)
   values: {}
 
-# -- [grafana-agent](https://grafana.github.io/helm-charts)
-# @default -- [example](./examples/grafana-agent.yaml)
+# -- [grafana-agent](https://grafana.github.io/helm-charts) is [deprecated](https://github.com/grafana/agent/releases/tag/v0.44.3), use Grafana Alloy instead. [example](./examples/grafana-agent.yaml)
+# @default -- DEPRECATED
 grafanaAgentOperator:
   # -- Enable grafana-agent
   enabled: false
@@ -164,7 +164,7 @@ grafanaAgentOperator:
   # -- Chart
   chart: grafana-agent-operator
   # -- [Grafana Agent Helm chart](https://github.com/grafana/helm-charts/tree/main/charts/agent-operator) version
-  targetRevision: 0.5.1
+  targetRevision: 0.5.2
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/helm-charts/blob/main/charts/agent-operator/values.yaml)
   values: {}
@@ -184,7 +184,7 @@ reloader:
   # -- Chart
   chart: "reloader"
   # -- [reloader Helm chart](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader) version
-  targetRevision: "2.2.8"
+  targetRevision: "2.2.11"
   # -- Helm values
   # @default -- [upstream values](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader/values.yaml)
   values: {}
@@ -206,7 +206,7 @@ opencost:
   # -- Chart
   chart: opencost
   # -- [OpenCost Helm chart](https://github.com/opencost/opencost-helm-chart/tree/main/charts/opencost)
-  targetRevision: 2.5.5
+  targetRevision: 2.5.16
   # -- Helm values
   # @default -- [upstream values](https://github.com/opencost/opencost-helm-chart/blob/main/charts/opencost/values.yaml)
   values: {}
@@ -228,7 +228,7 @@ goldilocks:
   # -- Chart
   chart: goldilocks
   # -- [Goldilocks Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/goldilocks)
-  targetRevision: 10.2.0
+  targetRevision: 10.3.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/goldilocks/values.yaml)
   values: {}

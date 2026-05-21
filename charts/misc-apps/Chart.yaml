@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.64.0
+version: 0.70.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,4 +19,8 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Set sentryKubernetes to fail after it was removed 6 months ago
+        Deprecate grafanaAgentOperator as it is deprecated upstream.
+        Update grafanaAgentOperator to its last release (chart 0.5.2).
+      links:
+        - name: Last release and depreciation notice
+          url: https://github.com/grafana/agent/releases/tag/v0.44.3

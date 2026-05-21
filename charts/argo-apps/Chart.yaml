@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.29.0
+version: 0.30.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,10 +18,19 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update Argo Rollouts from 1.8.3 to 1.8.4
+        Update Argo Rollouts from 1.8.4 to 1.9.0
 
         * Updated dependencies
-        * fix: bluegreen analysis prematurely succeeds if new ReplicaSet becomes unsaturated
+        * bluegreen analysis prematurely succeeds if new ReplicaSet becomes unsaturated (#4604)
+        * controller: ensure progress when canary > desired replicas (#4619)
+        * controller: Use maxTrafficWeight instead of hardcoded 100 in checkReplicasAvailable. (#4646)
+        * controller: Always reconcile pod metadata (#4477)
+        * dashboard: avoid dialing 0.0.0.0 in newHTTPServer. Fixes #3931. (#4589)
+        * trafficrouting: ReplicaSetReferenced does not check istio DestinationRules (#4560)
+        * trafficrouting: ensure DestinationRule is updated before SetWeight on rollback (#4612)
+        * trafficrouting: cache RPC client to avoid 'Stdout already set' error. Fixes #3918 (#4613)
+        * trafficrouting: ensure early SetWeight runs after checkReplicasAvailable (#4639)
+        * trafficrouting: set weight before hash for new canary (#4564)
       links:
         - name: Release notes
-          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.8.4
+          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.9.0

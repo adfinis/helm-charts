@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.45.0
+version: 0.48.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,6 +19,5 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: fully remove loki-stack from the chart
-
-        We made the installation fail back in Jan 2025, this follows up and removes it.
+        Mark fluentd as deprecated due to unmaintained upstream chart and no use-cases for us.
+        Update fluentd from 1.17.1 to 1.19.0
