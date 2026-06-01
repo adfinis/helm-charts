@@ -25318,6 +25318,37 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            chore: bump oauth2-proxy from 10.4.3 to 10.6.0
+          links:
+            - name: oauth2-proxy helm chart 10.6.0 release
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.6.0
+            - name: oauth2-proxy helm chart 10.5.0 release
+              url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.5.0
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-06-01T11:31:56.860187331Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: c49d784c63f3ea4811d358d561a577b90cb88d8c3676df0b4034739e958b2199
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.121.0/security-apps-0.121.0.tgz
+    version: 0.121.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update gatekeeper from 3.16.3 to 3.22.2
             * Bug fixes
             * sync-vap-enforcement-scope now enabled by default
@@ -36507,4 +36538,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-05-05T13:04:55.739736069Z"
+generated: "2026-06-01T11:31:56.863172113Z"
