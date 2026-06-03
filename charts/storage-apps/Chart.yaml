@@ -15,15 +15,22 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated csiDriverSmb to 1.20.1, including:
-          - feat: Add driver.labels option to helm chart for CSIDriver resource by @Copilot in #998
-          - Various CVE fixes
+        Updated cephCsiRbd and cephCsiCephfs to 3.17.0, including:
+          * Recommend Operator deployment over standalone Helm charts; updated sidecars.
+          * Added volume access restrictions via Kubernetes ServiceAccount.
+          * Added publish secret caching and compressed IPv6 support.
+          * Added configurable block encryption and new QoS limits.
+          * Fixed replication promote/demote errors and improved volume fencing.
+          * Added block usage stats; fixed panic during static volume expansion.
+          * Added required RBAC for `VolumeGroupReplication`.
+          * Added `SetSubVolCSIMetadata` to track metadata directly on subvolumes.
+          * Fixed alternate filesystem mount failures and snapshot delete lock-ups.
       links:
-        - name: "v1.20.0 Release Notes"
-          url: "https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.20.0"
-        - name: "v1.20.1 Release Notes"
-          url: "https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.20.1"
+        - name: "CephCsi v3.17.0 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.17.0"
+        - name: "Migration Guide"
+          url: "https://github.com/ceph/ceph-csi-operator/blob/main/docs/migration.md"
