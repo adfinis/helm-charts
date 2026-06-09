@@ -18,15 +18,19 @@ operator:
     repository: quay.io/keycloak/keycloak-operator
     # -- Pull policy for Operator.
     pullPolicy: IfNotPresent
-    # Overrides the image tag whose default is the chart appVersion.
+    # -- Overrides the image tag whose default is the chart appVersion.
     tag: ""
+    # -- Configure the SHA for the operator image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion.
+    sha: "bd128cd63da5b1e64514903ced8def912a41a6ae63d1569fd39022c586680087"
 
   config:
     keycloakImage:
       # -- Default keycloak image to use if non was specified in the Keycloak CRD.
       repository: quay.io/keycloak/keycloak
-      # Overrides the keycloak image tag whose default is the chart appVersion.
+      # -- Overrides the keycloak image tag whose default is the chart appVersion.
       tag: ""
+      # -- Configure the SHA for the default keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion.
+      sha: "5fdbf2dbb5897cc34e82de49d13e23db011f9925089dbc555fc095f2c8bc1dac"
 
   serviceAccount:
     # -- Specifies whether a service account should be created.
@@ -105,6 +109,11 @@ keycloak:
   #     optional: bool
   #     key: string
   #     name: string
+
+  # -- In this section you can find all properties related to making admin connections from the operator to the server.
+  admin: {}
+  # tlsSecret:
+  #   name: my-secret
 
   # -- In this section you can configure Keycloak's bootstrap admin - will be used only for initial cluster creation.
   bootstrapAdmin: ~
@@ -203,6 +212,15 @@ keycloak:
     # -- Labels to be appended to the Service object
     labels: ~
 
+    # -- The HTTP port exposed on the Kubernetes Service.
+    serviceHttpPort: ~
+
+    # -- The HTTPS port exposed on the Kubernetes Service.
+    serviceHttpsPort: ~
+
+    # -- The name of the Kubernetes Service.
+    serviceName: ~
+
     # -- A secret containing the TLS configuration for HTTPS.
     tlsSecret: ~
 
@@ -216,6 +234,9 @@ keycloak:
 
     # -- Overrides the operator.keycloakImage.tag value whose default is the chart appVersion.
     tag: ""
+
+    # -- Configure the SHA for the keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion.
+    sha: ""
 
   # -- Secret(s) that might be used when pulling an image from a private container image registry or repository.
   imagePullSecrets: ~
@@ -264,16 +285,30 @@ keycloak:
   scheduling: ~
 
   # -- Configuration related to the generated ServiceMonitor
-  serviceMonitor: ~
-  # enabled: true
-  # interval: 30s
-  # scrapeTimeout: 1m
+  serviceMonitor:
+    # -- Enables or disables the creation of the ServiceMonitor.
+    enabled: false
+    # -- Interval at which metrics should be scraped
+    interval: 30s
+    # -- Timeout after which the scrape is ended
+    scrapeTimeout: 10s
+    # -- Labels to be appended to the ServiceMonitor object
+    labels: {}
+    # -- Annotations to be appended to the ServiceMonitor object
+    annotations: {}
 
   # -- Set to force the behavior of the --optimized flag for the start command. If left unspecified the operator will assume custom images have already been augmented.
   startOptimized: ~
 
   # -- Configuration for startup probe, by default it is 1 for periodSeconds and 600 for failureThreshold
   startupProbe: ~
+
+  # -- In this section you can configure general shared OpenTelemetry settings for Keycloak.
+  telemetry: {}
+  # endpoint: ""
+  # protocol: ""
+  # resourceAttributes: {}
+  # serviceName: ""
 
   transaction:
     # -- Determine whether Keycloak should use a non-XA datasource.
@@ -285,8 +320,9 @@ keycloak:
   #  secret: {}
 
   # -- Additional values that will be merged with the operator's defaults
-  unsupported:
-  #  podTemplate: ~
+  unsupported: {}
+   # podTemplate: {}
+
   #    metadata:
   #      labels:
   #        foo: "bar"
@@ -302,7 +338,8 @@ keycloak:
   #            secretName: keycloak-podtemplate-secret
 
   # -- Configuration related to Keycloak deployment updates.
-  update: ~
+  update: {}
+    # strategy: RecreateOnImageChange
 
   realmimport:
     # -- Deploy realmimport resources
@@ -374,6 +411,7 @@ keycloak:
     #   loginWithEmailAllowed: boolean
     #   maxDeltaTimeSeconds: integer
     #   maxFailureWaitSeconds: integer
+    #   maxSecondaryAuthFailures: integer
     #   maxTEmporaryLockouts: integer
     #   minimumQuickLoginWaitSeconds: integer
     #   notBefore: integer
@@ -413,6 +451,7 @@ keycloak:
     #   resetPasswordAllowed: boolean
     #   revokeRefreshToken: boolean
     #   roles: []
+    #   scimApiEnabled: boolean
     #   scopeMappings: []
     #   smtpServer: {}
     #   social: boolean
@@ -439,7 +478,7 @@ keycloak:
     #   webAuthnPolicyExtraOrigins: []
     #   webAuthnPolicyPasswordlessAcceptableAaguids: []
     #   webAuthnPolicyPasswordlessAttestationConveyancePreference: string
-    #   webAuthnPolicyPasswordlessAuthenticatorAttachement: string
+    #   webAuthnPolicyPasswordlessAuthenticatorAttachment: string
     #   webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister: boolean
     #   webAuthnPolicyPasswordlessCreateTimeout: integer
     #   webAuthnPolicyPasswordlessExtraOrigins: []
