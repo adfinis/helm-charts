@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 1.11.4](https://img.shields.io/badge/Version-1.11.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.5.6](https://img.shields.io/badge/AppVersion-26.5.6-informational?style=flat-square)
+![Version: 1.12.0](https://img.shields.io/badge/Version-1.12.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.6.3](https://img.shields.io/badge/AppVersion-26.6.3-informational?style=flat-square)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -24,6 +24,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | grafana.extraLabels | object | `{}` | Labels to add to all Grafana integration resources |
 | imagePullSecrets | list | `[]` |  |
 | keycloak.additionalOptions | string | `nil` | Configuration of the Keycloak server expressed as a keys and values that can be either direct values or references to secrets. |
+| keycloak.admin | object | `{}` | In this section you can find all properties related to making admin connections from the operator to the server. |
 | keycloak.bootstrapAdmin | string | `nil` | In this section you can configure Keycloak's bootstrap admin - will be used only for initial cluster creation. |
 | keycloak.cache | object | `{}` | Configure keycloaks cache. |
 | keycloak.db.database | string | `nil` | Sets the database name of the default JDBC URL of the chosen vendor. If the `url` option is set, this option is ignored. |
@@ -52,9 +53,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.http.httpPort | string | `nil` | The used HTTP port |
 | keycloak.http.httpsPort | string | `nil` | The used HTTPS port |
 | keycloak.http.labels | string | `nil` | Labels to be appended to the Service object |
+| keycloak.http.serviceHttpPort | string | `nil` | The HTTP port exposed on the Kubernetes Service. |
+| keycloak.http.serviceHttpsPort | string | `nil` | The HTTPS port exposed on the Kubernetes Service. |
+| keycloak.http.serviceName | string | `nil` | The name of the Kubernetes Service. |
 | keycloak.http.tlsSecret | string | `nil` | A secret containing the TLS configuration for HTTPS. |
 | keycloak.httpManagement.port | string | `nil` | Port of management interface. |
 | keycloak.image.repository | string | `""` | Overrides the operator.keycloakImage.image value whose default is quay.io/keycloak/keycloak |
+| keycloak.image.sha | string | `""` | Configure the SHA for the keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
 | keycloak.image.tag | string | `""` | Overrides the operator.keycloakImage.tag value whose default is the chart appVersion. |
 | keycloak.imagePullSecrets | string | `nil` | Secret(s) that might be used when pulling an image from a private container image registry or repository. |
 | keycloak.import | string | `nil` | In this section you can configure import jobs scheduling |
@@ -71,22 +76,30 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.realmimport.realms | list | `[]` | A list of realms to configure using the realmimport CRD. |
 | keycloak.resources | object | `{}` | Compute Resources required by Keycloak container |
 | keycloak.scheduling | string | `nil` | In this section you can configure Keycloak's scheduling |
-| keycloak.serviceMonitor | string | `nil` | Configuration related to the generated ServiceMonitor |
+| keycloak.serviceMonitor | object | `{"annotations":{},"enabled":false,"interval":"30s","labels":{},"scrapeTimeout":"10s"}` | Configuration related to the generated ServiceMonitor |
+| keycloak.serviceMonitor.annotations | object | `{}` | Annotations to be appended to the ServiceMonitor object |
+| keycloak.serviceMonitor.enabled | bool | `false` | Enables or disables the creation of the ServiceMonitor. |
+| keycloak.serviceMonitor.interval | string | `"30s"` | Interval at which metrics should be scraped |
+| keycloak.serviceMonitor.labels | object | `{}` | Labels to be appended to the ServiceMonitor object |
+| keycloak.serviceMonitor.scrapeTimeout | string | `"10s"` | Timeout after which the scrape is ended |
 | keycloak.startOptimized | string | `nil` |  |
 | keycloak.startupProbe | string | `nil` | Configuration for startup probe, by default it is 1 for periodSeconds and 600 for failureThreshold |
+| keycloak.telemetry | object | `{}` | In this section you can configure general shared OpenTelemetry settings for Keycloak. |
 | keycloak.transaction.xaEnabled | bool | `false` | Determine whether Keycloak should use a non-XA datasource. |
 | keycloak.truststores | object | `{}` | Configure Keycloak truststores. |
-| keycloak.unsupported | string | `nil` | Additional values that will be merged with the operator's defaults |
-| keycloak.update | string | `nil` | Configuration related to Keycloak deployment updates. |
+| keycloak.unsupported | object | `{}` | Additional values that will be merged with the operator's defaults |
+| keycloak.update | object | `{}` | Configuration related to Keycloak deployment updates. |
 | nameOverride | string | `""` |  |
 | operator.affinity | object | `{}` | Affinity for Operator Deployment. |
 | operator.config.keycloakImage.repository | string | `"quay.io/keycloak/keycloak"` | Default keycloak image to use if non was specified in the Keycloak CRD. |
-| operator.config.keycloakImage.tag | string | `""` |  |
+| operator.config.keycloakImage.sha | string | `"5fdbf2dbb5897cc34e82de49d13e23db011f9925089dbc555fc095f2c8bc1dac"` | Configure the SHA for the default keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
+| operator.config.keycloakImage.tag | string | `""` | Overrides the keycloak image tag whose default is the chart appVersion. |
 | operator.deploymentAnnotations | object | `{}` | Annotations to set on the Operator Deployment. |
 | operator.enabled | bool | `true` | Enable deploying the keycloak-operator |
 | operator.image.pullPolicy | string | `"IfNotPresent"` | Pull policy for Operator. |
 | operator.image.repository | string | `"quay.io/keycloak/keycloak-operator"` | Operator Image source. |
-| operator.image.tag | string | `""` |  |
+| operator.image.sha | string | `"bd128cd63da5b1e64514903ced8def912a41a6ae63d1569fd39022c586680087"` | Configure the SHA for the operator image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
+| operator.image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | operator.nodeSelector | object | `{}` | Node selector for Operator Deployment. |
 | operator.podAnnotations | object | `{}` | Annotations to set on the Operator Pod. |
 | operator.podSecurityContext | object | `{}` | Pod security group configuration for Operator Deployment. |
