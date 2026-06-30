@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 1.12.0](https://img.shields.io/badge/Version-1.12.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.6.3](https://img.shields.io/badge/AppVersion-26.6.3-informational?style=flat-square)
+![Version: 1.12.1](https://img.shields.io/badge/Version-1.12.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.6.4](https://img.shields.io/badge/AppVersion-26.6.4-informational?style=flat-square)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -92,13 +92,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | nameOverride | string | `""` |  |
 | operator.affinity | object | `{}` | Affinity for Operator Deployment. |
 | operator.config.keycloakImage.repository | string | `"quay.io/keycloak/keycloak"` | Default keycloak image to use if non was specified in the Keycloak CRD. |
-| operator.config.keycloakImage.sha | string | `"5fdbf2dbb5897cc34e82de49d13e23db011f9925089dbc555fc095f2c8bc1dac"` | Configure the SHA for the default keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
+| operator.config.keycloakImage.sha | string | `"20e96e40e673ffa474ac4da56c91cb0adba28b8571bd274ce255e6120265c1f4"` | Configure the SHA for the default keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
 | operator.config.keycloakImage.tag | string | `""` | Overrides the keycloak image tag whose default is the chart appVersion. |
 | operator.deploymentAnnotations | object | `{}` | Annotations to set on the Operator Deployment. |
 | operator.enabled | bool | `true` | Enable deploying the keycloak-operator |
 | operator.image.pullPolicy | string | `"IfNotPresent"` | Pull policy for Operator. |
 | operator.image.repository | string | `"quay.io/keycloak/keycloak-operator"` | Operator Image source. |
-| operator.image.sha | string | `"bd128cd63da5b1e64514903ced8def912a41a6ae63d1569fd39022c586680087"` | Configure the SHA for the operator image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
+| operator.image.sha | string | `"831827a0a267805d0e5bef00e402d99f728ce7fc4caa62d486a9114912412434"` | Configure the SHA for the operator image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
 | operator.image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | operator.nodeSelector | object | `{}` | Node selector for Operator Deployment. |
 | operator.podAnnotations | object | `{}` | Annotations to set on the Operator Pod. |

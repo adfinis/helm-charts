@@ -2,8 +2,8 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.12.0
-appVersion: "26.6.3"
+version: 1.12.1
+appVersion: "26.6.4"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
 sources:
@@ -14,17 +14,11 @@ maintainers:
     email: support@adfinis.com
     url: https://adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Keycloak 26.6
+        feat: Keycloak 26.6.4
       links:
-        - name: Release notes 26.6.0
-          url: https://github.com/keycloak/keycloak/releases/tag/26.6.0
-        - name: Release notes 26.6.1
-          url: https://github.com/keycloak/keycloak/releases/tag/26.6.1
-        - name: Release notes 26.6.2
-          url: https://github.com/keycloak/keycloak/releases/tag/26.6.2
-        - name: Release notes 26.6.3
-          url: https://github.com/keycloak/keycloak/releases/tag/26.6.3
+        - name: Release notes 26.6.4
+          url: https://github.com/keycloak/keycloak/releases/tag/26.6.4
