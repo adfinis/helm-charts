@@ -5,6 +5,34 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update Argo Rollouts Chart from 2.40.9 to 2.41.0
+
+            - Add Gateway API HTTPRoute support for the dashboard
+            - replace deprecated --metricsport with --metricsPort
+    apiVersion: v2
+    created: "2026-07-01T14:02:07.230761598Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 7b9988e5e7d9ffdedab2bd3072d8b8254a4bf02061e8f5c80563bb25e9a49c09
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.31.0/argo-apps-0.31.0.tgz
+    version: 0.31.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update Argo Rollouts from 1.8.4 to 1.9.0
 
             * Updated dependencies
@@ -36725,4 +36753,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-01T13:30:15.285883282Z"
+generated: "2026-07-01T14:02:07.23235858Z"
