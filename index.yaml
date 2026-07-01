@@ -6152,6 +6152,67 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update Argo CD from v3.3.9 o v3.4.4 and argo-cd Helm chart from 9.5.11 to 10.1.0
+
+            v3.4 highlights:
+            - Microsoft Teams Workflows Support
+            - Application List Filter Improvements
+            - Source Hydrator UI Improvements
+            - Pause Reconciliation for a Cluster
+            - Reduced DNS Noise from gRPC Health Checks
+            - Extended OpenTelemetry Tracing for Authentication
+            - ApplicationSet Cache Synchronization
+            - Glob Patterns in Values Files
+            - New Session Tokens CLI command
+            - Expanded Manifest Generation Git Paths
+            - Bug Fixes
+            Helm chart improvements:
+            - Update Redis
+            - Enable network policies for all components by default
+            - Add starupProbes
+            - GatewayAPI ListenerSet Support
+            - Other updates
+
+          links:
+            - name: Argo CD 3.4 upgrading
+              url: https://argo-cd.readthedocs.io/en/stable/operator-manual/upgrading/3.3-3.4/
+            - name: Argo CD v3.4 release candidate announcement
+              url: https://blog.argoproj.io/argo-cd-v3-4-release-candidate-2702b8af68d4
+            - name: Argo CD v3.4.0
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.0
+            - name: Argo CD v3.4.1
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.1
+            - name: Argo CD v3.4.2
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.2
+            - name: Argo CD v3.4.3
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.3
+            - name: Argo CD v3.4.4
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.4
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-07-01T13:30:15.28185465Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 2bf89992a918b3aa1d93d9f97e0821b9c376e77944063748a2b90f4e88d47b61
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.269.0/infra-apps-0.269.0.tgz
+    version: 0.269.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update Argo CD from v3.2.6 to v3.3.9 and argo-cd Helm chart to 9.5.11
 
             v3.3.0 highlights:
@@ -36664,4 +36725,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-01T13:16:15.81583966Z"
+generated: "2026-07-01T13:30:15.285883282Z"
