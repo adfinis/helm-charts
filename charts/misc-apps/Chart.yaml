@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.70.0
+version: 0.71.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,8 +19,7 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Deprecate grafanaAgentOperator as it is deprecated upstream.
-        Update grafanaAgentOperator to its last release (chart 0.5.2).
+        Argo CD Apps: add sourceHydrator support to Application and ApplicationSet templates
       links:
-        - name: Last release and depreciation notice
-          url: https://github.com/grafana/agent/releases/tag/v0.44.3
+        - name: Chart change
+          url: https://github.com/argoproj/argo-helm/pull/3893
