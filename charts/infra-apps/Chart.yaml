@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.268.0
+version: 0.269.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,58 +15,43 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update Argo CD from v3.2.6 to v3.3.9 and argo-cd Helm chart to 9.5.11
+        feat: Update Argo CD from v3.3.9 o v3.4.4 and argo-cd Helm chart from 9.5.11 to 10.1.0
 
-        v3.3.0 highlights:
-        - server-side diffs
-        - PreDelete hooks support
-        - prune resources in reverse sync-wave order
-        - namespace/CRD creation before PreSync phase
-        - OIDC background token refresh
-        - shallow clone support
-        - Redis secrets via volume mount
-        - GitHub App auth without installationId
-        - custom icons in UI
-        - KEDA ScaledJob health checks
+        v3.4 highlights:
+        - Microsoft Teams Workflows Support
+        - Application List Filter Improvements
+        - Source Hydrator UI Improvements
+        - Pause Reconciliation for a Cluster
+        - Reduced DNS Noise from gRPC Health Checks
+        - Extended OpenTelemetry Tracing for Authentication
+        - ApplicationSet Cache Synchronization
+        - Glob Patterns in Values Files
+        - New Session Tokens CLI command
+        - Expanded Manifest Generation Git Paths
+        - Bug Fixes
         Helm chart improvements:
-        - VPA support for all components (9.5.0)
-        - ServerSideApply enabled for ArgoCD CRDs by default (9.4.12)
-        - HTTPRoute support for ApplicationSet webhook (9.5.6)
-        - HTTPRoute timeout configuration (9.4.5)
-        - GRPCRoute/HTTPRoute empty matches support (9.5.8)
-        - PrometheusRule API version overridable (9.5.7)
-        - custom StatefulSet labels (9.4.6)
-        - timeout.reconciliation aligned to 120s with 60s jitter (9.4.7)
-        - dex bumped to v2.45.1
-        - redis_exporter bumped to v1.83.0
-        - argocd-extension-installer bumped to v1.0.0
+        - Update Redis
+        - Enable network policies for all components by default
+        - Add starupProbes
+        - GatewayAPI ListenerSet Support
+        - Other updates
 
       links:
-        - name: Argo CD 3.3 upgrading
-          url: https://argo-cd.readthedocs.io/en/stable/operator-manual/upgrading/3.2-3.3/
-        - name: Argo CD v3.3 release candidate announcement
-          url: https://blog.argoproj.io/argo-cd-3-3-release-candidate-00e99f7b7daa
-        - name: Argo CD v3.3.9
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.3.9
-        - name: Argo CD v3.3.8
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.3.8
-        - name: Argo CD v3.3.7
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.3.7
-        - name: Argo CD v3.3.6
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.3.6
-        - name: Argo CD v3.3.5
-          url:  https://github.com/argoproj/argo-cd/releases/tag/v3.3.5
-        - name: Argo CD v3.3.4
-          url:  https://github.com/argoproj/argo-cd/releases/tag/v3.3.4
-        - name: Argo CD v3.3.3
-          url:  https://github.com/argoproj/argo-cd/releases/tag/v3.3.3
-        - name: Argo CD v3.3.2
-          url:  https://github.com/argoproj/argo-cd/releases/tag/v3.3.2
-        - name: Argo CD v3.3.1
-          url:  https://github.com/argoproj/argo-cd/releases/tag/v3.3.1
-        - name: Argo CD v3.3.0
-          url:  https://github.com/argoproj/argo-cd/releases/tag/v3.3.0
+        - name: Argo CD 3.4 upgrading
+          url: https://argo-cd.readthedocs.io/en/stable/operator-manual/upgrading/3.3-3.4/
+        - name: Argo CD v3.4 release candidate announcement
+          url: https://blog.argoproj.io/argo-cd-v3-4-release-candidate-2702b8af68d4
+        - name: Argo CD v3.4.0
+          url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.0
+        - name: Argo CD v3.4.1
+          url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.1
+        - name: Argo CD v3.4.2
+          url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.2
+        - name: Argo CD v3.4.3
+          url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.3
+        - name: Argo CD v3.4.4
+          url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.4
