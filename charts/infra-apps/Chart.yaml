@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.269.0
+version: 0.270.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,43 +15,16 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update Argo CD from v3.3.9 o v3.4.4 and argo-cd Helm chart from 9.5.11 to 10.1.0
+        feat: Update cert-manager from 1.20.2 to 1.20.3
 
-        v3.4 highlights:
-        - Microsoft Teams Workflows Support
-        - Application List Filter Improvements
-        - Source Hydrator UI Improvements
-        - Pause Reconciliation for a Cluster
-        - Reduced DNS Noise from gRPC Health Checks
-        - Extended OpenTelemetry Tracing for Authentication
-        - ApplicationSet Cache Synchronization
-        - Glob Patterns in Values Files
-        - New Session Tokens CLI command
-        - Expanded Manifest Generation Git Paths
-        - Bug Fixes
-        Helm chart improvements:
-        - Update Redis
-        - Enable network policies for all components by default
-        - Add starupProbes
-        - GatewayAPI ListenerSet Support
-        - Other updates
-
+        - This patch release fixes a security issue (GHSA-8rvj-mm4h-c258, HIGH)
+        - Remove issuer owner reference from challenges blocking challenge garbage collection
+        - Bump go to 1.26.3, other deps to fix several govulncheck
+        - Update Go to v1.26.4 to fix CVE-2026-27145, CVE-2026-42504, and CVE-2026-42507
       links:
-        - name: Argo CD 3.4 upgrading
-          url: https://argo-cd.readthedocs.io/en/stable/operator-manual/upgrading/3.3-3.4/
-        - name: Argo CD v3.4 release candidate announcement
-          url: https://blog.argoproj.io/argo-cd-v3-4-release-candidate-2702b8af68d4
-        - name: Argo CD v3.4.0
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.0
-        - name: Argo CD v3.4.1
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.1
-        - name: Argo CD v3.4.2
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.2
-        - name: Argo CD v3.4.3
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.3
-        - name: Argo CD v3.4.4
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.4.4
+        - name: cert-manager release notes
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.20.3
