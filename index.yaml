@@ -6180,6 +6180,40 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update cert-manager from 1.20.2 to 1.20.3
+
+            - This patch release fixes a security issue (GHSA-8rvj-mm4h-c258, HIGH)
+            - Remove issuer owner reference from challenges blocking challenge garbage collection
+            - Bump go to 1.26.3, other deps to fix several govulncheck
+            - Update Go to v1.26.4 to fix CVE-2026-27145, CVE-2026-42504, and CVE-2026-42507
+          links:
+            - name: cert-manager release notes
+              url: https://github.com/cert-manager/cert-manager/releases/tag/v1.20.3
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-01T14:25:19.78872807Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 6caf4e5aa70652d125f24b285294a2ee1db1f1727b2f5d2f492be85ea2d35d1a
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.270.0/infra-apps-0.270.0.tgz
+    version: 0.270.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update Argo CD from v3.3.9 o v3.4.4 and argo-cd Helm chart from 9.5.11 to 10.1.0
 
             v3.4 highlights:
@@ -36753,4 +36787,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-01T14:02:07.23235858Z"
+generated: "2026-07-01T14:25:19.790586633Z"
