@@ -6180,6 +6180,46 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update Velero from v1.17.1 to v1.18.1
+
+            - Update chart from v12.0.0 to v12.1.0
+            - Add optional PodDisruptionBudget
+            - Add missing standard Kubernetes labels
+            - Remove bitnami deps
+            - Process multiple backups concurrently
+            - Lots of other features that were added upstream
+          links:
+            - name: Chart release
+              url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-12.1.0
+            - name: Velero v1.18.1
+              url: https://github.com/velero-io/velero/releases/tag/v1.18.1
+            - name: Velero v1.18.0
+              url: https://github.com/velero-io/velero/releases/tag/v1.18.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-02T14:08:02.095409652Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 606c8014ef54c7fdba0938886c8d46b87664327dabc7e1f08fae0d42a5cf139a
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.271.0/infra-apps-0.271.0.tgz
+    version: 0.271.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update cert-manager from 1.20.2 to 1.20.3
 
             - This patch release fixes a security issue (GHSA-8rvj-mm4h-c258, HIGH)
@@ -36787,4 +36827,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-01T14:25:19.790586633Z"
+generated: "2026-07-02T14:08:02.099077289Z"
