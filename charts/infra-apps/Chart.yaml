@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.270.0
+version: 0.271.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,12 +19,18 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update cert-manager from 1.20.2 to 1.20.3
+        feat: Update Velero from v1.17.1 to v1.18.1
 
-        - This patch release fixes a security issue (GHSA-8rvj-mm4h-c258, HIGH)
-        - Remove issuer owner reference from challenges blocking challenge garbage collection
-        - Bump go to 1.26.3, other deps to fix several govulncheck
-        - Update Go to v1.26.4 to fix CVE-2026-27145, CVE-2026-42504, and CVE-2026-42507
+        - Update chart from v12.0.0 to v12.1.0
+        - Add optional PodDisruptionBudget
+        - Add missing standard Kubernetes labels
+        - Remove bitnami deps
+        - Process multiple backups concurrently
+        - Lots of other features that were added upstream
       links:
-        - name: cert-manager release notes
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.20.3
+        - name: Chart release
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-12.1.0
+        - name: Velero v1.18.1
+          url: https://github.com/velero-io/velero/releases/tag/v1.18.1
+        - name: Velero v1.18.0
+          url: https://github.com/velero-io/velero/releases/tag/v1.18.0
