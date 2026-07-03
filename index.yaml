@@ -6180,6 +6180,42 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update kube-prometheus-stack from v0.90.0 to v0.92.1
+
+            - Update chart from 84.0.1 to 87.5.1
+            - Enables distroless by default for proemtheus and proemtheus-node-exporter)
+            - Updates CRDs several times, update them before the upgrade or configure crds.upgradeJob.enabled
+            - Includes all the dependency updates (grafan, prom, other components, ...)
+          links:
+            - name: Helm Chart
+              url: https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
+            - name: Upgrade Documentation
+              url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-03T09:22:21.048069307Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 31a24c7a3b929a5a94313628745fb9fb5d60502e993258fa43cba4e944c0c854
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.272.0/infra-apps-0.272.0.tgz
+    version: 0.272.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update Velero from v1.17.1 to v1.18.1
 
             - Update chart from v12.0.0 to v12.1.0
@@ -36827,4 +36863,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-02T14:08:02.099077289Z"
+generated: "2026-07-03T09:22:21.050182179Z"
