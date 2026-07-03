@@ -6180,6 +6180,43 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update rbac-manager from v1.9.5 to v1.10.0
+
+            - Update Helm chart from 1.21.5 to 2.0.0
+            - Change image repository to GAR (pkg.dev)
+            - Immutable, signed images replace floating tags (like `v1`)
+          links:
+            - name: Helm Chart Change
+              url: https://github.com/FairwindsOps/charts/pull/1864
+            - name: RBAC Manager v1.10.0
+              url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.10.0
+            - name: Upgrade Guide
+              url: https://github.com/FairwindsOps/rbac-manager#notice-registry-migration-and-immutable-images-v195--v1100
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-03T13:03:03.80599366Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: ee7902f1bccc33b2c1ea2fa660fec05ff9338b4785a2ad261b6d106c07dc7f93
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.273.0/infra-apps-0.273.0.tgz
+    version: 0.273.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update kube-prometheus-stack from v0.90.0 to v0.92.1
 
             - Update chart from 84.0.1 to 87.5.1
@@ -36863,4 +36900,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-03T09:22:21.050182179Z"
+generated: "2026-07-03T13:03:03.810196048Z"
