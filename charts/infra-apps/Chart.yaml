@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.271.0
+version: 0.272.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,18 +19,14 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update Velero from v1.17.1 to v1.18.1
+        feat: Update kube-prometheus-stack from v0.90.0 to v0.92.1
 
-        - Update chart from v12.0.0 to v12.1.0
-        - Add optional PodDisruptionBudget
-        - Add missing standard Kubernetes labels
-        - Remove bitnami deps
-        - Process multiple backups concurrently
-        - Lots of other features that were added upstream
+        - Update chart from 84.0.1 to 87.5.1
+        - Enables distroless by default for proemtheus and proemtheus-node-exporter)
+        - Updates CRDs several times, update them before the upgrade or configure crds.upgradeJob.enabled
+        - Includes all the dependency updates (grafan, prom, other components, ...)
       links:
-        - name: Chart release
-          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-12.1.0
-        - name: Velero v1.18.1
-          url: https://github.com/velero-io/velero/releases/tag/v1.18.1
-        - name: Velero v1.18.0
-          url: https://github.com/velero-io/velero/releases/tag/v1.18.0
+        - name: Helm Chart
+          url: https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
+        - name: Upgrade Documentation
+          url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md
