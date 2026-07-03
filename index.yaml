@@ -1522,6 +1522,48 @@ entries:
         - kind: changed
           description: |
             feat: Update promitor
+              chart: "promitor-agent-scraper"
+
+            * update promitor-agent-scraper from 2.15.0 to 2.16.0
+              * Provide support for discovering for Azure Private Link services
+              * Provide support for discovering for Azure DocumentDB Mongo Clusters
+              * Fixed a bug where batching based on aggregation does not work properly
+            * update promitor-agent-resource-discovery from 0.15.0 to 0.16.0
+              * Provide support for discovering for Azure Private Link services
+              * Provide support for discovering for Azure DocumentDB Mongo Clusters
+          links:
+            - name: Promitor Resource Discovery v0.16.0
+              url: https://github.com/tomkerkhove/promitor/releases#release-ResourceDiscovery-v0.16.0
+            - name:  Promitor Scraper v2.15.0
+              url: https://github.com/tomkerkhove/promitor/releases#release-Scraper-v2.16.0
+            - name: Changelog
+              url: https://changelog.promitor.io/
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-07-03T13:31:33.197220815Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for Azure applications
+    digest: fbd78b23a6ddfabcaf3926abe9b40b43e11146563c81c6afb92f6456c4b919a2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.21.0/azure-apps-0.21.0.tgz
+    version: 0.21.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
+            feat: Update promitor
 
             * update promitor-agent-scraper from 2.14.1 to 2.15.0
               * Provide capability to configure query lookback in minutes
@@ -36942,4 +36984,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-03T13:11:14.918000277Z"
+generated: "2026-07-03T13:31:33.199576054Z"
