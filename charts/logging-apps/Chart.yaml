@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.48.0
+version: 0.49.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,9 +15,20 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Mark fluentd as deprecated due to unmaintained upstream chart and no use-cases for us.
-        Update fluentd from 1.17.1 to 1.19.0
+        feat: Update loki from 3.7.1 to 3.7.3
+
+        - security and bug fixes
+        - chart removes some deprecated apis
+        - various images like the kiwigrid k8s-sidecar are also updated
+        - a ton of features and fixes in both the Helm chart and Loki itself!
+
+        As always, please assume that this change contains several breaking changes.
+      links:
+        - name: Loki 3.7.3
+          url: https://github.com/grafana/loki/releases/tag/v3.7.3
+        - name: Loki 3.7.2
+          url: https://github.com/grafana/loki/releases/tag/v3.7.2
