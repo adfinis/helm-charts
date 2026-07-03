@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.272.0
+version: 0.273.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,14 +19,15 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update kube-prometheus-stack from v0.90.0 to v0.92.1
+        feat: Update rbac-manager from v1.9.5 to v1.10.0
 
-        - Update chart from 84.0.1 to 87.5.1
-        - Enables distroless by default for proemtheus and proemtheus-node-exporter)
-        - Updates CRDs several times, update them before the upgrade or configure crds.upgradeJob.enabled
-        - Includes all the dependency updates (grafan, prom, other components, ...)
+        - Update Helm chart from 1.21.5 to 2.0.0
+        - Change image repository to GAR (pkg.dev)
+        - Immutable, signed images replace floating tags (like `v1`)
       links:
-        - name: Helm Chart
-          url: https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
-        - name: Upgrade Documentation
-          url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/UPGRADE.md
+        - name: Helm Chart Change
+          url: https://github.com/FairwindsOps/charts/pull/1864
+        - name: RBAC Manager v1.10.0
+          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.10.0
+        - name: Upgrade Guide
+          url: https://github.com/FairwindsOps/rbac-manager#notice-registry-migration-and-immutable-images-v195--v1100
