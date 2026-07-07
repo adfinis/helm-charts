@@ -18366,6 +18366,44 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat: Update loki from 3.7.1 to 3.7.3
+
+            - security and bug fixes
+            - chart removes some deprecated apis
+            - various images like the kiwigrid k8s-sidecar are also updated
+            - a ton of features and fixes in both the Helm chart and Loki itself!
+
+            As always, please assume that this change contains several breaking changes.
+          links:
+            - name: Loki 3.7.3
+              url: https://github.com/grafana/loki/releases/tag/v3.7.3
+            - name: Loki 3.7.2
+              url: https://github.com/grafana/loki/releases/tag/v3.7.2
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-07T11:07:20.046586945Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: a6f944c69cc27e5273c6d6d7e8360dd7cf17ea2259977b547a8ffd67553b54d6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.49.0/logging-apps-0.49.0.tgz
+    version: 0.49.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Mark fluentd as deprecated due to unmaintained upstream chart and no use-cases for us.
             Update fluentd from 1.17.1 to 1.19.0
       artifacthub.io/containsSecurityUpdates: "false"
@@ -36984,4 +37022,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-03T13:31:33.199576054Z"
+generated: "2026-07-07T11:07:20.049496831Z"
