@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.71.0
+version: 0.72.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,7 +19,13 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Argo CD Apps: add sourceHydrator support to Application and ApplicationSet templates
+        Updated OpenCost to 2.5.26, including:
+          - OpenCost app updates from v1.120.1 to v1.120.4
+          - Plugin installation list and existingSecret support
+          - OCI cloud cost configuration example
+          - Gateway API filter support
+          - extraObjects support for tpl-rendered extra manifests
+          - Fixes for UI route TLS, service debug targetPort, namespace helper usage, and probe timeout overrides
       links:
-        - name: Chart change
-          url: https://github.com/argoproj/argo-helm/pull/3893
+        - name: "2.5.26 Release Notes"
+          url: https://github.com/opencost/opencost-helm-chart/releases/tag/opencost-2.5.26
