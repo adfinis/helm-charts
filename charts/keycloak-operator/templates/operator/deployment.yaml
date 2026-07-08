@@ -34,7 +34,7 @@ spec:
         - name: {{ .Chart.Name }}-operator
           securityContext:
             {{- toYaml .Values.operator.securityContext | nindent 12 }}
-          image: "{{ .Values.operator.image.repository }}:{{ .Values.operator.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.operator.image.repository }}:{{ .Values.operator.image.tag | default .Chart.AppVersion }}{{ if .Values.operator.image.sha }}@sha256:{{ .Values.operator.image.sha }}{{ end }}"
           imagePullPolicy: {{ .Values.operator.image.pullPolicy }}
           env:
             - name: KUBERNETES_NAMESPACE
@@ -42,7 +42,7 @@ spec:
                 fieldRef:
                   fieldPath: metadata.namespace
             - name: RELATED_IMAGE_KEYCLOAK
-              value: "{{ .Values.operator.config.keycloakImage.repository }}:{{ .Values.operator.config.keycloakImage.tag | default .Chart.AppVersion }}"
+              value: "{{ .Values.operator.config.keycloakImage.repository }}:{{ .Values.operator.config.keycloakImage.tag | default .Chart.AppVersion }}{{ if .Values.operator.config.keycloakImage.sha }}@sha256:{{ .Values.operator.config.keycloakImage.sha }}{{ end }}"
           ports:
             - name: http
               containerPort: 8080

@@ -20,7 +20,7 @@ argocd:
   # -- Chart
   chart: argo-cd
   # -- [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version
-  targetRevision: 9.5.11
+  targetRevision: 10.1.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml)
   values: {}
@@ -42,7 +42,7 @@ certManager:
   # -- Chart
   chart: cert-manager
   # -- [cert-manager Helm chart](https://github.com/cert-manager/cert-manager/tree/master/deploy/charts/cert-manager) version
-  targetRevision: 1.20.2
+  targetRevision: 1.20.3
 
   # -- Helm values
   # @default -- [upstream values](https://github.com/cert-manager/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml)
@@ -131,7 +131,7 @@ kubePrometheusStack:
   # -- Chart
   chart: kube-prometheus-stack
   # -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: 84.0.1
+  targetRevision: 87.5.1
   syncPolicy:
     syncOptions:
       # -- enable server-side-apply for KPS since it get's rid of having to manually sync/replace resources
@@ -157,7 +157,7 @@ rbacManager:
   # -- Chart
   chart: rbac-manager
   # -- [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version
-  targetRevision: 1.21.5
+  targetRevision: 2.0.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml)
   values: {}
@@ -179,7 +179,7 @@ velero:
   # -- Chart
   chart: velero
   # -- [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero)
-  targetRevision: 12.0.0
+  targetRevision: 12.1.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml)
   values: {}
@@ -236,7 +236,7 @@ mimir:
   # -- Chart
   chart: mimir-distributed
   # -- [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed)
-  targetRevision: 5.8.0
+  targetRevision: 6.1.0
   # -- Helm values
   # @default -- [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml)
   values: {}

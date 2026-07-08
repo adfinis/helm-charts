@@ -1,6 +1,6 @@
 # infra-apps
 
-![Version: 0.268.0](https://img.shields.io/badge/Version-0.268.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.274.0](https://img.shields.io/badge/Version-0.274.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for infrastructure components
 
@@ -29,7 +29,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | argocd.destination.namespace | string | `"infra-argocd"` | Namespace |
 | argocd.enabled | bool | `false` | Enable Argo CD |
 | argocd.repoURL | string | [repo](https://argoproj.github.io/argo-helm) | Repo URL |
-| argocd.targetRevision | string | `"9.5.11"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
+| argocd.targetRevision | string | `"10.1.0"` | [argo-cd Helm chart](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd) version |
 | argocd.values | object | [upstream values](https://github.com/argoproj/argo-helm/blob/main/charts/argo-cd/values.yaml) | Helm values |
 | argoconfig.application.annotations | object | `{}` | Optional annotations to add to all Applications metadata. |
 | certManager | object | [example](./examples/cert-manager.yaml) | [cert-manager](https://cert-manager.io/) |
@@ -38,7 +38,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | certManager.destination.namespace | string | `"infra-certmanager"` | Namespace |
 | certManager.enabled | bool | `false` | Enable cert-manager |
 | certManager.repoURL | string | [repo](https://charts.jetstack.io) | Repo URL |
-| certManager.targetRevision | string | `"1.20.2"` | [cert-manager Helm chart](https://github.com/cert-manager/cert-manager/tree/master/deploy/charts/cert-manager) version |
+| certManager.targetRevision | string | `"1.20.3"` | [cert-manager Helm chart](https://github.com/cert-manager/cert-manager/tree/master/deploy/charts/cert-manager) version |
 | certManager.values | object | [upstream values](https://github.com/cert-manager/cert-manager/blob/master/deploy/charts/cert-manager/values.yaml) | Helm values |
 | certManagerIssuers | object | [example](./examples/cert-manager-issuers.yaml) | [cert-manager-issuers](https://cert-manager.io/docs/configuration/) |
 | certManagerIssuers.annotations | object | `{}` | Annotations for cert-manager-issuers app |
@@ -72,7 +72,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kubePrometheusStack.enabled | bool | `false` | Enable prometheus-operator |
 | kubePrometheusStack.repoURL | string | [repo](https://prometheus-community.github.io/helm-charts) | Repo URL |
 | kubePrometheusStack.syncPolicy.syncOptions[0] | string | `"ServerSideApply=true"` | enable server-side-apply for KPS since it get's rid of having to manually sync/replace resources |
-| kubePrometheusStack.targetRevision | string | `"84.0.1"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
+| kubePrometheusStack.targetRevision | string | `"87.5.1"` | [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version |
 | kubePrometheusStack.values | object | [upstream values](https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml) | Helm values |
 | kured | object | [example](./examples/kured.yaml) | [kured](https://github.com/kubereboot/kured) |
 | kured.annotations | object | `{}` | Annotations for Kured app |
@@ -88,7 +88,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | mimir.destination.namespace | string | `"infra-mimir"` | Namespace |
 | mimir.enabled | bool | `false` | Enable mimir |
 | mimir.repoURL | string | [repo](https://grafana.github.io/helm-charts) | Repo URL |
-| mimir.targetRevision | string | `"5.8.0"` | [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed) |
+| mimir.targetRevision | string | `"6.1.0"` | [mimir Helm chart](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed) |
 | mimir.values | object | [upstream values](https://github.com/grafana/mimir/tree/main/operations/helm/charts/mimir-distributed/values.yaml) | Helm values |
 | rbacManager | object | [example](./examples/rbac-manager.yaml) | [rbac-manager](https://fairwindsops.github.io/rbac-manager/) |
 | rbacManager.annotations | object | `{}` | Annotations for rbac-manager app |
@@ -96,7 +96,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | rbacManager.destination.namespace | string | `"infra-rbac"` | Namespace |
 | rbacManager.enabled | bool | `false` | Enable rbac-manager operator |
 | rbacManager.repoURL | string | [repo](https://charts.fairwinds.com/stable) | Repo URL |
-| rbacManager.targetRevision | string | `"1.21.5"` | [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version |
+| rbacManager.targetRevision | string | `"2.0.0"` | [rbac-manager operator Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/rbac-manager) version |
 | rbacManager.values | object | [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/rbac-manager/values.yaml) | Helm values |
 | velero | object | [example](./examples/velero.yaml) | [Velero](https://velero.io/) |
 | velero.annotations | object | `{}` | Annotations for Velero app |
@@ -104,7 +104,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | velero.destination.namespace | string | `"infra-velero"` | Namespace |
 | velero.enabled | bool | `false` | Enable Velero |
 | velero.repoURL | string | [repo](https://vmware-tanzu.github.io/helm-charts) | Repo URL |
-| velero.targetRevision | string | `"12.0.0"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
+| velero.targetRevision | string | `"12.1.0"` | [Velero Helm chart](https://github.com/vmware-tanzu/helm-charts/tree/main/charts/velero) |
 | velero.values | object | [upstream values](https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml) | Helm values |
 
 ## About this chart

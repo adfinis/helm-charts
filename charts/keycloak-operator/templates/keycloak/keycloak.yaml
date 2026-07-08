@@ -1,5 +1,5 @@
 {{- if .Values.keycloak.enabled }}
-apiVersion: k8s.keycloak.org/v2alpha1
+apiVersion: k8s.keycloak.org/v2beta1
 kind: Keycloak
 metadata:
   name: {{ default (include "keycloak-operator.fullname" .) .Values.keycloak.name }}
@@ -9,6 +9,9 @@ metadata:
 spec:
   {{- with .Values.keycloak.additionalOptions }}
   additionalOptions: {{ . | toYaml | nindent 4 }}
+  {{- end }}
+  {{- with .Values.keycloak.admin }}
+  admin: {{ . | toYaml | nindent 4 }}
   {{- end }}
   {{- with .Values.keycloak.bootstrapAdmin }}
   bootstrapAdmin: {{ . | toYaml | nindent 4 }}
@@ -98,6 +101,15 @@ spec:
     {{- with .Values.keycloak.http.labels }}
     labels: {{ . | toYaml | nindent 6 }}
     {{- end }}
+    {{- with .Values.keycloak.http.serviceHttpPort }}
+    serviceHttpPort: {{ . }}
+    {{- end }}
+    {{- with .Values.keycloak.http.serviceHttpsPort }}
+    serviceHttpsPort: {{ . }}
+    {{- end }}
+    {{- with .Values.keycloak.http.serviceName }}
+    serviceName: {{ . | quote }}
+    {{- end }}
     {{- with .Values.keycloak.http.tlsSecret }}
     tlsSecret: {{ . | quote }}
     {{- end }}
@@ -106,7 +118,7 @@ spec:
     port: {{ . }}
   {{- end }}
   {{- if or .Values.keycloak.image.repository .Values.keycloak.image.tag }}
-  image: "{{ .Values.keycloak.image.repository | default .Values.operator.config.keycloakImage.repository }}:{{ .Values.keycloak.image.tag | default .Values.operator.config.keycloakImage.tag | default .Chart.AppVersion }}"
+  image: "{{ .Values.keycloak.image.repository | default .Values.operator.config.keycloakImage.repository }}:{{ .Values.keycloak.image.tag | default .Values.operator.config.keycloakImage.tag | default .Chart.AppVersion }}{{ if .Values.keycloak.image.sha }}@sha256:{{ .Values.keycloak.image.sha }}{{ else if .Values.operator.config.keycloakImage.sha }}@sha256:{{ .Values.operator.config.keycloakImage.sha }}{{ end }}"
   {{- end }}
   {{- with .Values.keycloak.imagePullSecrets }}
   imagePullSecrets: {{ . | toYaml | nindent 4 }}
@@ -172,8 +184,11 @@ spec:
   {{- with .Values.keycloak.serviceMonitor }}
   serviceMonitor: {{ . | toYaml | nindent 4 }}
   {{- end }}
-  {{- if hasKey .Values.keycloak "startOptimized" }}
+  {{- if not (eq .Values.keycloak.startOptimized nil) }}
   startOptimized: {{ ternary "true" "false" .Values.keycloak.startOptimized }}
+  {{- end }}
+  {{- with .Values.keycloak.telemetry }}
+  telemetry: {{ . | toYaml | nindent 4 }}
   {{- end }}
   {{- with .Values.keycloak.tracing }}
   tracing: {{ . | toYaml | nindent 4 }}
@@ -191,7 +206,7 @@ spec:
   transaction:
     xaEnabled: {{ ternary "true" "false" .Values.keycloak.transaction.xaEnabled }}
   {{- end }}
-  {{- with .Values.keycloak.truststrores }}
+  {{- with .Values.keycloak.truststores }}
   truststores: {{ . | toYaml | nindent 4 }}
   {{- end }}
   {{- with .Values.keycloak.unsupported }}

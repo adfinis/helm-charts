@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.121.0
+version: 0.122.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,13 +15,20 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        chore: bump oauth2-proxy from 10.4.3 to 10.6.0
+        feat: Update Kyverno from 1.17.1 to 1.18.1
+
+        - Secure HTTP calls with blocklist/allowlist
+        - Namespaced image registry credentials
+        - CLI expanded policy support
+        - Success event filtering
+        - Update Helm chart from 3.7.1 to 3.8.1
+        - Many more fixes and improvements in both the app and chart
       links:
-        - name: oauth2-proxy helm chart 10.6.0 release
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.6.0
-        - name: oauth2-proxy helm chart 10.5.0 release
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.5.0
+        - name: Kyverno 1.18.0
+          url: https://github.com/kyverno/kyverno/releases/tag/v1.18.0
+        - name: Kyverno 1.18.1
+          url: https://github.com/kyverno/kyverno/releases/tag/v1.18.1

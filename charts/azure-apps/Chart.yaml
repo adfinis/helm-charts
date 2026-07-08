@@ -2,7 +2,7 @@ apiVersion: v2
 name: azure-apps
 description: Argo CD app-of-apps config for Azure applications
 type: application
-version: 0.20.0
+version: 0.21.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -20,18 +20,19 @@ annotations:
     - kind: changed
       description: |
         feat: Update promitor
+          chart: "promitor-agent-scraper"
 
-        * update promitor-agent-scraper from 2.14.1 to 2.15.0
-          * Provide capability to configure query lookback in minutes
-          * Provide support for scraping Azure DNS zone metrics
-          * Provide new health check based on data freshness
-          * Azure Monitor Scraper: batch based on aggregation in addition to existing criteria
-        * update promitor-agent-resource-discovery from 0.14.1 to 0.15.0
-          * Provide support for discovering Azure DNS zones
+        * update promitor-agent-scraper from 2.15.0 to 2.16.0
+          * Provide support for discovering for Azure Private Link services
+          * Provide support for discovering for Azure DocumentDB Mongo Clusters
+          * Fixed a bug where batching based on aggregation does not work properly
+        * update promitor-agent-resource-discovery from 0.15.0 to 0.16.0
+          * Provide support for discovering for Azure Private Link services
+          * Provide support for discovering for Azure DocumentDB Mongo Clusters
       links:
-        - name: Promitor Resource Discovery v0.15.0
-          url: https://github.com/tomkerkhove/promitor/releases/tag/v0.15.0
-        - name:  Scraper-v2.15.0
-          url: https://github.com/tomkerkhove/promitor/releases/tag/Scraper-v2.15.0
+        - name: Promitor Resource Discovery v0.16.0
+          url: https://github.com/tomkerkhove/promitor/releases#release-ResourceDiscovery-v0.16.0
+        - name:  Promitor Scraper v2.15.0
+          url: https://github.com/tomkerkhove/promitor/releases#release-Scraper-v2.16.0
         - name: Changelog
           url: https://changelog.promitor.io/
