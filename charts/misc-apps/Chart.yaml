@@ -29,5 +29,3 @@ annotations:
       links:
         - name: "2.5.26 Release Notes"
           url: https://github.com/opencost/opencost-helm-chart/releases/tag/opencost-2.5.26
-        - name: "2.5.18 Release Notes"
-          url: https://github.com/opencost/opencost-helm-chart/releases/tag/opencost-2.5.18
