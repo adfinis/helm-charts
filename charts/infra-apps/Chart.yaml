@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.273.0
+version: 0.274.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,15 +19,21 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update rbac-manager from v1.9.5 to v1.10.0
+        feat!: Update Mimir from 2.17.0 to 3.1.2
 
-        - Update Helm chart from 1.21.5 to 2.0.0
-        - Change image repository to GAR (pkg.dev)
-        - Immutable, signed images replace floating tags (like `v1`)
+        - Update Helm chart from 5.8.0 to 6.1.0
+        - Update base image from Debian 12 to 13
+        - Update Golang and other security deps
+        - More Kafka options for Ingest storage
+        - Mimir Query Engine (MQE) improvements
+        - Zone-aware memberlist routing
+        - Ingest storage architecture (new Kafka based default)
       links:
-        - name: Helm Chart Change
-          url: https://github.com/FairwindsOps/charts/pull/1864
-        - name: RBAC Manager v1.10.0
-          url: https://github.com/FairwindsOps/rbac-manager/releases/tag/v1.10.0
-        - name: Upgrade Guide
-          url: https://github.com/FairwindsOps/rbac-manager#notice-registry-migration-and-immutable-images-v195--v1100
+        - name: Mimir 3.1.2
+          url: https://github.com/grafana/mimir/releases/tag/mimir-3.1.2
+        - name: Mimir 3.1.1
+          url: https://github.com/grafana/mimir/releases/tag/mimir-3.1.1
+        - name: Mimir 3.1.0
+          url: https://github.com/grafana/mimir/releases/tag/mimir-3.1.0
+        - name: Mimir 3.0.0
+          url: https://github.com/grafana/mimir/releases/tag/mimir-3.0.0
