@@ -6222,6 +6222,49 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            feat!: Update Mimir from 2.17.0 to 3.1.2
+
+            - Update Helm chart from 5.8.0 to 6.1.0
+            - Update base image from Debian 12 to 13
+            - Update Golang and other security deps
+            - More Kafka options for Ingest storage
+            - Mimir Query Engine (MQE) improvements
+            - Zone-aware memberlist routing
+            - Ingest storage architecture (new Kafka based default)
+          links:
+            - name: Mimir 3.1.2
+              url: https://github.com/grafana/mimir/releases/tag/mimir-3.1.2
+            - name: Mimir 3.1.1
+              url: https://github.com/grafana/mimir/releases/tag/mimir-3.1.1
+            - name: Mimir 3.1.0
+              url: https://github.com/grafana/mimir/releases/tag/mimir-3.1.0
+            - name: Mimir 3.0.0
+              url: https://github.com/grafana/mimir/releases/tag/mimir-3.0.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-08T08:30:51.629618021Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 83cecb79270a3c7c60987444cf7aef1f1a546a2dff92a92b394b1074bb67d375
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.274.0/infra-apps-0.274.0.tgz
+    version: 0.274.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update rbac-manager from v1.9.5 to v1.10.0
 
             - Update Helm chart from 1.21.5 to 2.0.0
@@ -37022,4 +37065,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-07T11:07:20.049496831Z"
+generated: "2026-07-08T08:30:51.632392339Z"
