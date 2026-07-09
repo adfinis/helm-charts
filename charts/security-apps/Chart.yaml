@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.122.0
+version: 0.123.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,16 +19,15 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update Kyverno from 1.17.1 to 1.18.1
-
-        - Secure HTTP calls with blocklist/allowlist
-        - Namespaced image registry credentials
-        - CLI expanded policy support
-        - Success event filtering
-        - Update Helm chart from 3.7.1 to 3.8.1
-        - Many more fixes and improvements in both the app and chart
+        Updated OpenBao to 0.28.4, including:
+          - OpenBao image updates from 2.5.3 to 2.5.5
+          - Template support for server extraContainers and extraInitContainers
+          - OpenShift deployment improvements
+          - Certified Red Hat registry images for OpenShift
+          - OpenBao UBI image and vault-k8s UBI image updates
+          - Commented example fixes
       links:
-        - name: Kyverno 1.18.0
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.18.0
-        - name: Kyverno 1.18.1
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.18.1
+        - name: "OpenBao chart 0.28.4"
+          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.28.4
+        - name: "OpenBao chart 0.28.0"
+          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.28.0
