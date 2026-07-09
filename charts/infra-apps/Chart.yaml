@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.275.0
+version: 0.276.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,13 +19,15 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Kured to 1.23.0, including:
-          - Update Helm chart from 5.11.0 to 6.1.0
-          - Update Kubernetes modules to 0.36.x
-          - Kubernetes 1.35 and 1.36 compatibility
-          - Alpine base image update to 3.24.1
-          - Prometheus common dependency updates
-          - GoReleaser v2 migration and release pipeline updates
+        Updated kubernetes-event-exporter to 3.6.3, including:
+          - Improved security defaults
+          - NetworkPolicy support and configurable cluster role rules
+          - Configurable probes, PodDisruptionBudget, and clusterName value
+          - OpenShift runtime adaptation and runAsGroup support
+          - tpl support for .Values.config
+          - Non-standard image detection and leader election RoleBinding fixes
+          - Fix for empty logs with the default config layout
+          - Removal of Kubernetes versions below 1.23 support
       links:
-        - name: "Kured 1.23.0 Release Notes"
-          url: https://github.com/kubereboot/kured/releases/tag/1.23.0
+        - name: "kubernetes-event-exporter changelog"
+          url: https://github.com/bitnami/charts/blob/main/bitnami/kubernetes-event-exporter/CHANGELOG.md

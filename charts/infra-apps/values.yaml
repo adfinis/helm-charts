@@ -216,7 +216,7 @@ kubeEventExporter:
     namespace: infra-kube-event-exporter
   repoURL: https://charts.bitnami.com/bitnami
   chart: kubernetes-event-exporter
-  targetRevision: 2.1.6
+  targetRevision: 3.6.3
   values: {}
 
 # -- [mimir](https://github.com/grafana/mimir)
