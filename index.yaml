@@ -6222,6 +6222,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Kured to 1.23.0, including:
+              - Update Helm chart from 5.11.0 to 6.1.0
+              - Update Kubernetes modules to 0.36.x
+              - Kubernetes 1.35 and 1.36 compatibility
+              - Alpine base image update to 3.24.1
+              - Prometheus common dependency updates
+              - GoReleaser v2 migration and release pipeline updates
+          links:
+            - name: "Kured 1.23.0 Release Notes"
+              url: https://github.com/kubereboot/kured/releases/tag/1.23.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-09T13:27:56.064459542Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 108c79bc8f1b8dc884ffa2867d1df6f975c2e86e011c420acbeda3e2f80489a1
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.275.0/infra-apps-0.275.0.tgz
+    version: 0.275.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat!: Update Mimir from 2.17.0 to 3.1.2
 
             - Update Helm chart from 5.8.0 to 6.1.0
@@ -37138,4 +37173,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-08T17:52:01.373657831Z"
+generated: "2026-07-09T13:27:56.067258767Z"
