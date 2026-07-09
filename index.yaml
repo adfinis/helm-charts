@@ -18444,6 +18444,37 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Fluent Bit to 0.57.9, including:
+              - Update Fluent Bit OCI image from v5.0.3 to v5.0.9
+              - Includes Fluent Bit image updates v5.0.4 through v5.0.9
+          links:
+            - name: "Fluent Bit Helm chart changelog"
+              url: https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/CHANGELOG.md
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-09T15:32:33.213741095Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: e0b5491d899c5606855769385fd54d8c229f8be6e016a02a82e361f87708c0ec
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.50.0/logging-apps-0.50.0.tgz
+    version: 0.50.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update loki from 3.7.1 to 3.7.3
 
             - security and bug fixes
@@ -37211,4 +37242,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-09T13:40:12.687587373Z"
+generated: "2026-07-09T15:32:33.216490125Z"
