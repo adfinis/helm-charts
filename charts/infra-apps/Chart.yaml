@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.274.0
+version: 0.275.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,21 +19,13 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat!: Update Mimir from 2.17.0 to 3.1.2
-
-        - Update Helm chart from 5.8.0 to 6.1.0
-        - Update base image from Debian 12 to 13
-        - Update Golang and other security deps
-        - More Kafka options for Ingest storage
-        - Mimir Query Engine (MQE) improvements
-        - Zone-aware memberlist routing
-        - Ingest storage architecture (new Kafka based default)
+        Updated Kured to 1.23.0, including:
+          - Update Helm chart from 5.11.0 to 6.1.0
+          - Update Kubernetes modules to 0.36.x
+          - Kubernetes 1.35 and 1.36 compatibility
+          - Alpine base image update to 3.24.1
+          - Prometheus common dependency updates
+          - GoReleaser v2 migration and release pipeline updates
       links:
-        - name: Mimir 3.1.2
-          url: https://github.com/grafana/mimir/releases/tag/mimir-3.1.2
-        - name: Mimir 3.1.1
-          url: https://github.com/grafana/mimir/releases/tag/mimir-3.1.1
-        - name: Mimir 3.1.0
-          url: https://github.com/grafana/mimir/releases/tag/mimir-3.1.0
-        - name: Mimir 3.0.0
-          url: https://github.com/grafana/mimir/releases/tag/mimir-3.0.0
+        - name: "Kured 1.23.0 Release Notes"
+          url: https://github.com/kubereboot/kured/releases/tag/1.23.0
