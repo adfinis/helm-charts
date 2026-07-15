@@ -21,11 +21,11 @@ barman:
 # -- [Back8sup](https://github.com/adfinis/back8sup) is DEPRECATED, use "Velero" instead
 # @default -- DEPRECATED
 back8sup:
-  enabled: true
+  enabled: false
   name: back8sup
   destination:
     namespace: backup-back8sup
   repoURL: "https://charts.adfinis.com"
   chart: back8sup
-  targetRevision: '0.4.8'
+  targetRevision: '0.5.0'
   values: {}
