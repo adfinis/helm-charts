@@ -30496,6 +30496,46 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated cephCsiRbd and cephCsiCephfs to 3.17.0, including:
+              * Recommend Operator deployment over standalone Helm charts; updated sidecars.
+              * Added volume access restrictions via Kubernetes ServiceAccount.
+              * Added publish secret caching and compressed IPv6 support.
+              * Added configurable block encryption and new QoS limits.
+              * Fixed replication promote/demote errors and improved volume fencing.
+              * Added block usage stats; fixed panic during static volume expansion.
+              * Added required RBAC for `VolumeGroupReplication`.
+              * Added `SetSubVolCSIMetadata` to track metadata directly on subvolumes.
+              * Fixed alternate filesystem mount failures and snapshot delete lock-ups.
+          links:
+            - name: "CephCsi v3.17.0 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.17.0"
+            - name: "Migration Guide"
+              url: "https://github.com/ceph/ceph-csi-operator/blob/main/docs/migration.md"
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-07-15T15:46:47.995565301Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for storage applications
+    digest: fd97385d732e6f90be00afb961262a51af4d131748e3b92295b839a508bfd9e9
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.23.0/storage-apps-0.23.0.tgz
+    version: 0.23.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated csiDriverSmb to 1.20.1, including:
               - feat: Add driver.labels option to helm chart for CSIDriver resource by @Copilot in #998
               - Various CVE fixes
@@ -37242,4 +37282,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-09T15:32:33.216490125Z"
+generated: "2026-07-15T15:46:47.998108134Z"
