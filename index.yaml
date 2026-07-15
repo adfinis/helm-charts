@@ -25942,6 +25942,43 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated OpenBao to 0.28.4, including:
+              - OpenBao image updates from 2.5.3 to 2.5.5
+              - Template support for server extraContainers and extraInitContainers
+              - OpenShift deployment improvements
+              - Certified Red Hat registry images for OpenShift
+              - OpenBao UBI image and vault-k8s UBI image updates
+              - Commented example fixes
+          links:
+            - name: "OpenBao chart 0.28.4"
+              url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.28.4
+            - name: "OpenBao chart 0.28.0"
+              url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.28.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-15T15:51:31.944445775Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: c3ca0a46ba0218327a42b925e6059e7e7c316356f03bf15169d6e79788b9b441
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.123.0/security-apps-0.123.0.tgz
+    version: 0.123.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update Kyverno from 1.17.1 to 1.18.1
 
             - Secure HTTP calls with blocklist/allowlist
@@ -37282,4 +37319,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-15T15:46:47.998108134Z"
+generated: "2026-07-15T15:51:31.947529464Z"
