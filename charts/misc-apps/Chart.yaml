@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.74.0
+version: 0.75.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,16 +19,10 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated MetalLB to 0.16.1, including:
-          - FRR-K8s is now the default BGP backend and FRR mode is deprecated
-          - BGP localASN support for per-peer local-AS overrides
-          - ServiceSelector support for advertisement resources
-          - Native HTTPS metrics with TLS/RBAC replacing kube-rbac-proxy
-          - Configurable memberlist and BGP debounce settings
-          - frr-k8s dependency update to 0.0.25 and FRR-mode updates
-          - Fixes for Helm rendering, HTTPS metrics scraping, controller health probes, BGPPeer schema, L2 speaker election, and BGP resource scoping
+        Updated Goldilocks to 10.4.1, including:
+          - Goldilocks app remains on v4.14.1
+          - Update optional VPA chart dependency from 4.8.* to 4.12.*
+          - Includes the intermediate VPA dependency update to 4.10.*
       links:
-        - name: "MetalLB 0.16.1 Release Notes"
-          url: https://metallb.universe.tf/release-notes/#version-0-16-1
-        - name: "MetalLB 0.16.0 Release Notes"
-          url: https://metallb.universe.tf/release-notes/#version-0-16-0
+        - name: "Goldilocks chart"
+          url: https://github.com/FairwindsOps/charts/tree/master/stable/goldilocks
