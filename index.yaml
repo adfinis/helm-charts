@@ -26043,6 +26043,43 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Vault to 0.34.0, including:
+              - Default Vault image update from 1.21.2 to 2.0.3
+              - vault-k8s update to 1.7.5
+              - vault-csi-provider update to 1.7.3
+              - Kubernetes Gateway API HTTPRoute support
+              - Vault Enterprise redundancy zones support
+              - Tested with Vault 2.0.3 and Vault 1.21 through 1.19
+          links:
+            - name: "Vault chart 0.34.0"
+              url: https://github.com/hashicorp/vault-helm/releases/tag/v0.34.0
+            - name: "Vault chart 0.33.0"
+              url: https://github.com/hashicorp/vault-helm/releases/tag/v0.33.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-16T14:34:49.361475545Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: ca51ee0d5edf7d5276bca83b3d764ba2f107e2a6df8ab452e9c18a0659327137
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.125.0/security-apps-0.125.0.tgz
+    version: 0.125.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated StackRox central and secured cluster services to 400.11.1, including:
               - Update StackRox app images from 4.10.1 to 4.11.1
               - Enhanced vulnerability management reporting
@@ -37460,4 +37497,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-16T13:56:49.986846902Z"
+generated: "2026-07-16T14:34:49.364761718Z"
