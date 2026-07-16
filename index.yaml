@@ -25980,6 +25980,46 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated StackRox central and secured cluster services to 400.11.1, including:
+              - Update StackRox app images from 4.10.1 to 4.11.1
+              - Enhanced vulnerability management reporting
+              - Red Hat hardened image scanning
+              - Policy scope support for cluster and namespace labels
+              - Detection and enforcement for oc debug and pod attach operations
+              - Compliance Operator tailored profile scheduling and maintenance
+              - Performance improvements for scanning, runtime collection, admission control, and API list operations
+              - Bug fixes and security updates from 4.11.1
+              - Direct Helm chart installation is deprecated in RHACS 4.11
+          links:
+            - name: "StackRox 4.11.1"
+              url: https://github.com/stackrox/stackrox/releases/tag/4.11.1
+            - name: "RHACS 4.11 Release Notes"
+              url: https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.11/html/release_notes/release-notes-411
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-16T11:42:42.629700596Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 1c1602208c7b28bed612d14521aab3b5b1d2b5dd74ba42d15e3ae7c65a3d4437
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.124.0/security-apps-0.124.0.tgz
+    version: 0.124.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated OpenBao to 0.28.4, including:
               - OpenBao image updates from 2.5.3 to 2.5.5
               - Template support for server extraContainers and extraInitContainers
@@ -37357,4 +37397,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-16T11:37:58.054775867Z"
+generated: "2026-07-16T11:42:42.631712528Z"
