@@ -20327,6 +20327,44 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated MetalLB to 0.16.1, including:
+              - FRR-K8s is now the default BGP backend and FRR mode is deprecated
+              - BGP localASN support for per-peer local-AS overrides
+              - ServiceSelector support for advertisement resources
+              - Native HTTPS metrics with TLS/RBAC replacing kube-rbac-proxy
+              - Configurable memberlist and BGP debounce settings
+              - frr-k8s dependency update to 0.0.25 and FRR-mode updates
+              - Fixes for Helm rendering, HTTPS metrics scraping, controller health probes, BGPPeer schema, L2 speaker election, and BGP resource scoping
+          links:
+            - name: "MetalLB 0.16.1 Release Notes"
+              url: https://metallb.universe.tf/release-notes/#version-0-16-1
+            - name: "MetalLB 0.16.0 Release Notes"
+              url: https://metallb.universe.tf/release-notes/#version-0-16-0
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-07-16T11:37:58.053087079Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 81eee3429f7a6c51ff27df559f6189bd049c6260624a818a1797f4a067348b6e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.74.0/misc-apps-0.74.0.tgz
+    version: 0.74.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated KEDA to 2.20.1, including:
               - Support separate node selectors and tolerations for operator, metrics server, and webhooks
               - Option to disable metrics server deployment
@@ -37319,4 +37357,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-15T15:51:31.947529464Z"
+generated: "2026-07-16T11:37:58.054775867Z"
