@@ -2933,6 +2933,37 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: |
+            Updated Back8sup to 0.5.0, including:
+              - Mark Back8sup chart as deprecated
+              - Disable Back8sup by default in backup-apps
+              - Keep Back8sup available for users who still need to migrate to Velero
+          links:
+            - name: "Back8sup chart"
+              url: https://github.com/adfinis/helm-charts/tree/main/charts/back8sup
+    apiVersion: v2
+    created: "2026-07-16T13:39:37.224936742Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for backup components
+    digest: bc36ce5028f0f5ce0d478b93ec716b6fcf1f5e1f7f5082e94652dbde7eba3599
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/backup-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: backup-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/backup-apps-0.7.0/backup-apps-0.7.0.tgz
+    version: 0.7.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "feat: Mark back8sup as DEPRECATED"
     apiVersion: v2
     created: "2026-02-18T08:06:44.162928284Z"
@@ -37397,4 +37428,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-16T11:42:42.631712528Z"
+generated: "2026-07-16T13:39:37.226528043Z"
