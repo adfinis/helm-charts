@@ -2,7 +2,7 @@ apiVersion: v2
 name: backup-apps
 description: Argo CD app-of-apps config for backup components
 type: application
-version: 0.7.0
+version: 0.8.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/backup-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,10 +18,4 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Back8sup to 0.5.0, including:
-          - Mark Back8sup chart as deprecated
-          - Disable Back8sup by default in backup-apps
-          - Keep Back8sup available for users who still need to migrate to Velero
-      links:
-        - name: "Back8sup chart"
-          url: https://github.com/adfinis/helm-charts/tree/main/charts/back8sup
+        Disable Barman by default in backup-apps.

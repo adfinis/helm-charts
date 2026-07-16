@@ -1,6 +1,6 @@
 # backup-apps
 
-![Version: 0.7.0](https://img.shields.io/badge/Version-0.7.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for backup components
 
@@ -27,7 +27,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | barman | object | [example](./examples/barman.yaml) | [Barman](https://github.com/EnterpriseDB/barman) |
 | barman.chart | string | `"barman"` | Chart |
 | barman.destination.namespace | string | `"backup-barman"` | Namespace |
-| barman.enabled | bool | `true` | Enable Barman |
+| barman.enabled | bool | `false` | Enable Barman |
 | barman.repoURL | string | [repo](https://charts.adfinis.com) | Repo URL |
 | barman.targetRevision | string | `"0.10.0"` | [Barman Helm chart](https://github.com/adfinis/helm-charts/tree/main/charts/barman) |
 | barman.values | object | [upstream values](https://github.com/adfinis/helm-charts/blob/main/charts/barman/values.yaml) | Helm values |
