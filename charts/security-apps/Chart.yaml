@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.122.0
+version: 0.124.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,16 +19,18 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Update Kyverno from 1.17.1 to 1.18.1
-
-        - Secure HTTP calls with blocklist/allowlist
-        - Namespaced image registry credentials
-        - CLI expanded policy support
-        - Success event filtering
-        - Update Helm chart from 3.7.1 to 3.8.1
-        - Many more fixes and improvements in both the app and chart
+        Updated StackRox central and secured cluster services to 400.11.1, including:
+          - Update StackRox app images from 4.10.1 to 4.11.1
+          - Enhanced vulnerability management reporting
+          - Red Hat hardened image scanning
+          - Policy scope support for cluster and namespace labels
+          - Detection and enforcement for oc debug and pod attach operations
+          - Compliance Operator tailored profile scheduling and maintenance
+          - Performance improvements for scanning, runtime collection, admission control, and API list operations
+          - Bug fixes and security updates from 4.11.1
+          - Direct Helm chart installation is deprecated in RHACS 4.11
       links:
-        - name: Kyverno 1.18.0
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.18.0
-        - name: Kyverno 1.18.1
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.18.1
+        - name: "StackRox 4.11.1"
+          url: https://github.com/stackrox/stackrox/releases/tag/4.11.1
+        - name: "RHACS 4.11 Release Notes"
+          url: https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.11/html/release_notes/release-notes-411
