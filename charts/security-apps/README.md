@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.127.0](https://img.shields.io/badge/Version-0.127.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.128.0](https://img.shields.io/badge/Version-0.128.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -61,7 +61,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | neuvector.destination.namespace | string | `"infra-neuvector"` | Namespace |
 | neuvector.enabled | bool | `false` | Enable neuvector |
 | neuvector.repoURL | string | [repo](https://neuvector.github.io/neuvector-helm) | Repo URL |
-| neuvector.targetRevision | string | `"2.8.13"` | [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version |
+| neuvector.targetRevision | string | `"2.10.3"` | [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version |
 | neuvector.values | object | [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/core/values.yaml) | Helm values |
 | neuvectorMonitor | object | - | [NeuVector monitor](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) ([example](./example/neuvector.yaml)) |
 | neuvectorMonitor.chart | string | `"monitor"` | Chart |
