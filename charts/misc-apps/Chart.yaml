@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.73.0
+version: 0.75.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,16 +19,10 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated KEDA to 2.20.1, including:
-          - Support separate node selectors and tolerations for operator, metrics server, and webhooks
-          - Option to disable metrics server deployment
-          - Optional APIService certificate injection for operator certificate auto-management
-          - Configurable operator leader election lease resource name
-          - TLS minimum version and cipher list environment variable support
-          - RBAC fixes for restricted mode, events.k8s.io, webhook event emission, and replica set informer cache
-          - Template fixes for empty annotations, tolerations, and nindent handling
+        Updated Goldilocks to 10.4.1, including:
+          - Goldilocks app remains on v4.14.1
+          - Update optional VPA chart dependency from 4.8.* to 4.12.*
+          - Includes the intermediate VPA dependency update to 4.10.*
       links:
-        - name: "KEDA Chart v2.20.1 Release Notes"
-          url: https://github.com/kedacore/charts/releases/tag/v2.20.1
-        - name: "KEDA Chart v2.20.0 Release Notes"
-          url: https://github.com/kedacore/charts/releases/tag/v2.20.0
+        - name: "Goldilocks chart"
+          url: https://github.com/FairwindsOps/charts/tree/master/stable/goldilocks

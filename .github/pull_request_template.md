@@ -15,6 +15,14 @@
 
     If your PR adds a new chart we expect you to create and link an issue so we
     can discuss adding your chart before you put the work into creating it.
+
+    We ask you to use the following format for linking issues:
+
+    * fixes #<NUMBER>
+
+    By formatting the link in a list and with the "fixes" prefix, the issue
+    will be autoclosed on merge and the title of the issue will be displayed
+    in the description.
 -->
 
 # Checklist

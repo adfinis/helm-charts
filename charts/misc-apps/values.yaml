@@ -58,7 +58,7 @@ metallb:
   # -- Chart
   chart: "metallb"
   # -- [metallb Helm chart](https://github.com/metallb/metallb/tree/main/charts/metallb)
-  targetRevision: "0.15.3"
+  targetRevision: "0.16.1"
   # -- Helm values
   # @default -- [upstream values](https://github.com/metallb/metallb/blob/main/charts/metallb/values.yaml)
   values: {}
@@ -228,7 +228,7 @@ goldilocks:
   # -- Chart
   chart: goldilocks
   # -- [Goldilocks Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/goldilocks)
-  targetRevision: 10.3.0
+  targetRevision: 10.4.1
   # -- Helm values
   # @default -- [upstream values](https://github.com/FairwindsOps/charts/blob/master/stable/goldilocks/values.yaml)
   values: {}

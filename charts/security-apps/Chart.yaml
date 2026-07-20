@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.123.0
+version: 0.125.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,15 +19,15 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated OpenBao to 0.28.4, including:
-          - OpenBao image updates from 2.5.3 to 2.5.5
-          - Template support for server extraContainers and extraInitContainers
-          - OpenShift deployment improvements
-          - Certified Red Hat registry images for OpenShift
-          - OpenBao UBI image and vault-k8s UBI image updates
-          - Commented example fixes
+        Updated Vault to 0.34.0, including:
+          - Default Vault image update from 1.21.2 to 2.0.3
+          - vault-k8s update to 1.7.5
+          - vault-csi-provider update to 1.7.3
+          - Kubernetes Gateway API HTTPRoute support
+          - Vault Enterprise redundancy zones support
+          - Tested with Vault 2.0.3 and Vault 1.21 through 1.19
       links:
-        - name: "OpenBao chart 0.28.4"
-          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.28.4
-        - name: "OpenBao chart 0.28.0"
-          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.28.0
+        - name: "Vault chart 0.34.0"
+          url: https://github.com/hashicorp/vault-helm/releases/tag/v0.34.0
+        - name: "Vault chart 0.33.0"
+          url: https://github.com/hashicorp/vault-helm/releases/tag/v0.33.0
