@@ -26079,6 +26079,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated NeuVector Monitor chart from 2.8.13 to 2.10.3, including:
+              - Chart update from 2.8.13 to 2.10.3
+              - Updated Prometheus Exporter image to 1.0.14
+              - Compatibility updates aligned with the NeuVector 5.5 release series
+              - Bug fixes, maintenance updates, and Helm chart improvements
+          links:
+            - name: "NeuVector Monitor chart 2.10.3"
+              url: https://artifacthub.io/packages/helm/neuvectorcharts/monitor/2.10.3
+            - name: "NeuVector Helm repository"
+              url: https://github.com/neuvector/neuvector-helm
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-24T18:30:51.022898057Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: aa4ae099a890a5f39df23e267bfc98bfaf103a829b7d0eaaf41b03237810c04f
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.127.0/security-apps-0.127.0.tgz
+    version: 0.127.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Kyverno Policies chart from 3.7.1 to 3.8.1, including:
               - Chart update from 3.7.1 to 3.8.1
               - Application version update to Kyverno v1.18.1
@@ -37568,4 +37603,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-24T13:00:27.157052805Z"
+generated: "2026-07-24T18:30:51.024999758Z"
