@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.126.0
+version: 0.127.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,13 +19,13 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Kyverno Policies chart from 3.7.1 to 3.8.1, including:
-          - Chart update from 3.7.1 to 3.8.1
-          - Application version update to Kyverno v1.18.1
-          - Bug fixes and maintenance updates included in the 3.8.x release series
-          - Updated Pod Security Standards (PSS) policies and chart dependencies
+        Updated Secrets Store CSI Driver chart from 1.5.6 to 1.6.0, including:
+          - Chart update from 1.5.6 to 1.6.0
+          - Support for Kubernetes v1.33
+          - CSI Driver image update to v1.5.4
+          - Bug fixes, dependency updates, and Helm chart maintenance improvements
       links:
-        - name: "Kyverno Policies chart 3.8.1"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.18.1
-        - name: "Kyverno Policies chart 3.8.0"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.18.0
+        - name: "Secrets Store CSI Driver chart 1.6.0"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.6.0
+        - name: "Secrets Store CSI Driver chart 1.5.6"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.5.4
