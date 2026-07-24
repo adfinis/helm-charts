@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.125.0](https://img.shields.io/badge/Version-0.125.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.126.0](https://img.shields.io/badge/Version-0.126.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -54,7 +54,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kyvernoPolicies.destination.namespace | string | `"infra-kyverno"` | Namespace |
 | kyvernoPolicies.enabled | bool | `false` | Enable kyverno-policies |
 | kyvernoPolicies.repoURL | string | [repo](https://kyverno.github.io/kyverno/) | Repo URL |
-| kyvernoPolicies.targetRevision | string | `"3.7.1"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies) |
+| kyvernoPolicies.targetRevision | string | `"3.8.1"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies) |
 | kyvernoPolicies.values | object | [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno-policies/values.yaml) | Helm values |
 | neuvector | object | - | [NeuVector](https://github.com/neuvector/neuvector) ([example](./example/neuvector.yaml)) |
 | neuvector.chart | string | `"core"` | Chart |
