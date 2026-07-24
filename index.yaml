@@ -26079,6 +26079,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Kyverno Policies chart from 3.7.1 to 3.8.1, including:
+              - Chart update from 3.7.1 to 3.8.1
+              - Application version update to Kyverno v1.18.1
+              - Bug fixes and maintenance updates included in the 3.8.x release series
+              - Updated Pod Security Standards (PSS) policies and chart dependencies
+          links:
+            - name: "Kyverno Policies chart 3.8.1"
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.18.1
+            - name: "Kyverno Policies chart 3.8.0"
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.18.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-24T13:00:27.154354408Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 7e8518ad4f45daf95f171dd9b0bfd585548c0f9252ce9c57743330cd02b6c70e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.126.0/security-apps-0.126.0.tgz
+    version: 0.126.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Vault to 0.34.0, including:
               - Default Vault image update from 1.21.2 to 2.0.3
               - vault-k8s update to 1.7.5
@@ -37533,4 +37568,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-20T11:52:02.945672039Z"
+generated: "2026-07-24T13:00:27.157052805Z"
