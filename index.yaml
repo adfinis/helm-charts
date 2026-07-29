@@ -26079,6 +26079,39 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated NeuVector to 2.10.3, including:
+              - NeuVector core app update from 5.5.1 to 5.5.3
+              - Enable internal certificate auto-rotation by default
+              - Updated Azure marketplace image defaults
+              - Chart updates for controller, enforcer, manager, and scanner components
+          links:
+            - name: "NeuVector Helm charts"
+              url: https://github.com/neuvector/neuvector-helm
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-07-29T16:31:51.867354069Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 11fea61b8cad1a0567c33b6e399fe60217e34720dda85599b5634cd8b0a6d9b5
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.128.0/security-apps-0.128.0.tgz
+    version: 0.128.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated NeuVector Monitor chart from 2.8.13 to 2.10.3, including:
               - Chart update from 2.8.13 to 2.10.3
               - Updated Prometheus Exporter image to 1.0.14
@@ -37603,4 +37636,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-24T18:30:51.024999758Z"
+generated: "2026-07-29T16:31:51.870289772Z"
