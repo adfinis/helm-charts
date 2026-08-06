@@ -26104,6 +26104,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Secrets Store CSI Driver chart from 1.5.6 to 1.6.0, including:
+              - Chart update from 1.5.6 to 1.6.0
+              - Support for Kubernetes v1.33
+              - CSI Driver image update to v1.5.4
+              - Bug fixes, dependency updates, and Helm chart maintenance improvements
+          links:
+            - name: "Secrets Store CSI Driver chart 1.6.0"
+              url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.6.0
+            - name: "Secrets Store CSI Driver chart 1.5.6"
+              url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.5.4
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-08-06T15:59:50.409893904Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 806f3cd94f8b8a876aed2b2f37baa60319e8aa3378d736ba025f25f90696f8a6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.129.0/security-apps-0.129.0.tgz
+    version: 0.129.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated NeuVector to 2.10.3, including:
               - NeuVector core app update from 5.5.1 to 5.5.3
               - Enable internal certificate auto-rotation by default
@@ -37661,4 +37696,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-08-06T15:05:10.248647396Z"
+generated: "2026-08-06T15:59:50.412709666Z"
