@@ -2970,6 +2970,31 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Disable Barman by default in backup-apps.
+    apiVersion: v2
+    created: "2026-08-06T15:05:10.245474253Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for backup components
+    digest: f7ab5e76787f5d6fb644bb1c4ab867a9f02958de25993e436f20c684b7061736
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/backup-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: backup-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/backup-apps-0.8.0/backup-apps-0.8.0.tgz
+    version: 0.8.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Back8sup to 0.5.0, including:
               - Mark Back8sup chart as deprecated
               - Disable Back8sup by default in backup-apps
@@ -37636,4 +37661,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-29T16:31:51.870289772Z"
+generated: "2026-08-06T15:05:10.248647396Z"
