@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.128.0
+version: 0.129.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,11 +19,13 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated NeuVector to 2.10.3, including:
-          - NeuVector core app update from 5.5.1 to 5.5.3
-          - Enable internal certificate auto-rotation by default
-          - Updated Azure marketplace image defaults
-          - Chart updates for controller, enforcer, manager, and scanner components
+        Updated Secrets Store CSI Driver chart from 1.5.6 to 1.6.0, including:
+          - Chart update from 1.5.6 to 1.6.0
+          - Support for Kubernetes v1.33
+          - CSI Driver image update to v1.5.4
+          - Bug fixes, dependency updates, and Helm chart maintenance improvements
       links:
-        - name: "NeuVector Helm charts"
-          url: https://github.com/neuvector/neuvector-helm
+        - name: "Secrets Store CSI Driver chart 1.6.0"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.6.0
+        - name: "Secrets Store CSI Driver chart 1.5.6"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.5.4
