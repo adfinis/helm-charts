@@ -2,7 +2,7 @@
 # @default -- [example](./examples/barman.yaml)
 barman:
   # -- Enable Barman
-  enabled: true
+  enabled: false
   name: barman
   destination:
     # -- Namespace
