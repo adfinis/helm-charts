@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.275.0
+version: 0.276.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,13 +19,14 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Kured to 1.23.0, including:
-          - Update Helm chart from 5.11.0 to 6.1.0
-          - Update Kubernetes modules to 0.36.x
-          - Kubernetes 1.35 and 1.36 compatibility
-          - Alpine base image update to 3.24.1
-          - Prometheus common dependency updates
-          - GoReleaser v2 migration and release pipeline updates
+        Updated Argo CD from 3.4.4 to 3.5.0
+          - Helm was upgraded to 4.2.0.
+          - Update bundled Redis to 9.6.4
+          - Update Redis Exporter to 1.88.0
+          - improve listenerset usability
+          - fix application-controller ServiceMonitor scrapeTimeout
+          - fix applicationSet NetworkPolicy webhook rule when httproute is enabled
+          - and more fixes and changes in several areas
       links:
-        - name: "Kured 1.23.0 Release Notes"
-          url: https://github.com/kubereboot/kured/releases/tag/1.23.0
+        - name: "Upgrade Notes"
+          url: https://argo-cd.readthedocs.io/en/latest/operator-manual/upgrading/3.4-3.5/
