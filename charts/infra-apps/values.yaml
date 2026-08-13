@@ -131,7 +131,7 @@ kubePrometheusStack:
   # -- Chart
   chart: kube-prometheus-stack
   # -- [kube-prometheus-stack Helm chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) version
-  targetRevision: 87.5.1
+  targetRevision: 88.3.0
   syncPolicy:
     syncOptions:
       # -- enable server-side-apply for KPS since it get's rid of having to manually sync/replace resources
