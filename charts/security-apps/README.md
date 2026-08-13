@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.129.0](https://img.shields.io/badge/Version-0.129.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.130.0](https://img.shields.io/badge/Version-0.130.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dex.destination.namespace | string | `"infra-dex"` | Namespace |
 | dex.enabled | bool | `false` | Enable dex |
 | dex.repoURL | string | [repo](https://charts.dexidp.io) | Repo URL |
-| dex.targetRevision | string | `"0.24.0"` | [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version |
+| dex.targetRevision | string | `"0.24.1"` | [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version |
 | dex.values | object | [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml) | Helm values |
 | dexK8sAuthenticator | object | DEPRECATED | [dex-k8s-authenticator](https://github.com/mintel/dex-k8s-authenticator)  is DEPRECATED, use "kubectl oidc-login aka kubelogin" instead |
 | falco | object | DEPRECATED | [falco](https://github.com/falcosecurity/falco/) is DEPRECATED since we no longer use it internally and will be replaced by NeuVector or StackRox |
