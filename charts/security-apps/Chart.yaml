@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.130.0
+version: 0.131.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,25 +15,15 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated OpenBao chart from 0.28.4 to 0.29.3, including:
-          - Chart update from 0.28.4 to 0.29.3
-          - OpenBao version 2.6.2
-          - Kubernetes compatibility for version 1.36
-          - Hardening CSI provider securityContext
+        Updated Dex chart from 0.24.0 to 0.24.1, including:
+          - Dex application version remains at 2.44.0
+          - Upstream Helm chart maintenance updates
       links:
-        - name: "OpenBao chart 0.29.3"
-          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.3
-        - name: "OpenBao chart 0.29.2"
-          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.2
-        - name: "OpenBao chart 0.29.1"
-          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.1
-        - name: "OpenBao chart 0.29.0"
-          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.0
-        - name: "OpenBao chart 0.28.6"
-          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.28.6
-        - name: "OpenBao chart 0.28.5"
-          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.28.5
+        - name: "Dex chart 0.24.1"
+          url: https://artifacthub.io/packages/helm/dex/dex/0.24.1
+        - name: "Dex Helm repository"
+          url: https://github.com/dexidp/helm-charts
