@@ -1,6 +1,6 @@
 # logging-apps
 
-![Version: 0.50.0](https://img.shields.io/badge/Version-0.50.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.51.0](https://img.shields.io/badge/Version-0.51.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for logging applications
 
@@ -53,7 +53,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | loki.destination.namespace | string | `"infra-logging"` | Namespace |
 | loki.enabled | bool | `false` | Enable loki |
 | loki.repoURL | string | [repo](https://grafana-community.github.io/helm-charts) | Repo URL |
-| loki.targetRevision | string | `"18.3.1"` | [loki Helm chart](https://github.com/grafana-community/helm-charts/tree/main/charts/loki) |
+| loki.targetRevision | string | `"18.8.0"` | [loki Helm chart](https://github.com/grafana-community/helm-charts/tree/main/charts/loki) |
 | loki.values | object | [upstream values](https://github.com/grafana-community/helm-charts/blob/main/charts/loki/values.yaml) | Helm values |
 | promtail | object | DEPRECATED | [Grafana Loki promtail](https://grafana.com/docs/loki/latest/send-data/promtail/) is DEPRECATED, use "fluentBit" instead |
 | promtail.annotations | object | `{}` | Annotations for promtail app |
