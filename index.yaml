@@ -6314,6 +6314,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated kube-prometheus-stack from 87.5.1 to 88.3.0, including:
+              - Prometheus Operator update from v0.92.1 to v0.93.0
+              - kube-state-metrics chart update from 7.5.1 to 8.2.0
+              - prometheus-node-exporter chart update from 4.55.0 to 4.56.1
+              - Grafana chart update from 12.7.2 to 12.10.4
+          links:
+            - name: "kube-prometheus-stack chart 88.3.0"
+              url: https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack/88.3.0
+            - name: "Upgrade instructions"
+              url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/README.md#upgrading-chart
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-08-17T12:37:02.456985026Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: fb900ba345f4eb0918e92de1c2cb7d9105bd4f04b567a1c9b27ba4a569dfcb07
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.277.0/infra-apps-0.277.0.tgz
+    version: 0.277.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Argo CD from 3.4.4 to 3.5.0
               - Helm was upgraded to 4.2.0.
               - Update bundled Redis to 9.6.4
@@ -37732,4 +37767,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-08-07T11:55:24.236180085Z"
+generated: "2026-08-17T12:37:02.459199981Z"
