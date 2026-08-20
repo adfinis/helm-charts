@@ -147,6 +147,60 @@ should match snapshot:
           - update
           - watch
   4: |
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+      labels:
+        app.kubernetes.io/component: keycloak-operator
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: keycloak-operator
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: keycloakoidcclientcontroller-cluster-role
+    rules:
+      - apiGroups:
+          - k8s.keycloak.org
+        resources:
+          - keycloakoidcclients
+          - keycloakoidcclients/status
+          - keycloakoidcclients/finalizers
+        verbs:
+          - get
+          - list
+          - watch
+          - patch
+          - update
+          - create
+          - delete
+  5: |
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+      labels:
+        app.kubernetes.io/component: keycloak-operator
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: keycloak-operator
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: keycloaksamlclientcontroller-cluster-role
+    rules:
+      - apiGroups:
+          - k8s.keycloak.org
+        resources:
+          - keycloaksamlclients
+          - keycloaksamlclients/status
+          - keycloaksamlclients/finalizers
+        verbs:
+          - get
+          - list
+          - watch
+          - patch
+          - update
+          - create
+          - delete
+  6: |
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -221,7 +275,7 @@ should match snapshot:
                 timeoutSeconds: 10
           securityContext: {}
           serviceAccountName: RELEASE-NAME-keycloak-operator
-  5: |
+  7: |
     apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
@@ -240,7 +294,7 @@ should match snapshot:
     subjects:
       - kind: ServiceAccount
         name: RELEASE-NAME-keycloak-operator
-  6: |
+  8: |
     apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
@@ -259,7 +313,7 @@ should match snapshot:
     subjects:
       - kind: ServiceAccount
         name: RELEASE-NAME-keycloak-operator
-  7: |
+  9: |
     apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
@@ -278,7 +332,7 @@ should match snapshot:
     subjects:
       - kind: ServiceAccount
         name: RELEASE-NAME-keycloak-operator
-  8: |
+  10: |
     apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
     metadata:
@@ -297,7 +351,45 @@ should match snapshot:
     subjects:
       - kind: ServiceAccount
         name: RELEASE-NAME-keycloak-operator
-  9: |
+  11: |
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      labels:
+        app.kubernetes.io/component: keycloak-operator
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: keycloak-operator
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: keycloakoidcclientcontroller-role-binding
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: keycloakoidcclientcontroller-cluster-role
+    subjects:
+      - kind: ServiceAccount
+        name: RELEASE-NAME-keycloak-operator
+  12: |
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      labels:
+        app.kubernetes.io/component: keycloak-operator
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: keycloak-operator
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: keycloaksamlclientcontroller-role-binding
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: keycloaksamlclientcontroller-cluster-role
+    subjects:
+      - kind: ServiceAccount
+        name: RELEASE-NAME-keycloak-operator
+  13: |
     apiVersion: rbac.authorization.k8s.io/v1
     kind: Role
     metadata:
@@ -373,7 +465,7 @@ should match snapshot:
           - delete
           - patch
           - update
-  10: |
+  14: |
     apiVersion: v1
     kind: Service
     metadata:
@@ -396,7 +488,7 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/name: keycloak-operator
       type: ClusterIP
-  11: |
+  15: |
     apiVersion: v1
     kind: ServiceAccount
     metadata:

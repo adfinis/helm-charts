@@ -135,4 +135,48 @@ rules:
       - patch
       - update
       - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: keycloakoidcclientcontroller-cluster-role
+  labels:
+    {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
+rules:
+  - apiGroups:
+      - k8s.keycloak.org
+    resources:
+      - keycloakoidcclients
+      - keycloakoidcclients/status
+      - keycloakoidcclients/finalizers
+    verbs:
+      - get
+      - list
+      - watch
+      - patch
+      - update
+      - create
+      - delete
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: keycloaksamlclientcontroller-cluster-role
+  labels:
+    {{- include "keycloak-operator.operator.labels" . | nindent 4 }}
+rules:
+  - apiGroups:
+      - k8s.keycloak.org
+    resources:
+      - keycloaksamlclients
+      - keycloaksamlclients/status
+      - keycloaksamlclients/finalizers
+    verbs:
+      - get
+      - list
+      - watch
+      - patch
+      - update
+      - create
+      - delete
 {{- end }}
