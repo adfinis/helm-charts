@@ -1,0 +1,19 @@
+{{- if .values.keycloak.oidcclients.enabled }}
+{{- $fullname := include "keycloak-operator.fullname" . }}
+{{- $labels := include "keycloak-operator.labels" . }}
+{{- range .values.keycloak.oidcclients.clients }}
+---
+apiVersion: k8s.keycloak.org/v2beta1
+kind: KeycloakOIDCClient
+metadata:
+  name: {{ $fullname }}-{{ .realm }}
+  labels:
+    {{- $labels | nindent 4 }}
+spec:
+  keycloakCRName: {{ default $fullname .keycloakCRName }}
+  client:
+    {{- .client | nindent 4 }}
+  realm:
+    {{- .realm | nindent 4 }}
+{{- end }}
+{{- end }}

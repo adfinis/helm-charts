@@ -493,6 +493,18 @@ keycloak:
     #   webAuthnPolicySignatureAlgorithms: []
     #   webAuthnPolicyUserVerificationRequirement: string
 
+  oidcclients:
+    # -- Deploy oidcclient resources
+    enabled: false
+    # -- A list of OIDC clients to configure using the oidcclients CRD.
+    clients: []
+
+  samlclients:
+    # -- Deploy samlclient resources
+    enabled: false
+    # -- A list of SAML clients to configure using the samlclients CRD.
+    clients: []
+
 # Configure if the [official Grafana dashboards](https://github.com/keycloak/keycloak-grafana-dashboard) should be deployed.
 grafana:
   # -- Enable Grafana Dashboards

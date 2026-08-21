@@ -70,11 +70,15 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.ingress.tlsSecret | string | `nil` | A secret containing the TLS configuration for re-encrypt or TLS termination scenarios. Reference: https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets |
 | keycloak.instances | int | `1` | Number of Keycloak instances in HA mode. |
 | keycloak.livenessProbe | string | `nil` | Configuration for liveness probe, by default it is 10 for periodSeconds and 3 for failureThreshold |
+| keycloak.oidcclients.clients | list | `[]` | A list of OIDC clients to configure using the oidcclients CRD. |
+| keycloak.oidcclients.enabled | bool | `false` | Deploy oidcclient resources |
 | keycloak.proxy.headers | string | `""` | The proxy headers that should be accepted by the server. Misconfiguration might leave the server exposed to security vulnerabilities. |
 | keycloak.readinessProbe | string | `nil` | Configuration for readiness probe, by default it is 10 for periodSeconds and 3 for failureThreshold |
 | keycloak.realmimport.enabled | bool | `false` | Deploy realmimport resources |
 | keycloak.realmimport.realms | list | `[]` | A list of realms to configure using the realmimport CRD. |
 | keycloak.resources | object | `{}` | Compute Resources required by Keycloak container |
+| keycloak.samlclients.clients | list | `[]` | A list of SAML clients to configure using the samlclients CRD. |
+| keycloak.samlclients.enabled | bool | `false` | Deploy samlclient resources |
 | keycloak.scheduling | string | `nil` | In this section you can configure Keycloak's scheduling |
 | keycloak.serviceMonitor | object | `{"annotations":{},"enabled":false,"interval":"30s","labels":{},"scrapeTimeout":"10s"}` | Configuration related to the generated ServiceMonitor |
 | keycloak.serviceMonitor.annotations | object | `{}` | Annotations to be appended to the ServiceMonitor object |
