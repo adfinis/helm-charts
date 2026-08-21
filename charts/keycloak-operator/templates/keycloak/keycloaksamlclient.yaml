@@ -3,7 +3,7 @@
 {{- $labels := include "keycloak-operator.labels" . }}
 {{- range .Values.keycloak.samlclients.clients }}
 ---
-apiVersion: k8s.keycloak.org/v2beta1
+apiVersion: k8s.keycloak.org/v2alpha1
 kind: KeycloakSAMLClient
 metadata:
   name: {{ $fullname }}-{{ .realm }}
