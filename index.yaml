@@ -17064,6 +17064,43 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Keycloak and Keycloak Operator from 26.6.4 to 26.7.2, including security fixes for:
+              - CVE-2026-45292: unbounded memory allocation in OpenTelemetry W3C baggage propagation
+              - CVE-2026-14613: fine-grained admin permissions bypass via the role groups endpoint
+              - CVE-2026-59888 and CVE-2026-59889: jackson-databind vulnerabilities
+              - CVE-2026-15945: hidden parent group disclosure through group hierarchy search
+              - CVE-2026-17048: vault-resolved rotated client secret exposure through the Admin REST API
+              - CVE-2026-15571: predictable account-linking hash enabling account takeover
+              - CVE-2026-18963: unauthenticated account takeover through the reset-credentials flow
+          links:
+            - name: Release notes 26.7.2
+              url: https://github.com/keycloak/keycloak/releases/tag/26.7.2
+            - name: Migration guide
+              url: https://www.keycloak.org/docs/latest/upgrading/index.html
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    appVersion: 26.7.2
+    created: "2026-08-21T14:11:38.51931677Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: e84777a19c7bb58435eb5878f5b5cec7382d4e62204d9a753110ba4473f44f44
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.13.0/keycloak-operator-1.13.0.tgz
+    version: 1.13.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Keycloak 26.6.4
           links:
             - name: Release notes 26.6.4
@@ -37767,4 +37804,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-08-17T12:37:02.459199981Z"
+generated: "2026-08-21T14:11:38.520985689Z"
