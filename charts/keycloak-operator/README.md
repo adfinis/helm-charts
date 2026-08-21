@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 1.12.1](https://img.shields.io/badge/Version-1.12.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.6.4](https://img.shields.io/badge/AppVersion-26.6.4-informational?style=flat-square)
+![Version: 1.13.0](https://img.shields.io/badge/Version-1.13.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.7.2](https://img.shields.io/badge/AppVersion-26.7.2-informational?style=flat-square)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -70,11 +70,15 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.ingress.tlsSecret | string | `nil` | A secret containing the TLS configuration for re-encrypt or TLS termination scenarios. Reference: https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets |
 | keycloak.instances | int | `1` | Number of Keycloak instances in HA mode. |
 | keycloak.livenessProbe | string | `nil` | Configuration for liveness probe, by default it is 10 for periodSeconds and 3 for failureThreshold |
+| keycloak.oidcclients.clients | list | `[]` | A list of OIDC clients to configure using the oidcclients CRD. |
+| keycloak.oidcclients.enabled | bool | `false` | Deploy oidcclient resources |
 | keycloak.proxy.headers | string | `""` | The proxy headers that should be accepted by the server. Misconfiguration might leave the server exposed to security vulnerabilities. |
 | keycloak.readinessProbe | string | `nil` | Configuration for readiness probe, by default it is 10 for periodSeconds and 3 for failureThreshold |
 | keycloak.realmimport.enabled | bool | `false` | Deploy realmimport resources |
 | keycloak.realmimport.realms | list | `[]` | A list of realms to configure using the realmimport CRD. |
 | keycloak.resources | object | `{}` | Compute Resources required by Keycloak container |
+| keycloak.samlclients.clients | list | `[]` | A list of SAML clients to configure using the samlclients CRD. |
+| keycloak.samlclients.enabled | bool | `false` | Deploy samlclient resources |
 | keycloak.scheduling | string | `nil` | In this section you can configure Keycloak's scheduling |
 | keycloak.serviceMonitor | object | `{"annotations":{},"enabled":false,"interval":"30s","labels":{},"scrapeTimeout":"10s"}` | Configuration related to the generated ServiceMonitor |
 | keycloak.serviceMonitor.annotations | object | `{}` | Annotations to be appended to the ServiceMonitor object |
@@ -92,13 +96,13 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | nameOverride | string | `""` |  |
 | operator.affinity | object | `{}` | Affinity for Operator Deployment. |
 | operator.config.keycloakImage.repository | string | `"quay.io/keycloak/keycloak"` | Default keycloak image to use if non was specified in the Keycloak CRD. |
-| operator.config.keycloakImage.sha | string | `"20e96e40e673ffa474ac4da56c91cb0adba28b8571bd274ce255e6120265c1f4"` | Configure the SHA for the default keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
+| operator.config.keycloakImage.sha | string | `"6efbadc00f0ed0237610becf11f4101b9c3ad8edf08a5b70c97aa4154ed436ec"` | Configure the SHA for the default keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
 | operator.config.keycloakImage.tag | string | `""` | Overrides the keycloak image tag whose default is the chart appVersion. |
 | operator.deploymentAnnotations | object | `{}` | Annotations to set on the Operator Deployment. |
 | operator.enabled | bool | `true` | Enable deploying the keycloak-operator |
 | operator.image.pullPolicy | string | `"IfNotPresent"` | Pull policy for Operator. |
 | operator.image.repository | string | `"quay.io/keycloak/keycloak-operator"` | Operator Image source. |
-| operator.image.sha | string | `"831827a0a267805d0e5bef00e402d99f728ce7fc4caa62d486a9114912412434"` | Configure the SHA for the operator image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
+| operator.image.sha | string | `"68b1e5805b990bc80bcdcc2bd9b23abff9b03e744aaea2b04efff30d390d7a6f"` | Configure the SHA for the operator image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
 | operator.image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | operator.nodeSelector | object | `{}` | Node selector for Operator Deployment. |
 | operator.podAnnotations | object | `{}` | Annotations to set on the Operator Pod. |

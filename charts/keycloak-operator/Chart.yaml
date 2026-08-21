@@ -2,8 +2,8 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 1.12.1
-appVersion: "26.6.4"
+version: 1.13.0
+appVersion: "26.7.2"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
 sources:
@@ -18,7 +18,16 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat: Keycloak 26.6.4
+        Updated Keycloak and Keycloak Operator from 26.6.4 to 26.7.2, including security fixes for:
+          - CVE-2026-45292: unbounded memory allocation in OpenTelemetry W3C baggage propagation
+          - CVE-2026-14613: fine-grained admin permissions bypass via the role groups endpoint
+          - CVE-2026-59888 and CVE-2026-59889: jackson-databind vulnerabilities
+          - CVE-2026-15945: hidden parent group disclosure through group hierarchy search
+          - CVE-2026-17048: vault-resolved rotated client secret exposure through the Admin REST API
+          - CVE-2026-15571: predictable account-linking hash enabling account takeover
+          - CVE-2026-18963: unauthenticated account takeover through the reset-credentials flow
       links:
-        - name: Release notes 26.6.4
-          url: https://github.com/keycloak/keycloak/releases/tag/26.6.4
+        - name: Release notes 26.7.2
+          url: https://github.com/keycloak/keycloak/releases/tag/26.7.2
+        - name: Migration guide
+          url: https://www.keycloak.org/docs/latest/upgrading/index.html

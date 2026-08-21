@@ -2,6 +2,8 @@ suite: default Keycloak operand tests
 templates:
   - keycloak/keycloak.yaml
   - keycloak/keycloakrealmimport.yaml
+  - keycloak/keycloakoidcclient.yaml
+  - keycloak/keycloaksamlclient.yaml
 tests:
   - it: should match snapshot
     values:

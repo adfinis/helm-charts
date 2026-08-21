@@ -20,8 +20,8 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: keycloak-operator
-        app.kubernetes.io/version: 26.6.4
-        helm.sh/chart: keycloak-operator-1.12.1
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
       name: keycloakcontroller-cluster-role
     rules:
       - apiGroups:
@@ -105,8 +105,8 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: keycloak-operator
-        app.kubernetes.io/version: 26.6.4
-        helm.sh/chart: keycloak-operator-1.12.1
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
       name: keycloakrealmimportcontroller-cluster-role
     rules:
       - apiGroups:
@@ -147,6 +147,60 @@ should match snapshot:
           - update
           - watch
   4: |
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+      labels:
+        app.kubernetes.io/component: keycloak-operator
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: keycloak-operator
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: keycloakoidcclientcontroller-cluster-role
+    rules:
+      - apiGroups:
+          - k8s.keycloak.org
+        resources:
+          - keycloakoidcclients
+          - keycloakoidcclients/status
+          - keycloakoidcclients/finalizers
+        verbs:
+          - get
+          - list
+          - watch
+          - patch
+          - update
+          - create
+          - delete
+  5: |
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+      labels:
+        app.kubernetes.io/component: keycloak-operator
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: keycloak-operator
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: keycloaksamlclientcontroller-cluster-role
+    rules:
+      - apiGroups:
+          - k8s.keycloak.org
+        resources:
+          - keycloaksamlclients
+          - keycloaksamlclients/status
+          - keycloaksamlclients/finalizers
+        verbs:
+          - get
+          - list
+          - watch
+          - patch
+          - update
+          - create
+          - delete
+  6: |
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -155,8 +209,8 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: keycloak-operator
-        app.kubernetes.io/version: 26.6.4
-        helm.sh/chart: keycloak-operator-1.12.1
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
       name: RELEASE-NAME-keycloak-operator-operator
     spec:
       replicas: 1
@@ -179,8 +233,8 @@ should match snapshot:
                     fieldRef:
                       fieldPath: metadata.namespace
                 - name: RELATED_IMAGE_KEYCLOAK
-                  value: quay.io/keycloak/keycloak:26.6.4@sha256:20e96e40e673ffa474ac4da56c91cb0adba28b8571bd274ce255e6120265c1f4
-              image: quay.io/keycloak/keycloak-operator:26.6.4@sha256:831827a0a267805d0e5bef00e402d99f728ce7fc4caa62d486a9114912412434
+                  value: quay.io/keycloak/keycloak:26.7.2@sha256:6efbadc00f0ed0237610becf11f4101b9c3ad8edf08a5b70c97aa4154ed436ec
+              image: quay.io/keycloak/keycloak-operator:26.7.2@sha256:68b1e5805b990bc80bcdcc2bd9b23abff9b03e744aaea2b04efff30d390d7a6f
               imagePullPolicy: IfNotPresent
               livenessProbe:
                 failureThreshold: 3
@@ -221,44 +275,6 @@ should match snapshot:
                 timeoutSeconds: 10
           securityContext: {}
           serviceAccountName: RELEASE-NAME-keycloak-operator
-  5: |
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: RoleBinding
-    metadata:
-      labels:
-        app.kubernetes.io/component: keycloak-operator
-        app.kubernetes.io/instance: RELEASE-NAME
-        app.kubernetes.io/managed-by: Helm
-        app.kubernetes.io/name: keycloak-operator
-        app.kubernetes.io/version: 26.6.4
-        helm.sh/chart: keycloak-operator-1.12.1
-      name: keycloak-operator-role-binding
-    roleRef:
-      apiGroup: rbac.authorization.k8s.io
-      kind: Role
-      name: keycloak-operator-role
-    subjects:
-      - kind: ServiceAccount
-        name: RELEASE-NAME-keycloak-operator
-  6: |
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: RoleBinding
-    metadata:
-      labels:
-        app.kubernetes.io/component: keycloak-operator
-        app.kubernetes.io/instance: RELEASE-NAME
-        app.kubernetes.io/managed-by: Helm
-        app.kubernetes.io/name: keycloak-operator
-        app.kubernetes.io/version: 26.6.4
-        helm.sh/chart: keycloak-operator-1.12.1
-      name: keycloak-operator-view
-    roleRef:
-      apiGroup: rbac.authorization.k8s.io
-      kind: ClusterRole
-      name: view
-    subjects:
-      - kind: ServiceAccount
-        name: RELEASE-NAME-keycloak-operator
   7: |
     apiVersion: rbac.authorization.k8s.io/v1
     kind: RoleBinding
@@ -268,13 +284,13 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: keycloak-operator
-        app.kubernetes.io/version: 26.6.4
-        helm.sh/chart: keycloak-operator-1.12.1
-      name: keycloakcontroller-role-binding
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: keycloak-operator-role-binding
     roleRef:
       apiGroup: rbac.authorization.k8s.io
-      kind: ClusterRole
-      name: keycloakcontroller-cluster-role
+      kind: Role
+      name: keycloak-operator-role
     subjects:
       - kind: ServiceAccount
         name: RELEASE-NAME-keycloak-operator
@@ -287,8 +303,46 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: keycloak-operator
-        app.kubernetes.io/version: 26.6.4
-        helm.sh/chart: keycloak-operator-1.12.1
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: keycloak-operator-view
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: view
+    subjects:
+      - kind: ServiceAccount
+        name: RELEASE-NAME-keycloak-operator
+  9: |
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      labels:
+        app.kubernetes.io/component: keycloak-operator
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: keycloak-operator
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: keycloakcontroller-role-binding
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: keycloakcontroller-cluster-role
+    subjects:
+      - kind: ServiceAccount
+        name: RELEASE-NAME-keycloak-operator
+  10: |
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      labels:
+        app.kubernetes.io/component: keycloak-operator
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: keycloak-operator
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
       name: keycloakrealmimportcontroller-role-binding
     roleRef:
       apiGroup: rbac.authorization.k8s.io
@@ -297,7 +351,45 @@ should match snapshot:
     subjects:
       - kind: ServiceAccount
         name: RELEASE-NAME-keycloak-operator
-  9: |
+  11: |
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      labels:
+        app.kubernetes.io/component: keycloak-operator
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: keycloak-operator
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: keycloakoidcclientcontroller-role-binding
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: keycloakoidcclientcontroller-cluster-role
+    subjects:
+      - kind: ServiceAccount
+        name: RELEASE-NAME-keycloak-operator
+  12: |
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      labels:
+        app.kubernetes.io/component: keycloak-operator
+        app.kubernetes.io/instance: RELEASE-NAME
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: keycloak-operator
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: keycloaksamlclientcontroller-role-binding
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: ClusterRole
+      name: keycloaksamlclientcontroller-cluster-role
+    subjects:
+      - kind: ServiceAccount
+        name: RELEASE-NAME-keycloak-operator
+  13: |
     apiVersion: rbac.authorization.k8s.io/v1
     kind: Role
     metadata:
@@ -306,8 +398,8 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: keycloak-operator
-        app.kubernetes.io/version: 26.6.4
-        helm.sh/chart: keycloak-operator-1.12.1
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
       name: keycloak-operator-role
     rules:
       - apiGroups:
@@ -373,7 +465,7 @@ should match snapshot:
           - delete
           - patch
           - update
-  10: |
+  14: |
     apiVersion: v1
     kind: Service
     metadata:
@@ -382,8 +474,8 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: keycloak-operator
-        app.kubernetes.io/version: 26.6.4
-        helm.sh/chart: keycloak-operator-1.12.1
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
       name: RELEASE-NAME-keycloak-operator-operator
     spec:
       ports:
@@ -396,7 +488,7 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/name: keycloak-operator
       type: ClusterIP
-  11: |
+  15: |
     apiVersion: v1
     kind: ServiceAccount
     metadata:
@@ -405,6 +497,6 @@ should match snapshot:
         app.kubernetes.io/instance: RELEASE-NAME
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: keycloak-operator
-        app.kubernetes.io/version: 26.6.4
-        helm.sh/chart: keycloak-operator-1.12.1
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
       name: RELEASE-NAME-keycloak-operator
