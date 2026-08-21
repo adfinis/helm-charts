@@ -1,7 +1,7 @@
-{{- if .values.keycloak.samlclients.enabled }}
+{{- if .Values.keycloak.samlclients.enabled }}
 {{- $fullname := include "keycloak-operator.fullname" . }}
 {{- $labels := include "keycloak-operator.labels" . }}
-{{- range .values.keycloak.samlclients.clients }}
+{{- range .Values.keycloak.samlclients.clients }}
 ---
 apiVersion: k8s.keycloak.org/v2beta1
 kind: KeycloakSAMLClient
