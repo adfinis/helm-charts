@@ -32,5 +32,19 @@ keycloak:
             lastName: Wurst
             username: "john.sausage"
             email: john.sausage@example.com
+  oidcclients:
+    enabled: true
+    clients:
+      - keycloakCRName: keycloak
+        realm: test
+        client:
+          appUrl: https://example.org/app
+  samlclients:
+    enabled: true
+    clients:
+      - keycloakCRName: keycloak
+        realm: test
+        client:
+          appUrl: https://example.org/app
   serviceMonitor:
     enabled: true

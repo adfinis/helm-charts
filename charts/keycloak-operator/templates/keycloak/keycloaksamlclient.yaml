@@ -11,9 +11,8 @@ metadata:
     {{- $labels | nindent 4 }}
 spec:
   keycloakCRName: {{ default $fullname .keycloakCRName }}
+  realm: {{ .realm | quote }}
   client:
-    {{- .client | nindent 4 }}
-  realm:
-    {{- .realm | nindent 4 }}
+    {{- .client | toYaml | nindent 4 }}
 {{- end }}
 {{- end }}

@@ -39,6 +39,20 @@ should match snapshot:
         xaEnabled: false
   2: |
     apiVersion: k8s.keycloak.org/v2beta1
+    kind: KeycloakOIDCClient
+    metadata:
+      labels:
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: RELEASE-NAME-keycloak-operator-test
+    spec:
+      client:
+        appUrl: https://example.org/app
+      keycloakCRName: keycloak
+      realm: test
+  3: |
+    apiVersion: k8s.keycloak.org/v2beta1
     kind: KeycloakRealmImport
     metadata:
       labels:
@@ -57,3 +71,17 @@ should match snapshot:
             id: "0"
             lastName: Wurst
             username: john.sausage
+  4: |
+    apiVersion: k8s.keycloak.org/v2beta1
+    kind: KeycloakSAMLClient
+    metadata:
+      labels:
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: 26.7.2
+        helm.sh/chart: keycloak-operator-1.13.0
+      name: RELEASE-NAME-keycloak-operator-test
+    spec:
+      client:
+        appUrl: https://example.org/app
+      keycloakCRName: keycloak
+      realm: test
