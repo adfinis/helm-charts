@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.129.0
+version: 0.130.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,13 +19,21 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Secrets Store CSI Driver chart from 1.5.6 to 1.6.0, including:
-          - Chart update from 1.5.6 to 1.6.0
-          - Support for Kubernetes v1.33
-          - CSI Driver image update to v1.5.4
-          - Bug fixes, dependency updates, and Helm chart maintenance improvements
+        Updated OpenBao chart from 0.28.4 to 0.29.3, including:
+          - Chart update from 0.28.4 to 0.29.3
+          - OpenBao version 2.6.2
+          - Kubernetes compatibility for version 1.36
+          - Hardening CSI provider securityContext
       links:
-        - name: "Secrets Store CSI Driver chart 1.6.0"
-          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.6.0
-        - name: "Secrets Store CSI Driver chart 1.5.6"
-          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.5.4
+        - name: "OpenBao chart 0.29.3"
+          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.3
+        - name: "OpenBao chart 0.29.2"
+          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.2
+        - name: "OpenBao chart 0.29.1"
+          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.1
+        - name: "OpenBao chart 0.29.0"
+          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.0
+        - name: "OpenBao chart 0.28.6"
+          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.28.6
+        - name: "OpenBao chart 0.28.5"
+          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.28.5
