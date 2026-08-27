@@ -26212,6 +26212,49 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated OpenBao chart from 0.28.4 to 0.29.3, including:
+              - Chart update from 0.28.4 to 0.29.3
+              - OpenBao version 2.6.2
+              - Kubernetes compatibility for version 1.36
+              - Hardening CSI provider securityContext
+          links:
+            - name: "OpenBao chart 0.29.3"
+              url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.3
+            - name: "OpenBao chart 0.29.2"
+              url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.2
+            - name: "OpenBao chart 0.29.1"
+              url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.1
+            - name: "OpenBao chart 0.29.0"
+              url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.0
+            - name: "OpenBao chart 0.28.6"
+              url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.28.6
+            - name: "OpenBao chart 0.28.5"
+              url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.28.5
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-08-27T18:57:22.204279154Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 2b8dd9cd354c25d2050e8c2a045b37304d906eaf9d63fd917a8be59fc7cdb70e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.130.0/security-apps-0.130.0.tgz
+    version: 0.130.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Secrets Store CSI Driver chart from 1.5.6 to 1.6.0, including:
               - Chart update from 1.5.6 to 1.6.0
               - Support for Kubernetes v1.33
@@ -37804,4 +37847,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-08-21T14:11:38.520985689Z"
+generated: "2026-08-27T18:57:22.206704675Z"
