@@ -6314,6 +6314,44 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Update cert-manager from 1.20.3 to 1.21.1
+              - cert-manager 1.21 adds experimental ACME Renewal Information (ARI) for proactive renewals.
+              - The Vault issuer now supports native AWS IAM authentication, eliminating the need for long-lived secrets.
+              - Three breaking changes are included: default `tokenrequest` RBAC is removed, `cert-manager-edit` Role permissions are restricted, and Prometheus metrics Helm values are deleted.
+              - Known issue: Setting a Certificate's `renewal.policy` to `Disabled` will trigger a controller crash-loop.
+              - Known issue: Issuers get stuck indefinitely if they reference a solver Secret that hasn't been created yet.
+              - Gateway API updates include HTTP01 ListenerSet fallbacks, selective TLS listener exclusion, and configurable protocols.
+              - Major bug fixes resolve an integer overflow for certificates longer than 3 years and stop an infinite loop caused by expired certificates.
+          links:
+            - name: "cert-manager 1.21.0"
+              url: https://github.com/cert-manager/cert-manager/releases#release-v1.21.0
+            - name: "cert-manager 1.21.1"
+              url: https://github.com/cert-manager/cert-manager/releases#release-v1.21.1
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-08-29T08:57:51.203912634Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: a15e903f0fa9db54370fbeb6b5e28fe08095d1282a2c043042e237bd6e29653b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.278.0/infra-apps-0.278.0.tgz
+    version: 0.278.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated kube-prometheus-stack from 87.5.1 to 88.3.0, including:
               - Prometheus Operator update from v0.92.1 to v0.93.0
               - kube-state-metrics chart update from 7.5.1 to 8.2.0
@@ -37847,4 +37885,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-08-27T18:57:22.206704675Z"
+generated: "2026-08-29T08:57:51.207747907Z"
