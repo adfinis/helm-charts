@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.277.0
+version: 0.278.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,13 +19,16 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated kube-prometheus-stack from 87.5.1 to 88.3.0, including:
-          - Prometheus Operator update from v0.92.1 to v0.93.0
-          - kube-state-metrics chart update from 7.5.1 to 8.2.0
-          - prometheus-node-exporter chart update from 4.55.0 to 4.56.1
-          - Grafana chart update from 12.7.2 to 12.10.4
+        Update cert-manager from 1.20.3 to 1.21.1
+          - cert-manager 1.21 adds experimental ACME Renewal Information (ARI) for proactive renewals.
+          - The Vault issuer now supports native AWS IAM authentication, eliminating the need for long-lived secrets.
+          - Three breaking changes are included: default `tokenrequest` RBAC is removed, `cert-manager-edit` Role permissions are restricted, and Prometheus metrics Helm values are deleted.
+          - Known issue: Setting a Certificate's `renewal.policy` to `Disabled` will trigger a controller crash-loop.
+          - Known issue: Issuers get stuck indefinitely if they reference a solver Secret that hasn't been created yet.
+          - Gateway API updates include HTTP01 ListenerSet fallbacks, selective TLS listener exclusion, and configurable protocols.
+          - Major bug fixes resolve an integer overflow for certificates longer than 3 years and stop an infinite loop caused by expired certificates.
       links:
-        - name: "kube-prometheus-stack chart 88.3.0"
-          url: https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack/88.3.0
-        - name: "Upgrade instructions"
-          url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/README.md#upgrading-chart
+        - name: "cert-manager 1.21.0"
+          url: https://github.com/cert-manager/cert-manager/releases#release-v1.21.0
+        - name: "cert-manager 1.21.1"
+          url: https://github.com/cert-manager/cert-manager/releases#release-v1.21.1
