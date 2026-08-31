@@ -1,0 +1,83 @@
+{{- if .Values.monitoring.serviceMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "gateway.fullname" . }}
+  labels:
+    {{- include "gateway.labels" . | nindent 4 }}
+    {{- with .Values.monitoring.serviceMonitor.extraLabels}}
+    {{- toYaml . | nindent 4}}
+    {{- end }}
+spec:
+  endpoints:
+  - interval: {{ .Values.monitoring.serviceMonitor.endpoint.interval}}
+    targetPort: {{ .Values.monitoring.service.port }}
+    path: {{ .Values.monitoring.serviceMonitor.endpoint.path}}
+  namespaceSelector:
+    matchNames:
+      - {{ .Release.Namespace }}
+  selector:
+    matchLabels:
+      {{- include "gateway.selectorLabels" . | nindent 6}}
+  {{- with .Values.monitoring.serviceMonitor.attachMetadata }}
+  attachMetadata:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.bodySizeLimit }}
+  bodySizeLimit: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.convertClassicHistogramsToNHCB }}
+  convertClassicHistogramsToNHCB: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.fallbackScrapeProtocol }}
+  fallbackScrapeProtocol: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.jobLabel }}
+  jobLabel: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.keepDroppedTargets }}
+  keepDroppedTargets: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.labelLimit }}
+  labelLimit: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.labelNameLengthLimit }}
+  labelNameLengthLimit: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.labelValueLengthLimit }}
+  labelValueLengthLimit: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.nativeHistogramBucketLimit }}
+  nativeHistogramBucketLimit: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.nativeHistogramMinBucketFactor }}
+  nativeHistogramMinBucketFactor:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.podTargetLabels }}
+  podTargetLabels:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.sampleLimit }}
+  sampleLimit: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.scrapeClass }}
+  scrapeClass: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.scrapeClassicHistograms }}
+  scrapeClassicHistograms: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.scrapeProtocols }}
+  scrapeProtocols: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.selectorMechanism }}
+  selectorMechanism: {{ . }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.podTargetLabels }}
+  targetLabels:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.monitoring.serviceMonitor.targetLimit }}
+  targetLimit: {{ . }}
+  {{- end }}
+{{- end }}
