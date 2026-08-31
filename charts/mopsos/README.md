@@ -7,7 +7,7 @@ Deploy Mopsos to a Kubernetes Cluster
 **Homepage:** <https://github.com/adfinis/mopsos>
 
 ## Maintainers
-This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk_kwd=helm-charts).
+This chart is maintained by [Adfinis](https://www.adfinis.com/?mtm_campaign=github&mtm_kwd=helm-charts&mtm_source=referal&mtm_medium=adfinis).
 
 ## Source Code
 
@@ -85,7 +85,7 @@ Kubernetes: `>= 1.21.0`
 Adfinis fights for a software world that is more open, where the quality is
 better and where software must be accessible to everyone. This chart
 is part of the action behind this commitment. Feel free to
-[contact](https://adfinis.com/kontakt/?pk_campaign=github&pk_kwd=helm-charts)
+[contact](https://www.adfinis.com/en/contact?mtm_campaign=github&mtm_kwd=helm-charts&mtm_source=referal&mtm_medium=adfinis)
 us if you have any questions.
 
 ## License

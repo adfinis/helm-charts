@@ -63,7 +63,7 @@ Deploy back8sup to a Kubernetes Cluster
 Adfinis fights for a software world that is more open, where the quality is
 better and where software must be accessible to everyone. This chart
 is part of the action behind this commitment. Feel free to
-[contact](https://adfinis.com/kontakt/?pk_campaign=github&pk_kwd=helm-charts)
+[contact](https://www.adfinis.com/en/contact?mtm_campaign=github&mtm_kwd=helm-charts&mtm_source=referal&mtm_medium=adfinis)
 us if you have any questions.
 
 ## License
