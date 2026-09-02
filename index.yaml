@@ -5899,6 +5899,39 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: Bumped hedgedoc to 1.12.0
+          links:
+            - name: GitHub Release
+              url: https://github.com/hedgedoc/hedgedoc/releases/tag/1.12.0
+      artifacthub.io/images: |
+        - name: hedgedoc
+          image: quay.io/hedgedoc/hedgedoc:1.12.0
+    apiVersion: v2
+    appVersion: 1.12.0
+    created: "2026-09-02T11:49:50.865777164Z"
+    dependencies:
+    - alias: postgresql
+      condition: postgresql.enabled
+      name: postgres
+      repository: oci://registry-1.docker.io/cloudpirates
+      version: ~0.19.5
+    description: Chart for HedgeDoc, a fork of CodiMD
+    digest: 0e533be804388c0d1e37681849ae97a1187d30dfe954dc0084389939ff643caf
+    icon: https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: hedgedoc
+    sources:
+    - https://github.com/hedgedoc/hedgedoc
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/hedgedoc-0.6.1/hedgedoc-0.6.1.tgz
+    version: 0.6.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: Bumped hedgedoc to 1.10.8
           links:
             - name: GitHub Release
@@ -37885,4 +37918,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-08-29T08:57:51.207747907Z"
+generated: "2026-09-02T11:49:50.867289219Z"
