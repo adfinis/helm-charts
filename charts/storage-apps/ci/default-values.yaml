@@ -9,3 +9,7 @@ cephCsiCephfs:
 minio:
   enabled: true
   values: {}
+
+garage:
+  enabled: true
+  values: {}
