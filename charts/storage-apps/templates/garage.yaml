@@ -11,13 +11,8 @@ spec:
   {{- end }}
   source:
     repoURL: {{ $app.repoURL | quote }}
-    chart: {{ $app.chart | quote }}
+    path: {{ $app.path | quote }}
     targetRevision: {{ $app.targetRevision | quote }}
-    helm:
-      releaseName: {{ $name | quote }}
-      values: |-
-        nameOverride: {{ $name | quote }}
-        {{- $app.values | toYaml | nindent 8 }}
   {{- if $app.destination }}
   destination:
     {{ $app.destination | toYaml | nindent 4 }}
