@@ -15,9 +15,11 @@ spec:
     targetRevision: {{ $app.targetRevision | quote }}
     helm:
       releaseName: {{ $name | quote }}
-      values: |-
+      valuesObject:
         nameOverride: {{ $name | quote }}
+        {{- if $app.values }}
         {{- $app.values | toYaml | nindent 8 }}
+        {{- end }}
   {{- if $app.destination }}
   destination:
     {{ $app.destination | toYaml | nindent 4 }}
