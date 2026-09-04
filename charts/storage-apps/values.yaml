@@ -77,3 +77,23 @@ minio:
   # -- Helm values
   # @default -- [upstream values](https://github.com/minio/minio/blob/master/helm/minio/values.yaml)
   values: {}
+
+# -- [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage)
+# @default -- -
+garage:
+  # -- Enable garage
+  enabled: false
+  name: garage
+  destination:
+    # -- Namespace
+    namespace: "infra-storage"
+  # -- Repo URL
+  # @default -- [repo](https://git.deuxfleurs.fr/Deuxfleurs/garage.git)
+  repoURL: "https://git.deuxfleurs.fr/Deuxfleurs/garage.git"
+  # -- Path
+  path: "script/helm/garage"
+  # -- [garage Helm chart](https://git.deuxfleurs.fr/Deuxfleurs/garage/releases) version
+  targetRevision: "v2.3.0"
+  # -- Helm values
+  # @default -- [upstream values](https://git.deuxfleurs.fr/Deuxfleurs/garage/src/branch/main-v2/script/helm/garage/values.yaml)
+  values: {}
