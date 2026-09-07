@@ -1521,6 +1521,40 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Promitor Scraper from 2.16.0 to 2.16.1 and Resource Discovery from 0.16.0 to 0.16.1, including:
+              * Use the configured Azure authority host when authenticating with SdkDefault.
+              * Patch various CVEs in both components.
+              * No breaking changes or deprecations.
+          links:
+            - name: Promitor Scraper v2.16.1
+              url: https://github.com/tomkerkhove/promitor/releases/tag/Scraper-v2.16.1
+            - name: Promitor Resource Discovery v0.16.1
+              url: https://github.com/tomkerkhove/promitor/releases/tag/ResourceDiscovery-v0.16.1
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-09-07T16:42:46.884097193Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for Azure applications
+    digest: 82c433e5acf8457fcc765c5cece63604ccc87077d26e44971fa334a5151f77ae
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/azure-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: azure-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/azure-apps-0.23.0/azure-apps-0.23.0.tgz
+    version: 0.23.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat: Update Azure Key Vault Provider for Secrets Store CSI Driver
               chart: "csi-secrets-store-provider-azure"
 
@@ -37918,4 +37952,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-02T11:49:50.867289219Z"
+generated: "2026-09-07T16:42:46.886592392Z"
