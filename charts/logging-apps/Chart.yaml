@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.50.0
+version: 0.51.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,9 +19,9 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Fluent Bit to 0.57.9, including:
-          - Update Fluent Bit OCI image from v5.0.3 to v5.0.9
-          - Includes Fluent Bit image updates v5.0.4 through v5.0.9
+        Updated Loki chart from 18.3.1 to 18.12.1, including:
+          - Loki application update from 3.7.3 to 3.7.7
+          - Rollout Operator dependency update from 0.50.0 to 0.51.1
       links:
-        - name: "Fluent Bit Helm chart changelog"
-          url: https://github.com/fluent/helm-charts/blob/main/charts/fluent-bit/CHANGELOG.md
+        - name: "Loki chart changes from 18.3.1 to 18.12.1"
+          url: https://github.com/grafana-community/helm-charts/compare/loki-18.3.1...loki-18.12.1
