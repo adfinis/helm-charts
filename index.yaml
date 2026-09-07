@@ -31164,6 +31164,37 @@ entries:
   storage-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: added
+          description: |
+            Add Garage helm chart
+          links:
+            - name: "Deploying Garage on Kubernetes"
+              url: "https://garagehq.deuxfleurs.fr/documentation/cookbook/kubernetes/"
+            - name: "Chart source"
+              url: "https://git.deuxfleurs.fr/Deuxfleurs/garage/src/branch/main-v2/script/helm/garage"
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-09-07T17:52:39.688286772Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for storage applications
+    digest: eac5559e49fe1dc90cb3b7a66bd49f6468ce2580ac3f89c631d6aed99af37180
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.24.0/storage-apps-0.24.0.tgz
+    version: 0.24.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: |
             Updated cephCsiRbd and cephCsiCephfs to 3.17.0, including:
@@ -37952,4 +37983,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-07T16:42:46.886592392Z"
+generated: "2026-09-07T17:52:39.691501313Z"
