@@ -6414,6 +6414,45 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Mimir chart from 6.1.0 to 6.2.0, including:
+              - Grafana Mimir application update from 3.1.2 to 3.2.0
+              - Reduced the default querier concurrency to 8
+              - Added VolumeAttributesClass support for persistent volume claims
+              - Added revisionHistoryLimit support for StatefulSet-based components
+              - Updated rollout-operator to 0.38.1
+              - Fixed KEDA ScaledObject fallback templates
+          links:
+            - name: "Mimir chart 6.2.0 release notes"
+              url: https://grafana.com/docs/helm-charts/mimir-distributed/latest/release-notes/v6.2/
+            - name: "Mimir chart changes from 6.1.0 to 6.2.0"
+              url: https://github.com/grafana/mimir/compare/mimir-distributed-6.1.0...mimir-distributed-6.2.0
+            - name: "Grafana Mimir 3.2.0"
+              url: https://github.com/grafana/mimir/releases/tag/mimir-3.2.0
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-09-09T11:41:49.402992929Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 21544776b7738ccb684662a1a9d241be7764c2ef1401ac20e7fb98130010c098
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.281.0/infra-apps-0.281.0.tgz
+    version: 0.281.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Argo CD chart from 10.3.0 to 10.8.4, including:
               - Argo CD application update from v3.5.0 to v3.5.2
               - Update Redis to a patched OpenSSL base image
@@ -38332,4 +38371,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-09T11:09:44.863306805Z"
+generated: "2026-09-09T11:41:49.404512239Z"
