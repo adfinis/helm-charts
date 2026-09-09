@@ -26350,6 +26350,39 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Dex chart from 0.24.0 to 0.24.1, including:
+              - Dex application version remains at 2.44.0
+              - Upstream Helm chart maintenance updates
+          links:
+            - name: "Dex chart 0.24.1"
+              url: https://artifacthub.io/packages/helm/dex/dex/0.24.1
+            - name: "Dex Helm repository"
+              url: https://github.com/dexidp/helm-charts
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-09-09T08:36:08.330177843Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: aa3b0096ba8bd48fd21e15cf0e25ee2c7477f807ec1c16007254c36cf43a218a
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.131.0/security-apps-0.131.0.tgz
+    version: 0.131.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated OpenBao chart from 0.28.4 to 0.29.3, including:
               - Chart update from 0.28.4 to 0.29.3
               - OpenBao version 2.6.2
@@ -38053,4 +38086,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-09T08:33:23.869218605Z"
+generated: "2026-09-09T08:36:08.332222532Z"
