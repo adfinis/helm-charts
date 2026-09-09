@@ -2,7 +2,7 @@ apiVersion: v2
 name: storage-apps
 description: Argo CD app-of-apps config for storage applications
 type: application
-version: 0.24.0
+version: 0.25.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -17,11 +17,16 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - kind: added
+    - kind: changed
       description: |
-        Add Garage helm chart
+        Updated cephCsiRbd and cephCsiCephfs from 3.17.0 to 3.17.1, including:
+          * Updated the Ceph base image to 20.2.4 with AES256 key format support.
+          * Fixed RBD replication cleanup and connection leaks.
+          * Fixed the integrated DEK store key size and read-only volume usage checks.
+          * AES256 key support requires Linux kernel 7.0 or a supported backport.
+          * Ceph Tentacle 20.2.0 may cause CephFS data loss when readAffinity is enabled.
       links:
-        - name: "Deploying Garage on Kubernetes"
-          url: "https://garagehq.deuxfleurs.fr/documentation/cookbook/kubernetes/"
-        - name: "Chart source"
-          url: "https://git.deuxfleurs.fr/Deuxfleurs/garage/src/branch/main-v2/script/helm/garage"
+        - name: "CephCsi v3.17.1 Release Notes"
+          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.17.1"
+        - name: "Migration Guide"
+          url: "https://github.com/ceph/ceph-csi-operator/blob/main/docs/migration.md"
