@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.77.0
+version: 0.78.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,17 +15,20 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated OpenCost chart from 2.5.26 to 2.5.30, including:
-          - OpenCost application update from 1.120.4 to 1.121.1
-          - Add inference-cost configuration support, disabled by default
-          - Add external labels configuration for OpenCost users
-          - Add opencost.exporter.extraEnvFrom for ConfigMap and Secret sources
+        Updated Reloader chart from 2.2.11 to 2.2.16, including:
+          - Reloader application update from v1.4.16 to v1.4.21
+          - Updated golang.org/x/text to fix CVE-2026-56852
+          - Prevented a panic caused by invalid regular expressions in reload annotations
+          - Added runtimeClassName and schedulerName support for the Reloader deployment
+          - Corrected the namespace selector helper documentation
       links:
-        - name: "OpenCost chart 2.5.30"
-          url: https://artifacthub.io/packages/helm/opencost/opencost/2.5.30
-        - name: "Chart changes from 2.5.26 to 2.5.30"
-          url: https://github.com/opencost/opencost-helm-chart/compare/opencost-2.5.26...opencost-2.5.30
+        - name: "Reloader chart 2.2.16 release notes"
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.16
+        - name: "Reloader v1.4.21 release notes"
+          url: https://github.com/stakater/Reloader/releases/tag/v1.4.21
+        - name: "Chart changes from 2.2.11 to 2.2.16"
+          url: https://github.com/stakater/Reloader/compare/chart-v2.2.11...chart-v2.2.16
