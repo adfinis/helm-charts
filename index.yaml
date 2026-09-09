@@ -18817,6 +18817,37 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Loki chart from 18.3.1 to 18.12.1, including:
+              - Loki application update from 3.7.3 to 3.7.7
+              - Rollout Operator dependency update from 0.50.0 to 0.51.1
+          links:
+            - name: "Loki chart changes from 18.3.1 to 18.12.1"
+              url: https://github.com/grafana-community/helm-charts/compare/loki-18.3.1...loki-18.12.1
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-09-09T08:46:28.847186339Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: e1cb4024b980ead098644047a3d543ed8a36af4aaa8560b3201173f496885e18
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.51.0/logging-apps-0.51.0.tgz
+    version: 0.51.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Fluent Bit to 0.57.9, including:
               - Update Fluent Bit OCI image from v5.0.3 to v5.0.9
               - Includes Fluent Bit image updates v5.0.4 through v5.0.9
@@ -38154,4 +38185,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-09T08:43:40.855259572Z"
+generated: "2026-09-09T08:46:28.850966914Z"
