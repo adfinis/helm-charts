@@ -26562,6 +26562,44 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated NeuVector core and monitor charts from 2.10.3 to 2.11.1, including:
+              - NeuVector application update from 5.5.3 to 5.6.1
+              - NeuVector Prometheus exporter update from 1.0.14 to 1.0.18
+              - Updated golang.org/x/net and golang.org/x/text dependencies
+              - Changed the controller readiness probe to use HTTP GET
+              - Pinned the monitor chart to the exporter's 1.0 release branch
+          links:
+            - name: "NeuVector chart 2.11.0 release notes"
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.11.0
+            - name: "NeuVector chart 2.11.1 release notes"
+              url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.11.1
+            - name: "Chart changes from 2.10.3 to 2.11.1"
+              url: https://github.com/neuvector/neuvector-helm/compare/v2.10.3...v2.11.1
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-09-09T14:32:52.068663345Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: ae0930a6c19d05014900bbcd9230d8616b827e41284a30e4beb9a761fb653849
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.134.0/security-apps-0.134.0.tgz
+    version: 0.134.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated StackRox Central and Secured Cluster Services charts from 400.11.1 to 400.11.3, including:
               - RHACS application update from 4.11.1 to 4.11.3
               - Security fixes for CVE-2026-42504, CVE-2026-39822, CVE-2026-13149,
@@ -38408,4 +38446,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-09T14:30:12.786771538Z"
+generated: "2026-09-09T14:32:52.070015131Z"
