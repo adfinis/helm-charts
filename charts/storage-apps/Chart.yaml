@@ -2,7 +2,7 @@ apiVersion: v2
 name: storage-apps
 description: Argo CD app-of-apps config for storage applications
 type: application
-version: 0.25.0
+version: 0.26.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,18 +15,21 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated cephCsiRbd and cephCsiCephfs from 3.17.0 to 3.17.1, including:
-          * Updated the Ceph base image to 20.2.4 with AES256 key format support.
-          * Fixed RBD replication cleanup and connection leaks.
-          * Fixed the integrated DEK store key size and read-only volume usage checks.
-          * AES256 key support requires Linux kernel 7.0 or a supported backport.
-          * Ceph Tentacle 20.2.0 may cause CephFS data loss when readAffinity is enabled.
+        Updated CSI Driver SMB chart from 1.20.1 to 1.20.3, including:
+          - Fixed CVE-2026-33186 in google.golang.org/grpc
+          - Fixed CVE-2026-25680
+          - Rebuilt with Go 1.26.4 to address Go runtime CVEs
+          - Updated CSI sidecar images
+          - Added controller.extraArgs support for sidecar containers
+          - Increased the Windows node plugin liveness probe timeout
       links:
-        - name: "CephCsi v3.17.1 Release Notes"
-          url: "https://github.com/ceph/ceph-csi/releases/tag/v3.17.1"
-        - name: "Migration Guide"
-          url: "https://github.com/ceph/ceph-csi-operator/blob/main/docs/migration.md"
+        - name: "CSI Driver SMB 1.20.2 release notes"
+          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.20.2
+        - name: "CSI Driver SMB 1.20.3 release notes"
+          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.20.3
+        - name: "Changes from 1.20.1 to 1.20.3"
+          url: https://github.com/kubernetes-csi/csi-driver-smb/compare/v1.20.1...v1.20.3

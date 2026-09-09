@@ -1,6 +1,6 @@
 # storage-apps
 
-![Version: 0.25.0](https://img.shields.io/badge/Version-0.25.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.26.0](https://img.shields.io/badge/Version-0.26.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for storage applications
 
@@ -42,7 +42,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | csiDriverSmb.destination.namespace | string | `"infra-csi-driver-smb"` | Namespace |
 | csiDriverSmb.enabled | bool | `false` | Enable csi-driver-smb |
 | csiDriverSmb.repoURL | string | [repo](https://raw.githubusercontent.com/kubernetes-csi/csi-driver-smb/master/charts) | Repo URL |
-| csiDriverSmb.targetRevision | string | `"1.20.1"` | [csi-driver-smb Helm chart](https://github.com/kubernetes-csi/csi-driver-smb/tree/master/charts) version |
+| csiDriverSmb.targetRevision | string | `"1.20.3"` | [csi-driver-smb Helm chart](https://github.com/kubernetes-csi/csi-driver-smb/tree/master/charts) version |
 | csiDriverSmb.values | object | [upstream values](https://github.com/kubernetes-csi/csi-driver-smb/blob/master/charts/latest/csi-driver-smb/values.yaml) | Helm values |
 | garage | object | - | [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) |
 | garage.destination.namespace | string | `"infra-storage"` | Namespace |
