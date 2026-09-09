@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.279.0
+version: 0.280.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,13 +19,17 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated kube-prometheus-stack from 88.3.0 to 88.6.5, including:
-          - Prometheus Operator update from v0.93.0 to v0.93.1
-          - kube-state-metrics chart update from 8.2.0 to 8.4.1
-          - prometheus-node-exporter chart update from 4.56.1 to 4.56.3
-          - Grafana chart update from 12.10.4 to 12.11.2
+        Updated Argo CD chart from 10.3.0 to 10.8.4, including:
+          - Argo CD application update from v3.5.0 to v3.5.2
+          - Update Redis to a patched OpenSSL base image
+          - Add optional Gateway API h2c service port support
+          - Add VPA recommender and startupBoost configuration
+          - Prevent high Redis Sentinel CPU usage after rolling upgrades
+          - Avoid unnecessary pod restarts on chart-only changes
       links:
-        - name: "kube-prometheus-stack chart 88.6.5"
-          url: https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack/88.6.5
-        - name: "Upgrade instructions"
-          url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/README.md#upgrading-chart
+        - name: "Argo CD chart 10.8.4"
+          url: https://github.com/argoproj/argo-helm/releases/tag/argo-cd-10.8.4
+        - name: "Chart changes from 10.3.0 to 10.8.4"
+          url: https://github.com/argoproj/argo-helm/compare/argo-cd-10.3.0...argo-cd-10.8.4
+        - name: "Argo CD v3.5.2"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v3.5.2
