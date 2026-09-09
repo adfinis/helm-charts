@@ -2,7 +2,7 @@ apiVersion: v2
 name: tracing-apps
 description: Argo CD app-of-apps config for tracing applications
 type: application
-version: 1.4.0
+version: 1.5.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,21 +18,16 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        feat!: Updating opentelemetry-collector Chart from 0.151.0 to 0.162.0
-
-        - Update collector from to 0.150.1 to 0.154.0
-        - `rewriteDeprecatedProcessorNames` value has been renamed to `rewriteDeprecatedComponentNames`
-        - backwards compatibility support for `config.service.telemetry.metrics.address` has been removed
-        - The new processor name `k8s_attributes` will only work with Collector versions >= 0.146.0, it was renamed from `k8sattributes`
-        - honor `schedulerName` in daemonset and statefulset modes
+        Updated opentelemetry-collector chart from 0.162.0 to 0.172.0, including:
+          - Collector application update from 0.154.0 to 0.159.0
+          - Automatically rewrite filelog receivers to file_log by default
+          - Automatically rewrite otlp and otlphttp exporters to otlp_grpc and otlp_http by default
+          - Add an opt-in k8s_events receiver for the kubernetesEvents preset
+          - Template extraEnvs and extraEnvsFrom; existing template syntax must be escaped
       links:
         - name: Upgrade Guide
           url: https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/UPGRADING.md
-        - name: Releasenotes for 0.151.0
-          url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases#release-v0.151.0
-        - name: Releasenotes for 0.152.0
-          url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases#release-v0.152.0
-        - name: Releasenotes for 0.153.0
-          url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases#release-v0.153.0
-        - name: Releasenotes for 0.154.0
-          url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases#release-v0.154.0
+        - name: OpenTelemetry Collector Contrib v0.159.0
+          url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases/tag/v0.159.0
+        - name: Chart changes from 0.162.0 to 0.172.0
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/compare/opentelemetry-collector-0.162.0...opentelemetry-collector-0.172.0
