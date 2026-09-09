@@ -10,6 +10,8 @@ readonly kube_prometheus_stack_version=$ADFINIS_CHARTS_KUBE_PROMETHEUS_STACK_VER
 readonly secrets_store_csi_driver_version=$ADFINIS_CHARTS_SECRETS_STORE_CSI_DRIVER_VERSION
 readonly cert_manager_version=$ADFINIS_CHARTS_CERT_MANAGER_VERSION
 readonly rbac_manager_version=$ADFINIS_CHARTS_RBAC_MANAGER_VERSION
+readonly gateway_api_version=$ADFINIS_CHARTS_GATEWAY_API_VERSION
+readonly kgateway_version=$ADFINIS_CHARTS_KGATEWAY_VERSION
 
 set +x
 
@@ -29,3 +31,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/secrets-store
 kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v$cert_manager_version/cert-manager.crds.yaml
 
 kubectl apply -f https://raw.githubusercontent.com/FairwindsOps/rbac-manager/v$rbac_manager_version/deploy/2_crd.yaml
+
+kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v$gateway_api_version/standard-install.yaml
+
+helm upgrade -i --create-namespace --namespace kgateway-system --version v$kgateway_version kgateway-crds oci://cr.kgateway.dev/kgateway-dev/charts/kgateway-crds

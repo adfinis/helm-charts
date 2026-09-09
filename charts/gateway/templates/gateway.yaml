@@ -1,0 +1,38 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: {{ include "gateway.fullname" . }}
+  labels:
+    {{- include "gateway.labels" . | nindent 4 }}
+  annotations:
+    {{- .Values.gateway.annotations | toYaml | nindent 4 }}
+spec:
+  gatewayClassName: kgateway
+  {{- if or .Values.gatewayParameters.enabled
+            .Values.autoscaling.enabled
+            .Values.resources.requests
+            .Values.resources.limits
+            .Values.resources.claims
+  }}
+  infrastructure:
+    parametersRef:
+      name: {{ include "gateway.fullname" . }}
+      group: gateway.kgateway.dev
+      kind: GatewayParameters
+  {{- end }}
+  {{- with .Values.gateway.addresses }}
+  addresses:
+  {{- toYaml . | nindent 4 }}
+  {{- end }}
+  listeners:
+    {{- if .Values.gateway.listeners}}
+    {{- .Values.gateway.listeners | toYaml | nindent 4 }}
+    {{- end }}
+    {{- if .Values.redirectHTTP }}
+    - allowedRoutes:
+        namespaces:
+          from: Same
+      name: http
+      port: 80
+      protocol: HTTP
+    {{- end }}
