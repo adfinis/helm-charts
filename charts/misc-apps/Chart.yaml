@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.75.0
+version: 0.76.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,10 +19,11 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Goldilocks to 10.4.1, including:
-          - Goldilocks app remains on v4.14.1
-          - Update optional VPA chart dependency from 4.8.* to 4.12.*
-          - Includes the intermediate VPA dependency update to 4.10.*
+        Updated Goldilocks chart from 10.4.1 to 11.1.0, including:
+          - Goldilocks application update from v4.14.1 to v4.16.1
+          - Optional VPA chart dependency update from 4.12.* to 5.0.*
       links:
-        - name: "Goldilocks chart"
-          url: https://github.com/FairwindsOps/charts/tree/master/stable/goldilocks
+        - name: "Goldilocks chart 11.1.0"
+          url: https://artifacthub.io/packages/helm/fairwinds-stable/goldilocks/11.1.0
+        - name: "Goldilocks releases"
+          url: https://github.com/FairwindsOps/goldilocks/releases
