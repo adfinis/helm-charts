@@ -31329,6 +31329,42 @@ entries:
   storage-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: changed
+          description: |
+            Updated cephCsiRbd and cephCsiCephfs from 3.17.0 to 3.17.1, including:
+              * Updated the Ceph base image to 20.2.4 with AES256 key format support.
+              * Fixed RBD replication cleanup and connection leaks.
+              * Fixed the integrated DEK store key size and read-only volume usage checks.
+              * AES256 key support requires Linux kernel 7.0 or a supported backport.
+              * Ceph Tentacle 20.2.0 may cause CephFS data loss when readAffinity is enabled.
+          links:
+            - name: "CephCsi v3.17.1 Release Notes"
+              url: "https://github.com/ceph/ceph-csi/releases/tag/v3.17.1"
+            - name: "Migration Guide"
+              url: "https://github.com/ceph/ceph-csi-operator/blob/main/docs/migration.md"
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-09-09T10:21:36.215469339Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for storage applications
+    digest: b8d340e2e6d8cbcb824aefa4567d2d91e596305df6ff5844b744660aee38aac6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.25.0/storage-apps-0.25.0.tgz
+    version: 0.25.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: added
           description: |
             Add Garage helm chart
@@ -38185,4 +38221,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-09T08:46:28.850966914Z"
+generated: "2026-09-09T10:21:36.216726423Z"
