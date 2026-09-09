@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.280.0
+version: 0.281.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,21 +15,21 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Argo CD chart from 10.3.0 to 10.8.4, including:
-          - Argo CD application update from v3.5.0 to v3.5.2
-          - Update Redis to a patched OpenSSL base image
-          - Add optional Gateway API h2c service port support
-          - Add VPA recommender and startupBoost configuration
-          - Prevent high Redis Sentinel CPU usage after rolling upgrades
-          - Avoid unnecessary pod restarts on chart-only changes
+        Updated Mimir chart from 6.1.0 to 6.2.0, including:
+          - Grafana Mimir application update from 3.1.2 to 3.2.0
+          - Reduced the default querier concurrency to 8
+          - Added VolumeAttributesClass support for persistent volume claims
+          - Added revisionHistoryLimit support for StatefulSet-based components
+          - Updated rollout-operator to 0.38.1
+          - Fixed KEDA ScaledObject fallback templates
       links:
-        - name: "Argo CD chart 10.8.4"
-          url: https://github.com/argoproj/argo-helm/releases/tag/argo-cd-10.8.4
-        - name: "Chart changes from 10.3.0 to 10.8.4"
-          url: https://github.com/argoproj/argo-helm/compare/argo-cd-10.3.0...argo-cd-10.8.4
-        - name: "Argo CD v3.5.2"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.5.2
+        - name: "Mimir chart 6.2.0 release notes"
+          url: https://grafana.com/docs/helm-charts/mimir-distributed/latest/release-notes/v6.2/
+        - name: "Mimir chart changes from 6.1.0 to 6.2.0"
+          url: https://github.com/grafana/mimir/compare/mimir-distributed-6.1.0...mimir-distributed-6.2.0
+        - name: "Grafana Mimir 3.2.0"
+          url: https://github.com/grafana/mimir/releases/tag/mimir-3.2.0
