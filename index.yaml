@@ -6414,6 +6414,45 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Argo CD chart from 10.3.0 to 10.8.4, including:
+              - Argo CD application update from v3.5.0 to v3.5.2
+              - Update Redis to a patched OpenSSL base image
+              - Add optional Gateway API h2c service port support
+              - Add VPA recommender and startupBoost configuration
+              - Prevent high Redis Sentinel CPU usage after rolling upgrades
+              - Avoid unnecessary pod restarts on chart-only changes
+          links:
+            - name: "Argo CD chart 10.8.4"
+              url: https://github.com/argoproj/argo-helm/releases/tag/argo-cd-10.8.4
+            - name: "Chart changes from 10.3.0 to 10.8.4"
+              url: https://github.com/argoproj/argo-helm/compare/argo-cd-10.3.0...argo-cd-10.8.4
+            - name: "Argo CD v3.5.2"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.5.2
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-09-09T10:54:58.472156665Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 565ff9558dcb6e156ba9c84e594b84765edfc4866dbe02cdfd23a42873a4b23b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.280.0/infra-apps-0.280.0.tgz
+    version: 0.280.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated kube-prometheus-stack from 88.3.0 to 88.6.5, including:
               - Prometheus Operator update from v0.93.0 to v0.93.1
               - kube-state-metrics chart update from 8.2.0 to 8.4.1
@@ -26449,6 +26488,43 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Kyverno and Kyverno Policies charts from 3.8.1 to 3.9.0, including:
+              - Application version update to Kyverno v1.19.0
+              - ValidatingAdmissionPolicy generation and reporting enabled by default
+              - ValidatingPolicy is now the default Kyverno Policies policy type
+              - Removed deprecated spec.validationFailureAction in favor of per-rule failureAction
+          links:
+            - name: "Kyverno release v1.19.0"
+              url: https://github.com/kyverno/kyverno/releases/tag/v1.19.0
+            - name: "Kyverno chart 3.9.0"
+              url: https://artifacthub.io/packages/helm/kyverno/kyverno/3.9.0
+            - name: "Kyverno Policies chart 3.9.0"
+              url: https://artifacthub.io/packages/helm/kyverno/kyverno-policies/3.9.0
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-09-09T10:54:58.702219016Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 831f9141c48e4547cff911af5b457188e96368f6bf5b7963b9f5a915231167ea
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.132.0/security-apps-0.132.0.tgz
+    version: 0.132.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Dex chart from 0.24.0 to 0.24.1, including:
               - Dex application version remains at 2.44.0
               - Upstream Helm chart maintenance updates
@@ -38221,4 +38297,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-09T10:21:36.216726423Z"
+generated: "2026-09-09T10:54:58.706188835Z"
