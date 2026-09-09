@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.78.0
+version: 0.79.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,20 +15,17 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Reloader chart from 2.2.11 to 2.2.16, including:
-          - Reloader application update from v1.4.16 to v1.4.21
-          - Updated golang.org/x/text to fix CVE-2026-56852
-          - Prevented a panic caused by invalid regular expressions in reload annotations
-          - Added runtimeClassName and schedulerName support for the Reloader deployment
-          - Corrected the namespace selector helper documentation
+        Updated KEDA chart from 2.20.1 to 2.20.2, including:
+          - KEDA application update from v2.20.1 to v2.20.2
+          - Added access to core events required by the operator for leader election
       links:
-        - name: "Reloader chart 2.2.16 release notes"
-          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.16
-        - name: "Reloader v1.4.21 release notes"
-          url: https://github.com/stakater/Reloader/releases/tag/v1.4.21
-        - name: "Chart changes from 2.2.11 to 2.2.16"
-          url: https://github.com/stakater/Reloader/compare/chart-v2.2.11...chart-v2.2.16
+        - name: "KEDA chart 2.20.2 release notes"
+          url: https://github.com/kedacore/charts/releases/tag/v2.20.2
+        - name: "KEDA 2.20.2 release notes"
+          url: https://github.com/kedacore/keda/releases/tag/v2.20.2
+        - name: "Chart changes from 2.20.1 to 2.20.2"
+          url: https://github.com/kedacore/charts/compare/v2.20.1...v2.20.2
