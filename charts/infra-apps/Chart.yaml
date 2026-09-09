@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.281.0
+version: 0.282.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,21 +15,17 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Mimir chart from 6.1.0 to 6.2.0, including:
-          - Grafana Mimir application update from 3.1.2 to 3.2.0
-          - Reduced the default querier concurrency to 8
-          - Added VolumeAttributesClass support for persistent volume claims
-          - Added revisionHistoryLimit support for StatefulSet-based components
-          - Updated rollout-operator to 0.38.1
-          - Fixed KEDA ScaledObject fallback templates
+        Updated Kubernetes Event Exporter chart from 2.1.6 to 3.6.3, including:
+          - Kubernetes Event Exporter application update from 1.1.0 to 1.7.0
+          - Changed the default resourcesPreset from none to small
+          - Enabled automatic OpenShift security context adaptation by default
+          - Added container image verification; custom images require global.security.allowInsecureImages=true
       links:
-        - name: "Mimir chart 6.2.0 release notes"
-          url: https://grafana.com/docs/helm-charts/mimir-distributed/latest/release-notes/v6.2/
-        - name: "Mimir chart changes from 6.1.0 to 6.2.0"
-          url: https://github.com/grafana/mimir/compare/mimir-distributed-6.1.0...mimir-distributed-6.2.0
-        - name: "Grafana Mimir 3.2.0"
-          url: https://github.com/grafana/mimir/releases/tag/mimir-3.2.0
+        - name: "Kubernetes Event Exporter chart 3.6.3"
+          url: https://artifacthub.io/packages/helm/bitnami/kubernetes-event-exporter/3.6.3
+        - name: "Chart changes from 2.1.6 to 3.6.3"
+          url: https://github.com/bitnami/charts/compare/kubernetes-event-exporter/2.1.6...kubernetes-event-exporter/3.6.3
