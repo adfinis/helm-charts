@@ -1,0 +1,35 @@
+{{ if .Values.garage.enabled }}
+{{ template "argoconfig.application" (list . "storage-apps.garage") }}
+{{ end }}
+
+{{- define "storage-apps.garage" -}}{{- $app := unset .Values.garage "enabled" -}}{{- $name := default $app.destination.namespace $app.name -}}
+metadata:
+  name: {{ template "common.fullname" . }}-{{ $name }}
+spec:
+  {{- if $app.project }}
+  project: {{ $app.project | quote }}
+  {{- end }}
+  source:
+    repoURL: {{ $app.repoURL | quote }}
+    path: {{ $app.path | quote }}
+    targetRevision: {{ $app.targetRevision | quote }}
+    helm:
+      releaseName: {{ $name | quote }}
+      valuesObject:
+        nameOverride: {{ $name | quote }}
+        {{- if $app.values }}
+        {{- $app.values | toYaml | nindent 8 }}
+        {{- end }}
+  {{- if $app.destination }}
+  destination:
+    {{ $app.destination | toYaml | nindent 4 }}
+  {{- end }}
+  {{- if $app.syncPolicy }}
+  syncPolicy:
+    {{ $app.syncPolicy | toYaml | nindent 4 }}
+  {{- end }}
+  {{- if $app.ignoreDifferences }}
+  ignoreDifferences:
+    {{ $app.ignoreDifferences | toYaml | nindent 4 }}
+  {{- end }}
+{{- end -}}
