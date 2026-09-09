@@ -26562,6 +26562,43 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated StackRox Central and Secured Cluster Services charts from 400.11.1 to 400.11.3, including:
+              - RHACS application update from 4.11.1 to 4.11.3
+              - Security fixes for CVE-2026-42504, CVE-2026-39822, CVE-2026-13149,
+                CVE-2026-59869, CVE-2026-49978, and CVE-2026-69152
+              - Restore CEL scanner profile results in the Coverage view
+              - Add NODE_EVENT to the security policy CRD
+              - Reschedule pending view-based reports after Central restarts
+          links:
+            - name: "RHACS 4.11 release notes"
+              url: https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.11/html/release_notes/release-notes-411
+            - name: "StackRox changes from 4.11.1 to 4.11.3"
+              url: https://github.com/stackrox/stackrox/compare/4.11.1...4.11.3
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-09-09T14:30:12.785077549Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: fb2773cc0f2d5e224c0cce077810e965fa57b3ef122b7176f5957132de2de6db
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.133.0/security-apps-0.133.0.tgz
+    version: 0.133.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Kyverno and Kyverno Policies charts from 3.8.1 to 3.9.0, including:
               - Application version update to Kyverno v1.19.0
               - ValidatingAdmissionPolicy generation and reporting enabled by default
@@ -38371,4 +38408,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-09T11:41:49.404512239Z"
+generated: "2026-09-09T14:30:12.786771538Z"
