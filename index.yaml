@@ -5,6 +5,39 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Argo Rollouts chart from 2.41.0 to 2.42.0, including:
+
+            - Update Argo Rollouts from v1.9.0 to v1.9.1
+            - Remove the default controller readinessProbe to align with upstream manifests
+          links:
+            - name: Argo Rollouts chart 2.42.0
+              url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.42.0
+            - name: Argo Rollouts v1.9.1
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.9.1
+    apiVersion: v2
+    created: "2026-09-09T08:29:08.290089511Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: 5b111c1c5aab22437cbb628904f7786bbfb7554d6bb8f6cd729ce9066ce352bb
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.32.0/argo-apps-0.32.0.tgz
+    version: 0.32.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update Argo Rollouts Chart from 2.40.9 to 2.41.0
 
             - Add Gateway API HTTPRoute support for the dashboard
@@ -37983,4 +38016,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-07T17:52:39.691501313Z"
+generated: "2026-09-09T08:29:08.292005195Z"
