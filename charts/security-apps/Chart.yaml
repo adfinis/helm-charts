@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.132.0
+version: 0.133.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,19 +15,19 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Kyverno and Kyverno Policies charts from 3.8.1 to 3.9.0, including:
-          - Application version update to Kyverno v1.19.0
-          - ValidatingAdmissionPolicy generation and reporting enabled by default
-          - ValidatingPolicy is now the default Kyverno Policies policy type
-          - Removed deprecated spec.validationFailureAction in favor of per-rule failureAction
+        Updated StackRox Central and Secured Cluster Services charts from 400.11.1 to 400.11.3, including:
+          - RHACS application update from 4.11.1 to 4.11.3
+          - Security fixes for CVE-2026-42504, CVE-2026-39822, CVE-2026-13149,
+            CVE-2026-59869, CVE-2026-49978, and CVE-2026-69152
+          - Restore CEL scanner profile results in the Coverage view
+          - Add NODE_EVENT to the security policy CRD
+          - Reschedule pending view-based reports after Central restarts
       links:
-        - name: "Kyverno release v1.19.0"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.19.0
-        - name: "Kyverno chart 3.9.0"
-          url: https://artifacthub.io/packages/helm/kyverno/kyverno/3.9.0
-        - name: "Kyverno Policies chart 3.9.0"
-          url: https://artifacthub.io/packages/helm/kyverno/kyverno-policies/3.9.0
+        - name: "RHACS 4.11 release notes"
+          url: https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.11/html/release_notes/release-notes-411
+        - name: "StackRox changes from 4.11.1 to 4.11.3"
+          url: https://github.com/stackrox/stackrox/compare/4.11.1...4.11.3
