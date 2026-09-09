@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.76.0
+version: 0.77.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,11 +19,13 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Goldilocks chart from 10.4.1 to 11.1.0, including:
-          - Goldilocks application update from v4.14.1 to v4.16.1
-          - Optional VPA chart dependency update from 4.12.* to 5.0.*
+        Updated OpenCost chart from 2.5.26 to 2.5.30, including:
+          - OpenCost application update from 1.120.4 to 1.121.1
+          - Add inference-cost configuration support, disabled by default
+          - Add external labels configuration for OpenCost users
+          - Add opencost.exporter.extraEnvFrom for ConfigMap and Secret sources
       links:
-        - name: "Goldilocks chart 11.1.0"
-          url: https://artifacthub.io/packages/helm/fairwinds-stable/goldilocks/11.1.0
-        - name: "Goldilocks releases"
-          url: https://github.com/FairwindsOps/goldilocks/releases
+        - name: "OpenCost chart 2.5.30"
+          url: https://artifacthub.io/packages/helm/opencost/opencost/2.5.30
+        - name: "Chart changes from 2.5.26 to 2.5.30"
+          url: https://github.com/opencost/opencost-helm-chart/compare/opencost-2.5.26...opencost-2.5.30
