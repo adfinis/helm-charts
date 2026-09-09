@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.135.0
+version: 0.136.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,19 +19,16 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated OAuth2 Proxy chart from 10.6.0 to 10.7.0, including:
-          - OAuth2 Proxy application update from 7.15.2 to 7.15.3
-          - Updated Go to 1.26.4 and refreshed dependencies
-          - Fixed CVE-2026-33811, CVE-2026-33814, CVE-2026-39820,
-            CVE-2026-39836, CVE-2026-42499, CVE-2026-42504,
-            CVE-2026-39823, CVE-2026-39826, CVE-2026-39825,
-            CVE-2026-27145, and CVE-2026-42507
-          - Added centralized alpha-config source and name helpers
-          - Added guards for invalid deprecated alphaConfig combinations
+        Updated Vault chart from 0.34.0 to 0.34.1, including:
+          - Vault application update from 2.0.3 to 2.0.4
+          - Vault CSI Provider update to 1.7.4
+          - Vault Kubernetes update to 1.7.6
+          - Patched a vulnerability in golang.org/x/crypto
+          - Fixed the license secret volume defaultMode for python-yq 4 compatibility
       links:
-        - name: "OAuth2 Proxy chart 10.7.0 release notes"
-          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.7.0
-        - name: "OAuth2 Proxy 7.15.3 release notes"
-          url: https://github.com/oauth2-proxy/oauth2-proxy/releases/tag/v7.15.3
-        - name: "Chart changes from 10.6.0 to 10.7.0"
-          url: https://github.com/oauth2-proxy/manifests/compare/oauth2-proxy-10.6.0...oauth2-proxy-10.7.0
+        - name: "Vault chart 0.34.1 release notes"
+          url: https://github.com/hashicorp/vault-helm/releases/tag/v0.34.1
+        - name: "Vault 2.x release notes"
+          url: https://developer.hashicorp.com/vault/docs/updates/release-notes
+        - name: "Chart changes from 0.34.0 to 0.34.1"
+          url: https://github.com/hashicorp/vault-helm/compare/v0.34.0...v0.34.1
