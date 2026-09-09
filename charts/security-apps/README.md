@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.132.0](https://img.shields.io/badge/Version-0.132.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.134.0](https://img.shields.io/badge/Version-0.134.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -61,14 +61,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | neuvector.destination.namespace | string | `"infra-neuvector"` | Namespace |
 | neuvector.enabled | bool | `false` | Enable neuvector |
 | neuvector.repoURL | string | [repo](https://neuvector.github.io/neuvector-helm) | Repo URL |
-| neuvector.targetRevision | string | `"2.10.3"` | [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version |
+| neuvector.targetRevision | string | `"2.11.1"` | [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version |
 | neuvector.values | object | [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/core/values.yaml) | Helm values |
 | neuvectorMonitor | object | - | [NeuVector monitor](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) ([example](./example/neuvector.yaml)) |
 | neuvectorMonitor.chart | string | `"monitor"` | Chart |
 | neuvectorMonitor.destination.namespace | string | `"infra-neuvector"` | Namespace |
 | neuvectorMonitor.enabled | bool | `false` | Enable neuvector/monitor |
 | neuvectorMonitor.repoURL | string | [repo](https://neuvector.github.io/neuvector-helm) | Repo URL |
-| neuvectorMonitor.targetRevision | string | `"2.10.3"` | [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version |
+| neuvectorMonitor.targetRevision | string | `"2.11.1"` | [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version |
 | neuvectorMonitor.values | object | [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/monitor/values.yaml) | Helm values |
 | oauth2Proxy | object | [example](./examples/oauth2-proxy.yaml) | [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) |
 | oauth2Proxy.annotations | object | `{}` | Annotations for oauth2-proxy app |
@@ -98,14 +98,14 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | stackroxCentralServices.destination.namespace | string | `"infra-stackrox"` | Namespace |
 | stackroxCentralServices.enabled | bool | `false` | Enable StackRox central-services |
 | stackroxCentralServices.repoURL | string | [repo](https://charts.stackrox.io) | Repo URL |
-| stackroxCentralServices.targetRevision | string | `"400.11.1"` | [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
+| stackroxCentralServices.targetRevision | string | `"400.11.3"` | [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
 | stackroxCentralServices.values | object | [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-central/values.yaml) | Helm values |
 | stackroxSecuredClusterServices | object | - | [StackRox secured-cluster-services](https://www.stackrox.io/) ([example/stackrox.yaml)) |
 | stackroxSecuredClusterServices.chart | string | `"stackrox-secured-cluster-services"` | Chart |
 | stackroxSecuredClusterServices.destination.namespace | string | `"infra-stackrox"` | Namespace |
 | stackroxSecuredClusterServices.enabled | bool | `false` | Enable StackRox secured-cluster-services |
 | stackroxSecuredClusterServices.repoURL | string | [repo](https://charts.stackrox.io) | Repo URL |
-| stackroxSecuredClusterServices.targetRevision | string | `"400.11.1"` | [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
+| stackroxSecuredClusterServices.targetRevision | string | `"400.11.3"` | [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
 | stackroxSecuredClusterServices.values | object | [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-secured-cluster/values.yaml.htpl) | Helm values |
 | vault | object | - | [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml)) |
 | vault.chart | string | `"vault"` | Chart |
