@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.31.0
+version: 0.32.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,7 +18,12 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Update Argo Rollouts Chart from 2.40.9 to 2.41.0
+        Updated Argo Rollouts chart from 2.41.0 to 2.42.0, including:
 
-        - Add Gateway API HTTPRoute support for the dashboard
-        - replace deprecated --metricsport with --metricsPort
+        - Update Argo Rollouts from v1.9.0 to v1.9.1
+        - Remove the default controller readinessProbe to align with upstream manifests
+      links:
+        - name: Argo Rollouts chart 2.42.0
+          url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.42.0
+        - name: Argo Rollouts v1.9.1
+          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.9.1
