@@ -6414,6 +6414,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated kube-prometheus-stack from 88.3.0 to 88.6.5, including:
+              - Prometheus Operator update from v0.93.0 to v0.93.1
+              - kube-state-metrics chart update from 8.2.0 to 8.4.1
+              - prometheus-node-exporter chart update from 4.56.1 to 4.56.3
+              - Grafana chart update from 12.10.4 to 12.11.2
+          links:
+            - name: "kube-prometheus-stack chart 88.6.5"
+              url: https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack/88.6.5
+            - name: "Upgrade instructions"
+              url: https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/README.md#upgrading-chart
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-09-09T08:40:22.976516811Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 53ed068677b7f6370660156ba3d1e4399416772e533e8a1878fb34d8d517c954
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.279.0/infra-apps-0.279.0.tgz
+    version: 0.279.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Update cert-manager from 1.20.3 to 1.21.1
               - cert-manager 1.21 adds experimental ACME Renewal Information (ARI) for proactive renewals.
               - The Vault issuer now supports native AWS IAM authentication, eliminating the need for long-lived secrets.
@@ -38086,4 +38121,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-09T08:36:08.332222532Z"
+generated: "2026-09-09T08:40:22.978816007Z"
