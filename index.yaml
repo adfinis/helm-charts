@@ -20700,6 +20700,39 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Goldilocks chart from 10.4.1 to 11.1.0, including:
+              - Goldilocks application update from v4.14.1 to v4.16.1
+              - Optional VPA chart dependency update from 4.12.* to 5.0.*
+          links:
+            - name: "Goldilocks chart 11.1.0"
+              url: https://artifacthub.io/packages/helm/fairwinds-stable/goldilocks/11.1.0
+            - name: "Goldilocks releases"
+              url: https://github.com/FairwindsOps/goldilocks/releases
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-09-09T08:43:40.85269647Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 0861d261e9ffe87ec1ad00ca552861ef3270077b0b425045c166c8f5b859c91e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.76.0/misc-apps-0.76.0.tgz
+    version: 0.76.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Goldilocks to 10.4.1, including:
               - Goldilocks app remains on v4.14.1
               - Update optional VPA chart dependency from 4.8.* to 4.12.*
@@ -38121,4 +38154,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-09T08:40:22.978816007Z"
+generated: "2026-09-09T08:43:40.855259572Z"
