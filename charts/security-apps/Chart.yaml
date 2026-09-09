@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.133.0
+version: 0.134.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,15 +19,16 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated StackRox Central and Secured Cluster Services charts from 400.11.1 to 400.11.3, including:
-          - RHACS application update from 4.11.1 to 4.11.3
-          - Security fixes for CVE-2026-42504, CVE-2026-39822, CVE-2026-13149,
-            CVE-2026-59869, CVE-2026-49978, and CVE-2026-69152
-          - Restore CEL scanner profile results in the Coverage view
-          - Add NODE_EVENT to the security policy CRD
-          - Reschedule pending view-based reports after Central restarts
+        Updated NeuVector core and monitor charts from 2.10.3 to 2.11.1, including:
+          - NeuVector application update from 5.5.3 to 5.6.1
+          - NeuVector Prometheus exporter update from 1.0.14 to 1.0.18
+          - Updated golang.org/x/net and golang.org/x/text dependencies
+          - Changed the controller readiness probe to use HTTP GET
+          - Pinned the monitor chart to the exporter's 1.0 release branch
       links:
-        - name: "RHACS 4.11 release notes"
-          url: https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_security_for_kubernetes/4.11/html/release_notes/release-notes-411
-        - name: "StackRox changes from 4.11.1 to 4.11.3"
-          url: https://github.com/stackrox/stackrox/compare/4.11.1...4.11.3
+        - name: "NeuVector chart 2.11.0 release notes"
+          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.11.0
+        - name: "NeuVector chart 2.11.1 release notes"
+          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.11.1
+        - name: "Chart changes from 2.10.3 to 2.11.1"
+          url: https://github.com/neuvector/neuvector-helm/compare/v2.10.3...v2.11.1
