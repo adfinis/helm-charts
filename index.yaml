@@ -35783,6 +35783,43 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated opentelemetry-collector chart from 0.162.0 to 0.172.0, including:
+              - Collector application update from 0.154.0 to 0.159.0
+              - Automatically rewrite filelog receivers to file_log by default
+              - Automatically rewrite otlp and otlphttp exporters to otlp_grpc and otlp_http by default
+              - Add an opt-in k8s_events receiver for the kubernetesEvents preset
+              - Template extraEnvs and extraEnvsFrom; existing template syntax must be escaped
+          links:
+            - name: Upgrade Guide
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/UPGRADING.md
+            - name: OpenTelemetry Collector Contrib v0.159.0
+              url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases/tag/v0.159.0
+            - name: Chart changes from 0.162.0 to 0.172.0
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/compare/opentelemetry-collector-0.162.0...opentelemetry-collector-0.172.0
+    apiVersion: v2
+    created: "2026-09-09T08:33:23.867169157Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for tracing applications
+    digest: a390b3b314541d0c351dbdd28152ab6169cf94487cc0ff6c540cd86ae1fb17be
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-1.5.0/tracing-apps-1.5.0.tgz
+    version: 1.5.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             feat!: Updating opentelemetry-collector Chart from 0.151.0 to 0.162.0
 
             - Update collector from to 0.150.1 to 0.154.0
@@ -38016,4 +38053,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-09T08:29:08.292005195Z"
+generated: "2026-09-09T08:33:23.869218605Z"
