@@ -20809,6 +20809,44 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Reloader chart from 2.2.11 to 2.2.16, including:
+              - Reloader application update from v1.4.16 to v1.4.21
+              - Updated golang.org/x/text to fix CVE-2026-56852
+              - Prevented a panic caused by invalid regular expressions in reload annotations
+              - Added runtimeClassName and schedulerName support for the Reloader deployment
+              - Corrected the namespace selector helper documentation
+          links:
+            - name: "Reloader chart 2.2.16 release notes"
+              url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.16
+            - name: "Reloader v1.4.21 release notes"
+              url: https://github.com/stakater/Reloader/releases/tag/v1.4.21
+            - name: "Chart changes from 2.2.11 to 2.2.16"
+              url: https://github.com/stakater/Reloader/compare/chart-v2.2.11...chart-v2.2.16
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-09-11T13:31:50.713975066Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 33ed52dd3fe7906a5b91118654ff6e3e4f0aedd245a995203826f5365640b610
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.78.0/misc-apps-0.78.0.tgz
+    version: 0.78.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated OpenCost chart from 2.5.26 to 2.5.30, including:
               - OpenCost application update from 1.120.4 to 1.121.1
               - Add inference-cost configuration support, disabled by default
@@ -38446,4 +38484,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-09T14:32:52.070015131Z"
+generated: "2026-09-11T13:31:50.715962967Z"
