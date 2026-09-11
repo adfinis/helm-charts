@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.136.0
+version: 0.137.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,16 +19,18 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Vault chart from 0.34.0 to 0.34.1, including:
-          - Vault application update from 2.0.3 to 2.0.4
-          - Vault CSI Provider update to 1.7.4
-          - Vault Kubernetes update to 1.7.6
-          - Patched a vulnerability in golang.org/x/crypto
-          - Fixed the license secret volume defaultMode for python-yq 4 compatibility
+        Updated Gatekeeper chart from 3.22.2 to 3.23.1, including:
+          - Gatekeeper application update from v3.22.2 to v3.23.1
+          - Backported security updates for v3.23.1
+          - Added structured fields to semantic log lines
+          - Added status resource routing for remote cluster mode
+          - Added mutation ApplyTo operation filtering
+          - Fixed generated ValidatingAdmissionPolicy reconciliation loops and update churn
+          - Added a default failure policy for Kubernetes-native validation templates
       links:
-        - name: "Vault chart 0.34.1 release notes"
-          url: https://github.com/hashicorp/vault-helm/releases/tag/v0.34.1
-        - name: "Vault 2.x release notes"
-          url: https://developer.hashicorp.com/vault/docs/updates/release-notes
-        - name: "Chart changes from 0.34.0 to 0.34.1"
-          url: https://github.com/hashicorp/vault-helm/compare/v0.34.0...v0.34.1
+        - name: "Gatekeeper 3.23.0 release notes"
+          url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.23.0
+        - name: "Gatekeeper 3.23.1 release notes"
+          url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.23.1
+        - name: "Changes from 3.22.2 to 3.23.1"
+          url: https://github.com/open-policy-agent/gatekeeper/compare/v3.22.2...v3.23.1
