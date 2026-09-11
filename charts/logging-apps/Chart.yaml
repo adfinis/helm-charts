@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.51.0
+version: 0.52.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,13 +15,20 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Loki chart from 18.3.1 to 18.12.1, including:
-          - Loki application update from 3.7.3 to 3.7.7
-          - Rollout Operator dependency update from 0.50.0 to 0.51.1
+        Updated Fluent Bit chart from 0.57.9 to 0.58.1, including:
+          - Fluent Bit application update from 5.0.9 to 5.1.1
+          - Added S3 Parquet/Arrow and Google Cloud Storage output support
+          - Added adaptive flushing, TLS certificate reload/watch, and HTTPS proxy support
+          - Fixed hot-reload backlog handling, TLS session reuse, and storage eviction
+          - Fixed Kubernetes event parsing and Kubernetes filter crash cases
       links:
-        - name: "Loki chart changes from 18.3.1 to 18.12.1"
-          url: https://github.com/grafana-community/helm-charts/compare/loki-18.3.1...loki-18.12.1
+        - name: "Fluent Bit 5.1.0 release notes"
+          url: https://github.com/fluent/fluent-bit/releases/tag/v5.1.0
+        - name: "Fluent Bit 5.1.1 release notes"
+          url: https://github.com/fluent/fluent-bit/releases/tag/v5.1.1
+        - name: "Fluent Bit chart changes from 0.57.9 to 0.58.1"
+          url: https://github.com/fluent/helm-charts/compare/fluent-bit-0.57.9...fluent-bit-0.58.1
