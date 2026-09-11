@@ -20809,6 +20809,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated KEDA chart from 2.20.1 to 2.20.2, including:
+              - KEDA application update from v2.20.1 to v2.20.2
+              - Added access to core events required by the operator for leader election
+          links:
+            - name: "KEDA chart 2.20.2 release notes"
+              url: https://github.com/kedacore/charts/releases/tag/v2.20.2
+            - name: "KEDA 2.20.2 release notes"
+              url: https://github.com/kedacore/keda/releases/tag/v2.20.2
+            - name: "Chart changes from 2.20.1 to 2.20.2"
+              url: https://github.com/kedacore/charts/compare/v2.20.1...v2.20.2
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-09-11T13:36:18.955447843Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: ed6507054470ca751ea1c695d305cf21785a1009c541211a49cde504d05d96b3
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.79.0/misc-apps-0.79.0.tgz
+    version: 0.79.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Reloader chart from 2.2.11 to 2.2.16, including:
               - Reloader application update from v1.4.16 to v1.4.21
               - Updated golang.org/x/text to fix CVE-2026-56852
@@ -38484,4 +38519,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-11T13:31:50.715962967Z"
+generated: "2026-09-11T13:36:18.958412448Z"
