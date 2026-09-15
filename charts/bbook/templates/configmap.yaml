@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "bbook.fullname" . }}-config
+  labels:
+    {{- include "bbook.labels" . | nindent 4 }}
+data:
+  LOG_FORMAT: {{ .Values.config.logFormat | quote }}
+  LOG_LEVEL: {{ .Values.config.logLevel | quote }}
+  BBOOK_SCHEME: {{ .Values.config.scheme | quote }}
+  BBOOK_HOSTNAME: {{ .Values.config.hostname | quote }}
+  BBOOK_PORT: {{ .Values.config.port | quote }}
+  POSTGRES_HOST: {{ include "bbook.databaseHost" . | quote }}
+  POSTGRES_USER: {{ include "bbook.databaseUser" . | quote }}
+  POSTGRES_DB: {{ include "bbook.databaseName" . | quote }}
+  CONNECTION_STRING_PARAMS: {{ include "bbook.databaseParams" . | quote }}
+  ZOHO_SYNC_ENABLED: {{ .Values.config.zoho.syncEnabled | quote }}
+  ZOHO_BASE_URL: {{ .Values.config.zoho.baseURL | quote }}
+  ZOHO_ACCOUNTS_URL: {{ .Values.config.zoho.accountsURL | quote }}
+  OIDC_ISSUER_URL: {{ .Values.config.oidc.issuerURL | quote }}
+  OIDC_DISCOVERY_URL: {{ default .Values.config.oidc.issuerURL .Values.config.oidc.discoveryURL | quote }}
+  OIDC_INSECURE_SKIP_ISSUER_VALIDATION: {{ .Values.config.oidc.insecureSkipIssuerValidation | quote }}
+  OIDC_CLIENT_ID: {{ .Values.config.oidc.clientID | quote }}
+  OIDC_REDIRECT_URL: {{ default (printf "%s://%s/auth/callback" .Values.config.scheme .Values.config.hostname) .Values.config.oidc.redirectURL | quote }}
+  OIDC_REQUIRED_GROUP: {{ .Values.config.oidc.requiredGroup | quote }}

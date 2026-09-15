@@ -1,0 +1,81 @@
+# default values in the case of CI/CD
+
+config:
+  sessionSecret: ci-only-session-secret-0123456789abcdef
+  oidc:
+    issuerURL: http://bbook-ci-oidc
+    clientID: bbook
+    clientSecret: ci-dummy-secret
+
+postgresql:
+  enabled: true
+  persistence:
+    enabled: false
+  auth:
+    username: bbook
+    password: ci-dummy-password
+    database: bbook
+
+extraObjects:
+  - apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: bbook-ci-oidc
+    data:
+      default.conf: |
+        server {
+          listen 8080;
+          default_type application/json;
+          root /srv;
+        }
+      openid-configuration: |
+        {
+          "issuer": "http://bbook-ci-oidc",
+          "authorization_endpoint": "http://bbook-ci-oidc/auth",
+          "token_endpoint": "http://bbook-ci-oidc/token",
+          "userinfo_endpoint": "http://bbook-ci-oidc/userinfo",
+          "jwks_uri": "http://bbook-ci-oidc/keys",
+          "response_types_supported": ["code"],
+          "subject_types_supported": ["public"],
+          "id_token_signing_alg_values_supported": ["RS256"]
+        }
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: bbook-ci-oidc
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app.kubernetes.io/name: bbook-ci-oidc
+      template:
+        metadata:
+          labels:
+            app.kubernetes.io/name: bbook-ci-oidc
+        spec:
+          containers:
+            - name: nginx
+              image: nginx:1.27-alpine
+              ports:
+                - containerPort: 8080
+              volumeMounts:
+                - name: conf
+                  mountPath: /etc/nginx/conf.d/default.conf
+                  subPath: default.conf
+                - name: conf
+                  mountPath: /srv/.well-known/openid-configuration
+                  subPath: openid-configuration
+          volumes:
+            - name: conf
+              configMap:
+                name: bbook-ci-oidc
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: bbook-ci-oidc
+    spec:
+      selector:
+        app.kubernetes.io/name: bbook-ci-oidc
+      ports:
+        - port: 80
+          targetPort: 8080

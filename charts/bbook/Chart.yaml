@@ -1,0 +1,28 @@
+---
+apiVersion: v2
+name: bbook
+description: Contact address book, syncing contacts from Zoho CRM to a searchable web page and a read-only CardDAV endpoint
+type: application
+version: 0.1.0
+appVersion: "0.1.2"
+kubeVersion: ">= 1.21.0"
+home: https://github.com/adfinis/bbook
+sources:
+  - https://github.com/adfinis/bbook
+maintainers:
+  - name: adfinis
+    email: "wolf@adfinis.com"
+    url: "https://adfinis.com"
+dependencies:
+  - name: postgres
+    alias: postgresql
+    version: ~0.19.5
+    repository: oci://registry-1.docker.io/cloudpirates
+    condition: postgresql.enabled
+annotations:
+  artifacthub.io/images: |
+    - name: bbook
+      image: ghcr.io/adfinis/bbook:0.1.2
+  artifacthub.io/changes: |
+    - kind: added
+      description: Initial version of the bbook chart

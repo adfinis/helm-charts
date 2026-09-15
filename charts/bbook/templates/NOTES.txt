@@ -1,0 +1,10 @@
+bbook is reachable at {{ .Values.config.scheme }}://{{ .Values.config.hostname }}{{ if .Values.config.port }}:{{ .Values.config.port }}{{ end }}
+{{- if not .Values.ingress.enabled }}
+
+The ingress is disabled. Forward the service port to reach bbook locally:
+  kubectl --namespace {{ .Release.Namespace }} port-forward svc/{{ include "bbook.fullname" . }} {{ .Values.service.port }}
+{{- end }}
+{{- if not .Values.config.zoho.syncEnabled }}
+
+The Zoho sync is disabled, no contacts will be fetched from Zoho CRM.
+{{- end }}

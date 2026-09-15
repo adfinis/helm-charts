@@ -1,0 +1,169 @@
+# Default values for bbook.
+# This is a YAML-formatted file.
+
+# -- number of replicas to launch.
+# Note: every replica runs its own Zoho sync job and search index
+replicaCount: 1
+
+image:
+  # -- repository where the image is located
+  repository: ghcr.io/adfinis/bbook
+  # -- pullPolicy to use
+  pullPolicy: IfNotPresent
+  # -- Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+# -- imagePullSecrets for pulling the image
+imagePullSecrets: []
+
+# -- nameOverride configuration
+nameOverride: ""
+
+# -- fullnameOverride configuration
+fullnameOverride: ""
+
+serviceAccount:
+  # -- Specifies whether a service account should be created
+  create: true
+  # -- Annotations to add to the service account
+  annotations: {}
+  # -- The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+# -- Pod annotations to add
+podAnnotations: {}
+
+# -- Pod securityContext configuration
+podSecurityContext: {}
+  # fsGroup: 2000
+
+# -- Container securityContext configuration
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  # -- service type of the application
+  type: ClusterIP
+  # -- port where the service listens to
+  port: 8081
+
+ingress:
+  # -- enable ingress for bbook
+  enabled: false
+  # -- which ingressClassName to use
+  className: ""
+  # -- ingress annotations
+  annotations: {}
+    # kubernetes.io/tls-acme: "true"
+  # -- ingress hostnames
+  hosts:
+    - host: bbook.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  # -- ingress TLS configuration
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - bbook.local
+
+# -- Pod resources to define
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+# -- Pod nodeSelector configuration
+nodeSelector: {}
+
+# -- Pod tolerations configuration
+tolerations: []
+
+# -- Pod affinity configuration
+affinity: {}
+
+config:
+  # -- log format (text|json)
+  logFormat: json
+  # -- log level (debug|info|warn|error)
+  logLevel: info
+  # -- scheme used to reach bbook externally (BBOOK_SCHEME)
+  scheme: https
+  # -- hostname where bbook is reachable (BBOOK_HOSTNAME), usually the ingress host
+  hostname: bbook.local
+  # -- external port (BBOOK_PORT), leave empty for the scheme default
+  port: ""
+  zoho:
+    # -- enable the Zoho CRM sync job
+    syncEnabled: false
+    # -- Zoho API base URL
+    baseURL: https://www.zohoapis.eu
+    # -- Zoho accounts URL
+    accountsURL: https://accounts.zoho.eu
+    # -- Zoho OAuth client ID (stored in the Secret)
+    clientID: ""
+    # -- Zoho OAuth client secret (stored in the Secret)
+    clientSecret: ""
+    # -- Zoho OAuth refresh token (stored in the Secret)
+    refreshToken: ""
+  oidc:
+    # -- OIDC issuer URL as seen by the browser
+    issuerURL: ""
+    # -- OIDC discovery URL as seen by bbook, defaults to issuerURL
+    discoveryURL: ""
+    # -- skip validation of the issuer in the discovery document
+    insecureSkipIssuerValidation: false
+    # -- OIDC client ID
+    clientID: bbook
+    # -- OIDC client secret (stored in the Secret)
+    clientSecret: ""
+    # -- OIDC redirect URL, defaults to <scheme>://<hostname>/auth/callback
+    redirectURL: ""
+    # -- group required to access bbook (needs a groups claim in the ID token).
+    # Empty disables the app-side check, leaving access control to the IdP.
+    requiredGroup: ""
+  # -- session cookie secret, at least 32 characters (stored in the Secret)
+  sessionSecret: ""
+
+# -- use an existing Secret instead of creating one.
+# Must contain POSTGRES_PASSWORD, OIDC_CLIENT_SECRET, SESSION_SECRET and,
+# when the Zoho sync is enabled, ZOHO_CLIENT_ID, ZOHO_CLIENT_SECRET and ZOHO_REFRESH_TOKEN.
+existingSecret: ""
+
+# -- extra Kubernetes objects deployed with the chart, rendered through tpl.
+extraObjects: []
+
+postgresql:
+  # -- deploy the bundled PostgreSQL (CloudPirates postgres chart).
+  # If disabled, externalDatabase is used instead.
+  enabled: false
+  nameOverride: postgresql
+  auth:
+    # -- PostgreSQL user name
+    username: bbook
+    # -- PostgreSQL password (stored in the Secret)
+    password: ""
+    # -- PostgreSQL database name
+    database: bbook
+
+# -- external database configuration, used when postgresql.enabled is false
+externalDatabase:
+  # -- database host, may include a port (host:5432)
+  host: ""
+  # -- database user name
+  username: bbook
+  # -- database password (stored in the Secret)
+  password: ""
+  # -- database name
+  database: bbook
+  # -- extra connection string parameters, e.g. "?sslmode=require"
+  connectionStringParams: ""
