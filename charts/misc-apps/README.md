@@ -1,6 +1,6 @@
 # misc-apps
 
-![Version: 0.77.0](https://img.shields.io/badge/Version-0.77.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.79.0](https://img.shields.io/badge/Version-0.79.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for miscellaneous small tools
 
@@ -67,7 +67,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keda.destination.namespace | string | `"infra-keda"` | Namespace |
 | keda.enabled | bool | `false` | Enable KEDA |
 | keda.repoURL | string | [repo](https://kedacore.github.io/charts) | Repo URL |
-| keda.targetRevision | string | `"2.20.1"` | [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version |
+| keda.targetRevision | string | `"2.20.2"` | [keda Helm chart](https://github.com/kedacore/charts/tree/main/keda/) version |
 | keda.values | object | [upstream values](https://github.com/kedacore/charts/blob/main/keda/values.yaml) | Helm values |
 | metallb | object | - | [metallb](https://github.com/metallb/metallb) ([example](./examples/metallb.yaml)) |
 | metallb.chart | string | `"metallb"` | Chart |
@@ -96,7 +96,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | reloader.destination.namespace | string | `"infra-reloader"` | Namespace |
 | reloader.enabled | bool | `false` | Enable reloader |
 | reloader.repoURL | string | [repo](https://stakater.github.io/stakater-charts) | Repo URL |
-| reloader.targetRevision | string | `"2.2.11"` | [reloader Helm chart](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader) version |
+| reloader.targetRevision | string | `"2.2.16"` | [reloader Helm chart](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader) version |
 | reloader.values | object | [upstream values](https://github.com/stakater/Reloader/tree/master/deployments/kubernetes/chart/reloader/values.yaml) | Helm values |
 | sentryKubernetes | object | DEPRECATED | [sentry-kubernetes](https://github.com/getsentry/sentry-kubernetes) is DEPRECATED, use other error reporting solutions instead |
 | signalilo | object | - | [sigalilo](https://github.com/vshn/signalilo) ([example](./examples/signalilo.yaml)) |
