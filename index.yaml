@@ -18895,6 +18895,44 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Fluent Bit chart from 0.57.9 to 0.58.1, including:
+              - Fluent Bit application update from 5.0.9 to 5.1.1
+              - Added S3 Parquet/Arrow and Google Cloud Storage output support
+              - Added adaptive flushing, TLS certificate reload/watch, and HTTPS proxy support
+              - Fixed hot-reload backlog handling, TLS session reuse, and storage eviction
+              - Fixed Kubernetes event parsing and Kubernetes filter crash cases
+          links:
+            - name: "Fluent Bit 5.1.0 release notes"
+              url: https://github.com/fluent/fluent-bit/releases/tag/v5.1.0
+            - name: "Fluent Bit 5.1.1 release notes"
+              url: https://github.com/fluent/fluent-bit/releases/tag/v5.1.1
+            - name: "Fluent Bit chart changes from 0.57.9 to 0.58.1"
+              url: https://github.com/fluent/helm-charts/compare/fluent-bit-0.57.9...fluent-bit-0.58.1
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-09-21T15:34:31.899231109Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: 63b2a83a19dd4a971cba4000b6e6084f404ca755d89e81b5f883a53887682cee
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.52.0/logging-apps-0.52.0.tgz
+    version: 0.52.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Loki chart from 18.3.1 to 18.12.1, including:
               - Loki application update from 3.7.3 to 3.7.7
               - Rollout Operator dependency update from 0.50.0 to 0.51.1
@@ -38673,4 +38711,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-21T15:31:50.062681702Z"
+generated: "2026-09-21T15:34:31.901683616Z"
