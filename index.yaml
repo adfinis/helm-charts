@@ -26635,6 +26635,41 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated OpenBao chart from 0.29.3 to 0.29.4, including:
+              - OpenBao application update to v2.6.2
+              - Snapshot Agent update to v0.4.4
+              - Added nodeSelector and affinity support for the Snapshot Agent CronJob pod
+              - Fixed invalid YAML syntax in the StatefulSet definition
+          links:
+            - name: "OpenBao Helm chart 0.29.4 release notes"
+              url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.4
+            - name: "Changes from 0.29.3 to 0.29.4"
+              url: https://github.com/openbao/openbao-helm/compare/openbao-0.29.3...openbao-0.29.4
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-09-21T15:31:50.061522264Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 7f3d1179657e9b23c995225f54355de6a84c3e898daffb2dddb9e0602a755603
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.138.0/security-apps-0.138.0.tgz
+    version: 0.138.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Gatekeeper chart from 3.22.2 to 3.23.1, including:
               - Gatekeeper application update from v3.22.2 to v3.23.1
               - Backported security updates for v3.23.1
@@ -38638,4 +38673,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-21T15:25:58.883887904Z"
+generated: "2026-09-21T15:31:50.062681702Z"
