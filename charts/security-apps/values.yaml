@@ -96,7 +96,7 @@ gatekeeper:
   # -- Chart
   chart: "gatekeeper"
   # -- [gatekeeper Helm chart](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper) version
-  targetRevision: "3.22.2"
+  targetRevision: "3.23.1"
   # -- Helm values
   # @default -- [upstream values](https://github.com/open-policy-agent/gatekeeper/blob/master/charts/gatekeeper/values.yaml)
   values: {}
@@ -304,7 +304,7 @@ openbao:
   # -- Chart
   chart: openbao
   # -- [OpenBao Helm chart](https://github.com/openbao/openbao-helm/tree/main/charts/openbao)
-  targetRevision: 0.29.3
+  targetRevision: 0.29.4
   # -- Helm values
   # @default -- [upstream values](https://github.com/openbao/openbao-helm/blob/main/charts/openbao/values.yaml)
   values: {}

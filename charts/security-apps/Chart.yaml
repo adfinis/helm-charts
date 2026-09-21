@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.136.0
+version: 0.138.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,20 +15,17 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Vault chart from 0.34.0 to 0.34.1, including:
-          - Vault application update from 2.0.3 to 2.0.4
-          - Vault CSI Provider update to 1.7.4
-          - Vault Kubernetes update to 1.7.6
-          - Patched a vulnerability in golang.org/x/crypto
-          - Fixed the license secret volume defaultMode for python-yq 4 compatibility
+        Updated OpenBao chart from 0.29.3 to 0.29.4, including:
+          - OpenBao application update to v2.6.2
+          - Snapshot Agent update to v0.4.4
+          - Added nodeSelector and affinity support for the Snapshot Agent CronJob pod
+          - Fixed invalid YAML syntax in the StatefulSet definition
       links:
-        - name: "Vault chart 0.34.1 release notes"
-          url: https://github.com/hashicorp/vault-helm/releases/tag/v0.34.1
-        - name: "Vault 2.x release notes"
-          url: https://developer.hashicorp.com/vault/docs/updates/release-notes
-        - name: "Chart changes from 0.34.0 to 0.34.1"
-          url: https://github.com/hashicorp/vault-helm/compare/v0.34.0...v0.34.1
+        - name: "OpenBao Helm chart 0.29.4 release notes"
+          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.4
+        - name: "Changes from 0.29.3 to 0.29.4"
+          url: https://github.com/openbao/openbao-helm/compare/openbao-0.29.3...openbao-0.29.4
