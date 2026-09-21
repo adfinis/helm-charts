@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.137.0
+version: 0.138.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,22 +15,17 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Gatekeeper chart from 3.22.2 to 3.23.1, including:
-          - Gatekeeper application update from v3.22.2 to v3.23.1
-          - Backported security updates for v3.23.1
-          - Added structured fields to semantic log lines
-          - Added status resource routing for remote cluster mode
-          - Added mutation ApplyTo operation filtering
-          - Fixed generated ValidatingAdmissionPolicy reconciliation loops and update churn
-          - Added a default failure policy for Kubernetes-native validation templates
+        Updated OpenBao chart from 0.29.3 to 0.29.4, including:
+          - OpenBao application update to v2.6.2
+          - Snapshot Agent update to v0.4.4
+          - Added nodeSelector and affinity support for the Snapshot Agent CronJob pod
+          - Fixed invalid YAML syntax in the StatefulSet definition
       links:
-        - name: "Gatekeeper 3.23.0 release notes"
-          url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.23.0
-        - name: "Gatekeeper 3.23.1 release notes"
-          url: https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.23.1
-        - name: "Changes from 3.22.2 to 3.23.1"
-          url: https://github.com/open-policy-agent/gatekeeper/compare/v3.22.2...v3.23.1
+        - name: "OpenBao Helm chart 0.29.4 release notes"
+          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.4
+        - name: "Changes from 0.29.3 to 0.29.4"
+          url: https://github.com/openbao/openbao-helm/compare/openbao-0.29.3...openbao-0.29.4
