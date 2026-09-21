@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.134.0
+version: 0.135.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,16 +19,19 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated NeuVector core and monitor charts from 2.10.3 to 2.11.1, including:
-          - NeuVector application update from 5.5.3 to 5.6.1
-          - NeuVector Prometheus exporter update from 1.0.14 to 1.0.18
-          - Updated golang.org/x/net and golang.org/x/text dependencies
-          - Changed the controller readiness probe to use HTTP GET
-          - Pinned the monitor chart to the exporter's 1.0 release branch
+        Updated OAuth2 Proxy chart from 10.6.0 to 10.7.0, including:
+          - OAuth2 Proxy application update from 7.15.2 to 7.15.3
+          - Updated Go to 1.26.4 and refreshed dependencies
+          - Fixed CVE-2026-33811, CVE-2026-33814, CVE-2026-39820,
+            CVE-2026-39836, CVE-2026-42499, CVE-2026-42504,
+            CVE-2026-39823, CVE-2026-39826, CVE-2026-39825,
+            CVE-2026-27145, and CVE-2026-42507
+          - Added centralized alpha-config source and name helpers
+          - Added guards for invalid deprecated alphaConfig combinations
       links:
-        - name: "NeuVector chart 2.11.0 release notes"
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.11.0
-        - name: "NeuVector chart 2.11.1 release notes"
-          url: https://github.com/neuvector/neuvector-helm/releases/tag/v2.11.1
-        - name: "Chart changes from 2.10.3 to 2.11.1"
-          url: https://github.com/neuvector/neuvector-helm/compare/v2.10.3...v2.11.1
+        - name: "OAuth2 Proxy chart 10.7.0 release notes"
+          url: https://github.com/oauth2-proxy/manifests/releases/tag/oauth2-proxy-10.7.0
+        - name: "OAuth2 Proxy 7.15.3 release notes"
+          url: https://github.com/oauth2-proxy/oauth2-proxy/releases/tag/v7.15.3
+        - name: "Chart changes from 10.6.0 to 10.7.0"
+          url: https://github.com/oauth2-proxy/manifests/compare/oauth2-proxy-10.6.0...oauth2-proxy-10.7.0
