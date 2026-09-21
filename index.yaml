@@ -31821,6 +31821,45 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated CSI Driver SMB chart from 1.20.1 to 1.20.3, including:
+              - Fixed CVE-2026-33186 in google.golang.org/grpc
+              - Fixed CVE-2026-25680
+              - Rebuilt with Go 1.26.4 to address Go runtime CVEs
+              - Updated CSI sidecar images
+              - Added controller.extraArgs support for sidecar containers
+              - Increased the Windows node plugin liveness probe timeout
+          links:
+            - name: "CSI Driver SMB 1.20.2 release notes"
+              url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.20.2
+            - name: "CSI Driver SMB 1.20.3 release notes"
+              url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.20.3
+            - name: "Changes from 1.20.1 to 1.20.3"
+              url: https://github.com/kubernetes-csi/csi-driver-smb/compare/v1.20.1...v1.20.3
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-09-21T15:46:02.942292351Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for storage applications
+    digest: f10ca0e595ec51fdba2016251e3223d712ba998c61ee9cbe5c3c3a23b32d9993
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: storage-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/storage-apps-0.26.0/storage-apps-0.26.0.tgz
+    version: 0.26.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated cephCsiRbd and cephCsiCephfs from 3.17.0 to 3.17.1, including:
               * Updated the Ceph base image to 20.2.4 with AES256 key format support.
               * Fixed RBD replication cleanup and connection leaks.
@@ -38711,4 +38750,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-21T15:34:31.901683616Z"
+generated: "2026-09-21T15:46:02.946241857Z"
