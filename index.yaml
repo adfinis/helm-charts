@@ -18953,6 +18953,44 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Loki chart from 18.12.1 to 18.13.7, including:
+              - Loki application update from 3.7.7 to 3.7.8
+              - Updated gRPC to address high-severity security vulnerabilities
+              - Updated containerd, golang.org/x/net, and golang.org/x/crypto for security fixes
+              - Updated rollout-operator from 0.51.1 to 0.52.0
+              - Updated access-log-exporter to v0.4.21
+          links:
+            - name: "Loki chart 18.13.7 release notes"
+              url: https://github.com/grafana-community/helm-charts/releases/tag/loki-18.13.7
+            - name: "Loki 3.7.8 release notes"
+              url: https://github.com/grafana/loki/releases/tag/v3.7.8
+            - name: "Chart changes from 18.12.1 to 18.13.7"
+              url: https://github.com/grafana-community/helm-charts/compare/loki-18.12.1...loki-18.13.7
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-10-01T14:01:35.832894357Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: 97758bedd545e076eedf7ddd9ac882b38e1087e6a18bd28f9c68b930a801531a
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.53.0/logging-apps-0.53.0.tgz
+    version: 0.53.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Fluent Bit chart from 0.57.9 to 0.58.1, including:
               - Fluent Bit application update from 5.0.9 to 5.1.1
               - Added S3 Parquet/Arrow and Google Cloud Storage output support
@@ -39078,4 +39116,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-01T13:55:06.812342623Z"
+generated: "2026-10-01T14:01:35.835162025Z"
