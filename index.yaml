@@ -26731,6 +26731,40 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated StackRox Central and Secured Cluster charts from 400.11.3 to 400.11.4, including:
+              - StackRox application update from 4.11.3 to 4.11.4
+              - Redacted plaintext service account tokens from OpenShift-managed secret annotations in diagnostic bundles
+              - Fixed Scanner V4 matching for the "CVE is not yet fixable" policy criterion
+          links:
+            - name: "StackRox 4.11.4 release notes"
+              url: https://github.com/stackrox/stackrox/releases/tag/4.11.4
+            - name: "Changes from 4.11.3 to 4.11.4"
+              url: https://github.com/stackrox/stackrox/compare/4.11.3...4.11.4
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-10-01T13:45:40.758021186Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: 78addfd2ddc1e13455fd1addcee5f56dc7d493d1bd6cf2a829eaf07175265a3f
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.142.0/security-apps-0.142.0.tgz
+    version: 0.142.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated NeuVector core and monitor charts from 2.11.1 to 2.11.2, including:
               - NeuVector application update from v5.6.1 to v5.6.2
               - NeuVector monitor update from v1.0.18 to v1.0.19
@@ -38923,4 +38957,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-01T13:43:37.171043106Z"
+generated: "2026-10-01T13:45:40.759877074Z"
