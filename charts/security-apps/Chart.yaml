@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.139.0
+version: 0.140.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,21 +15,18 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Dex chart from 0.24.1 to 0.25.2, including:
-          - Dex application update from v2.44.0 to v2.45.1
-          - Enabled ContinueOnConnectorFailure by default
-          - Updated gomplate to v5.0.0, which includes breaking changes
-          - Raised the minimum supported Kubernetes version from 1.14 to 1.20
-          - Fixed MySQL 8.0+ storage migrations and the chart favicon link
-          - Note: upstream reports CVE-2025-68121 and CVE-2026-25934 in the optional gomplate binary
+        Updated Secrets Store CSI Driver chart from 1.6.0 to 1.6.1, including:
+          - Secrets Store CSI Driver application update from v1.6.0 to v1.6.1
+          - Updated vulnerable image dependencies and Go to fix image CVEs
+          - Updated golang.org/x/net to fix GO-2026-4918
+          - Prevented a secret update hot loop
+          - Corrected the log format for missing target path modification times
       links:
-        - name: "Dex v2.45.0 release notes"
-          url: https://github.com/dexidp/dex/releases/tag/v2.45.0
-        - name: "Dex v2.45.1 release notes"
-          url: https://github.com/dexidp/dex/releases/tag/v2.45.1
-        - name: "Chart changes from 0.24.1 to 0.25.2"
-          url: https://github.com/dexidp/helm-charts/compare/dex-0.24.1...dex-0.25.2
+        - name: "Secrets Store CSI Driver v1.6.1 release notes"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/releases/tag/v1.6.1
+        - name: "Changes from v1.6.0 to v1.6.1"
+          url: https://github.com/kubernetes-sigs/secrets-store-csi-driver/compare/v1.6.0...v1.6.1
