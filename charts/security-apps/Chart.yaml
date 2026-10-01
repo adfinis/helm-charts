@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.138.0
+version: 0.139.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,13 +19,17 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated OpenBao chart from 0.29.3 to 0.29.4, including:
-          - OpenBao application update to v2.6.2
-          - Snapshot Agent update to v0.4.4
-          - Added nodeSelector and affinity support for the Snapshot Agent CronJob pod
-          - Fixed invalid YAML syntax in the StatefulSet definition
+        Updated Dex chart from 0.24.1 to 0.25.2, including:
+          - Dex application update from v2.44.0 to v2.45.1
+          - Enabled ContinueOnConnectorFailure by default
+          - Updated gomplate to v5.0.0, which includes breaking changes
+          - Raised the minimum supported Kubernetes version from 1.14 to 1.20
+          - Fixed MySQL 8.0+ storage migrations and the chart favicon link
+          - Note: upstream reports CVE-2025-68121 and CVE-2026-25934 in the optional gomplate binary
       links:
-        - name: "OpenBao Helm chart 0.29.4 release notes"
-          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.29.4
-        - name: "Changes from 0.29.3 to 0.29.4"
-          url: https://github.com/openbao/openbao-helm/compare/openbao-0.29.3...openbao-0.29.4
+        - name: "Dex v2.45.0 release notes"
+          url: https://github.com/dexidp/dex/releases/tag/v2.45.0
+        - name: "Dex v2.45.1 release notes"
+          url: https://github.com/dexidp/dex/releases/tag/v2.45.1
+        - name: "Chart changes from 0.24.1 to 0.25.2"
+          url: https://github.com/dexidp/helm-charts/compare/dex-0.24.1...dex-0.25.2
