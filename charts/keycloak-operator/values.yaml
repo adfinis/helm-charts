@@ -21,7 +21,7 @@ operator:
     # -- Overrides the image tag whose default is the chart appVersion.
     tag: ""
     # -- Configure the SHA for the operator image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion.
-    sha: "68b1e5805b990bc80bcdcc2bd9b23abff9b03e744aaea2b04efff30d390d7a6f"
+    sha: "06a13deb391960cabf7eb0580442962326c2d163bb7887acbf0dcfeb11a1b2f4"
 
   config:
     keycloakImage:
@@ -30,7 +30,7 @@ operator:
       # -- Overrides the keycloak image tag whose default is the chart appVersion.
       tag: ""
       # -- Configure the SHA for the default keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion.
-      sha: "6efbadc00f0ed0237610becf11f4101b9c3ad8edf08a5b70c97aa4154ed436ec"
+      sha: "82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c"
 
   serviceAccount:
     # -- Specifies whether a service account should be created.
