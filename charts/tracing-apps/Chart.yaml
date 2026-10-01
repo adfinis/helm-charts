@@ -2,7 +2,7 @@ apiVersion: v2
 name: tracing-apps
 description: Argo CD app-of-apps config for tracing applications
 type: application
-version: 1.5.0
+version: 1.6.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,16 +18,19 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated opentelemetry-collector chart from 0.162.0 to 0.172.0, including:
-          - Collector application update from 0.154.0 to 0.159.0
-          - Automatically rewrite filelog receivers to file_log by default
-          - Automatically rewrite otlp and otlphttp exporters to otlp_grpc and otlp_http by default
-          - Add an opt-in k8s_events receiver for the kubernetesEvents preset
-          - Template extraEnvs and extraEnvsFrom; existing template syntax must be escaped
+        Updated opentelemetry-collector chart from 0.172.0 to 0.174.0, including:
+          - Collector application update from 0.159.0 to 0.161.0
+          - Removed deprecated Kafka client and exporter authentication options
+          - Renamed the dynamic_sampling processor to adaptive_tail_sampling
+          - Enabled stable Kubernetes attribute conventions by default
+          - Removed the deprecated Mezmo exporter; use OTLP/HTTP instead
+          - Added a signing processor for tamper-evident audit logs
       links:
-        - name: Upgrade Guide
+        - name: "OpenTelemetry Collector chart upgrade guide"
           url: https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/UPGRADING.md
-        - name: OpenTelemetry Collector Contrib v0.159.0
-          url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases/tag/v0.159.0
-        - name: Chart changes from 0.162.0 to 0.172.0
-          url: https://github.com/open-telemetry/opentelemetry-helm-charts/compare/opentelemetry-collector-0.162.0...opentelemetry-collector-0.172.0
+        - name: "OpenTelemetry Collector Contrib v0.160.0"
+          url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases/tag/v0.160.0
+        - name: "OpenTelemetry Collector Contrib v0.161.0"
+          url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases/tag/v0.161.0
+        - name: "Chart changes from 0.172.0 to 0.174.0"
+          url: https://github.com/open-telemetry/opentelemetry-helm-charts/compare/opentelemetry-collector-0.172.0...opentelemetry-collector-0.174.0
