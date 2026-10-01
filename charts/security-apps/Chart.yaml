@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.143.0
+version: 0.144.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,17 +19,20 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Kyverno and Kyverno Policies charts from 3.9.0 to 3.9.1, including:
-          - Kyverno application update from v1.19.0 to v1.19.1
-          - Fixed an SSRF and service account token egress controls bypass in legacy API calls and global context entries
-          - Updated Go and dependencies to address CVE-2026-39821, CVE-2026-56853, and CVE-2026-56858
-          - Fixed PolicyException scope and namespace-isolation bypasses
-          - Fixed file descriptor and memory leaks when reading OCI image layers
-          - Added CEL autogen support for custom workload CRDs
+        Updated OpenBao chart from 0.29.4 to 0.30.0, including:
+          - OpenBao application update from v2.6.2 to v2.7.0
+          - BREAKING: changed the standalone storage backend to PebbleDB; manual migration is required
+          - Fixed authorization, namespace isolation, plugin execution, audit log data exposure, ACME SAN validation, and OIDC security issues
+          - Removed several built-in seals, auth engines, and secret engines in favor of external plugins
+          - Added external keys, post-quantum cryptography, PostgreSQL read scalability, and strong consistency controls
+          - Added signatures for Helm charts and OCI artifacts
+          - Added resource-specific metadata support to the Snapshot Agent
       links:
-        - name: "Kyverno v1.19.1 release notes"
-          url: https://github.com/kyverno/kyverno/releases/tag/v1.19.1
-        - name: "GHSA-q825-p383-r9v5 security advisory"
-          url: https://github.com/kyverno/kyverno/security/advisories/GHSA-q825-p383-r9v5
-        - name: "Changes from v1.19.0 to v1.19.1"
-          url: https://github.com/kyverno/kyverno/compare/v1.19.0...v1.19.1
+        - name: "OpenBao Helm chart 0.30.0 release notes"
+          url: https://github.com/openbao/openbao-helm/releases/tag/openbao-0.30.0
+        - name: "OpenBao v2.7.0 release notes"
+          url: https://github.com/openbao/openbao/releases/tag/v2.7.0
+        - name: "Standalone storage migration guide"
+          url: https://openbao.org/docs/guides/migrations/k8s-pebbledb
+        - name: "Chart changes from 0.29.4 to 0.30.0"
+          url: https://github.com/openbao/openbao-helm/compare/openbao-0.29.4...openbao-0.30.0
