@@ -1,0 +1,123 @@
+{{- if or .Values.gatewayParameters.enabled
+          .Values.resources.requests
+          .Values.resources.limits
+          .Values.resources.claims}}
+apiVersion: gateway.kgateway.dev/v1alpha1
+kind: GatewayParameters
+metadata:
+  name: {{ include "gateway.fullname" . }}
+  labels:
+    {{- include "gateway.labels" . | nindent 4 }}
+  annotations:
+    {{- .Values.gatewayParameters.annotations | toYaml | nindent 4 }}
+spec:
+  kube:
+    {{- if or .Values.gatewayParameters.replicas .Values.gatewayParameters.deploymentStrategy}}
+    deployment:
+      {{- with .Values.gatewayParameters.replicas }}
+      replicas: {{ . }}
+      {{- end }}
+      {{- if .Values.gatewayParameters.deploymentStrategy }}
+      strategy:
+        type: {{ .Values.gatewayParameters.deploymentStrategy }}
+        {{- if and (eq .Values.gatewayParameters.deploymentStrategy "RollingUpdate") (or .Values.gatewayParameters.maxSurge .Values.gatewayParameters.maxUnavailable)}}
+        rollingUpdate:
+          maxSurge: {{ .Values.gatewayParameters.maxSurge }}
+          maxUnavailable: {{ .Values.gatewayParameters.maxUnavailable }}
+        {{- end}}
+      {{- end }}
+    {{- end }}
+    {{- $envoy := .Values.gatewayParameters.envoyContainer -}}
+    {{- if or .Values.resources.limits
+              .Values.resources.claims
+              .Values.resources.requests
+              $envoy.bootstrap
+              $envoy.env
+              $envoy.extraVolumeMounts
+              $envoy.image
+              $envoy.securityContext
+    }}
+    envoyContainer:
+      {{- if or .Values.resources.limits
+                .Values.resources.claims
+                .Values.resources.requests
+      }}
+      resources:
+        {{- with .Values.resources.claims }}
+        claims:
+          {{ toYaml . | nindent 10 }}
+        {{- end }}
+        {{- with .Values.resources.limits }}
+        limits:
+          {{ toYaml . | nindent 10 }}
+        {{- end }}
+        {{- with .Values.resources.requests }}
+        requests:
+          {{- toYaml . | nindent 10 }}
+        {{- end }}
+      {{- end}}
+      {{- with $envoy.bootstrap }}
+      bootstrap:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $envoy.env }}
+      env:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $envoy.extraVolumeMounts }}
+      extraVolumeMounts:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $envoy.image }}
+      image:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $envoy.securityContext }}
+      securityContext:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- end}}
+    {{- with .Values.gatewayParameters.istio }}
+    istio:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+    {{- if .Values.gatewayParameters.omitDefaultSecurityContext}}
+    omitDefaultSecurityContext: true
+    {{- end }}
+    {{- with .Values.gatewayParameters.podTemplate}}
+    podTemplate:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+    {{- with .Values.gatewayParameters.sdsContainer}}
+    sdsContainer:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+    service:
+      type: {{ .Values.gatewayParameters.service.type }}
+      {{- if eq .Values.gatewayParameters.service.type "NodePort" }}
+      ports:
+        {{- toYaml .Values.gatewayParameters.service.ports  | nindent 8 }}
+      {{- end }}
+      {{- with .Values.gatewayParameters.service.extraLabels }}
+      extraLabels:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.gatewayParameters.service.extraAnnotations }}
+      extraAnnotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.gatewayParameters.service.externalTrafficPolicy }}
+      externalTrafficPolicy: {{ . }}
+      {{- end }}
+      {{- with .Values.gatewayParameters.service.clusterIP }}
+      clusterIP: {{ . }}
+      {{- end }}
+    {{- with .Values.gatewayParameters.serviceAccount}}
+    serviceAccount:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+    {{- with .Values.gatewayParameters.stats}}
+    stats:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+{{- end}}
