@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.52.0
+version: 0.53.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,20 +15,20 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Fluent Bit chart from 0.57.9 to 0.58.1, including:
-          - Fluent Bit application update from 5.0.9 to 5.1.1
-          - Added S3 Parquet/Arrow and Google Cloud Storage output support
-          - Added adaptive flushing, TLS certificate reload/watch, and HTTPS proxy support
-          - Fixed hot-reload backlog handling, TLS session reuse, and storage eviction
-          - Fixed Kubernetes event parsing and Kubernetes filter crash cases
+        Updated Loki chart from 18.12.1 to 18.13.7, including:
+          - Loki application update from 3.7.7 to 3.7.8
+          - Updated gRPC to address high-severity security vulnerabilities
+          - Updated containerd, golang.org/x/net, and golang.org/x/crypto for security fixes
+          - Updated rollout-operator from 0.51.1 to 0.52.0
+          - Updated access-log-exporter to v0.4.21
       links:
-        - name: "Fluent Bit 5.1.0 release notes"
-          url: https://github.com/fluent/fluent-bit/releases/tag/v5.1.0
-        - name: "Fluent Bit 5.1.1 release notes"
-          url: https://github.com/fluent/fluent-bit/releases/tag/v5.1.1
-        - name: "Fluent Bit chart changes from 0.57.9 to 0.58.1"
-          url: https://github.com/fluent/helm-charts/compare/fluent-bit-0.57.9...fluent-bit-0.58.1
+        - name: "Loki chart 18.13.7 release notes"
+          url: https://github.com/grafana-community/helm-charts/releases/tag/loki-18.13.7
+        - name: "Loki 3.7.8 release notes"
+          url: https://github.com/grafana/loki/releases/tag/v3.7.8
+        - name: "Chart changes from 18.12.1 to 18.13.7"
+          url: https://github.com/grafana-community/helm-charts/compare/loki-18.12.1...loki-18.13.7
