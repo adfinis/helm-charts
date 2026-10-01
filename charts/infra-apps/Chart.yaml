@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.284.0
+version: 0.285.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,15 +19,15 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated kube-prometheus-stack chart from 88.6.5 to 91.8.2, including:
-          - Prometheus Operator update from v0.93.1 to v0.94.1
-          - Updated Grafana chart from 12.11.2 to 13.2.7
-          - Updated kube-state-metrics from 8.4.1 to 8.6.0
-          - Updated prometheus-node-exporter from 4.56.3 to 4.59.0
-          - Added secret-based authentication for control-plane ServiceMonitors
-          - Switched bundled chart dependencies to OCI registries
+        Updated Velero chart from 12.1.0 to 12.2.0, including:
+          - Velero application update from 1.18.1 to 1.18.2
+          - Restored optimized cross-namespace API listing for wildcard namespace backups
+          - Fixed Kopia snapshot leaks caused by incorrect backup labels
+          - Skipped VolumeGroupSnapshot cleanup for backups that did not use group snapshots
       links:
-        - name: "kube-prometheus-stack 91.8.2 release notes"
-          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-91.8.2
-        - name: "kube-prometheus-stack changes from 88.6.5 to 91.8.2"
-          url: https://github.com/prometheus-community/helm-charts/compare/kube-prometheus-stack-88.6.5...kube-prometheus-stack-91.8.2
+        - name: "Velero chart 12.2.0 release notes"
+          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-12.2.0
+        - name: "Velero v1.18.2 release notes"
+          url: https://github.com/velero-io/velero/releases/tag/v1.18.2
+        - name: "Chart changes from 12.1.0 to 12.2.0"
+          url: https://github.com/vmware-tanzu/helm-charts/compare/velero-12.1.0...velero-12.2.0
