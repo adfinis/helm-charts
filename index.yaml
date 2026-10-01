@@ -26731,6 +26731,46 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated NeuVector core and monitor charts from 2.11.1 to 2.11.2, including:
+              - NeuVector application update from v5.6.1 to v5.6.2
+              - NeuVector monitor update from v1.0.18 to v1.0.19
+              - Fixed admission-control and logout bypass vulnerabilities
+              - Fixed SAML and OpenID user identification and SAML audience validation vulnerabilities
+              - Fixed packet-capture filter command injection that could lead to remote code execution
+              - Updated golang.org/x/crypto and other dependencies
+              - Added Traefik ingress support
+          links:
+            - name: "NeuVector v5.6.2 release notes"
+              url: https://github.com/neuvector/neuvector/releases/tag/v5.6.2
+            - name: "NeuVector changes from v5.6.1 to v5.6.2"
+              url: https://github.com/neuvector/neuvector/compare/v5.6.1...v5.6.2
+            - name: "Chart changes from 2.11.1 to 2.11.2"
+              url: https://github.com/neuvector/neuvector-helm/compare/v2.11.1...v2.11.2
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-10-01T13:43:37.169057437Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: c98c3eb9ae979e6c8a5dced4be4058a909c6180e6f45d70926157e4fff614e1a
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.141.0/security-apps-0.141.0.tgz
+    version: 0.141.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Secrets Store CSI Driver chart from 1.6.0 to 1.6.1, including:
               - Secrets Store CSI Driver application update from v1.6.0 to v1.6.1
               - Updated vulnerable image dependencies and Go to fix image CVEs
@@ -38883,4 +38923,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-01T13:41:09.248536696Z"
+generated: "2026-10-01T13:43:37.171043106Z"
