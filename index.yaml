@@ -17315,6 +17315,64 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Keycloak and Keycloak Operator from 26.7.2 to 26.7.4, including security fixes for:
+              - CVE-2026-90997: default MySQL/MariaDB row counts make stateless replay gates accept reused artifacts
+              - CVE-2026-79651: unauthenticated denial of service via unbounded locale caching
+              - CVE-2026-74909: percent-encoded semicolon bypasses matrix parameter stripping in PathMatcher
+              - CVE-2026-19607: username takeover leading to account lockout
+              - CVE-2026-17526: privilege escalation allowing the "impersonation" role to impersonate a realm administrator
+              - CVE-2026-18212: SAML redirect DEFLATE helpers leak native zlib state
+              - CVE-2026-35563: LDAP client implementation does not verify if the server certificate matches the intended hostname
+              - CVE-2026-16093: required signed-JWT assertion policy bypass via unsigned assertion headers
+              - CVE-2026-16072: organization managers can create managed members through stored registration links without permissions
+              - CVE-2026-16108: realm default-group reads disclose hidden groups under FGAP v2
+              - CVE-2026-16105: missing per-role authorization on RoleContainerResource composite endpoints
+              - CVE-2026-16089: authorization codes can be retargeted to another client session
+              - CVE-2026-16104: authenticator config surfaces expose raw reCAPTCHA secrets
+              - CVE-2026-16106: incorrect authorization allows delegated admin to remove privileged child roles
+              - CVE-2026-17059: user PII disclosure via GET /roles/{role}/users due to missing per-user view filter
+              - CVE-2026-18218: client not-before revocation is ignored when realm not-before is older but nonzero
+              - CVE-2026-18215: Microsoft external access-token exchange bypasses configured tenant token-exchange
+              - CVE-2026-18201: generic identity-provider creation binds brokers to organizations without permissions
+              - CVE-2026-18209: redirect_uri OIDC response-parameter injection bypass via URL fragment
+              - CVE-2026-18214: Google external access-token exchange bypasses hosted-domain restriction
+              - CVE-2026-18571: group assignment bypass during user creation allows adding unpermitted groups
+              - CVE-2026-18572: UMA claim token can override the authorization time-policy clock
+              - CVE-2026-18573: client access-type condition evaluates updates against the old client type
+              - CVE-2026-18570: full-scope-disabled client policy validation bypass
+              - CVE-2026-19729: relative path traversal enabling filesystem probing
+              - CVE-2026-79652: jwt-bearer authorization grant does not enforce consentRequired
+          links:
+            - name: Release notes 26.7.4
+              url: https://github.com/keycloak/keycloak/releases/tag/26.7.4
+            - name: Release notes 26.7.3
+              url: https://github.com/keycloak/keycloak/releases/tag/26.7.3
+            - name: Migration guide
+              url: https://www.keycloak.org/docs/latest/upgrading/index.html
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    appVersion: 26.7.4
+    created: "2026-10-01T09:15:15.929571746Z"
+    description: Deploy Keycloak Operator and Keycloak
+    digest: d8e74261a431dbf7617ac1695c8d2512715964b82d3c24e58ffd6f52c4974fdd
+    home: https://www.keycloak.org
+    icon: https://www.keycloak.org/resources/images/logo-stacked.svg
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: keycloak-operator
+    sources:
+    - https://github.com/keycloak/keycloak-k8s-resources
+    - https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/keycloak-operator-1.13.1/keycloak-operator-1.13.1.tgz
+    version: 1.13.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Keycloak and Keycloak Operator from 26.6.4 to 26.7.2, including security fixes for:
               - CVE-2026-45292: unbounded memory allocation in OpenTelemetry W3C baggage propagation
               - CVE-2026-14613: fine-grained admin permissions bypass via the role groups endpoint
@@ -38750,4 +38808,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-21T15:46:02.946241857Z"
+generated: "2026-10-01T09:15:15.931113907Z"
