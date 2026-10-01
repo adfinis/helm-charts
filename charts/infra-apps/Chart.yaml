@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.282.0
+version: 0.283.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,20 +15,18 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Argo CD chart from 10.8.4 to 10.9.5, including:
-          - Argo CD application update from v3.5.2 to v3.5.3
-          - Added support for a custom Secret name for the embedded Redis password
-          - Fixed repository cleanup when changing revisions
-          - Fixed health reporting for KubeVirt, Flink, Crossplane, and Gateway API resources
-          - Fixed retry operation state handling and an SSO redirect retry loop
+        Updated cert-manager chart from v1.21.1 to v1.21.2, including:
+          - Updated Go, gRPC, and golang.org/x/crypto to address reported security vulnerabilities
+          - Prevented untrusted ACME, Vault, and HTTP-01 response bodies from leaking into status and events
+          - Restricted ambient AWS credentials for namespaced Vault Issuers
+          - Fixed controller and webhook panics and data races
+          - Fixed ACME renewal, HTTP-01 solver cleanup, and Gateway API DNS name handling
       links:
-        - name: "Argo CD chart 10.9.5 release notes"
-          url: https://github.com/argoproj/argo-helm/releases/tag/argo-cd-10.9.5
-        - name: "Argo CD v3.5.3 release notes"
-          url: https://github.com/argoproj/argo-cd/releases/tag/v3.5.3
-        - name: "Chart changes from 10.8.4 to 10.9.5"
-          url: https://github.com/argoproj/argo-helm/compare/argo-cd-10.8.4...argo-cd-10.9.5
+        - name: "cert-manager v1.21.2 release notes"
+          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.21.2
+        - name: "cert-manager changes from v1.21.1 to v1.21.2"
+          url: https://github.com/cert-manager/cert-manager/compare/v1.21.1...v1.21.2
