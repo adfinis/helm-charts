@@ -2,7 +2,7 @@ apiVersion: v2
 name: security-apps
 description: Argo CD app-of-apps config for security applications
 type: application
-version: 0.142.0
+version: 0.143.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,12 +19,17 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated StackRox Central and Secured Cluster charts from 400.11.3 to 400.11.4, including:
-          - StackRox application update from 4.11.3 to 4.11.4
-          - Redacted plaintext service account tokens from OpenShift-managed secret annotations in diagnostic bundles
-          - Fixed Scanner V4 matching for the "CVE is not yet fixable" policy criterion
+        Updated Kyverno and Kyverno Policies charts from 3.9.0 to 3.9.1, including:
+          - Kyverno application update from v1.19.0 to v1.19.1
+          - Fixed an SSRF and service account token egress controls bypass in legacy API calls and global context entries
+          - Updated Go and dependencies to address CVE-2026-39821, CVE-2026-56853, and CVE-2026-56858
+          - Fixed PolicyException scope and namespace-isolation bypasses
+          - Fixed file descriptor and memory leaks when reading OCI image layers
+          - Added CEL autogen support for custom workload CRDs
       links:
-        - name: "StackRox 4.11.4 release notes"
-          url: https://github.com/stackrox/stackrox/releases/tag/4.11.4
-        - name: "Changes from 4.11.3 to 4.11.4"
-          url: https://github.com/stackrox/stackrox/compare/4.11.3...4.11.4
+        - name: "Kyverno v1.19.1 release notes"
+          url: https://github.com/kyverno/kyverno/releases/tag/v1.19.1
+        - name: "GHSA-q825-p383-r9v5 security advisory"
+          url: https://github.com/kyverno/kyverno/security/advisories/GHSA-q825-p383-r9v5
+        - name: "Changes from v1.19.0 to v1.19.1"
+          url: https://github.com/kyverno/kyverno/compare/v1.19.0...v1.19.1
