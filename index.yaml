@@ -26731,6 +26731,45 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Dex chart from 0.24.1 to 0.25.2, including:
+              - Dex application update from v2.44.0 to v2.45.1
+              - Enabled ContinueOnConnectorFailure by default
+              - Updated gomplate to v5.0.0, which includes breaking changes
+              - Raised the minimum supported Kubernetes version from 1.14 to 1.20
+              - Fixed MySQL 8.0+ storage migrations and the chart favicon link
+              - Note: upstream reports CVE-2025-68121 and CVE-2026-25934 in the optional gomplate binary
+          links:
+            - name: "Dex v2.45.0 release notes"
+              url: https://github.com/dexidp/dex/releases/tag/v2.45.0
+            - name: "Dex v2.45.1 release notes"
+              url: https://github.com/dexidp/dex/releases/tag/v2.45.1
+            - name: "Chart changes from 0.24.1 to 0.25.2"
+              url: https://github.com/dexidp/helm-charts/compare/dex-0.24.1...dex-0.25.2
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-10-01T13:38:48.914401853Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for security applications
+    digest: b61e019e66dd3dcdfa0bcfbe7efd9a0867b43a768ddc26733d5274dc7fb34982
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/security-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: security-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/security-apps-0.139.0/security-apps-0.139.0.tgz
+    version: 0.139.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated OpenBao chart from 0.29.3 to 0.29.4, including:
               - OpenBao application update to v2.6.2
               - Snapshot Agent update to v0.4.4
@@ -38808,4 +38847,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-01T09:15:15.931113907Z"
+generated: "2026-10-01T13:38:48.915719364Z"
