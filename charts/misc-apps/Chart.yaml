@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.83.0
+version: 0.84.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,19 +15,23 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Goldilocks chart from 11.1.0 to 11.2.0, including:
-          - Goldilocks application update from v4.16.1 to v4.16.2
-          - Updated libcrypto3, libssl3, and Go to fix vulnerabilities
-          - Added a metrics endpoint to the Goldilocks controller
-          - Updated the bundled VPA chart from 5.0.* to 5.1.*
+        Updated Reloader chart from 2.2.16 to 2.2.18, including:
+          - Reloader application update from v1.4.21 to v1.4.22
+          - Added configurable leader election timings
+          - Moved lease RBAC to the metadata reader role when high availability is enabled
+          - Rejected non-positive pause-period durations
+          - Cleaned up leftover leader election leases
+          - Added templating support to image fields
       links:
-        - name: "Goldilocks v4.16.2 release notes"
-          url: https://github.com/FairwindsOps/goldilocks/releases/tag/v4.16.2
-        - name: "Goldilocks vulnerability fixes"
-          url: https://github.com/FairwindsOps/goldilocks/pull/889
-        - name: "Goldilocks changes from v4.16.1 to v4.16.2"
-          url: https://github.com/FairwindsOps/goldilocks/compare/v4.16.1...v4.16.2
+        - name: "Reloader chart 2.2.17 release notes"
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.17
+        - name: "Reloader chart 2.2.18 release notes"
+          url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.18
+        - name: "Reloader v1.4.22 release notes"
+          url: https://github.com/stakater/Reloader/releases/tag/v1.4.22
+        - name: "Chart changes from 2.2.16 to 2.2.18"
+          url: https://github.com/stakater/Reloader/compare/chart-v2.2.16...chart-v2.2.18
