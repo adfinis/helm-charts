@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.79.0
+version: 0.80.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,13 +19,10 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated KEDA chart from 2.20.1 to 2.20.2, including:
-          - KEDA application update from v2.20.1 to v2.20.2
-          - Added access to core events required by the operator for leader election
+        Updated Argo CD Apps chart from 2.0.5 to 2.0.6, including:
+          - Quoted AppProject descriptions to preserve string values
       links:
-        - name: "KEDA chart 2.20.2 release notes"
-          url: https://github.com/kedacore/charts/releases/tag/v2.20.2
-        - name: "KEDA 2.20.2 release notes"
-          url: https://github.com/kedacore/keda/releases/tag/v2.20.2
-        - name: "Chart changes from 2.20.1 to 2.20.2"
-          url: https://github.com/kedacore/charts/compare/v2.20.1...v2.20.2
+        - name: "Argo CD Apps chart 2.0.6 release notes"
+          url: https://github.com/argoproj/argo-helm/releases/tag/argocd-apps-2.0.6
+        - name: "Chart changes from 2.0.5 to 2.0.6"
+          url: https://github.com/argoproj/argo-helm/compare/argocd-apps-2.0.5...argocd-apps-2.0.6
