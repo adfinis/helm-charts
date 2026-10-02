@@ -36961,6 +36961,46 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated opentelemetry-collector chart from 0.172.0 to 0.174.0, including:
+              - Collector application update from 0.159.0 to 0.161.0
+              - Removed deprecated Kafka client and exporter authentication options
+              - Renamed the dynamic_sampling processor to adaptive_tail_sampling
+              - Enabled stable Kubernetes attribute conventions by default
+              - Removed the deprecated Mezmo exporter; use OTLP/HTTP instead
+              - Added a signing processor for tamper-evident audit logs
+          links:
+            - name: "OpenTelemetry Collector chart upgrade guide"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/blob/main/charts/opentelemetry-collector/UPGRADING.md
+            - name: "OpenTelemetry Collector Contrib v0.160.0"
+              url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases/tag/v0.160.0
+            - name: "OpenTelemetry Collector Contrib v0.161.0"
+              url: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases/tag/v0.161.0
+            - name: "Chart changes from 0.172.0 to 0.174.0"
+              url: https://github.com/open-telemetry/opentelemetry-helm-charts/compare/opentelemetry-collector-0.172.0...opentelemetry-collector-0.174.0
+    apiVersion: v2
+    created: "2026-10-02T11:03:37.44756318Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for tracing applications
+    digest: be979afd8888047a7545232b3b6498f2a48725cf491b792d4853ea941b44c7b2
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/tracing-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: tracing-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/tracing-apps-1.6.0/tracing-apps-1.6.0.tgz
+    version: 1.6.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated opentelemetry-collector chart from 0.162.0 to 0.172.0, including:
               - Collector application update from 0.154.0 to 0.159.0
               - Automatically rewrite filelog receivers to file_log by default
@@ -39231,4 +39271,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-02T11:01:02.869672252Z"
+generated: "2026-10-02T11:03:37.45107259Z"
