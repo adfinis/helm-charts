@@ -21058,6 +21058,43 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Goldilocks chart from 11.1.0 to 11.2.0, including:
+              - Goldilocks application update from v4.16.1 to v4.16.2
+              - Updated libcrypto3, libssl3, and Go to fix vulnerabilities
+              - Added a metrics endpoint to the Goldilocks controller
+              - Updated the bundled VPA chart from 5.0.* to 5.1.*
+          links:
+            - name: "Goldilocks v4.16.2 release notes"
+              url: https://github.com/FairwindsOps/goldilocks/releases/tag/v4.16.2
+            - name: "Goldilocks vulnerability fixes"
+              url: https://github.com/FairwindsOps/goldilocks/pull/889
+            - name: "Goldilocks changes from v4.16.1 to v4.16.2"
+              url: https://github.com/FairwindsOps/goldilocks/compare/v4.16.1...v4.16.2
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-10-02T11:37:03.633618882Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 86bee1dae5fb270a87b3857ecc755f20be45d3ea99c1325f671a81b7d7adcf4e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.83.0/misc-apps-0.83.0.tgz
+    version: 0.83.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated OpenCost chart from 2.5.30 to 2.5.32, including:
               - OpenCost application update from 1.121.1 to 1.121.3
               - Added IBM Cloud Usage Reports cloud cost integration
@@ -39385,4 +39422,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-02T11:32:47.791285219Z"
+generated: "2026-10-02T11:37:03.635687322Z"
