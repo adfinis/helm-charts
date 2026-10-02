@@ -21058,6 +21058,47 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated KEDA chart from 2.20.2 to 2.21.0, including:
+              - Fixed critical CVE-2026-77524 by enforcing explicit service account token audiences
+              - BREAKING: removed deprecated Temporal scaler settings buildId, selectAllActive, and selectUnversioned
+              - BREAKING: Azure Pipelines now includes assigned unfinished jobs by default
+              - Added Azure Cosmos DB Change Feed, ClickHouse, and GCP Cloud Spanner scalers
+              - Added dynamic HPA target updates for external scalers
+              - Added Prometheus OAuth2 client credentials and additional scaler authentication options
+          links:
+            - name: "KEDA 2.21.0 release notes"
+              url: https://github.com/kedacore/keda/releases/tag/v2.21.0
+            - name: "KEDA 2.21 migration guide"
+              url: https://keda.sh/docs/2.21/migration/#upgrading-from-keda-220-to-221
+            - name: "CVE-2026-77524 security advisory"
+              url: https://github.com/kedacore/keda/security/advisories/GHSA-637c-6jxx-4rwm
+            - name: "Changes from 2.20.2 to 2.21.0"
+              url: https://github.com/kedacore/keda/compare/v2.20.2...v2.21.0
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-10-02T11:31:08.281736097Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 989c9e0a363d5f2587df1c8418fbf8af52d018cc24e182a409c76ffdc2d210f6
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.81.0/misc-apps-0.81.0.tgz
+    version: 0.81.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Argo CD Apps chart from 2.0.5 to 2.0.6, including:
               - Quoted AppProject descriptions to preserve string values
           links:
@@ -39303,4 +39344,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-02T11:28:41.626375276Z"
+generated: "2026-10-02T11:31:08.283640924Z"
