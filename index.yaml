@@ -6414,6 +6414,44 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Argo CD chart from 10.8.4 to 10.9.5, including:
+              - Argo CD application update from v3.5.2 to v3.5.3
+              - Added support for a custom Secret name for the embedded Redis password
+              - Fixed repository cleanup when changing revisions
+              - Fixed health reporting for KubeVirt, Flink, Crossplane, and Gateway API resources
+              - Fixed retry operation state handling and an SSO redirect retry loop
+          links:
+            - name: "Argo CD chart 10.9.5 release notes"
+              url: https://github.com/argoproj/argo-helm/releases/tag/argo-cd-10.9.5
+            - name: "Argo CD v3.5.3 release notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.5.3
+            - name: "Chart changes from 10.8.4 to 10.9.5"
+              url: https://github.com/argoproj/argo-helm/compare/argo-cd-10.8.4...argo-cd-10.9.5
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-10-02T10:25:06.32235999Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 253585569f2387594144da46946d8f02656a829a5f4c283876a68fa3a5d679e7
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.282.0/infra-apps-0.282.0.tgz
+    version: 0.282.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Mimir chart from 6.1.0 to 6.2.0, including:
               - Grafana Mimir application update from 3.1.2 to 3.2.0
               - Reduced the default querier concurrency to 8
@@ -39155,4 +39193,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-02T07:58:25.22557463Z"
+generated: "2026-10-02T10:25:06.324439366Z"
