@@ -2,7 +2,7 @@ apiVersion: v2
 name: misc-apps
 description: Argo CD app-of-apps config for miscellaneous small tools
 type: application
-version: 0.80.0
+version: 0.81.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,14 +15,23 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Argo CD Apps chart from 2.0.5 to 2.0.6, including:
-          - Quoted AppProject descriptions to preserve string values
+        Updated KEDA chart from 2.20.2 to 2.21.0, including:
+          - Fixed critical CVE-2026-77524 by enforcing explicit service account token audiences
+          - BREAKING: removed deprecated Temporal scaler settings buildId, selectAllActive, and selectUnversioned
+          - BREAKING: Azure Pipelines now includes assigned unfinished jobs by default
+          - Added Azure Cosmos DB Change Feed, ClickHouse, and GCP Cloud Spanner scalers
+          - Added dynamic HPA target updates for external scalers
+          - Added Prometheus OAuth2 client credentials and additional scaler authentication options
       links:
-        - name: "Argo CD Apps chart 2.0.6 release notes"
-          url: https://github.com/argoproj/argo-helm/releases/tag/argocd-apps-2.0.6
-        - name: "Chart changes from 2.0.5 to 2.0.6"
-          url: https://github.com/argoproj/argo-helm/compare/argocd-apps-2.0.5...argocd-apps-2.0.6
+        - name: "KEDA 2.21.0 release notes"
+          url: https://github.com/kedacore/keda/releases/tag/v2.21.0
+        - name: "KEDA 2.21 migration guide"
+          url: https://keda.sh/docs/2.21/migration/#upgrading-from-keda-220-to-221
+        - name: "CVE-2026-77524 security advisory"
+          url: https://github.com/kedacore/keda/security/advisories/GHSA-637c-6jxx-4rwm
+        - name: "Changes from 2.20.2 to 2.21.0"
+          url: https://github.com/kedacore/keda/compare/v2.20.2...v2.21.0
