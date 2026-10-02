@@ -2,7 +2,7 @@ apiVersion: v2
 name: logging-apps
 description: Argo CD app-of-apps config for logging applications
 type: application
-version: 0.52.0
+version: 0.54.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,20 +15,21 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Fluent Bit chart from 0.57.9 to 0.58.1, including:
-          - Fluent Bit application update from 5.0.9 to 5.1.1
-          - Added S3 Parquet/Arrow and Google Cloud Storage output support
-          - Added adaptive flushing, TLS certificate reload/watch, and HTTPS proxy support
-          - Fixed hot-reload backlog handling, TLS session reuse, and storage eviction
-          - Fixed Kubernetes event parsing and Kubernetes filter crash cases
+        Updated Fluent Bit chart from 0.58.1 to 0.58.2, including:
+          - Fluent Bit application update from 5.1.1 to 5.1.2
+          - Stopped Azure Kusto output from logging federated and access tokens
+          - Fixed Windows Event Log and engine startup crash and race paths
+          - Fixed storage backlog chunk limit underflows and overflows
+          - Added Google Cloud workload identity and application default credential support
+          - Added namespace exclusion to the Kubernetes filter
       links:
-        - name: "Fluent Bit 5.1.0 release notes"
-          url: https://github.com/fluent/fluent-bit/releases/tag/v5.1.0
-        - name: "Fluent Bit 5.1.1 release notes"
-          url: https://github.com/fluent/fluent-bit/releases/tag/v5.1.1
-        - name: "Fluent Bit chart changes from 0.57.9 to 0.58.1"
-          url: https://github.com/fluent/helm-charts/compare/fluent-bit-0.57.9...fluent-bit-0.58.1
+        - name: "Fluent Bit chart 0.58.2 release notes"
+          url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.58.2
+        - name: "Fluent Bit 5.1.2 release notes"
+          url: https://github.com/fluent/fluent-bit/releases/tag/v5.1.2
+        - name: "Chart changes from 0.58.1 to 0.58.2"
+          url: https://github.com/fluent/helm-charts/compare/fluent-bit-0.58.1...fluent-bit-0.58.2

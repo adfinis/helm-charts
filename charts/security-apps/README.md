@@ -1,6 +1,6 @@
 # security-apps
 
-![Version: 0.138.0](https://img.shields.io/badge/Version-0.138.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.144.0](https://img.shields.io/badge/Version-0.144.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 Argo CD app-of-apps config for security applications
 
@@ -28,7 +28,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | dex.destination.namespace | string | `"infra-dex"` | Namespace |
 | dex.enabled | bool | `false` | Enable dex |
 | dex.repoURL | string | [repo](https://charts.dexidp.io) | Repo URL |
-| dex.targetRevision | string | `"0.24.1"` | [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version |
+| dex.targetRevision | string | `"0.25.2"` | [dex Helm chart](https://github.com/dexidp/helm-charts/tree/master/charts/dex/) version |
 | dex.values | object | [upstream values](https://github.com/dexidp/helm-charts/tree/master/charts/dex/values.yaml) | Helm values |
 | dexK8sAuthenticator | object | DEPRECATED | [dex-k8s-authenticator](https://github.com/mintel/dex-k8s-authenticator)  is DEPRECATED, use "kubectl oidc-login aka kubelogin" instead |
 | falco | object | DEPRECATED | [falco](https://github.com/falcosecurity/falco/) is DEPRECATED since we no longer use it internally and will be replaced by NeuVector or StackRox |
@@ -46,7 +46,7 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kyverno.destination.namespace | string | `"infra-kyverno"` | Namespace |
 | kyverno.enabled | bool | `false` | Enable kyverno |
 | kyverno.repoURL | string | [repo](https://kyverno.github.io/kyverno/) | Repo URL |
-| kyverno.targetRevision | string | `"3.9.0"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno) |
+| kyverno.targetRevision | string | `"3.9.1"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno) |
 | kyverno.values | object | [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno/values.yaml) | Helm values |
 | kyvernoPolicies | object | [example](./examples/kyverno.yaml) | [Kyverno Policies](https://kyverno.io) |
 | kyvernoPolicies.annotations | object | `{}` | Annotations for kyverno |
@@ -54,21 +54,21 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | kyvernoPolicies.destination.namespace | string | `"infra-kyverno"` | Namespace |
 | kyvernoPolicies.enabled | bool | `false` | Enable kyverno-policies |
 | kyvernoPolicies.repoURL | string | [repo](https://kyverno.github.io/kyverno/) | Repo URL |
-| kyvernoPolicies.targetRevision | string | `"3.9.0"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies) |
+| kyvernoPolicies.targetRevision | string | `"3.9.1"` | [kyverno Helm chart](https://github.com/kyverno/kyverno/tree/main/charts/kyverno-policies) |
 | kyvernoPolicies.values | object | [upstream values](https://github.com/kyverno/kyverno/blob/main/charts/kyverno-policies/values.yaml) | Helm values |
 | neuvector | object | - | [NeuVector](https://github.com/neuvector/neuvector) ([example](./example/neuvector.yaml)) |
 | neuvector.chart | string | `"core"` | Chart |
 | neuvector.destination.namespace | string | `"infra-neuvector"` | Namespace |
 | neuvector.enabled | bool | `false` | Enable neuvector |
 | neuvector.repoURL | string | [repo](https://neuvector.github.io/neuvector-helm) | Repo URL |
-| neuvector.targetRevision | string | `"2.11.1"` | [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version |
+| neuvector.targetRevision | string | `"2.11.2"` | [neuvector/core Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/core) version |
 | neuvector.values | object | [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/core/values.yaml) | Helm values |
 | neuvectorMonitor | object | - | [NeuVector monitor](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) ([example](./example/neuvector.yaml)) |
 | neuvectorMonitor.chart | string | `"monitor"` | Chart |
 | neuvectorMonitor.destination.namespace | string | `"infra-neuvector"` | Namespace |
 | neuvectorMonitor.enabled | bool | `false` | Enable neuvector/monitor |
 | neuvectorMonitor.repoURL | string | [repo](https://neuvector.github.io/neuvector-helm) | Repo URL |
-| neuvectorMonitor.targetRevision | string | `"2.11.1"` | [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version |
+| neuvectorMonitor.targetRevision | string | `"2.11.2"` | [neuvector/monitor Helm chart](https://github.com/neuvector/neuvector-helm/tree/master/charts/monitor) version |
 | neuvectorMonitor.values | object | [upstream values](https://github.com/neuvector/neuvector-helm/blob/master/charts/monitor/values.yaml) | Helm values |
 | oauth2Proxy | object | [example](./examples/oauth2-proxy.yaml) | [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) |
 | oauth2Proxy.annotations | object | `{}` | Annotations for oauth2-proxy app |
@@ -84,28 +84,28 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | openbao.destination.namespace | string | `"infra-openbao"` | Namespace |
 | openbao.enabled | bool | `false` | Enable openbao |
 | openbao.repoURL | string | [repo](https://openbao.github.io/openbao-helm) | Repo URL |
-| openbao.targetRevision | string | `"0.29.4"` | [OpenBao Helm chart](https://github.com/openbao/openbao-helm/tree/main/charts/openbao) |
+| openbao.targetRevision | string | `"0.30.0"` | [OpenBao Helm chart](https://github.com/openbao/openbao-helm/tree/main/charts/openbao) |
 | openbao.values | object | [upstream values](https://github.com/openbao/openbao-helm/blob/main/charts/openbao/values.yaml) | Helm values |
 | secretsStoreCsiDriver | object | - | [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver) ([example](./examples/secrets-store-csi-driver.yaml)) |
 | secretsStoreCsiDriver.chart | string | `"secrets-store-csi-driver"` | Chart |
 | secretsStoreCsiDriver.destination.namespace | string | `"infra-secrets-store-csi"` | Namespace |
 | secretsStoreCsiDriver.enabled | bool | `false` | Enable secrets-store-csi-driver |
 | secretsStoreCsiDriver.repoURL | string | [repo](https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts) | Repo URL |
-| secretsStoreCsiDriver.targetRevision | string | `"1.6.0"` | [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version |
+| secretsStoreCsiDriver.targetRevision | string | `"1.6.1"` | [secrets-store-csi-driver Helm chart](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver) version |
 | secretsStoreCsiDriver.values | object | [upstream values](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/main/charts/secrets-store-csi-driver/values.yaml) | Helm values |
 | stackroxCentralServices | object | - | [StackRox central-services](https://www.stackrox.io/) ([example/stackrox.yaml)) |
 | stackroxCentralServices.chart | string | `"stackrox-central-services"` | Chart |
 | stackroxCentralServices.destination.namespace | string | `"infra-stackrox"` | Namespace |
 | stackroxCentralServices.enabled | bool | `false` | Enable StackRox central-services |
 | stackroxCentralServices.repoURL | string | [repo](https://charts.stackrox.io) | Repo URL |
-| stackroxCentralServices.targetRevision | string | `"400.11.3"` | [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
+| stackroxCentralServices.targetRevision | string | `"400.11.4"` | [stackrox/central-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
 | stackroxCentralServices.values | object | [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-central/values.yaml) | Helm values |
 | stackroxSecuredClusterServices | object | - | [StackRox secured-cluster-services](https://www.stackrox.io/) ([example/stackrox.yaml)) |
 | stackroxSecuredClusterServices.chart | string | `"stackrox-secured-cluster-services"` | Chart |
 | stackroxSecuredClusterServices.destination.namespace | string | `"infra-stackrox"` | Namespace |
 | stackroxSecuredClusterServices.enabled | bool | `false` | Enable StackRox secured-cluster-services |
 | stackroxSecuredClusterServices.repoURL | string | [repo](https://charts.stackrox.io) | Repo URL |
-| stackroxSecuredClusterServices.targetRevision | string | `"400.11.3"` | [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
+| stackroxSecuredClusterServices.targetRevision | string | `"400.11.4"` | [stackrox/secured-cluster-services Helm chart](https://github.com/stackrox/helm-charts/tree/main/opensource) version |
 | stackroxSecuredClusterServices.values | object | [upstream values](https://github.com/stackrox/stackrox/blob/master/image/templates/helm/stackrox-secured-cluster/values.yaml.htpl) | Helm values |
 | vault | object | - | [vault](https://github.com/hashicorp/vault/) ([example](./examples/vault.yaml)) |
 | vault.chart | string | `"vault"` | Chart |

@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.281.0
+version: 0.282.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,17 +19,16 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Mimir chart from 6.1.0 to 6.2.0, including:
-          - Grafana Mimir application update from 3.1.2 to 3.2.0
-          - Reduced the default querier concurrency to 8
-          - Added VolumeAttributesClass support for persistent volume claims
-          - Added revisionHistoryLimit support for StatefulSet-based components
-          - Updated rollout-operator to 0.38.1
-          - Fixed KEDA ScaledObject fallback templates
+        Updated Argo CD chart from 10.8.4 to 10.9.5, including:
+          - Argo CD application update from v3.5.2 to v3.5.3
+          - Added support for a custom Secret name for the embedded Redis password
+          - Fixed repository cleanup when changing revisions
+          - Fixed health reporting for KubeVirt, Flink, Crossplane, and Gateway API resources
+          - Fixed retry operation state handling and an SSO redirect retry loop
       links:
-        - name: "Mimir chart 6.2.0 release notes"
-          url: https://grafana.com/docs/helm-charts/mimir-distributed/latest/release-notes/v6.2/
-        - name: "Mimir chart changes from 6.1.0 to 6.2.0"
-          url: https://github.com/grafana/mimir/compare/mimir-distributed-6.1.0...mimir-distributed-6.2.0
-        - name: "Grafana Mimir 3.2.0"
-          url: https://github.com/grafana/mimir/releases/tag/mimir-3.2.0
+        - name: "Argo CD chart 10.9.5 release notes"
+          url: https://github.com/argoproj/argo-helm/releases/tag/argo-cd-10.9.5
+        - name: "Argo CD v3.5.3 release notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v3.5.3
+        - name: "Chart changes from 10.8.4 to 10.9.5"
+          url: https://github.com/argoproj/argo-helm/compare/argo-cd-10.8.4...argo-cd-10.9.5

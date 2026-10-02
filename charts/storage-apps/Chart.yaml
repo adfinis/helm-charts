@@ -2,7 +2,7 @@ apiVersion: v2
 name: storage-apps
 description: Argo CD app-of-apps config for storage applications
 type: application
-version: 0.26.0
+version: 0.27.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/storage-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -19,17 +19,18 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated CSI Driver SMB chart from 1.20.1 to 1.20.3, including:
-          - Fixed CVE-2026-33186 in google.golang.org/grpc
-          - Fixed CVE-2026-25680
-          - Rebuilt with Go 1.26.4 to address Go runtime CVEs
-          - Updated CSI sidecar images
-          - Added controller.extraArgs support for sidecar containers
-          - Increased the Windows node plugin liveness probe timeout
+        Updated Ceph CSI RBD and CephFS charts from 3.17.1 to 3.18.0, including:
+          - Deprecated Helm deployments ahead of their planned removal in 3.19; migrate to Ceph CSI Operator
+          - Added cgroup v2 QoS and asynchronous volume health checks for RBD
+          - Added MDS pinning and asynchronous volume health checks for CephFS
+          - Fixed CephFS nodeplugin secret RBAC for metadata KMS
+          - Updated gRPC to 1.83.2 to address reported security vulnerabilities
+          - Updated CSI sidecars, Kubernetes dependencies, and go-ceph
+          - Moved encrypted CephFS fscrypt locks to the configured RADOS namespace
       links:
-        - name: "CSI Driver SMB 1.20.2 release notes"
-          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.20.2
-        - name: "CSI Driver SMB 1.20.3 release notes"
-          url: https://github.com/kubernetes-csi/csi-driver-smb/releases/tag/v1.20.3
-        - name: "Changes from 1.20.1 to 1.20.3"
-          url: https://github.com/kubernetes-csi/csi-driver-smb/compare/v1.20.1...v1.20.3
+        - name: "Ceph CSI v3.18.0 release notes"
+          url: https://github.com/ceph/ceph-csi/releases/tag/v3.18.0
+        - name: "Ceph CSI changes from v3.17.1 to v3.18.0"
+          url: https://github.com/ceph/ceph-csi/compare/v3.17.1...v3.18.0
+        - name: "Ceph CSI Operator migration guide"
+          url: https://github.com/ceph/ceph-csi-operator/blob/main/docs/migration.md
