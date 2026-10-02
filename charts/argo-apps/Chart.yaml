@@ -2,7 +2,7 @@ apiVersion: v2
 name: argo-apps
 description: Argo CD app-of-apps config for various argo project components
 type: application
-version: 0.32.0
+version: 0.33.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -18,12 +18,17 @@ annotations:
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated Argo Rollouts chart from 2.41.0 to 2.42.0, including:
-
-        - Update Argo Rollouts from v1.9.0 to v1.9.1
-        - Remove the default controller readinessProbe to align with upstream manifests
+        Updated Argo Rollouts chart from 2.42.0 to 2.43.2, including:
+          - Argo Rollouts application update from v1.9.1 to v1.10.0
+          - Fixed desired replica synchronization during aborted scale-downs
+          - Fixed notification-controller selection and an unstructured-object panic
+          - Fixed ALB status updates and stale ReplicaSet cache handling
+          - Limited the ConfigMap checksum to data so chart-only changes no longer restart the controller
+          - The checksum change causes one controller rollout when adopting this release
       links:
-        - name: Argo Rollouts chart 2.42.0
-          url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.42.0
-        - name: Argo Rollouts v1.9.1
-          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.9.1
+        - name: "Argo Rollouts chart 2.43.2 release notes"
+          url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.43.2
+        - name: "Argo Rollouts v1.10.0 release notes"
+          url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.10.0
+        - name: "Chart changes from 2.42.0 to 2.43.2"
+          url: https://github.com/argoproj/argo-helm/compare/argo-rollouts-2.42.0...argo-rollouts-2.43.2
