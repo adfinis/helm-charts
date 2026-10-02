@@ -18953,6 +18953,45 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Fluent Bit chart from 0.58.1 to 0.58.2, including:
+              - Fluent Bit application update from 5.1.1 to 5.1.2
+              - Stopped Azure Kusto output from logging federated and access tokens
+              - Fixed Windows Event Log and engine startup crash and race paths
+              - Fixed storage backlog chunk limit underflows and overflows
+              - Added Google Cloud workload identity and application default credential support
+              - Added namespace exclusion to the Kubernetes filter
+          links:
+            - name: "Fluent Bit chart 0.58.2 release notes"
+              url: https://github.com/fluent/helm-charts/releases/tag/fluent-bit-0.58.2
+            - name: "Fluent Bit 5.1.2 release notes"
+              url: https://github.com/fluent/fluent-bit/releases/tag/v5.1.2
+            - name: "Chart changes from 0.58.1 to 0.58.2"
+              url: https://github.com/fluent/helm-charts/compare/fluent-bit-0.58.1...fluent-bit-0.58.2
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-10-02T07:58:25.223255728Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for logging applications
+    digest: 9398391c6c240819b4ec465a193e9a6a92d6a0f45aee077881cb09eb614886c3
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/logging-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: logging-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/logging-apps-0.54.0/logging-apps-0.54.0.tgz
+    version: 0.54.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Loki chart from 18.12.1 to 18.13.7, including:
               - Loki application update from 3.7.7 to 3.7.8
               - Updated gRPC to address high-severity security vulnerabilities
@@ -39116,4 +39155,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-01T14:01:35.835162025Z"
+generated: "2026-10-02T07:58:25.22557463Z"
