@@ -5,6 +5,44 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Argo Rollouts chart from 2.42.0 to 2.43.2, including:
+              - Argo Rollouts application update from v1.9.1 to v1.10.0
+              - Fixed desired replica synchronization during aborted scale-downs
+              - Fixed notification-controller selection and an unstructured-object panic
+              - Fixed ALB status updates and stale ReplicaSet cache handling
+              - Limited the ConfigMap checksum to data so chart-only changes no longer restart the controller
+              - The checksum change causes one controller rollout when adopting this release
+          links:
+            - name: "Argo Rollouts chart 2.43.2 release notes"
+              url: https://github.com/argoproj/argo-helm/releases/tag/argo-rollouts-2.43.2
+            - name: "Argo Rollouts v1.10.0 release notes"
+              url: https://github.com/argoproj/argo-rollouts/releases/tag/v1.10.0
+            - name: "Chart changes from 2.42.0 to 2.43.2"
+              url: https://github.com/argoproj/argo-helm/compare/argo-rollouts-2.42.0...argo-rollouts-2.43.2
+    apiVersion: v2
+    created: "2026-10-02T11:01:02.865309176Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for various argo project components
+    digest: ea75f5ac50a48a575b8357c783e3d846beffd1e953b38f94752a72ab194efd0f
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/argo-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: argo-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/argo-apps-0.33.0/argo-apps-0.33.0.tgz
+    version: 0.33.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Argo Rollouts chart from 2.41.0 to 2.42.0, including:
 
             - Update Argo Rollouts from v1.9.0 to v1.9.1
@@ -39193,4 +39231,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-02T10:25:06.324439366Z"
+generated: "2026-10-02T11:01:02.869672252Z"
