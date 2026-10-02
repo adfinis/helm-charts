@@ -21058,6 +21058,47 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated OpenCost chart from 2.5.30 to 2.5.32, including:
+              - OpenCost application update from 1.121.1 to 1.121.3
+              - Added IBM Cloud Usage Reports cloud cost integration
+              - Added AWS Marketplace fees and GCP GPU public pricing
+              - Improved public, spot, persistent volume, and local disk pricing
+              - Added account filtering to network insights
+              - Fixed concurrent modification of node labels
+          links:
+            - name: "OpenCost chart 2.5.32 release notes"
+              url: https://github.com/opencost/opencost-helm-chart/releases/tag/opencost-2.5.32
+            - name: "OpenCost 1.121.2 release notes"
+              url: https://github.com/opencost/opencost/releases/tag/v1.121.2
+            - name: "OpenCost 1.121.3 release notes"
+              url: https://github.com/opencost/opencost/releases/tag/v1.121.3
+            - name: "Chart changes from 2.5.30 to 2.5.32"
+              url: https://github.com/opencost/opencost-helm-chart/compare/opencost-2.5.30...opencost-2.5.32
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-10-02T11:32:47.789637433Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: d398310f9aeb61e5d56391d52659504ae3356a2c631268b74d9c1265f77e866b
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.82.0/misc-apps-0.82.0.tgz
+    version: 0.82.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated KEDA chart from 2.20.2 to 2.21.0, including:
               - Fixed critical CVE-2026-77524 by enforcing explicit service account token audiences
               - BREAKING: removed deprecated Temporal scaler settings buildId, selectAllActive, and selectUnversioned
@@ -39344,4 +39385,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-02T11:31:08.283640924Z"
+generated: "2026-10-02T11:32:47.791285219Z"
