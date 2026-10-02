@@ -21058,6 +21058,47 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Reloader chart from 2.2.16 to 2.2.18, including:
+              - Reloader application update from v1.4.21 to v1.4.22
+              - Added configurable leader election timings
+              - Moved lease RBAC to the metadata reader role when high availability is enabled
+              - Rejected non-positive pause-period durations
+              - Cleaned up leftover leader election leases
+              - Added templating support to image fields
+          links:
+            - name: "Reloader chart 2.2.17 release notes"
+              url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.17
+            - name: "Reloader chart 2.2.18 release notes"
+              url: https://github.com/stakater/Reloader/releases/tag/chart-v2.2.18
+            - name: "Reloader v1.4.22 release notes"
+              url: https://github.com/stakater/Reloader/releases/tag/v1.4.22
+            - name: "Chart changes from 2.2.16 to 2.2.18"
+              url: https://github.com/stakater/Reloader/compare/chart-v2.2.16...chart-v2.2.18
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-10-02T11:39:38.382676401Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for miscellaneous small tools
+    digest: 03cdcb84ea3d05cd094ccb2e4a1c28e39a928c3f9c987cbd1d263f30812cc3e3
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/misc-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: misc-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/misc-apps-0.84.0/misc-apps-0.84.0.tgz
+    version: 0.84.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Goldilocks chart from 11.1.0 to 11.2.0, including:
               - Goldilocks application update from v4.16.1 to v4.16.2
               - Updated libcrypto3, libssl3, and Go to fix vulnerabilities
@@ -39422,4 +39463,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-02T11:37:03.635687322Z"
+generated: "2026-10-02T11:39:38.384406931Z"
