@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.283.0
+version: 0.284.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,18 +15,19 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
     - kind: changed
       description: |
-        Updated cert-manager chart from v1.21.1 to v1.21.2, including:
-          - Updated Go, gRPC, and golang.org/x/crypto to address reported security vulnerabilities
-          - Prevented untrusted ACME, Vault, and HTTP-01 response bodies from leaking into status and events
-          - Restricted ambient AWS credentials for namespaced Vault Issuers
-          - Fixed controller and webhook panics and data races
-          - Fixed ACME renewal, HTTP-01 solver cleanup, and Gateway API DNS name handling
+        Updated kube-prometheus-stack chart from 88.6.5 to 91.8.2, including:
+          - Prometheus Operator update from v0.93.1 to v0.94.1
+          - Updated Grafana chart from 12.11.2 to 13.2.7
+          - Updated kube-state-metrics from 8.4.1 to 8.6.0
+          - Updated prometheus-node-exporter from 4.56.3 to 4.59.0
+          - Added secret-based authentication for control-plane ServiceMonitors
+          - Switched bundled chart dependencies to OCI registries
       links:
-        - name: "cert-manager v1.21.2 release notes"
-          url: https://github.com/cert-manager/cert-manager/releases/tag/v1.21.2
-        - name: "cert-manager changes from v1.21.1 to v1.21.2"
-          url: https://github.com/cert-manager/cert-manager/compare/v1.21.1...v1.21.2
+        - name: "kube-prometheus-stack 91.8.2 release notes"
+          url: https://github.com/prometheus-community/helm-charts/releases/tag/kube-prometheus-stack-91.8.2
+        - name: "kube-prometheus-stack changes from 88.6.5 to 91.8.2"
+          url: https://github.com/prometheus-community/helm-charts/compare/kube-prometheus-stack-88.6.5...kube-prometheus-stack-91.8.2
