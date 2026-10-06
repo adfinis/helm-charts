@@ -6452,6 +6452,43 @@ entries:
       artifacthub.io/changes: |
         - kind: changed
           description: |
+            Updated Velero chart from 12.1.0 to 12.2.0, including:
+              - Velero application update from 1.18.1 to 1.18.2
+              - Restored optimized cross-namespace API listing for wildcard namespace backups
+              - Fixed Kopia snapshot leaks caused by incorrect backup labels
+              - Skipped VolumeGroupSnapshot cleanup for backups that did not use group snapshots
+          links:
+            - name: "Velero chart 12.2.0 release notes"
+              url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-12.2.0
+            - name: "Velero v1.18.2 release notes"
+              url: https://github.com/velero-io/velero/releases/tag/v1.18.2
+            - name: "Chart changes from 12.1.0 to 12.2.0"
+              url: https://github.com/vmware-tanzu/helm-charts/compare/velero-12.1.0...velero-12.2.0
+      artifacthub.io/containsSecurityUpdates: "false"
+    apiVersion: v2
+    created: "2026-10-06T10:17:00.389563222Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: 21c1d90ca05afe457a0b7a7e48a612e63ade93e95f8620d60769aded2ef613b5
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.285.0/infra-apps-0.285.0.tgz
+    version: 0.285.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: |
             Updated Argo CD chart from 10.8.4 to 10.9.5, including:
               - Argo CD application update from v3.5.2 to v3.5.3
               - Added support for a custom Secret name for the embedded Redis password
@@ -39463,4 +39500,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-02T11:39:38.384406931Z"
+generated: "2026-10-06T10:17:00.390663318Z"
