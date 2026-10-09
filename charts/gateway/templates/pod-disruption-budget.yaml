@@ -1,0 +1,21 @@
+{{- if .Values.podDisruption.enabled }}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "gateway.fullname" . }}
+  labels:
+    {{- include "gateway.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "gateway.selectorLabelsPods" . | nindent 6 }}
+  {{- with .Values.podDisruption.maxUnavailable }}
+  maxUnavailable: {{ . }}
+  {{- end }}
+  {{- with .Values.podDisruption.minAvailable }}
+  minAvailable: {{ . }}
+  {{- end }}
+  {{- with .Values.podDisruption.unhealthyPodEvictionPolicy}}
+  unhealthyPodEvictionPolicy: {{ . }}
+  {{- end }}
+{{- end }}

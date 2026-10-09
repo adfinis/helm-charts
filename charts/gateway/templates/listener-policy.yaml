@@ -1,0 +1,48 @@
+{{- if or .Values.listenerPolicy.enabled .Values.accessLog.enabled }}
+apiVersion: gateway.kgateway.dev/v1alpha1
+kind: ListenerPolicy
+metadata:
+  name: {{ include "gateway.fullname" . }}
+  labels:
+    {{- include "gateway.labels" . | nindent 4 }}
+  annotations:
+    {{- .Values.listenerPolicy.annotations | toYaml | nindent 4 }}
+spec:
+  targetRefs:
+    - group: gateway.networking.k8s.io
+      kind: Gateway
+      name: {{ include "gateway.fullname" . }}
+  default:
+    {{- if or .Values.listenerPolicy.default.httpSettings .Values.accessLog.enabled }}
+    httpSettings:
+      {{- if or .Values.listenerPolicy.default.httpSettings }}
+      {{- toYaml .Values.listenerPolicy.default.httpSettings | nindent 6 }}
+      {{- end }}
+      {{- if .Values.accessLog.enabled }}
+      accessLog:
+      - openTelemetry:
+          grpcService:
+            backendRef:
+              name: {{ .Values.accessLog.otelService.name }}
+              namespace: {{ .Values.accessLog.otelService.namespace }}
+              port: {{ .Values.accessLog.otelService.port }}
+            logName: {{ .Values.accessLog.logName }}
+          body: {{ .Values.accessLog.logFormat | quote }}
+      {{- end }}
+    {{- end }}
+    {{- if and (ne .Values.listenerPolicy.default.proxyProtocol nil) .Values.listenerPolicy.enabled }}
+    {{- if eq (len .Values.listenerPolicy.default.proxyProtocol) 0 }}
+    proxyProtocol: {}
+    {{- else }}
+    proxyProtocol:
+      {{- toYaml .Values.listenerPolicy.default.proxyProtocol | nindent 6 }}
+    {{- end }}
+    {{- end }}
+    {{- with .Values.listenerPolicy.default.perConnectionBufferLimitBytes}}
+    perConnectionBufferLimitBytes: {{ . }}
+    {{- end }}
+  {{- with .Values.listenerPolicy.perPort }}
+  perPort:
+    {{- toYaml . | nindent 4}}
+  {{- end}}
+{{- end }}

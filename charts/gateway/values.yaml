@@ -1,0 +1,189 @@
+# Default values for kgateway.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# -- Override the chart name
+nameOverride: ""
+# -- Override the full name
+fullnameOverride: ""
+
+gateway:
+  # -- Specify listeners for the gateway
+  listeners: []
+  # -- Specify annotations to the gateway
+  annotations: {}
+  # -- Specify addresses that will be requested for the gateway
+  addresses: []
+
+# -- Redirct HTTP traffic to HTTPS
+redirectHTTP: true
+
+gatewayParameters:
+  # -- Enable Gateway Parmeters
+  enabled: true
+  # -- Add annotations to the gateway parameters
+  annotations: {}
+  # -- (int) Specify number of replicas for the created envoy deployment
+  replicas:
+  # -- Specify the startegy used to replace old envoy Pods by new ones
+  deploymentStrategy: RollingUpdate
+  # -- (int) Specify the maximum numbe rof pods that can be scheduled above the desired number of pods if the deployment strategy is RollingUpdate
+  maxSurge:
+  # -- (int) Specify the maximum number of unavailable pods during an update if the deployment strategy is RollingUpdate
+  maxUnavailable:
+  # -- Configuration for the istio integration
+  istio: {}
+  # -- Configuration for the envoy container apart from resources (configured further down)
+  envoyContainer:
+    bootstrap: {}
+    env: []
+    extraVolumeMounts: []
+    image: {}
+    securityContext: {}
+  # -- Configure the service that exposes the proxy
+  service:
+    type: LoadBalancer
+    ports: []
+    extraLabels: {}
+    extraAnnotations: {}
+    externalTrafficPolicy:
+    clusterIP:
+  # -- Enable to omit the rendering of 'securityContext' fields
+  omitDefaultSecurityContext: false
+  # -- Configure the ServiceAccount used by the proxy pods
+  serviceAccount: {}
+  # -- Configuration for the pods that will be created
+  podTemplate: {}
+  # -- Configuration for the Secret Discovery Service
+  sdsContainer: {}
+  # -- Configuration for the stats server
+  stats: {}
+
+# -- Resource limits claims and requests for the envoy containers (will be configured in GatwayParameters.envoyContainer and automatically enable GatewayParameters)
+resources:
+  requests: {}
+  limits: {}
+  claims: {}
+
+autoscaling:
+  # -- Enable autoscaling
+  enabled: false
+  # -- (int) Specify the maximum number of replicas
+  minReplicas:
+  # -- (int) Specify the minimum number of replicas
+  maxReplicas:
+  # -- (int) Specify the percentage of CPU used before it scales up
+  targetCPUUtilizationPercentage:
+  # -- (int) Specify the percentage of CPU used before it scales up
+  targetMemoryUtilizationPercentage:
+
+podDisruption:
+  # -- Enable a pod disruption budget
+  enabled: false
+  # -- (int) Specify the maximum number of replicas that may be unavailable
+  maxUnavailable:
+  # -- (int) Specify the minimum number of replicas that have to be available
+  minAvailable:
+  # -- Define the criteria for when unhealthy pods should be considered for eviction
+  unhealthyPodEvictionPolicy:
+
+networkPolicy:
+  # -- Enable the network policy
+  enabled: false
+  # -- Specify annotations for the network policy
+  annotations: {}
+  # -- Apply the network policy to resources by matching labels
+  matchLabels: {}
+  # -- Apply the network policy by using expressions
+  matchExpressions: []
+  # -- Define ingress rules
+  ingress: []
+  # -- Define egress rules
+  egress: []
+
+listenerPolicy:
+  # -- Enable the listener policy
+  enabled: false
+  # -- Specify annotations for the listener policy
+  annotations: {}
+  default:
+    # -- Define any config or policy that should map 1-to-1 with a given HTTPListener
+    httpSettings: {}
+    # -- (object) If this is set (even to '{}') envoy will expect connections to include the PROXY protocol header
+    proxyProtocol:
+    # -- (int) Specify the default per-connection buffer limit
+    perConnectionBufferLimitBytes:
+  # -- Overwrite the listener configuration per port
+  perPort: []
+
+monitoring:
+  serviceMonitor:
+    # -- Enable the service monitor
+    enabled: false
+    # -- Add additional labels to the service monitor (for example for prometheus to discover it)
+    extraLabels: {}
+    # -- Define how to scrape metrics from the service
+    endpoint:
+      # -- Interval in which the the metrics are scraped
+      interval: 2s
+      # -- Define the where the labels are to be scraped
+      path: /metrics
+    # -- Define additional metadata to be added to discored targets
+    attachMetadata: {}
+    # -- Define a job level limit on the size of the uncompressed response body that will be accepted
+    bodySizeLimit:
+    # -- Define wether to convert all scrape classic histograms to native histograms
+    convertClassicHistogramsToNHCB: false
+    # -- Define the scrap protocl to use if a scrape returns unusable content
+    fallbackScrapeProtocol:
+    # -- Defines the label to use to retrive the job name from.
+    jobLabel:
+    # -- (int) Define the per-scrape limit on the number of targets dropped by relabeling that will be kept in memory
+    keepDroppedTargets:
+    # -- (int) Define the per-scrape limit on the number of labels
+    labelLimit:
+    # -- (int) Define the per-scrape limit on the length of labels
+    labelNameLengthLimit:
+    # -- (int) Define the per-scrape limit on the length of values
+    labelValueLengthLimit:
+    # -- (int) Define the limit for buckets in a native histogram
+    nativeHistogramBucketLimit:
+    # -- Define that if the growth factor of one bucket to the next is samller than this, the buckets will be merged
+    nativeHistogramMinBucketFactor:
+    # -- Define the labels which transferred from the pod to the ingeste labels
+    podTargetLabels: []
+    # -- (int) Define a per-scrape limit on the number of scraped samples
+    sampleLimit:
+    # -- Define the scrape class
+    scrapeClass:
+    # -- Define wether to scrape classic histograms that are also exposed as a native histogram
+    scrapeClassicHistograms: false
+    # -- Define the protocol to negotiate during a scrape
+    scrapeProtocols: []
+    # -- Define the mechanism used to select the endpoints to scrape
+    selectorMechanism:
+    # -- Define the labels that will be transferred from the target service onto the ingested metrics
+    targetLabels: []
+    # -- Define a limit on the number of scraped targets that will be accepted.
+    targetLimit:
+  service:
+    # -- Define the port which the service should target to scrape the labels from the pods
+    targetPort: http-monitoring
+    # -- Define the port which the service exposes and the service monitor targets
+    port: 9091
+
+accessLog:
+  enabled: false
+  # -- Name for the access log
+  logName: "http-gateway-access-logs"
+  # -- Formatting of the access log
+  logFormat: >-
+    "%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %RESPONSE_CODE% "%REQ(:AUTHORITY)%" "%UPSTREAM_CLUSTER%"
+  # -- Open Telemetry Collector GRPC Service which should receive the logs
+  otelService:
+    # -- Name of the GRPC Service of Open Telemetry Collector
+    name:
+    # -- Namspace of the GRPC Service of Open Telemetry Collector
+    namespace:
+    # -- (int) Port of the GRPC Service of Open Telemetry Collector
+    port:
