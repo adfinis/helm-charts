@@ -6482,6 +6482,50 @@ entries:
   infra-apps:
   - annotations:
       artifacthub.io/changes: |
+        - kind: security
+          description: |
+            Updated argo-cd chart from 10.9.5 to 10.11.6, including:
+              - argo-cd application update from 3.5.3 to 3.5.6
+              - CRITICAL: A Kustomize remote ref can run commands in the repo-server (GHSA-9v9p-x54c-58gc)
+                CRITICAL: A Kustomize Helm config home can run commands in the repo-server (GHSA-fw5c-w8rc-j7fx)
+                CRITICAL: A Jsonnet import can read files from the repo-server (GHSA-m3vr-7329-44ww)
+                CRITICAL: AppProject restrictions bypassed by PreDelete/PostDelete resource hooks (GHSA-fmxq-cgp8-87wp, CVE-2026-77459)
+                HIGH: Login failure rate limit can be bypassed via concurrent requests (GHSA-4439-h7jw-5cjj, CVE-2025-61560)
+                HIGH: Command injection via a repository proxy URL on SSH Git repositories (GHSA-j6cw-g6p4-7hch, CVE-2026-55797)
+                MODERATE: Extension proxy RBAC ignores application namespace when applications-in-any-namespace is enabled (GHSA-g3ff-q88g-chrj)
+                MODERATE: An oversized OCI manifest can exhaust repo-server memory (GHSA-w996-f2wq-x9c6)
+          links:
+            - name: "ArgoCD 3.5.4 release notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.5.4
+            - name: "ArgoCD 3.5.5 release notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.5.5
+            - name: "ArgoCD 3.5.6 release notes"
+              url: https://github.com/argoproj/argo-cd/releases/tag/v3.5.6
+            - name: "Chart changes"
+              url: https://github.com/argoproj/argo-helm/compare/argo-cd-10.9.5...argo-cd-10.11.6
+      artifacthub.io/containsSecurityUpdates: "true"
+    apiVersion: v2
+    created: "2026-10-28T16:50:06.964105281Z"
+    dependencies:
+    - name: argoconfig
+      repository: https://charts.adfinis.com
+      version: 0.9.1
+    description: Argo CD app-of-apps config for infrastructure components
+    digest: b3b094d40c8b6dd7ca039ba65790810aaa262969293a0fb80d29842d4becd48e
+    home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: infra-apps
+    sources:
+    - https://github.com/adfinis/helm-charts
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/infra-apps-0.286.0/infra-apps-0.286.0.tgz
+    version: 0.286.0
+  - annotations:
+      artifacthub.io/changes: |
         - kind: changed
           description: |
             Updated Velero chart from 12.1.0 to 12.2.0, including:
@@ -39532,4 +39576,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-28T09:28:21.522370021Z"
+generated: "2026-10-28T16:50:06.966178043Z"
