@@ -2,7 +2,7 @@ apiVersion: v2
 name: cert-manager-issuers
 description: Configure cert-manager Issuers and ClusterIssuers via Helm
 type: application
-version: 0.3.0
+version: 0.3.1
 # matches apiVersion: cert-manager.io/v1
 appVersion: '1'
 keywords:
@@ -19,11 +19,11 @@ maintainers:
 dependencies:
   - name: common
     repository: https://charts.adfinis.com
-    version: 0.0.7
+    version: 0.0.8
 annotations:
   artifacthub.io/changes: |
     - kind: changed
-      description: "cert-manager-issuers: add AWSPCAClusterIssuer and AWSPCAIssuer"
+      description: "cert-manager-issuers: update common dependencies to 0.0.8"
       links:
         - name: GitHub PR
-          url: https://github.com/adfinis/helm-charts/pull/1333
+          url: https://github.com/adfinis/helm-charts/pull/2064
