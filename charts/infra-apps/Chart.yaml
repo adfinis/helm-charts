@@ -2,7 +2,7 @@ apiVersion: v2
 name: infra-apps
 description: Argo CD app-of-apps config for infrastructure components
 type: application
-version: 0.285.0
+version: 0.286.0
 home: https://github.com/adfinis/helm-charts/tree/main/charts/infra-apps
 sources:
   - https://github.com/adfinis/helm-charts
@@ -15,19 +15,26 @@ dependencies:
     version: 0.9.1
     repository: https://charts.adfinis.com
 annotations:
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
-    - kind: changed
+    - kind: security
       description: |
-        Updated Velero chart from 12.1.0 to 12.2.0, including:
-          - Velero application update from 1.18.1 to 1.18.2
-          - Restored optimized cross-namespace API listing for wildcard namespace backups
-          - Fixed Kopia snapshot leaks caused by incorrect backup labels
-          - Skipped VolumeGroupSnapshot cleanup for backups that did not use group snapshots
+        Updated argo-cd chart from 10.9.5 to 10.11.6, including:
+          - argo-cd application update from 3.5.3 to 3.5.6
+          - CRITICAL: A Kustomize remote ref can run commands in the repo-server (GHSA-9v9p-x54c-58gc)
+            CRITICAL: A Kustomize Helm config home can run commands in the repo-server (GHSA-fw5c-w8rc-j7fx)
+            CRITICAL: A Jsonnet import can read files from the repo-server (GHSA-m3vr-7329-44ww)
+            CRITICAL: AppProject restrictions bypassed by PreDelete/PostDelete resource hooks (GHSA-fmxq-cgp8-87wp, CVE-2026-77459)
+            HIGH: Login failure rate limit can be bypassed via concurrent requests (GHSA-4439-h7jw-5cjj, CVE-2025-61560)
+            HIGH: Command injection via a repository proxy URL on SSH Git repositories (GHSA-j6cw-g6p4-7hch, CVE-2026-55797)
+            MODERATE: Extension proxy RBAC ignores application namespace when applications-in-any-namespace is enabled (GHSA-g3ff-q88g-chrj)
+            MODERATE: An oversized OCI manifest can exhaust repo-server memory (GHSA-w996-f2wq-x9c6)
       links:
-        - name: "Velero chart 12.2.0 release notes"
-          url: https://github.com/vmware-tanzu/helm-charts/releases/tag/velero-12.2.0
-        - name: "Velero v1.18.2 release notes"
-          url: https://github.com/velero-io/velero/releases/tag/v1.18.2
-        - name: "Chart changes from 12.1.0 to 12.2.0"
-          url: https://github.com/vmware-tanzu/helm-charts/compare/velero-12.1.0...velero-12.2.0
+        - name: "ArgoCD 3.5.4 release notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v3.5.4
+        - name: "ArgoCD 3.5.5 release notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v3.5.5
+        - name: "ArgoCD 3.5.6 release notes"
+          url: https://github.com/argoproj/argo-cd/releases/tag/v3.5.6
+        - name: "Chart changes"
+          url: https://github.com/argoproj/argo-helm/compare/argo-cd-10.9.5...argo-cd-10.11.6
