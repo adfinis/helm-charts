@@ -4459,6 +4459,38 @@ entries:
   - annotations:
       artifacthub.io/changes: |
         - kind: changed
+          description: "cert-manager-issuers: update common dependencies to 0.0.8"
+          links:
+            - name: GitHub PR
+              url: https://github.com/adfinis/helm-charts/pull/2064
+    apiVersion: v2
+    appVersion: "1"
+    created: "2026-10-28T09:28:21.520431372Z"
+    dependencies:
+    - name: common
+      repository: https://charts.adfinis.com
+      version: 0.0.8
+    description: Configure cert-manager Issuers and ClusterIssuers via Helm
+    digest: ca4c6ef6d972bf1ca7414d955854118d1d384de2af67bd8b079763f5bb4f1541
+    home: https://cert-manager.io/docs/configuration/
+    icon: https://raw.githubusercontent.com/adfinis/helm-charts/main/charts/cert-manager-issuers/logo.png
+    keywords:
+    - cert-manager
+    - tls
+    maintainers:
+    - email: support@adfinis.com
+      name: adfinis
+      url: https://adfinis.com
+    name: cert-manager-issuers
+    sources:
+    - https://github.com/adfinis/helm-charts/tree/main/charts/cert-manager-issuers
+    type: application
+    urls:
+    - https://github.com/adfinis/helm-charts/releases/download/cert-manager-issuers-0.3.1/cert-manager-issuers-0.3.1.tgz
+    version: 0.3.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
           description: "cert-manager-issuers: add AWSPCAClusterIssuer and AWSPCAIssuer"
           links:
             - name: GitHub PR
@@ -39500,4 +39532,4 @@ entries:
     urls:
     - https://github.com/adfinis-sygroup/helm-charts/releases/download/vault-monitoring-0.1.0/vault-monitoring-0.1.0.tgz
     version: 0.1.0
-generated: "2026-10-06T10:17:00.390663318Z"
+generated: "2026-10-28T09:28:21.522370021Z"
