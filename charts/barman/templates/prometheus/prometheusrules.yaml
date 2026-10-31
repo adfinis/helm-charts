@@ -3,7 +3,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
   name: {{ include "barman.fullname" . }}
-   {{- if .Values.prometheus.rules.namespace }}
+  {{- if .Values.prometheus.rules.namespace }}
   namespace: {{ .Values.prometheus.rules.namespace }}
   {{- end }}
   labels:
@@ -18,5 +18,5 @@ spec:
   groups:
   - name: barman
     rules:
-    {{- toYaml .Values.prometheus.rules.spec | nindent 4 }}
+      {{- toYaml .Values.prometheus.rules.spec | nindent 6 }}
 {{- end }}
