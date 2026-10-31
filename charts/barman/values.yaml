@@ -186,8 +186,8 @@ prometheus:
     # -- Enable Alertmanager rules
     enabled: false
     # -- Selector labels for Alertmanager rules
-    selector: []
+    selector: {}
     # -- Additional labels for Alertmanager rules
-    additionalLabels: []
+    additionalLabels: {}
     # -- Array of Alertmanager rules
     spec: []
