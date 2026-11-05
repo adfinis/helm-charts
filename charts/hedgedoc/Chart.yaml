@@ -4,7 +4,7 @@ name: hedgedoc
 description: Chart for HedgeDoc, a fork of CodiMD
 type: application
 version: 0.6.2
-appVersion: "1.12.1"
+appVersion: "1.12.2"
 icon: https://raw.githubusercontent.com/hedgedoc/hedgedoc-logo/main/LOGOTYPE/PNG/HedgeDoc-Logo%201.png
 sources:
   - https://github.com/hedgedoc/hedgedoc
@@ -21,10 +21,10 @@ dependencies:
 annotations:
   artifacthub.io/images: |
     - name: hedgedoc
-      image: quay.io/hedgedoc/hedgedoc:1.12.1
+      image: quay.io/hedgedoc/hedgedoc:1.12.2
   artifacthub.io/changes: |
     - kind: changed
-      description: Bumped hedgedoc to 1.12.1
+      description: Bumped hedgedoc to 1.12.2
       links:
         - name: GitHub Release
-          url: https://github.com/hedgedoc/hedgedoc/releases/tag/1.12.1
+          url: https://github.com/hedgedoc/hedgedoc/releases/tag/1.12.2
