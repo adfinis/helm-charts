@@ -1,11 +1,5 @@
 suite: default Keycloak Operator tests
-templates:
-  - operator/clusterrole.yaml
-  - operator/deployment.yaml
-  - operator/rolebinding.yaml
-  - operator/roles.yaml
-  - operator/serviceaccount.yaml
-  - operator/service.yaml
+templates: []
 tests:
   - it: should match snapshot
     values:

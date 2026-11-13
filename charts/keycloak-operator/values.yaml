@@ -6,96 +6,12 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-operator:
+tags:
   # -- Enable deploying the keycloak-operator
-  enabled: true
+  enable-operator: true
 
-  # -- Number or oeprator pods to start.
-  replicaCount: 1
-
-  image:
-    # -- Operator Image source.
-    repository: quay.io/keycloak/keycloak-operator
-    # -- Pull policy for Operator.
-    pullPolicy: IfNotPresent
-    # -- Overrides the image tag whose default is the chart appVersion.
-    tag: ""
-    # -- Configure the SHA for the operator image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion.
-    sha: "06a13deb391960cabf7eb0580442962326c2d163bb7887acbf0dcfeb11a1b2f4"
-
-  config:
-    keycloakImage:
-      # -- Default keycloak image to use if non was specified in the Keycloak CRD.
-      repository: quay.io/keycloak/keycloak
-      # -- Overrides the keycloak image tag whose default is the chart appVersion.
-      tag: ""
-      # -- Configure the SHA for the default keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion.
-      sha: "82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c"
-
-  serviceAccount:
-    # -- Specifies whether a service account should be created.
-    create: true
-    # -- Annotations to add to the service account
-    annotations: {}
-    # -- The name of the service account to use.
-    # If not set and create is true, a name is generated using the fullname template
-    name: ""
-
-  # -- Annotations to set on the Operator Deployment.
-  deploymentAnnotations: {}
-
-  # -- Annotations to set on the Operator Pod.
-  podAnnotations: {}
-
-  # -- Pod security group configuration for Operator Deployment.
-  podSecurityContext: {}
-    # fsGroup: 2000
-
-  # -- Security context for Operator Deployment.
-  securityContext: {}
-    # capabilities:
-    #   drop:
-    #   - ALL
-    # readOnlyRootFilesystem: true
-    # runAsNonRoot: true
-    # runAsUser: 1000
-
-  service:
-    # -- Enable creation of Service
-    enabled: true
-    # -- Service type for Operator.
-    type: ClusterIP
-    # -- Service port for Operator.
-    port: 8080
-
-  # -- Resource requests and limits for Operator Deployment.
-  resources: {}
-    # We usually recommend not to specify default resources and to leave this as a conscious
-    # choice for the user. This also increases chances charts run on environments with little
-    # resources, such as Minikube. If you do want to specify resources, uncomment the following
-    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-    # limits:
-    #   cpu: 100m
-    #   memory: 128Mi
-    # requests:
-    #   cpu: 100m
-    #   memory: 128Mi
-
-  # -- Node selector for Operator Deployment.
-  nodeSelector: {}
-
-  # -- Pod Topology Spread Constraints for Operator Deployment
-  podTopologySpreadConstraints: {}
-
-  # -- Tolerations for Operator Deployment.
-  tolerations: []
-
-  # -- Affinity for Operator Deployment.
-  affinity: {}
-
-  roles:
-    # -- Enable managing of serviceMonitors, required for keycloak.serviceMonitor.enabled=true.
-    enableServiceMonitor: false
+# -- Values for the operator deployment, see upstream keycloak-operator-helm chart for details.
+operator: {}
 
 keycloak:
   # -- Enable deploying a bundled keycloak with the operator

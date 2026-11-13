@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 1.13.1](https://img.shields.io/badge/Version-1.13.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.7.4](https://img.shields.io/badge/AppVersion-26.7.4-informational?style=flat-square)
+![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.8.2](https://img.shields.io/badge/AppVersion-26.8.2-informational?style=flat-square)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -13,6 +13,12 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 
 * <https://github.com/keycloak/keycloak-k8s-resources>
 * <https://github.com/adfinis/helm-charts/tree/main/charts/keycloak-operator>
+
+## Requirements
+
+| Repository | Name | Version |
+|------------|------|---------|
+| oci://quay.io/keycloak | operator(keycloak-operator-helm) | 26.8.2 |
 
 ## Values
 
@@ -94,31 +100,8 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.unsupported | object | `{}` | Additional values that will be merged with the operator's defaults |
 | keycloak.update | object | `{}` | Configuration related to Keycloak deployment updates. |
 | nameOverride | string | `""` |  |
-| operator.affinity | object | `{}` | Affinity for Operator Deployment. |
-| operator.config.keycloakImage.repository | string | `"quay.io/keycloak/keycloak"` | Default keycloak image to use if non was specified in the Keycloak CRD. |
-| operator.config.keycloakImage.sha | string | `"82a77884f3af238beab1e7afd63b5f530e1b5c0590bd7aa60b40a40463e29b2c"` | Configure the SHA for the default keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
-| operator.config.keycloakImage.tag | string | `""` | Overrides the keycloak image tag whose default is the chart appVersion. |
-| operator.deploymentAnnotations | object | `{}` | Annotations to set on the Operator Deployment. |
-| operator.enabled | bool | `true` | Enable deploying the keycloak-operator |
-| operator.image.pullPolicy | string | `"IfNotPresent"` | Pull policy for Operator. |
-| operator.image.repository | string | `"quay.io/keycloak/keycloak-operator"` | Operator Image source. |
-| operator.image.sha | string | `"06a13deb391960cabf7eb0580442962326c2d163bb7887acbf0dcfeb11a1b2f4"` | Configure the SHA for the operator image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
-| operator.image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
-| operator.nodeSelector | object | `{}` | Node selector for Operator Deployment. |
-| operator.podAnnotations | object | `{}` | Annotations to set on the Operator Pod. |
-| operator.podSecurityContext | object | `{}` | Pod security group configuration for Operator Deployment. |
-| operator.podTopologySpreadConstraints | object | `{}` | Pod Topology Spread Constraints for Operator Deployment |
-| operator.replicaCount | int | `1` | Number or oeprator pods to start. |
-| operator.resources | object | `{}` | Resource requests and limits for Operator Deployment. |
-| operator.roles.enableServiceMonitor | bool | `false` | Enable managing of serviceMonitors, required for keycloak.serviceMonitor.enabled=true. |
-| operator.securityContext | object | `{}` | Security context for Operator Deployment. |
-| operator.service.enabled | bool | `true` | Enable creation of Service |
-| operator.service.port | int | `8080` | Service port for Operator. |
-| operator.service.type | string | `"ClusterIP"` | Service type for Operator. |
-| operator.serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
-| operator.serviceAccount.create | bool | `true` | Specifies whether a service account should be created. |
-| operator.serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
-| operator.tolerations | list | `[]` | Tolerations for Operator Deployment. |
+| operator | object | `{}` | Values for the operator deployment, see upstream keycloak-operator-helm chart for details. |
+| tags.enable-operator | bool | `true` | Enable deploying the keycloak-operator |
 
 ## About this chart
 
