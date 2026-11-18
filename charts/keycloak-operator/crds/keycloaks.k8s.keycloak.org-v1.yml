@@ -3715,6 +3715,11 @@ spec:
                                   type: "string"
                               type: "object"
                             type: "array"
+                          schedulingGroup:
+                            properties:
+                              podGroupName:
+                                type: "string"
+                            type: "object"
                           securityContext:
                             properties:
                               appArmorProfile:
@@ -4401,6 +4406,10 @@ spec:
                                                 type: "integer"
                                               signerName:
                                                 type: "string"
+                                              userAnnotations:
+                                                additionalProperties:
+                                                  type: "string"
+                                                type: "object"
                                             type: "object"
                                           secret:
                                             properties:
@@ -8704,6 +8713,11 @@ spec:
                                   type: "string"
                               type: "object"
                             type: "array"
+                          schedulingGroup:
+                            properties:
+                              podGroupName:
+                                type: "string"
+                            type: "object"
                           securityContext:
                             properties:
                               appArmorProfile:
@@ -9390,6 +9404,10 @@ spec:
                                                 type: "integer"
                                               signerName:
                                                 type: "string"
+                                              userAnnotations:
+                                                additionalProperties:
+                                                  type: "string"
+                                                type: "object"
                                             type: "object"
                                           secret:
                                             properties:
