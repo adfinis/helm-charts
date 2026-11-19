@@ -118,7 +118,7 @@ spec:
     port: {{ . }}
   {{- end }}
   {{- if or .Values.keycloak.image.repository .Values.keycloak.image.tag }}
-  image: "{{ .Values.keycloak.image.repository | default .Values.operator.config.keycloakImage.repository }}:{{ .Values.keycloak.image.tag | default .Values.operator.config.keycloakImage.tag | default .Chart.AppVersion }}{{ if .Values.keycloak.image.sha }}@sha256:{{ .Values.keycloak.image.sha }}{{ else if .Values.operator.config.keycloakImage.sha }}@sha256:{{ .Values.operator.config.keycloakImage.sha }}{{ end }}"
+  image: "{{ .Values.keycloak.image.repository }}:{{ .Values.keycloak.image.tag | default .Chart.AppVersion }}{{ with .Values.keycloak.image.sha }}@sha256:{{ . }}{{ end }}"
   {{- end }}
   {{- with .Values.keycloak.imagePullSecrets }}
   imagePullSecrets: {{ . | toYaml | nindent 4 }}

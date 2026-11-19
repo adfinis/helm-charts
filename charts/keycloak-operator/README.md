@@ -1,6 +1,6 @@
 # keycloak-operator
 
-![Version: 2.0.0](https://img.shields.io/badge/Version-2.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.8.2](https://img.shields.io/badge/AppVersion-26.8.2-informational?style=flat-square)
+![Version: 2.0.1](https://img.shields.io/badge/Version-2.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 26.8.2](https://img.shields.io/badge/AppVersion-26.8.2-informational?style=flat-square)
 
 Deploy Keycloak Operator and Keycloak
 
@@ -64,9 +64,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | keycloak.http.serviceName | string | `nil` | The name of the Kubernetes Service. |
 | keycloak.http.tlsSecret | string | `nil` | A secret containing the TLS configuration for HTTPS. |
 | keycloak.httpManagement.port | string | `nil` | Port of management interface. |
-| keycloak.image.repository | string | `""` | Overrides the operator.keycloakImage.image value whose default is quay.io/keycloak/keycloak |
+| keycloak.image.repository | string | `"quay.io/keycloak/keycloak"` | Keycloak image repository. |
 | keycloak.image.sha | string | `""` | Configure the SHA for the keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion. |
-| keycloak.image.tag | string | `""` | Overrides the operator.keycloakImage.tag value whose default is the chart appVersion. |
+| keycloak.image.tag | string | `""` | Keycloak image tag. Defaults to the chart appVersion. |
 | keycloak.imagePullSecrets | string | `nil` | Secret(s) that might be used when pulling an image from a private container image registry or repository. |
 | keycloak.import | string | `nil` | In this section you can configure import jobs scheduling |
 | keycloak.ingress.annotations | object | `{}` | Annotations for the Ingress |

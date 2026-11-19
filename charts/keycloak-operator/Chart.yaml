@@ -2,7 +2,7 @@ apiVersion: v2
 name: keycloak-operator
 description: Deploy Keycloak Operator and Keycloak
 type: application
-version: 2.0.0
+version: 2.0.1
 appVersion: "26.8.2"
 icon: https://www.keycloak.org/resources/images/logo-stacked.svg
 home: https://www.keycloak.org
@@ -23,22 +23,6 @@ dependencies:
 annotations:
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
-    - kind: changed
+    - kind: fixed
       description: |
-        Updated Keycloak and Keycloak Operator from 26.7.4 to 26.8.2, including security fixes and features.
-
-        This is a BREAKING change due to the switch to the upstream Helm chart that is now embedded in this chart.
-
-        The highlights of this release are:
-        * Issue and verify digital wallet credentials with OID4VCI and OID4VP
-        * Automate user provisioning across identity systems with the SCIM API
-        * Run multi-cluster deployments without an external cache using stateless mode (now supported)
-        * Simpler administration with automatic index creation, reduced memory usage, and enhanced HTTP performance
-        * Token exchange delegation for AI agents and automation with consent and FGAP authorization
-      links:
-        - name: Release notes 26.8.0
-          url: https://github.com/keycloak/keycloak/releases/tag/26.8.0
-        - name: Release notes 26.8.1
-          url: https://github.com/keycloak/keycloak/releases/tag/26.8.1
-        - name: Release notes 26.8.2
-          url: https://github.com/keycloak/keycloak/releases/tag/26.8.2
+        Fix nil pointer error when rendering the Keycloak CR with keycloak.image set. The template still referenced operator.config.keycloakImage, which was removed in 2.0.0.
