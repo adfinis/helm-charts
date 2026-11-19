@@ -7,7 +7,7 @@ should match snapshot:
         app.kubernetes.io/component: keycloak
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: 26.8.2
-        helm.sh/chart: keycloak-operator-2.0.0
+        helm.sh/chart: keycloak-operator-2.0.1
       name: keycloak
     spec:
       features:
@@ -23,6 +23,7 @@ should match snapshot:
         strict: true
       http:
         httpEnabled: true
+      image: quay.io/keycloak/keycloak:26.8.2
       ingress:
         annotations:
           test: value
@@ -44,7 +45,7 @@ should match snapshot:
       labels:
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: 26.8.2
-        helm.sh/chart: keycloak-operator-2.0.0
+        helm.sh/chart: keycloak-operator-2.0.1
       name: RELEASE-NAME-keycloak-operator-test
     spec:
       client:
@@ -58,7 +59,7 @@ should match snapshot:
       labels:
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: 26.8.2
-        helm.sh/chart: keycloak-operator-2.0.0
+        helm.sh/chart: keycloak-operator-2.0.1
       name: RELEASE-NAME-keycloak-operator-test
     spec:
       keycloakCRName: keycloak
@@ -78,7 +79,7 @@ should match snapshot:
       labels:
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: 26.8.2
-        helm.sh/chart: keycloak-operator-2.0.0
+        helm.sh/chart: keycloak-operator-2.0.1
       name: RELEASE-NAME-keycloak-operator-test
     spec:
       client:

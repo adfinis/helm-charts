@@ -149,10 +149,10 @@ keycloak:
     port: ~
 
   image:
-    # -- Overrides the operator.keycloakImage.image value whose default is quay.io/keycloak/keycloak
-    repository: ""
+    # -- Keycloak image repository.
+    repository: quay.io/keycloak/keycloak
 
-    # -- Overrides the operator.keycloakImage.tag value whose default is the chart appVersion.
+    # -- Keycloak image tag. Defaults to the chart appVersion.
     tag: ""
 
     # -- Configure the SHA for the keycloak image. Should match the SHA of the image tag if specified or the image tag resolved from the chart appVersion.
