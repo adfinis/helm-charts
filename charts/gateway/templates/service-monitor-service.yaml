@@ -1,0 +1,15 @@
+{{- if .Values.monitoring.serviceMonitor.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "gateway.fullname" . }}-monitoring
+  labels:
+    {{- include "gateway.labels" . | nindent 4 }}
+spec:
+  selector:
+    {{- include "gateway.selectorLabelsPods" . | nindent 4 }}
+  ports:
+  - targetPort: {{ .Values.monitoring.service.targetPort }}
+    protocol: TCP
+    port: {{ .Values.monitoring.service.port }}
+{{- end }}
