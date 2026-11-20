@@ -1,0 +1,41 @@
+suite: prometheusrules tests
+templates:
+  - prometheus/prometheusrules.yaml
+tests:
+  - it: should not render by default
+    asserts:
+      - hasDocuments:
+          count: 0
+  - it: should render with an empty rules spec
+    set:
+      prometheus.rules.enabled: true
+    asserts:
+      - hasDocuments:
+          count: 1
+      - isKind:
+          of: PrometheusRule
+      - equal:
+          path: spec.groups[0].name
+          value: barman
+      - isEmpty:
+          path: spec.groups[0].rules
+  - it: should render rules, selector labels and namespace from the example values
+    values:
+      - ../examples/barman.yaml
+    set:
+      prometheus.rules.namespace: monitoring
+      prometheus.rules.additionalLabels:
+        team: dba
+    asserts:
+      - equal:
+          path: metadata.namespace
+          value: monitoring
+      - equal:
+          path: metadata.labels["k8s.adfinis.com/prometheus"]
+          value: kube-prometheus
+      - equal:
+          path: metadata.labels.team
+          value: dba
+      - equal:
+          path: spec.groups[0].rules[0].alert
+          value: BarmanBackupMissing

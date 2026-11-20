@@ -1,6 +1,6 @@
 # barman
 
-![Version: 0.10.0](https://img.shields.io/badge/Version-0.10.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.19](https://img.shields.io/badge/AppVersion-v2.19-informational?style=flat-square)
+![Version: 0.10.1](https://img.shields.io/badge/Version-0.10.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v2.19](https://img.shields.io/badge/AppVersion-v2.19-informational?style=flat-square)
 
 Chart for Barman PostgreSQL Backup and Recovery Manager
 
@@ -70,9 +70,9 @@ This chart is maintained by [Adfinis](https://adfinis.com/?pk_campaign=github&pk
 | persistence.recover.size | string | `"4Gi"` | Size of storage volume |
 | persistence.recover.storageClass | string | `""` | Storage class |
 | prometheus.enabled | bool | `true` | Enable Prometheus integration |
-| prometheus.rules.additionalLabels | list | `[]` | Additional labels for Alertmanager rules |
+| prometheus.rules.additionalLabels | object | `{}` | Additional labels for Alertmanager rules |
 | prometheus.rules.enabled | bool | `false` | Enable Alertmanager rules |
-| prometheus.rules.selector | list | `[]` | Selector labels for Alertmanager rules |
+| prometheus.rules.selector | object | `{}` | Selector labels for Alertmanager rules |
 | prometheus.rules.spec | list | `[]` | Array of Alertmanager rules |
 | prometheus.service.externalPort | int | `9780` | Prometheus exporter service external port |
 | prometheus.service.internalPort | int | `9780` | Prometheus exporter service internal port |

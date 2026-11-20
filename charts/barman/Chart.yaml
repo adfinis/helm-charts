@@ -2,7 +2,7 @@ apiVersion: v2
 name: barman
 type: application
 description: Chart for Barman PostgreSQL Backup and Recovery Manager
-version: 0.10.0
+version: 0.10.1
 appVersion: "v2.19"
 keywords:
   - barman
@@ -19,8 +19,5 @@ maintainers:
     url: https://adfinis.com
 annotations:
   artifacthub.io/changes: |
-    - kind: added
-      description: "added init containers for barman deployment"
-      links:
-        - name: GitHub PR
-          url: https://github.com/adfinis/helm-charts/pull/905
+    - kind: fixed
+      description: "fix PrometheusRule rendering when prometheus.rules.spec is empty, default rule selector/additionalLabels to maps"
